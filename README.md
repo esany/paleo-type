@@ -37,6 +37,7 @@ The Knau benchmark is a `research-scope` pilot. It tests the generic method; it 
 3. For generic research gates: `methodology/research-gates.md`.
 4. For the authoritative scholarly procedure: `methodology/historical-source-workflow.md`.
 5. For project creation, project kinds, relations and anti-drift rules: `methodology/project-lifecycle.md`.
+6. For scheduled governance/structural work and backlog semantics: `MILESTONES.md`.
 
 ### AI continuing research
 1. read `AGENTS.md`;
@@ -53,6 +54,7 @@ Old chat must never be required to reconstruct durable research state.
 - `README.md` — repository purpose/map.
 - `AGENTS.md` — binding operating/quality guardrails.
 - `DECISIONS.md` — consequential cross-project rationale.
+- `MILESTONES.md` — sequencing semantics for admitted governance/structural work and backlog; never scholarly research state.
 - `methodology/historical-source-workflow.md` — authoritative end-to-end scholarly method.
 - `methodology/research-gates.md` — canonical reusable G1–G6 requirements.
 - `methodology/project-lifecycle.md` — canonical project creation/relationship/feedback rules.
@@ -69,7 +71,8 @@ Old chat must never be required to reconstruct durable research state.
 - research-scope project `transcription/` — scoped transcription truth.
 - project `apparatus/decisions.tsv` — concrete source/reading revisions/adjudications.
 - project `palaeography/`, `research/`, `context/`, `LEARNINGS.md` — created only when real evidence/work exists.
-- GitHub Issues — bounded deferred work, never current research truth.
+- GitHub Issues — bounded deferred/discrete work, never current research truth.
+- GitHub Milestones — navigation mirror for work admitted to a bounded governance/structural sequence; never G1–G6 or research state.
 - Chat — transient workspace only.
 
 ## Project model
@@ -99,6 +102,8 @@ A project relation never proves a source relation. For example, `compares-with` 
 
 A project records only its concrete state against these requirements in `STATUS.md`; it does not redefine the gates.
 
+**G1–G6 are not GitHub Milestones.** They are evidence-based scholarly maturity states. GitHub Milestones are reserved for bounded admitted work sequences such as the governance/architecture review defined in `MILESTONES.md`.
+
 ## Core scientific principles
 
 1. Evidence before plausibility.
@@ -127,15 +132,33 @@ A project records only its concrete state against these requirements in `STATUS.
 
 This feedback loop allows the system to learn without letting one pilot silently define general method.
 
+## Governance work versus research maturity
+
+`MILESTONES.md` defines a bounded M1–M4 governance/architecture audit and a conditional M5 implementation phase. Milestone assignment means work has been explicitly admitted to that sequence; an open issue without a milestone remains backlog/deferred until its trigger is met.
+
+This planning layer does not alter project research state. Research maturity remains exclusively in generic G1–G6 plus each project's `STATUS.md`.
+
 ## Human-in-the-loop
 
 The assistant applies historical, archival, palaeographic, editorial and technical expertise, maintains research state and exposes evidence/uncertainty. The user controls purpose, priorities, source access only they can provide, rights/confidentiality facts and consequential publication/use decisions. Qualified specialists are an escalation/validation layer for consequential specialist claims.
+
+## GitHub navigation
+
+- Milestones organize bounded governance/structural work explicitly admitted to the sequence defined in `MILESTONES.md`.
+- Open Issues without a Milestone remain backlog/deferred until their documented trigger is met.
+- G1–G6 scholarly research gates are never mirrored as GitHub Milestones.
+- Issues + topical labels expose deferred/discrete work by subject.
+- PRs provide human-readable records for cohesive repo-wide changes.
+- Tags/releases mark intentionally frozen reproducible research checkpoints.
+
+GitHub metadata never replaces canonical repository records.
 
 ## Repository structure
 
 ```text
 AGENTS.md
 DECISIONS.md
+MILESTONES.md
 README.md
 methodology/
   historical-source-workflow.md
@@ -156,11 +179,11 @@ corpus/
 entities/
 projects/
   relationships.tsv
-  ega-reg-ii-5-00000129/      # source-unit
+  ega-reg-ii-5-00000129/        # source-unit
   ega-reg-ii-4-bd-ii-00000089/ # source-unit
-  ega-reg-ii-3-00000235/      # source-unit
-  ega-reg-ii-3-00000197/      # source-unit
-  ega-reg-ii-5-knau/          # research-scope pilot
+  ega-reg-ii-3-00000235/        # source-unit
+  ega-reg-ii-3-00000197/        # source-unit
+  ega-reg-ii-5-knau/            # research-scope pilot
 ```
 
 Optional project directories are created only when real work exists. No empty future-proof structure.
@@ -178,6 +201,7 @@ Another capable researcher/agent, given only repository + accessible source mate
 - what the current project text says and where it is uncertain/incomplete;
 - which generic gate is active and which concrete gaps remain;
 - what changed when project findings fed back into corpus or method;
+- which governance/structural issues are scheduled versus intentionally deferred;
 - what the exact next research action is.
 
 If recovering old chat or manually reconciling duplicated project truth is necessary, the architecture has drifted and must be repaired.
