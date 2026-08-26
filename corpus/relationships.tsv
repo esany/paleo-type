@@ -1,9 +1,9 @@
 relation_id	subject_id	predicate	object_id	status	evidence_basis	notes
-REL001	A	metadata_says_extract_of	B	metadata-supported	Archival metadata for A and B	Do not upgrade to textual identity without passage-level collation.
+REL001	A	metadata_says_extract_of	B	metadata-supported	Archival metadata for A and B	Catalogue-level relation remains distinct from textual collation.
 REL002	A	belongs_to_event	EV-1533-ZIEGENRUECK	metadata-supported	Archival metadata	Administrative/event relation, not textual relation.
 REL003	B	belongs_to_event	EV-1533-ZIEGENRUECK	metadata-supported	Archival metadata	Administrative/event relation, not textual relation.
 REL004	C1	belongs_to_event	EV-1529-NEUSTADT	metadata-supported	Record title/date metadata	No implication of relation to A/B beyond broader visitation context.
 REL005	C2	belongs_to_event	EV-1529-INCOME-KNAU	metadata-supported	Record title/date metadata	Separate 1529 income source; event granularity provisional.
 REL006	C2	mentions_place	PLACE-KNAU	observed	Record title + inspected images	Entity link only; no textual dependency claim.
 REL007	A	mentions_place	PLACE-KNAU	observed	Inspected A fol. 61v heading/entry	Entity link only.
-REL008	B	textually_corresponds_to	A	unresolved	Archival metadata suggests extract relation	Must locate and collate the corresponding Knau passage before verification.
+REL008	B:306v-309r	textually_corresponds_to	A:61v-63r	observed	Direct visual inspection of both loci: B image 667 begins `Knawe` with the same filial/Knau administrative structure as A 61v; B continues through images 668-672 and closes before the next place, matching the A entry boundary structurally and sharing multiple distinctive clauses/names	This establishes a genuine corresponding Knau passage, not yet a claim of verbatim copying or complete line-by-line equivalence. Detailed collation remains required before using individual B readings to adjudicate A.
