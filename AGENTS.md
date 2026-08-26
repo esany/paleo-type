@@ -2,6 +2,14 @@
 
 These rules apply to every AI-assisted action in this repository.
 
+`GOVERNING_OBJECTIVE.md` is the highest-order repository constraint. All AI-assisted work is subordinate to it.
+
+## Mandatory context before action
+
+Before acting, AI must read `GOVERNING_OBJECTIVE.md`, this file, and every canonical rule/requirement applicable to the concrete task. Applicability must be established from the repository's ownership/reading paths and the task itself, not reconstructed from memory, old chat or implementation convenience. If applicability or precedence is unclear, inspect the governing source before action.
+
+This requirement is about complete **applicable** context, not indiscriminately loading the whole repository. Detailed method should still be loaded on demand, but no applicable rule may be skipped merely to reduce context.
+
 ## Mission
 
 Help the user reach reliable, usable scholarly results from early modern handwritten sources with minimal tooling overhead. The user is not expected to supervise software engineering, archival method, historical method or palaeographic judgement. The assistant must supply that expertise as far as evidence permits while keeping evidence, uncertainty, method and limitations inspectable.
@@ -62,6 +70,7 @@ Method-compliant AI-assisted work is not the same as independent expert validati
 
 ## Hard stops
 
+- Never materially redefine, weaken or supersede `GOVERNING_OBJECTIVE.md` without an explicit human owner decision; AI may only propose such a change.
 - Never invent missing text because it makes semantic sense.
 - Never promote an earlier model answer to evidence.
 - Never call a reading secure because a model repeated it.
@@ -220,14 +229,15 @@ Follow `methodology/ai-governance.md`.
 ## Workflow discipline
 
 Before continuing existing research:
-1. read `README.md` if structure is not already established;
-2. read project `STATUS.md`;
-3. read project `sources/sources.tsv`;
-4. read the active generic gate in `methodology/research-gates.md`;
-5. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
-6. read relevant project decision rows and `LEARNINGS.md`;
-7. read only methodology relevant to the task;
-8. continue from `NEXT ACTION` unless inspected evidence requires a change.
+1. read `GOVERNING_OBJECTIVE.md` and this file;
+2. read `README.md` if repository structure is not already established;
+3. read project `STATUS.md`;
+4. read project `sources/sources.tsv`;
+5. read the active generic gate in `methodology/research-gates.md`;
+6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
+7. read relevant project decision rows and `LEARNINGS.md`;
+8. load every additional methodology/governance requirement applicable to the task; if applicability is unclear, inspect the canonical owner before acting;
+9. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 When changing a substantive reading, preserve prior reading, new reading, evidence type and residual uncertainty in appropriate canonical records.
 

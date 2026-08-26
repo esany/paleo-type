@@ -4,6 +4,8 @@ Lean, evidence-based workspace for the transparent transcription, source critici
 
 ## Purpose
 
+The highest-order repository purpose, precedence and human change authority are defined once in `GOVERNING_OBJECTIVE.md`. This README is an orientation map and does not supersede that objective.
+
 `paleo-type` helps a non-specialist reliably unlock early modern handwritten sources without turning the research task into a software project or requiring the user to become a historian, archivist or palaeographer.
 
 The research sources and scholarly result are the product. Tooling is support infrastructure only.
@@ -35,21 +37,23 @@ The current benchmark is `projects/ega-reg-ii-5-knau/`. It tests the generic met
 
 ### Human
 1. Read this README.
-2. For the current Knau investigation: `projects/ega-reg-ii-5-knau/STATUS.md`.
-3. For its source group: `projects/ega-reg-ii-5-knau/sources/sources.tsv`.
-4. For generic research gates: `methodology/research-gates.md`.
-5. For project/source-group creation and anti-drift rules: `methodology/project-lifecycle.md`.
-6. For source identity, exact exports and preservation: `methodology/source-and-provenance.md`.
-7. For GitHub work sequencing: `MILESTONES.md`.
+2. Read `GOVERNING_OBJECTIVE.md` when evaluating purpose, precedence, Human-in-the-loop or consequential method/architecture change.
+3. For the current Knau investigation: `projects/ega-reg-ii-5-knau/STATUS.md`.
+4. For its source group: `projects/ega-reg-ii-5-knau/sources/sources.tsv`.
+5. For generic research gates: `methodology/research-gates.md`.
+6. For project/source-group creation and anti-drift rules: `methodology/project-lifecycle.md`.
+7. For source identity, exact exports and preservation: `methodology/source-and-provenance.md`.
+8. For GitHub work sequencing: `MILESTONES.md`.
 
 ### AI continuing research
-1. read `AGENTS.md`;
-2. read the active project's `STATUS.md`;
-3. read its `sources/sources.tsv`;
-4. read the active gate in `methodology/research-gates.md`;
-5. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
-6. read only methodology needed for the current task;
-7. continue from project `NEXT ACTION` unless inspected evidence requires a change.
+1. read `GOVERNING_OBJECTIVE.md` and `AGENTS.md`;
+2. establish and load all canonical rules/requirements applicable to the concrete task;
+3. read the active project's `STATUS.md`;
+4. read its `sources/sources.tsv`;
+5. read the active gate in `methodology/research-gates.md`;
+6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
+7. read additional task-relevant methodology from its canonical owner;
+8. continue from project `NEXT ACTION` unless inspected evidence requires a change.
 
 Old chat must never be required to reconstruct durable research state.
 
@@ -76,7 +80,8 @@ They are not collapsed merely because both are in `ThHStAW, EGA, Reg. Ii 3`.
 
 ## Where truth lives
 
-- `README.md` — repository purpose/map.
+- `GOVERNING_OBJECTIVE.md` — highest-order scholarly purpose, precedence and human material-change authority.
+- `README.md` — repository orientation/map.
 - `AGENTS.md` — binding operating/quality guardrails.
 - `DECISIONS.md` — consequential cross-project rationale.
 - `MILESTONES.md` — GitHub work-planning semantics; never scholarly truth.
@@ -182,6 +187,7 @@ Labels classify domains. Open Issues without a Milestone remain backlog/deferred
 ## Repository structure
 
 ```text
+GOVERNING_OBJECTIVE.md
 AGENTS.md
 DECISIONS.md
 MILESTONES.md

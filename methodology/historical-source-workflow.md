@@ -4,6 +4,8 @@
 
 This is the **authoritative end-to-end scholarly method** for `paleo-type` when handwritten historical sources are identified, transcribed, analysed, collated and prepared for edition. It defines method before individual readings are solved and applies across projects.
 
+This method operationalizes `GOVERNING_OBJECTIVE.md`. It is subordinate to that highest-order purpose and may not redefine or weaken it.
+
 The goal is source-exact, human-auditable historical research whose archival, transcriptional, editorial and interpretive claims can be checked by another scholar against the source.
 
 Detailed files implement parts of this method:
