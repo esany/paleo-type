@@ -37,9 +37,17 @@ Do not use `source` as an undifferentiated term when precision matters. Distingu
 
 A portal image number is never a folio merely because both are numbers. A PDF page is never a manuscript page unless demonstrated. Keep every numbering system in a separate field.
 
-## Stable local identity
+## Stable local identity and sigla
 
-Every corpus source gets a stable local `source_id`. External IDs/URLs/URNs are attributes, not replacements for the local ID.
+Every corpus source gets a stable local `source_id`. **The canonical ID must identify the source, not its temporary research role.** Bare ordinal labels such as `A`, `B`, `C1` or `source-1` are prohibited as corpus primary keys because they are meaningless outside the local argument and become dangerous when scope/order changes.
+
+Prefer a compact identity-derived ID based on stable archival/catalogue identifiers, for example:
+
+`THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`
+
+The human-readable title, date and folios remain separate fields; do not encode uncertain interpretations into the key. External IDs/URLs/URNs are attributes and evidence for identity, not replacements for the local key.
+
+**Witness sigla are allowed only as optional presentation/collation aliases after the witness has been fully identified.** For example, an edition may say `A = ThHStAW ... Reg. Ii 5 ...`, but `A` must never be the only durable identifier or the corpus foreign key. If sigla are used, store them explicitly as `legacy_alias`/`siglum` and make all machine references point to `source_id`.
 
 A stable source identity should preserve, where available:
 
@@ -101,13 +109,14 @@ Event nodes may remain provisional when the archival material does not yet justi
 
 When two records may transmit related text:
 
-1. identify each witness independently;
-2. locate the putatively corresponding loci;
-3. transcribe/read each witness without importing the other's spelling into it;
-4. record structural/textual correspondences and divergences;
-5. only then classify the relationship as demonstrated, partial, dependent, independent or unresolved as the evidence permits.
+1. identify each witness independently by canonical source identity;
+2. optionally assign short sigla for a specific apparatus, recording their expansion explicitly;
+3. locate the putatively corresponding loci;
+4. transcribe/read each witness without importing the other's spelling into it;
+5. record structural/textual correspondences and divergences;
+6. only then classify the relationship as demonstrated, partial, dependent, independent or unresolved as the evidence permits.
 
-A clearer reading in witness B may support identification/interpretation of an unclear token in witness A, but it does not change the graphemes actually visible in A.
+A clearer reading in one witness may support identification/interpretation of an unclear token in another, but it does not change the graphemes actually visible in the latter.
 
 ## Digital source criticism
 
