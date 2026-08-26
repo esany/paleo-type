@@ -47,6 +47,13 @@ In particular:
 
 Do not make a future agent recover durable research state from chat.
 
+### 10. Research integrity gate
+Before treating a consequential changed result or substantive work block as complete, run the relevant branches of the continuous integrity check in `methodology/quality-and-learning.md`.
+
+The gate tests five things: evidence actually inspected, separation of claim layers, genuine independence of corroboration, persistence of changed research truth, and alignment with the research goal. A consequential unresolved result may pass; an unsupported resolved result may not.
+
+At useful checkpoints, add a small adversarial evidence spot-check of consequential `working` items. Try to falsify them rather than merely confirm repository consistency. Keep this proportional to novelty, observed error and consequence.
+
 ## AI governance triggers
 
 Ordinary AI assistance stays lean. Do not create evaluation infrastructure for routine candidate generation, comparison or critique.
