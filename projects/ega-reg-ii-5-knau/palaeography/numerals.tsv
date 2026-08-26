@@ -1,13 +1,13 @@
 token_or_form	status	locations	reading_or_function	note
-ij	working	132:01	roman numeral two	Secure role from `ij filial` still requires direct visual checkpoint
-1	working	132:list;132:13	arabic one candidate	Compare all occurrences before interpreting values
-80	variant	133:19;133:24	arabic eighty candidate	Both occurrences must be visually compared; previous chat treated them as secure too early
-viertel	working	132:06	measure/quantity word	Compare with upper 133 before adjudicating surrounding notation
-grosch	working	132:13	monetary term	`silbern grosch` working reading
-pfennig	working	135:02	monetary term	Use as word-form anchor; amount is written as word `acht` in current reading
-W1	unresolved	132:03	unknown numerical/economic token	Next-action target
-W2	unresolved	132:04	unknown numerical/economic token	Next-action target
-W3	unresolved	132:05	unknown numerical/economic token	Next-action target
-W4	unresolved	132:06	unknown numerical/economic token	Next-action target
-W5	unresolved	132:07	unknown numerical/economic token	Next-action target
-W6	unresolved	132:08	unknown numerical/economic token	Next-action target
+ij	working	132:01	roman numeral two	Directly reinspected on image 132; sign is compatible with historical `ij` in `hat ij filial`, but exact grapheme decomposition remains a working reading rather than independent validation
+1	working	132:06;132:13	arabic one	Directly visible on image 132 in the itemized passage and household/groschen clause; surrounding economic notation remains unresolved
+80	observed	133:lower paragraph, two occurrences	arabic eighty	Direct reinspection of image 133 shows the same clear arabic `80` form twice in the pfarrholtz paragraph; lexical/syntactic interpretation around it remains separate
+viertel	working	132:06	quantity/measure word	Directly reinspected on image 132 after arabic `1`; compare with further same-hand occurrences before using as a broad notation anchor
+Pfarr-/money word `grosch`	working	132:13	monetary term	Current reading remains `grosch`; exact preceding qualifier and amount clause still require line-level recheck before edition
+pfennig	working	135:closing Knau lines	monetary term	Previously read in the closing obligation; not part of the current 132/133 notation adjudication
+W1	unresolved	132:03	unknown numerical/economic token	Direct reinspection confirms a compact value/sign group before the running text; no safe expansion from internal evidence yet
+W2	unresolved	132:04	unknown numerical/economic token	Direct reinspection confirms a distinct value/sign group; no safe expansion from internal evidence yet
+W3	unresolved	132:05	unknown numerical/economic token	Direct reinspection confirms a distinct value/sign group associated with a line ending in `maß`; no safe expansion yet
+W4	unresolved	132:06	unknown numerical/economic token before `1 viertel ...`	Direct reinspection confirms the token is separate from the arabic `1`; do not collapse it into the quantity without external/same-hand control
+W5	unresolved	132:07	unknown economic/land token	No safe numerical reading from current internal comparison
+W6	unresolved	132:08	unknown economic token	No safe numerical reading from current internal comparison
