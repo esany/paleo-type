@@ -11,209 +11,151 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | repository purpose/map/required reading path | `README.md` | entry point |
 | mandatory AI/research guardrails | `AGENTS.md` | binding rules |
 | shared architectural/methodological rationale | `DECISIONS.md` | lean cross-project decision record |
-| general research method | `methodology/*.md` | reusable normative method |
+| authoritative end-to-end scholarly method | `methodology/historical-source-workflow.md` | reusable normative method |
+| generic scholarly maturity gates | `methodology/research-gates.md` | reusable G1–G6 requirements |
+| detailed generic method | `methodology/*.md` | reusable specialist rules |
 | corpus source identity and inspection stage | `corpus/sources.tsv` | corpus inventory |
-| external/digital source file or instantiation identity, checksum, coverage, storage expectation and rights status | `corpus/files.tsv` | canonical file/instantiation manifest |
+| external/digital source file or instantiation identity/checksum/coverage/storage/rights | `corpus/files.tsv` | canonical file/instantiation manifest |
 | explicit source/event/entity relationships | `corpus/relationships.tsv` | relationship claims + evidence status |
 | administrative/historical event context | `corpus/events.tsv` | contextual event/activity registry |
-| recurring normalized identities | `entities/*.tsv` | authority-like local identities; never manuscript readings |
+| recurring normalized identities | `entities/*.tsv` | corpus-level normalized identities |
 | project identity/stable scope | `projects/<id>/project.yml` | project identity |
-| project research gates/requirements | `projects/<id>/MILESTONES.md` | canonical scholarly maturity criteria |
-| current project state/exact next action | `projects/<id>/STATUS.md` | restart point |
-| project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk; does not replace `corpus/files.tsv` |
-| current line readings | `projects/<id>/transcription/*.tsv` | transcription truth |
-| substantive reading changes | `projects/<id>/apparatus/decisions.tsv` | revision trail |
+| current project gate state, source-specific gaps and exact next action | `projects/<id>/STATUS.md` | restart point |
+| project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk |
+| project transcription | `projects/<id>/transcription/` | transcription truth |
+| substantive source/reading decisions | `projects/<id>/apparatus/decisions.tsv` | revision trail |
 | external literature/source inspection audit | `projects/<id>/research/` | checked-vs-lead distinction |
-| hand/source-specific comparisons | `projects/<id>/palaeography/` | empirical internal evidence |
+| source/hand-specific comparisons | `projects/<id>/palaeography/` | empirical comparison evidence |
 | project-specific failures/lessons | `projects/<id>/LEARNINGS.md` | learning record |
 | deferred technical/methodological improvements | GitHub Issues | triggered backlog, never current research truth |
 | end-user explanation | GitHub Wiki | handbook only |
 | exploratory reasoning | chat | transient workspace only |
 
-Explanations may summarize canonical records, but they must not become parallel truth stores.
+Projects do **not** own copies of generic gate requirements. Explanations may summarize canonical records, but they must not become parallel truth stores.
+
+## Framework / corpus / project ownership test
+
+Before creating/updating a durable record ask:
+
+1. Would the statement remain a valid rule for another comparable manuscript project? → `methodology/` (or `AGENTS.md` / `DECISIONS.md`).
+2. Does it concern identities/relationships spanning sources or projects? → `corpus/` / `entities/`.
+3. Does it concern what was found, read, decided or remains open in one concrete project? → `projects/<id>/`.
+
+A pilot may reveal a generic weakness, but project evidence becomes method only after an explicit generalisability check.
 
 ## Required reading paths
 
 ### Human
-Read `README.md` first. Deeper files are opened only as needed. GitHub-native navigation may expose milestones, labelled issues, larger change reviews and frozen checkpoints, but the linked repository files remain authoritative for scholarly state.
+Read `README.md` first. For one project, read its `STATUS.md`; generic maturity requirements live in `methodology/research-gates.md`.
 
 ### AI continuing research
-
 1. read `README.md` if repository structure is not already established;
 2. read `AGENTS.md`;
-3. read `DECISIONS.md` only when a shared method/data-model choice matters;
-4. inspect relevant `corpus/` rows, including `corpus/files.tsv` when exact inspected files/instantiations matter;
-5. read active project `STATUS.md` and its referenced `MILESTONES.md` requirements;
-6. read relevant decision rows and `LEARNINGS.md`;
-7. read only relevant methodology;
-8. continue from `NEXT ACTION` unless inspected evidence justifies a change.
+3. read project `STATUS.md`;
+4. read the active generic gate in `methodology/research-gates.md`;
+5. inspect relevant `corpus/` records when source identity/files/relations matter;
+6. read relevant project decisions/LEARNINGS and only the methodology needed for the task;
+7. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 ## GitHub-native human navigation
 
-GitHub metadata is a **navigation layer over canonical research records**, never a competing truth store.
+GitHub metadata is a navigation layer over canonical records, never a competing truth store.
 
 ### Milestones
-
-Use GitHub Milestones only when a project already has explicit scholarly gates in its canonical `MILESTONES.md`.
-
-- Mirror the milestone name and a short human-readable purpose.
-- Link/refer to the project `MILESTONES.md` for requirements and exit gates; do not duplicate the checklist in GitHub metadata.
-- Milestone completion is a navigation/progress signal. The scholarly basis for declaring a gate reached remains in repository state (`MILESTONES.md`, `STATUS.md`, research records).
-- Do not create calendar deadlines unless the research genuinely has one.
-- Do not fragment a scholarly gate into many issues merely to produce a progress percentage.
+GitHub Milestones may mirror the generic G1–G6 gate names/purposes for human navigation when useful.
+- Requirements/exit gates remain in `methodology/research-gates.md`.
+- Project gate state remains in project `STATUS.md`.
+- Do not duplicate full checklists in GitHub metadata.
+- No calendar due dates unless the research genuinely has one.
+- Do not fragment gates merely to produce progress percentages.
 
 ### Issues and labels
-
-Issues preserve bounded future work or a genuinely useful discrete work package. Labels classify issues for human filtering only.
-
-- Derive a small label vocabulary from actual recurring issue themes rather than designing a taxonomy in advance.
-- Prefer topical labels such as `corpus`, `palaeography`, `provenance`, `publication`, `automation`, `standards`, `bibliography`, `data-quality` only where the current issue set justifies them.
-- Do not encode canonical research status, reading confidence or source identity in labels.
-- GitHub open/closed state is enough for issue lifecycle; do not add redundant status labels.
-- Replace body hashtags with labels only after the corresponding real GitHub labels exist.
-- Assign an issue to a research milestone only when completing that issue materially contributes to that scholarly gate. Trigger-based future infrastructure issues normally remain unassigned until their trigger fires and they become gate-relevant.
+Issues preserve bounded future work or genuinely useful discrete work packages. Labels classify them for filtering only.
+- use a small topic vocabulary derived from actual issues;
+- do not encode canonical research status, confidence or source identity in labels;
+- assign an issue to a gate only when completing it materially contributes to that gate;
+- trigger-based future infrastructure normally stays unassigned until the trigger fires.
 
 ### Pull requests
+- small/local research or maintenance change → direct commit to `main` is acceptable;
+- cohesive repository-wide method/schema/provenance/structural change → branch + PR is preferred;
+- PR description states problem, material changes, deliberate non-changes and impact on research state;
+- PR does not replace `DECISIONS.md` for durable cross-project rationale.
 
-Use PRs as human-readable change records for consequential repository-wide work, not as ceremony for every research correction.
+### Tags/releases
+Use only for intentionally frozen, reproducible research/publication checkpoints. Do not release ordinary development increments. G5/G6 are natural candidates; earlier gates only when independently useful.
 
-- Small/local research or maintenance change → direct commit to `main` is acceptable.
-- Cohesive repository-wide method, schema, provenance-model or structural change → branch + PR is preferred.
-- PR description should state the problem, material changes, deliberate non-changes and impact on existing research state.
-- Prefer a coherent/squashed merge history for such structural changes when practical.
-- A PR does not replace `DECISIONS.md` when a durable cross-project rationale is required.
-
-### Tags and releases
-
-Use tags/releases only for intentionally frozen, reproducible research/publication checkpoints.
-
-- Do not release ordinary development increments.
-- A checkpoint should identify the project/research state being frozen and point to the canonical source/transcription/apparatus state in that commit.
-- M5/M6 are natural candidates; earlier milestones warrant a release only when the checkpoint has independent research value.
-- A release does not make unresolved readings certain and does not replace provenance or edition documentation.
-
-### Projects, Discussions and other GitHub structures
-
-Do not introduce GitHub Projects/Kanban, Discussions, CODEOWNERS, contributor governance or workflow templates until an actual collaboration/navigation problem requires them. The default is absence, not preconfiguration.
+Do not introduce Projects/Kanban, Discussions, CODEOWNERS or contributor/workflow bureaucracy without an observed need.
 
 ## Maintenance triggers
 
-### Source discovered
-- add to `corpus/sources.tsv` at the truthful inspection stage;
-- do not create a project or transcribe it automatically;
-- record discovery boundary only when it matters to corpus coverage.
-
-### Source identity/inspection stage changes
-- update `corpus/sources.tsv`;
-- update project `sources/` only for project-specific inspection/crosswalk detail;
-- do not duplicate full corpus identity in project files.
-
-### External/digital source file or instantiation changes
-- update `corpus/files.tsv` for file identity, checksum, source coverage, storage expectation and rights status;
-- keep project `sources/` for local folio/image/PDF/export mappings and inspection details;
-- do not create a second file manifest inside a project.
-
-### Source relationship changes
-- update `corpus/relationships.tsv` with evidence/status;
-- catalogue statements stay `metadata-supported` until stronger evidence exists;
-- update project `STATUS.md` only if the relation changes active research.
-
-### Event/context changes
-- update `corpus/events.tsv`;
-- do not infer textual relation from shared event membership.
-
-### Repeated normalized entity becomes useful
-- add/update `entities/`;
-- keep manuscript form in transcription;
-- never normalize the diplomatic reading by editing the entity registry.
+### Source identity/stage/file/relation changes
+Update the corresponding canonical corpus record and project crosswalk/status only when the project consequence changes.
 
 ### Transcription changes
-- update `transcription/*.tsv`;
-- log substantive replacement/rejection in `apparatus/decisions.tsv`;
-- update palaeographic evidence if anchors change;
-- update `STATUS.md` if active uncertainty/next action changes.
+Update project transcription; log consequential replacements/rejections; update palaeographic evidence and `STATUS.md` when active uncertainty/next action changes.
 
 ### External source/literature inspected
-- update project `research/` with exact access level/passages;
-- promote source-status codes only under `evidence-policy.md`.
+Update project research audit with actual access level/passages.
 
 ### Project lesson learned
-- record concrete failure/correction in `LEARNINGS.md`;
-- promote to methodology only when genuinely generalizable.
+Record the concrete failure/correction in `LEARNINGS.md`. Promote only a genuinely general safeguard into methodology.
 
-### Method/governance/structure changes
-- update owning methodology/AGENTS file;
-- record a cross-project rationale in `DECISIONS.md` only when it would otherwise need rediscovery;
-- update README only when map/top-level orientation changes;
-- update Wiki explanation only if end-user meaning changes and write access exists.
+### Generic method/gate changes
+Update the owning methodology file; record durable cross-project rationale in `DECISIONS.md` when needed; then run a bounded repo-wide consistency pass across dependent projects.
 
-### Canonical truth or structure changes materially
-Run a **bounded repo-wide consistency pass** after changes such as source-ID migration, corrected source identity/provenance, file/instantiation manifest changes, relationship-status change, status-model change or repository restructuring.
+### Active task/gate state changes
+Update project `STATUS.md`; do not copy generic gate requirements into the project.
 
-Start from the changed canonical truths, not from a ritual reread of every file:
+## Bounded repo-wide consistency pass
 
-1. state the changed truths/identifiers;
-2. check dependent canonical records and project crosswalks;
-3. check derived state (`project.yml`, `STATUS.md`, research/source audits) for obsolete wording or completed `next_step`s;
-4. search for stale identifiers/aliases and contradictory folio/image/date/source/file-relation claims;
-5. check relevant open Issues against current implementation/triggers;
+Run after material canonical changes such as source-ID migration, provenance correction, file-manifest change, relationship-status change, generic gate/method change or repository restructuring.
+
+Start from the changed canonical truths:
+1. state changed truths/identifiers;
+2. check dependent canonical records/project crosswalks;
+3. check derived project state (`project.yml`, `STATUS.md`, research/source audits) for obsolete wording/completed next steps;
+4. search for stale identifiers, old generic-rule copies and contradictory claims;
+5. check relevant Issues against current implementation/triggers;
 6. apply the fachlich-technisches quality gate from `AGENTS.md`;
-7. stop when the repository is coherent and return to research.
+7. stop when coherent and return to research.
 
-Do not use a consistency pass to invent new architecture or re-adjudicate manuscript readings unless the inconsistency exposes a genuine research problem.
-
-### Useful future idea appears but is not justified now
-Create or update a GitHub Issue only if it contains:
-
-`problem/benefit → why not now → trigger → acceptance criteria`.
-
-Close duplicates and ideas that have become core methodology. Do not leave current research requirements deferred as issues.
-
-### Active task changes
-Update project `STATUS.md` so another agent can continue without the chat.
+Do not use a consistency pass to invent new architecture or re-adjudicate manuscript readings unless a genuine research problem is exposed.
 
 ## README, Wiki, Issues and chat
 
-### README
-Orientation and map, not detailed research status.
-
-### Wiki
-Human-facing handbook. It may explain statuses/workflows but never own open readings, corpus identities or next actions.
-
-### Issues
-Deferred work whose rationale is worth preserving. They are not a roadmap commitment. An issue's trigger must be reached before implementation is assumed useful.
-
-### Chat
-Transient workspace. Any fact/decision/open problem needed for continuation must be persisted before the work is considered durable.
+- **README** — orientation/map, not detailed status.
+- **Wiki** — human-facing handbook, never canonical research truth.
+- **Issues** — triggered/deferred work, not a roadmap commitment.
+- **Chat** — transient workspace; durable continuation state must be persisted.
 
 ## Human–AI maintenance responsibility
 
 ### AI
-The assistant owns routine repository/corpus hygiene: identify affected canonical records, update them during the same work block when practical, preserve revision history, repair cross-references, maintain restartability, and surface missing metadata instead of inventing it.
+Own routine repository/corpus hygiene, propagation of changed truths, cross-reference repair and restartability. Surface missing metadata rather than inventing it.
 
 ### User
-The user owns research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not responsible for repository synchronization or specialist adjudication they cannot validate.
+Own research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not the repository synchronizer or default specialist adjudicator.
 
 ### Qualified expert
-Escalation/review role when the consequence of error warrants independent specialist judgment.
+Escalation/review role when consequence/uncertainty warrants independent specialist judgment.
 
 ## End-of-work integrity check
 
-Before completing consequential research ask:
-
-1. What research truth changed?
-2. Is it in its one canonical home?
-3. Did a source identity/relation change require a corpus update?
-4. Did an external/digital source file or instantiation change require a `corpus/files.tsv` update?
+Before completing consequential work ask:
+1. What research/method truth changed?
+2. Is it in the correct method/corpus/project canonical home?
+3. Did a generic method change leak source-specific facts into methodology or duplicate generic requirements inside a project?
+4. Did a source/file/relation change require corpus updates?
 5. Did a reading change require transcription/decision/palaeography updates?
-6. Did the active problem/next action change?
-7. Did a project failure create a real learning?
-8. Did a deferred idea become useful enough for an Issue, or did an existing Issue's trigger actually fire?
-9. Did a material canonical/structural change require a bounded repo-wide consistency pass?
-10. Can another capable agent identify the exact sources/files, understand evidence status and continue without the chat?
+6. Did project gate state/next action change?
+7. Did a project failure create a generalisable learning?
+8. Did a deferred issue trigger actually fire?
+9. Is a bounded consistency pass required?
+10. Can another capable researcher identify the source, understand the active generic gate and continue without chat?
 
 If 10 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
-`Maintain on change, propagate material truth changes across dependent records, then stop.`
+`Maintain on change, preserve method/corpus/project boundaries, propagate material truth changes, then stop.`
