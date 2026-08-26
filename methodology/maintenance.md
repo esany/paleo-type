@@ -8,6 +8,7 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 
 | Information | Canonical home | Role |
 |---|---|---|
+| highest-order scholarly purpose, precedence and human material-change authority | `GOVERNING_OBJECTIVE.md` | repository constitution / mission boundary |
 | repository purpose/map/required reading path | `README.md` | entry point |
 | mandatory AI/research guardrails | `AGENTS.md` | binding rules |
 | shared architectural/methodological rationale | `DECISIONS.md` | lean cross-project decision record |
@@ -38,6 +39,16 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | exploratory reasoning | chat | transient workspace only |
 
 Explanations and GitHub metadata may summarize canonical records but must not become parallel truth stores.
+
+## Governing-objective change control
+
+`GOVERNING_OBJECTIVE.md` is not ordinary maintenance. A material change to its purpose, precedence or governing invariants is a special governance event and requires an explicit human owner decision.
+
+- AI/collaborators may analyse or propose an amendment, but must not autonomously weaken, replace or supersede the objective.
+- A material amendment must be isolated in a visible, cohesive PR with rationale and consequences; it must not arrive as incidental cleanup or automatic propagation.
+- Routine synchronization/refactor machinery must never rewrite the governing objective merely because lower-level method, standards, models or architecture changed.
+- Clarifying references in lower-level files should point to the canonical objective rather than copy it.
+- Ordinary source research and maintenance remain lean and do not inherit mission-change ceremony.
 
 ## Method / corpus / project ownership test
 
@@ -120,18 +131,19 @@ Update `projects/<id>/sources/sources.tsv`. Do not modify canonical source ident
 
 ### Human
 
-Read `README.md` first. For one investigation read its `STATUS.md` and `sources/sources.tsv`. Read `methodology/project-lifecycle.md` for project/source-group semantics, `methodology/source-and-provenance.md` for exact source/export preservation, and `MILESTONES.md` when interpreting scheduled Issues/Milestones.
+Read `README.md` first. Read `GOVERNING_OBJECTIVE.md` when evaluating repository purpose, precedence, Human-in-the-loop or consequential method/architecture change. For one investigation read its `STATUS.md` and `sources/sources.tsv`. Read `methodology/project-lifecycle.md` for project/source-group semantics, `methodology/source-and-provenance.md` for exact source/export preservation, and `MILESTONES.md` when interpreting scheduled Issues/Milestones.
 
 ### AI continuing research
 
-1. read `README.md` if repository structure is not already established;
-2. read `AGENTS.md`;
-3. read project `STATUS.md`;
-4. read project `sources/sources.tsv`;
-5. read the active generic gate in `methodology/research-gates.md`;
-6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, `corpus/source-data/` and `corpus/relationships.tsv`;
-7. read only methodology needed for the task;
-8. continue from `NEXT ACTION` unless inspected evidence requires a change.
+1. read `GOVERNING_OBJECTIVE.md` and `AGENTS.md`;
+2. establish and load all canonical rules/requirements applicable to the concrete task;
+3. read `README.md` if repository structure is not already established;
+4. read project `STATUS.md`;
+5. read project `sources/sources.tsv`;
+6. read the active generic gate in `methodology/research-gates.md`;
+7. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, `corpus/source-data/` and `corpus/relationships.tsv`;
+8. read additional task-relevant methodology from its canonical owner;
+9. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 ## GitHub-native human navigation
 
@@ -168,6 +180,8 @@ Issues preserve bounded future work or useful discrete work packages. Labels cla
 
 Small/local research or maintenance changes may commit directly to `main`; cohesive repository-wide method/schema/provenance/structural changes preferably use branch + PR. PRs state problem, material changes, deliberate non-changes and research-state impact. PRs do not replace `DECISIONS.md`.
 
+A material change to `GOVERNING_OBJECTIVE.md` is always a dedicated/cohesive governance PR and requires explicit human owner approval before merge.
+
 ### Tags/releases
 
 Use only for intentionally frozen reproducible research/publication checkpoints.
@@ -176,6 +190,7 @@ Do not introduce Projects/Kanban or Discussions without observed need. Governanc
 
 ## Maintenance triggers
 
+- governing-objective clarification/change proposal → treat as special governance event; never auto-propagate a material mission change;
 - source identity/stage change → update `corpus/sources.tsv`, then affected project references only;
 - exact export/checksum/coverage/storage/rights change → update `corpus/files.tsv`, then preservation/project consequences;
 - reusable source-wide crosswalk change → update `corpus/source-data/<source_id>/`, then affected project references/transcription addresses;
@@ -210,6 +225,7 @@ Do not use a consistency pass to invent architecture or re-adjudicate manuscript
 
 ## README, Wiki, Issues, Milestones and chat
 
+- **GOVERNING_OBJECTIVE** — highest-order purpose/precedence/change authority, not an operational handbook.
 - **README** — orientation/map, not detailed status.
 - **Wiki** — human-facing handbook, never canonical research truth.
 - **Issues** — discrete/deferred work, not research truth.
@@ -224,7 +240,7 @@ Own routine repository/corpus/project hygiene, propagation of changed truths, so
 
 ### User
 
-Own research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not the repository synchronizer or default specialist adjudicator.
+Own research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not the repository synchronizer or default specialist adjudicator. Material change to the governing objective requires the user's explicit decision.
 
 ### Qualified expert
 
