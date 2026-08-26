@@ -82,7 +82,8 @@ Method-compliant AI-assisted work is not the same as independent expert validati
 - Never add infrastructure “for later” without a current need; preserve rationale as a lean Issue instead.
 - Never claim corpus completeness without documented search boundaries/access limitations.
 - Never let project-specific facts/IDs/tokens become generic methodology merely because they were discovered in the pilot.
-- Never duplicate generic G1–G6 requirements inside a project milestone file.
+- Never duplicate generic G1–G6 requirements inside a project file or GitHub Milestone description.
+- Never treat GitHub Milestone assignment, progress or closure as evidence that a scholarly G1–G6 gate has been reached.
 
 ## Three truth domains
 
@@ -218,15 +219,28 @@ Final restartability test:
 
 If not, persist the minimum missing state.
 
-## GitHub Issue discipline
+## GitHub Issue and Milestone discipline
 
-A future Issue must state:
+Follow `MILESTONES.md` for work-target semantics.
+
+A future deferred Issue must state:
 1. problem/research benefit;
 2. why not now;
 3. trigger;
 4. acceptance criteria.
 
 No technology wish lists. Current research-integrity requirements belong in methodology, not deferred issues.
+
+For scheduled Issue work:
+- Milestone = primary target/work phase;
+- labels = affected domain(s)/kind;
+- `GOV-*` = repository governance/architecture family;
+- `<project> / G*` = project scholarly work toward a generic gate;
+- no Milestone = backlog/unscheduled.
+
+A project gate Milestone may mirror G1–G6 for human navigation, but project `STATUS.md` remains the only canonical owner of actual gate state. Update `STATUS.md` first when evidence changes the gate; then adjust GitHub planning metadata if useful.
+
+Do not create Issues merely to mirror every routine research action.
 
 ## Fachlich-technisches quality gate
 
@@ -271,6 +285,7 @@ Ask:
 - Did a clearer witness overwrite the witness under transcription?
 - Did I update the correct method/corpus/project canonical record?
 - Did the pilot accidentally define generic method?
+- Did I mistake a GitHub planning state for scholarly/evidential state?
 - Would another capable agent need this chat?
 - Did the work reduce consequential uncertainty rather than produce ceremony?
 
