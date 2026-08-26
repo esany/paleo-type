@@ -1,17 +1,29 @@
-# Status — EGA Reg. Ii 4 Bd. II / 00000089
+# STATUS — EGA Reg. Ii 4 Bd. II / 00000089
+
+Last checkpoint: 2026-08-26
+
+## Research purpose
+
+Preserve this independent source unit and its reusable Knau-locus mapping for later controlled witness comparison.
+
+## Project kind and scope
+
+- kind: `source-unit`
+- canonical source: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`
+- active scope: uploaded export images 642–681; Knau locus images 667–672 / fol. 306v–309r.
 
 ## Evidence state
 
-Primary archive export inspected from the user-supplied 41-page PDF. It identifies the archival unit as Landesarchiv Thüringen – Hauptstaatsarchiv Weimar, Ernestinisches Gesamtarchiv, ThHStAW, EGA, Reg. Ii 4 Bd. II. The supplied section spans export images 642–681. The Knau witness is located at images 667–672, corresponding to fol. 306v–309r under the controlled crosswalk.
+The primary archive export has been inspected. Exact binary provenance is in `corpus/files.tsv`; stable-image URNs and controlled Knau mapping are in `sources/knau-crosswalk.tsv`. The visible correspondence to Reg. Ii 5 supports comparison but not automatic textual equivalence or dependence.
 
-## Repository preservation
+## Project relations
 
-The exact archive-export binary remains `external-to-git` under the current repository policy. The repository preserves its canonical source identity, checksum/file provenance, stable image URNs where available, the passage crosswalk, and all derived scholarly work.
+See `../relationships.tsv`. The Knau research-scope project currently `compares-with` this source-unit project. Historical/source relationship claims remain separately controlled in `corpus/relationships.tsv`.
 
-## Witness rule
+## NEXT ACTION — canonical restart point
 
-Reg. Ii 4 Bd. II is treated as its own primary witness. The archival relationship to Reg. Ii 5 and visible structural correspondence justify comparison, not automatic textual equivalence. Detailed collation must precede claims about copying, dependence, variants, or editorial priority.
+`not yet activated` for source-unit-wide work. When the Knau research-scope project reaches G4, independently transcribe the required locus here before collation; do not import readings from Reg. Ii 5.
 
-## Next scholarly work
+## Restartability test
 
-Create image-level diplomatic transcription for 667–672 and a controlled collation against Reg. Ii 5 images 132–135, with uncertainty and intervention provenance recorded explicitly.
+A new researcher can identify the source, exact Knau locus, binary/crosswalk provenance, comparison role and dormant state without chat.
