@@ -40,9 +40,11 @@ It should link or point to deeper rules rather than duplicate them in full.
 
 ### Wiki — end-user handbook
 
-The Wiki explains the system from the perspective of a person using the results: how an source is processed, how to read statuses and uncertainty, what AI does, what the user needs to provide, and what a result can or cannot establish.
+The Wiki explains the system from the perspective of a person using the results: how a source is processed, how to read statuses and uncertainty, what AI does, what the user needs to provide, and what a result can or cannot establish.
 
 The Wiki may summarize project progress for orientation, but must point to the project's `STATUS.md` for the current state. Do not maintain a second list of open readings, decisions or source statuses in the Wiki.
+
+When Wiki-writing access is available to the assistant, maintaining affected end-user explanations is part of assistant documentation hygiene. If the current environment cannot write the Wiki, the canonical repository update must not be blocked; explicitly identify the specific Wiki page/statement that has become stale so it can be synchronized when Wiki access is available.
 
 ### Chat — workspace, not memory
 
@@ -92,7 +94,7 @@ Update records because an event changed their truth, not because a calendar says
 
 - update the owning file in `methodology/` or `AGENTS.md`;
 - update `README.md` when the reading path, repository map or top-level principles changed;
-- update the Wiki explanation if the end-user experience or meaning of outputs changed materially.
+- update the Wiki explanation if the end-user experience or meaning of outputs changed materially and Wiki-writing access is available; otherwise report the precise pending Wiki synchronization without creating a second canonical state.
 
 ### If the active task changes
 
@@ -102,13 +104,14 @@ Update `STATUS.md` immediately enough that another agent can continue without re
 
 ### AI responsibility
 
-The assistant owns routine research-state hygiene. It should:
+The assistant owns routine research-state and documentation hygiene. It should:
 
 - identify which canonical records are affected by its research work;
 - update those records as part of the same substantive work session when possible;
 - keep `STATUS.md` restartable;
 - preserve rejected/replaced readings rather than silently overwriting history;
 - detect documentation drift and repair cross-references when it changes structure or method;
+- maintain affected Wiki explanations when Wiki-writing access is available, or flag the exact pending synchronization when it is not;
 - avoid asking the user to perform repository housekeeping that the assistant can perform itself;
 - surface a missing fact instead of inventing metadata or rights information.
 
@@ -138,7 +141,7 @@ Before treating a substantive research session as complete, the assistant asks:
 3. Did a material reading change require a decision-log entry?
 4. Did the active problem or next action change? If yes, is `STATUS.md` restartable?
 5. Did a project-specific failure teach a reusable lesson?
-6. Did a general rule, structure or user-facing meaning change? If yes, are README/methodology/Wiki references consistent?
+6. Did a general rule, structure or user-facing meaning change? If yes, are README/methodology references consistent and is any required Wiki synchronization completed or explicitly identified?
 7. Would another capable agent be able to continue from the repository without the chat?
 
 If the answer to 7 is no, persist the minimum missing state. Do not create documentation merely to satisfy the checklist.
