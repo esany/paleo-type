@@ -33,6 +33,20 @@ Link readings to persons, places, institutions, legal/economic concepts and hist
 ### 8. Publish usable result
 Produce a readable transcription, uncertainty/apparatus, source audit and concise historical commentary whose claims can be traced. Raise validation to match the consequence of error; consequential claims that remain dependent on unresolved specialist judgement require appropriate independent human review.
 
+### 9. Persist research state
+Whenever a work session changed research truth, persist the minimum changed state in its canonical repository records before relying on the result for future continuation. Follow `methodology/maintenance.md`.
+
+In particular:
+
+- changed readings belong in `transcription/` and substantive replacements/rejections in the decision log;
+- changed source knowledge belongs in `sources/` or `research/`;
+- changed comparison evidence belongs in `palaeography/`;
+- changed active problem, scope or next action belongs in `STATUS.md`;
+- learned project-specific failure modes belong in `LEARNINGS.md`;
+- general method/structure changes belong in their owning methodology/guardrail files and, where needed, the README.
+
+Do not make a future agent recover durable research state from chat.
+
 ## AI governance triggers
 
 Ordinary AI assistance stays lean. Do not create evaluation infrastructure for routine candidate generation, comparison or critique.
@@ -47,4 +61,10 @@ Validation is also proportional: use the lightest check sufficient for the conse
 
 ## Checkpoint rule
 
-`STATUS.md` is the canonical continuation point. Update it whenever the active task, corpus boundary, or major unresolved problem changes.
+`STATUS.md` is the canonical continuation point. Update it whenever the active task, corpus boundary, major unresolved problem or next action changes.
+
+A valid checkpoint is restartable: another capable agent should be able to continue correctly from the repository without needing the old chat. This does not require duplicating all research detail into `STATUS.md`; it should point to the relevant canonical records and state the exact next action.
+
+## Maintenance rule
+
+Maintenance is event-driven. Follow `methodology/maintenance.md` and update only records whose truth changed. Repository maintenance is normally an assistant responsibility; the user should not be asked to synchronize files or adjudicate specialist questions merely to keep the system coherent.
