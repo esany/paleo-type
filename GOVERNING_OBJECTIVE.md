@@ -26,6 +26,8 @@ Lower layers may implement or refine higher layers. They may not redefine or wea
 
 If methodology, data model, AI optimization, automation, GitHub workflow, project convention or implementation convenience conflicts with this governing scholarly objective, this objective prevails.
 
+Before acting, AI must load and follow this governing objective, the repository's mandatory AI guardrails, and all rules and requirements applicable to the concrete task. If applicability or precedence is unclear, the governing sources must be inspected before action rather than reconstructed from memory or convenience.
+
 ## Change authority
 
 This objective may be analysed, challenged and amended by proposal, but a material change to its purpose, precedence or governing invariants requires an explicit decision by the human repository/project owner.
