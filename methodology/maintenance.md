@@ -6,145 +6,138 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 
 ## One fact, one canonical home
 
-Avoid duplicated truth. Explanations may summarize canonical information, but changing the explanation must never become a substitute for changing the owning record.
-
 | Information | Canonical home | Role |
 |---|---|---|
-| project purpose, repository map, required reading path | `README.md` | entry point for humans and AI |
-| mandatory AI/research guardrails | `AGENTS.md` | binding operating rules |
+| repository purpose/map/required reading path | `README.md` | entry point |
+| mandatory AI/research guardrails | `AGENTS.md` | binding rules |
 | general research method | `methodology/*.md` | reusable normative method |
-| project identity and stable scope metadata | `projects/<id>/project.yml` | structured project identity |
-| current research state and exact next action | `projects/<id>/STATUS.md` | canonical restart point |
-| current line-level readings | `projects/<id>/transcription/*.tsv` | transcription record |
-| substantive reading changes/adjudications | `projects/<id>/apparatus/decisions.tsv` | revision trail |
-| primary-source identity/provenance | `projects/<id>/sources/` | inspected source record |
-| external literature/source audit | `projects/<id>/research/` | checked-vs-lead distinction |
-| hand/source-specific empirical comparisons | `projects/<id>/palaeography/` | reusable internal evidence |
-| project-specific failure modes and lessons | `projects/<id>/LEARNINGS.md` | learning record |
-| end-user explanation and how-to material | GitHub Wiki | handbook; never canonical research state |
-| exploratory reasoning and interaction | chat | transient workspace; not a durable research record |
+| corpus source identity and inspection stage | `corpus/sources.tsv` | corpus inventory |
+| explicit source/event/entity relationships | `corpus/relationships.tsv` | relationship claims + evidence status |
+| administrative/historical event context | `corpus/events.tsv` | contextual event/activity registry |
+| recurring normalized identities | `entities/*.tsv` | authority-like local identities; never manuscript readings |
+| project identity/stable scope | `projects/<id>/project.yml` | project identity |
+| current project state/exact next action | `projects/<id>/STATUS.md` | restart point |
+| project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk |
+| current line readings | `projects/<id>/transcription/*.tsv` | transcription truth |
+| substantive reading changes | `projects/<id>/apparatus/decisions.tsv` | revision trail |
+| external literature/source inspection audit | `projects/<id>/research/` | checked-vs-lead distinction |
+| hand/source-specific comparisons | `projects/<id>/palaeography/` | empirical internal evidence |
+| project-specific failures/lessons | `projects/<id>/LEARNINGS.md` | learning record |
+| deferred technical/methodological improvements | GitHub Issues | triggered backlog, never current research truth |
+| end-user explanation | GitHub Wiki | handbook only |
+| exploratory reasoning | chat | transient workspace only |
 
-## README, Wiki and chat
-
-### README — repository orientation
-
-The README must remain sufficient to answer:
-
-- What is `paleo-type` for?
-- What are its non-negotiable principles?
-- Where does each kind of information live?
-- What must a human or AI read before working in the repository?
-- Which file is the canonical continuation point for an active project?
-
-It should link or point to deeper rules rather than duplicate them in full.
-
-### Wiki — end-user handbook
-
-The Wiki explains the system from the perspective of a person using the results: how a source is processed, how to read statuses and uncertainty, what AI does, what the user needs to provide, and what a result can or cannot establish.
-
-The Wiki may summarize project progress for orientation, but must point to the project's `STATUS.md` for the current state. Do not maintain a second list of open readings, decisions or source statuses in the Wiki.
-
-When Wiki-writing access is available to the assistant, maintaining affected end-user explanations is part of assistant documentation hygiene. If the current environment cannot write the Wiki, the canonical repository update must not be blocked; explicitly identify the specific Wiki page/statement that has become stale so it can be synchronized when Wiki access is available.
-
-### Chat — workspace, not memory
-
-Chat is where exploratory work happens. Any result needed for reliable continuation must be persisted in the owning repository file before it is treated as part of the research state. A future agent must not need the old chat to reconstruct the next action.
+Explanations may summarize canonical records, but they must not become parallel truth stores.
 
 ## Required reading paths
 
-### Human who wants to understand the repository
+### Human
+Read `README.md` first. Deeper files are opened only as needed.
 
-Start with `README.md`. It should provide enough orientation to understand the architecture and current benchmark. Read the linked methodology or project files only when deeper detail is needed.
+### AI continuing research
 
-### AI continuing an existing project
-
-Before substantive work:
-
-1. read `README.md` if the repository or structure is not already established in context;
+1. read `README.md` if repository structure is not already established;
 2. read `AGENTS.md`;
-3. read the active project's `STATUS.md`;
-4. read relevant rows in `apparatus/decisions.tsv` and the project's `LEARNINGS.md`;
-5. read only the methodology files relevant to the task;
-6. continue from `next_action` rather than reopening broad exploration without evidence-based reason.
+3. inspect relevant `corpus/` rows if source identity/relations matter;
+4. read active project `STATUS.md`;
+5. read relevant decision rows and `LEARNINGS.md`;
+6. read only relevant methodology;
+7. continue from `NEXT ACTION` unless inspected evidence justifies a change.
 
 ## Maintenance triggers
 
-Update records because an event changed their truth, not because a calendar says so.
+### Source discovered
+- add to `corpus/sources.tsv` at the truthful inspection stage;
+- do not create a project or transcribe it automatically;
+- record discovery boundary only when it matters to corpus coverage.
 
-### If a transcription changes
+### Source identity/inspection stage changes
+- update `corpus/sources.tsv`;
+- update project `sources/` only for project-specific inspection/crosswalk detail;
+- do not duplicate full corpus identity in project files.
 
-- update the relevant `transcription/*.tsv` row;
-- log a substantive replacement/rejection in `apparatus/decisions.tsv`;
-- update palaeographic concordances if the change creates or invalidates a comparison anchor;
-- update `STATUS.md` if the active uncertainty or next action changed.
+### Source relationship changes
+- update `corpus/relationships.tsv` with evidence/status;
+- catalogue statements stay `metadata-supported` until stronger evidence exists;
+- update project `STATUS.md` only if the relation changes active research.
 
-### If a source is inspected or its status changes
+### Event/context changes
+- update `corpus/events.tsv`;
+- do not infer textual relation from shared event membership.
 
-- update `sources/` or `research/` with what was actually inspected and what it supports;
-- promote `K/S` to `P/E/F` only under the evidence policy;
-- update `STATUS.md` only if this changes the active research state.
+### Repeated normalized entity becomes useful
+- add/update `entities/`;
+- keep manuscript form in transcription;
+- never normalize the diplomatic reading by editing the entity registry.
 
-### If a project lesson is learned
+### Transcription changes
+- update `transcription/*.tsv`;
+- log substantive replacement/rejection in `apparatus/decisions.tsv`;
+- update palaeographic evidence if anchors change;
+- update `STATUS.md` if active uncertainty/next action changes.
 
-- record the concrete failure/correction in `LEARNINGS.md`;
-- change general `methodology/` only if the rule is genuinely generalizable;
-- update `README.md` only if repository-level orientation or principles changed.
+### External source/literature inspected
+- update project `research/` with exact access level/passages;
+- promote source-status codes only under `evidence-policy.md`.
 
-### If method, governance or structure changes
+### Project lesson learned
+- record concrete failure/correction in `LEARNINGS.md`;
+- promote to methodology only when genuinely generalizable.
 
-- update the owning file in `methodology/` or `AGENTS.md`;
-- update `README.md` when the reading path, repository map or top-level principles changed;
-- update the Wiki explanation if the end-user experience or meaning of outputs changed materially and Wiki-writing access is available; otherwise report the precise pending Wiki synchronization without creating a second canonical state.
+### Method/governance/structure changes
+- update owning methodology/AGENTS file;
+- update README only when map/top-level orientation changes;
+- update Wiki explanation only if end-user meaning changes and write access exists.
 
-### If the active task changes
+### Useful future idea appears but is not justified now
+Create or update a GitHub Issue only if it contains:
 
-Update `STATUS.md` immediately enough that another agent can continue without reconstructing the task from chat.
+`problem/benefit → why not now → trigger → acceptance criteria`.
 
-## Human–AI maintenance responsibilities
+Close duplicates and ideas that have become core methodology. Do not leave current research requirements deferred as issues.
 
-### AI responsibility
+### Active task changes
+Update project `STATUS.md` so another agent can continue without the chat.
 
-The assistant owns routine research-state and documentation hygiene. It should:
+## README, Wiki, Issues and chat
 
-- identify which canonical records are affected by its research work;
-- update those records as part of the same substantive work session when possible;
-- keep `STATUS.md` restartable;
-- preserve rejected/replaced readings rather than silently overwriting history;
-- detect documentation drift and repair cross-references when it changes structure or method;
-- maintain affected Wiki explanations when Wiki-writing access is available, or flag the exact pending synchronization when it is not;
-- avoid asking the user to perform repository housekeeping that the assistant can perform itself;
-- surface a missing fact instead of inventing metadata or rights information.
+### README
+Orientation and map, not detailed research status.
 
-### User responsibility
+### Wiki
+Human-facing handbook. It may explain statuses/workflows but never own open readings, corpus identities or next actions.
 
-The user owns decisions that depend on purpose, access or authority rather than specialist historical technique. The user should provide or decide, when needed:
+### Issues
+Deferred work whose rationale is worth preserving. They are not a roadmap commitment. An issue's trigger must be reached before implementation is assumed useful.
 
-- research goals and desired output;
-- source material or access that the assistant cannot obtain;
-- facts about permissions, ownership, embargoes or private material that are not otherwise verifiable;
-- acceptable effort/depth when several research paths are possible;
-- whether to escalate a consequential unresolved issue to an external expert;
-- whether and where results will be published or otherwise used consequentially.
+### Chat
+Transient workspace. Any fact/decision/open problem needed for continuation must be persisted before the work is considered durable.
 
-The user is **not** responsible for manually synchronizing repository records or adjudicating palaeographic questions they cannot validate.
+## Human–AI maintenance responsibility
 
-### Qualified human expert
+### AI
+The assistant owns routine repository/corpus hygiene: identify affected canonical records, update them during the same work block when practical, preserve revision history, repair cross-references, maintain restartability, and surface missing metadata instead of inventing it.
 
-A specialist human is an escalation/review role, not the default maintenance mechanism. Use one when the consequence of error warrants independent specialist judgement and the available evidence/tooling cannot resolve the issue sufficiently.
+### User
+The user owns research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not responsible for repository synchronization or specialist adjudication they cannot validate.
+
+### Qualified expert
+Escalation/review role when the consequence of error warrants independent specialist judgment.
 
 ## End-of-work integrity check
 
-Before treating a substantive research session as complete, the assistant asks:
+Before completing consequential research ask:
 
-1. Did the evidence or reading state change?
-2. If yes, is the owning canonical file updated?
-3. Did a material reading change require a decision-log entry?
-4. Did the active problem or next action change? If yes, is `STATUS.md` restartable?
-5. Did a project-specific failure teach a reusable lesson?
-6. Did a general rule, structure or user-facing meaning change? If yes, are README/methodology references consistent and is any required Wiki synchronization completed or explicitly identified?
-7. Would another capable agent be able to continue from the repository without the chat?
+1. What research truth changed?
+2. Is it in its one canonical home?
+3. Did a source identity/relation change require a corpus update?
+4. Did a reading change require transcription/decision/palaeography updates?
+5. Did the active problem/next action change?
+6. Did a project failure create a real learning?
+7. Did a deferred idea become useful enough for an Issue, or did an existing Issue's trigger actually fire?
+8. Can another capable agent identify the exact sources, understand evidence status and continue without the chat?
 
-If the answer to 7 is no, persist the minimum missing state. Do not create documentation merely to satisfy the checklist.
+If 8 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
