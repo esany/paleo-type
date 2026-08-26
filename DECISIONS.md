@@ -101,11 +101,11 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Consequence:** Project `MILESTONES.md` copies are removed. Generic gates live in `methodology/research-gates.md`; project `STATUS.md` records only state and source-specific gaps against those gates. Generalisation follows `project observation → project learning/status → explicit generalisability check → methodology/decision update`.
 
-## D-010 — Milestones schedule admitted work; they do not represent research maturity
+## D-010 — Milestone families organize admitted work; they never own scholarly truth
 
-**Status:** accepted  
-**Decision:** Use GitHub Milestones only to sequence bounded governance/structural/implementation work that has been explicitly admitted to an active or approved phase. Open Issues without a Milestone remain backlog/deferred until their documented trigger is met. Do not mirror G1–G6 scholarly research gates as GitHub Milestones.
+**Status:** accepted; supersedes the initial narrower rule that prohibited G1–G6 GitHub Milestone mirrors.  
+**Decision:** GitHub Milestones may organize different work families. Use `GOV-*` Milestones for repository governance/architecture phases and project-scoped `<project> / G*` Milestones for discrete scholarly Issues contributing to generic G1–G6 gates. Open Issues without a Milestone remain backlog/deferred until scheduled or triggered. Labels remain the orthogonal classifier for scholarly/technical domains.
 
-**Reason:** Research maturity is evidence-dependent and already has a canonical home in `methodology/research-gates.md` plus project `STATUS.md`. Reusing GitHub Milestones for G1–G6 would duplicate truth and create synchronization drift. Conversely, leaving every future Issue visually equivalent obscures which work is actually scheduled versus merely preserved as an option.
+**Reason:** GitHub needs to expose both system-level work sequences and human-readable project research work. A project G2 Milestone can usefully group the Issues required for diplomatic representation without becoming the scientific claim that G2 has been reached. Prohibiting all gate mirrors loses that navigation benefit; treating Milestone completion as gate completion would instead duplicate truth and create synchronization drift.
 
-**Consequence:** `MILESTONES.md` defines the M1–M4 governance/architecture sequence and the conditional M5 implementation phase. GitHub milestone metadata mirrors that plan for navigation only. No milestone means backlog, not low research maturity. A backlog issue enters an active Milestone only when its trigger is demonstrated or a governing audit explicitly admits it.
+**Consequence:** `MILESTONES.md` defines Milestone-family semantics and naming. Generic G1–G6 requirements remain canonical only in `methodology/research-gates.md`; actual gate state remains canonical only in project `STATUS.md`. A GitHub project-gate Milestone means planned Issue work toward that gate, not evidence-based gate attainment. One Issue uses the primary target Milestone and multiple labels for cross-disciplinary relevance. No Milestone means backlog/unscheduled, not low scholarly maturity.
