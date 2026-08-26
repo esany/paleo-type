@@ -99,4 +99,13 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Reason:** Mixing pilot facts with reusable method creates hidden coupling, duplicated truth, drift and false generalisation from a single source.
 
-**Consequence:** Project `MILESTONES.md` copies are removed. Generic gates live in `methodology/research-gates.md`; project `STATUS.md` records only state and source-specific gaps against those gates. Generalisation follows `project observation → project learning/status → explicit generalisability check → methodology/decision update`.
+**Consequence:** Generic gates live in `methodology/research-gates.md`; project `STATUS.md` records only state and source-specific gaps. Generalisation follows `project observation → project learning/status → explicit generalisability check → methodology/decision update`.
+
+## D-010 — Projects have explicit kinds and project relations are not source relations
+
+**Status:** accepted  
+**Decision:** Create projects from a generic minimal contract, not by cloning a pilot. Distinguish `source-unit` projects, which own reusable source-local mapping/work for one canonical source, from `research-scope` projects, which own bounded questions/loci/edition tasks. Research-organisational project relations live in `projects/relationships.tsv`; historical/archival/textual source relations remain in `corpus/relationships.tsv`.
+
+**Reason:** As multiple archival units enter the repository, copying source mappings into every consuming research project would create drift, while treating research organisation as source history would create false scholarly claims.
+
+**Consequence:** Source-unit mappings have one canonical home; research-scope projects reference them. New projects are instantiated from `templates/project/` and must pass `methodology/project-lifecycle.md`. Project findings feed back through the explicit project → source-unit/corpus → related-project or project → generalisability → method consistency loops.
