@@ -39,6 +39,7 @@ The current pilot project is `projects/ega-reg-ii-5-knau/`. It **tests** the gen
 2. For current Knau research state: `projects/ega-reg-ii-5-knau/STATUS.md`.
 3. For the generic research path and requirements: `methodology/research-gates.md`.
 4. For the authoritative scholarly procedure: `methodology/historical-source-workflow.md`.
+5. For scheduled governance/structural work and backlog semantics: `MILESTONES.md`.
 
 ### AI continuing research
 
@@ -56,6 +57,7 @@ The current pilot project is `projects/ega-reg-ii-5-knau/`. It **tests** the gen
 - `README.md` — repository purpose/map.
 - `AGENTS.md` — binding operating/quality guardrails.
 - `DECISIONS.md` — consequential cross-project rationale.
+- `MILESTONES.md` — sequencing semantics for admitted governance/structural work and backlog; never scholarly research state.
 - `methodology/historical-source-workflow.md` — authoritative end-to-end scholarly method.
 - `methodology/research-gates.md` — canonical reusable G1–G6 scholarly maturity requirements.
 - other `methodology/*.md` — detailed reusable method.
@@ -72,7 +74,8 @@ The current pilot project is `projects/ega-reg-ii-5-knau/`. It **tests** the gen
 - project `palaeography/` — source-specific palaeographic evidence.
 - project `research/` — external-source inspection audit.
 - project `LEARNINGS.md` — concrete project failures/corrections and possible generalisation candidates.
-- GitHub Issues — bounded deferred work, never current research truth.
+- GitHub Issues — bounded deferred/discrete work, never current research truth.
+- GitHub Milestones — navigation mirror for work admitted to a bounded governance/structural sequence; never G1–G6 or research state.
 - Wiki — optional end-user explanation only.
 - Chat — transient workspace only.
 
@@ -98,6 +101,8 @@ Standards/reference frameworks include ICA Records in Contexts concepts, TEI P5 
 
 A project records only its concrete state against these requirements in `STATUS.md`. It does not copy/redefine the gates.
 
+**G1–G6 are not GitHub Milestones.** They are evidence-based scholarly maturity states. GitHub Milestones are reserved for bounded admitted work sequences such as the governance/architecture review defined in `MILESTONES.md`.
+
 ## Core scientific principles
 
 1. **Evidence before plausibility.** Semantic coherence never creates manuscript text.
@@ -122,6 +127,7 @@ A project records only its concrete state against these requirements in `STATUS.
 - project-specific failure/correction → `LEARNINGS.md`;
 - if a project learning is genuinely general → promote the corrective rule to methodology, while the concrete incident remains in the project;
 - deferred improvement → GitHub Issue;
+- admitted governance/structural sequence → `MILESTONES.md` + GitHub Milestone mirror;
 - ordinary implementation detail → Git history.
 
 ## Human-in-the-loop
@@ -136,8 +142,10 @@ Qualified independent specialists are an escalation/validation layer for consequ
 
 GitHub metadata is presentation/navigation only:
 
-- Milestones may mirror generic G1–G6 names/purposes;
-- Issues + topical labels expose deferred/discrete work;
+- Milestones organize bounded work that has been explicitly admitted into an active/approved governance or structural sequence; the exact M1–M4 semantics live in `MILESTONES.md`;
+- open Issues without a Milestone remain backlog/deferred until their documented trigger is met;
+- G1–G6 scholarly research gates are **never** mirrored as Milestones; project `STATUS.md` remains canonical for research maturity;
+- Issues + topical labels expose deferred/discrete work by subject;
 - PRs provide human-readable records for cohesive repo-wide changes;
 - tags/releases mark intentionally frozen reproducible research checkpoints.
 
@@ -148,6 +156,7 @@ GitHub metadata never replaces canonical repository records.
 ```text
 AGENTS.md
 DECISIONS.md
+MILESTONES.md
 README.md
 methodology/
   historical-source-workflow.md
@@ -187,6 +196,7 @@ Another capable researcher/agent, given only repository + accessible source mate
 - which generic gate is active and which concrete project gaps remain;
 - why consequential decisions were made;
 - what has/has not received independent expert review;
-- what the exact next research action is.
+- what the exact next research action is;
+- which governance/structural issues are scheduled versus intentionally deferred in backlog.
 
 If recovering old chat is necessary, the work is not fully persisted.
