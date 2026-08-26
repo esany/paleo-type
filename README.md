@@ -39,7 +39,7 @@ The current pilot project is `projects/ega-reg-ii-5-knau/`. It **tests** the gen
 2. For current Knau research state: `projects/ega-reg-ii-5-knau/STATUS.md`.
 3. For the generic research path and requirements: `methodology/research-gates.md`.
 4. For the authoritative scholarly procedure: `methodology/historical-source-workflow.md`.
-5. For scheduled governance/structural work and backlog semantics: `MILESTONES.md`.
+5. For GitHub work sequencing, Milestone families and backlog semantics: `MILESTONES.md`.
 
 ### AI continuing research
 
@@ -57,7 +57,7 @@ The current pilot project is `projects/ega-reg-ii-5-knau/`. It **tests** the gen
 - `README.md` — repository purpose/map.
 - `AGENTS.md` — binding operating/quality guardrails.
 - `DECISIONS.md` — consequential cross-project rationale.
-- `MILESTONES.md` — sequencing semantics for admitted governance/structural work and backlog; never scholarly research state.
+- `MILESTONES.md` — GitHub Milestone-family semantics, sequencing and backlog rules; planning/navigation only.
 - `methodology/historical-source-workflow.md` — authoritative end-to-end scholarly method.
 - `methodology/research-gates.md` — canonical reusable G1–G6 scholarly maturity requirements.
 - other `methodology/*.md` — detailed reusable method.
@@ -67,15 +67,16 @@ The current pilot project is `projects/ega-reg-ii-5-knau/`. It **tests** the gen
 - `corpus/events.tsv` — shared administrative/historical event context.
 - `entities/` — recurring normalized identities; never manuscript readings.
 - project `project.yml` — stable project identity/scope.
-- project `STATUS.md` — current generic gate state, project-specific gaps, validation state and exact next action.
+- project `STATUS.md` — actual project gate state, project-specific gaps, validation state and exact next action.
 - project `sources/` — project-specific source/folio/image/export mappings.
 - project `transcription/` — source transcription.
 - project `apparatus/decisions.tsv` — concrete source/reading revisions/adjudications.
 - project `palaeography/` — source-specific palaeographic evidence.
 - project `research/` — external-source inspection audit.
 - project `LEARNINGS.md` — concrete project failures/corrections and possible generalisation candidates.
-- GitHub Issues — bounded deferred/discrete work, never current research truth.
-- GitHub Milestones — navigation mirror for work admitted to a bounded governance/structural sequence; never G1–G6 or research state.
+- GitHub Issues — bounded deferred/discrete work; never current research truth.
+- GitHub Milestones — work targets/phases for admitted Issues, including governance and project-gate mirrors; never evidence or gate truth.
+- GitHub labels — topical/domain navigation only.
 - Wiki — optional end-user explanation only.
 - Chat — transient workspace only.
 
@@ -99,9 +100,9 @@ Standards/reference frameworks include ICA Records in Contexts concepts, TEI P5 
 
 `G1 source/transmission basis → G2 diplomatic representation → G3 internal palaeographic analysis → G4 controlled witness comparison → G5 critical consolidation/validation → G6 scholarly edition`
 
-A project records only its concrete state against these requirements in `STATUS.md`. It does not copy/redefine the gates.
+A project records its **actual evidence-based state** against these requirements in `STATUS.md`. It does not copy/redefine the gates.
 
-**G1–G6 are not GitHub Milestones.** They are evidence-based scholarly maturity states. GitHub Milestones are reserved for bounded admitted work sequences such as the governance/architecture review defined in `MILESTONES.md`.
+GitHub may use project-scoped Milestones such as `ega-reg-ii-5-knau / G2 — Diplomatic representation` to organize discrete Issues contributing to a gate. Such a Milestone is only a work-planning mirror: closing it does **not** establish that the scholarly gate has been reached. `STATUS.md` remains authoritative for gate state.
 
 ## Core scientific principles
 
@@ -127,7 +128,7 @@ A project records only its concrete state against these requirements in `STATUS.
 - project-specific failure/correction → `LEARNINGS.md`;
 - if a project learning is genuinely general → promote the corrective rule to methodology, while the concrete incident remains in the project;
 - deferred improvement → GitHub Issue;
-- admitted governance/structural sequence → `MILESTONES.md` + GitHub Milestone mirror;
+- admitted work sequence → `MILESTONES.md` semantics + appropriate GitHub Milestone family;
 - ordinary implementation detail → Git history.
 
 ## Human-in-the-loop
@@ -140,12 +141,25 @@ Qualified independent specialists are an escalation/validation layer for consequ
 
 ## GitHub navigation
 
-GitHub metadata is presentation/navigation only:
+GitHub metadata is presentation/navigation only.
 
-- Milestones organize bounded work that has been explicitly admitted into an active/approved governance or structural sequence; the exact M1–M4 semantics live in `MILESTONES.md`;
-- open Issues without a Milestone remain backlog/deferred until their documented trigger is met;
-- G1–G6 scholarly research gates are **never** mirrored as Milestones; project `STATUS.md` remains canonical for research maturity;
-- Issues + topical labels expose deferred/discrete work by subject;
+### Milestones
+
+Use Milestones for **targets/phases**, with explicit families:
+
+- `GOV-*` — repository governance, architecture and structural-review work;
+- `<project> / G*` — project-specific scholarly Issues contributing to generic G1–G6 gates.
+
+The exact semantics/names live in `MILESTONES.md`. A project gate Milestone may mirror a G1–G6 target for issue organization, but it never replaces `research-gates.md` or project `STATUS.md`.
+
+Open Issues without a Milestone remain backlog/deferred until scheduled or triggered. Normal research activity need not become an Issue merely to fit the GitHub view.
+
+### Labels
+
+Use labels for the **affected domain/type**, not for target state. One Issue may have multiple domain labels while having one primary Milestone target.
+
+### Pull requests and releases
+
 - PRs provide human-readable records for cohesive repo-wide changes;
 - tags/releases mark intentionally frozen reproducible research checkpoints.
 
@@ -197,6 +211,7 @@ Another capable researcher/agent, given only repository + accessible source mate
 - why consequential decisions were made;
 - what has/has not received independent expert review;
 - what the exact next research action is;
-- which governance/structural issues are scheduled versus intentionally deferred in backlog.
+- which Issues are scheduled, toward which target family, and which remain intentionally in backlog;
+- that GitHub Milestone completion and scientific gate attainment are different claims.
 
 If recovering old chat is necessary, the work is not fully persisted.
