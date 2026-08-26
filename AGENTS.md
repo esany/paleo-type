@@ -39,6 +39,9 @@ A useful shorthand is:
 - Never silently normalize spelling, names, numerals, currencies or measures in the transcription layer.
 - Never hide disagreement between readings; record it.
 - Never ask the user to settle a specialist historical or palaeographic question merely because the assistant is uncertain; expose the uncertainty and identify the next evidential test.
+- Never upload restricted, confidential, sensitive or rights-unclear source material to an external AI service merely for convenience.
+- Never treat scaled AI/HTR output as validated research data without an evaluation appropriate to the task and consequence of error.
+- Never claim reproducibility of a proprietary model operation when the exact model/version cannot actually be fixed or recovered.
 - Never add infrastructure “for later” without a current research need.
 
 ## Required claim separation
@@ -72,6 +75,17 @@ Use source-status codes from `methodology/evidence-policy.md`. For every externa
 A source can support only what was actually inspected. A catalogue can establish existence/metadata, not manuscript content. A searchable copy of uncertain provenance must be labeled as such.
 
 Historical or palaeographic expertise may guide what to look for, which parallels to test and which interpretations are plausible. It is not itself a substitute for a source when the claim concerns what a particular source says.
+
+Source images used substantively must become traceable independently of a transient chat as soon as practical: archive/repository identity, shelfmark, folio/page/image identifier and stable/local file identity where available. Do not invent missing metadata, and do not publish restricted binaries merely for reproducibility.
+
+## AI governance
+
+Follow `methodology/ai-governance.md`.
+
+- Record AI provenance only when a model/tool materially affects a research decision or published claim; do not archive every routine prompt.
+- Validation must scale with consequence: exploratory use can remain lightweight; working research requires evidence control; publication-level or consequential claims require stronger independent validation.
+- If AI/HTR/automation becomes a systematic corpus-level research method, evaluate it against representative human-checked material and document important failure patterns before relying on aggregate outputs.
+- Published claims remain human-accountable even when AI supplies specialist assistance. This does not require the user to become a palaeographer; consequential unresolved specialist judgement should be escalated rather than guessed.
 
 ## Workflow discipline
 
@@ -108,6 +122,10 @@ Ask:
 - Am I using genuine evidence, or merely my own domain knowledge, to settle this source-specific claim?
 - Am I asking the user to make a specialist decision they are not equipped to validate?
 - Can another person trace why this decision was made?
+- If AI materially shaped this result, is the consequential use traceable enough?
+- Are rights, confidentiality and source-access conditions respected?
+- Has validation matched the consequence of being wrong?
+- If automation is shaping corpus-level findings, was it actually evaluated?
 - Does this new file/tool directly accelerate reliable source work?
 - Would direct source work answer the research question faster than further system development?
 
