@@ -1,0 +1,7 @@
+person_id	preferred_label	variant_forms	external_id	status	evidence_basis	notes
+PERSON-JOHANN-FRIEDRICH-I	Johann Friedrich I of Saxony			metadata-supported	A/B archival metadata	Commissioner; external authority ID not yet verified.
+PERSON-MENIUS-JUSTUS	Justus Menius			metadata-supported	A/B archival metadata	Visitor; external authority ID not yet verified.
+PERSON-MYCONIUS-FRIEDRICH	Friedrich Myconius			metadata-supported	A/B archival metadata	Visitor; external authority ID not yet verified.
+PERSON-DENSTEDT-GEORG	Georg von Denstedt			metadata-supported	A/B archival metadata	Visitor; external authority ID not yet verified.
+PERSON-COTTA-JOHANN	Johann Cotta			metadata-supported	A/B archival metadata	Visitor; external authority ID not yet verified.
+PERSON-WOLF-GRAEFENDORF	Wolf von Gräfendorf			working	Historical identification lead + A reading `wolff von [surname-token]`	Do not use this normalized identity to overwrite the unresolved manuscript surname token.
