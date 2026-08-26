@@ -1,0 +1,13 @@
+token_or_form	status	locations	reading_or_function	note
+ij	working	132:01	roman numeral two	Secure role from `ij filial` still requires direct visual checkpoint
+1	working	132:list;132:13	arabic one candidate	Compare all occurrences before interpreting values
+80	variant	133:19;133:24	arabic eighty candidate	Both occurrences must be visually compared; previous chat treated them as secure too early
+viertel	working	132:06	measure/quantity word	Compare with upper 133 before adjudicating surrounding notation
+grosch	working	132:13	monetary term	`silbern grosch` working reading
+pfennig	working	135:02	monetary term	Use as word-form anchor; amount is written as word `acht` in current reading
+W1	unresolved	132:03	unknown numerical/economic token	Next-action target
+W2	unresolved	132:04	unknown numerical/economic token	Next-action target
+W3	unresolved	132:05	unknown numerical/economic token	Next-action target
+W4	unresolved	132:06	unknown numerical/economic token	Next-action target
+W5	unresolved	132:07	unknown numerical/economic token	Next-action target
+W6	unresolved	132:08	unknown numerical/economic token	Next-action target
