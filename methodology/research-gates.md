@@ -2,9 +2,11 @@
 
 ## Purpose
 
-These gates define **reusable scholarly maturity states** for projects in `paleo-type`. They are not schedules, task lists or project-specific milestones. The authoritative end-to-end method is `historical-source-workflow.md`; these gates answer when a project may claim a given research state has been reached.
+These gates define **reusable scholarly maturity states** for projects in `paleo-type`. They are not schedules, task lists or project-specific milestone definitions. The authoritative end-to-end method is `historical-source-workflow.md`; these gates answer when a project may claim a given research state has been reached.
 
 A concrete project records only its own status, unmet requirements and next action in `projects/<id>/STATUS.md`.
+
+GitHub may use a project-scoped Milestone such as `<project> / G2 — Diplomatic representation` to group discrete Issues that contribute to one of these gates. That Milestone is a **work-planning mirror only**: its progress/closure does not establish scholarly gate attainment, and its description must not duplicate or redefine the generic requirements below. See `MILESTONES.md`.
 
 > A project may advance only when the relevant gate requirements are demonstrably met. Activity alone does not complete a gate.
 
@@ -212,4 +214,6 @@ Project `STATUS.md` records only:
 - validation/review state where consequential;
 - exact next action.
 
-Do not duplicate these generic gate requirements inside individual projects.
+GitHub project-gate Milestones may group scheduled Issues for human navigation, but they do not alter this ownership model or the evidence required to change gate state.
+
+Do not duplicate these generic gate requirements inside individual projects or GitHub Milestone descriptions.
