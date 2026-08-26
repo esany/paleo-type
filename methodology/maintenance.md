@@ -18,6 +18,7 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | administrative/historical event context | `corpus/events.tsv` | contextual event/activity registry |
 | recurring normalized identities | `entities/*.tsv` | authority-like local identities; never manuscript readings |
 | project identity/stable scope | `projects/<id>/project.yml` | project identity |
+| project research gates/requirements | `projects/<id>/MILESTONES.md` | canonical scholarly maturity criteria |
 | current project state/exact next action | `projects/<id>/STATUS.md` | restart point |
 | project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk; does not replace `corpus/files.tsv` |
 | current line readings | `projects/<id>/transcription/*.tsv` | transcription truth |
@@ -34,7 +35,7 @@ Explanations may summarize canonical records, but they must not become parallel 
 ## Required reading paths
 
 ### Human
-Read `README.md` first. Deeper files are opened only as needed.
+Read `README.md` first. Deeper files are opened only as needed. GitHub-native navigation may expose milestones, labelled issues, larger change reviews and frozen checkpoints, but the linked repository files remain authoritative for scholarly state.
 
 ### AI continuing research
 
@@ -42,10 +43,58 @@ Read `README.md` first. Deeper files are opened only as needed.
 2. read `AGENTS.md`;
 3. read `DECISIONS.md` only when a shared method/data-model choice matters;
 4. inspect relevant `corpus/` rows, including `corpus/files.tsv` when exact inspected files/instantiations matter;
-5. read active project `STATUS.md`;
+5. read active project `STATUS.md` and its referenced `MILESTONES.md` requirements;
 6. read relevant decision rows and `LEARNINGS.md`;
 7. read only relevant methodology;
 8. continue from `NEXT ACTION` unless inspected evidence justifies a change.
+
+## GitHub-native human navigation
+
+GitHub metadata is a **navigation layer over canonical research records**, never a competing truth store.
+
+### Milestones
+
+Use GitHub Milestones only when a project already has explicit scholarly gates in its canonical `MILESTONES.md`.
+
+- Mirror the milestone name and a short human-readable purpose.
+- Link/refer to the project `MILESTONES.md` for requirements and exit gates; do not duplicate the checklist in GitHub metadata.
+- Milestone completion is a navigation/progress signal. The scholarly basis for declaring a gate reached remains in repository state (`MILESTONES.md`, `STATUS.md`, research records).
+- Do not create calendar deadlines unless the research genuinely has one.
+- Do not fragment a scholarly gate into many issues merely to produce a progress percentage.
+
+### Issues and labels
+
+Issues preserve bounded future work or a genuinely useful discrete work package. Labels classify issues for human filtering only.
+
+- Derive a small label vocabulary from actual recurring issue themes rather than designing a taxonomy in advance.
+- Prefer topical labels such as `corpus`, `palaeography`, `provenance`, `publication`, `automation`, `standards`, `bibliography`, `data-quality` only where the current issue set justifies them.
+- Do not encode canonical research status, reading confidence or source identity in labels.
+- GitHub open/closed state is enough for issue lifecycle; do not add redundant status labels.
+- Replace body hashtags with labels only after the corresponding real GitHub labels exist.
+- Assign an issue to a research milestone only when completing that issue materially contributes to that scholarly gate. Trigger-based future infrastructure issues normally remain unassigned until their trigger fires and they become gate-relevant.
+
+### Pull requests
+
+Use PRs as human-readable change records for consequential repository-wide work, not as ceremony for every research correction.
+
+- Small/local research or maintenance change → direct commit to `main` is acceptable.
+- Cohesive repository-wide method, schema, provenance-model or structural change → branch + PR is preferred.
+- PR description should state the problem, material changes, deliberate non-changes and impact on existing research state.
+- Prefer a coherent/squashed merge history for such structural changes when practical.
+- A PR does not replace `DECISIONS.md` when a durable cross-project rationale is required.
+
+### Tags and releases
+
+Use tags/releases only for intentionally frozen, reproducible research/publication checkpoints.
+
+- Do not release ordinary development increments.
+- A checkpoint should identify the project/research state being frozen and point to the canonical source/transcription/apparatus state in that commit.
+- M5/M6 are natural candidates; earlier milestones warrant a release only when the checkpoint has independent research value.
+- A release does not make unresolved readings certain and does not replace provenance or edition documentation.
+
+### Projects, Discussions and other GitHub structures
+
+Do not introduce GitHub Projects/Kanban, Discussions, CODEOWNERS, contributor governance or workflow templates until an actual collaboration/navigation problem requires them. The default is absence, not preconfiguration.
 
 ## Maintenance triggers
 
