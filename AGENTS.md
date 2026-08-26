@@ -4,167 +4,223 @@ These rules apply to every AI-assisted action in this repository.
 
 ## Mission
 
-Help the user reach reliable, usable scholarly results from early modern handwritten sources with minimal tooling overhead. The user is not expected to supervise software engineering or to supply specialist historical or palaeographic judgement. The assistant must provide as much relevant expert method and domain knowledge as it can, while making the evidence, uncertainty, reasoning path and limits of that expertise inspectable.
+Help the user reach reliable, usable scholarly results from early modern handwritten sources with minimal tooling overhead. The user is not expected to supervise software engineering, archival method, historical method or palaeographic judgement. The assistant must supply that expertise as far as evidence permits while keeping evidence, uncertainty, method and limitations inspectable.
 
 The goal is source access and historical understanding, not development of `paleo-type` for its own sake.
 
 ## Human–AI division of labour
 
-- **AI supplies expertise and candidates.** Apply historical, palaeographic, linguistic, archival and methodological knowledge proactively instead of asking the user to act as the missing specialist.
-- **AI maintains research state.** Routine repository hygiene, synchronization of affected canonical records and a restartable `STATUS.md` are assistant responsibilities, not user chores.
-- **Evidence constrains conclusions.** Domain knowledge may generate hypotheses, comparisons and tests; it must never be converted into manuscript evidence merely because it is plausible.
-- **The system exposes uncertainty.** If the available evidence does not discriminate between viable readings or interpretations, keep them `variant` or `unresolved` rather than transferring the decision to an unqualified user.
-- **The user controls purpose and depth.** The user decides the research question, desired output, acceptable effort and whether an unresolved point warrants further work.
-- **The user supplies authority/access facts when necessary.** Ask the user only for information or decisions that genuinely depend on their access, rights knowledge, intent or authority — not for repository housekeeping or specialist adjudication the assistant should perform.
-- **Expert humans are escalation, not routine.** Recommend qualified human review when a consequential question remains unresolved, specialist notation exceeds the available evidence, or publication-level validation requires independent expertise. Do not make ordinary progress depend on the user becoming that expert.
-
-A useful shorthand is:
-
-`AI supplies expertise and maintains state → evidence tests and constrains → uncertainty remains visible → user controls purpose/depth → expert review only when warranted`
+- **AI supplies expertise and candidates.** Apply historical, palaeographic, linguistic, archival and methodological knowledge proactively.
+- **AI maintains research state.** Corpus/source records, affected project records and restartable `STATUS.md` are assistant responsibilities.
+- **Evidence constrains conclusions.** Expertise generates hypotheses and tests; it never becomes manuscript evidence merely because it is plausible.
+- **The system exposes uncertainty.** Preserve `variant`/`unresolved` rather than transferring specialist adjudication to an unqualified user.
+- **The user controls purpose and depth.** The user decides research goals, source access only they can provide, rights/authority facts and consequential publication/use decisions.
+- **Expert humans are escalation, not routine.** Recommend independent qualified review only when stakes or unresolved specialist evidence warrant it.
 
 ## Research outcome before system development
 
-- Prefer direct source work over building infrastructure.
-- Add a tool, schema, model, automation or workflow only when it solves a current research problem faster, more reliably or more transparently.
-- More process is not more rigor. Tables, confidence scores, agents, HTR models and automation must earn their cost by reducing consequential uncertainty or improving traceability.
-- Stop system development when a direct image comparison, source check or expert judgement is the shorter path to the research result.
-- The end product is a usable scholarly result: transcription, visible uncertainty/apparatus, verified source basis and historical interpretation. The repository is only a means to that end.
+- Prefer direct source work over infrastructure.
+- Add tooling/schema/model/automation only when it solves a demonstrated current bottleneck or materially improves correctness/traceability.
+- Standards such as RiC and TEI are conceptual/interchange targets, not reasons to add complexity prematurely.
+- Future technical options belong in GitHub Issues until an explicit trigger is reached.
+- The end product is usable historical research: source inventory/provenance, transcription, apparatus, collation and interpretation.
 
 ## Hard stops
 
 - Never invent missing text because it makes semantic sense.
 - Never promote an earlier model answer to evidence.
-- Never call a reading “secure”, “confirmed” or “gold” merely because the same model repeated it.
-- Never treat metadata, a finding aid, TOC, abstract, snippet, review or publisher description as a read primary source/full text.
-- Never cite a publication for a claim that was not checked in the relevant passage.
+- Never call a reading secure because a model repeated it.
+- Never treat metadata/finding aid/TOC/abstract/snippet/review as read manuscript/full text.
+- Never cite literature for a content claim whose relevant passage was not inspected.
 - Never let historical identification silently alter the diplomatic/graphematic reading.
 - Never silently normalize spelling, names, numerals, currencies or measures in the transcription layer.
-- Never hide disagreement between readings; record it.
-- Never ask the user to settle a specialist historical or palaeographic question merely because the assistant is uncertain; expose the uncertainty and identify the next evidential test.
-- Never ask the user to synchronize repository state that the assistant can maintain itself.
-- Never maintain a second canonical project status in the Wiki or chat.
-- Never upload restricted, confidential, sensitive or rights-unclear source material to an external AI service merely for convenience.
-- Never treat scaled AI/HTR output as validated research data without an evaluation appropriate to the task and consequence of error.
-- Never claim reproducibility of a proprietary model operation when the exact model/version cannot actually be fixed or recovered.
-- Never add infrastructure “for later” without a current research need.
+- Never merge records because they concern the same place/event or have similar wording.
+- Never promote an archive-catalogue relation such as “extract from” to demonstrated textual dependence without collation.
+- Never infer folio from portal image number, PDF page or export order alone.
+- Never use a clearer parallel witness to overwrite graphemes in the witness being transcribed.
+- Never hide disagreement between readings or source relationships; record it.
+- Never ask the user to settle specialist questions merely because the assistant is uncertain.
+- Never make the user synchronize repository state the assistant can maintain.
+- Never maintain canonical research state in chat or Wiki.
+- Never upload rights-unclear/restricted material externally merely for convenience.
+- Never treat scaled AI/HTR output as validated research data without appropriate evaluation.
+- Never add infrastructure “for later” without a current need; preserve the rationale as a lean Issue instead.
+- Never claim corpus completeness without documented search boundaries and access limitations.
 
-## Required claim separation
+## Three truth domains
 
-Every substantive statement must belong to one of these layers:
+Keep these distinct:
 
-1. `OBSERVATION` — visible layout/marks/features without lexical resolution.
-2. `READING` — proposed graphematic/lexical transcription.
-3. `NORMALIZATION` — modern/expanded form derived from a reading.
-4. `IDENTIFICATION` — linkage to a historical person/place/institution/object.
-5. `INTERPRETATION` — historical meaning or explanation.
+1. **ARCHIVAL** — record identity, provenance, archival/digital instantiation and source relationships.
+2. **TEXTUAL/PALAEOGRAPHIC** — signs/readings actually visible in a concrete witness.
+3. **HISTORICAL** — interpretation of past events, agents, institutions and relationships.
+
+No domain may silently rewrite another.
+
+Follow `methodology/source-and-provenance.md` for archival/corpus work.
+
+## Required claim separation inside a witness
+
+Every substantive textual/historical statement belongs to one of:
+
+1. `OBSERVATION`
+2. `READING`
+3. `NORMALIZATION`
+4. `IDENTIFICATION`
+5. `INTERPRETATION`
 
 Do not collapse these layers.
 
 ## Reading statuses
 
-Use only:
+Use:
 
-- `observed` — directly visible feature or highly local sign description.
-- `working` — current best reading, not independently validated.
-- `variant` — two or more graphically viable readings remain.
-- `unresolved` — evidence is insufficient for a useful reading.
-- `rejected` — an earlier reading failed reinspection/comparison.
+- `observed`
+- `working`
+- `variant`
+- `unresolved`
+- `rejected`
 
-Do not use `gold` unless an explicit external validation protocol is later defined and met.
+Do not use `gold` without an explicit external validation protocol.
 
-## Source discipline
+## Source and corpus discipline
 
-Use source-status codes from `methodology/evidence-policy.md`. For every external source, record what was actually opened/read and the exact pages/passages when possible.
+### Source identity
 
-A source can support only what was actually inspected. A catalogue can establish existence/metadata, not manuscript content. A searchable copy of uncertain provenance must be labeled as such.
+Distinguish:
 
-Historical or palaeographic expertise may guide what to look for, which parallels to test and which interpretations are plausible. It is not itself a substitute for a source when the claim concerns what a particular source says.
+`archival unit → record → witness → locus → instantiation`
 
-Source images used substantively must become traceable independently of a transient chat as soon as practical: archive/repository identity, shelfmark, folio/page/image identifier and stable/local file identity where available. Do not invent missing metadata, and do not publish restricted binaries merely for reproducibility.
+and separately research sources such as finding aids, editions and scholarship.
+
+Portal image numbers, archival folios, PDF pages, export sequence and legacy working IDs are distinct identifiers and must remain distinct fields.
+
+### Canonical corpus records
+
+- corpus source identity/stage → `corpus/sources.tsv`
+- source/event/entity relationship → `corpus/relationships.tsv`
+- administrative/historical activity context → `corpus/events.tsv`
+- repeated normalized people/places → `entities/`
+- exact project-specific image/folio/export mapping → project `sources/`
+
+A relationship is a research claim. Record its evidence status. `metadata-supported` is not `verified textual correspondence`.
+
+### Inspection versus confidence
+
+Corpus `inspection_status` records what was done (`discovered`, `metadata-inspected`, `images-inspected`, `partially-transcribed`, `fully-transcribed`, `collated`). It is not a confidence score.
+
+Project source-status codes from `methodology/evidence-policy.md` describe evidence type/access level. Do not conflate these dimensions.
+
+### Collation
+
+Before calling two records textual witnesses/parallels:
+
+1. identify each independently;
+2. locate corresponding loci;
+3. inspect/read each separately;
+4. compare structure/wording;
+5. record correspondence/divergence;
+6. upgrade the relationship only as far as the evidence warrants.
+
+## Digital source criticism
+
+For consequential source work determine what exactly was inspected:
+
+- archive/fonds/signature/record;
+- folio/locus;
+- digital record/image/URN where available;
+- PDF/export/image numbering as separate fields;
+- whether the export is complete for the claimed range;
+- whether the working image is original or derived/cropped/scaled.
+
+Do not rely on a transient chat attachment as the only durable identity of evidence.
+
+## Corpus discovery and completeness
+
+The aim may be broad discovery of visitation records, but “all available” must remain bounded by evidence.
+
+Before corpus-completeness claims, document repositories/catalogues searched, date/geographic boundaries, queries/filters, access dates, inclusion/exclusion rules and known unavailable/not-digitised material.
+
+Absence from search results is not historical absence.
 
 ## AI governance
 
 Follow `methodology/ai-governance.md`.
 
-- Record AI provenance only when a model/tool materially affects a research decision or published claim; do not archive every routine prompt.
-- Validation must scale with consequence: exploratory use can remain lightweight; working research requires evidence control; publication-level or consequential claims require stronger independent validation.
-- If AI/HTR/automation becomes a systematic corpus-level research method, evaluate it against representative human-checked material and document important failure patterns before relying on aggregate outputs.
-- Published claims remain human-accountable even when AI supplies specialist assistance. This does not require the user to become a palaeographer; consequential unresolved specialist judgement should be escalated rather than guessed.
+- Record consequential AI provenance, not every prompt.
+- Validation scales with consequence.
+- If AI/HTR/automation becomes systematic corpus-level method, evaluate against representative human-checked material and record important failure patterns before relying on aggregates.
+- Model agreement is not independent historical evidence unless independence is actually established.
 
 ## Workflow discipline
 
-Before continuing an existing project:
+Before continuing existing research:
 
-1. Read `README.md` if repository structure/ownership is not already established in context.
-2. Read its `STATUS.md`.
-3. Read relevant rows in `apparatus/decisions.tsv`.
-4. Read `LEARNINGS.md` for known failure modes.
-5. Read only methodology files relevant to the task.
-6. Continue from `next_action`; do not restart broad exploration unless evidence requires it.
+1. read `README.md` if structure is not already established;
+2. inspect relevant `corpus/` rows when source identity/relationships matter;
+3. read project `STATUS.md`;
+4. read relevant decision rows and `LEARNINGS.md`;
+5. read only relevant methodology;
+6. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
-When changing a substantive reading:
+When changing a substantive reading, preserve the prior reading, new reading, evidence type and residual uncertainty in the appropriate canonical records.
 
-1. preserve the prior reading in the decision log;
-2. state the new reading;
-3. cite the evidence type (image reinspection, intra-hand parallel, external primary parallel, etc.);
-4. state what remains uncertain.
-
-When specialist judgement is required:
-
-1. perform the expert analysis rather than delegating it reflexively to the user;
-2. distinguish domain-knowledge expectation from source-visible evidence;
-3. seek internal or external controls where the distinction matters;
-4. if evidence remains insufficient, preserve the unresolved state;
-5. escalate to a qualified human expert only when the unresolved point is consequential enough to justify it.
+When changing a source relationship, preserve the previous relation/status where consequential, cite the basis and do not upgrade beyond demonstrated evidence.
 
 ## Maintenance discipline
 
-Follow `methodology/maintenance.md`. Maintenance is event-driven and belongs inside the research work, not in a separate periodic ritual.
+Follow `methodology/maintenance.md`. Maintenance is event-driven and part of research work.
 
-After a substantive change, determine which canonical record owns the changed truth and update it in the same work session when practical.
+Update only the canonical record whose truth changed:
 
-Required triggers include:
+- reading → transcription / decision log;
+- palaeographic anchor → palaeography;
+- source identity/stage → corpus or project source register;
+- source relationship → `corpus/relationships.tsv`;
+- event context → `corpus/events.tsv`;
+- active problem/next action → project `STATUS.md`;
+- project learning → `LEARNINGS.md`;
+- general method → `methodology/`;
+- repository map → README.
 
-- reading changed → transcription row; substantive replacement/rejection → decision log;
-- comparison anchor changed → relevant palaeographic concordance;
-- source inspected/status changed → source register or research audit;
-- active uncertainty/scope/next action changed → `STATUS.md`;
-- project-specific failure/correction learned → `LEARNINGS.md`;
-- general method/governance changed → owning `methodology/` file;
-- repository map, top-level principles or reading path changed → `README.md`;
-- end-user meaning/workflow changed materially → update the Wiki explanation, while keeping the repository canonical.
-
-Do not duplicate open readings, decision state or source status into the Wiki. Chat is transient; persist any state needed for reliable continuation before treating the work as complete.
-
-The final integrity question after substantive research work is:
+Final restartability test:
 
 > Could another capable agent continue correctly from the repository without recovering this chat?
 
-If not, persist the minimum missing state. Do not create documents that add no research or continuity value.
+If not, persist the minimum missing state.
 
-## Anti-slop check before committing research output
+## GitHub Issue discipline — lean future backlog
+
+Use an Issue for a deferred improvement only when the knowledge is worth preserving but implementation is not currently justified.
+
+Every future Issue must state:
+
+1. **Problem / research benefit**;
+2. **Why not now**;
+3. **Trigger** for reconsideration;
+4. **Acceptance criteria / Definition of Done**.
+
+Do not create technology wish lists. Close/merge duplicate or overly granular issues. Current research-integrity requirements belong in methodology, not in a deferred issue.
+
+## Anti-slop / integrity check before completing consequential work
 
 Ask:
 
-- Did I see the source or am I relying on metadata?
-- Is this text actually visible, or am I completing syntax?
-- Did context influence a supposedly blind reading?
-- Am I overstating confidence because a phrase sounds coherent?
-- Am I using genuine evidence, or merely my own domain knowledge, to settle this source-specific claim?
-- Am I asking the user to make a specialist decision they are not equipped to validate?
-- Can another person trace why this decision was made?
-- If AI materially shaped this result, is the consequential use traceable enough?
-- Are rights, confidentiality and source-access conditions respected?
-- Has validation matched the consequence of being wrong?
-- If automation is shaping corpus-level findings, was it actually evaluated?
-- Did I update the canonical record that owns any changed research state?
-- Is `STATUS.md` still an exact restart point if the active state changed?
-- Would another capable agent need this chat to continue?
-- Does this new file/tool directly accelerate reliable source work?
-- Would direct source work answer the research question faster than further system development?
+- Did I inspect the source at the level I claim?
+- Is this manuscript text visible or syntactically completed?
+- Did historical context contaminate a supposedly blind reading?
+- Have archival truth, textual truth and historical interpretation been kept separate?
+- Did I distinguish portal/PDF/image numbers from folios?
+- Am I treating catalogue metadata as evidence only for metadata-level claims?
+- Is a claimed source relationship textually demonstrated or merely metadata-supported?
+- Is corroboration genuinely independent?
+- Did a clearer parallel witness overwrite the witness under transcription?
+- Did I update the one canonical record that owns changed truth?
+- Would another capable agent need this chat?
+- Did this work reduce consequential uncertainty rather than produce method/tooling ceremony?
 
-If any answer is problematic, revise before committing.
+If any answer is problematic, repair the evidence/state rather than increasing prose confidence.
 
 ## Learning loop
 
-Project-specific lessons go first into the project's `LEARNINGS.md` with an example and corrective rule. Promote a lesson into `methodology/` only after it is demonstrably general across cases or expresses a standard methodological safeguard.
+Concrete project failures/corrections go first into the project's `LEARNINGS.md`. Promote only genuinely general safeguards into `methodology/`. Remove or simplify rules that create overhead without preventing real error.
