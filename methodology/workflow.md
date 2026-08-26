@@ -2,13 +2,13 @@
 
 ## Authority
 
-The authoritative scholarly end-to-end method is `methodology/historical-source-workflow.md`. This file is only the **operational execution map**. Detailed transcription requirements live in `methodology/transcription-guidelines.md`; provenance in `source-and-provenance.md`; evidence/source-status rules in `evidence-policy.md`; AI validation rules in `ai-governance.md`.
+The authoritative scholarly end-to-end method is `historical-source-workflow.md`. Generic maturity requirements live in `research-gates.md`. This file is only the **operational execution map**. Detailed transcription requirements live in `transcription-guidelines.md`; provenance in `source-and-provenance.md`; evidence/source-status rules in `evidence-policy.md`; AI validation rules in `ai-governance.md`.
 
-If an operational shortcut conflicts with the scholarly method, the scholarly method wins and the conflict must be repaired.
+If an operational shortcut conflicts with the scholarly method or generic gate requirements, the scholarly method/gates win and the conflict must be repaired.
 
 ## Goal
 
-Produce a traceable, human-auditable historical source transcription and analysis with the least process necessary to keep it reliable. Research activity must advance an explicit project milestone requirement rather than merely generate more tooling or notes.
+Produce a traceable, human-auditable historical source transcription and analysis with the least process necessary to keep it reliable. Research activity must advance an explicit unmet requirement of the active generic research gate, repair an invalid prerequisite, or provide necessary evidence for doing so.
 
 ## Operational sequence
 
@@ -21,9 +21,9 @@ Before claiming complete transcription, inspect the working locus for foliation/
 Do not mark unexamined phenomena absent; use `not investigated` where necessary.
 
 ### S3 — Diplomatic transcription
-Transcribe the principal witness by archival folio and directly inspected physical line. Preserve source structure and written forms. Distinguish uncertainty/source phenomena according to `transcription-guidelines.md`. Do not replace visible multi-line source text with semantic summaries.
+Transcribe the principal witness by archival locus and directly inspected physical line where relevant. Preserve source structure and written forms. Distinguish uncertainty/source phenomena according to `transcription-guidelines.md`. Do not replace visible multi-line source text with semantic summaries.
 
-A human-readable folio/line witness view must be derivable from canonical transcription data; machine-oriented TSV fragments alone are not sufficient as an M2 result.
+A human-readable witness view must be derivable from canonical transcription data; machine-oriented fragments alone are not sufficient for G2.
 
 ### S4 — Internal palaeographic analysis
 For consequential uncertainty, localise the sign sequence, classify the problem, seek appropriate controlled internal comparanda, compare graphical features and record candidates/evidence. Same record is not automatically same hand. Context follows graphematic candidate formation rather than replacing it.
@@ -32,7 +32,7 @@ For consequential uncertainty, localise the sign sequence, classify the problem,
 Before strong external-witness influence, ensure the principal witness has a coherent source-based checkpoint. It may contain unresolved readings.
 
 ### S6 — Independent external control and collation
-Identify/read related witnesses and controls independently, then map corresponding loci and collate. Record agreements/divergences and upgrade source relationships only as far as evidence warrants. Never copy a clearer witness into the principal witness transcription.
+Identify/read related witnesses and controls independently, then map corresponding loci and collate. Record agreements/divergences and upgrade source relationships only as far as evidence warrants. Never copy a clearer witness into the principal-witness transcription.
 
 ### S7 — Normalize/identify/interpret
 Only after source readings are explicit, link manuscript forms to normalized people/places/institutions/values/concepts and perform historical source criticism. Keep manuscript form, expansion, normalization, identification and interpretation distinct.
@@ -48,28 +48,39 @@ Define an explicit edition concept, then derive the user-facing edition from the
 ## Research-state persistence
 
 When research truth changes, update its canonical owner during the same work block when practical:
-
 - source identity/inspection stage → `corpus/sources.tsv`;
 - external/digital file identity/recoverability → `corpus/files.tsv`;
 - source/event/entity relationship → `corpus/relationships.tsv`;
 - event context → `corpus/events.tsv`;
 - project source/folio/image mapping → project `sources/`;
 - diplomatic reading → project `transcription/`;
-- consequential reading revision/rejection → `apparatus/decisions.tsv`;
-- palaeographic evidence → `palaeography/`;
-- external-source inspection status → `research/`;
-- active gate/next action → `STATUS.md`;
-- project-specific failure/lesson → `LEARNINGS.md`;
-- general scholarly method → `historical-source-workflow.md` or relevant detailed methodology;
+- consequential reading revision/rejection → project `apparatus/decisions.tsv`;
+- palaeographic evidence → project `palaeography/`;
+- external-source inspection status → project `research/`;
+- active gate/project-specific unmet requirements/next action → project `STATUS.md`;
+- project-specific failure/lesson → project `LEARNINGS.md`;
+- generic scholarly method/gates → `methodology/`;
 - durable cross-project architecture rationale → `DECISIONS.md`.
 
 Do not make a future researcher recover durable state from chat.
 
-## Project milestone rule
+## Generic gate rule
 
-Project milestones define scholarly maturity states, not schedules. `STATUS.md` must identify the active milestone and the smallest next source/evidence action that advances an unmet requirement.
+`research-gates.md` defines the reusable G1–G6 scholarly maturity requirements once for all projects. A project must **not** redefine those requirements in its own milestone file.
 
-If a proposed activity cannot be tied to an unmet gate requirement, an invalid prerequisite or necessary evidence, do not perform it as current research work.
+Project `STATUS.md` identifies the active gate and records only project-specific evidence, unmet requirements/blockers, validation state and the smallest next source/evidence action.
+
+If a proposed activity cannot be tied to an unmet generic gate requirement, an invalid prerequisite or necessary evidence, do not perform it as current research work.
+
+## Framework / corpus / project discipline
+
+Before persisting a new rule or finding ask:
+
+- valid for another comparable manuscript project? → `methodology/`;
+- spans source/project identities or relations? → `corpus/` / `entities/`;
+- concrete source/research finding? → `projects/<id>/`.
+
+Pilot observations may trigger methodological learning but do not define general rules automatically.
 
 ## Validation proportionality
 
@@ -87,4 +98,4 @@ When useful technology is not required by a current scholarly gate, preserve it 
 
 ## Maintenance
 
-Follow `methodology/maintenance.md`: propagate material truth changes across dependent records, run a bounded consistency pass when warranted, then return to source research.
+Follow `maintenance.md`: propagate material truth changes across dependent records, run a bounded consistency pass when warranted, then return to source research.
