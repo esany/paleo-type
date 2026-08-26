@@ -100,3 +100,12 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 **Reason:** Mixing pilot facts with reusable method creates hidden coupling, duplicated truth, drift and false generalisation from a single source.
 
 **Consequence:** Project `MILESTONES.md` copies are removed. Generic gates live in `methodology/research-gates.md`; project `STATUS.md` records only state and source-specific gaps against those gates. Generalisation follows `project observation → project learning/status → explicit generalisability check → methodology/decision update`.
+
+## D-010 — Milestones schedule admitted work; they do not represent research maturity
+
+**Status:** accepted  
+**Decision:** Use GitHub Milestones only to sequence bounded governance/structural/implementation work that has been explicitly admitted to an active or approved phase. Open Issues without a Milestone remain backlog/deferred until their documented trigger is met. Do not mirror G1–G6 scholarly research gates as GitHub Milestones.
+
+**Reason:** Research maturity is evidence-dependent and already has a canonical home in `methodology/research-gates.md` plus project `STATUS.md`. Reusing GitHub Milestones for G1–G6 would duplicate truth and create synchronization drift. Conversely, leaving every future Issue visually equivalent obscures which work is actually scheduled versus merely preserved as an option.
+
+**Consequence:** `MILESTONES.md` defines the M1–M4 governance/architecture sequence and the conditional M5 implementation phase. GitHub milestone metadata mirrors that plan for navigation only. No milestone means backlog, not low research maturity. A backlog issue enters an active Milestone only when its trigger is demonstrated or a governing audit explicitly admits it.
