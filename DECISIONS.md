@@ -130,7 +130,7 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 ## D-013 — Governing scholarly objective has precedence over derived method and architecture
 
-**Status:** proposed in GOV-M1 / Issue #41; requires explicit human approval before acceptance.  
+**Status:** accepted by explicit human owner decision during GOV-M1 / Issue #41.  
 **Decision:** Establish `GOVERNING_OBJECTIVE.md` as the single highest-order, implementation-independent statement of repository purpose, governing invariants, precedence and human material-change authority. Methodology, information models, AI/HITL workflows, software, automation, GitHub workflow and presentation are derived means and may not silently weaken that objective.
 
 **Reason:** The mission is already expressed across several repository files, but without one canonical precedence point a locally reasonable AI/engineering optimization could gradually substitute a proxy goal or reinterpret lower-level rules as authority to change the research purpose.
