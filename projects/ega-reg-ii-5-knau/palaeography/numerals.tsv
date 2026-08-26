@@ -4,7 +4,8 @@ ij	working	132:01	roman numeral two	Directly reinspected on image 132; sign is c
 80	observed	133:lower paragraph, two occurrences	arabic eighty	Direct reinspection of image 133 shows the same clear arabic `80` form twice in the pfarrholtz paragraph; lexical/syntactic interpretation around it remains separate
 viertel	working	132:06	quantity/measure word	Directly reinspected on image 132 after arabic `1`; compare with further same-hand occurrences before using as a broad notation anchor
 Pfarr-/money word `grosch`	working	132:13	monetary term	Current reading remains `grosch`; exact preceding qualifier and amount clause still require line-level recheck before edition
-pfennig	working	135:closing Knau lines	monetary term	Previously read in the closing obligation; not part of the current 132/133 notation adjudication
+pfennig	observed	135:02	monetary term	Direct reinspection of image 135 supports written-out `acht pfennig` in the Knau closing obligation
+C2 accounting-list notation	observed	THHSTAW-EGA-REG-II-3-STAT-VIS-00000235:304r (image 625); 305r (image 627)	repeated marginal Roman-numeral/value notation in income lists	Comparison-class evidence only: C2 is a separate 1529 record and hand identity with Reg. Ii 5 is not established. Use to generate/test notation hypotheses, never as direct grapheme proof for W1–W6.
 W1	unresolved	132:03	unknown numerical/economic token	Direct reinspection confirms a compact value/sign group before the running text; no safe expansion from internal evidence yet
 W2	unresolved	132:04	unknown numerical/economic token	Direct reinspection confirms a distinct value/sign group; no safe expansion from internal evidence yet
 W3	unresolved	132:05	unknown numerical/economic token	Direct reinspection confirms a distinct value/sign group associated with a line ending in `maß`; no safe expansion yet
