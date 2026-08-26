@@ -1,5 +1,5 @@
 page_id	line_id	region	reading	status	alternatives	evidence_note
-132	00	heading	Knawe	working		Recheck directly from image before formal edition
+132	00	heading	Knawe	observed		Direct reinspection of original image 132; heading is clearly visible
 132	01	top	hat ij filial Laßgaw / vnnd Bharen	variant	Laßkaw; Bahren	Direct reinspection supports `hat` + numeral + `filial`; exact numeral/place spellings remain working/variant
 132	02	top	wolff von [surname-token] lehen /	variant	grevendorff; greuendorff; grefendorff	Adversarial reinspection confirms `wolff von` and a repeated surname-like token, but exact graphematic spelling is not yet safely discriminated; historical identification remains separate
 132	03	list	It(em) [W1] ... geltzins	unresolved		W1 is numerical/economic token
