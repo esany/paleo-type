@@ -1,0 +1,13 @@
+id: ega-reg-ii-4-bd-ii-00000089
+title: "Reg. Ii 4 Bd. II — Ziegenrück visitation source"
+repository_role: "independent primary-source project; comparison witness for Reg. Ii 5 Knau"
+canonical_source_id: "THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089"
+archive: "Landesarchiv Thüringen – Hauptstaatsarchiv Weimar"
+collection: "Ernestinisches Gesamtarchiv"
+signature: "ThHStAW, EGA, Reg. Ii 4 Bd. II"
+working_images:
+  - "642-681"
+active_scope: "Uploaded 41-page archival export, images 642–681. Existing corpus metadata locates the corresponding Knau sequence within images 667–672 / fol. 306v–309r; detailed collation remains required."
+source_binary_policy: "Exact archive-export binary remains external-to-git; repository preserves identity, checksum/provenance metadata, crosswalk and derived scholarly work."
+transcription_mode: "conservative graphematic working transcription"
+external_context_allowed_in_blind_reading: false
