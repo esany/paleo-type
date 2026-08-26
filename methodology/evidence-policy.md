@@ -15,7 +15,6 @@
 ## Audit requirements
 
 For external sources record:
-
 - bibliographic/archive identity;
 - source-status code;
 - access route;
@@ -27,7 +26,6 @@ For external sources record:
 ## Primary-source provenance
 
 A primary image or file used for substantive transcription must become traceable independently of a transient chat session as soon as practical. Record what is actually known, such as:
-
 - archive/repository and shelfmark;
 - folio/page/image identifier;
 - access route;
@@ -44,12 +42,11 @@ A source may move from `K/S` to `P/E/F` only after the underlying material has a
 ## Claim rule
 
 Every consequential historical claim must be traceable to either:
-
 - an inspected source (`P/E/F`), or
 - an explicitly labeled inference (`H`) whose premises are themselves traceable.
 
-AI/model output is never a source-status category and does not independently support a historical claim. Consequential AI use is documented as research provenance under `methodology/ai-governance.md`, not as evidence.
+AI/model output is never a source-status category and does not independently support a historical claim. Consequential AI use is documented as research provenance under `ai-governance.md`, not as evidence.
 
 ## Parallel-source rule
 
-A finding aid saying that a volume contains “Knau” is not a textual parallel. It becomes a textual parallel only after the relevant manuscript/edition passage is inspected and compared.
+A finding aid saying that a record contains a relevant place/person/topic is not a textual parallel. It becomes a textual parallel only after the relevant manuscript/edition passage is inspected and compared.
