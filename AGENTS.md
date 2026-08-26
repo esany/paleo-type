@@ -111,10 +111,13 @@ Portal image numbers, archival folios, PDF pages, export sequence and legacy wor
 ### Canonical corpus records
 
 - corpus source identity/stage → `corpus/sources.tsv`
+- external/digital source file or instantiation identity, checksum, coverage, storage and rights status → `corpus/files.tsv`
 - source/event/entity relationship → `corpus/relationships.tsv`
 - administrative/historical activity context → `corpus/events.tsv`
 - repeated normalized people/places → `entities/`
-- exact project-specific image/folio/export mapping → project `sources/`
+- exact project-specific image/folio/export mapping and inspection detail → project `sources/`
+
+`corpus/files.tsv` is the canonical manifest for the external/digital files used as source instantiations. Project crosswalks may map a file's internal pages/images to folios or working IDs, but must not become a competing file-identity/checksum/storage/rights store.
 
 A relationship is a research claim. Record its evidence status. `metadata-supported` is not `verified textual correspondence`.
 
@@ -142,6 +145,7 @@ For consequential source work determine what exactly was inspected:
 - archive/fonds/signature/record;
 - folio/locus;
 - digital record/image/URN where available;
+- external/digital file identity from `corpus/files.tsv` when a file/export underlies the work;
 - PDF/export/image numbering as separate fields;
 - whether the export is complete for the claimed range;
 - whether the working image is original or derived/cropped/scaled.
@@ -171,7 +175,7 @@ Before continuing existing research:
 
 1. read `README.md` if structure is not already established;
 2. read `DECISIONS.md` when a shared method/data-model choice is relevant;
-3. inspect relevant `corpus/` rows when source identity/relationships matter;
+3. inspect relevant `corpus/` rows, including `corpus/files.tsv` when exact inspected files/instantiations matter;
 4. read project `STATUS.md`;
 5. read relevant decision rows and `LEARNINGS.md`;
 6. read only relevant methodology;
@@ -201,7 +205,9 @@ Update only the canonical record whose truth changed:
 
 - reading → transcription / decision log;
 - palaeographic anchor → palaeography;
-- source identity/stage → corpus or project source register;
+- source identity/stage → `corpus/sources.tsv`;
+- external/digital source file identity/checksum/coverage/storage/rights → `corpus/files.tsv`;
+- project-specific image/folio/export mapping → project `sources/`;
 - source relationship → `corpus/relationships.tsv`;
 - event context → `corpus/events.tsv`;
 - active problem/next action → project `STATUS.md`;
@@ -245,6 +251,7 @@ Before completing consequential work, check only what is relevant:
 **Technisch / research-data**
 
 - Does every consequential source/record/locus have an unambiguous canonical identity and provenance path?
+- Is the exact external/digital source file recoverable through `corpus/files.tsv` where file-based work is consequential?
 - Are folio, portal image, PDF/export numbering and file identity kept distinct?
 - Do changed IDs/relationships remain referentially coherent in affected canonical records?
 - Did changed research truth reach its single canonical home?
