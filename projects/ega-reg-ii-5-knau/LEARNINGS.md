@@ -65,3 +65,11 @@ Observed failure: generic scholarly gate requirements and parts of the method we
 Corrective practice: generic method/gates now live only in `methodology/`; Knau `STATUS.md` records only its own state and evidence gaps against those generic requirements. Concrete pilot observations remain here or in project research records and are promoted only after an explicit generalisability check.
 
 Generalizable: yes; reflected in `methodology/historical-source-workflow.md`, `methodology/research-gates.md`, `AGENTS.md` and `DECISIONS.md` D-009.
+
+## L009 — source records were turned into artificial projects
+
+Observed failure: PR #40 created `source-unit` projects for individual archival records so that source-wide crosswalks would have a single owner. This made one historical investigation appear as several duplicate projects, obscured the actual source group, and introduced artificial project-to-project relations whose targets were really sources.
+
+Corrective practice: define a project as the bounded historical investigation / source-unlocking undertaking. Keep each archival record as a canonical corpus source, declare its project role/locus in `sources/sources.tsv`, and keep reusable source-wide crosswalks in `corpus/source-data/<source_id>/`. Preserve exact original exports as first-class file assets rather than treating a URN as equivalent backup.
+
+Generalizable: yes; promoted through `methodology/project-lifecycle.md`, `methodology/source-and-provenance.md`, `AGENTS.md` and `DECISIONS.md` D-012.

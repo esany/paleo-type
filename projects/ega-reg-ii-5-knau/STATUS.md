@@ -1,39 +1,51 @@
-# STATUS — Knau benchmark
+# STATUS — Knau source-group investigation
 
 Last checkpoint: 2026-08-26
 
 ## Overall research goal
 
-Produce a source-exact, critically controlled scholarly edition of the Knau passage in `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`, with visible uncertainty, traceable editorial decisions, controlled use of comparison witnesses and a human-auditable path from archival source to transcription, analysis and eventual edition.
+Produce a source-exact, critically controlled scholarly edition and historical understanding of the Knau material using the bounded source group registered in `sources/sources.tsv`. The principal diplomatic object is `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`; related 1533 and 1529 records are comparison/control/context sources and remain independently identified.
 
 Generic scholarly method is defined in `../../methodology/historical-source-workflow.md`; reusable maturity requirements are in `../../methodology/research-gates.md`; diplomatic requirements are in `../../methodology/transcription-guidelines.md`.
 
-This is a `research-scope` project. Source-unit projects own reusable source-local mapping; research relations are recorded in `../relationships.tsv`; historical/source relations remain canonical in `../../corpus/relationships.tsv`.
+## Source group
+
+The project currently uses four distinct archival records:
+
+- principal: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*, Knau locus fol. 61v–63r / export images 132–135;
+- comparison: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — *Visitation im Amt Ziegenrück*, corresponding Knau locus fol. 306v–309r / export images 667–672;
+- control: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, including `Knaw Kirch Einkommen` on fol. 304r / export image 625;
+- context: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — *Visitation in Neustadt an der Orla*, fol. 41r–63v.
+
+The two Reg. Ii 3 records share the same archival volume/signature but are separate catalogued/identified records with different titles, record IDs, loci and evidential roles. They must not be collapsed into a generic `Reg. Ii 3` source.
+
+Canonical source identities remain in `../../corpus/sources.tsv`; exact file identities/checksums remain in `../../corpus/files.tsv`; historical/source relationships remain in `../../corpus/relationships.tsv`.
+
+## Original-export preservation state
+
+The exact four central archive-export PDFs used for this project are checksum-verified locally against `corpus/files.tsv`:
+
+- `1a03ea95927-120-143.pdf` — SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- `1a03e6fca87-642-681.pdf` — SHA-256 `dc61e65822a34b84c9d88e57690609bbea6eb4537a9efc00294d1520f8f3b86f`;
+- `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-Neustadt-O-p41r-63v.pdf` — SHA-256 `451bb32b0bca077c4089966594e2bf234b39e87d9e087d3c1c2e2a569f31fd12`;
+- `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-303-306.pdf` — SHA-256 `963a29eff5cc98bb35cecc28e20c6ed3fcb835261e322f991e42b60662d54c06`.
+
+These PDFs are central preservation assets, not replaceable by URNs. The repository is public and the current archive exports are recorded as `InC/1.0`; therefore committing the binary bytes publicly is not treated as authorized by default. Until rights/authority for public redistribution is confirmed, repository preservation is **not complete**. The intended repository paths and this blocked state are recorded in `corpus/files.tsv` rather than falsely claiming the files are safely backed up in Git.
+
+Legacy single-image Reg. Ii 5 PDF exports remain separately checksum-tracked for provenance.
 
 ## Generic gate state
 
-- **G1 — Source and transmission basis secured:** substantially reached.
+- **G1 — Source and transmission basis secured:** substantially reached, but repository-local preservation of the central original exports remains a source-preservation gap pending rights resolution.
 - **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached.**
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
 - **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
 - **G5 — Critically consolidated and proportionally validated text state:** not reached.
 - **G6 — Scholarly edition produced and quality-controlled:** final goal, not reached.
 
-## Canonical source basis
-
-Principal witness: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, Knau locus fol. 61v–63r / export images 132–135. Reusable source-local digital/folio mapping is owned by `../ega-reg-ii-5-00000129/sources/crosswalk.tsv`.
-
-Project relations:
-- `scopes-source-unit` → `ega-reg-ii-5-00000129`;
-- `compares-with` → `ega-reg-ii-4-bd-ii-00000089`;
-- `uses-as-control` → `ega-reg-ii-3-00000235`;
-- `uses-as-context` → `ega-reg-ii-3-00000197`.
-
-These are research-organisational relations only. They do not create source dependence, same-hand status or textual equivalence.
-
 ## Existing text checkpoint
 
-The existing `transcription/132.tsv`–`135.tsv` files are legacy working transcription data, not yet the final G2-compliant representation. Controlled anchors include `Knawe` on fol. 61v, closing Knau lines on fol. 63r, repeated `wolff von`, arabic `1`, and twice-reinspected arabic `80` on fol. 62r. Known representation gaps remain especially W1–W6/U1–U2 on 61v, the upper economic passage/U3–U5 on 62r, and substantial multi-line gaps on 62v.
+The existing `transcription/132.tsv`–`135.tsv` files are legacy working transcription data, not yet the final G2-compliant representation. Controlled anchors include `Knawe` on fol. 61v, closing Knau lines on fol. 63r, repeated `wolff von`, Arabic `1`, and twice-reinspected Arabic `80` on fol. 62r. Known representation gaps remain especially W1–W6/U1–U2 on 61v, the upper economic passage/U3–U5 on 62r, and substantial multi-line gaps on 62v.
 
 ## Active G2 project gaps
 
@@ -49,8 +61,8 @@ G2 does **not** require every difficult token to be resolved.
 
 ## NEXT ACTION — canonical restart point
 
-Using Reg. Ii 5 fol. 61v–63r and the source-unit crosswalk:
-1. inspect each folio for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
+Using the principal Reg. Ii 5 source, its canonical source-data crosswalk and the exact checksum-identified archive export:
+1. inspect fol. 61v–63r for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
 2. assign editor line references only from direct physical inspection;
 3. map legacy rows to verified folio/physical-line loci while retaining export IDs as provenance;
 4. choose the smallest structured representation required by the generic transcription guideline;
@@ -62,8 +74,8 @@ Do not let comparison-source work displace this active G2 task.
 
 ## Human-in-the-loop state
 
-The user must be able to inspect the current diplomatic text without understanding internal TSV conventions. No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded.
+The user must be able to inspect the current diplomatic text and source group without understanding internal TSV architecture. No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded.
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from repository + sources: active gate, exact source locus, source-unit project and crosswalk, project relations, remaining G2 gaps, current text evidence and next action without old chat.
+A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the investigation object, four distinct archival records and their roles/loci, exact original exports and preservation state, active gate, remaining G2 gaps, current text evidence and next action without old chat.

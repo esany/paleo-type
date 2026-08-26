@@ -2,7 +2,7 @@
 
 ## Authority
 
-The authoritative scholarly end-to-end method is `historical-source-workflow.md`. Generic maturity requirements live in `research-gates.md`. This file is only the **operational execution map**. Detailed transcription requirements live in `transcription-guidelines.md`; provenance in `source-and-provenance.md`; evidence/source-status rules in `evidence-policy.md`; AI validation rules in `ai-governance.md`.
+The authoritative scholarly end-to-end method is `historical-source-workflow.md`. Generic maturity requirements live in `research-gates.md`. This file is only the **operational execution map**. Detailed transcription requirements live in `transcription-guidelines.md`; provenance/preservation in `source-and-provenance.md`; project/source-group semantics in `project-lifecycle.md`; evidence/source-status rules in `evidence-policy.md`; AI validation rules in `ai-governance.md`.
 
 If an operational shortcut conflicts with the scholarly method or generic gate requirements, the scholarly method/gates win and the conflict must be repaired.
 
@@ -12,8 +12,8 @@ Produce a traceable, human-auditable historical source transcription and analysi
 
 ## Operational sequence
 
-### S1 — Identify source/provenance
-Register canonical source identity, archival locus and digital instantiation. Keep folio, portal/export image, PDF page and working IDs distinct. Record source relationships at their actual evidential level.
+### S1 — Establish project source group and provenance
+Define the investigation's source group in project `sources/sources.tsv`. Register each distinct archival record canonically in `corpus/sources.tsv`; do not collapse separately identified records because they share a signature. Register the exact original export used in `corpus/files.tsv` with filename, SHA-256, coverage and preservation state. Keep folio, portal/export image, PDF page and working IDs distinct. Put reusable source-wide crosswalks in `corpus/source-data/<source_id>/`. Record source relationships at their actual evidential level.
 
 ### S2 — Inspect document/material structure
 Before claiming complete transcription, inspect the working locus for foliation/boundaries, physical lineation, reading order, layout/list/table structure, headings/marginalia, additions/deletions/corrections, damage/illegibility, abbreviation practice and evidence of hand shifts where relevant.
@@ -49,10 +49,12 @@ Define an explicit edition concept, then derive the user-facing edition from the
 
 When research truth changes, update its canonical owner during the same work block when practical:
 - source identity/inspection stage → `corpus/sources.tsv`;
-- external/digital file identity/recoverability → `corpus/files.tsv`;
+- exact original/digital file identity, checksum, coverage, preservation state/path and rights → `corpus/files.tsv`;
+- reusable source-wide image/PDF/export/folio mapping → `corpus/source-data/<source_id>/`;
 - source/event/entity relationship → `corpus/relationships.tsv`;
 - event context → `corpus/events.tsv`;
-- project source/folio/image mapping → project `sources/`;
+- project source membership/role/relevant locus → project `sources/sources.tsv`;
+- project-specific inspection audit → project `sources/inspection-log.tsv`;
 - diplomatic reading → project `transcription/`;
 - consequential reading revision/rejection → project `apparatus/decisions.tsv`;
 - palaeographic evidence → project `palaeography/`;
@@ -72,15 +74,19 @@ Project `STATUS.md` identifies the active gate and records only project-specific
 
 If a proposed activity cannot be tied to an unmet generic gate requirement, an invalid prerequisite or necessary evidence, do not perform it as current research work.
 
-## Framework / corpus / project discipline
+## Method / corpus / project discipline
 
 Before persisting a new rule or finding ask:
 
-- valid for another comparable manuscript project? → `methodology/`;
-- spans source/project identities or relations? → `corpus/` / `entities/`;
-- concrete source/research finding? → `projects/<id>/`.
+- valid for another comparable manuscript investigation? → `methodology/`;
+- canonical source/file/reusable mapping/source relationship truth? → `corpus/` / `entities/`;
+- concrete investigation source role/locus/reading/state? → `projects/<id>/`.
 
-Pilot observations may trigger methodological learning but do not define general rules automatically.
+A project is the investigation, not a source record or PDF. Pilot observations may trigger methodological learning but do not define general rules automatically.
+
+## Exact-export rule
+
+A central original archive export is part of the evidential chain. A URL/URN does not replace it. If public-repository rights prevent committing the exact bytes, keep the intended repository path and `preservation-blocked-rights` state explicit rather than claiming complete preservation.
 
 ## Validation proportionality
 
@@ -90,7 +96,7 @@ Independent specialist validation is not the same as method-compliant AI work. R
 
 ## Corpus expansion
 
-Corpus discovery is separate from the active transcription/edition workflow. Discovered sources may remain metadata/images inspected. Full transcription is never automatic merely because a source exists.
+Corpus discovery is separate from the active transcription/edition workflow. Discovered sources may remain metadata/images inspected. Full transcription is never automatic merely because a source exists, and discovery of a source does not automatically create a new project.
 
 ## Deferred technology
 

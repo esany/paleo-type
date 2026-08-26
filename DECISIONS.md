@@ -45,7 +45,7 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Reason:** Digital archive exports expose multiple numbering systems and representations that are not interchangeable. Collapsing them can create false provenance.
 
-**Consequence:** Project crosswalks map these identifiers explicitly; no folio is inferred from an export/image number alone.
+**Consequence:** Reusable source-wide crosswalks map these identifiers under `corpus/source-data/<source_id>/`; project source registers record only project role/relevant locus. No folio is inferred from an export/image number alone.
 
 ## D-004 — Three truth domains must not silently rewrite each other
 
@@ -110,11 +110,20 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Consequence:** `MILESTONES.md` defines Milestone-family semantics and naming. Generic G1–G6 requirements remain canonical only in `methodology/research-gates.md`; actual gate state remains canonical only in project `STATUS.md`. A GitHub project-gate Milestone means planned Issue work toward that gate, not evidence-based gate attainment. One Issue uses the primary target Milestone and multiple labels for cross-disciplinary relevance. No Milestone means backlog/unscheduled, not low scholarly maturity.
 
-## D-011 — Projects have explicit kinds and project relations are not source relations
+## D-011 — Source-unit/research-scope project kinds
+
+**Status:** superseded by D-012  
+**Decision:** PR #40 introduced `source-unit` projects for individual canonical sources and `research-scope` projects for bounded investigations.
+
+**Reason:** The intent was to give reusable source mappings one owner and prevent copied crosswalks.
+
+**Consequence:** The distinction is retained only as historical rationale. It proved confusing to humans and semantically weak as a backend because a source record was represented as a project. D-012 preserves single ownership without source-as-project containers.
+
+## D-012 — A project is an investigation over a source group; exact exports are first-class assets
 
 **Status:** accepted  
-**Decision:** Create projects from a generic minimal contract, not by cloning a pilot. Distinguish `source-unit` projects, which own reusable source-local mapping/work for one canonical source, from `research-scope` projects, which own bounded questions/loci/edition tasks. Research-organisational project relations live in `projects/relationships.tsv`; historical/archival/textual source relations remain in `corpus/relationships.tsv`.
+**Decision:** Define a project as a bounded historical investigation / source-unlocking undertaking over one or more distinct canonical source records. Do not create projects automatically for archival records or files. Project source membership/role/locus lives in `projects/<id>/sources/sources.tsv`; canonical source identity remains in `corpus/sources.tsv`; reusable source-wide crosswalks live in `corpus/source-data/<source_id>/`. Exact original exports used as evidence are first-class research assets tracked byte-exactly in `corpus/files.tsv` and should be repository-preserved when rights/authority permit.
 
-**Reason:** As multiple archival units enter the repository, copying source mappings into every consuming research project would create drift, while treating research organisation as source history would create false scholarly claims.
+**Reason:** Historians investigate coherent source groups, not technical source wrappers. The source-unit model created apparent duplicate projects and artificial project-to-project relations. At the same time, relying on URNs/portal links without preserving the exact inspected PDF is inadequate for reproducibility and personal source safeguarding.
 
-**Consequence:** Source-unit mappings have one canonical home; research-scope projects reference them. New projects are instantiated from `templates/project/` and must pass `methodology/project-lifecycle.md`. Project findings feed back through the explicit project → source-unit/corpus → related-project or project → generalisability → method consistency loops.
+**Consequence:** Source-as-project directories introduced by PR #40 are removed; the Knau investigation remains the project and explicitly contains four distinct source records, including the two separately identified Reg. Ii 3 records. Project relations are reserved for relations between genuine investigations. Exact source exports have filename, SHA-256, coverage, intended repository path and explicit preservation status; a public-repository rights blocker must remain visible rather than being masked by a URL/URN.

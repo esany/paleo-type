@@ -17,27 +17,31 @@ Later evidence may reopen an earlier gate. Consequential revision must remain tr
 ## G1 — Source and transmission basis secured
 
 ### Target state
-The principal witness/source and relevant comparison/control sources can be independently identified and recovered, while archival description, digital instantiation and demonstrated textual relationships remain distinct.
+The project's bounded source group can be reconstructed: every principal/comparison/control/context record is independently identified; project roles/loci are explicit; exact digital instantiations used as evidence are byte-identifiable and recoverable or have an explicit preservation blocker; archival description, digital instantiation and demonstrated textual relationships remain distinct.
 
 ### Requirements
+- the project source group is explicit and human-readable in `projects/<id>/sources/sources.tsv`;
 - principal source/witness has an unambiguous canonical identity;
-- archive/fonds/signature/record/locus and persistent/digital identifiers are recorded where available;
+- every material comparison/control/context source is independently identified rather than collapsed by shared archive/signature/topic;
+- archive/fonds/signature/record/title/locus and persistent/digital identifiers are recorded where available;
+- project-relevant locus is separated from the source's full archival extent;
 - archival locus is mapped independently of portal/export/PDF numbering;
-- consequential digital files/instantiations are recoverable through the canonical file manifest;
-- crosswalks distinguish folio/page, image, PDF/export and working identifiers;
-- comparison/control sources are independently identified and have explicit evidential roles;
+- each consequential digital file/instantiation has exact filename, SHA-256, coverage and preservation/storage state in `corpus/files.tsv`;
+- the exact inspected export is recoverable from its controlled preservation location, or the repository states a concrete unresolved preservation blocker; URL/URN + checksum alone is not misrepresented as equivalent backup;
+- reusable source-wide crosswalks distinguish folio/page, image, PDF/export and working identifiers and have one canonical source-data home;
+- source roles in the project are distinguished from historical/source relationships;
 - source relationships are stated only at the level supported by inspected evidence;
 - catalogue/finding-aid claims remain distinguishable from manuscript/collation findings;
 - project source basis can be reconstructed from repository state without chat.
 
 ### Exit gate
-A competent third party can identify and recover the exact source/locus/instantiation and understand what is actually known about relevant source relationships.
+A competent third party can identify every material source record in the investigation, understand its project role/locus, recover or account for the exact inspected instantiation, and understand what is actually known about relevant source relationships.
 
 ### Permitted residual uncertainty
-Textual dependence, scribal relationship, finer chronology or record-stage relationships may remain unresolved when explicitly labelled.
+Textual dependence, scribal relationship, finer chronology or record-stage relationships may remain unresolved when explicitly labelled. A rights/access preservation blocker may remain only if the exact byte identity is controlled and the limitation is explicit; it is not silently treated as full repository preservation.
 
 ### Reopen when
-Source identity, locus mapping, digital-file identity, provenance, project boundary or a consequential source relationship is shown to be wrong or materially incomplete.
+Source identity, source-group membership/role, locus mapping, digital-file identity/preservation state, provenance, project boundary or a consequential source relationship is shown to be wrong or materially incomplete.
 
 ---
 
