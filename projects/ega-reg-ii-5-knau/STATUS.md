@@ -2,9 +2,21 @@
 
 Last checkpoint: 2026-08-26
 
+## Source identity now established
+
+Witness **A** is `ThHStAW, EGA, Reg. Ii 5`, archival record `stat_visitation_00000128`, titled **Visitation im Amt Leuchtenburg und in Ziegenrück**. User-supplied archival metadata identifies it as a Visitationsprotokoll with page sequence `28r–55r`, in the Ernestinisches Gesamtarchiv, Reg. Ii (Kirchen- und Schulvisitation, Bewidmung), in the 1533 Thüringen visitation context. The same metadata describes A as an **Auszug** from `ThHStAW, Reg. Ii 4 Bd. II`, specifically `249r–293v` (Amt Leuchtenburg) and `295r–300r` (Ziegenrück). Treat that relationship as an archival-metadata claim until the corresponding manuscript passages are collated.
+
+The uploaded archive export `1a03ea161c0-2.pdf` has been inspected: its parsed first page identifies `ThHStAW, EGA, Reg. Ii 5`, and its second page visibly contains the archival cover/image. The file currently available here is only a 2-page export, **not yet the complete Reg. Ii 5 image sequence** needed for full source ingest.
+
 ## Scope currently supported
 
-Working material consists of images 132–135 from the Reg. Ii 5 complex. The current working hypothesis is that the Knau entry begins on 132 and continues through the beginning of 135, where a new large heading appears. This boundary remains a **working source observation** until exact folio/entry mapping is rechecked from the images.
+Working manuscript material consists of images 132–135 from witness A. The current working hypothesis is that the Knau entry begins on 132 and continues through the beginning of 135, where a new large heading appears. Exact mapping of these export/working image numbers to archival folios and stable image identifiers/URNs remains to be established from the complete export. Do not infer folio numbers from image numbers.
+
+## Witness model
+
+- **A — ThHStAW, EGA, Reg. Ii 5**: current principal witness and source of working images 132–135.
+- **B — ThHStAW, EGA, Reg. Ii 4 Bd. II**: related fuller visitation protocol; archival metadata for A explicitly describes A as an extract from B. B is a potential parallel witness/control, but equivalence of individual passages must be demonstrated by collation rather than assumed.
+- **C — ThHStAW, EGA, Reg. Ii 3**: additional DigiRef material mentioning Knau/Laskau/Bahren; relationship to A/B remains to be established from inspected evidence.
 
 ## What has been learned reliably enough to continue
 
@@ -30,9 +42,9 @@ Important current anchors/limits:
 
 ## Active problem
 
-The largest high-value unresolved block remains the **numerical, monetary, grain and measure notation** in the itemized section of image 132 and comparable notation in the upper part of 133.
+Before further palaeographic adjudication, complete **source ingest and provenance mapping for witness A**. We now have authoritative record-level identity but not the complete export sequence needed to map working images 132–135 to folios/URNs and establish the exact Knau entry boundary.
 
-The first notation pass confirmed that W1–W6 are real distinct economic/value tokens or groups, but the internal evidence inspected so far does **not** safely expand them. Do not solve them by semantic expectation.
+After that ingest, the largest high-value textual block remains the **numerical, monetary, grain and measure notation** in the itemized section of image 132 and comparable notation in the upper part of 133. W1–W6 are real distinct economic/value tokens or groups, but current internal evidence does not safely expand them.
 
 ## FIRST INTEGRITY-CHECK RESULT
 
@@ -52,22 +64,21 @@ Preserved unresolved:
 - upper economic passage of 133;
 - surrounding units/syntax around the `80` occurrences.
 
-This is a successful integrity check: it changed confidence in both directions rather than merely confirming the repository.
-
 ## NEXT ACTION — canonical restart point
 
-1. Continue the notation-first pass on image 132 and upper 133.
-2. For W1–W6, record **visible sign structure** before assigning lexical/monetary meaning; do not reuse semantic labels as evidence.
-3. Search the currently inspected pages 132–135 for genuinely comparable value/currency/measure signs and update `palaeography/numerals.tsv` only when a visual parallel exists.
-4. If internal comparison does not discriminate W1–W6, move to the shortest external control: an actually inspected contemporary/near-contemporary primary parallel or reliable scholarly edition that reproduces the relevant notation. A finding-aid description is not sufficient.
-5. Adjudicate each W token separately in `apparatus/decisions.tsv`; `unresolved` is an acceptable result.
-6. After the notation block is stable enough, run another small adversarial sample on consequential running-text anchors, then freeze a coherent transcription checkpoint for 132–135.
-7. Only after that checkpoint, proceed to historical identification/context and broader parallel-source audit.
+1. Obtain/ingest the **complete original archive export for A = Reg. Ii 5** without renaming or reordering it.
+2. Build a source crosswalk separating: archive/signature, archival folio, export image number, stable object/image identifier or URN, PDF page, and legacy working IDs 132–135.
+3. Locate 132–135 exactly and establish the complete Knau entry boundary in A. Do not infer mappings from sequence alone.
+4. Register B (`Reg. Ii 4 Bd. II`) and C (`Reg. Ii 3`) as separate witnesses/leads; do not merge their numbering or text with A.
+5. Once A is mapped, collate the corresponding Knau passage in B as a genuinely separate textual control where passage equivalence is demonstrable.
+6. Return to W1–W6: record visible sign structure, use same-hand A evidence first, B only as a separately labelled parallel witness, and adjudicate each token independently.
+7. Freeze a coherent A transcription checkpoint; only then proceed to broader historical identification/context.
 
 ## Stop conditions
 
 Pause and mark `unresolved` rather than infer if:
 
+- image/folio identity is not established;
 - the image does not distinguish the graphemes/signs;
 - only syntax/context supports the completion;
 - a supposed parallel has not actually been inspected;
@@ -76,4 +87,4 @@ Pause and mark `unresolved` rather than infer if:
 
 ## User-facing result target
 
-A usable transcription of the Knau entry with visible uncertainty, a compact critical apparatus, and historical commentary in which every substantive claim can be traced to inspected evidence or is explicitly marked as inference.
+A usable transcription of the Knau entry in witness A with exact source provenance, visible uncertainty and a compact critical apparatus; separately labelled collation with related witnesses where demonstrable; and historical commentary in which every substantive claim can be traced to inspected evidence or is explicitly marked as inference.
