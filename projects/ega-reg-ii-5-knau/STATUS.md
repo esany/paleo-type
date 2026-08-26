@@ -8,117 +8,62 @@ Produce a source-exact, critically controlled scholarly edition of the Knau pass
 
 Generic scholarly method is defined in `../../methodology/historical-source-workflow.md`; reusable maturity requirements are in `../../methodology/research-gates.md`; diplomatic requirements are in `../../methodology/transcription-guidelines.md`.
 
-This file contains only **project-specific state**: what has been established for Knau, which generic gate is active, which source-specific requirements remain unmet, validation status and the exact next action.
-
-## Pilot method-compliance checkpoint
-
-The Knau pilot exposed a general weakness in the earlier transcription approach: provenance/evidence handling was strong, but diplomatic source representation was underspecified. The general correction has been promoted to repository methodology; the project now records only its concrete consequences.
-
-For this project:
-- archival folio + directly inspected physical line must replace export-image working IDs as the primary scholarly transcription address;
-- folio breaks, physical lineation and source-relevant layout/reading order must be checked directly;
-- uncertain positive reading must be distinguishable from illegible/gap material;
-- editorial supply/expansion must be distinguishable from written source text;
-- additions, deletions, damage and hand shifts must be representable when actually observed;
-- abbreviation sign and editor-provided expansion must remain separate;
-- a human-readable folio/line diplomatic witness view must be derivable from canonical transcription data without a second manually maintained text truth;
-- method-compliant AI-assisted work must remain distinguishable from independent qualified human validation.
-
-The existing `transcription/132.tsv`–`135.tsv` files are therefore **legacy working transcription data**, not yet the final G2-compliant scholarly representation. Existing readings and revision history remain valuable and must not be discarded.
+This is a `research-scope` project. Source-unit projects own reusable source-local mapping; research relations are recorded in `../relationships.tsv`; historical/source relations remain canonical in `../../corpus/relationships.tsv`.
 
 ## Generic gate state
-
-Canonical gate definitions: `../../methodology/research-gates.md`.
 
 - **G1 — Source and transmission basis secured:** substantially reached.
 - **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached.**
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
-- **G4 — Comparison witnesses/controls independently assessed and collated:** not reached; corresponding Reg. Ii 4 locus is located.
+- **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
 - **G5 — Critically consolidated and proportionally validated text state:** not reached.
 - **G6 — Scholarly edition produced and quality-controlled:** final goal, not reached.
 
 ## Canonical source basis
 
-### Principal witness
+Principal witness: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, Knau locus fol. 61v–63r / export images 132–135. Reusable source-local digital/folio mapping is owned by `../ega-reg-ii-5-00000129/sources/crosswalk.tsv`.
 
-`THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — ThHStAW, EGA, Reg. Ii 5, **Visitation im Amt Ziegenrück**, 1533 context.
+Project relations:
+- `scopes-source-unit` → `ega-reg-ii-5-00000129`;
+- `compares-with` → `ega-reg-ii-4-bd-ii-00000089`;
+- `uses-as-control` → `ega-reg-ii-3-00000235`;
+- `uses-as-context` → `ega-reg-ii-3-00000197`.
 
-Knau locus:
-- export image 132 = fol. 61v — Knau begins;
-- export image 133 = fol. 62r;
-- export image 134 = fol. 62v;
-- export image 135 = fol. 63r — Knau closes at top; following entry is outside scope.
-
-Exact digital/folio mapping: `sources/reg-ii-5-00000129-crosswalk.tsv`.
-
-### Existing comparison/control sources
-
-- `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — related 1533 Ziegenrück record; corresponding Knau locus at fol. `306v–309r`. Detailed independent transcription/collation remains G4 work.
-- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — 1529 Pfarreinkommen record; relevant `Knaw Kirch Einkommen` at fol. `304r`. Comparison/control for economic/notation questions, not automatically a textual witness or same-hand control.
-- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — separate earlier 1529 visitation source; no textual-dependence or same-hand claim assumed.
+These are research-organisational relations only. They do not create source dependence, same-hand status or textual equivalence.
 
 ## Existing text checkpoint
 
-The legacy transcription contains useful working readings, but it cannot yet be presented as a complete scholarly diplomatic transcript because physical lineation and several source phenomena were not systematically encoded.
-
-Controlled anchors include:
-- `Knawe` heading on fol. 61v — directly reinspected, `observed`;
-- closing Knau lines on fol. 63r — directly controlled, `observed`;
-- repeated `wolff von` — visually supported; following surname token remains graphematically variant/unresolved;
-- arabic `1` visible in economic clauses;
-- arabic `80` directly reinspected twice on fol. 62r as numeral form only.
-
-Known text gaps in the legacy representation remain especially:
-- fol. 61v: W1–W6 and U1–U2;
-- fol. 62r: upper economic/natural-obligation passage plus U3–U5 and variant lines;
-- fol. 62v: largest continuous gap, with multi-line paragraph summaries instead of line-level source text.
+The existing `transcription/132.tsv`–`135.tsv` files are legacy working transcription data, not yet the final G2-compliant representation. Controlled anchors include `Knawe` on fol. 61v, closing Knau lines on fol. 63r, repeated `wolff von`, arabic `1`, and twice-reinspected arabic `80` on fol. 62r. Known representation gaps remain especially W1–W6/U1–U2 on 61v, the upper economic passage/U3–U5 on 62r, and substantial multi-line gaps on 62v.
 
 ## Active G2 project gaps
-
-Against the generic G2 requirements, this project still needs:
 
 1. direct folio-by-folio inspection of physical lineation and reading order on 61v–63r;
 2. source-specific layout/material description sufficient to preserve list/accounting/spatial meaning;
 3. verified mapping from legacy `132–135` working rows to archival folio/physical-line addresses where possible;
-4. explicit classification of source phenomena actually present (unclear vs illegible/gap, abbreviation/expansion, additions/deletions/damage/hand shifts if observed);
-5. minimal compliant migration/extension of the principal-witness transcription without discarding prior readings/decisions;
-6. a derived human-readable diplomatic witness view;
-7. full source-representation completeness check across fol. 61v–63r.
+4. explicit classification of source phenomena actually present;
+5. minimal compliant migration/extension without discarding prior readings/decisions;
+6. derived human-readable diplomatic witness view;
+7. full representation-completeness check across fol. 61v–63r.
 
 G2 does **not** require every difficult token to be resolved.
 
 ## NEXT ACTION — canonical restart point
 
-Using the original/digital images of Reg. Ii 5 fol. 61v–63r:
-
-1. inspect each folio as a document for physical lineation, reading order and relevant layout, headings/marginalia, additions/deletions/corrections, damage/illegibility, abbreviation practice and evidence of hand shifts;
-2. assign editor line references only from direct physical-line inspection (`61v:01`, etc. conceptually); do not mechanically convert legacy `132:xx` IDs;
-3. map existing legacy transcription rows to verified folio/physical-line loci where possible, preserving legacy/export IDs as provenance;
-4. identify which source phenomena actually occur and choose the **smallest** structured representation needed by the generic transcription guideline;
-5. migrate/extend the principal-witness transcription without discarding prior readings/decisions;
+Using Reg. Ii 5 fol. 61v–63r and the source-unit crosswalk:
+1. inspect each folio for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
+2. assign editor line references only from direct physical inspection;
+3. map legacy rows to verified folio/physical-line loci while retaining export IDs as provenance;
+4. choose the smallest structured representation required by the generic transcription guideline;
+5. migrate/extend the principal-witness transcription;
 6. produce the derived human-readable diplomatic witness view;
-7. complete remaining visible text representation and run the generic G2 gate.
+7. run the generic G2 gate.
 
-Do not make detailed comparison-source analysis, historical normalization or edition rendering the controlling task until this G2 source-representation correction is complete.
+Do not let comparison-source work displace this active G2 task.
 
 ## Human-in-the-loop state
 
-The user must be able to inspect the current diplomatic text without understanding internal TSV conventions. The derived witness view is therefore a G2 requirement, not a cosmetic feature.
-
-No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded. Method-compliant AI-assisted readings remain distinguishable from later independent specialist validation.
-
-## Stop conditions
-
-Mark uncertainty rather than infer when source evidence does not discriminate; distinguish unclear positive reading from illegible/gap material; never add supplied text indistinguishably to written text; do not claim same hand without palaeographic evidence; do not infer physical-line addresses from export numbering; do not let comparison sources overwrite the principal witness.
+The user must be able to inspect the current diplomatic text without understanding internal TSV conventions. No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded.
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from the repository:
-- which generic scholarly method/gate governs the work;
-- why the legacy transcription is not yet G2-compliant;
-- which **project-specific** G2 gaps remain;
-- what existing readings remain valid working evidence;
-- the exact next source-inspection action;
-- what has and has not received independent human expert validation.
-
-If any of that requires old chat, the checkpoint is incomplete.
+A new capable researcher/agent must be able to determine from repository + sources: active gate, exact source locus, source-unit project and crosswalk, project relations, remaining G2 gaps, current text evidence and next action without old chat.

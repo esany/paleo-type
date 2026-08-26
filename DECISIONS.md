@@ -109,3 +109,12 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 **Reason:** GitHub needs to expose both system-level work sequences and human-readable project research work. A project G2 Milestone can usefully group the Issues required for diplomatic representation without becoming the scientific claim that G2 has been reached. Prohibiting all gate mirrors loses that navigation benefit; treating Milestone completion as gate completion would instead duplicate truth and create synchronization drift.
 
 **Consequence:** `MILESTONES.md` defines Milestone-family semantics and naming. Generic G1–G6 requirements remain canonical only in `methodology/research-gates.md`; actual gate state remains canonical only in project `STATUS.md`. A GitHub project-gate Milestone means planned Issue work toward that gate, not evidence-based gate attainment. One Issue uses the primary target Milestone and multiple labels for cross-disciplinary relevance. No Milestone means backlog/unscheduled, not low scholarly maturity.
+
+## D-011 — Projects have explicit kinds and project relations are not source relations
+
+**Status:** accepted  
+**Decision:** Create projects from a generic minimal contract, not by cloning a pilot. Distinguish `source-unit` projects, which own reusable source-local mapping/work for one canonical source, from `research-scope` projects, which own bounded questions/loci/edition tasks. Research-organisational project relations live in `projects/relationships.tsv`; historical/archival/textual source relations remain in `corpus/relationships.tsv`.
+
+**Reason:** As multiple archival units enter the repository, copying source mappings into every consuming research project would create drift, while treating research organisation as source history would create false scholarly claims.
+
+**Consequence:** Source-unit mappings have one canonical home; research-scope projects reference them. New projects are instantiated from `templates/project/` and must pass `methodology/project-lifecycle.md`. Project findings feed back through the explicit project → source-unit/corpus → related-project or project → generalisability → method consistency loops.

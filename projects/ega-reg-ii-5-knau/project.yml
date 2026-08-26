@@ -1,6 +1,7 @@
 id: ega-reg-ii-5-knau
 title: "Knau visitation / benefice material"
-repository_role: "first benchmark for paleo-type"
+project_kind: "research-scope"
+repository_role: "first benchmark research project for paleo-type"
 canonical_source_id: "THHSTAW-EGA-REG-II-5-STAT-VIS-00000129"
 archive: "Landesarchiv Thüringen – Hauptstaatsarchiv Weimar"
 collection: "Ernestinisches Gesamtarchiv"
@@ -14,5 +15,6 @@ working_images:
   - "135"
 active_scope: "Knau entry in ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r; legacy export images 132–135"
 canonical_status_file: "STATUS.md"
+source_binary_policy: "Principal and comparison archive-export binaries remain external-to-git and are identified canonically in corpus/files.tsv."
 transcription_mode: "conservative graphematic working transcription"
 external_context_allowed_in_blind_reading: false

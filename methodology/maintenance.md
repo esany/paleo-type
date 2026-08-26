@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Keep `paleo-type` continuously usable without creating a second documentation project. Maintenance is event-driven: when research or method changes, update the canonical record that owns that information. Do not create periodic process work merely to make the repository look maintained.
+Keep `paleo-type` continuously usable without creating a second documentation project. Maintenance is event-driven: when research or method changes, update the canonical record that owns that information, propagate only material consequences, then return to research.
 
 ## One fact, one canonical home
 
@@ -14,48 +14,93 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | GitHub Milestone-family/naming/backlog semantics | `MILESTONES.md` | planning/navigation rules only |
 | authoritative end-to-end scholarly method | `methodology/historical-source-workflow.md` | reusable normative method |
 | generic scholarly maturity gates | `methodology/research-gates.md` | reusable G1–G6 requirements |
-| detailed generic method | `methodology/*.md` | reusable specialist rules |
+| project creation/kinds/relations/feedback | `methodology/project-lifecycle.md` | reusable project lifecycle rules |
+| minimal new-project contract | `templates/project/` | project creation template |
 | corpus source identity and inspection stage | `corpus/sources.tsv` | corpus inventory |
 | external/digital source file or instantiation identity/checksum/coverage/storage/rights | `corpus/files.tsv` | canonical file/instantiation manifest |
-| explicit source/event/entity relationships | `corpus/relationships.tsv` | relationship claims + evidence status |
+| historical/archival/textual source relations | `corpus/relationships.tsv` | relationship claims + evidence status |
 | administrative/historical event context | `corpus/events.tsv` | contextual event/activity registry |
 | recurring normalized identities | `entities/*.tsv` | corpus-level normalized identities |
-| project identity/stable scope | `projects/<id>/project.yml` | project identity |
+| research-organisational project relations | `projects/relationships.tsv` | project-to-project use/dependency only |
+| project identity/kind/stable scope | `projects/<id>/project.yml` | project identity |
 | current project gate state, source-specific gaps and exact next action | `projects/<id>/STATUS.md` | restart point |
-| project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk |
-| project transcription | `projects/<id>/transcription/` | transcription truth |
-| substantive source/reading decisions | `projects/<id>/apparatus/decisions.tsv` | revision trail |
-| external literature/source inspection audit | `projects/<id>/research/` | checked-vs-lead distinction |
-| source/hand-specific comparisons | `projects/<id>/palaeography/` | empirical comparison evidence |
-| project-specific failures/lessons | `projects/<id>/LEARNINGS.md` | learning record |
+| reusable source-local image/folio/export mapping | owning `source-unit` project's `sources/` | source-local canonical mapping |
+| scoped transcription/decisions/analysis | owning research project directories | scoped research truth |
+| substantive source/reading decisions | project `apparatus/decisions.tsv` | revision trail |
+| external literature/source inspection audit | project `research/` | checked-vs-lead distinction |
+| source/hand-specific comparisons | project `palaeography/` | empirical comparison evidence |
+| project-specific failures/lessons | project `LEARNINGS.md` | learning record |
 | deferred/discrete tracked work | GitHub Issues | work package/backlog, never current research truth |
 | end-user explanation | GitHub Wiki | handbook only |
 | exploratory reasoning | chat | transient workspace only |
 
-Projects do **not** own copies of generic gate requirements. Explanations and GitHub metadata may mirror/routinely summarize canonical records, but they must not become parallel truth stores.
+Projects do **not** own copies of generic gate requirements. Consumer projects do **not** own copies of reusable source-unit mappings. Explanations and GitHub metadata may mirror/summarize canonical records, but they must not become parallel truth stores.
 
-## Framework / corpus / project ownership test
+## Method / corpus / project ownership test
 
 Before creating/updating a durable record ask:
-1. Would the statement remain a valid rule for another comparable manuscript project? → `methodology/` (or `AGENTS.md` / `DECISIONS.md`).
-2. Does it concern identities/relationships spanning sources or projects? → `corpus/` / `entities/`.
-3. Does it concern what was found, read, decided or remains open in one concrete project? → `projects/<id>/`.
+1. Would the statement remain a valid rule for another comparable manuscript project? → METHOD (`methodology/`, `AGENTS.md`, `DECISIONS.md`).
+2. Does it concern historical/source identity, source relationships, shared events or normalized entities? → CORPUS / `entities/`.
+3. Does it concern how our research projects relate organizationally? → `projects/relationships.tsv`.
+4. Does it concern what was found, read, decided or remains open in one concrete project? → `projects/<id>/`.
 
 A pilot may reveal a generic weakness, but project evidence becomes method only after an explicit generalisability check.
+
+## Project lifecycle
+
+Follow `methodology/project-lifecycle.md` for every project creation or material project-structure change.
+
+Key invariants:
+- a corpus source is not automatically a project;
+- create projects from `templates/project/`, never by cloning a concrete project;
+- supported project kinds are `source-unit` and `research-scope` until an observed need justifies another;
+- source-unit projects own reusable source-local mappings;
+- research-scope projects reference source-unit mappings rather than copying them;
+- project relations never stand in for historical/source relations;
+- do not create empty future-proof directories;
+- dormant source-unit projects may state `not yet activated` without becoming backlog debt.
+
+### New-project creation check
+
+Before accepting a new project verify:
+1. project ID is unique and project kind is explicit/valid;
+2. canonical source ID exists where applicable;
+3. exact digital binaries used as evidence are registered in `corpus/files.tsv`;
+4. project scope is bounded and does not imply unsupported completeness;
+5. `STATUS.md` states actual inspection/evidence state;
+6. generic gates/method are referenced rather than copied;
+7. reusable source-local mapping has exactly one canonical owner;
+8. material project-to-project use is recorded in `projects/relationships.tsv`;
+9. historical/source claims remain in `corpus/relationships.tsv`;
+10. another capable researcher can restart without chat.
+
+If the same machine-checkable creation failure recurs, consider activating schema validation under its existing trigger; do not automate pre-emptively.
+
+## Feedback loops
+
+### Research-scope discovers source-level correction
+`project evidence → verify → update source-unit/corpus owner → follow projects/relationships.tsv → update only affected project consequences → bounded consistency pass`.
+
+### Project discovers generic methodological weakness
+`project observation → project learning/status → explicit generalisability check → methodology/DECISIONS update → bounded consistency pass`.
+
+### Source-unit mapping changes
+Update only the source-unit owner first, then related consumer projects whose state/reference actually changes. Never replicate the corrected mapping into every consumer.
 
 ## Required reading paths
 
 ### Human
-Read `README.md` first. For one project, read its `STATUS.md`; generic maturity requirements live in `methodology/research-gates.md`. Read `MILESTONES.md` when interpreting scheduled Issues/Milestones.
+Read `README.md` first. For one project, read its `STATUS.md`; generic maturity requirements live in `methodology/research-gates.md`. Read `methodology/project-lifecycle.md` for project kinds/relations and `MILESTONES.md` when interpreting scheduled Issues/Milestones.
 
 ### AI continuing research
 1. read `README.md` if repository structure is not already established;
 2. read `AGENTS.md`;
 3. read project `STATUS.md`;
 4. read the active generic gate in `methodology/research-gates.md`;
-5. inspect relevant `corpus/` records when source identity/files/relations matter;
-6. read relevant project decisions/LEARNINGS and only methodology needed for the task;
-7. continue from `NEXT ACTION` unless inspected evidence requires a change.
+5. inspect relevant corpus records and `projects/relationships.tsv` when source/project identity or relations matter;
+6. inspect owning source-unit mapping when a research-scope depends on it;
+7. read only methodology needed for the task;
+8. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 ## GitHub-native human navigation
 
@@ -109,12 +154,18 @@ Small/local research or maintenance change may commit directly to `main`; cohesi
 ### Tags/releases
 Use only for intentionally frozen, reproducible research/publication checkpoints. Do not release ordinary development increments. G5/G6 are natural candidates; earlier gates only when independently useful.
 
-Do not introduce Projects/Kanban or Discussions without an observed need. Governance protections such as CODEOWNERS/rulesets may be introduced only when their concrete protection requirement is established (for example under #41).
+Do not introduce Projects/Kanban or Discussions without an observed need. Governance protections such as CODEOWNERS/rulesets may be introduced only when their concrete protection requirement is established.
 
 ## Maintenance triggers
 
 ### Source identity/stage/file/relation changes
-Update the corresponding canonical corpus record and project crosswalk/status only when project consequence changes.
+Update the corresponding canonical corpus/source-unit owner, then affected project status/reference only when project consequence changes.
+
+### Project relation changes
+Update `projects/relationships.tsv`; review only directly affected project statuses/references.
+
+### Project creation/kind/scope changes
+Run the new-project creation check and verify source-unit/research-scope ownership boundaries.
 
 ### Transcription changes
 Update project transcription; log consequential replacements/rejections; update palaeographic evidence and `STATUS.md` when active uncertainty/next action changes.
@@ -125,27 +176,29 @@ Update project research audit with actual access level/passages.
 ### Project lesson learned
 Record the concrete failure/correction in `LEARNINGS.md`. Promote only a genuinely general safeguard into methodology.
 
-### Generic method/gate changes
-Update the owning methodology file; record durable cross-project rationale in `DECISIONS.md` when needed; then run a bounded repo-wide consistency pass across dependent projects. Re-check project-gate Milestone descriptions/assignments only if the changed gate materially affects planned Issues; do not copy the changed generic requirements into GitHub.
+### Generic method/gate/lifecycle changes
+Update the owning methodology file; record durable cross-project rationale in `DECISIONS.md` when needed; then run a bounded repo-wide consistency pass. Re-check project-gate Milestone descriptions/assignments only if the changed gate materially affects planned Issues; do not copy generic requirements into GitHub.
 
 ### Active task/gate state changes
-Update project `STATUS.md` first; do not copy generic gate requirements into the project. Then review whether scheduled scholarly Issues still target the correct project gate Milestone. This also triggers an issue-trigger audit.
+Update project `STATUS.md` first; then review whether scheduled scholarly Issues still target the correct project gate Milestone. This also triggers an issue-trigger audit.
 
 ### Governance/architecture phase changes
 Update the appropriate `GOV-*` Issue/Milestone planning state. Do not infer or modify project scholarly gate state unless research evidence itself changed.
 
 ## Bounded repo-wide consistency pass
 
-Run after material canonical changes such as source-ID migration, provenance correction, file-manifest change, relationship-status change, generic gate/method change or repository restructuring.
+Run after material canonical changes such as source-ID migration, provenance correction, file-manifest change, source/project relationship change, project-ownership migration, generic gate/method/lifecycle change or repository restructuring.
 
 Start from changed canonical truths:
-1. state changed truths/identifiers;
-2. check dependent canonical records/project crosswalks;
-3. check derived project state (`project.yml`, `STATUS.md`, research/source audits) for obsolete wording/completed next steps;
-4. search for stale identifiers, old generic-rule copies and contradictory claims;
-5. audit relevant open Issues against triggers/current implementation and check that Milestone family/target still matches scheduled work;
-6. apply the fachlich-technisches quality gate from `AGENTS.md`;
-7. stop when coherent and return to research.
+1. state changed truths/identifiers/owners;
+2. check corpus and `projects/relationships.tsv` referential integrity;
+3. check source-unit mappings and consuming research-scope references;
+4. check project `project.yml`/`STATUS.md` for obsolete scope/kind/path/next-step wording;
+5. search for duplicate crosswalks, stale identifiers, old generic-rule copies and contradictory relations;
+6. audit relevant open Issues against triggers and check Milestone family/target consistency;
+7. apply the fachlich-technisches quality gate from `AGENTS.md`;
+8. verify restartability;
+9. stop when coherent and return to research.
 
 Do not use a consistency pass to invent new architecture or re-adjudicate manuscript readings unless a genuine research problem is exposed.
 
@@ -160,7 +213,7 @@ Do not use a consistency pass to invent new architecture or re-adjudicate manusc
 ## Human–AI maintenance responsibility
 
 ### AI
-Own routine repository/corpus hygiene, propagation of changed truths, cross-reference repair, issue-trigger audit, Milestone-assignment consistency and restartability. Surface missing metadata rather than inventing it.
+Own routine repository/corpus/project hygiene, propagation of changed truths, project/source relation integrity, issue-trigger audit, Milestone-assignment consistency and restartability. Surface missing metadata rather than inventing it.
 
 ### User
 Own research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not the repository synchronizer or default specialist adjudicator.
@@ -171,20 +224,21 @@ Escalation/review role when consequence/uncertainty warrants independent special
 ## End-of-work integrity check
 
 Before completing consequential work ask:
-1. What research/method truth changed?
-2. Is it in the correct method/corpus/project canonical home?
-3. Did a generic method change leak source-specific facts into methodology or duplicate generic requirements inside a project?
-4. Did a source/file/relation change require corpus updates?
-5. Did a reading change require transcription/decision/palaeography updates?
-6. Did project gate state/next action change?
-7. If Issue-tracked work changed, is its target Milestone family/assignment still correct without being mistaken for scholarly state?
-8. Did a project failure create a generalisable learning?
-9. Did a deferred issue trigger actually fire, become obsolete, or get implemented elsewhere?
-10. Is a bounded consistency pass required?
-11. Can another capable researcher identify the source, understand the active generic gate and continue without chat?
+1. What research/method truth changed and who owns it?
+2. Is source-level truth in corpus/source-unit rather than a consumer research-scope project?
+3. Are project relations distinct from historical/source relations?
+4. Did a project structure change pass project-lifecycle invariants?
+5. Did the change require propagation through `projects/relationships.tsv`?
+6. Did a generic method change leak source-specific facts into methodology or duplicate generic requirements inside a project?
+7. Did project gate state/next action change?
+8. If Issue-tracked work changed, is its target Milestone family/assignment still correct without being mistaken for scholarly state?
+9. Did a project failure create a generalisable learning?
+10. Did a deferred issue trigger fire, become obsolete, or get implemented elsewhere?
+11. Is a bounded consistency pass required?
+12. Can another capable researcher identify source/project ownership and continue without chat?
 
-If 11 is no, persist the minimum missing state.
+If 12 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
-`Maintain on change, preserve method/corpus/project boundaries, keep GitHub planning metadata subordinate to canonical research state, audit deferred triggers at meaningful change points, propagate material truth changes, then stop.`
+`Maintain on change; one fact, one owner; reference rather than copy; keep GitHub planning metadata subordinate to canonical research state; propagate through explicit relations; then stop.`
