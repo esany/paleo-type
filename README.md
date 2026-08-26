@@ -25,7 +25,7 @@ Before substantive work:
 
 1. read `AGENTS.md`;
 2. read `DECISIONS.md` only when a shared method/data-model choice matters;
-3. inspect `corpus/sources.tsv`, `corpus/relationships.tsv` and `corpus/events.tsv` when source identity/relations matter;
+3. inspect relevant corpus records (`corpus/sources.tsv`, `corpus/files.tsv`, `corpus/relationships.tsv`, `corpus/events.tsv`) when source identity, inspected files or relations matter;
 4. read the active project's `STATUS.md`;
 5. read relevant `apparatus/decisions.tsv` rows and `LEARNINGS.md`;
 6. read only the methodology files needed for the current task;
@@ -41,13 +41,14 @@ One fact should have one canonical home.
 - `AGENTS.md` — binding operating guardrails and fachlich-technisches quality gate.
 - `DECISIONS.md` — only consequential cross-project method/data-model decisions and their rationale.
 - `methodology/` — reusable scholarly method and governance.
-- `corpus/sources.tsv` — canonical inventory of archival/source units.
+- `corpus/sources.tsv` — canonical inventory of archival/source units and their inspection stage.
+- `corpus/files.tsv` — canonical manifest of external/digital source files or instantiations, including file identity/checksum, coverage, storage expectation and rights status where recorded.
 - `corpus/relationships.tsv` — explicit claims about relationships between records, witnesses, events and entities.
 - `corpus/events.tsv` — administrative/historical activities that contextualize records without implying textual identity.
 - `entities/` — normalized recurring identities; manuscript forms remain in transcriptions.
 - project `project.yml` — stable project scope metadata.
 - project `STATUS.md` — canonical current state and exact restart point.
-- project `sources/` — project-specific image/folio/export crosswalks and source inspection records.
+- project `sources/` — project-specific image/folio/export crosswalks and source inspection details; not a replacement for the corpus file manifest.
 - `transcription/` — current line-level readings.
 - `apparatus/decisions.tsv` — substantive source/reading revisions, rejections and adjudications.
 - `palaeography/` — empirical comparison evidence.
@@ -170,9 +171,9 @@ README.md
 methodology/
 corpus/
   sources.tsv
+  files.tsv
   relationships.tsv
   events.tsv
-  files.tsv
 entities/
 projects/
   ega-reg-ii-5-knau/
@@ -201,7 +202,7 @@ The programme is incremental and evidence-driven:
 6. prioritize new records by expected reduction of consequential uncertainty;
 7. automate only proven repetitive bottlenecks.
 
-Exact source identities, dates, folios, URLs, roles and inspection states live in `corpus/sources.tsv`, not as shorthand source lists in this README.
+Exact source identities, dates, folios, URLs, roles and inspection states live in `corpus/sources.tsv`; external/digital file identity and recoverability live in `corpus/files.tsv`, not as shorthand source lists in this README.
 
 ## Deferred work: GitHub Issue contract
 
@@ -237,6 +238,7 @@ The architecture is sufficient when another capable researcher/agent, given only
 - what the project/corpus contains;
 - what each source actually is;
 - what was inspected versus merely catalogued;
+- which external/digital source file or instantiation underlies consequential work and how it is recoverable;
 - how sources are believed to relate and at what evidential level;
 - what the current transcription says and where it is uncertain;
 - why consequential decisions were made;
