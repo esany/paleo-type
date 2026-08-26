@@ -10,6 +10,47 @@ The assistant is expected to contribute relevant historical, palaeographic, ling
 
 The first benchmark is the Knau visitation material in ThHStAW, EGA, Reg. Ii 5 (working images 132–135).
 
+## Start here — what to read
+
+The README is the orientation layer for both humans and AI. It should remain sufficient to understand what the repository is for, how it is organized, where the authoritative records live and what must be read next.
+
+### Human who wants to understand the repository
+
+Read this README first. It is intentionally the shortest complete map of the system. Open deeper files only when you need the underlying rule, evidence or project detail.
+
+### AI continuing research
+
+Before substantive work on an existing project:
+
+1. read this README if the repository structure is not already established in context;
+2. read `AGENTS.md` for mandatory operating constraints;
+3. read the active project's `STATUS.md` for the exact restart point;
+4. read relevant rows in `apparatus/decisions.tsv` and the project's `LEARNINGS.md`;
+5. read only the methodology files relevant to the task;
+6. continue from `next_action` unless evidence gives a concrete reason to change course.
+
+The old chat must not be required to reconstruct the research state.
+
+## Where truth lives
+
+`paleo-type` avoids parallel truth stores.
+
+- **README** — repository purpose, map and required reading path.
+- **`AGENTS.md`** — binding AI/research guardrails.
+- **`methodology/`** — reusable normative method and governance.
+- **`project.yml`** — stable project identity/scope metadata.
+- **`STATUS.md`** — canonical current state and exact next action for a project.
+- **`transcription/`** — current line-level readings.
+- **`apparatus/decisions.tsv`** — substantive changes, rejections and adjudications.
+- **`sources/` / `research/`** — what sources were actually inspected and what they can support.
+- **`palaeography/`** — empirical hand/source-specific comparison evidence.
+- **`LEARNINGS.md`** — project-specific failures, corrections and lessons.
+- **GitHub Wiki** — end-user handbook and explanation; not a second research-status store.
+- **Chat** — transient working space; not durable research memory.
+- **Primary sources** — historical evidence.
+
+For the detailed ownership and maintenance rules see `methodology/maintenance.md`.
+
 ## Non-negotiable principles
 
 1. **Evidence before plausibility.** Never turn a plausible completion into a reading.
@@ -28,10 +69,43 @@ The first benchmark is the Knau visitation material in ThHStAW, EGA, Reg. Ii 5 (
 14. **Research outcome before system development.** `paleo-type` exists to unlock sources, not to become an end in itself. Build or automate only when it materially improves the current research result.
 15. **Lean by default.** Add tooling only when it shortens the path to a more reliable transcription or interpretation.
 16. **Learning feeds back.** Proven project learnings may improve the general method, but project-specific facts never become general palaeographic rules.
+17. **Maintenance follows change.** When research truth changes, update the one canonical record that owns it. Do not create duplicate status or documentation stores.
 
 A compact formulation of the intended division of labour is:
 
-`AI supplies expertise → evidence tests and constrains → provenance records consequential AI use → validation scales with stakes → uncertainty remains visible → user controls purpose/depth → expert review only when warranted`
+`AI supplies expertise and maintains research state → evidence tests and constrains → provenance records consequential AI use → validation scales with stakes → uncertainty remains visible → user controls purpose/depth → expert review only when warranted`
+
+## Human–AI division of labour
+
+### AI / assistant
+
+The assistant is responsible for the specialist and procedural work it can perform reliably:
+
+- historical, palaeographic, linguistic, archival and methodological analysis;
+- candidate generation and controlled comparison;
+- source-status discipline and evidence tracing;
+- identifying the next evidential test instead of asking the user to guess;
+- maintaining affected repository records as research progresses;
+- keeping `STATUS.md` restartable;
+- detecting documentation drift after structural or methodological changes;
+- surfacing uncertainty, missing metadata or rights constraints rather than inventing them.
+
+### User
+
+The user controls decisions that depend on purpose, access or authority:
+
+- the research question and desired result;
+- which material should be investigated and any source access only the user can provide;
+- facts about permissions, ownership, confidentiality or embargoes that are not otherwise verifiable;
+- acceptable effort/depth where several defensible research paths exist;
+- whether a consequential unresolved question warrants external expert review;
+- whether and where results will be published or used consequentially.
+
+The user is not expected to maintain repository synchronization manually or to adjudicate specialist historical/palaeographic questions they cannot validate.
+
+### Qualified human expert
+
+A qualified specialist is an escalation and independent-review role when consequences or unresolved expertise warrant it, not a routine prerequisite for ordinary source work.
 
 ## Evidence layers
 
@@ -63,8 +137,15 @@ Only `P`, `E`, and `F` support claims about content, and only within the passage
 ## Repository structure
 
 ```text
+AGENTS.md                    Mandatory AI/research guardrails
+README.md                    Repository entry point and reading map
 methodology/                 General rules that apply to every project
   ai-governance.md           Lean AI provenance, rights and validation rules
+  evidence-policy.md         Source status and claim discipline
+  maintenance.md             Canonical ownership, upkeep triggers and responsibilities
+  quality-and-learning.md    Error taxonomy and learning loop
+  transcription-guidelines.md Conservative transcription conventions
+  workflow.md                Minimal research workflow
 projects/
   ega-reg-ii-5-knau/         First benchmark/source project
     STATUS.md                Exact restart point and next action
@@ -93,7 +174,30 @@ projects/
 11. Keep source-derived facts separate from inference and interpretation.
 12. Use expert knowledge to choose the next best comparison or source check, not to overwrite uncertainty.
 13. Raise validation when the consequence of error rises; evaluate AI explicitly if it becomes a systematic corpus-level method.
-14. Feed genuinely generalizable lessons back into `methodology/`.
+14. Persist the changed research state in its canonical files so another agent can continue without the chat.
+15. Feed genuinely generalizable lessons back into `methodology/`.
+
+## Continuous maintenance
+
+Maintenance is **event-driven, not calendar-driven**. There is no value in a recurring maintenance ritual if nothing relevant changed.
+
+When research changes a reading, source status, active uncertainty, next action, project lesson or general method, the assistant updates the affected canonical record as part of the same work session when practical. The assistant should not leave repository housekeeping to the user.
+
+Before a substantive research session is considered complete, the decisive check is:
+
+> **Could another capable agent continue correctly from the repository without recovering this chat?**
+
+If not, persist the minimum missing state. Do not generate extra documentation merely to satisfy the check.
+
+Detailed maintenance triggers are defined in `methodology/maintenance.md`.
+
+## Wiki contract
+
+The GitHub Wiki is for **end users**, not for maintaining a parallel research state.
+
+It should explain, in accessible language, how `paleo-type` works, what the user must provide, what the AI does, how to understand `working`/`variant`/`unresolved`, what the evidence statuses mean, and what an output can or cannot establish.
+
+The Wiki may show a human-friendly project overview, but the authoritative current state remains the project's `STATUS.md`; readings remain in `transcription/`; source status remains in `sources/` and `research/`. If Wiki and repository ever disagree, the repository wins and the Wiki should be corrected.
 
 ## Research-first rule
 
