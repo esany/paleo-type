@@ -57,3 +57,11 @@ Observed failure: chat-based work repeatedly revisited method and lost the exact
 Corrective practice: `STATUS.md` contains one canonical `NEXT ACTION` and is updated when the research state changes.
 
 Generalizable: yes.
+
+## L008 — the pilot was allowed to define generic method
+
+Observed failure: generic scholarly gate requirements and parts of the method were copied into the Knau project and mixed with source-specific facts such as concrete folios, working IDs and unresolved tokens. This made the pilot a hidden second definition of the framework.
+
+Corrective practice: generic method/gates now live only in `methodology/`; Knau `STATUS.md` records only its own state and evidence gaps against those generic requirements. Concrete pilot observations remain here or in project research records and are promoted only after an explicit generalisability check.
+
+Generalizable: yes; reflected in `methodology/historical-source-workflow.md`, `methodology/research-gates.md`, `AGENTS.md` and `DECISIONS.md` D-009.
