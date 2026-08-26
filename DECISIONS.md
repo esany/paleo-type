@@ -91,3 +91,12 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 **Reason:** Tooling overhead can displace the actual historical research and create maintenance burden.
 
 **Consequence:** The default response to a research problem is the simplest discriminating source/evidence action, not new infrastructure.
+
+## D-009 — Method, corpus and project knowledge are separate layers
+
+**Status:** accepted; supersedes project-local copies of generic research gates.  
+**Decision:** Reusable scholarly method and G1–G6 maturity requirements live once in `methodology/`; cross-source identities/context live in `corpus/` and `entities/`; concrete source observations, readings, decisions, validation state and next actions live in `projects/<id>/`. A pilot project may expose a methodological weakness but does not define generic method automatically.
+
+**Reason:** Mixing pilot facts with reusable method creates hidden coupling, duplicated truth, drift and false generalisation from a single source.
+
+**Consequence:** Project `MILESTONES.md` copies are removed. Generic gates live in `methodology/research-gates.md`; project `STATUS.md` records only state and source-specific gaps against those gates. Generalisation follows `project observation → project learning/status → explicit generalisability check → methodology/decision update`.
