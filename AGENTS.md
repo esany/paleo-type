@@ -8,6 +8,19 @@ Help the user reach reliable, usable scholarly results from early modern handwri
 
 The goal is source access and historical understanding, not development of `paleo-type` for its own sake.
 
+## Required professional lenses
+
+Apply the relevant expertise without requiring the user to police it:
+
+- **historical source criticism** — provenance, transmission, purpose, dependency, context and limits of inference;
+- **archival/diplomatic reasoning** — archival hierarchy, record identity, foliation, document stage/type, copies/extracts/attachments and digital mediation;
+- **palaeography/editorial method** — grapheme comparison, abbreviations, hands, numerals/notation, diplomatic transcription, variants and collation;
+- **early-modern domain knowledge** — administrative, ecclesiastical, legal, economic, monetary, metrological and visitation-specific concepts as hypothesis/test knowledge, never as substitute manuscript evidence;
+- **research-data/provenance modelling** — stable identity, explicit relationships, evidence status, referential integrity and reproducible source mapping;
+- **research software engineering** — Git traceability, simple maintainable formats, validation proportional to risk and automation only for demonstrated bottlenecks.
+
+Domain expertise may suggest what to test. It may not make an unread sign, undocumented source relation or historical identification true.
+
 ## Human–AI division of labour
 
 - **AI supplies expertise and candidates.** Apply historical, palaeographic, linguistic, archival and methodological knowledge proactively.
@@ -157,15 +170,28 @@ Follow `methodology/ai-governance.md`.
 Before continuing existing research:
 
 1. read `README.md` if structure is not already established;
-2. inspect relevant `corpus/` rows when source identity/relationships matter;
-3. read project `STATUS.md`;
-4. read relevant decision rows and `LEARNINGS.md`;
-5. read only relevant methodology;
-6. continue from `NEXT ACTION` unless inspected evidence requires a change.
+2. read `DECISIONS.md` when a shared method/data-model choice is relevant;
+3. inspect relevant `corpus/` rows when source identity/relationships matter;
+4. read project `STATUS.md`;
+5. read relevant decision rows and `LEARNINGS.md`;
+6. read only relevant methodology;
+7. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 When changing a substantive reading, preserve the prior reading, new reading, evidence type and residual uncertainty in the appropriate canonical records.
 
 When changing a source relationship, preserve the previous relation/status where consequential, cite the basis and do not upgrade beyond demonstrated evidence.
+
+## Lean decision discipline
+
+Use `DECISIONS.md` only for consequential cross-project methodological or architectural decisions whose rationale would otherwise need to be rediscovered. Keep entries short: decision, reason, consequence, and supersession/revisit condition where useful.
+
+- concrete source/reading decision → project `apparatus/decisions.tsv`;
+- current research state → project `STATUS.md`;
+- project-specific correction/lesson → `LEARNINGS.md`;
+- deferred improvement → GitHub Issue;
+- ordinary implementation detail → Git history.
+
+Do not create ADR ceremony or duplicate the same truth across these stores.
 
 ## Maintenance discipline
 
@@ -181,6 +207,7 @@ Update only the canonical record whose truth changed:
 - active problem/next action → project `STATUS.md`;
 - project learning → `LEARNINGS.md`;
 - general method → `methodology/`;
+- shared architectural/methodological rationale → `DECISIONS.md`;
 - repository map → README.
 
 Final restartability test:
@@ -201,6 +228,30 @@ Every future Issue must state:
 4. **Acceptance criteria / Definition of Done**.
 
 Do not create technology wish lists. Close/merge duplicate or overly granular issues. Current research-integrity requirements belong in methodology, not in a deferred issue.
+
+## Fachlich-technisches quality gate
+
+Before completing consequential work, check only what is relevant:
+
+**Fachlich**
+
+- Was the source inspected at the level claimed?
+- Are archival, textual/palaeographic and historical claims still separate?
+- Did domain knowledge generate a test rather than substitute for evidence?
+- Are uncertainty and genuine alternatives preserved?
+- Is a parallel/source relationship supported only as strongly as inspection/collation permits?
+- Is consequential corroboration genuinely independent?
+
+**Technisch / research-data**
+
+- Does every consequential source/record/locus have an unambiguous canonical identity and provenance path?
+- Are folio, portal image, PDF/export numbering and file identity kept distinct?
+- Do changed IDs/relationships remain referentially coherent in affected canonical records?
+- Did changed research truth reach its single canonical home?
+- Is the simplest maintainable representation being used rather than unnecessary infrastructure?
+- Could another capable researcher/agent restart without this chat?
+
+If a machine-checkable structural failure begins recurring (invalid IDs/statuses, broken references, malformed TSV/schema drift), implement the smallest automated validation that catches the observed class of error. Do not build validation infrastructure speculatively.
 
 ## Anti-slop / integrity check before completing consequential work
 
@@ -223,4 +274,4 @@ If any answer is problematic, repair the evidence/state rather than increasing p
 
 ## Learning loop
 
-Concrete project failures/corrections go first into the project's `LEARNINGS.md`. Promote only genuinely general safeguards into `methodology/`. Remove or simplify rules that create overhead without preventing real error.
+Concrete project failures/corrections go first into the project's `LEARNINGS.md`. Promote only genuinely general safeguards into `methodology/` or, for durable cross-project choices, `DECISIONS.md`. Remove or simplify rules that create overhead without preventing real error.
