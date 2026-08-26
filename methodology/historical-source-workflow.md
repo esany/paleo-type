@@ -8,7 +8,8 @@ The goal is source-exact, human-auditable historical research whose archival, tr
 
 Detailed files implement parts of this method:
 
-- `source-and-provenance.md` — archival/source identity and digital provenance;
+- `source-and-provenance.md` — archival/source identity, exact digital instantiations and preservation;
+- `project-lifecycle.md` — investigation/source-group boundaries, project creation and feedback;
 - `transcription-guidelines.md` — diplomatic source representation;
 - `research-gates.md` — generic scholarly maturity requirements;
 - `evidence-policy.md` — inspected-source/evidence status;
@@ -21,19 +22,19 @@ If a project-specific file conflicts with this generic method, preserve the proj
 
 `paleo-type` has three distinct levels:
 
-1. **METHOD (`methodology/`, `AGENTS.md`, `DECISIONS.md`)** — rules that should remain valid for another comparable historical-handwriting project.
-2. **CORPUS (`corpus/`, `entities/`)** — identities and relationships that span sources/projects.
-3. **PROJECT (`projects/<id>/`)** — concrete source observations, transcription, comparison evidence, research state and source-specific decisions.
+1. **METHOD (`methodology/`, `AGENTS.md`, `DECISIONS.md`)** — rules that should remain valid for another comparable historical-handwriting investigation.
+2. **CORPUS (`corpus/`, `entities/`)** — canonical archival/source identities, exact digital instantiations, reusable source-wide mappings, source/event/entity relationships and normalized identities.
+3. **PROJECT (`projects/<id>/`)** — a bounded historical investigation / source-unlocking undertaking over a coherent source group, including project-specific source roles/loci, observations, transcription, comparison evidence, decisions and research state.
 
-Generalisation test:
+Generalisation/ownership test:
 
-> Would this statement still be a valid requirement if the next project used a different early-modern manuscript?
+> Would this statement still be a valid requirement if the next project used a different early-modern manuscript/source group?
 
 - yes → methodology;
-- no, but it concerns multiple corpus records → corpus;
-- no, it concerns the concrete source/research case → project.
+- no, but it is canonical source/file/reusable mapping/relationship truth → corpus;
+- no, it concerns one investigation's source role/locus/reading/state → project.
 
-Project facts may illustrate a method in discussion, but they must not become normative method merely because the pilot exhibited them.
+A source record or PDF is not automatically a project. Separately identified archival records remain separate sources even when they share a volume/signature. Project facts may illustrate a method in discussion, but they must not become normative method merely because the pilot exhibited them.
 
 ## Research-question control
 
@@ -89,12 +90,12 @@ When a standards version materially changes a repository rule, document the insp
 
 # End-to-end scholarly method
 
-## S1 — Identify source and establish provenance
-**Question:** What exactly is the source object/record and how can it be recovered?
+## S1 — Establish investigation source group and provenance
+**Question:** Which distinct archival/source records form the investigation, what role/locus does each have, and how can the exact inspected instantiations be recovered?
 
-Required method: distinguish archival unit, record, witness, locus and instantiation; preserve archival/catalogue identifiers and stable digital identifiers; keep folio/page, portal image, export sequence, PDF page and working IDs separate; distinguish catalogue statements from direct observations; model copy/extract/parallel/event relationships as claims with evidential status.
+Required method: define the bounded project source group; independently identify every material source record; preserve separately catalogued/identified records even when they share a volume/signature; distinguish archival unit, record, witness, locus and instantiation; record each source's project role and relevant locus without rewriting canonical source identity; preserve archival/catalogue identifiers and stable digital identifiers; for consequential file-based work record exact original filename, SHA-256, coverage and preservation/storage state; treat URL/URN as secondary provenance rather than equivalent backup; keep folio/page, portal image, export sequence, PDF page and working IDs separate; distinguish catalogue statements from direct observations; model copy/extract/parallel/event relationships as claims with evidential status.
 
-**Completion evidence:** a third party can identify and recover the exact source/locus/instantiation without chat.
+**Completion evidence:** a third party can reconstruct the project source group, distinguish its archival records and their roles/loci, and recover or explicitly account for the exact inspected instantiations without chat.
 
 ## S2 — Describe document and material/textual structure
 **Question:** What documentary/material structure is relevant to reading, transmission and transcription?
@@ -224,7 +225,7 @@ A pilot may expose a methodological weakness. Learning path:
 For any new rule, field, structure or workflow step ask:
 1. Which research question or required source-representation task does it serve?
 2. Which disciplinary requirement/domain governs it?
-3. Is it generic method, corpus identity/context, or project-specific evidence?
+3. Is it generic method, canonical corpus/source truth, or project-specific investigation evidence?
 4. Does it improve scholarly validity, auditability or human usability?
 5. Is the leanest adequate representation being used?
 
