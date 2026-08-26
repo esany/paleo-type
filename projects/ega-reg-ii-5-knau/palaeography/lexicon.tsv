@@ -1,0 +1,12 @@
+form	status	locations	purpose	note
+Knawe	working	132;133;134;135	place-form comparison	Historical identification kept separate
+wolff	working	132;133;134	grapheme/word anchor	Earlier `welch` reading rejected at one occurrence
+grevendorff	variant	132;133;134	surname-form comparison	Alternatives include greuendorff/grefendorff; do not normalize in transcription
+pfarrer	working	132;133;134;135	frequent word anchor	Includes inflected pfarrern
+pfarrlehen	working	132;134	compound anchor	Direct occurrences need checkpoint reinspection
+pfarrholtz	working	133	compound/wood vocabulary	Repeated within lower paragraph
+acker	working	134	land vocabulary	Full surrounding clauses remain unresolved
+holtz	working	133;134	word/grapheme anchor	
+geben	working	133;135	verb anchor		soll	working	132;133;134	verb anchor	
+gebrauchen	working	134	verb/grapheme anchor	
+lassen	working	133;134	verb anchor	
