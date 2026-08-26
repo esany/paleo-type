@@ -36,7 +36,6 @@ Projects do **not** own copies of generic gate requirements. Explanations may su
 ## Framework / corpus / project ownership test
 
 Before creating/updating a durable record ask:
-
 1. Would the statement remain a valid rule for another comparable manuscript project? → `methodology/` (or `AGENTS.md` / `DECISIONS.md`).
 2. Does it concern identities/relationships spanning sources or projects? → `corpus/` / `entities/`.
 3. Does it concern what was found, read, decided or remains open in one concrete project? → `projects/<id>/`.
@@ -54,7 +53,7 @@ Read `README.md` first. For one project, read its `STATUS.md`; generic maturity 
 3. read project `STATUS.md`;
 4. read the active generic gate in `methodology/research-gates.md`;
 5. inspect relevant `corpus/` records when source identity/files/relations matter;
-6. read relevant project decisions/LEARNINGS and only the methodology needed for the task;
+6. read relevant project decisions/LEARNINGS and only methodology needed for the task;
 7. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 ## GitHub-native human navigation
@@ -62,12 +61,7 @@ Read `README.md` first. For one project, read its `STATUS.md`; generic maturity 
 GitHub metadata is a navigation layer over canonical records, never a competing truth store.
 
 ### Milestones
-GitHub Milestones may mirror the generic G1–G6 gate names/purposes for human navigation when useful.
-- Requirements/exit gates remain in `methodology/research-gates.md`.
-- Project gate state remains in project `STATUS.md`.
-- Do not duplicate full checklists in GitHub metadata.
-- No calendar due dates unless the research genuinely has one.
-- Do not fragment gates merely to produce progress percentages.
+GitHub Milestones may mirror generic G1–G6 names/purposes for human navigation when useful. Requirements remain in `research-gates.md`; project state remains in `STATUS.md`. No calendar due dates without real deadlines and no fragmentation for progress percentages.
 
 ### Issues and labels
 Issues preserve bounded future work or genuinely useful discrete work packages. Labels classify them for filtering only.
@@ -76,11 +70,18 @@ Issues preserve bounded future work or genuinely useful discrete work packages. 
 - assign an issue to a gate only when completing it materially contributes to that gate;
 - trigger-based future infrastructure normally stays unassigned until the trigger fires.
 
+**No-dead-issue rule:** every deferred issue must contain (a) research benefit/problem, (b) why it is not current work, (c) an observable trigger, and (d) definition of done/acceptance criteria. It is not a roadmap promise.
+
+**Trigger audit:** do not create calendar-based backlog grooming. Re-check open deferred issues whenever a bounded repo-wide consistency pass runs, a project changes gate, publication/export work begins, or evidence suggests an issue trigger fired. For each relevant issue choose exactly one outcome:
+1. trigger not met → leave open without starting work;
+2. trigger met → update the issue with concrete evidence/current scope and make it actionable;
+3. already implemented/absorbed → close `completed`;
+4. superseded/irrelevant → close `not_planned` or `duplicate` with rationale.
+
+Remove obsolete body hashtags once equivalent GitHub labels exist. Do not keep issues open merely as memory; durable methodological truth belongs in the repository.
+
 ### Pull requests
-- small/local research or maintenance change → direct commit to `main` is acceptable;
-- cohesive repository-wide method/schema/provenance/structural change → branch + PR is preferred;
-- PR description states problem, material changes, deliberate non-changes and impact on research state;
-- PR does not replace `DECISIONS.md` for durable cross-project rationale.
+Small/local research or maintenance change may commit directly to `main`; cohesive repository-wide method/schema/provenance/structural change preferably uses branch + PR. PR descriptions state problem, material changes, deliberate non-changes and research-state impact. PRs do not replace `DECISIONS.md`.
 
 ### Tags/releases
 Use only for intentionally frozen, reproducible research/publication checkpoints. Do not release ordinary development increments. G5/G6 are natural candidates; earlier gates only when independently useful.
@@ -90,7 +91,7 @@ Do not introduce Projects/Kanban, Discussions, CODEOWNERS or contributor/workflo
 ## Maintenance triggers
 
 ### Source identity/stage/file/relation changes
-Update the corresponding canonical corpus record and project crosswalk/status only when the project consequence changes.
+Update the corresponding canonical corpus record and project crosswalk/status only when project consequence changes.
 
 ### Transcription changes
 Update project transcription; log consequential replacements/rejections; update palaeographic evidence and `STATUS.md` when active uncertainty/next action changes.
@@ -105,18 +106,18 @@ Record the concrete failure/correction in `LEARNINGS.md`. Promote only a genuine
 Update the owning methodology file; record durable cross-project rationale in `DECISIONS.md` when needed; then run a bounded repo-wide consistency pass across dependent projects.
 
 ### Active task/gate state changes
-Update project `STATUS.md`; do not copy generic gate requirements into the project.
+Update project `STATUS.md`; do not copy generic gate requirements into the project. This also triggers an issue-trigger audit.
 
 ## Bounded repo-wide consistency pass
 
 Run after material canonical changes such as source-ID migration, provenance correction, file-manifest change, relationship-status change, generic gate/method change or repository restructuring.
 
-Start from the changed canonical truths:
+Start from changed canonical truths:
 1. state changed truths/identifiers;
 2. check dependent canonical records/project crosswalks;
 3. check derived project state (`project.yml`, `STATUS.md`, research/source audits) for obsolete wording/completed next steps;
 4. search for stale identifiers, old generic-rule copies and contradictory claims;
-5. check relevant Issues against current implementation/triggers;
+5. audit relevant open Issues against triggers/current implementation and close/update where appropriate;
 6. apply the fachlich-technisches quality gate from `AGENTS.md`;
 7. stop when coherent and return to research.
 
@@ -132,7 +133,7 @@ Do not use a consistency pass to invent new architecture or re-adjudicate manusc
 ## Human–AI maintenance responsibility
 
 ### AI
-Own routine repository/corpus hygiene, propagation of changed truths, cross-reference repair and restartability. Surface missing metadata rather than inventing it.
+Own routine repository/corpus hygiene, propagation of changed truths, cross-reference repair, issue-trigger audit and restartability. Surface missing metadata rather than inventing it.
 
 ### User
 Own research purpose, source access only they can provide, rights/authority facts not otherwise verifiable, desired depth and consequential publication/use decisions. The user is not the repository synchronizer or default specialist adjudicator.
@@ -150,7 +151,7 @@ Before completing consequential work ask:
 5. Did a reading change require transcription/decision/palaeography updates?
 6. Did project gate state/next action change?
 7. Did a project failure create a generalisable learning?
-8. Did a deferred issue trigger actually fire?
+8. Did a deferred issue trigger actually fire, become obsolete, or get implemented elsewhere?
 9. Is a bounded consistency pass required?
 10. Can another capable researcher identify the source, understand the active generic gate and continue without chat?
 
@@ -158,4 +159,4 @@ If 10 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
-`Maintain on change, preserve method/corpus/project boundaries, propagate material truth changes, then stop.`
+`Maintain on change, preserve method/corpus/project boundaries, audit deferred triggers at meaningful change points, propagate material truth changes, then stop.`
