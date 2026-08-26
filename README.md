@@ -190,6 +190,12 @@ projects/
 
 Create additional registries or tooling only when repeated real data requires them.
 
+## Human navigation
+
+The active research project is the [Knau visitation project](projects/ega-reg-ii-5-knau/). Its [current state and next action](projects/ega-reg-ii-5-knau/STATUS.md) and [full research gates](projects/ega-reg-ii-5-knau/MILESTONES.md) remain the canonical guides to progress.
+
+GitHub provides a presentation layer over those records: [Issues](https://github.com/esany/paleo-type/issues) expose triggered or deliberately deferred topics, [Pull Requests](https://github.com/esany/paleo-type/pulls) document larger reviewed changes, and [Releases](https://github.com/esany/paleo-type/releases) expose intentionally frozen checkpoints when any exist. GitHub metadata never replaces the canonical research records listed above.
+
 ## Research programme
 
 The programme is incremental and evidence-driven:
