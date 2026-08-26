@@ -2,110 +2,109 @@
 
 Last checkpoint: 2026-08-26
 
-## Scope and canonical corpus references
+## Overall research goal
 
-This project is the first research benchmark inside the broader visitation-source corpus. Canonical source identities and inter-source relationships live at corpus level:
+Produce a source-exact, critically controlled scholarly edition of the Knau passage in `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`, with visible uncertainty, traceable editorial decisions, controlled use of the demonstrated Reg. Ii 4 parallel and the already available Reg. Ii 3 comparison material.
 
-- `corpus/sources.tsv`
-- `corpus/relationships.tsv`
-- `corpus/events.tsv`
-- `corpus/files.tsv`
+Milestone requirements and gates live in `MILESTONES.md`. This file records only the current project state and restart point.
 
-Canonical source IDs are identity-derived from archive/signature/catalogue record. Ordinal sigla such as `A/B/C1/C2` are legacy/presentation aliases only and must not be used as corpus keys or as the sole source reference.
+## Milestone state
 
-### ThHStAW, EGA, Reg. Ii 5 — stat_visitation_00000129
-Canonical ID: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` (legacy siglum `A`).
+- **M1 — Source and transmission basis secured:** substantially reached. Canonical source identities, digital-file provenance, project crosswalks and the relevant comparison-source roles are recorded. The exact textual/transmission relationship to Reg. Ii 4 may be strengthened later by M4 collation without blocking M1.
+- **M2 — Principal witness completely represented:** **ACTIVE — not reached.**
+- **M3 — Internal palaeographic and notational analysis completed:** not yet the active gate; existing palaeographic work is supporting evidence and does not substitute for M2 completeness.
+- **M4 — Existing comparison witnesses/controls independently assessed and collated:** not yet reached; the Reg. Ii 4 corresponding locus is located but detailed collation remains open.
+- **M5 — Critically consolidated text state:** not reached.
+- **M6 — Scholarly edition produced and quality-controlled:** final goal, not current work.
 
-**Visitation im Amt Ziegenrück**, archival sequence `55v–66v`, 1533 context. Archival metadata states this record is an extract from the Reg. Ii 4 Bd. II Ziegenrück protocol.
+## Canonical source basis
 
-The uploaded export (`1a03ea95927-120-143.pdf`) has been inspected. Knau is mapped:
+Canonical corpus identity/provenance lives in `corpus/`; project-specific folio/image/export mappings live in `sources/`. Legacy sigla `A/B/C1/C2` are aliases only.
+
+### Principal witness
+
+`THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — ThHStAW, EGA, Reg. Ii 5, **Visitation im Amt Ziegenrück**, 1533 context.
+
+Knau project locus:
 
 - export image 132 = fol. 61v — Knau begins;
-- export image 133 = fol. 62r — folio number 62 directly visible;
+- export image 133 = fol. 62r;
 - export image 134 = fol. 62v;
-- export image 135 = fol. 63r — folio number 63 directly visible; Knau closes at top and next entry begins below.
+- export image 135 = fol. 63r — Knau closes at top; following entry is outside scope.
 
-Exact project mapping lives in `sources/reg-ii-5-00000129-crosswalk.tsv`. Keep export image, PDF page, archival folio and stable image/URN as separate fields.
+Exact mapping: `sources/reg-ii-5-00000129-crosswalk.tsv`.
 
-### ThHStAW, EGA, Reg. Ii 4 Bd. II — stat_visitation_00000089
-Canonical ID: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` (legacy siglum `B`).
+### Existing comparison/control sources
 
-**Visitation im Amt Ziegenrück**, `294r–313r`. Archival metadata supports the extract relationship to Reg. Ii 5. The corresponding Knau locus has been located at `306v–309r` (export images 667–672). Structural/textual correspondence is observed; detailed line-level collation remains required before individual readings are transferred as evidence.
+- `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — related 1533 Ziegenrück record; corresponding Knau locus located at fol. `306v–309r` / export images 667–672. Structural/textual correspondence is observed; detailed line-level collation remains for M4.
+- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — 1529 Pfarreinkommen record; relevant `Knaw Kirch Einkommen` at fol. `304r` / export image 625. It is comparison/control evidence for economic/notation questions, not a textual witness of the 1533 passage unless demonstrated.
+- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — separate earlier 1529 visitation source; no same-hand/textual-dependence claim is assumed.
 
-Exact mapping lives in `sources/reg-ii-4-bd-ii-00000089-crosswalk.tsv`.
+## Active milestone — M2
 
-### ThHStAW, EGA, Reg. Ii 3 — stat_visitation_00000197
-Canonical ID: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` (legacy siglum `C1`).
+### M2 target
 
-**Visitation in Neustadt an der Orla**, `41r–63v`, exact archival date range supplied as 1529-05-23 through 1529-06-01. The uploaded export has been inspected. This is a separate earlier visitation source; no same-hand/textual-dependence claim with the 1533 records is assumed.
+Every relevant physical text area of Reg. Ii 5, fol. 61v–63r must be represented as conservative line-level diplomatic working text. **M2 does not require every token to be solved.** `variant` and `unresolved` are valid outcomes; paragraph-level descriptions standing in for visible source text are not.
 
-### ThHStAW, EGA, Reg. Ii 3 — stat_visitation_00000235
-Canonical ID: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` (legacy siglum `C2`).
+### M2 requirements already satisfied / controlled
 
-**Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)**, `303r–306r`, approximate archival range 1529-01-01 through 1529-12-31. The uploaded export has been inspected. Its folio/image sequence is now mapped in `sources/reg-ii-3-00000235-crosswalk.tsv`; the directly relevant heading `Knaw Kirch Einkommen` is located at fol. 304r / export image 625. C2 remains a separate accounting/notation comparison source, not a textual witness of the 1533 passage unless demonstrated.
+- Project boundary 61v–63r is established sufficiently for the current text scope.
+- `Knawe` heading on fol. 61v has been directly reinspected and is `observed`.
+- Closing Knau lines on fol. 63r (`Soll auch ein jeder hausgenos ... / ... acht pfennig ... / pfarrrecht geben`) have been directly controlled and are `observed`.
+- The transcription TSVs 132–135 provide the structured container for the principal witness.
+- Known uncertain readings are not to be repaired from historical/semantic plausibility or by silently copying a comparison witness.
 
-## Current transcription checkpoint
+### Unmet M2 requirements / known gaps
 
-The transcription TSVs 132–135 preserve the current diplomatic working text for `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, fol. 61v–63r. They are not yet a validated edition.
+These are completeness gaps, not a demand that every word be adjudicated:
 
-Direct reinspection in the current work block promoted only clearly controlled material:
+1. **fol. 61v:** W1–W6 and U1–U2 still require source-level representation precise enough that unresolved signs/options are localized rather than hidden by coarse description.
+2. **fol. 62r:** upper economic/natural-obligation passage, currently 133:01–11, plus U3–U5 and remaining variant lines require complete conservative line-level representation.
+3. **fol. 62v:** largest continuous M2 gap. 134:01–07 and much of 134:10–23 remain collapsed/unresolved instead of complete line-level diplomatic representation.
+4. Every remaining multi-line placeholder/semantic summary must be replaced by the narrowest source-based representation possible, even where individual words remain unreadable.
+5. After filling these physical-text gaps, perform an M2 completeness pass from 61v through 63r to confirm that no relevant visible line/text unit is omitted.
 
-- `Knawe` heading on fol. 61v is now `observed`;
-- the Knau closing lines on fol. 63r (`Soll auch ein jeder hausgenos ... / ... acht pfennig ... / pfarrrecht geben`) are now `observed`;
-- no unresolved token was resolved from context or comparison-source plausibility.
+### Important current evidence limits
 
-Important remaining anchors/limits:
-
-- `wolff von` is visually supported across repeated occurrences;
-- surname token after `wolff von` remains exact-graphematically variant/unresolved; historical identification as Wolf von Gräfendorf is a separate `IDENTIFICATION` claim;
-- top quantity in `hat ij filial ...` remains working/variant rather than externally validated;
-- arabic `1` is directly visible in economic clauses;
-- arabic `80` is directly reinspected twice on fol. 62r; numeral form only;
-- W1–W6 on fol. 61v remain unresolved economic/value notation groups;
-- fol. 62r upper economic/natural-obligation passage (current 133:01–11) is still not safely reconstructed;
-- fol. 62v remains the largest continuous transcription gap: 134:01–07 and much of 134:10–23 are unresolved rather than line-level diplomatic text;
-- earlier semantic completions or source-status overstatements from chat are not evidence.
-
-## Edition-completeness inventory
-
-The current bottleneck is not only W1–W6. A coherent edition requires closing all major physical-text gaps in the principal witness before normalization/commentary:
-
-1. fol. 61v: W1–W6 and U1–U2;
-2. fol. 62r: upper passage 133:01–11 plus U3–U5 and a few variant lines;
-3. fol. 62v: full line-level reconstruction of the currently collapsed/unresolved paragraphs, especially 134:01–07 and 134:10–23;
-4. fol. 63r: closing Knau lines are now directly controlled; the following new entry is outside the active edition boundary.
-
-## Evidential roles (not identities)
-
-Research roles remain separate from source identity:
-
-1. `Reg. Ii 5 / stat_visitation_00000129` — principal transcription witness and first source for internal comparison;
-2. `Reg. Ii 4 Bd. II / stat_visitation_00000089` — related 1533 parallel/control where correspondence is demonstrated;
-3. `Reg. Ii 3 / stat_visitation_00000235` — already available economic/notation comparison source;
-4. `Reg. Ii 3 / stat_visitation_00000197` — already available earlier visitational/historical comparison source.
-
-A source may change research role without changing identity. A clearer reading in another source may support identification but never overwrite the graphemes of the principal transcription witness.
-
-## Active research problem
-
-Finish a source-exact diplomatic transcription of Reg. Ii 5, fol. 61v–63r using only the already available source material. No additional source acquisition is part of the current edition plan.
-
-The next evidential work must reduce the actual gaps in the principal text rather than add more corpus architecture or collect new sources.
+- `wolff von` is visually supported across repeated occurrences; the following surname token remains graphematically variant/unresolved. Historical identification as Wolf von Gräfendorf is a separate identification claim.
+- The top quantity in `hat ij filial ...` remains working/variant rather than externally validated.
+- Arabic `1` is directly visible in economic clauses.
+- Arabic `80` has been directly reinspected twice on fol. 62r as a numeral form only.
+- W1–W6 remain unresolved economic/value notation groups.
+- Existing C2 and Reg. Ii 4 material may later help discriminate readings, but they do not remove the M2 requirement to represent what is visible in the principal witness itself.
 
 ## NEXT ACTION — canonical restart point
 
-1. Selectively transcribe the `Knaw Kirch Einkommen` subsection at `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235:304r` only far enough to inventory numeral/currency/measure forms that can test concrete W1–W6 candidates; do not treat different-hand forms as proof of A graphemes.
-2. Reinspect the existing Reg. Ii 5 comparison loci across fol. 55v–67r and extend `palaeography/numerals.tsv` only with directly controlled forms relevant to W1–W6, `1`, `80`, `viertel`, `grosch`, `pfennig` or related notation.
-3. Re-read the principal witness line by line in completeness order: fol. 61v unresolved item list/U1–U2 → fol. 62r upper passage/U3–U5 → fol. 62v collapsed paragraphs. Record signs/options even when a word cannot be resolved; do not leave whole paragraphs as fluent semantic placeholders where individual line structure can be recovered.
-4. Perform detailed local collation of `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129:61v–63r` against `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089:306v–309r`, preserving each witness independently and recording only demonstrated correspondences/divergences.
-5. Adjudicate individual unresolved readings with evidence order: principal-image graphemes → same-source/hand anchors where demonstrated → relevant C2 notation control → demonstrated Reg. Ii 4 parallel. Leave unresolved when evidence does not discriminate.
-6. Freeze a coherent diplomatic transcription checkpoint of fol. 61v–63r, then derive a readable edition layer and compact apparatus without overwriting the diplomatic text.
-7. Run the continuous research-integrity gate plus a small adversarial sample before treating the edition checkpoint as stable.
+**Advance M2 only:** re-read the principal witness in physical completeness order and replace coarse unresolved placeholders with conservative line-level source representations:
+
+1. fol. 61v — unresolved item list / W1–W6 / U1–U2;
+2. fol. 62r — upper passage 133:01–11 / U3–U5 / remaining variant lines;
+3. fol. 62v — 134:01–07 and 134:10–23, then all remaining lines;
+4. run a fol. 61v–63r completeness pass against the images.
+
+Record visible signs, partial strings and alternatives even when no lexical solution is possible. Do **not** make detailed C2 notation analysis, Reg. Ii 4 collation, final W1–W6 adjudication or edition-layer production the controlling task until the M2 representation gate is satisfied. Such evidence may be consulted only when necessary to segment/represent the principal source without importing its reading.
+
+## What comes after M2
+
+Only after M2 passes:
+
+- **M3:** systematically test consequential unresolved/variant loci using internal palaeographic and notational evidence, with C2 only in its explicitly limited comparison/control role where relevant.
+- **M4:** independently read/collate Reg. Ii 4 Bd. II 306v–309r against Reg. Ii 5 61v–63r and record demonstrated agreements/divergences without witness contamination.
+- **M5:** consolidate the critically controlled text, preserve residual uncertainty and adversarially test consequential working readings.
+- **M6:** derive and quality-control the scholarly edition from that consolidated research state.
 
 ## Stop conditions
 
-Mark `unresolved` rather than infer when image evidence does not discriminate; support is only syntax/history; the relevant external passage was not actually inspected; witness correspondence is assumed rather than shown; archival metadata is being treated as textual proof; or repeated AI readings are the only corroboration.
+Mark `unresolved` rather than infer when image evidence does not discriminate; support is only syntax/history; a comparison passage was not actually inspected; witness correspondence is assumed rather than demonstrated; archival metadata is being treated as textual proof; or repeated AI readings are the only corroboration.
 
-## User-facing result target
+## Restartability test
 
-A source-exact Knau transcription in `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r` with visible uncertainty and compact apparatus; demonstrated and separately labelled use of the Reg. Ii 4 Bd. II parallel and already available Reg. Ii 3 comparison material; and a readable edition layer whose interventions remain traceable to the diplomatic text.
+A new capable agent should be able to determine from `MILESTONES.md`, this file, the transcription TSVs and the canonical corpus/source records:
+
+- the final research goal;
+- which milestone is active and why;
+- which M2 requirements remain unmet;
+- the exact physical loci to inspect next;
+- which tempting later-stage activities must not displace M2 completeness.
+
+If old chat is required to recover any of that state, this checkpoint is incomplete.
