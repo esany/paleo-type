@@ -38,7 +38,7 @@ One fact has one canonical owner:
 - exact digital/export file identity, filename, checksum, coverage, storage state and rights → `corpus/files.tsv`;
 - reusable source-wide image/PDF/export/folio crosswalk → `corpus/source-data/<source_id>/`;
 - historical/archival/textual source relationships → `corpus/relationships.tsv`;
-- project membership, project role and project-relevant locus → `projects/<id>/sources/sources.tsv`;
+- project-source membership, project-relative function and project-relevant locus → `projects/<id>/sources/sources.tsv`;
 - project inspection events/details → `projects/<id>/sources/inspection-log.tsv` when needed;
 - project transcription/decisions/analysis/status → that project;
 - research-organisational project-to-project relations → `projects/relationships.tsv` only when multiple genuine projects exist and a material relation needs recording;
@@ -67,7 +67,7 @@ Create every new project from `templates/project/`, never by cloning an existing
 Required at creation:
 1. unique project ID and human-readable title;
 2. bounded `research_object` / `active_scope` describing the investigation, not a storage unit;
-3. `sources/sources.tsv` listing the actual source group and each source's role/locus;
+3. `sources/sources.tsv` listing the actual source group and each project's use of each source/locus;
 4. every referenced canonical source ID already exists in `corpus/sources.tsv`;
 5. every exact digital export used as evidence exists in `corpus/files.tsv` with checksum and storage/preservation state;
 6. `STATUS.md` records actual evidence state and a bounded `NEXT ACTION`;
@@ -84,10 +84,14 @@ Required columns:
 
 `source_id | archival_title | project_role | relevant_locus | primary_file_id | status | notes`
 
+Semantically, each row is a **project-source membership relation plus its project-relative function and locus**, not an additional properties record for the source. The source keeps one stable canonical identity in the corpus; its function may differ legitimately between investigations.
+
 Rules:
 - one row represents one canonical archival/source record used by the project;
 - keep separately identified archival records separate even when they share archive, fonds or signature;
-- `project_role` describes use in this investigation (`principal`, `comparison`, `control`, `context`, etc.) and is not part of source identity;
+- `project_role` describes the function of that source **in this investigation** (`principal`, `comparison`, `control`, `context`, etc.); it is project-relative and is not part of source identity;
+- the same canonical source may occur in another project's source register with a different `project_role` without changing `corpus/sources.tsv`;
+- `comparison` means “used for comparison in this investigation”; it does not assert a source-to-source relationship such as textual correspondence or dependence;
 - `relevant_locus` is project-specific and does not redefine the source's full archival extent;
 - `primary_file_id` points to `corpus/files.tsv`; additional files may be found there by `source_id`;
 - source relationships are not encoded here as historical facts; use `corpus/relationships.tsv` with evidence status.
@@ -114,6 +118,7 @@ A project is valid only if all applicable checks pass:
 - [ ] research object and active scope are understandable to a historian without internal architecture knowledge;
 - [ ] source group is explicit in `sources/sources.tsv`;
 - [ ] distinct archival records/sections remain distinct source rows;
+- [ ] project-relative source functions are not treated as canonical source properties;
 - [ ] every source ID resolves to `corpus/sources.tsv`;
 - [ ] every exact evidence file resolves to `corpus/files.tsv` and has a checksum;
 - [ ] central original exports have an explicit preservation state and repository path/blocked reason;
@@ -137,7 +142,7 @@ Never repair a source fact only in one project's copy.
 
 ### Project source-group change
 
-Update `projects/<id>/sources/sources.tsv` first, then project status/work products whose scope changes. Do not change canonical source identity merely because project role changes.
+Update `projects/<id>/sources/sources.tsv` first, then project status/work products whose scope changes. A change of project-relative function or locus does not by itself change canonical source identity or source-to-source relationships.
 
 ### Generic methodological weakness
 
@@ -158,7 +163,7 @@ A completed/inactive project remains a scholarly provenance package. If supersed
 At any time the repository should answer without chat:
 - what the project investigates;
 - which distinct archival records form its source group;
-- what role/locus each source has in the project;
+- what project-relative function/locus each source has;
 - which exact original exports were used and where they are preserved;
 - which source relationships are actually evidenced;
 - what was inspected/read/decided;
