@@ -1,0 +1,5 @@
+project_from	relation_type	project_to	basis	status	notes
+ega-reg-ii-5-knau	scopes-source-unit	ega-reg-ii-5-00000129	Knau project works on fol. 61v–63r within this source-unit project	active	Research-scope relation only; source identity remains in corpus/sources.tsv.
+ega-reg-ii-5-knau	compares-with	ega-reg-ii-4-bd-ii-00000089	Corresponding Knau locus located at fol. 306v–309r	active	Does not assert copying/dependence; source relation evidence remains in corpus/relationships.tsv.
+ega-reg-ii-5-knau	uses-as-control	ega-reg-ii-3-00000235	Knaw Kirch Einkommen at fol. 304r is used for economic/notation comparison	active	Control role does not make it a textual witness.
+ega-reg-ii-5-knau	uses-as-context	ega-reg-ii-3-00000197	Earlier Neustadt visitation material provides contextual comparison when relevant	active	No textual-dependence or same-hand claim implied.
