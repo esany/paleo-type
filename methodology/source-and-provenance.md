@@ -57,11 +57,24 @@ For example, two separately catalogued records in `ThHStAW, EGA, Reg. Ii 3` reta
 
 Discovery is not inspection; inspection is not transcription; transcription is not collation.
 
+## Persistent identifiers and exact instantiations
+
+Persistent identifiers such as URNs and stable archival URLs are **first-class provenance and working identifiers**. They support durable citation, re-location of the archive-provided digital object, comparison with the provider's current representation and linkage back to institutional metadata.
+
+They have a different evidential quality from the exact file used in research. A persistent identifier identifies or relocates the archive-side object/representation; a checksum identifies the concrete byte sequence actually inspected or preserved. Neither replaces the other.
+
+Therefore preserve both when available:
+
+- archive record identity + persistent identifier/URL;
+- exact file identity + original filename + SHA-256 + coverage + preservation state.
+
+Do not downgrade a URN to a mere convenience link, and do not treat it as an equivalent backup of the exact export.
+
 ## Original-export preservation
 
 The exact archive export used to support consequential research is a **first-class research asset**.
 
-A URL or URN can help relocate an archive record but is not equivalent to the exact export that was inspected. Portals can change rendering, sequence, metadata, availability or export behavior.
+A URL or URN can help relocate and cite the archive-side digital object, but it is not equivalent to the exact export that was inspected. Portals can change rendering, sequence, metadata, availability or export behavior.
 
 For every central original export used by a project:
 
@@ -71,10 +84,25 @@ For every central original export used by a project:
 4. record the repository path where the original is or is intended to be preserved;
 5. preserve the original bytes unchanged — do not overwrite with OCR, compression, crop, rotation or normalization;
 6. keep derived renders/crops/OCR as separate derivatives linked back to the original file ID;
-7. make preservation state explicit (`repo-preserved`, `external-controlled`, `preservation-blocked`, etc.);
+7. make preservation state explicit (`repo-preserved`, `external-controlled`, `preservation-blocked-public-redistribution`, etc.);
 8. if rights/access constraints prevent repository storage, state the blocker explicitly. Do not claim that checksum + URN constitutes equivalent backup.
 
-For a public repository, a rights marker such as `InC` does not itself grant redistribution permission. Public upload of such a binary requires an adequate rights/authority basis. Rights uncertainty is a preservation blocker to record and resolve, not a reason to silently discard the original or pretend a portal reference is enough.
+## Rights statements and preservation decisions
+
+Record the rights statement actually supplied with the object/export. Do not replace a known rights state with generic `rights unclear` wording.
+
+For an object marked `InC/1.0`:
+
+- the object is identified as protected by copyright and/or related rights;
+- uses permitted by applicable copyright/related-rights law remain possible;
+- further uses may require permission from the rightsholder;
+- additional rights or permissions may also matter;
+- additional institutional information may exist;
+- the rights statement itself is **not a licence** and does not by itself grant a general redistribution permission.
+
+Accordingly, in a public repository `InC/1.0` should be recorded as a **known protected-rights state**, while public redistribution of the exact binary remains a separate authority/use question. If no further licence, contractual permission or other adequate legal basis is documented, use an explicit preservation state such as `preservation-blocked-public-redistribution` rather than pretending the rights state is unknown.
+
+This repository records scholarly provenance and preservation state; it does not convert a rights statement into legal permission.
 
 ## Reusable source data
 
@@ -129,6 +157,7 @@ For consequential work determine:
 
 - archive/fonds/signature/record;
 - record title and locus;
+- persistent identifier/archival URL where available;
 - exact file ID and SHA-256 of the inspected export;
 - whether that exact export is preserved and where;
 - folio, portal image, PDF page, export sequence and legacy IDs as separate identifiers;
@@ -153,7 +182,7 @@ Source inventory is not an invitation to transcribe everything. Prioritize sourc
 
 When source knowledge changes:
 
-- source identity/stage → `corpus/sources.tsv`;
+- source identity/stage and persistent archival identifiers → `corpus/sources.tsv`;
 - exact file/checksum/coverage/storage/rights → `corpus/files.tsv`;
 - reusable source-wide crosswalk → `corpus/source-data/<source_id>/`;
 - source relationship → `corpus/relationships.tsv`;
@@ -163,6 +192,6 @@ When source knowledge changes:
 
 Final test:
 
-> Could another capable researcher identify every distinct archival record in the investigation, recover or account for the exact inspected export, understand its project role/locus, distinguish catalogue claims from demonstrated relationships, and continue without chat?
+> Could another capable researcher identify every distinct archival record in the investigation, use its persistent archival identifier, recover or account for the exact inspected export, understand its project role/locus, distinguish catalogue claims from demonstrated relationships, and continue without chat?
 
 If not, persist the missing minimum state.
