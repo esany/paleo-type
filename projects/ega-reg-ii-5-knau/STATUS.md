@@ -2,73 +2,107 @@
 
 Last checkpoint: 2026-08-26
 
-## Canonical source model
+## Scope and canonical corpus references
+
+This project is the first research benchmark inside the broader visitation-source corpus. Canonical source identities and inter-source relationships now live at corpus level:
+
+- `corpus/sources.tsv`
+- `corpus/relationships.tsv`
+- `corpus/events.tsv`
+
+This project must not duplicate those identities except where project-specific inspection/crosswalk detail is required.
 
 ### A — principal witness
-`ThHStAW, EGA, Reg. Ii 5`, DigiRef/ThULB record `stat_visitation_00000129`, **Visitation im Amt Ziegenrück**, archival sequence `55v–66v` according to user-supplied archival metadata. The metadata states that A is an extract from `ThHStAW, EGA, Reg. Ii 4 Bd. II, 294r–313r`.
+Corpus source `A`: `ThHStAW, EGA, Reg. Ii 5`, record `stat_visitation_00000129`, **Visitation im Amt Ziegenrück**, archival sequence `55v–66v`, 1533 context. Archival metadata states A is an extract from B.
 
-The complete uploaded A excerpt covering export images 120–143 has been inspected. The Knau entry is now mapped as:
+The uploaded A export (`1a03ea95927-120-143.pdf`) has been inspected. Knau is mapped:
 
-- export image 132 = fol. 61v — Knau entry begins;
-- export image 133 = fol. 62r — folio number 62 visible;
+- export image 132 = fol. 61v — Knau begins;
+- export image 133 = fol. 62r — folio number 62 directly visible;
 - export image 134 = fol. 62v;
-- export image 135 = fol. 63r — folio number 63 visible; Knau closes at top and next place begins below.
+- export image 135 = fol. 63r — folio number 63 directly visible; Knau closes at top and next entry begins below.
 
-Keep export image number, PDF page, archival folio and any stable image/URN identifier as separate provenance fields. Never infer folio identity from export numbering alone.
+Exact project mapping lives in `sources/a-crosswalk.tsv`. Keep export image, PDF page, archival folio and stable image/URN as separate fields.
 
-### B — related fuller 1533 protocol
-`ThHStAW, EGA, Reg. Ii 4 Bd. II`, **Visitation im Amt Ziegenrück**, `294r–313r` according to user-supplied archival metadata. An archive export of the relevant Ziegenrück sequence has been inspected. A and B metadata point to each other as full protocol/extract, but exact passage dependence and correspondence must be demonstrated by line-level collation.
+### B — fuller related 1533 protocol
+Corpus source `B`: `ThHStAW, EGA, Reg. Ii 4 Bd. II`, **Visitation im Amt Ziegenrück**, `294r–313r`. A/B archival metadata supports `A metadata_says_extract_of B`; exact textual correspondence is still unresolved until passage-level collation.
 
-### C1 — earlier 1529 visitation source
-`ThHStAW, EGA, Reg. Ii 3`, record `stat_visitation_00000197`, **Visitation in Neustadt an der Orla**, `41r–63v`, dated by the user-supplied archival record to 1529-05-23 through 1529-06-01. The uploaded 47-page archive export has been inspected and visibly spans folios 41–63. It is a separate earlier visitation source; do not assume same hand, wording, institutional moment or textual dependence on A/B.
+### C1 — earlier 1529 visitation
+Corpus source `C1`: `ThHStAW, EGA, Reg. Ii 3`, record `stat_visitation_00000197`, **Visitation in Neustadt an der Orla**, `41r–63v`, exact archival date range supplied as 1529-05-23 through 1529-06-01. The uploaded 47-page export has been inspected. Separate earlier visitation source; no assumed same hand/textual dependence with A/B.
 
-### C2 — Reg. Ii 3 income/accounting source
-`ThHStAW, EGA, Reg. Ii 3`, record URL supplied as `stat_visitation_00000235`. The uploaded 9-page archive export around folios 303–306 has been inspected. It visibly contains parish/church-income headings for relevant places including Knau and Laskau and dense numeral/measure notation. Exact catalog title/date and relationship to C1/A/B remain to be verified from the archival record; treat C2 as a separate source unit.
+### C2 — 1529 income/accounting source
+Corpus source `C2`: `ThHStAW, EGA, Reg. Ii 3`, record `stat_visitation_00000235`, **Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)**, `303r–306r`, approximate archival range 1529-01-01 through 1529-12-31. The uploaded 9-page export has been inspected. It is a separate accounting/income source and is especially relevant to numerals, measures, money and natural dues.
 
 ## Current transcription checkpoint for A
 
-The TSV files for legacy working images 132–135 preserve current `working`, `variant` and `unresolved` readings. They are not a validated edition.
+Legacy transcription TSVs 132–135 preserve current `working`, `variant` and `unresolved` readings. They are not a validated edition.
 
 Important anchors/limits:
 
 - `Knawe` — working reading on A 61v;
 - `wolff von` — visually supported across repeated A occurrences;
-- repeated surname-like token after `wolff von` — exact graphematic spelling remains variant/unresolved; candidates include `grevendorff`, `greuendorff`, `grefendorff`; historical identification as Gräfendorf is separate;
-- top quantity in `hat ij filial ...` — current working `ij`, not externally validated;
+- surname token after `wolff von` — exact graphematic spelling remains variant/unresolved; historical identification as Wolf von Gräfendorf remains a separate `IDENTIFICATION` claim;
+- top quantity in `hat ij filial ...` — working `ij`, not externally validated;
 - arabic `1` — directly visible in A economic clauses;
-- arabic `80` — directly reinspected twice on A 62r and recorded only as numeral form;
+- arabic `80` — directly reinspected twice on A 62r; numeral form only;
 - W1–W6 on A 61v remain unresolved economic/value notation groups;
-- earlier semantic completions and source-status overstatements from chat are not evidence.
+- earlier semantic completions or source-status overstatements from chat are not evidence.
 
-## Methodological consequence of the expanded corpus
+## Corpus-method consequence
 
-The project now has four distinct evidential roles, not one blended pool:
+Evidence order for difficult A readings is now explicit:
 
-1. **A internal same-hand/source comparison** — first choice for graphematic adjudication of A;
-2. **B textual witness/control** — potentially strongest control for content if passage equivalence is demonstrated;
-3. **C1 historical/visitational comparison** — earlier independent context and terminology, not automatically palaeographic evidence for A;
-4. **C2 economic-notation comparison** — potentially valuable for vocabulary, accounting structures and notation classes, but not evidence that the same glyph in A has the same reading unless the visual/semantic bridge is explicitly shown.
+1. A internal same-hand/source comparison;
+2. demonstrated B textual parallel;
+3. separately labelled C2 economic/notation comparison;
+4. C1 historical/visitational context where relevant;
+5. reliable inspected external edition/reference if still needed.
 
-Never use B/C wording to overwrite the diplomatic reading of A.
+A clearer reading in B/C2 may support identification of A but never overwrite the graphemes visible in A.
 
-## Active problem
+## Architecture state
 
-The highest-value unresolved problem remains the numerical, monetary, grain and measure notation in A 61v and the upper part of A 62r, especially W1–W6. The newly ingested A context and C2 source give substantially more comparison material, while B may provide a textual parallel once the corresponding Knau passage is located.
+The corpus/source-criticism foundation is now implemented at repository level:
+
+- stable local source IDs A/B/C1/C2;
+- corpus source inventory;
+- explicit relationship register with evidence status;
+- event/context registry;
+- minimal normalized person/place registries;
+- generic archival/digital provenance methodology;
+- workflow and AGENTS guardrails updated for corpus discovery/collation;
+- deferred standards/automation/HTR/publication work preserved as GitHub Issues with lean triggers.
+
+The repository no longer depends on this chat to understand the A/B/C1/C2 source model or the methodological rationale.
+
+## Active research problem
+
+Return to research, not further architecture work.
+
+The highest-value unresolved textual block remains numerical, monetary, grain and measure notation in A 61v and upper A 62r, especially W1–W6. Before resolving them, exploit the newly available source controls correctly.
 
 ## NEXT ACTION — canonical restart point
 
-1. Complete provenance records for A/B/C1/C2, including record IDs, folios, export image numbers and stable identifiers where available.
-2. Locate the Knau passage in B that corresponds to A 61v–63r. Establish correspondence structurally before using B to resolve wording.
-3. Independently locate/transcribe the Knau income section in C2 and catalogue its numeral/currency/measure forms as **C2 evidence**, not A readings.
-4. Run an A-internal notation concordance across the inspected A 55v–67r sequence for W1–W6 and known anchors such as `1`, `80`, `viertel`, `grosch`, `pfennig`, grain and measure terms.
-5. Adjudicate W1–W6 individually using this evidence order: A-internal same-hand evidence → demonstrated B parallel → separately labelled C2 comparison → reliable external reference if still needed.
-6. Update `apparatus/decisions.tsv`, `palaeography/numerals.tsv` and source audit for every consequential change.
-7. Run the research-integrity gate and a small adversarial sample, then freeze a coherent A 61v–63r transcription checkpoint.
+1. **Locate the B locus corresponding to A 61v–63r.** Demonstrate structural/textual correspondence before using B wording as evidence.
+2. **Independently map/transcribe the Knau section in C2 (303r–306r)** only to the depth needed for numeral/currency/measure comparison; keep C2 readings separate.
+3. **Build an A-internal notation concordance across inspected A 55v–67r** for W1–W6 and known anchors (`1`, `80`, grain/measure/currency terms).
+4. Adjudicate W1–W6 individually using the evidence order above.
+5. Persist every consequential change in transcription, `apparatus/decisions.tsv`, `palaeography/numerals.tsv`, project source audit and corpus relationship status when appropriate.
+6. Run the continuous research-integrity gate plus a small adversarial sample.
+7. Freeze a coherent A 61v–63r transcription checkpoint.
+8. Then expand systematic visitation-corpus discovery from the current A/B/C1/C2 starting set, recording discovery boundaries rather than claiming unbounded completeness.
 
 ## Stop conditions
 
-Mark `unresolved` rather than infer if image evidence does not discriminate; if support comes only from syntax/history; if a supposed parallel has not actually been inspected; if textual correspondence between witnesses is assumed rather than shown; or if repeated AI readings are the only corroboration.
+Mark `unresolved` rather than infer when:
+
+- image evidence does not discriminate;
+- support is only syntax/history;
+- the relevant external passage was not actually inspected;
+- witness correspondence is assumed rather than shown;
+- an archival metadata relation is being treated as textual proof;
+- repeated AI readings are the only corroboration.
 
 ## User-facing result target
 
-A usable, source-exact transcription of Knau in A (`Reg. Ii 5, 61v–63r`) with visible uncertainty and compact apparatus; a separately labelled collation with B where correspondence is demonstrated; selectively used C1/C2 controls with explicit evidential role; and historical commentary in which every substantive claim is traceable to inspected evidence or marked as inference.
+A source-exact Knau transcription in A (`Reg. Ii 5, 61v–63r`) with visible uncertainty and compact apparatus; demonstrated and separately labelled B collation; selective C1/C2 controls with explicit evidential roles; and a growing corpus inventory in which archival provenance, textual evidence and historical interpretation remain traceable and distinct.
