@@ -1,0 +1,5 @@
+page_id	line_id	region	reading	status	alternatives	evidence_note
+135	01	knau-close	Soll auch ein jeder hausgenos zu Knawe /	working		Recheck `hausgenos` directly from original
+135	02	knau-close	dem pfarrer jerlich acht pfennig zu	working		Numeral/word `acht` and `pfennig` should join notation concordance
+135	03	knau-close	pfarrrecht geben /	working		
+135	04	new-entry	[large new heading begins]	observed		Heading text intentionally not inferred here; marks working boundary hypothesis
