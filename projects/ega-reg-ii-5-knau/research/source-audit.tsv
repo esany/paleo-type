@@ -1,0 +1,5 @@
+audit_id	candidate_source	status	what_was_actually_checked	usable_claim	blocked_claim	next_step
+R001	EGA Reg. Ii 3, possible Knau/Pfarreinkommen material	K	Finding-aid/search metadata only in prior chat	Candidate parallel may exist	No claim about manuscript wording or provisions	Obtain and inspect actual relevant folios
+R002	EGA Reg. Ii 4 Bd. II, Saalfeld visitation material	K	Finding-aid/portal metadata only in prior chat	Candidate relevant visitation material may exist	No textual parallel or content claim	Obtain and inspect actual relevant folios
+R003	Lehnbuch associated with Abt Gregor von Thüna / Saalfeld	H	User supplied contextual lead; no source pages inspected in this project	Research lead only	No assertion about exact feudal relationship from repository evidence	Obtain bibliographic/archive identity and inspect passage
+R004	Modern research publications mentioned in prior chat	S	Mixed search results/TOCs/online reproductions; audit not sufficient	Discovery leads only	Do not use for substantive interpretation yet	Identify authoritative full text/edition and log exact pages read
