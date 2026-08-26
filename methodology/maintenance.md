@@ -10,6 +10,7 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 |---|---|---|
 | repository purpose/map/required reading path | `README.md` | entry point |
 | mandatory AI/research guardrails | `AGENTS.md` | binding rules |
+| shared architectural/methodological rationale | `DECISIONS.md` | lean cross-project decision record |
 | general research method | `methodology/*.md` | reusable normative method |
 | corpus source identity and inspection stage | `corpus/sources.tsv` | corpus inventory |
 | explicit source/event/entity relationships | `corpus/relationships.tsv` | relationship claims + evidence status |
@@ -38,11 +39,12 @@ Read `README.md` first. Deeper files are opened only as needed.
 
 1. read `README.md` if repository structure is not already established;
 2. read `AGENTS.md`;
-3. inspect relevant `corpus/` rows if source identity/relations matter;
-4. read active project `STATUS.md`;
-5. read relevant decision rows and `LEARNINGS.md`;
-6. read only relevant methodology;
-7. continue from `NEXT ACTION` unless inspected evidence justifies a change.
+3. read `DECISIONS.md` only when a shared method/data-model choice matters;
+4. inspect relevant `corpus/` rows if source identity/relations matter;
+5. read active project `STATUS.md`;
+6. read relevant decision rows and `LEARNINGS.md`;
+7. read only relevant methodology;
+8. continue from `NEXT ACTION` unless inspected evidence justifies a change.
 
 ## Maintenance triggers
 
@@ -86,8 +88,24 @@ Read `README.md` first. Deeper files are opened only as needed.
 
 ### Method/governance/structure changes
 - update owning methodology/AGENTS file;
+- record a cross-project rationale in `DECISIONS.md` only when it would otherwise need rediscovery;
 - update README only when map/top-level orientation changes;
 - update Wiki explanation only if end-user meaning changes and write access exists.
+
+### Canonical truth or structure changes materially
+Run a **bounded repo-wide consistency pass** after changes such as source-ID migration, corrected source identity/provenance, relationship-status change, status-model change or repository restructuring.
+
+Start from the changed canonical truths, not from a ritual reread of every file:
+
+1. state the changed truths/identifiers;
+2. check dependent canonical records and project crosswalks;
+3. check derived state (`project.yml`, `STATUS.md`, research/source audits) for obsolete wording or completed `next_step`s;
+4. search for stale identifiers/aliases and contradictory folio/image/date/source-relation claims;
+5. check relevant open Issues against current implementation/triggers;
+6. apply the fachlich-technisches quality gate from `AGENTS.md`;
+7. stop when the repository is coherent and return to research.
+
+Do not use a consistency pass to invent new architecture or re-adjudicate manuscript readings unless the inconsistency exposes a genuine research problem.
 
 ### Useful future idea appears but is not justified now
 Create or update a GitHub Issue only if it contains:
@@ -135,10 +153,11 @@ Before completing consequential research ask:
 5. Did the active problem/next action change?
 6. Did a project failure create a real learning?
 7. Did a deferred idea become useful enough for an Issue, or did an existing Issue's trigger actually fire?
-8. Can another capable agent identify the exact sources, understand evidence status and continue without the chat?
+8. Did a material canonical/structural change require a bounded repo-wide consistency pass?
+9. Can another capable agent identify the exact sources, understand evidence status and continue without the chat?
 
-If 8 is no, persist the minimum missing state.
+If 9 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
-`Maintain on change, at the canonical source, with the minimum record needed for reliable continuation.`
+`Maintain on change, propagate material truth changes across dependent records, then stop.`
