@@ -1,0 +1,10 @@
+decision_id	location	previous	current	status	reason	evidence_type	remaining_uncertainty
+D001	132/name occurrence	welch	wolff	rejected	Later direct reinspection/same-hand comparison contradicted early silhouette guess	image reinspection + intra-hand comparison	Exact checkpoint should be reverified from source image
+D002	132/place after filial	kirchen	Laßgaw | Laßkaw	rejected	Earlier word-shape reading failed; later reading indicates place name	image reinspection	Exact spelling unresolved
+D003	132/surname occurrence	gemeindschafft	grevendorff | variants	rejected	Earlier semantic/silhouette reading contradicted repeated surname form	intra-hand comparison	Exact graphematic surname spelling unresolved
+D004	132/top numeral	2	ij	rejected	Manuscript notation read as roman `ij` rather than normalized arabic 2	image reinspection	Recheck glyph form at checkpoint
+D005	132/18	[restituirn semantic proposal]	[U2]	rejected	Proposal was semantic completion rather than controlled graphematic reading	methodological audit	Token unresolved
+D006	132/18	[entzogen semantic proposal]	[U2]	rejected	Proposal was semantic completion rather than controlled graphematic reading	methodological audit	Token unresolved
+D007	133/15	verlassen werden	vorlassen wurden | alternatives	variant	Successive readings conflict; syntax must not decide the graphemes	image reinspection history	Requires direct high-resolution comparison
+D008	133/upper	three-viertel/korn/haber fluent reconstruction	unresolved	rejected	Latest reinspection found prior reconstruction too strongly assembled from partial forms	methodological audit	Entire upper economic passage needs notation-first pass
+D009	134/multiple	earlier fluent land/property clauses	conservative unresolved spans	rejected	Earlier output smoothed syntax beyond visible grapheme control	methodological audit	Re-read original line by line after notation pass
