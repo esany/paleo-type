@@ -1,10 +1,10 @@
 page_id	line_id	region	reading	status	alternatives	evidence_note
-134	01-07	paragraph-1	[paragraph contains economic notation, pfarrer/Knawe context and a clause involving wolff von grevendorff; full line reading not yet safe]	unresolved		Earlier versions were over-smoothed; re-read from original before reuse
-134	08	paragraph-2	Das wolff von grevendorff dem pfarrer	working	greuendorff; grefendorff	Strong working anchor, still requires direct checkpoint verification
+134	01-07	paragraph-1	[paragraph contains economic notation, pfarrer/Knawe context and a clause involving wolff von [surname-token]; full line reading not yet safe]	unresolved	grevendorff; greuendorff; grefendorff	Earlier versions were over-smoothed; exact surname spelling remains unresolved after adversarial check
+134	08	paragraph-2	Das wolff von [surname-token] dem pfarrer	variant	grevendorff; greuendorff; grefendorff	Direct reinspection confirms repeated token and surrounding words, but exact graphematic surname spelling is not yet safely discriminated
 134	09	paragraph-2	[... pfarrlehen zu Knawe ...]	variant		`pfarrlehen` was strengthened by intra-hand comparison but full physical line is not frozen
 134	10-18	paragraph-2	[unresolved land/garden/possible steinbruch clause]	unresolved		Do not import earlier semantic reconstruction as text
 134	19	paragraph-3	Von dem acker / [U6]	unresolved		
-134	20	paragraph-3	wolff von grevendorff / [U7]	unresolved	greuendorff; grefendorff	
+134	20	paragraph-3	wolff von [surname-token] / [U7]	unresolved	grevendorff; greuendorff; grefendorff	Repeated surname-like token; exact spelling unresolved
 134	21	paragraph-3	[U8] Soll er dem pfarrer ein	unresolved		
 134	22	paragraph-3	andern acker / [U9]	unresolved		
 134	23	paragraph-3	[U10] vnnd denselbigen	unresolved		
