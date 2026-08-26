@@ -21,13 +21,17 @@ The first benchmark is the Knau visitation material in ThHStAW, EGA, Reg. Ii 5 (
 7. **The user controls purpose and depth.** The user should not have to adjudicate specialist questions they cannot validate. The system must expose unresolved points and identify the next useful evidential test.
 8. **Human experts are escalation, not routine.** Seek qualified independent review when a consequential unresolved issue, specialist notation or publication-level claim genuinely warrants it.
 9. **Reproducible decisions.** Material revisions are logged with reason and evidence.
-10. **Research outcome before system development.** `paleo-type` exists to unlock sources, not to become an end in itself. Build or automate only when it materially improves the current research result.
-11. **Lean by default.** Add tooling only when it shortens the path to a more reliable transcription or interpretation.
-12. **Learning feeds back.** Proven project learnings may improve the general method, but project-specific facts never become general palaeographic rules.
+10. **AI provenance is proportional.** Record consequential AI use, not every prompt. If a model materially shapes a research decision, preserve enough context to understand what it did and how the result was checked.
+11. **Rights and confidentiality come before convenience.** Do not send restricted, sensitive or rights-unclear material to external AI systems merely because it is easier.
+12. **Validation scales with consequence.** Exploration can be lightweight; working claims require evidence control; publication-level or consequential claims require stronger independent validation.
+13. **AI-as-method requires evaluation.** If HTR/LLM/automation systematically determines corpus-level findings, validate it against representative human-checked material and examine failure patterns before relying on aggregate results.
+14. **Research outcome before system development.** `paleo-type` exists to unlock sources, not to become an end in itself. Build or automate only when it materially improves the current research result.
+15. **Lean by default.** Add tooling only when it shortens the path to a more reliable transcription or interpretation.
+16. **Learning feeds back.** Proven project learnings may improve the general method, but project-specific facts never become general palaeographic rules.
 
 A compact formulation of the intended division of labour is:
 
-`AI supplies expertise → evidence tests and constrains → uncertainty remains visible → user controls purpose/depth → expert review only when warranted`
+`AI supplies expertise → evidence tests and constrains → provenance records consequential AI use → validation scales with stakes → uncertainty remains visible → user controls purpose/depth → expert review only when warranted`
 
 ## Evidence layers
 
@@ -60,6 +64,7 @@ Only `P`, `E`, and `F` support claims about content, and only within the passage
 
 ```text
 methodology/                 General rules that apply to every project
+  ai-governance.md           Lean AI provenance, rights and validation rules
 projects/
   ega-reg-ii-5-knau/         First benchmark/source project
     STATUS.md                Exact restart point and next action
@@ -75,23 +80,32 @@ projects/
 
 ## Working cycle
 
-1. Register the source and what was actually inspected.
-2. Segment by physical page/region/line.
-3. Produce a blind graphematic reading from the image.
-4. Record alternatives and unresolved tokens without semantic filling.
-5. Build internal comparisons from repeated forms in the same hand.
-6. Adjudicate only where evidence warrants it; log substantive changes.
-7. Freeze a versioned transcription checkpoint.
-8. Only then introduce parallel primary sources, editions and historical context.
-9. Keep source-derived facts separate from inference and interpretation.
-10. Use expert knowledge to choose the next best comparison or source check, not to overwrite uncertainty.
-11. Feed genuinely generalizable lessons back into `methodology/`.
+1. Register the source and what was actually inspected; preserve enough provenance to identify the source independently of a transient chat.
+2. Check rights/access constraints before sending restricted or sensitive material to external AI services.
+3. Segment by physical page/region/line.
+4. Produce a blind graphematic reading from the image.
+5. Record alternatives and unresolved tokens without semantic filling.
+6. Build internal comparisons from repeated forms in the same hand.
+7. Adjudicate only where evidence warrants it; log substantive changes.
+8. Record consequential AI assistance when it materially affects a research decision; routine prompting need not be archived.
+9. Freeze a versioned transcription checkpoint.
+10. Only then introduce parallel primary sources, editions and historical context.
+11. Keep source-derived facts separate from inference and interpretation.
+12. Use expert knowledge to choose the next best comparison or source check, not to overwrite uncertainty.
+13. Raise validation when the consequence of error rises; evaluate AI explicitly if it becomes a systematic corpus-level method.
+14. Feed genuinely generalizable lessons back into `methodology/`.
 
 ## Research-first rule
 
 Before adding tooling, ask whether direct source work would solve the current problem faster. More tables, agents, HTR models, confidence scores or automation do not constitute rigor by themselves. A technical extension belongs in the repository only when it reduces consequential uncertainty, improves traceability or materially accelerates the present research task.
 
 The preferred next action is always the one with the highest expected research value per unit effort.
+
+## AI governance
+
+`methodology/ai-governance.md` defines the minimum additional safeguards for consequential AI use: proportional provenance, rights/confidentiality checks, stable primary-source identity, validation scaled to stakes, evaluation when AI becomes a research method, and human accountability for published claims.
+
+It is intentionally lean. It does **not** require archiving every chat, prompt or model output.
 
 ## Current benchmark
 
