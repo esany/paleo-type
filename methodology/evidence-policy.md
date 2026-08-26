@@ -24,6 +24,19 @@ For external sources record:
 - what it does **not** establish;
 - date checked.
 
+## Primary-source provenance
+
+A primary image or file used for substantive transcription must become traceable independently of a transient chat session as soon as practical. Record what is actually known, such as:
+
+- archive/repository and shelfmark;
+- folio/page/image identifier;
+- access route;
+- stable/local filename or identifier;
+- date inspected;
+- relevant rights/access limitation.
+
+Use a checksum/hash only when it solves a concrete identity or versioning problem. Do not invent archival metadata that has not been verified, and do not publish restricted binary sources merely to satisfy reproducibility.
+
 ## Promotion rule
 
 A source may move from `K/S` to `P/E/F` only after the underlying material has actually been opened and the relevant passage inspected. Repetition of metadata never promotes status.
@@ -34,6 +47,8 @@ Every consequential historical claim must be traceable to either:
 
 - an inspected source (`P/E/F`), or
 - an explicitly labeled inference (`H`) whose premises are themselves traceable.
+
+AI/model output is never a source-status category and does not independently support a historical claim. Consequential AI use is documented as research provenance under `methodology/ai-governance.md`, not as evidence.
 
 ## Parallel-source rule
 
