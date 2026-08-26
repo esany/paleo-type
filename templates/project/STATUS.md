@@ -4,17 +4,15 @@ Last checkpoint: YYYY-MM-DD
 
 ## Research purpose
 
-State the concrete purpose of this project. Do not copy generic method or gate requirements here.
+State the historical investigation / source-unlocking purpose. Do not copy generic method or gate requirements here.
 
-## Project kind and scope
+## Source group
 
-- kind: `source-unit` or `research-scope`
-- canonical source(s): reference corpus source IDs; do not redefine source identity
-- exact active scope: state what part/question is actually being worked on
+Reference `sources/sources.tsv` and summarize only what a human needs to understand the investigation: principal/comparison/control/context sources and the relevant project loci. Canonical archival/file identity remains in `corpus/`.
 
-## Evidence state
+## Evidence and preservation state
 
-State what has actually been inspected, at what level, and what remains metadata-only/not inspected/not observable.
+State what has actually been inspected, at what level, and what remains metadata-only/not inspected/not observable. State whether every central original export used as evidence is actually preserved in the repository (or why preservation is currently blocked). A URL/URN alone is not equivalent to the exact inspected export.
 
 ## Generic gate state
 
@@ -22,12 +20,12 @@ Reference `../../methodology/research-gates.md`. Record only this project's curr
 
 ## Project relations
 
-Reference relevant rows in `../relationships.tsv`. Project relations describe research organisation only; historical/source relations belong in `corpus/relationships.tsv`.
+Reference `../relationships.tsv` only if this genuine investigation materially relates to another genuine project. Historical/source relations belong in `corpus/relationships.tsv`.
 
 ## NEXT ACTION — canonical restart point
 
-State one bounded next research action. If the project is only registered and not active, say `not yet activated` rather than inventing work.
+State one bounded next research action.
 
 ## Restartability test
 
-A new capable researcher must be able to identify the source/scope, evidence state, current gate/activity state, relevant project/source relations and exact next action without old chat.
+A new capable researcher must be able to identify the investigation, distinct archival source records, relevant loci, exact source exports/preservation state, current gate/activity state and exact next action without old chat.
