@@ -1,0 +1,21 @@
+page_id	line_id	region	reading	status	alternatives	evidence_note
+132	00	heading	Knawe	working		Recheck directly from image before formal edition
+132	01	top	hat ij filial Laßgaw / vnnd Bharen	variant	Laßkaw; Bahren	Recovered from latest blind-reading checkpoint; spelling needs image reinspection
+132	02	top	wolff von grevendorff lehen /	working	greuendorff; grefendorff	Historical identification must remain separate
+132	03	list	It(em) [W1] ... geltzins	unresolved		W1 is numerical/economic token
+132	04	list	It(em) [W2] ...	unresolved		W2 is numerical/economic token
+132	05	list	It(em) [W3] ... maß	unresolved		W3 is numerical/economic token
+132	06	list	It(em) [W4] 1 viertel haber ... maß /	variant		Numeral/measure reading requires concordance
+132	07	list	[W5] feldes [besampt | besament] gut	variant	besampt; besament	W5 unresolved
+132	08	list	It(em) [W6] ...	unresolved		W6 unresolved
+132	09	prose	Holtzmarck zu notturfft zu brennen	working		Same-hand recheck required
+132	10	prose	vnnd zu bawen	working		
+132	11	prose	Das dem pfarrern aus einem jeden haus	working		Latest independent re-read
+132	12	prose	zu Knawe / Laßgaw vnnd Bharen	variant	Laßkaw; Bahren	Place spelling requires image control
+132	13	prose	jerlich 1 silbern grosch / gereicht	working		Economic notation to cross-check
+132	14	prose	werden soll / neben alles andern d(er)	working		Abbreviation expansion not yet formalized
+132	15	prose	pfarrern einkommen /	working		
+132	16	prose	Das wolff von grevendorff dem	working	greuendorff; grefendorff	
+132	17	prose	pfarrern zu Knawe / alles [U1]	unresolved		U1 unresolved verb/object span
+132	18	prose	soll was er dem pfarrlehen [U2]	unresolved		Earlier semantic completions rejected
+132	19	prose	hat	working		
