@@ -4,107 +4,114 @@ Last checkpoint: 2026-08-26
 
 ## Overall research goal
 
-Produce a source-exact, critically controlled scholarly edition of the Knau passage in `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`, with visible uncertainty, traceable editorial decisions, controlled use of the demonstrated Reg. Ii 4 parallel and the already available Reg. Ii 3 comparison material.
+Produce a source-exact, critically controlled scholarly edition of the Knau passage in `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`, with visible uncertainty, traceable editorial decisions, controlled use of comparison witnesses and a human-auditable path from archival source to transcription, analysis and eventual edition.
 
-Milestone requirements and gates live in `MILESTONES.md`. This file records only the current project state and restart point.
+The authoritative end-to-end scholarly method is `methodology/historical-source-workflow.md`. Detailed diplomatic requirements are in `methodology/transcription-guidelines.md`. Project research gates are in `MILESTONES.md`.
+
+## Method audit checkpoint
+
+A standards/expertise audit on 2026-08-26 found that the repository is already strong in provenance, source-relationship discipline, evidence-layer separation, revision traceability and AI-governance, but that the **diplomatic transcription layer was underspecified** relative to established archival/editorial practice.
+
+The audit is persisted in `methodology/historical-source-workflow.md` and has these binding consequences:
+
+- archival folio/page + editor-assigned physical line reference must become the primary scholarly transcription address; export-image IDs remain provenance/legacy references;
+- M2 transcription must preserve folio breaks, physical lineation and source-relevant layout/reading order;
+- uncertain positive readings must be distinguishable from illegible/gap material;
+- editorial supply/expansion must be distinguishable from written source text;
+- additions, deletions, damage and hand shifts must be representable when actually present;
+- abbreviation sign and editor-provided expansion must remain separate;
+- a human-readable folio/line diplomatic witness view must be derivable from canonical transcription data without a second manually maintained text truth;
+- method-compliant AI-assisted work must not be described as independently expert-validated unless a qualified independent review actually occurred.
+
+The existing `132.tsv`–`135.tsv` files are therefore **legacy working transcription data**, not yet the final M2-compliant scholarly representation. Existing readings and revision history remain valuable and must not be discarded.
 
 ## Milestone state
 
-- **M1 — Source and transmission basis secured:** substantially reached. Canonical source identities, digital-file provenance, project crosswalks and the relevant comparison-source roles are recorded. The exact textual/transmission relationship to Reg. Ii 4 may be strengthened later by M4 collation without blocking M1.
-- **M2 — Principal witness completely represented:** **ACTIVE — not reached.**
-- **M3 — Internal palaeographic and notational analysis completed:** not yet the active gate; existing palaeographic work is supporting evidence and does not substitute for M2 completeness.
-- **M4 — Existing comparison witnesses/controls independently assessed and collated:** not yet reached; the Reg. Ii 4 corresponding locus is located but detailed collation remains open.
+- **M1 — Source and transmission basis secured:** substantially reached.
+- **M2 — Principal witness completely represented:** **ACTIVE — not reached.** It now includes compliance with the revised diplomatic-transcription requirements above.
+- **M3 — Internal palaeographic and notational analysis completed:** not reached.
+- **M4 — Existing comparison witnesses/controls independently assessed and collated:** not reached; corresponding Reg. Ii 4 locus is located.
 - **M5 — Critically consolidated text state:** not reached.
 - **M6 — Scholarly edition produced and quality-controlled:** final goal, not current work.
 
 ## Canonical source basis
 
-Canonical corpus identity/provenance lives in `corpus/`; project-specific folio/image/export mappings live in `sources/`. Legacy sigla `A/B/C1/C2` are aliases only.
-
 ### Principal witness
 
 `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — ThHStAW, EGA, Reg. Ii 5, **Visitation im Amt Ziegenrück**, 1533 context.
 
-Knau project locus:
+Knau locus:
 
 - export image 132 = fol. 61v — Knau begins;
 - export image 133 = fol. 62r;
 - export image 134 = fol. 62v;
 - export image 135 = fol. 63r — Knau closes at top; following entry is outside scope.
 
-Exact mapping: `sources/reg-ii-5-00000129-crosswalk.tsv`.
+Exact digital/folio mapping: `sources/reg-ii-5-00000129-crosswalk.tsv`.
 
 ### Existing comparison/control sources
 
-- `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — related 1533 Ziegenrück record; corresponding Knau locus located at fol. `306v–309r` / export images 667–672. Structural/textual correspondence is observed; detailed line-level collation remains for M4.
-- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — 1529 Pfarreinkommen record; relevant `Knaw Kirch Einkommen` at fol. `304r` / export image 625. It is comparison/control evidence for economic/notation questions, not a textual witness of the 1533 passage unless demonstrated.
-- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — separate earlier 1529 visitation source; no same-hand/textual-dependence claim is assumed.
+- `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — related 1533 Ziegenrück record; corresponding Knau locus at fol. `306v–309r`. Detailed independent transcription/collation remains M4 work.
+- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — 1529 Pfarreinkommen record; relevant `Knaw Kirch Einkommen` at fol. `304r`. Comparison/control for economic/notation questions, not automatically a textual witness or same-hand control.
+- `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — separate earlier 1529 visitation source; no textual-dependence or same-hand claim assumed.
 
-## Active milestone — M2
+## Existing text checkpoint
 
-### M2 target
+The legacy transcription contains useful working readings, but it cannot yet be presented as a complete scholarly diplomatic transcript because physical lineation and several source phenomena were not systematically encoded.
 
-Every relevant physical text area of Reg. Ii 5, fol. 61v–63r must be represented as conservative line-level diplomatic working text. **M2 does not require every token to be solved.** `variant` and `unresolved` are valid outcomes; paragraph-level descriptions standing in for visible source text are not.
+Controlled anchors include:
 
-### M2 requirements already satisfied / controlled
+- `Knawe` heading on fol. 61v — directly reinspected, `observed`;
+- closing Knau lines on fol. 63r — directly controlled, `observed`;
+- repeated `wolff von` — visually supported; following surname token remains graphematically variant/unresolved;
+- arabic `1` visible in economic clauses;
+- arabic `80` directly reinspected twice on fol. 62r as numeral form only.
 
-- Project boundary 61v–63r is established sufficiently for the current text scope.
-- `Knawe` heading on fol. 61v has been directly reinspected and is `observed`.
-- Closing Knau lines on fol. 63r (`Soll auch ein jeder hausgenos ... / ... acht pfennig ... / pfarrrecht geben`) have been directly controlled and are `observed`.
-- The transcription TSVs 132–135 provide the structured container for the principal witness.
-- Known uncertain readings are not to be repaired from historical/semantic plausibility or by silently copying a comparison witness.
+Known text gaps in the legacy representation remain especially:
 
-### Unmet M2 requirements / known gaps
+- fol. 61v: W1–W6 and U1–U2;
+- fol. 62r: upper economic/natural-obligation passage plus U3–U5 and variant lines;
+- fol. 62v: largest continuous gap, with multi-line paragraph summaries instead of line-level source text.
 
-These are completeness gaps, not a demand that every word be adjudicated:
+## Active M2 problem
 
-1. **fol. 61v:** W1–W6 and U1–U2 still require source-level representation precise enough that unresolved signs/options are localized rather than hidden by coarse description.
-2. **fol. 62r:** upper economic/natural-obligation passage, currently 133:01–11, plus U3–U5 and remaining variant lines require complete conservative line-level representation.
-3. **fol. 62v:** largest continuous M2 gap. 134:01–07 and much of 134:10–23 remain collapsed/unresolved instead of complete line-level diplomatic representation.
-4. Every remaining multi-line placeholder/semantic summary must be replaced by the narrowest source-based representation possible, even where individual words remain unreadable.
-5. After filling these physical-text gaps, perform an M2 completeness pass from 61v through 63r to confirm that no relevant visible line/text unit is omitted.
+Before further lexical/palaeographic resolution, the principal witness must be re-inspected as a **document**, not merely as isolated tokens, so that the compliant transcription can preserve the source's actual physical structure and phenomena.
 
-### Important current evidence limits
-
-- `wolff von` is visually supported across repeated occurrences; the following surname token remains graphematically variant/unresolved. Historical identification as Wolf von Gräfendorf is a separate identification claim.
-- The top quantity in `hat ij filial ...` remains working/variant rather than externally validated.
-- Arabic `1` is directly visible in economic clauses.
-- Arabic `80` has been directly reinspected twice on fol. 62r as a numeral form only.
-- W1–W6 remain unresolved economic/value notation groups.
-- Existing C2 and Reg. Ii 4 material may later help discriminate readings, but they do not remove the M2 requirement to represent what is visible in the principal witness itself.
+This is a scholarly correction, not a software-development project. Do not design a large abstract schema or migrate line IDs by assumption.
 
 ## NEXT ACTION — canonical restart point
 
-**Advance M2 only:** re-read the principal witness in physical completeness order and replace coarse unresolved placeholders with conservative line-level source representations:
+Using the original/digital images of Reg. Ii 5 fol. 61v–63r:
 
-1. fol. 61v — unresolved item list / W1–W6 / U1–U2;
-2. fol. 62r — upper passage 133:01–11 / U3–U5 / remaining variant lines;
-3. fol. 62v — 134:01–07 and 134:10–23, then all remaining lines;
-4. run a fol. 61v–63r completeness pass against the images.
+1. inspect each folio for physical lineation, reading order and relevant layout (including list/accounting arrangement), headings/marginalia, additions/deletions/corrections, damage/illegibility, abbreviation practice and any evidence of hand shifts;
+2. assign editor line references **only from direct physical-line inspection** (`61v:01`, etc. conceptually); do not mechanically convert legacy `132:xx` IDs;
+3. map every existing legacy transcription row to its verified folio/physical-line locus where possible, preserving the legacy/export IDs as provenance;
+4. identify which source phenomena actually occur and choose the **smallest** compliant structured representation required by `transcription-guidelines.md`;
+5. then migrate/extend the principal-witness transcription without discarding prior readings/decisions;
+6. produce a derived human-readable diplomatic witness view showing folio breaks and physical line references;
+7. complete the remaining visible text representation folio by folio and run the M2 gate.
 
-Record visible signs, partial strings and alternatives even when no lexical solution is possible. Do **not** make detailed C2 notation analysis, Reg. Ii 4 collation, final W1–W6 adjudication or edition-layer production the controlling task until the M2 representation gate is satisfied. Such evidence may be consulted only when necessary to segment/represent the principal source without importing its reading.
+Do not begin detailed C2 notation analysis, Reg. Ii 4 collation, historical normalization or edition rendering as the controlling task until this M2 source-representation correction is complete.
 
-## What comes after M2
+## Human-in-the-loop state
 
-Only after M2 passes:
+The user must be able to inspect the current diplomatic text without understanding internal TSV conventions. The future witness view is therefore a scholarly M2 requirement, not a cosmetic feature.
 
-- **M3:** systematically test consequential unresolved/variant loci using internal palaeographic and notational evidence, with C2 only in its explicitly limited comparison/control role where relevant.
-- **M4:** independently read/collate Reg. Ii 4 Bd. II 306v–309r against Reg. Ii 5 61v–63r and record demonstrated agreements/divergences without witness contamination.
-- **M5:** consolidate the critically controlled text, preserve residual uncertainty and adversarially test consequential working readings.
-- **M6:** derive and quality-control the scholarly edition from that consolidated research state.
+No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded. Method-compliant AI-assisted readings must remain distinguishable from any later independent specialist validation.
 
 ## Stop conditions
 
-Mark `unresolved` rather than infer when image evidence does not discriminate; support is only syntax/history; a comparison passage was not actually inspected; witness correspondence is assumed rather than demonstrated; archival metadata is being treated as textual proof; or repeated AI readings are the only corroboration.
+Mark uncertainty rather than infer when source evidence does not discriminate; distinguish unclear positive reading from illegible/gap material; never add supplied text indistinguishably to the written text; do not claim same hand without palaeographic evidence; do not infer physical line addresses from export numbering; and do not let comparison sources overwrite the principal witness.
 
 ## Restartability test
 
-A new capable agent should be able to determine from `MILESTONES.md`, this file, the transcription TSVs and the canonical corpus/source records:
+A new capable researcher/agent must be able to determine from the repository:
 
-- the final research goal;
-- which milestone is active and why;
-- which M2 requirements remain unmet;
-- the exact physical loci to inspect next;
-- which tempting later-stage activities must not displace M2 completeness.
+- which scholarly standards/method govern the work;
+- why the legacy transcription is not yet M2-compliant;
+- what source phenomena and physical structure must now be directly checked;
+- what existing readings remain valid working evidence;
+- what the exact next source-inspection action is;
+- what has and has not received independent human expert validation.
 
-If old chat is required to recover any of that state, this checkpoint is incomplete.
+If any of that requires old chat, the checkpoint is incomplete.
