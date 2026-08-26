@@ -1,127 +1,90 @@
-# Workflow
+# Workflow — operational map
+
+## Authority
+
+The authoritative scholarly end-to-end method is `methodology/historical-source-workflow.md`. This file is only the **operational execution map**. Detailed transcription requirements live in `methodology/transcription-guidelines.md`; provenance in `source-and-provenance.md`; evidence/source-status rules in `evidence-policy.md`; AI validation rules in `ai-governance.md`.
+
+If an operational shortcut conflicts with the scholarly method, the scholarly method wins and the conflict must be repaired.
 
 ## Goal
 
-Produce a traceable corpus map, transcription and source-based historical working basis with the least process necessary to keep results reliable.
+Produce a traceable, human-auditable historical source transcription and analysis with the least process necessary to keep it reliable. Research activity must advance an explicit project milestone requirement rather than merely generate more tooling or notes.
 
-## Stages
+## Operational sequence
 
-### -1. Discover and bound the source field
-When the task extends beyond a single known manuscript, record candidate archival records in `corpus/sources.tsv` without pretending they have been inspected. Keep discovery scope explicit: repository/catalogue, date/geographic limits, query/filter and access limits when completeness matters.
+### S1 — Identify source/provenance
+Register canonical source identity, archival locus and digital instantiation. Keep folio, portal/export image, PDF page and working IDs distinct. Record source relationships at their actual evidential level.
 
-Do not transcribe everything merely because it was discovered. Prioritize by expected research value.
+### S2 — Inspect document/material structure
+Before claiming complete transcription, inspect the working locus for foliation/boundaries, physical lineation, reading order, layout/list/table structure, headings/marginalia, additions/deletions/corrections, damage/illegibility, abbreviation practice and evidence of hand shifts where relevant.
 
-### 0. Register source identity and provenance
-Follow `methodology/source-and-provenance.md`.
+Do not mark unexamined phenomena absent; use `not investigated` where necessary.
 
-Distinguish archival unit, record, witness, locus and digital instantiation. Record archive/fonds/signature/record ID, folio/locus, digital URL/identifier and inspection status where available. Keep portal image numbers, PDF pages, export sequence and archival foliation separate.
+### S3 — Diplomatic transcription
+Transcribe the principal witness by archival folio and directly inspected physical line. Preserve source structure and written forms. Distinguish uncertainty/source phenomena according to `transcription-guidelines.md`. Do not replace visible multi-line source text with semantic summaries.
 
-If a new source relation matters (extract/copy/parallel/event membership), record it in `corpus/relationships.tsv` with the actual evidence status. Do not convert catalogue metadata into demonstrated textual dependence.
+A human-readable folio/line witness view must be derivable from canonical transcription data; machine-oriented TSV fragments alone are not sufficient as an M2 result.
 
-Preserve enough identity that substantive work does not depend on recovering a transient chat attachment. Check rights/access constraints before external AI processing where relevant.
+### S4 — Internal palaeographic analysis
+For consequential uncertainty, localise the sign sequence, classify the problem, seek appropriate controlled internal comparanda, compare graphical features and record candidates/evidence. Same record is not automatically same hand. Context follows graphematic candidate formation rather than replacing it.
 
-### 1. Observe
-Record page structure, regions, physical lines, headings, marginalia and obvious numerical/list structures. Do not interpret lexical content unnecessarily.
+### S5 — Freeze/review principal-witness checkpoint
+Before strong external-witness influence, ensure the principal witness has a coherent source-based checkpoint. It may contain unresolved readings.
 
-### 2. Blind read
-Transcribe from the image before consulting contextual identifications or external parallels. Preserve historical spelling. Mark unresolved/variant material explicitly.
+### S6 — Independent external control and collation
+Identify/read related witnesses and controls independently, then map corresponding loci and collate. Record agreements/divergences and upgrade source relationships only as far as evidence warrants. Never copy a clearer witness into the principal witness transcription.
 
-### 3. Internal palaeographic comparison
-Use repeated forms in the same hand/source to test graphemes, abbreviations, numerals and words. Store reusable hand/source-specific evidence in `palaeography/`.
+### S7 — Normalize/identify/interpret
+Only after source readings are explicit, link manuscript forms to normalized people/places/institutions/values/concepts and perform historical source criticism. Keep manuscript form, expansion, normalization, identification and interpretation distinct.
 
-### 4. Adjudicate
-Change a working reading only when evidence improves. Log material revisions and rejected readings. If AI materially shaped a consequential decision, record proportional research provenance as defined in `ai-governance.md`.
+### S8 — Critical consolidation/validation
+Run the relevant scholarly and technical integrity gates: complete source representation, decision traceability, adversarial checking, provenance/referential consistency, witness-contamination check and explicit independent-human-review status for consequential specialist claims.
 
-### 5. Freeze witness checkpoint
-Create a coherent page/section transcription version before importing broad contextual or parallel-witness wording. A checkpoint may still contain unresolved tokens.
+An unresolved but well-tested result may pass; an unsupported resolved result may not.
 
-### 6. Collate / external control
-For a possible parallel witness:
+### S9 — Edition/publication
+Define an explicit edition concept, then derive the user-facing edition from the consolidated research state. Do not introduce new manuscript readings at the presentation stage. Match publication/interchange technology to a concrete scholarly need.
 
-1. identify both records independently;
-2. locate corresponding loci;
-3. inspect/read each without importing the other's spelling;
-4. compare structure and wording;
-5. record correspondence/divergence;
-6. upgrade the source relationship only as far as the evidence warrants.
+## Research-state persistence
 
-For external controls generally, prefer direct parallel primary sources and scholarly editions before research literature. Audit access level before using content.
+When research truth changes, update its canonical owner during the same work block when practical:
 
-### 7. Identify and interpret
-Link readings to persons, places, institutions, legal/economic concepts and historical context. Keep normalized identities separate from manuscript forms. Keep source-derived facts separate from inference.
-
-### 8. Publish usable result
-Produce a readable transcription, uncertainty/apparatus, source/provenance basis and concise historical commentary whose claims can be traced. Raise validation to match the consequence of error; consequential claims that remain dependent on unresolved specialist judgement require appropriate independent human review.
-
-### 9. Persist research state
-Whenever a work session changes research truth, persist the minimum changed state in its canonical repository records before relying on the result for future continuation.
-
-In particular:
-
-- corpus source identity/inspection stage → `corpus/sources.tsv`;
+- source identity/inspection stage → `corpus/sources.tsv`;
+- external/digital file identity/recoverability → `corpus/files.tsv`;
 - source/event/entity relationship → `corpus/relationships.tsv`;
 - event context → `corpus/events.tsv`;
-- repeated normalized identity → `entities/` where useful;
-- project-specific image/folio/export mapping → project `sources/`;
-- changed readings → `transcription/` and substantive replacements/rejections → decision log;
-- changed comparison evidence → `palaeography/`;
-- changed external-source access/status → `research/`;
-- changed active problem/scope/next action → `STATUS.md`;
-- project-specific failure/correction → `LEARNINGS.md`;
-- general method/structure → owning methodology/guardrail file.
+- project source/folio/image mapping → project `sources/`;
+- diplomatic reading → project `transcription/`;
+- consequential reading revision/rejection → `apparatus/decisions.tsv`;
+- palaeographic evidence → `palaeography/`;
+- external-source inspection status → `research/`;
+- active gate/next action → `STATUS.md`;
+- project-specific failure/lesson → `LEARNINGS.md`;
+- general scholarly method → `historical-source-workflow.md` or relevant detailed methodology;
+- durable cross-project architecture rationale → `DECISIONS.md`.
 
-Do not make a future agent recover durable research state from chat.
+Do not make a future researcher recover durable state from chat.
 
-### 10. Research integrity gate
-Before treating a consequential changed result or substantive work block as complete, run the relevant branches of `methodology/quality-and-learning.md`.
+## Project milestone rule
 
-The gate tests evidence actually inspected, claim-layer separation, genuine independence of corroboration, persistence of changed research truth and goal alignment.
+Project milestones define scholarly maturity states, not schedules. `STATUS.md` must identify the active milestone and the smallest next source/evidence action that advances an unmet requirement.
 
-For archival/corpus work also ask:
+If a proposed activity cannot be tied to an unmet gate requirement, an invalid prerequisite or necessary evidence, do not perform it as current research work.
 
-- is the exact record/locus/instantiation identifiable?
-- did I confuse image/PDF/export numbering with foliation?
-- is a relationship observed/textually demonstrated, or only metadata-supported?
-- did a clearer parallel witness overwrite the witness under transcription?
+## Validation proportionality
 
-A consequential unresolved result may pass. An unsupported resolved result may not.
+Use the lightest check sufficient for the consequence of being wrong, but never omit distinctions required for scholarly source representation. Tooling can remain lean; evidence semantics cannot.
 
-At useful checkpoints, actively try to falsify a small sample of important `working` readings or relationships rather than merely confirm repository consistency.
+Independent specialist validation is not the same as method-compliant AI work. Record which occurred.
 
-## Corpus expansion cycle
+## Corpus expansion
 
-Once the starting project is stable enough, corpus growth follows:
+Corpus discovery is separate from the active transcription/edition workflow. Discovered sources may remain metadata/images inspected. Full transcription is never automatic merely because a source exists.
 
-`discover → register → deduplicate without forced merging → inspect structure → prioritize → selectively transcribe/collate → update relations → return to active research question`
+## Deferred technology
 
-A source may remain `metadata-inspected` or `images-inspected`; full transcription is not a default requirement.
+When useful technology is not required by a current scholarly gate, preserve it as a trigger-based GitHub Issue rather than implementing it speculatively.
 
-## AI governance triggers
+## Maintenance
 
-Ordinary AI assistance stays lean. Do not create evaluation infrastructure for routine candidate generation, comparison or critique.
-
-Formal evaluation is triggered when AI/HTR/automation materially determines corpus-level findings such as bulk transcription, classification, extraction, coding or quantitative counts. Then follow `methodology/ai-governance.md`: representative human-checked material, appropriate metrics, qualitative failure analysis, validated scope and explicit exclusions.
-
-## Priority rule
-
-At every stage choose the next action with the highest expected reduction of consequential uncertainty per unit effort. Direct source comparison beats generic tooling when it answers the question faster.
-
-Validation is proportional: use the lightest check sufficient for the consequence of being wrong.
-
-## Checkpoint rule
-
-Project `STATUS.md` is the canonical continuation point for active work. It should point to corpus/source records rather than duplicate them.
-
-A valid checkpoint is restartable: another capable agent should be able to continue correctly from the repository without the old chat.
-
-## Deferred improvement rule
-
-When a useful future technical/methodological extension is not justified now, preserve it as a GitHub Issue with:
-
-`problem/benefit → why not now → trigger → acceptance criteria`.
-
-Do not implement it merely to complete a roadmap.
-
-## Maintenance rule
-
-Maintenance is event-driven. Follow `methodology/maintenance.md` and update only records whose truth changed. Repository maintenance is normally an assistant responsibility.
+Follow `methodology/maintenance.md`: propagate material truth changes across dependent records, run a bounded consistency pass when warranted, then return to source research.
