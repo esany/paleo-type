@@ -1,0 +1,20 @@
+id: ega-reg-ii-3-00000235
+title: "Reg. Ii 3, fol. 303r–306r — parish/church income material"
+repository_role: "independent source-unit project; comparison source for Knau research"
+canonical_source_id: "THHSTAW-EGA-REG-II-3-STAT-VIS-00000235"
+archive: "Landesarchiv Thüringen – Hauptstaatsarchiv Weimar"
+collection: "Ernestinisches Gesamtarchiv"
+signature: "ThHStAW, EGA, Reg. Ii 3"
+working_images:
+  - "623"
+  - "624"
+  - "625"
+  - "626"
+  - "627"
+  - "628"
+  - "629"
+  - "630"
+active_scope: "Uploaded 9-page archival export; manuscript images 623–630, with archival range around fol. 303r–306r. Knaw Kirch Einkommen is visible on image 625 / fol. 304r."
+source_binary_policy: "Exact archive-export binary remains external-to-git; repository preserves identity, checksum/provenance metadata, crosswalk and derived scholarly work."
+transcription_mode: "conservative graphematic working transcription"
+external_context_allowed_in_blind_reading: false
