@@ -13,12 +13,13 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | shared architectural/methodological rationale | `DECISIONS.md` | lean cross-project decision record |
 | general research method | `methodology/*.md` | reusable normative method |
 | corpus source identity and inspection stage | `corpus/sources.tsv` | corpus inventory |
+| external/digital source file or instantiation identity, checksum, coverage, storage expectation and rights status | `corpus/files.tsv` | canonical file/instantiation manifest |
 | explicit source/event/entity relationships | `corpus/relationships.tsv` | relationship claims + evidence status |
 | administrative/historical event context | `corpus/events.tsv` | contextual event/activity registry |
 | recurring normalized identities | `entities/*.tsv` | authority-like local identities; never manuscript readings |
 | project identity/stable scope | `projects/<id>/project.yml` | project identity |
 | current project state/exact next action | `projects/<id>/STATUS.md` | restart point |
-| project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk |
+| project-specific image/folio/export/source inspection detail | `projects/<id>/sources/` | local provenance/crosswalk; does not replace `corpus/files.tsv` |
 | current line readings | `projects/<id>/transcription/*.tsv` | transcription truth |
 | substantive reading changes | `projects/<id>/apparatus/decisions.tsv` | revision trail |
 | external literature/source inspection audit | `projects/<id>/research/` | checked-vs-lead distinction |
@@ -40,7 +41,7 @@ Read `README.md` first. Deeper files are opened only as needed.
 1. read `README.md` if repository structure is not already established;
 2. read `AGENTS.md`;
 3. read `DECISIONS.md` only when a shared method/data-model choice matters;
-4. inspect relevant `corpus/` rows if source identity/relations matter;
+4. inspect relevant `corpus/` rows, including `corpus/files.tsv` when exact inspected files/instantiations matter;
 5. read active project `STATUS.md`;
 6. read relevant decision rows and `LEARNINGS.md`;
 7. read only relevant methodology;
@@ -57,6 +58,11 @@ Read `README.md` first. Deeper files are opened only as needed.
 - update `corpus/sources.tsv`;
 - update project `sources/` only for project-specific inspection/crosswalk detail;
 - do not duplicate full corpus identity in project files.
+
+### External/digital source file or instantiation changes
+- update `corpus/files.tsv` for file identity, checksum, source coverage, storage expectation and rights status;
+- keep project `sources/` for local folio/image/PDF/export mappings and inspection details;
+- do not create a second file manifest inside a project.
 
 ### Source relationship changes
 - update `corpus/relationships.tsv` with evidence/status;
@@ -93,14 +99,14 @@ Read `README.md` first. Deeper files are opened only as needed.
 - update Wiki explanation only if end-user meaning changes and write access exists.
 
 ### Canonical truth or structure changes materially
-Run a **bounded repo-wide consistency pass** after changes such as source-ID migration, corrected source identity/provenance, relationship-status change, status-model change or repository restructuring.
+Run a **bounded repo-wide consistency pass** after changes such as source-ID migration, corrected source identity/provenance, file/instantiation manifest changes, relationship-status change, status-model change or repository restructuring.
 
 Start from the changed canonical truths, not from a ritual reread of every file:
 
 1. state the changed truths/identifiers;
 2. check dependent canonical records and project crosswalks;
 3. check derived state (`project.yml`, `STATUS.md`, research/source audits) for obsolete wording or completed `next_step`s;
-4. search for stale identifiers/aliases and contradictory folio/image/date/source-relation claims;
+4. search for stale identifiers/aliases and contradictory folio/image/date/source/file-relation claims;
 5. check relevant open Issues against current implementation/triggers;
 6. apply the fachlich-technisches quality gate from `AGENTS.md`;
 7. stop when the repository is coherent and return to research.
@@ -149,14 +155,15 @@ Before completing consequential research ask:
 1. What research truth changed?
 2. Is it in its one canonical home?
 3. Did a source identity/relation change require a corpus update?
-4. Did a reading change require transcription/decision/palaeography updates?
-5. Did the active problem/next action change?
-6. Did a project failure create a real learning?
-7. Did a deferred idea become useful enough for an Issue, or did an existing Issue's trigger actually fire?
-8. Did a material canonical/structural change require a bounded repo-wide consistency pass?
-9. Can another capable agent identify the exact sources, understand evidence status and continue without the chat?
+4. Did an external/digital source file or instantiation change require a `corpus/files.tsv` update?
+5. Did a reading change require transcription/decision/palaeography updates?
+6. Did the active problem/next action change?
+7. Did a project failure create a real learning?
+8. Did a deferred idea become useful enough for an Issue, or did an existing Issue's trigger actually fire?
+9. Did a material canonical/structural change require a bounded repo-wide consistency pass?
+10. Can another capable agent identify the exact sources/files, understand evidence status and continue without the chat?
 
-If 9 is no, persist the minimum missing state.
+If 10 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
