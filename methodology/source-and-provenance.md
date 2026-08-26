@@ -53,15 +53,17 @@ A stable source identity should preserve, where available:
 
 `archive + fonds + signature + record_id + title + date range + folios + persistent/digital URL`
 
-For consequential image-based work, preserve enough instantiation identity to recover the exact inspected object. When binaries are outside Git, record a stable URL/URN and, when practical and rights-compatible, filename/checksum/storage expectation.
+For consequential image/file-based work, the exact inspected instantiation must also be recoverable. `corpus/files.tsv` is the canonical manifest for external/digital source files or instantiations and records, where available/applicable, file identity, checksum, source coverage, storage expectation and rights status. Stable portal URLs/URNs remain part of source/digital provenance; project crosswalks map internal image/PDF/export positions to folios without becoming a competing file manifest.
 
 Never invent missing identifiers.
 
 ## Corpus inventory
 
-`corpus/sources.tsv` is the canonical corpus-level inventory.
+`corpus/sources.tsv` is the canonical corpus-level inventory of archival/source units and their inspection stage.
 
-It records known source units independently of whether they have been fully read. Discovery is not inspection; inspection is not transcription; transcription is not collation.
+`corpus/files.tsv` is the canonical corpus-level manifest of external/digital source files or instantiations used in research. It complements rather than duplicates `corpus/sources.tsv`: a source record identifies the archival/intellectual source; a file row identifies the concrete external/digital representation used or expected for inspection.
+
+Discovery is not inspection; inspection is not transcription; transcription is not collation.
 
 Use `inspection_status` values descriptively, for example:
 
@@ -125,6 +127,7 @@ Digitised archives add a second mediation layer that must itself be criticized.
 For consequential work ask:
 
 - What record did the portal/export actually select?
+- Which external/digital file or instantiation was actually inspected, and is it represented in `corpus/files.tsv` when file-based work is consequential?
 - Which numbering system is visible: folio, portal image, PDF page, export sequence, legacy working ID?
 - Is the export complete for the claimed range?
 - Are metadata from the archive, aggregator, editor or researcher distinguishable?
@@ -176,17 +179,18 @@ Transcribe only as deeply as the active research question requires. A source may
 
 When new archival/source knowledge changes research truth:
 
-- corpus identity → `corpus/sources.tsv`;
+- corpus source identity/stage → `corpus/sources.tsv`;
+- external/digital source file identity/checksum/coverage/storage/rights → `corpus/files.tsv`;
 - source relationship → `corpus/relationships.tsv`;
 - event context → `corpus/events.tsv`;
 - normalized repeated entity → `entities/`;
-- project-specific exact image/folio mapping → project `sources/` crosswalk;
+- project-specific exact image/folio/PDF/export mapping and inspection detail → project `sources/` crosswalk;
 - project consequence/next action → project `STATUS.md`.
 
 Do not duplicate these truths in chat, Wiki or parallel notes.
 
 Final test:
 
-> Could another capable researcher identify the exact source, understand what was actually inspected, distinguish catalogue claims from demonstrated relationships, and continue the current research without recovering the chat?
+> Could another capable researcher identify the exact source and inspected file/instantiation, understand what was actually inspected, distinguish catalogue claims from demonstrated relationships, and continue the current research without recovering the chat?
 
 If not, persist the missing minimum state before treating the work block as complete.
