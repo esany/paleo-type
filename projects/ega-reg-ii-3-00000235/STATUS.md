@@ -1,17 +1,29 @@
-# Status — EGA Reg. Ii 3 / 00000235
+# STATUS — EGA Reg. Ii 3 / 00000235
+
+Last checkpoint: 2026-08-26
+
+## Research purpose
+
+Preserve this independent source unit and its reusable source-local mapping for scoped research, especially economic/notation comparison around Knau.
+
+## Project kind and scope
+
+- kind: `source-unit`
+- canonical source: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`
+- active scope: uploaded images 623–630; archival range around fol. 303r–306r; `Knaw Kirch Einkommen` visible at image 625 / fol. 304r.
 
 ## Evidence state
 
-Primary archive export inspected from the user-supplied 9-page PDF. The export identifies the archival unit as Landesarchiv Thüringen – Hauptstaatsarchiv Weimar, Ernestinisches Gesamtarchiv, ThHStAW, EGA, Reg. Ii 3. Manuscript images 623–630 are preserved in the supplied section. Image 625 visibly contains the heading `Knaw Kirch Einkommen` on fol. 304r.
+The primary archive export has been inspected. Exact binary provenance is in `corpus/files.tsv`; image/folio/PDF mapping is in `sources/crosswalk.tsv`. Similarity or relevance to Reg. Ii 5 does not establish textual identity, same-hand status or dependence.
 
-## Repository preservation
+## Project relations
 
-The source binary itself is not copied into Git because the repository's current source policy records exact archive binaries as `external-to-git`. Preservation in this repository therefore means: canonical source identity, file/checksum provenance in `corpus/files.tsv`, image/folio/PDF-page crosswalk, source-specific project scope, and future transcriptions/apparatus kept under this project.
+See `../relationships.tsv`. The Knau research-scope project currently `uses-as-control` this source-unit project for economic/notation questions.
 
-## Separation rule
+## NEXT ACTION — canonical restart point
 
-This source is an independent source unit. Similarity or relevance to Reg. Ii 5 does not establish textual identity, same-hand status, or dependence. Any such claim requires explicit comparison evidence.
+`not yet activated` for source-unit-wide transcription. When the Knau project reaches a comparison task requiring this source, perform only the bounded direct reading needed by that research question and keep results source-local here.
 
-## Next scholarly work
+## Restartability test
 
-Create image-level transcription files only after direct manuscript reading; record uncertainty explicitly and keep interpretation separate from diplomatic evidence.
+A new researcher can identify the exact source/export/locus, its control role, evidence limits and dormant state without chat.
