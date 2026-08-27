@@ -15,7 +15,7 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | GitHub Milestone-family/naming/backlog semantics | `MILESTONES.md` | planning/navigation rules only |
 | authoritative end-to-end scholarly method | `methodology/historical-source-workflow.md` | reusable normative method |
 | generic scholarly maturity gates | `methodology/research-gates.md` | reusable G1–G6 requirements |
-| project/source-group lifecycle and feedback | `methodology/project-lifecycle.md` | reusable project rules |
+| project/source-use lifecycle and feedback | `methodology/project-lifecycle.md` | reusable project rules |
 | source identity/instantiation/preservation method | `methodology/source-and-provenance.md` | reusable source rules |
 | minimal new-project contract | `templates/project/` | project creation template |
 | archival/source record identity and inspection stage | `corpus/sources.tsv` | canonical source inventory |
@@ -24,8 +24,10 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | historical/archival/textual source relations | `corpus/relationships.tsv` | relationship claims + evidence status |
 | administrative/historical event context | `corpus/events.tsv` | contextual event/activity registry |
 | recurring normalized identities | `entities/*.tsv` | corpus-level normalized identities |
-| project identity/research object/stable scope | `projects/<id>/project.yml` | investigation identity |
-| project source group, roles and relevant loci | `projects/<id>/sources/sources.tsv` | human-readable project source basis |
+| project identity/boundary anchor, research purpose and active scope | `projects/<id>/project.yml` | root-anchored project identity |
+| project-relative Source research functions and relevant loci | `projects/<id>/source-uses.tsv` | normalized Project→Source research-use truth |
+| concrete Project-use → File/instance evidence binding | `projects/<id>/research/use-evidence.tsv` | project-local use-evidence relation; File identity stays in `corpus/files.tsv` |
+| current Reg. Ii 5 legacy source rows / `primary_file_id` / `principal_source_id` | `projects/ega-reg-ii-5-knau/sources/sources.tsv` + `project.yml` | temporary migration compatibility only until separately admitted loss-checked migration |
 | project-specific inspection audit | `projects/<id>/sources/inspection-log.tsv` | inspected-vs-metadata trace |
 | current project gate/evidence/preservation gaps and exact next action | `projects/<id>/STATUS.md` | restart point |
 | scoped transcription/decisions/analysis | owning project directories | project research truth |
@@ -56,8 +58,8 @@ Before creating/updating durable state ask:
 
 1. Would the statement remain a valid rule for another comparable manuscript investigation? → METHOD.
 2. Does it identify an archival record, exact export, reusable source-wide mapping, source relationship, event or normalized entity? → CORPUS / `entities/`.
-3. Does it say why/how a source is used in one investigation, what locus matters, what was read/decided, or what remains open? → PROJECT.
-4. Does it describe a relation between two genuine investigations? → `projects/relationships.tsv`.
+3. Does it define the historical project boundary/root, say why/how a source is used relative to that project, what locus/evidence matters, what was read/decided, or what remains open? → PROJECT.
+4. Does it describe a relation between two genuine root-anchored projects? → `projects/relationships.tsv`.
 
 A pilot may reveal a generic weakness, but project evidence becomes method only after an explicit generalisability check.
 
@@ -67,32 +69,36 @@ Follow `methodology/project-lifecycle.md` for every project creation or material
 
 Key invariants:
 
-- a project is a bounded historical investigation / source-unlocking undertaking;
-- a source record, archive section or PDF does not automatically become a project;
-- a project has an explicit source group in `sources/sources.tsv`;
-- separately identified archival records remain separate source rows even when they share volume/signature;
-- project role/locus is not source identity;
+- a project is anchored through exactly one `project_source_id` to a historically independent source structure; current research scope may be narrower but does not redefine that boundary;
+- structural containment lives in canonical Source→Source `part_of`; internal/external status is derived rather than copied into Project data;
+- a source record, archive section, PDF, current question or temporary comparison task does not automatically become a project;
+- project-relative Source use is represented as one `source-uses.tsv` row per concrete `research_function`; several functions for the same Source are allowed when evidenced;
+- `research_function` and relevant locus are not Source identity or structural membership;
+- concrete digital evidence used by a Source use is linked separately through `research/use-evidence.tsv`; `corpus/files.tsv` remains the canonical owner of File identity/provenance;
 - reusable source-wide crosswalks live once in `corpus/source-data/<source_id>/`;
-- project relations are only between genuine investigations;
+- Project→Project relations are explicit only and are never inferred from Source use;
 - do not create empty future-proof directories.
+
+The current Reg. Ii 5 project remains intentionally on the legacy `sources/sources.tsv` + `primary_file_id` + optional `principal_source_id` representation until its separately admitted loss-checked migration. Maintenance must keep that legacy state readable without treating it as the target model.
 
 ### New-project creation check
 
 Before accepting a new project verify:
 
-1. project ID/title identify an investigation, not a source/file surrogate;
-2. research object and active scope are bounded and human-readable;
-3. `sources/sources.tsv` exists and lists the actual source group;
-4. every source ID resolves to `corpus/sources.tsv`;
-5. distinct archival records/sections remain distinct rows;
+1. `project_source_id` identifies the historically independent source root rather than a place/question/file surrogate;
+2. research object and active scope are bounded and human-readable within that root;
+3. `source-uses.tsv` exists and records the actual project-relative Source uses/functions needed now;
+4. every used source ID resolves to `corpus/sources.tsv`;
+5. distinct archival records/sections remain distinct Source rows;
 6. every exact evidence export resolves to `corpus/files.tsv` with SHA-256 and preservation state;
-7. central original exports have an intended/actual repository path or explicit preservation blocker;
-8. project-relevant locus is separated from full archival source extent;
-9. generic gates/method are referenced rather than copied;
-10. reusable crosswalks have one canonical corpus source-data owner;
-11. historical/source claims remain in `corpus/relationships.tsv`;
-12. project relations are used only when another genuine project exists;
-13. another capable researcher can restart without chat.
+7. any project-use-specific File binding is explicit in `research/use-evidence.tsv` rather than inferred from Source membership;
+8. central original exports have an intended/actual repository path or explicit preservation blocker;
+9. source-relative relevant locus is separated from full archival Source extent and from an instance-specific evidence locator;
+10. generic gates/method are referenced rather than copied;
+11. reusable crosswalks have one canonical corpus source-data owner;
+12. historical/source claims remain in `corpus/relationships.tsv`;
+13. Project relations are used only when another genuine root-anchored project exists;
+14. another capable researcher can restart without chat.
 
 If the same machine-checkable creation failure recurs, consider the smallest validation that catches it; do not automate pre-emptively.
 
@@ -115,13 +121,15 @@ When a rights/authority fact changes, update `corpus/files.tsv` and perform the 
 
 ### Project discovers a source-level correction
 
-`project evidence → verify → update canonical corpus owner → update only affected project source register/status/work products → bounded consistency pass`
+`project evidence → verify → update canonical corpus owner → update only affected project use/status/work products → bounded consistency pass`
 
 Examples: wrong source title, file checksum/path, folio/export mapping or source relationship.
 
-### Project source role/locus changes
+### Project Source research use changes
 
-Update `projects/<id>/sources/sources.tsv`. Do not modify canonical source identity merely because a source changes from context to comparison, or because a narrower locus becomes relevant.
+Update `projects/<id>/source-uses.tsv`; update `research/use-evidence.tsv` only when the concrete File/instance evidence for that use changes. Do not modify canonical Source identity or `part_of` merely because a research function/locus/evidence binding changes.
+
+For the current unmigrated Reg. Ii 5 project, keep applying equivalent bounded maintenance to its legacy source register until the separately admitted migration occurs; do not create duplicate target rows merely for synchronization.
 
 ### Project discovers generic methodological weakness
 
@@ -131,19 +139,20 @@ Update `projects/<id>/sources/sources.tsv`. Do not modify canonical source ident
 
 ### Human
 
-Read `README.md` first. Read `GOVERNING_OBJECTIVE.md` when evaluating repository purpose, precedence, Human-in-the-loop or consequential method/architecture change. For one investigation read its `STATUS.md` and `sources/sources.tsv`. Read `methodology/project-lifecycle.md` for project/source-group semantics, `methodology/source-and-provenance.md` for exact source/export preservation, and `MILESTONES.md` when interpreting scheduled Issues/Milestones.
+Read `README.md` first. Read `GOVERNING_OBJECTIVE.md` when evaluating repository purpose, precedence, Human-in-the-loop or consequential method/architecture change. For a target-model project read its `project.yml`, `STATUS.md`, `source-uses.tsv` and use-evidence when present. For the current unmigrated Reg. Ii 5 project read its `STATUS.md` and legacy `sources/sources.tsv`. Read `methodology/project-lifecycle.md` for project/source-use semantics, `methodology/source-and-provenance.md` for exact source/export preservation, and `MILESTONES.md` when interpreting scheduled Issues/Milestones.
 
 ### AI continuing research
 
 1. read `GOVERNING_OBJECTIVE.md` and `AGENTS.md`;
 2. establish and load all canonical rules/requirements applicable to the concrete task;
 3. read `README.md` if repository structure is not already established;
-4. read project `STATUS.md`;
-5. read project `sources/sources.tsv`;
-6. read the active generic gate in `methodology/research-gates.md`;
-7. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, `corpus/source-data/` and `corpus/relationships.tsv`;
-8. read additional task-relevant methodology from its canonical owner;
-9. continue from `NEXT ACTION` unless inspected evidence requires a change.
+4. read project `project.yml` and resolve `project_source_id`;
+5. read project `STATUS.md`;
+6. read `source-uses.tsv` and explicit use-evidence where the project uses the target model; for the current unmigrated Reg. Ii 5 project read its legacy `sources/sources.tsv` instead;
+7. read the active generic gate in `methodology/research-gates.md`;
+8. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, `corpus/source-data/` and `corpus/relationships.tsv`;
+9. read additional task-relevant methodology from its canonical owner;
+10. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 ## GitHub-native human navigation
 
@@ -192,11 +201,12 @@ Do not introduce Projects/Kanban or Discussions without observed need. Governanc
 
 - governing-objective clarification/change proposal → treat as special governance event; never auto-propagate a material mission change;
 - source identity/stage change → update `corpus/sources.tsv`, then affected project references only;
-- exact export/checksum/coverage/storage/rights change → update `corpus/files.tsv`, then preservation/project consequences;
+- exact export/checksum/coverage/storage/rights change → update `corpus/files.tsv`, then preservation/project-use consequences;
 - reusable source-wide crosswalk change → update `corpus/source-data/<source_id>/`, then affected project references/transcription addresses;
-- project source-group role/locus change → update project `sources/sources.tsv` and affected `STATUS.md`/work products;
+- project Source research-function/locus change → update project `source-uses.tsv` and affected `STATUS.md`/work products; use the legacy register only for the current unmigrated Reg. Ii 5 compatibility state;
+- project-use concrete File/instance evidence change → update project `research/use-evidence.tsv`, never duplicate File provenance there;
 - source relationship change → update `corpus/relationships.tsv` with evidence status;
-- project relation change → update `projects/relationships.tsv` only when both endpoints are genuine projects;
+- Project relation change → update `projects/relationships.tsv` only when both endpoints are genuine projects;
 - project creation/scope change → run the project creation check;
 - transcription change → update transcription, consequential decision/palaeography and status as applicable;
 - external source/literature inspected → update project research audit at actual access level;
@@ -210,16 +220,17 @@ Run after material canonical changes such as source-ID/provenance correction, fi
 
 1. state changed canonical truths/owners;
 2. check `corpus/sources.tsv` ↔ `corpus/files.tsv` ↔ `corpus/source-data/` referential integrity;
-3. check each project `sources/sources.tsv` against canonical source/file IDs;
-4. verify separately identified archival records have not been collapsed by shared signature/title shorthand;
-5. check project `project.yml`/`STATUS.md` for stale scope/path/next-step claims;
-6. search for source-as-project leftovers, duplicate crosswalks, stale identifiers and old generic-rule copies;
-7. verify `projects/relationships.tsv` contains only genuine project-to-project relations;
-8. verify central source-export preservation claims match actual file state and rights constraints;
-9. audit relevant deferred Issues against triggers/Milestone targets;
-10. apply the fachlich-technisches quality gate from `AGENTS.md`;
-11. verify restartability;
-12. stop when coherent and return to research.
+3. check target-model project `source-uses.tsv` and `research/use-evidence.tsv` against canonical Source/File IDs; for current unmigrated Reg. Ii 5 check the legacy `sources/sources.tsv` instead;
+4. verify `use-evidence.file_id` belongs to the same canonical Source as the referenced use rather than acting as cross-Source claim evidence;
+5. verify separately identified archival records have not been collapsed by shared signature/title shorthand;
+6. check project `project.yml`/`STATUS.md` for stale scope/path/next-step claims;
+7. search for source-as-project leftovers, duplicate crosswalks, stale identifiers and old generic-rule copies;
+8. verify `projects/relationships.tsv` contains only genuine Project→Project relations and none inferred from Source use;
+9. verify central source-export preservation claims match actual file state and rights constraints;
+10. audit relevant deferred Issues against triggers/Milestone targets;
+11. apply the fachlich-technisches quality gate from `AGENTS.md`;
+12. verify restartability;
+13. stop when coherent and return to research.
 
 Do not use a consistency pass to invent architecture or re-adjudicate manuscript readings unless a genuine research problem is exposed.
 
@@ -251,20 +262,21 @@ Escalation/review role when consequence/uncertainty warrants independent special
 Before completing consequential work ask:
 
 1. What research/method truth changed and who owns it?
-2. Is canonical source/file/crosswalk truth in CORPUS rather than copied into projects?
-3. Does each project still represent a real investigation rather than a source/file wrapper?
-4. Are distinct archival records preserved separately even when they share a volume/signature?
-5. Does project `sources/sources.tsv` expose role/locus/file clearly to a human?
-6. Are central original exports actually preserved as claimed, with rights blockers explicit?
-7. Are project relations distinct from source relations?
-8. Did project gate/next-action state change?
-9. Did a project learning justify generalisation?
-10. Did any deferred Issue trigger fire or become obsolete?
-11. Is a bounded consistency pass required?
-12. Can another capable researcher identify the investigation, source group, exact exports/preservation state and continue without chat?
+2. Is canonical Source/File/crosswalk truth in CORPUS rather than copied into projects?
+3. Does each project remain anchored to its historically independent `project_source_id` rather than a current question/source bundle?
+4. Are internal/external statuses still derived from `part_of` rather than stored as competing truth?
+5. Does each target-model `source-uses.tsv` expose project-relative research functions/loci, with concrete File evidence separately bound through use-evidence?
+6. For the current unmigrated Reg. Ii 5 project, is legacy `sources/sources.tsv` still readable without being mistaken for the target model?
+7. Are central original exports actually preserved as claimed, with rights blockers explicit?
+8. Are Project relations distinct from Source relations and never inferred from Source use?
+9. Did project gate/next-action state change?
+10. Did a project learning justify generalisation?
+11. Did any deferred Issue trigger fire or become obsolete?
+12. Is a bounded consistency pass required?
+13. Can another capable researcher identify the historical Project root, used Sources/functions, exact evidence/preservation state and continue without chat?
 
-If 12 is no, persist the minimum missing state.
+If 13 is no, persist the minimum missing state.
 
 ## Lean maintenance rule
 
-`Maintain on change; project = investigation; source = source; exact export = evidence asset; one fact, one owner; reference rather than copy; propagate only material consequences; then stop.`
+`Maintain on change; project = historical source-root anchored state; source = source; research function = Project→Source use; exact File identity = corpus truth; concrete use→File evidence = explicit project relation; one fact, one owner; derive structural status; reference rather than copy; propagate only material consequences; then stop.`
