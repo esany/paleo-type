@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "tables": {
     "sources": {
       "path": "corpus/sources.tsv",
@@ -35,8 +35,10 @@
       "required_columns": [
         "relation_id",
         "subject_id",
+        "subject_locus",
         "predicate",
         "object_id",
+        "object_locus",
         "status",
         "evidence_basis",
         "notes"
@@ -98,6 +100,44 @@
         "archival_title",
         "project_role",
         "status"
+      ]
+    },
+    "project_source_uses": {
+      "glob": "projects/*/source-uses.tsv",
+      "required_columns": [
+        "use_id",
+        "source_id",
+        "research_function",
+        "relevant_locus",
+        "status",
+        "evidence_basis",
+        "notes"
+      ],
+      "required_nonempty": [
+        "use_id",
+        "source_id",
+        "research_function",
+        "status",
+        "evidence_basis"
+      ]
+    },
+    "project_use_evidence": {
+      "glob": "projects/*/research/use-evidence.tsv",
+      "required_columns": [
+        "evidence_id",
+        "use_id",
+        "file_id",
+        "evidence_locator",
+        "status",
+        "evidence_basis",
+        "notes"
+      ],
+      "required_nonempty": [
+        "evidence_id",
+        "use_id",
+        "file_id",
+        "status",
+        "evidence_basis"
       ]
     },
     "crosswalks": {
