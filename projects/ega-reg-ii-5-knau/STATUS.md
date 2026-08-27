@@ -4,22 +4,22 @@ Last checkpoint: 2026-08-27
 
 ## Overall research goal
 
-Produce a source-exact, critically controlled scholarly edition and historical understanding of the Knau material using the bounded source group registered in `sources/sources.tsv`. The principal diplomatic object is `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`; related 1533 and 1529 archival records supply the acts within which the relevant protocol/source units are located.
+Produce a source-exact, critically controlled scholarly edition and historical understanding of the Knau material using the bounded protocol/source group registered in `sources/sources.tsv`. The principal diplomatic object is `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`; archival acts/records, protocol/source units, exact files and loci remain distinct.
 
 Generic scholarly method is defined in `../../methodology/historical-source-workflow.md`; reusable maturity requirements are in `../../methodology/research-gates.md`; diplomatic requirements are in `../../methodology/transcription-guidelines.md`.
 
-## Archival records and protocol/source-group level
+## Archival records and protocol/source groups
 
-The project currently anchors four distinct archival records/acts. These archival records are **not automatically identical with the protocol/source groups used by the investigation**. Project roles concern the relevant protocol/source unit within an act; where that unit has not yet been canonically delimited, the row is only a record-level routing anchor.
+The project uses four protocol/source units, each anchored to its parent archival record/act. Project roles attach to the protocol/source units, not absolutely to the parent acts.
 
-- principal act/record: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*; relevant principal protocol/source locus fol. 61v–63r / export images 132–135;
-- comparison act/record: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — *Visitation im Amt Ziegenrück*; corresponding protocol/source locus fol. 306v–309r / export images 667–672;
-- control act/record: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, including `Knaw Kirch Einkommen` on fol. 304r / export image 625;
-- context act/record: `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld*, fol. 41r–63v. This title identifies the **Akte / archival record**, not the project’s protocol/source-group. The relevant protocol/source unit inside the act is not yet canonically delimited and must not be invented from the act title.
+- principal: `UNIT-REG-II-5-00000129-ZIEGENRUECK-VIS` — *Visitation im Amt Ziegenrück*, fol. 55v–66v, within `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`; principal Knau locus fol. 61v–63r / export images 132–135; Registratur für die Superintendenz Neustadt an der Orla (Auszug);
+- comparison: `UNIT-REG-II-4-BD-II-00000089-ZIEGENRUECK-VIS` — *Visitation im Amt Ziegenrück*, fol. 294r–313r, within `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`; corresponding Knau locus fol. 306v–309r / export images 667–672;
+- control: `UNIT-REG-II-3-00000235-INCOME` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, within `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`; includes `Knaw Kirch Einkommen` on fol. 304r / export image 625;
+- context: `UNIT-REG-II-3-00000197-NEUSTADT-VIS` — *Visitation in Neustadt an der Orla*, fol. 41r–63v, within the parent act `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld*. Exact supplied range: 1529-05-23 to 1529-06-01; supplied calendar label `gregorian`; supplied serial values 2279668–2279677.
 
-The two Reg. Ii 3 records share the same archival volume/signature but are separate catalogued/identified acts/records with different record IDs, titles and evidential roles. They must not be collapsed into a generic `Reg. Ii 3` source. Conversely, a record title must not be promoted to protocol/source-group identity merely because the project uses material from that act.
+The two Reg. Ii 3 parent records share the same archival volume/signature but are separate catalogued acts/records. They must not be collapsed. Conversely, the parent-act title `Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld` must not replace the protocol title `Visitation in Neustadt an der Orla`.
 
-Canonical archival record identities remain in `../../corpus/sources.tsv`; exact file identities/checksums remain in `../../corpus/files.tsv`; historical/source relationships remain in `../../corpus/relationships.tsv`.
+Canonical parent-record identities remain in `../../corpus/sources.tsv`; reusable protocol/source-unit identities in `../../corpus/source-units.tsv`; exact file identities/checksums in `../../corpus/files.tsv`; relationships in `../../corpus/relationships.tsv`.
 
 ## Original-export preservation state
 
@@ -61,7 +61,7 @@ G2 does **not** require every difficult token to be resolved.
 
 ## NEXT ACTION — canonical restart point
 
-Using the principal Reg. Ii 5 archival record, its canonical source-data crosswalk and the exact checksum-identified archive export:
+Using the principal Reg. Ii 5 protocol/source unit, its parent-record source-data crosswalk and the exact checksum-identified archive export:
 1. inspect fol. 61v–63r for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
 2. assign editor line references only from direct physical inspection;
 3. map legacy rows to verified folio/physical-line loci while retaining export IDs as provenance;
@@ -78,4 +78,4 @@ The user must be able to inspect the current diplomatic text and source group wi
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the investigation object, distinct archival acts/records, the protocol/source-group level within those acts, exact exports/preservation state, active gate, remaining G2 gaps, current text evidence and next action without old chat. Where a protocol/source unit has not yet been delimited, that absence must be explicit rather than silently replaced by the act title.
+A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the investigation object, parent archival acts/records, relevant protocol/source units, exact exports/preservation state, active gate, remaining G2 gaps, current text evidence and next action without old chat.
