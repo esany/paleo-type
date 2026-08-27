@@ -1,46 +1,65 @@
-# Corpus — canonical source, protocol and file layer
+# Corpus — canonical act, protocol and file layer
 
-This directory stores project-independent facts about archival records/acts, intellectually meaningful protocol/source units within them, and the exact digital instantiations used for research.
+This directory stores project-independent facts about archival acts/records, intellectually meaningful protocol/source units within them, and exact digital instantiations used for research.
 
 ## Human reading order
 
-1. `sources.tsv` — archival/catalogued records or acts;
-2. `source-units.tsv` — protocol/source units within those records when identified;
-3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state, intended repository path and rights status;
-4. `source-data/<source_id>/` — reusable record-wide mappings such as export-image/PDF-page/folio crosswalks;
+1. `sources.tsv` — parent archival acts/records;
+2. `source-units.tsv` — protocol/source units within those acts;
+3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state, rights status and, where applicable, source-unit linkage;
+4. `source-data/<source_id>/` — reusable parent-act mappings such as export-image/PDF-page/folio crosswalks, optionally tagged to a source unit;
 5. `relationships.tsv` — evidence-status-controlled relationships;
 6. `events.tsv` — shared event/activity context.
 
 The minimum hierarchy is:
 
-`archival holding/signature → archival record/act → protocol/source unit → witness/locus → digital instantiation`
+`archival holding/signature → archival act/record → protocol/source unit → witness/locus → digital instantiation`
 
-An act title, record ID or full act extent is not automatically the protocol/source-group identity. A protocol/source unit may be coterminous with its parent record, but the levels remain conceptually distinct.
+A provider/DigiRef record ID may identify either an act or a source unit. Its level must be established from archival context; never infer that all provider IDs have the same granularity.
 
-For the Knau project, `ThHStAW, EGA, Reg. Ii 3 / stat_visitation_00000197` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* — is the parent archival act/record. Its relevant protocol/source unit is `UNIT-REG-II-3-00000197-NEUSTADT-VIS` — *Visitation in Neustadt an der Orla*, fol. 41r–63v, with supplied exact range 1529-05-23 to 1529-06-01. These protocol facts belong in `source-units.tsv`, not on the parent act row.
+## Current Knau source group
+
+The project uses **four protocol/source units from three archival acts**:
+
+- `ThHStAW, EGA, Reg. Ii 4 Bd. II` — parent act *Visitation in Thüringen* → *Visitation im Amt Ziegenrück*, fol. 294r–313r;
+- `ThHStAW, EGA, Reg. Ii 5` — parent act *Registratur für die Superintendentur Neustadt (Orla) (Auszug)* → *Visitation im Amt Ziegenrück*, fol. 55v–66v;
+- `ThHStAW, EGA, Reg. Ii 3` — parent act *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* → *Visitation in Neustadt an der Orla*, fol. 41r–63v;
+- the same `Reg. Ii 3` act → *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
+
+The last two are separate source units inside one act, not two archival acts. Archivportal Thüringen independently lists both units under archive signature `3`.
 
 ## Machine contract and resolver
 
-`source-contract.json` defines the lean machine-readable invariants. Run:
+`source-contract.json` defines lean machine-readable invariants. Run:
 
 `python tools/source_contract.py validate`
 
-Resolve canonical provenance with:
+Resolve canonical provenance with either a parent act or, preferably for project work, the source unit:
 
-`python tools/source_contract.py resolve --project <project> --source-id <source_id> [--source-unit-id <source_unit_id>] [--locus <folio>]`
+`python tools/source_contract.py resolve --project <project> --source-unit-id <source_unit_id> [--locus <folio>]`
 
-The resolver follows project use to the parent archival record, protocol/source unit when present, selected primary file and record-wide crosswalk. Missing mappings are reported rather than guessed. If multiple protocol units from one act are used in a project, `--source-unit-id` disambiguates them.
+`--source-id <source_id>` remains available, but if a project uses multiple source units from one act the resolver requires `--source-unit-id` to disambiguate them.
+
+The resolver follows:
+
+`project role → protocol/source unit → parent archival act → exact file → parent-act crosswalk/locus`
+
+Missing mappings are reported rather than guessed.
 
 ## Identity and ownership
 
-- archival record/act identity → `sources.tsv`;
-- reusable protocol/source-unit identity, title, extent and unit-level dates → `source-units.tsv`;
-- exact file identity/preservation → `files.tsv`;
-- reusable record-wide folio/image/PDF mapping → `source-data/<source_id>/`;
-- project role and relevant locus → project `sources/sources.tsv`, referencing both `source_id` and `source_unit_id` where the unit is known;
+- parent archival act/record identity → `sources.tsv`;
+- reusable protocol/source-unit identity/title/extent/provider record → `source-units.tsv`;
+- exact file identity/preservation and optional unit linkage → `files.tsv`;
+- reusable act-wide folio/image/PDF mapping → `source-data/<source_id>/`;
+- project role and relevant locus → project `sources/sources.tsv`, referencing the relevant source unit;
 - project reading/analysis → project work directories.
 
-A shared signature does not collapse separate acts/records. Conversely, one act may contain several protocol/source units. Do not invent a source-unit identifier until the unit is evidenced and delimited.
+A shared signature does not collapse genuinely separate acts. Conversely, one act may contain many distinct protocol/source units. Do not create a second act merely because a portal exposes a separate unit-level record ID.
+
+## Persistent identifiers
+
+Stable image URNs are copied only when institutionally evidenced. Never synthesize a URN from neighboring identifiers or image-number patterns. A missing URN is a documented gap, not an invitation to guess.
 
 ## Exact original exports
 
