@@ -4,7 +4,9 @@ on:
   pull_request:
     paths:
       - 'corpus/**'
+      - 'projects/*/project.yml'
       - 'projects/*/sources/**'
+      - 'templates/project/**'
       - 'templates/source/**'
       - 'tools/source_contract.py'
       - '.github/workflows/source-contract.yml'
@@ -12,7 +14,9 @@ on:
     branches: [main]
     paths:
       - 'corpus/**'
+      - 'projects/*/project.yml'
       - 'projects/*/sources/**'
+      - 'templates/project/**'
       - 'templates/source/**'
       - 'tools/source_contract.py'
       - '.github/workflows/source-contract.yml'
@@ -26,4 +30,16 @@ jobs:
         with:
           python-version: '3.12'
       - run: python tools/source_contract.py validate
-      - run: python tools/source_contract.py resolve --project ega-reg-ii-5-knau --source-id THHSTAW-EGA-REG-II-5-STAT-VIS-00000129 --locus 62r > /dev/null
+      - name: Resolve project-scope regression
+        run: |
+          python tools/source_contract.py resolve --project ega-reg-ii-5-knau --source-id THHSTAW-EGA-REG-II-5-STAT-VIS-00000129 --locus 62r > /tmp/internal.json
+          python tools/source_contract.py resolve --project ega-reg-ii-5-knau --source-id THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089 > /tmp/external.json
+          python - <<'PY'
+          import json
+          with open('/tmp/internal.json', encoding='utf-8') as fh:
+              internal = json.load(fh)
+          with open('/tmp/external.json', encoding='utf-8') as fh:
+              external = json.load(fh)
+          assert internal['project_scope'] == 'internal', internal['project_scope']
+          assert external['project_scope'] == 'external', external['project_scope']
+          PY

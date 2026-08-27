@@ -1,8 +1,9 @@
 id: ega-reg-ii-5-knau
-title: "Knau — visitation and parish-income source group"
-repository_role: "active benchmark investigation for paleo-type"
-research_object: "Source-based reconstruction and scholarly edition of the Knau visitation/parish-income material using the relevant 1529–1533 archival source group"
-active_scope: "Principal Knau passage in ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r, investigated with the explicitly registered comparison/control/context records in sources/sources.tsv"
+title: "ThHStAW, EGA, Reg. Ii 5 — Knau working scope"
+repository_role: "active benchmark project for the historically independent Reg. Ii 5 act"
+project_source_id: "ACT-THHSTAW-EGA-REG-II-5"
+research_object: "Source-based reconstruction and scholarly edition work within the historically independent ThHStAW, EGA, Reg. Ii 5 act"
+active_scope: "Current working focus: principal Knau passage fol. 61v–63r in the Ziegenrück protocol; external comparison/control/context sources remain explicitly registered but are not structural parts of this project act"
 source_register: "sources/sources.tsv"
 principal_source_id: "THHSTAW-EGA-REG-II-5-STAT-VIS-00000129"
 canonical_status_file: "STATUS.md"

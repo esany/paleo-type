@@ -62,17 +62,17 @@ Generalizable: yes.
 
 Observed failure: generic scholarly gate requirements and parts of the method were copied into the Knau project and mixed with source-specific facts such as concrete folios, working IDs and unresolved tokens. This made the pilot a hidden second definition of the framework.
 
-Corrective practice: generic method/gates now live only in `methodology/`; Knau `STATUS.md` records only its own state and evidence gaps against those generic requirements. Concrete pilot observations remain here or in project research records and are promoted only after an explicit generalisability check.
+Corrective practice: generic method/gates now live only in `methodology/`; project `STATUS.md` records only its own state and evidence gaps against those generic requirements. Concrete pilot observations remain here or in project research records and are promoted only after an explicit generalisability check.
 
 Generalizable: yes; reflected in `methodology/historical-source-workflow.md`, `methodology/research-gates.md`, `AGENTS.md` and `DECISIONS.md` D-009.
 
-## L009 — source records were turned into artificial projects
+## L009 — protocol-level source wrappers were mistaken for projects
 
-Observed failure: PR #40 created `source-unit` projects for individual archival records so that source-wide crosswalks would have a single owner. This made one historical investigation appear as several duplicate projects, obscured the actual source group, and introduced artificial project-to-project relations whose targets were really sources.
+Observed failure: PR #40 created `source-unit` projects for individual protocol/source records mainly to give source-wide crosswalks one owner. This duplicated infrastructure and confused documentary components with historically independent project structures.
 
-Corrective practice: define a project as the bounded historical investigation / source-unlocking undertaking. Keep canonical corpus source information outside projects, declare project role/locus in `sources/sources.tsv`, and keep reusable crosswalks in `corpus/source-data/<source_id>/`. Preserve exact original exports as first-class file assets rather than treating a URN as equivalent backup.
+Corrective practice: reusable source identity/crosswalk/file provenance remains in `corpus/`. A project is anchored once to its historically independent source root via `project_source_id`; protocol/section/etc. nodes inside it remain corpus sources related by `part_of`, not separate projects merely because they need canonical metadata.
 
-Generalizable: yes; promoted through `methodology/project-lifecycle.md`, `methodology/source-and-provenance.md`, `AGENTS.md` and `DECISIONS.md` D-012.
+Generalizable: yes; reflected in `methodology/project-lifecycle.md`, `AGENTS.md` and `DECISIONS.md` D-014.
 
 ## L010 — provider record IDs and one current hierarchy were mistaken for the data model
 
@@ -81,3 +81,11 @@ Observed failure: the four user-supplied source-group entries were repeatedly re
 Corrective practice: determine source granularity independently of provider-record granularity. Keep every historical/documentary object that needs stable identity as a source node in `corpus/sources.tsv`; express containment generically as evidence-status-controlled `part_of` relations in `corpus/relationships.tsv`. The current Knau case is simply four protocol nodes related to three larger act nodes. Future section/protocol/act/volume/series or other part–whole structures use the same node/relation pattern without schema changes.
 
 Generalizable: yes; reflected in `methodology/source-and-provenance.md` and source-contract validation.
+
+## L011 — a research bundle was mistaken for project identity
+
+Observed failure: after correcting source granularity, the project itself was still defined as the current Knau investigation over one principal and several comparison/control/context sources. That made the project boundary depend on a research question rather than the historically independent documentary structure.
+
+Corrective practice: bind each project to one `project_source_id`. Current scope may be narrow; external sources may be used; neither changes project identity. Determine whether any used source is internal or external from its canonical `part_of` ancestry relative to the project root.
+
+Generalizable: yes; promoted through `methodology/project-lifecycle.md`, `AGENTS.md`, the source resolver and `DECISIONS.md` D-014.

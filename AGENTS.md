@@ -35,7 +35,7 @@ Every durable statement belongs to exactly one level:
 
 1. **METHOD** — `methodology/`, `AGENTS.md`, `DECISIONS.md`: reusable scholarly rules/gates that should remain valid for another comparable manuscript investigation.
 2. **CORPUS** — `corpus/`, `entities/`: canonical archival source identity, exact digital instantiations, reusable source-wide mappings, source/event/entity relationships and recurring normalized identities.
-3. **PROJECT** — `projects/<id>/`: one bounded historical investigation / source-unlocking undertaking over a coherent source group, including project roles/loci, observations, readings, comparisons, decisions, gate state and next action.
+3. **PROJECT** — `projects/<id>/`: scholarly state anchored to one historically independent source structure identified by `project_source_id`, including current scope, source uses/roles, observations, readings, comparisons, decisions, gate state and next action.
 
 Generalisation test:
 
@@ -43,9 +43,9 @@ Generalisation test:
 
 - yes → METHOD;
 - no, but it is canonical source/file/reusable mapping/relationship truth → CORPUS;
-- no, it is a concrete investigation/source-role/reading/state fact → PROJECT.
+- no, it is concrete work state relative to one historical project root → PROJECT.
 
-**Project is not source.** Do not create a project merely because an archival record, source section or PDF exists. A project follows a coherent investigation. Its source group is declared in `projects/<id>/sources/sources.tsv`.
+**Project identity follows historical structure.** Every project has exactly one `project_source_id` pointing to the historically independent source root. In the current archival domain that root is an act. Current research scope may be narrower, and external comparison/control/context sources may be used, but neither the current question nor the assembled comparison set may redefine the project boundary.
 
 **A pilot tests the method; it does not define it.** Generic scholarly maturity requirements live once in `methodology/research-gates.md`; a project `STATUS.md` records only its own state/gaps against them.
 
@@ -87,6 +87,7 @@ Method-compliant AI-assisted work is not the same as independent expert validati
 - Never hide disagreement between readings or source relationships; record it.
 - Never claim same hand merely because material is in the same record/date/office.
 - Never create source-as-project wrappers merely to own crosswalks or file metadata.
+- Never let a current research bundle, place focus or comparison set redefine the historically independent project root.
 - Never encode project source use as a project-to-project relation when the target is actually an archival source.
 - Never ask the user to settle specialist questions merely because the assistant is uncertain.
 - Never make the user synchronize repository state the assistant can maintain.
@@ -137,9 +138,9 @@ Reading status is not the same as source-phenomenon type. Follow `methodology/tr
 
 Distinguish:
 
-`project → source group → archival unit → record → witness → locus → instantiation`
+`project_source_id → source node → part_of descendants/ancestors → witness → locus → instantiation`
 
-The project level is a research organisation layer; the archival/source levels are evidence/provenance layers.
+The project root is a historical/source structure, while project roles and active scope are research-organisation facts. Structural membership is derived from canonical `part_of` relations.
 
 Portal image numbers, archival folios, PDF pages, export sequence and legacy working IDs are distinct identifiers.
 
@@ -148,10 +149,11 @@ Canonical records:
 - source identity/stage → `corpus/sources.tsv`;
 - exact file/instantiation filename/checksum/coverage/storage/preservation path/rights → `corpus/files.tsv`;
 - reusable source-wide image/PDF/export/folio mapping → `corpus/source-data/<source_id>/`;
-- source/event/entity relationships → `corpus/relationships.tsv`;
+- source/event/entity and structural `part_of` relationships → `corpus/relationships.tsv`;
 - administrative/historical activity context → `corpus/events.tsv`;
 - repeated normalized identities → `entities/`;
-- project source membership/role/relevant locus → project `sources/sources.tsv`;
+- project root → project `project.yml: project_source_id`;
+- project source use/role/relevant locus → project `sources/sources.tsv`;
 - project-specific inspection audit → project `sources/inspection-log.tsv` when useful.
 
 A relationship is a research claim. `metadata-supported` is not verified textual correspondence.
@@ -175,7 +177,7 @@ Derived images/renders/OCR must be distinguishable from the original and point b
 
 ## Project source-group discipline
 
-`projects/<id>/sources/sources.tsv` is the human-readable source-group entry point.
+`projects/<id>/sources/sources.tsv` is the human-readable research-use entry point.
 
 For every project source record preserve:
 - canonical `source_id`;
@@ -185,7 +187,7 @@ For every project source record preserve:
 - primary exact file ID;
 - status/limitations.
 
-Project role is not source identity. A source may change role without changing its canonical source record.
+Project role is not source identity and does not determine structural membership. A source is internal when it is the project root or reaches that root through canonical `part_of`; otherwise it is external. The same source may have a different research role in another project without changing its canonical identity.
 
 Two records sharing `ThHStAW, EGA, Reg. Ii 3` remain distinct when their archive record IDs/titles/loci differ.
 
@@ -231,19 +233,20 @@ Follow `methodology/ai-governance.md`.
 Before continuing existing research:
 1. read `GOVERNING_OBJECTIVE.md` and this file;
 2. read `README.md` if repository structure is not already established;
-3. read project `STATUS.md`;
-4. read project `sources/sources.tsv`;
-5. read the active generic gate in `methodology/research-gates.md`;
-6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
-7. read relevant project decision rows and `LEARNINGS.md`;
-8. load every additional methodology/governance requirement applicable to the task; if applicability is unclear, inspect the canonical owner before acting;
-9. continue from `NEXT ACTION` unless inspected evidence requires a change.
+3. read project `project.yml` and resolve `project_source_id`;
+4. read project `STATUS.md`;
+5. read project `sources/sources.tsv`;
+6. read the active generic gate in `methodology/research-gates.md`;
+7. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
+8. read relevant project decision rows and `LEARNINGS.md`;
+9. load every additional methodology/governance requirement applicable to the task; if applicability is unclear, inspect the canonical owner before acting;
+10. continue from `NEXT ACTION` unless inspected evidence requires a change.
 
 When changing a substantive reading, preserve prior reading, new reading, evidence type and residual uncertainty in appropriate canonical records.
 
 When changing a source relationship, preserve previous status where consequential, cite basis and do not upgrade beyond demonstrated evidence.
 
-When changing project source role/locus, update the project source register without rewriting canonical source identity.
+When changing project source role/locus, update the project source register without rewriting canonical source identity or project-root membership.
 
 ## Lean decision discipline
 
@@ -263,7 +266,7 @@ Do not create ADR ceremony or duplicate truth stores.
 Follow `methodology/maintenance.md`.
 
 After a material canonical or structural change, run a bounded repo-wide consistency pass checking for:
-- source-as-project leftovers;
+- project roots that do not resolve or do not match the intended historical structure;
 - project facts leaked into methodology;
 - generic rules duplicated inside projects;
 - distinct archival records accidentally collapsed;
@@ -275,7 +278,7 @@ After a material canonical or structural change, run a bounded repo-wide consist
 
 Final restartability test:
 
-> Could another capable researcher identify the investigation, distinct source group, exact exports/preservation state and continue correctly from repository + controlled source material without recovering this chat?
+> Could another capable researcher identify the historical project root, distinguish its structural sources from external research sources, recover the exact exports/preservation state and continue correctly from repository + controlled source material without recovering this chat?
 
 If not, persist the minimum missing state.
 
@@ -314,7 +317,8 @@ Before completing consequential work, check what is relevant.
 - Has independent expert validation been distinguished from AI-assisted method compliance?
 
 **Method/corpus/project ownership**
-- Does the project represent an investigation rather than a source/file surrogate?
+- Does `project_source_id` identify the historically independent project root rather than the current research bundle?
+- Are internal sources structurally derived from `part_of` and external sources kept external?
 - Is each distinct archival record preserved independently?
 - Is each durable statement stored at the correct level?
 - Did a project-specific fact accidentally become a generic rule?
@@ -344,7 +348,7 @@ Ask:
 - Is a claimed source relationship demonstrated or only metadata-supported?
 - Is corroboration genuinely independent?
 - Did a clearer witness overwrite the witness under transcription?
-- Did I create an artificial project just to represent a source?
+- Did the current question or comparison set silently redefine the historical project root?
 - Is the exact inspected export actually preserved as claimed?
 - Did I update the correct method/corpus/project canonical record?
 - Did the pilot accidentally define generic method?

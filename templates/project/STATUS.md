@@ -2,13 +2,17 @@
 
 Last checkpoint: YYYY-MM-DD
 
-## Research purpose
+## Historical project root
 
-State the historical investigation / source-unlocking purpose. Do not copy generic method or gate requirements here.
+State the historically independent source structure identified by `project.yml: project_source_id`. Do not redefine the project from the current narrow research question.
 
-## Source group
+## Research purpose and active scope
 
-Reference `sources/sources.tsv` and summarize only what a human needs to understand the investigation: principal/comparison/control/context sources and the relevant project loci. Canonical archival/file identity remains in `corpus/`.
+State the scholarly purpose and current bounded working scope within the project root. The active scope may be narrower than the full project source structure.
+
+## Sources used
+
+Reference `sources/sources.tsv`. Summarize only what a human needs to understand: internal project sources and external comparison/control/context sources, with relevant loci. Internal/external status is derived from canonical `part_of` relations; canonical archival/file identity remains in `corpus/`.
 
 ## Evidence and preservation state
 
@@ -20,7 +24,7 @@ Reference `../../methodology/research-gates.md`. Record only this project's curr
 
 ## Project relations
 
-Reference `../relationships.tsv` only if this genuine investigation materially relates to another genuine project. Historical/source relations belong in `corpus/relationships.tsv`.
+Reference `../relationships.tsv` only if this historically independent project materially relates to another project. Historical/source relations belong in `corpus/relationships.tsv`.
 
 ## NEXT ACTION — canonical restart point
 
@@ -28,4 +32,4 @@ State one bounded next research action.
 
 ## Restartability test
 
-A new capable researcher must be able to identify the investigation, distinct archival source records, relevant loci, exact source exports/preservation state, current gate/activity state and exact next action without old chat.
+A new capable researcher must be able to identify the historical project root, distinguish structural/internal sources from external research sources, recover relevant loci and exact source exports/preservation state, understand current gate/activity state and continue from the exact next action without old chat.

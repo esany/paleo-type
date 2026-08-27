@@ -1,25 +1,29 @@
-# STATUS — Knau source-group investigation
+# STATUS — ThHStAW, EGA, Reg. Ii 5
 
 Last checkpoint: 2026-08-27
 
-## Overall research goal
+## Historical project root
 
-Produce a source-exact, critically controlled scholarly edition and historical understanding of the Knau material using the bounded protocol/source group registered in `sources/sources.tsv`. The principal diplomatic object is `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`; parent archival acts, protocol/source records, exact files and loci remain distinct.
+This project is anchored to the historically independent source structure `ACT-THHSTAW-EGA-REG-II-5` — *Registratur für die Superintendenz Neustadt an der Orla (Auszug)* — via `project.yml: project_source_id`.
+
+The current Knau work is a bounded research scope inside that project root; it does not define the project boundary.
 
 Generic scholarly method is defined in `../../methodology/historical-source-workflow.md`; reusable maturity requirements are in `../../methodology/research-gates.md`; diplomatic requirements are in `../../methodology/transcription-guidelines.md`.
 
-## Three parent acts / four protocol source records
+## Research purpose and active scope
 
-The project uses four canonical protocol/source records from three larger archival acts. Project roles attach to the protocol records, not to the parent acts. In the corpus both levels are ordinary source nodes; containment is represented only by `part_of` relations.
+Produce a source-exact, critically controlled scholarly edition and historical understanding of the relevant material within Reg. Ii 5. The active diplomatic focus is the Knau passage at fol. 61v–63r inside the Ziegenrück protocol fol. 55v–66v.
 
-- **principal** — `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`: *Visitation im Amt Ziegenrück*, fol. 55v–66v, `part_of` `ACT-THHSTAW-EGA-REG-II-5` — *Registratur für die Superintendenz Neustadt an der Orla (Auszug)*. Principal Knau locus: fol. 61v–63r / export images 132–135.
-- **comparison** — `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`: *Visitation im Amt Ziegenrück*, fol. 294r–313r, `part_of` `ACT-THHSTAW-EGA-REG-II-4-BD-II` — *Visitation in Thüringen*. Corresponding Knau locus: fol. 306v–309r / export images 667–672.
-- **context** — `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V`: *Visitation in Neustadt an der Orla*, fol. 41r–63v, `part_of` `ACT-THHSTAW-EGA-REG-II-3` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld*. Exact supplied range: 1529-05-23 to 1529-06-01; supplied calendar label `gregorian`; supplied serial values 2279668–2279677.
-- **control** — `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`: *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, `part_of` the **same** `ACT-THHSTAW-EGA-REG-II-3`. Includes `Knaw Kirch Einkommen` on fol. 304r / export image 625.
+## Sources used
 
-The two Reg. Ii 3 protocols are distinct sources inside one larger source node. `stat_visitation_00000197` is retained as the catalogue/access anchor of that larger node; it is not used as the canonical local ID of the Neustadt protocol.
+The project uses four canonical protocol/source records. Structural membership is derived from `corpus/relationships.tsv` `part_of` relations, not from project roles.
 
-All canonical source-node identities live in `../../corpus/sources.tsv`; `part_of` and other relations live in `../../corpus/relationships.tsv`; exact file identities/checksums live in `../../corpus/files.tsv`.
+- **internal / principal** — `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`: *Visitation im Amt Ziegenrück*, fol. 55v–66v, structurally inside `ACT-THHSTAW-EGA-REG-II-5`. Principal Knau locus: fol. 61v–63r / export images 132–135.
+- **external / comparison** — `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`: *Visitation im Amt Ziegenrück*, fol. 294r–313r, structurally inside `ACT-THHSTAW-EGA-REG-II-4-BD-II`. Corresponding Knau locus: fol. 306v–309r / export images 667–672.
+- **external / context** — `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V`: *Visitation in Neustadt an der Orla*, fol. 41r–63v, structurally inside `ACT-THHSTAW-EGA-REG-II-3`. Exact supplied range: 1529-05-23 to 1529-06-01; supplied calendar label `gregorian`; supplied serial values 2279668–2279677.
+- **external / control** — `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`: *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, structurally inside the same Reg. Ii 3 act. Includes `Knaw Kirch Einkommen` on fol. 304r / export image 625.
+
+The project source register records research function and relevant locus only. The resolver derives whether each source is internal or external from its `part_of` ancestry relative to `ACT-THHSTAW-EGA-REG-II-5`.
 
 ## Digital addressing state
 
@@ -28,11 +32,11 @@ All canonical source-node identities live in `../../corpus/sources.tsv`; `part_o
 - Reg. Ii 3 / Pfarreinkommen 303r–306r: folio↔export-image↔PDF-page mapping recorded; stable per-image URNs are **not yet recorded**.
 - Reg. Ii 3 / Neustadt 41r–63v: exact protocol extent and inspected export identity are known, but a canonical folio↔export-image/PDF-page crosswalk has **not yet been reconstructed** in the repo.
 
-Crosswalks are source-level. Adjacent pages present in an export but outside the evidenced protocol boundary are not silently assigned to the protocol.
+Crosswalks are source-level. Adjacent pages present in an export but outside an evidenced source boundary are not silently assigned to that source.
 
 ## Original-export preservation state
 
-The exact four central archive-export PDFs used for this project are checksum-verified locally against `corpus/files.tsv`:
+The exact four central archive-export PDFs used for this project are checksum-verified against `corpus/files.tsv`:
 
 - `1a03ea95927-120-143.pdf` — SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - `1a03e6fca87-642-681.pdf` — SHA-256 `dc61e65822a34b84c9d88e57690609bbea6eb4537a9efc00294d1520f8f3b86f`;
@@ -70,7 +74,7 @@ G2 does **not** require every difficult token to be resolved.
 
 ## NEXT ACTION — canonical restart point
 
-Using the principal Reg. Ii 5 protocol/source record, its source-data crosswalk and the exact checksum-identified archive export:
+Using the internal principal Reg. Ii 5 protocol/source record, its source-data crosswalk and the exact checksum-identified archive export:
 1. inspect fol. 61v–63r for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
 2. assign editor line references only from direct physical inspection;
 3. map legacy rows to verified folio/physical-line loci while retaining export IDs as provenance;
@@ -79,7 +83,7 @@ Using the principal Reg. Ii 5 protocol/source record, its source-data crosswalk 
 6. produce the derived human-readable diplomatic witness view;
 7. run the generic G2 gate.
 
-Do not let comparison-source work displace this active G2 task.
+Do not let external comparison-source work displace this active G2 task.
 
 ## Human-in-the-loop state
 
@@ -87,4 +91,4 @@ The user must be able to inspect the current diplomatic text and source group wi
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the investigation object, all relevant source nodes and their `part_of` context, four project protocol records, exact exports/preservation state, available/missing URNs and crosswalks, active gate, remaining G2 gaps, current text evidence and next action without old chat.
+A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the historical project root `ACT-THHSTAW-EGA-REG-II-5`, which used sources are internal versus external, exact exports/preservation state, available/missing URNs and crosswalks, active gate, remaining G2 gaps, current text evidence and next action without old chat.
