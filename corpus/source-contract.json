@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "tables": {
+    "sources": {
+      "path": "corpus/sources.tsv",
+      "key": "source_id",
+      "required_columns": [
+        "source_id",
+        "archive",
+        "fonds",
+        "signature",
+        "record_id",
+        "title",
+        "digital_url"
+      ],
+      "required_nonempty": [
+        "source_id",
+        "archive",
+        "fonds",
+        "signature",
+        "title"
+      ],
+      "identity_fields": [
+        "archive",
+        "fonds",
+        "signature",
+        "record_id"
+      ]
+    },
+    "files": {
+      "path": "corpus/files.tsv",
+      "key": "file_id",
+      "required_columns": [
+        "file_id",
+        "source_id",
+        "filename",
+        "sha256",
+        "role",
+        "coverage",
+        "storage_status",
+        "rights_status"
+      ],
+      "required_nonempty": [
+        "file_id",
+        "source_id",
+        "filename",
+        "sha256",
+        "role",
+        "coverage",
+        "storage_status",
+        "rights_status"
+      ]
+    },
+    "project_sources": {
+      "glob": "projects/*/sources/sources.tsv",
+      "required_columns": [
+        "source_id",
+        "archival_title",
+        "project_role",
+        "relevant_locus",
+        "primary_file_id",
+        "status"
+      ],
+      "required_nonempty": [
+        "source_id",
+        "archival_title",
+        "project_role",
+        "status"
+      ]
+    },
+    "crosswalks": {
+      "glob": "corpus/source-data/*/crosswalk.tsv",
+      "required_columns": [
+        "source_id",
+        "archival_folio",
+        "mapping_status"
+      ],
+      "locator_fields": [
+        "export_image",
+        "pdf_page",
+        "stable_image_urn"
+      ]
+    }
+  },
+  "controlled_values": {
+    "files.storage_status": [
+      "repo-preserved",
+      "external-controlled",
+      "preservation-blocked-public-redistribution"
+    ],
+    "crosswalk.mapping_status": [
+      "observed",
+      "inferred-high",
+      "unresolved",
+      "working"
+    ]
+  }
+}

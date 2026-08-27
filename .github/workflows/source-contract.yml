@@ -1,0 +1,28 @@
+name: source-contract
+
+on:
+  pull_request:
+    paths:
+      - 'corpus/**'
+      - 'projects/*/sources/**'
+      - 'templates/source/**'
+      - 'tools/source_contract.py'
+      - '.github/workflows/source-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'corpus/**'
+      - 'projects/*/sources/**'
+      - 'templates/source/**'
+      - 'tools/source_contract.py'
+      - '.github/workflows/source-contract.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/source_contract.py validate
