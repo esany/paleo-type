@@ -21,6 +21,10 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
             decisions,
         )
         self.assertIn(
+            "| material research-system change-admission workflow | `methodology/maintenance.md` | canonical operational admission rule |",
+            maintenance,
+        )
+        self.assertIn(
             "This file is the canonical operational owner of the general consequence-based admission workflow",
             maintenance,
         )
