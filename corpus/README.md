@@ -63,6 +63,8 @@ Missing crosswalk mappings are reported rather than guessed.
 
 Research functions are not Source properties. A Source may serve several different research functions in the same or different Projects without changing its canonical Source node.
 
+A use-evidence `file_id` must resolve to a File whose canonical `source_id` equals the `source_id` of the referenced use. This relation identifies a concrete digital instantiation of that Source for that use; it is not a cross-Source claim-evidence mechanism.
+
 `source-uses.relevant_locus` and `use-evidence.evidence_locator` are not interchangeable: the former is source-relative scholarly scope; the latter is an optional locator inside the concrete digital instantiation actually used. Prefer the canonical crosswalk for reusable folio/image/PDF/URN correspondence rather than duplicating it project-locally.
 
 ## Persistent identifiers
