@@ -74,10 +74,10 @@ Corrective practice: define a project as the bounded historical investigation / 
 
 Generalizable: yes; promoted through `methodology/project-lifecycle.md`, `methodology/source-and-provenance.md`, `AGENTS.md` and `DECISIONS.md` D-012.
 
-## L010 — provider record IDs were mistaken for archival-act boundaries
+## L010 — provider record IDs and protocol records were confused with larger archival acts
 
-Observed failure: `stat_visitation_00000197` and `stat_visitation_00000235` were initially represented as two Reg. Ii 3 archival records because DigiRef exposes separate record identifiers. Owner-supplied archival identification plus Archivportal context showed that *Visitation in Neustadt an der Orla* (41r–63v) and *Pfarreinkommen Gössitz, Knau …* (303r–306r) are two protocol/source units within the same parent act `ThHStAW, EGA, Reg. Ii 3 — Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld`. The same review showed that Reg. Ii 4 Bd. II and Reg. Ii 5 need parent-act titles above their Ziegenrück protocol records.
+Observed failure: the four user-supplied source-group entries were repeatedly reinterpreted as archival acts because portal/DigiRef identifiers were treated as if they fixed archival granularity. In fact all four entries are bounded protocol/source records inside larger acts. In particular, *Visitation in Neustadt an der Orla* (41r–63v) and *Pfarreinkommen Gössitz, Knau …* (303r–306r) are two distinct protocol sources within the same parent act `ThHStAW, EGA, Reg. Ii 3 — Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld`. Reg. Ii 4 Bd. II and Reg. Ii 5 likewise have parent acts above their bounded Ziegenrück protocols.
 
-Corrective practice: determine archival granularity independently of provider-record granularity. Model parent acts in `corpus/sources.tsv`, bounded reusable protocols in `corpus/source-units.tsv`, and retain provider IDs/URLs at the level they actually identify. Never create a second parent act solely because a portal exposes a second record ID.
+Corrective practice: determine archival granularity independently of provider-record granularity. Keep larger parent acts once in `corpus/archival-acts.tsv`; keep the bounded protocol/source records that research actually uses as the canonical `source_id` rows in `corpus/sources.tsv`. Provider IDs/URLs remain at the level they actually identify. Never create a second parent act solely because a portal exposes another record ID, and never add a redundant second protocol table when `sources.tsv` already owns canonical protocol identity.
 
-Generalizable: yes; promoted into source/provenance method, project lifecycle, AGENTS guardrails and source-contract validation.
+Generalizable: yes; reflected in `methodology/source-and-provenance.md` and source-contract validation.

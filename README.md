@@ -20,16 +20,16 @@ Reusable scholarly method, research gates, evidence rules, project/source-group 
 ### 2. CORPUS
 `corpus/`, `entities/`
 
-Canonical parent archival acts/records, reusable protocol/source units within them, exact digital instantiations, reusable mappings, historical/source relationships, events and recurring normalized identities.
+Canonical archival source records, exact digital instantiations, reusable source-wide mappings, historical/source relationships, events and recurring normalized identities.
 
 ### 3. PROJECT
 `projects/<id>/`, `projects/relationships.tsv`
 
-A project is a **bounded historical investigation / source-unlocking undertaking over a coherent source group**. It owns project-specific source-unit roles/loci, transcription, comparison/collation, interpretation, decisions, current evidence/gate state and exact next action.
+A project is a **bounded historical investigation / source-unlocking undertaking over a coherent source group**. It owns project-specific source roles/loci, transcription, comparison/collation, interpretation, decisions, current evidence/gate state and exact next action.
 
 Generalisation test:
 
-> reusable rule for another comparable manuscript project → METHOD; canonical act/unit/file/relationship truth → CORPUS; concrete investigation/source-role/reading/state → PROJECT.
+> reusable rule for another comparable manuscript project → METHOD; canonical source/file/relationship truth → CORPUS; concrete investigation/source-role/reading/state → PROJECT.
 
 The current benchmark is `projects/ega-reg-ii-5-knau/`. It tests the generic method; it does not define it.
 
@@ -51,7 +51,7 @@ The current benchmark is `projects/ega-reg-ii-5-knau/`. It tests the generic met
 3. read the active project's `STATUS.md`;
 4. read its `sources/sources.tsv`;
 5. read the active gate in `methodology/research-gates.md`;
-6. inspect relevant `corpus/sources.tsv`, `corpus/source-units.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
+6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
 7. read additional task-relevant methodology from its canonical owner;
 8. continue from project `NEXT ACTION` unless inspected evidence requires a change.
 
@@ -61,22 +61,22 @@ Old chat must never be required to reconstruct durable research state.
 
 A project follows the **historical investigation**, not the storage object.
 
-A new archival act, protocol record or PDF does **not** automatically create a project. A project is created when there is a coherent investigation / Erschließungsvorhaben over a bounded source group.
+A new archive record or PDF does **not** automatically create a project. A project is created when there is a coherent investigation / Erschließungsvorhaben over a bounded source group.
 
 The source group may contain:
-- one principal source unit;
+- one principal source;
 - comparison witnesses;
-- control source units;
-- contextual source units;
-- several co-equal units.
+- control sources;
+- contextual sources;
+- several co-equal sources.
 
-Keep the levels explicit:
+Each source remains an independently identified archival record. If two records share the same volume/signature but have separate archival record IDs/titles/loci, they stay separate sources.
 
-`archival holding/signature → parent archival act/record → protocol/source unit → witness/locus → digital instantiation`
+For the current Knau investigation this means, among others, that the two Reg. Ii 3 records are distinct:
+- *Visitation in Neustadt an der Orla* (`00000197`, fol. 41r–63v);
+- *Pfarreinkommen Gössitz, Knau ...* (`00000235`, fol. 303r–306r).
 
-A provider/DigiRef record ID may identify an act or a finer protocol unit. Do not assume all provider IDs have the same granularity. Multiple protocol units may legitimately belong to one parent act.
-
-For the current Knau investigation, four source units come from **three** archival acts. In particular, both *Visitation in Neustadt an der Orla* (fol. 41r–63v) and *Pfarreinkommen Gössitz, Knau ...* (fol. 303r–306r) belong to the same `ThHStAW, EGA, Reg. Ii 3` parent act.
+They are not collapsed merely because both are in `ThHStAW, EGA, Reg. Ii 3`.
 
 ## Where truth lives
 
@@ -88,17 +88,16 @@ For the current Knau investigation, four source units come from **three** archiv
 - `methodology/historical-source-workflow.md` — authoritative end-to-end scholarly method.
 - `methodology/research-gates.md` — canonical reusable G1–G6 requirements.
 - `methodology/project-lifecycle.md` — project/source-group creation, relations and feedback rules.
-- `methodology/source-and-provenance.md` — act/unit identity, exact exports and preservation rules.
+- `methodology/source-and-provenance.md` — source identity, exact exports and preservation rules.
 - `templates/project/` — minimal new-project contract; never clone a concrete project.
-- `corpus/sources.tsv` — canonical parent archival act/record inventory.
-- `corpus/source-units.tsv` — canonical reusable protocol/source-unit inventory, including unit-level provider records where evidenced.
-- `corpus/files.tsv` — exact file/instantiation manifest with parent act, optional unit link, filename, SHA-256, coverage, storage/preservation state, intended repository path and rights state.
-- `corpus/source-data/<source_id>/` — reusable parent-act crosswalks/mappings; rows may link to a source unit.
-- `corpus/relationships.tsv` — historical/archival/textual source/unit relationship claims.
+- `corpus/sources.tsv` — canonical archival/source-record inventory.
+- `corpus/files.tsv` — exact file/instantiation manifest with filename, SHA-256, coverage, storage/preservation state, intended repository path and rights state.
+- `corpus/source-data/<source_id>/` — reusable source-wide crosswalks/mappings.
+- `corpus/relationships.tsv` — historical/archival/textual source relationship claims.
 - `corpus/events.tsv` — shared event/activity context.
 - `entities/` — recurring normalized identities; never manuscript readings.
 - project `project.yml` — investigation identity and bounded research object.
-- project `sources/sources.tsv` — human-readable source group: parent act, source unit, titles, project role, relevant locus and primary file.
+- project `sources/sources.tsv` — human-readable source group: source ID, archival title, project role, relevant locus and primary file.
 - project `sources/inspection-log.tsv` — project-specific inspection audit when useful.
 - project `STATUS.md` — actual evidence/gate state, preservation gaps and exact next action.
 - project `transcription/`, `apparatus/`, `palaeography/`, `research/`, `context/`, `LEARNINGS.md` — created only when real work exists.
@@ -111,30 +110,28 @@ For the current Knau investigation, four source units come from **three** archiv
 
 The exact original archive export actually used in research is a first-class research asset.
 
-A URL or URN is useful provenance but **does not replace the exact PDF/export**. For central source exports `corpus/files.tsv` records the original filename, SHA-256, exact coverage, parent act/source unit, intended repository path and preservation state.
+A URL or URN is useful provenance but **does not replace the exact PDF/export**. For central source exports `corpus/files.tsv` records the original filename, SHA-256, exact coverage, intended repository path and preservation state.
 
 The preserved original must remain byte-identical. OCR, crops, renders, rotations or other derivatives are stored separately and point back to the original file ID.
 
-The repository is public. Where an archive export is marked `InC` and no redistribution authority has been established, `paleo-type` must not pretend a public Git commit is authorized. Such a file is marked `preservation-blocked-public-redistribution` until an adequate rights/authority basis permits repository storage or another controlled repository-integrated preservation location is established. A checksum + URN is not labelled equivalent backup.
-
-Stable image URNs are recorded only when institutionally evidenced; missing URNs are never synthesized from neighboring identifiers.
+The repository is public. Where an archive export is marked `InC` and no redistribution authority has been established, `paleo-type` must not pretend a public Git commit is authorized. Such a file is marked `preservation-blocked-rights` until an adequate rights/authority basis permits repository storage or another controlled repository-integrated preservation location is established. A checksum + URN is not labelled equivalent backup.
 
 ## Current Knau source group
 
-`projects/ega-reg-ii-5-knau/sources/sources.tsv` registers four source units from three parent acts:
+`projects/ega-reg-ii-5-knau/sources/sources.tsv` currently registers four distinct records:
 
-1. **principal** — Reg. Ii 5 parent act *Registratur für die Superintendentur Neustadt (Orla) (Auszug)* → *Visitation im Amt Ziegenrück*, fol. 55v–66v; Knau fol. 61v–63r.
-2. **comparison** — Reg. Ii 4 Bd. II parent act *Visitation in Thüringen* → *Visitation im Amt Ziegenrück*, fol. 294r–313r; Knau fol. 306v–309r.
-3. **context** — Reg. Ii 3 parent act *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* → *Visitation in Neustadt an der Orla*, fol. 41r–63v.
-4. **control** — the same Reg. Ii 3 parent act → *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
+1. principal — Reg. Ii 5 / `00000129`, Knau fol. 61v–63r;
+2. comparison — Reg. Ii 4 Bd. II / `00000089`, Knau fol. 306v–309r;
+3. control — Reg. Ii 3 / `00000235`, *Pfarreinkommen Gössitz, Knau ...*, fol. 303r–306r;
+4. context — Reg. Ii 3 / `00000197`, *Visitation in Neustadt an der Orla*, fol. 41r–63v.
 
-Parent-act identities live in `corpus/sources.tsv`; protocol/source-unit identities in `corpus/source-units.tsv`; exact PDFs/checksums in `corpus/files.tsv`; reusable crosswalks under `corpus/source-data/`.
+Their canonical identities remain in `corpus/sources.tsv`; their exact PDFs/checksums remain in `corpus/files.tsv`; reusable crosswalks live under `corpus/source-data/`.
 
 ## Project relations versus source relations
 
 `projects/relationships.tsv` is only for relations between **genuine investigations**, for example a later project extending or sharing sources with another project.
 
-`corpus/relationships.tsv` describes claims about **historical/archival/textual acts, units and witnesses**.
+`corpus/relationships.tsv` describes claims about **historical/archival/textual sources**.
 
 Never create project nodes merely to express source use, and never let a project relation prove a source relation.
 
@@ -169,8 +166,8 @@ GitHub may use project-scoped Milestones such as `ega-reg-ii-5-knau / G2 — Dip
 
 ## Feedback and anti-drift
 
-- project discovers act/unit/file/crosswalk correction → verify → update canonical corpus owner → update only affected project consequences;
-- project source-group role/locus changes → update project `sources/sources.tsv`, not canonical act/unit identity;
+- project discovers source identity/file/crosswalk correction → verify → update canonical corpus owner → update only affected project consequences;
+- project source-group role/locus changes → update project `sources/sources.tsv`, not canonical source identity;
 - project discovers generic weakness → project learning/status → generalisability check → methodology/DECISIONS → bounded consistency pass;
 - deferred improvement → trigger-based GitHub Issue;
 - ordinary implementation detail → Git history.
@@ -212,13 +209,12 @@ templates/
     STATUS.md
 corpus/
   sources.tsv
-  source-units.tsv
   files.tsv
   relationships.tsv
   events.tsv
   source-data/
     <source_id>/
-      crosswalk.tsv        # only when reusable mapping exists
+      crosswalk.tsv        # only when source-wide mapping exists
   source-files/
     <source_id>/
       original/            # exact bytes when rights/authority permit
@@ -244,16 +240,15 @@ Optional project directories exist only when real work requires them.
 
 Another capable researcher/agent, given repository + controlled source material, can determine:
 - what the investigation is;
-- which parent archival acts contain its source group;
-- which protocol/source units are actually used and why;
-- which unit/locus is principal/comparison/control/context;
+- which distinct archival records form its source group and why;
+- which record/locus is principal/comparison/control/context;
 - which exact PDF/export was inspected, its checksum and preservation state;
-- where reusable crosswalks live and which stable URNs are actually evidenced;
-- what source/unit relationships are actually evidenced;
+- where reusable crosswalks live;
+- what source relationships are actually evidenced;
 - what was inspected versus catalogued;
 - what the current transcription says and where it is uncertain/incomplete;
 - which generic gate is active and which concrete gaps remain;
 - what the exact next research action is;
 - which GitHub items are planning metadata rather than scholarly truth.
 
-If old chat, artificial source-as-project containers, conflated act/unit identities, or manual reconciliation of duplicate source truth are required, the architecture has drifted and must be repaired.
+If old chat, artificial source-as-project containers, or manual reconciliation of duplicate source truth are required, the architecture has drifted and must be repaired.
