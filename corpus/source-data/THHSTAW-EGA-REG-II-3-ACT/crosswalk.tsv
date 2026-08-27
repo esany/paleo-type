@@ -1,0 +1,9 @@
+source_id	source_unit_id	archival_folio	export_image	pdf_page	stable_image_urn	mapping_status	evidence	content_anchor	notes
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	303r	623	2		observed	folio number 303 visible	Gössitz pfarr Einkommen	
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	303v	624	3		inferred-high	verso sequence	Gössitz Kirch Einkommen	
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	304r	625	4		observed	folio number 304 visible	Knaw Kirch Einkommen	Directly relevant Knau subsection.
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	304v	626	5		inferred-high	verso sequence	Bahren Kirch Einkommen	
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	305r	627	6		observed	folio number 305 visible	Laßkaw pfarr Einkommen	
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	305v	628	7		inferred-high	verso sequence	continuation	
+THHSTAW-EGA-REG-II-3-ACT	UNIT-REG-II-3-00000235-INCOME	306r	629	8		observed	folio number 306 visible	continuation / protocol end range	
+THHSTAW-EGA-REG-II-3-ACT		306v-or-adjacent	630	9		unresolved	part of inspected export but exact archival side/boundary not verified	blank / minimal notation	Kept at parent-act level only until the exact side/boundary is verified; it must not be silently assigned to the income unit.
