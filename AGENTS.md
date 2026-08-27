@@ -21,7 +21,7 @@ The goal is source access and historical understanding, not development of `pale
 Apply the relevant expertise without requiring the user to police it:
 
 - **historical source criticism** — provenance, transmission, purpose, dependency, context and limits of inference;
-- **archival/diplomatic reasoning** — archival hierarchy, act/record identity, protocol/source-unit boundaries, foliation, document stage/type, copies/extracts/attachments and digital mediation;
+- **archival/diplomatic reasoning** — archival hierarchy, record identity, foliation, document stage/type, copies/extracts/attachments and digital mediation;
 - **palaeography/editorial method** — grapheme comparison, abbreviations, hands, numerals/notation, diplomatic transcription, variants and collation;
 - **domain history** — source-type-specific administrative, ecclesiastical, legal, economic, monetary and metrological concepts as hypothesis/test knowledge, never substitute manuscript evidence;
 - **research-data/provenance modelling** — stable identity, explicit relationships, evidence status, referential integrity, exact-file provenance and reproducible source mapping;
@@ -34,7 +34,7 @@ Domain expertise may suggest what to test. It may not make an unread sign, undoc
 Every durable statement belongs to exactly one level:
 
 1. **METHOD** — `methodology/`, `AGENTS.md`, `DECISIONS.md`: reusable scholarly rules/gates that should remain valid for another comparable manuscript investigation.
-2. **CORPUS** — `corpus/`, `entities/`: canonical parent archival acts/records, protocol/source units, exact digital instantiations, reusable mappings, source/event/entity relationships and recurring normalized identities.
+2. **CORPUS** — `corpus/`, `entities/`: canonical archival source identity, exact digital instantiations, reusable source-wide mappings, source/event/entity relationships and recurring normalized identities.
 3. **PROJECT** — `projects/<id>/`: one bounded historical investigation / source-unlocking undertaking over a coherent source group, including project roles/loci, observations, readings, comparisons, decisions, gate state and next action.
 
 Generalisation test:
@@ -42,10 +42,10 @@ Generalisation test:
 > Would this remain a valid requirement for a different comparable early-modern manuscript investigation?
 
 - yes → METHOD;
-- no, but it is canonical act/unit/file/reusable mapping/relationship truth → CORPUS;
+- no, but it is canonical source/file/reusable mapping/relationship truth → CORPUS;
 - no, it is a concrete investigation/source-role/reading/state fact → PROJECT.
 
-**Project is not source.** Do not create a project merely because an archival act, protocol record, source section or PDF exists. A project follows a coherent investigation. Its source group is declared in `projects/<id>/sources/sources.tsv`.
+**Project is not source.** Do not create a project merely because an archival record, source section or PDF exists. A project follows a coherent investigation. Its source group is declared in `projects/<id>/sources/sources.tsv`.
 
 **A pilot tests the method; it does not define it.** Generic scholarly maturity requirements live once in `methodology/research-gates.md`; a project `STATUS.md` records only its own state/gaps against them.
 
@@ -79,9 +79,8 @@ Method-compliant AI-assisted work is not the same as independent expert validati
 - Never let historical identification silently alter the diplomatic/graphematic reading.
 - Never silently normalize spelling, names, numerals, currencies or measures in the transcription layer.
 - Never collapse `unclear`, `gap/illegible`, `supplied`, addition/deletion/damage or research confidence into one ambiguous marker when the distinction matters.
-- Never merge acts/records because they concern the same place/event, share a shelfmark, or have similar wording.
-- Never collapse genuinely separate archival acts/records merely because they occur in the same holding context.
-- Never create a second archival act merely because a portal/DigiRef exposes a separate protocol/source-unit record ID; establish provider-record granularity first.
+- Never merge records because they concern the same place/event, share a shelfmark, or have similar wording.
+- Never collapse separately catalogued/identified records merely because they occur in the same archival volume/signature.
 - Never promote an archive-catalogue relation such as “extract from” to demonstrated textual dependence without collation.
 - Never infer folio/physical line from portal image number, PDF page or export order alone.
 - Never use a clearer parallel witness to overwrite graphemes in the witness being transcribed.
@@ -95,7 +94,6 @@ Method-compliant AI-assisted work is not the same as independent expert validati
 - Never upload rights-unclear/restricted material externally merely for convenience.
 - Never claim an exact source export is repository-preserved when its binary bytes are absent.
 - Never treat URL/URN + checksum as equivalent to preservation of the exact inspected export.
-- Never synthesize a persistent image URN from neighboring URNs, image numbers or apparent identifier patterns.
 - Never overwrite an original export with OCR, crop, compression, rotation or another derivative.
 - Never treat scaled AI/HTR output as validated research data without appropriate evaluation.
 - Never add infrastructure “for later” without a current need; preserve rationale as a lean Issue instead.
@@ -108,7 +106,7 @@ Method-compliant AI-assisted work is not the same as independent expert validati
 
 Keep these distinct:
 
-1. **ARCHIVAL** — act/record/unit identity, provenance, archival/digital instantiation and source relationships.
+1. **ARCHIVAL** — record identity, provenance, archival/digital instantiation and source relationships.
 2. **TEXTUAL/PALAEOGRAPHIC** — signs/readings actually visible in a concrete witness.
 3. **HISTORICAL** — interpretation of past events, agents, institutions and relationships.
 
@@ -139,24 +137,21 @@ Reading status is not the same as source-phenomenon type. Follow `methodology/tr
 
 Distinguish:
 
-`project → source group → archival holding/signature → archival act/record → protocol/source unit → witness → locus → instantiation`
+`project → source group → archival unit → record → witness → locus → instantiation`
 
 The project level is a research organisation layer; the archival/source levels are evidence/provenance layers.
-
-Portal/DigiRef record IDs may occur at act or protocol-unit granularity. Determine the level from archival context before assigning canonical ownership.
 
 Portal image numbers, archival folios, PDF pages, export sequence and legacy working IDs are distinct identifiers.
 
 Canonical records:
 
-- parent archival act/record identity/stage → `corpus/sources.tsv`;
-- reusable protocol/source-unit identity/extent/provider record → `corpus/source-units.tsv`;
-- exact file/instantiation filename/checksum/coverage/storage/preservation path/rights and optional unit link → `corpus/files.tsv`;
-- reusable parent-act image/PDF/export/folio mapping → `corpus/source-data/<source_id>/`;
-- source/unit/event/entity relationships → `corpus/relationships.tsv`;
+- source identity/stage → `corpus/sources.tsv`;
+- exact file/instantiation filename/checksum/coverage/storage/preservation path/rights → `corpus/files.tsv`;
+- reusable source-wide image/PDF/export/folio mapping → `corpus/source-data/<source_id>/`;
+- source/event/entity relationships → `corpus/relationships.tsv`;
 - administrative/historical activity context → `corpus/events.tsv`;
 - repeated normalized identities → `entities/`;
-- project source-unit membership/role/relevant locus → project `sources/sources.tsv`;
+- project source membership/role/relevant locus → project `sources/sources.tsv`;
 - project-specific inspection audit → project `sources/inspection-log.tsv` when useful.
 
 A relationship is a research claim. `metadata-supported` is not verified textual correspondence.
@@ -170,7 +165,6 @@ For consequential file-based work identify the exact original export used and pr
 - original filename;
 - SHA-256;
 - exact coverage;
-- parent act and, when applicable, protocol/source unit;
 - storage/preservation status;
 - actual/intended repository path;
 - rights/authority state.
@@ -183,22 +177,21 @@ Derived images/renders/OCR must be distinguishable from the original and point b
 
 `projects/<id>/sources/sources.tsv` is the human-readable source-group entry point.
 
-For every project source use preserve:
-- canonical parent `source_id`;
-- `source_unit_id` and unit title when the relevant protocol/source unit is known;
-- archival act title;
+For every project source record preserve:
+- canonical `source_id`;
+- archival title;
 - project role (`principal`, `comparison`, `control`, `context`, etc.);
 - relevant project locus;
 - primary exact file ID;
 - status/limitations.
 
-Project role is not source identity. It is a relation from the project to the source unit/use and may change without changing canonical act/unit identity.
+Project role is not source identity. A source may change role without changing its canonical source record.
 
-One archival act may contribute multiple independent project source units. The current Reg. Ii 3 case is a regression example: the Neustadt visitation and the Knau-area Pfarreinkommen are two units inside one parent act, not two acts merely because DigiRef exposes different record identifiers.
+Two records sharing `ThHStAW, EGA, Reg. Ii 3` remain distinct when their archive record IDs/titles/loci differ.
 
 ## Collation discipline
 
-Before calling units/records textual witnesses/parallels:
+Before calling records textual witnesses/parallels:
 1. identify each independently;
 2. locate corresponding loci;
 3. inspect/read each separately;
@@ -209,12 +202,11 @@ Before calling units/records textual witnesses/parallels:
 ## Digital source criticism
 
 For consequential work determine what was actually inspected:
-- archive/fonds/signature and parent act/record;
-- protocol/source-unit identity/boundary when applicable;
+- archive/fonds/signature/record and archival title;
 - archival folio/locus;
 - exact original file ID + SHA-256;
 - whether that exact binary is preserved/controlled and where;
-- digital act/unit/image/URN identifiers where available, each at its actual granularity;
+- digital record/image/URN where available as secondary provenance;
 - PDF/export/image numbering as separate fields;
 - whether export is complete for the claimed range;
 - whether working image is original or derived/cropped/scaled.
@@ -242,7 +234,7 @@ Before continuing existing research:
 3. read project `STATUS.md`;
 4. read project `sources/sources.tsv`;
 5. read the active generic gate in `methodology/research-gates.md`;
-6. inspect relevant `corpus/sources.tsv`, `corpus/source-units.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
+6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
 7. read relevant project decision rows and `LEARNINGS.md`;
 8. load every additional methodology/governance requirement applicable to the task; if applicability is unclear, inspect the canonical owner before acting;
 9. continue from `NEXT ACTION` unless inspected evidence requires a change.
@@ -251,7 +243,7 @@ When changing a substantive reading, preserve prior reading, new reading, eviden
 
 When changing a source relationship, preserve previous status where consequential, cite basis and do not upgrade beyond demonstrated evidence.
 
-When changing project source role/locus, update the project source register without rewriting canonical act/unit identity.
+When changing project source role/locus, update the project source register without rewriting canonical source identity.
 
 ## Lean decision discipline
 
@@ -274,17 +266,16 @@ After a material canonical or structural change, run a bounded repo-wide consist
 - source-as-project leftovers;
 - project facts leaked into methodology;
 - generic rules duplicated inside projects;
-- distinct archival acts accidentally collapsed;
-- protocol/source units accidentally promoted to separate acts because provider IDs differ;
+- distinct archival records accidentally collapsed;
 - duplicate/stale source crosswalks;
-- source/unit/file/project references that no longer resolve;
+- source/file/project references that no longer resolve;
 - source preservation claims that do not match actual binary/rights state;
 - stale gate/milestone references;
 - contradictory project `STATUS.md` claims.
 
 Final restartability test:
 
-> Could another capable researcher identify the investigation, parent archival acts, relevant protocol/source units, exact exports/preservation state and continue correctly from repository + controlled source material without recovering this chat?
+> Could another capable researcher identify the investigation, distinct source group, exact exports/preservation state and continue correctly from repository + controlled source material without recovering this chat?
 
 If not, persist the minimum missing state.
 
@@ -324,17 +315,15 @@ Before completing consequential work, check what is relevant.
 
 **Method/corpus/project ownership**
 - Does the project represent an investigation rather than a source/file surrogate?
-- Is each distinct parent archival act preserved independently?
-- Are distinct protocol/source units within one act represented without creating false parent acts?
+- Is each distinct archival record preserved independently?
 - Is each durable statement stored at the correct level?
 - Did a project-specific fact accidentally become a generic rule?
 - Did the project copy generic gate requirements instead of recording only its state against them?
 
 **Technisch / research-data**
-- Does every consequential act/source-unit/locus have unambiguous identity/provenance?
+- Does every consequential source/record/locus have unambiguous identity/provenance?
 - Is the exact original source export identified by filename + SHA-256 and preservation state?
 - Are folio, portal image, PDF/export numbering and file identity kept distinct?
-- Are provider record IDs stored at their evidenced granularity?
 - Are changed IDs/relations referentially coherent?
 - Did changed research truth reach its canonical home?
 - Is the simplest maintainable representation being used?
@@ -351,8 +340,7 @@ Ask:
 - Are archival truth, textual truth and historical interpretation separate?
 - Did I distinguish image/PDF/export numbers from folios/physical lines?
 - Am I treating catalogue metadata only as metadata-level evidence?
-- Did I establish whether a provider record identifies an act or a protocol/source unit before modelling it?
-- Did I keep genuinely separate archival acts separate while allowing multiple units inside one act?
+- Did I keep separately identified archival records separate?
 - Is a claimed source relationship demonstrated or only metadata-supported?
 - Is corroboration genuinely independent?
 - Did a clearer witness overwrite the witness under transcription?
