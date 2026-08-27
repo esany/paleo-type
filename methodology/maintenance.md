@@ -15,6 +15,7 @@ Keep `paleo-type` continuously usable without creating a second documentation pr
 | GitHub Milestone-family/naming/backlog semantics | `MILESTONES.md` | planning/navigation rules only |
 | authoritative end-to-end scholarly method | `methodology/historical-source-workflow.md` | reusable normative method |
 | generic scholarly maturity gates | `methodology/research-gates.md` | reusable G1–G6 requirements |
+| material research-system change-admission workflow | `methodology/maintenance.md` | canonical operational admission rule |
 | project/source-use lifecycle and feedback | `methodology/project-lifecycle.md` | reusable project rules |
 | source identity/instantiation/preservation method | `methodology/source-and-provenance.md` | reusable source rules |
 | minimal new-project contract | `templates/project/` | project creation template |
@@ -51,6 +52,47 @@ Explanations and GitHub metadata may summarize canonical records but must not be
 - Routine synchronization/refactor machinery must never rewrite the governing objective merely because lower-level method, standards, models or architecture changed.
 - Clarifying references in lower-level files should point to the canonical objective rather than copy it.
 - Ordinary source research and maintenance remain lean and do not inherit mission-change ceremony.
+
+## Material research-system change admission
+
+This file is the canonical operational owner of the general consequence-based admission workflow for material research-system changes:
+
+`analysis → requirements → concept → owner review / explicit implementation admission → development → deterministic tests / scholarly loss checks → result review`
+
+Apply this workflow when a proposed change materially alters shared METHOD, the CORPUS information model or canonical ownership, Project architecture/invariants, canonical research-data migration semantics, or another research-system rule where error could change provenance, scholarly meaning, auditability or restartability.
+
+The stages have distinct purposes:
+
+1. **Analysis** — inspect the current canonical state and the demonstrated failure/need.
+2. **Requirements** — derive the applicable scholarly, epistemic, provenance, usability and technical requirements.
+3. **Concept** — state the smallest coherent change, alternatives, dependencies and explicit non-goals.
+4. **Owner review / explicit implementation admission** — the human owner decides whether a sufficiently precise material scope may enter development.
+5. **Development** — implement only the admitted scope.
+6. **Deterministic tests / scholarly loss checks** — verify machine-checkable invariants and proportionate preservation of scholarly meaning, provenance and regression fixtures before treating the implementation as ready.
+7. **Result review** — compare the result with the admitted requirements and preserved research meaning; passing deterministic tests alone does not establish scholarly acceptance.
+
+### Lean admission boundary
+
+Only **material research-system changes** require this admission path. Do not turn ordinary scholarship or already admitted bounded implementation into repeated approval loops.
+
+A new material admission is not required merely for:
+
+- source inspection;
+- evidence logging;
+- bounded research or transcription performed within an already admitted method/scope;
+- derived/rebuildable outputs that do not redefine canonical truth;
+- routine repository maintenance that does not change research-system semantics;
+- implementation details already unambiguously covered by a sufficiently precise admitted scope.
+
+Once a material implementation scope is explicitly admitted, its precise bounded implementation may proceed without owner micromanagement. If apparently routine or admitted work exposes a **new** material architecture or migration choice outside that scope, stop the affected change and return that choice to this admission workflow rather than silently expanding scope.
+
+### Admission is not specialist validation
+
+Owner admission controls purpose, priorities and permission to implement a material research-system change. It does **not** establish archival, palaeographic, historical, philological, editorial or other specialist truth and never substitutes for qualified independent specialist validation where that is required.
+
+AI/HITL-specific obligations for applying this general rule live in `methodology/ai-governance.md`; that file references this canonical workflow rather than duplicating it.
+
+No workflow engine is required. An inspectable admitted scope, bounded implementation, deterministic/proportional tests and explicit result review are sufficient.
 
 ## Method / corpus / project ownership test
 
