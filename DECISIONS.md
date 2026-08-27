@@ -121,12 +121,12 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 ## D-012 — A project is an investigation over a source group; exact exports are first-class assets
 
-**Status:** accepted  
+**Status:** superseded by D-014  
 **Decision:** Define a project as a bounded historical investigation / source-unlocking undertaking over one or more distinct canonical source records. Do not create projects automatically for archival records or files. Project-source membership, project-relative function (`principal`, `control`, `context`, `comparison`, etc.) and project-relevant locus live in `projects/<id>/sources/sources.tsv`; these functions are relations of the form `(project, source) → function`, not properties of the canonical source. The same source may therefore have different functions in different projects without changing `corpus/sources.tsv`. Canonical source identity remains in `corpus/sources.tsv`; reusable source-wide crosswalks live in `corpus/source-data/<source_id>/`. Source-to-source claims such as `extract_of` or demonstrated textual correspondence remain separate in `corpus/relationships.tsv`. Exact original exports used as evidence are first-class research assets tracked byte-exactly in `corpus/files.tsv` and should be repository-preserved when rights/authority permit.
 
 **Reason:** Historians investigate coherent source groups, not technical source wrappers. A source has stable identity but no absolute research role: its function arises only within a concrete investigation. Conflating project-relative function with source identity or with source-to-source relationships would create false cross-project semantics. The source-unit model created apparent duplicate projects and artificial project-to-project relations. At the same time, relying on URNs/portal links without preserving the exact inspected PDF is inadequate for reproducibility and personal source safeguarding.
 
-**Consequence:** Source-as-project directories introduced by PR #40 are removed; project source registers are interpreted as project-source membership/function relations rather than source property tables. A source can be principal in one project and control/context in another without contradiction. `comparison` means only “used for comparison in this investigation” unless an independent source relationship is evidenced in `corpus/relationships.tsv`. Project relations are reserved for relations between genuine investigations. Exact source exports have filename, SHA-256, coverage, intended repository path and explicit preservation status; a public-repository rights blocker must remain visible rather than being masked by a URL/URN.
+**Consequence:** Retained only as historical rationale. D-014 keeps project-relative roles and exact-export provenance but replaces the investigation-defined project boundary with a historically independent source-root boundary.
 
 ## D-013 — Governing scholarly objective has precedence over derived method and architecture
 
@@ -136,3 +136,12 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 **Reason:** The mission is already expressed across several repository files, but without one canonical precedence point a locally reasonable AI/engineering optimization could gradually substitute a proxy goal or reinterpret lower-level rules as authority to change the research purpose.
 
 **Consequence:** Lower-level files should reference rather than restate the governing objective. Material amendments to it require an explicit human owner decision and visible rationale; routine research remains lean. The objective does not freeze current formats, standards, models, gates, GitHub or the Knau pilot.
+
+## D-014 — A project is anchored to one historically independent source structure
+
+**Status:** accepted by explicit human owner decision  
+**Decision:** Every project has exactly one canonical `project_source_id` identifying its historically independent source root. In the current archival domain this root is an act. Sources structurally contained in that root are internal; sources outside it may still be registered for comparison, control or context but remain external. Internal/external status is derived from the canonical `part_of` relations rather than copied into project metadata. Project-relative roles remain relations of the form `(project, source) → function` and do not alter source identity. Exact source exports remain first-class byte-identified research assets as established in D-012.
+
+**Reason:** A project should preserve the historically autonomous documentary structure rather than create a synthetic container from whatever source bundle a current question happens to use. This keeps historical structure stable while still allowing a narrow active research locus and external comparative evidence.
+
+**Consequence:** `project.yml` requires `project_source_id`; a declared `principal_source_id` must lie structurally within that root. The source resolver derives `project_root`, `internal` or `external` from `part_of`. Project scope may be narrower than the whole root, but it does not redefine project identity. D-012 is superseded only on project-boundary semantics; its rules on relative roles, source identity separation and exact-export provenance remain retained here.
