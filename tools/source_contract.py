@@ -39,31 +39,11 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
     warnings: list[str] = []
     cache: dict[str, object] = {}
 
-    act_cfg = contract["tables"]["archival_acts"]
-    act_path = root / act_cfg["path"]
-    ah, acts = read_tsv(act_path)
-    check_headers(act_path, ah, act_cfg["required_columns"], errors)
-    act_by_id: dict[str, dict[str, str]] = {}
-    allowed_act_status = set(contract["controlled_values"]["archival_acts.status"])
-    for i, row in enumerate(acts, start=2):
-        for field in act_cfg["required_nonempty"]:
-            if not row.get(field):
-                errors.append(f"{act_path}:{i}: {field} must not be empty")
-        aid = row.get(act_cfg["key"], "")
-        if aid:
-            if aid in act_by_id:
-                errors.append(f"{act_path}:{i}: duplicate archival_act_id {aid}")
-            act_by_id[aid] = row
-        status = row.get("status", "")
-        if status and status not in allowed_act_status:
-            errors.append(f"{act_path}:{i}: unknown archival-act status {status!r}")
-
     source_cfg = contract["tables"]["sources"]
     source_path = root / source_cfg["path"]
     sh, sources = read_tsv(source_path)
     check_headers(source_path, sh, source_cfg["required_columns"], errors)
     source_by_id: dict[str, dict[str, str]] = {}
-    identity_seen: dict[tuple[str, ...], str] = {}
     for i, row in enumerate(sources, start=2):
         for field in source_cfg["required_nonempty"]:
             if not row.get(field):
@@ -73,25 +53,65 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             if sid in source_by_id:
                 errors.append(f"{source_path}:{i}: duplicate source_id {sid}")
             source_by_id[sid] = row
-        aid = row.get("archival_act_id", "")
-        if aid not in act_by_id:
-            errors.append(f"{source_path}:{i}: archival_act_id {aid} does not exist in corpus/archival-acts.tsv")
-        else:
-            act = act_by_id[aid]
-            for field in ("archive", "fonds", "signature"):
-                if row.get(field) != act.get(field):
-                    errors.append(f"{source_path}:{i}: {field} differs from parent act {aid}")
-        identity = tuple(row.get(f, "") for f in source_cfg.get("identity_fields", []))
-        if identity and all(identity):
-            if identity in identity_seen and identity_seen[identity] != sid:
-                errors.append(f"{source_path}:{i}: protocol identity duplicates source {identity_seen[identity]}")
-            identity_seen[identity] = sid
         if bool(row.get("date_from")) != bool(row.get("date_to")):
             errors.append(f"{source_path}:{i}: date_from/date_to must be supplied together")
         if bool(row.get("date_serial_from")) != bool(row.get("date_serial_to")):
             errors.append(f"{source_path}:{i}: date_serial_from/date_serial_to must be supplied together")
         if (row.get("date_serial_from") or row.get("date_serial_to")) and not row.get("date_calendar_label"):
             errors.append(f"{source_path}:{i}: serial date values require date_calendar_label")
+
+    rel_cfg = contract["tables"]["relationships"]
+    rel_path = root / rel_cfg["path"]
+    rh, relationships = read_tsv(rel_path)
+    check_headers(rel_path, rh, rel_cfg["required_columns"], errors)
+    relation_by_id: dict[str, dict[str, str]] = {}
+    parents_by_source: dict[str, list[str]] = {}
+    part_pairs: set[tuple[str, str]] = set()
+    for i, row in enumerate(relationships, start=2):
+        for field in rel_cfg["required_nonempty"]:
+            if not row.get(field):
+                errors.append(f"{rel_path}:{i}: {field} must not be empty")
+        rid = row.get(rel_cfg["key"], "")
+        if rid:
+            if rid in relation_by_id:
+                errors.append(f"{rel_path}:{i}: duplicate relation_id {rid}")
+            relation_by_id[rid] = row
+        if row.get("predicate") != "part_of":
+            continue
+        subject = row.get("subject_id", "")
+        obj = row.get("object_id", "")
+        if subject not in source_by_id:
+            errors.append(f"{rel_path}:{i}: part_of subject {subject} is not a corpus source node")
+        if obj not in source_by_id:
+            errors.append(f"{rel_path}:{i}: part_of object {obj} is not a corpus source node")
+        if subject == obj and subject:
+            errors.append(f"{rel_path}:{i}: source {subject} cannot be part_of itself")
+        pair = (subject, obj)
+        if all(pair):
+            if pair in part_pairs:
+                errors.append(f"{rel_path}:{i}: duplicate part_of relation {subject} -> {obj}")
+            part_pairs.add(pair)
+            parents_by_source.setdefault(subject, []).append(obj)
+
+    visited: set[str] = set()
+    active: list[str] = []
+
+    def visit(node: str) -> None:
+        if node in active:
+            cycle = active[active.index(node):] + [node]
+            errors.append(f"{rel_path}: part_of cycle detected: {' -> '.join(cycle)}")
+            return
+        if node in visited:
+            return
+        active.append(node)
+        for parent in parents_by_source.get(node, []):
+            if parent in source_by_id:
+                visit(parent)
+        active.pop()
+        visited.add(node)
+
+    for sid in source_by_id:
+        visit(sid)
 
     file_cfg = contract["tables"]["files"]
     file_path = root / file_cfg["path"]
@@ -148,13 +168,13 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             project_rows[key] = row
             title = row.get("archival_title", "")
             if title and title != source_by_id[sid].get("title", ""):
-                errors.append(f"{path}:{i}: archival_title differs from canonical protocol title for {sid}")
+                errors.append(f"{path}:{i}: archival_title differs from canonical source title for {sid}")
             fid = row.get("primary_file_id", "")
             if fid:
                 if fid not in file_by_id:
                     errors.append(f"{path}:{i}: primary_file_id {fid} does not exist in corpus/files.tsv")
                 elif file_by_id[fid].get("source_id") != sid:
-                    errors.append(f"{path}:{i}: primary_file_id {fid} belongs to another protocol source")
+                    errors.append(f"{path}:{i}: primary_file_id {fid} belongs to another source")
 
     cross_cfg = contract["tables"]["crosswalks"]
     allowed_mapping = set(contract["controlled_values"]["crosswalk.mapping_status"])
@@ -164,7 +184,7 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         check_headers(path, headers, cross_cfg["required_columns"], errors)
         source_dir = path.parent.name
         if source_dir not in source_by_id:
-            errors.append(f"{path}: source-data directory {source_dir} has no protocol source record")
+            errors.append(f"{path}: source-data directory {source_dir} has no corpus source node")
         loci_seen: set[str] = set()
         for i, row in enumerate(rows, start=2):
             sid = row.get("source_id", "")
@@ -191,8 +211,9 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             warnings.append(f"projects/{project_id}: active source {sid} has a relevant_locus but no source-data crosswalk yet")
 
     cache.update(
-        archival_acts=act_by_id,
         sources=source_by_id,
+        relationships=relation_by_id,
+        parents_by_source=parents_by_source,
         files=file_by_id,
         project_sources=project_rows,
         crosswalks=crosswalks_by_source,
@@ -214,6 +235,24 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return 0
 
 
+def part_of_paths(source_id: str, source_by_id: dict[str, dict[str, str]], parents: dict[str, list[str]]) -> list[list[dict[str, str]]]:
+    paths: list[list[dict[str, str]]] = []
+
+    def walk(node: str, path: list[dict[str, str]]) -> None:
+        node_parents = parents.get(node, [])
+        if not node_parents:
+            if path:
+                paths.append(path)
+            return
+        for parent_id in node_parents:
+            parent = source_by_id.get(parent_id)
+            if parent:
+                walk(parent_id, path + [parent])
+
+    walk(source_id, [])
+    return paths
+
+
 def cmd_resolve(args: argparse.Namespace) -> int:
     root = repo_root(args.root)
     errors, warnings, cache = validate(root, load_contract(root))
@@ -228,7 +267,6 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         print(f"ERROR: source {args.source_id} is not registered in project {args.project}", file=sys.stderr)
         return 2
     source_row = cache["sources"][args.source_id]
-    act_row = cache["archival_acts"].get(source_row.get("archival_act_id", ""))
     fid = project_row.get("primary_file_id", "")
     file_row = cache["files"].get(fid) if fid else None
 
@@ -247,8 +285,8 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         "project": args.project,
         "project_source": project_row,
         "source": source_row,
-        "source_level": "protocol_record",
-        "parent_archival_act": act_row,
+        "source_type": source_row.get("source_type") or None,
+        "part_of_paths": part_of_paths(args.source_id, cache["sources"], cache["parents_by_source"]),
         "primary_file": file_row,
         "locus": args.locus or None,
         "locus_matches": locus_matches,
@@ -266,7 +304,7 @@ def build_parser() -> argparse.ArgumentParser:
     v = sub.add_parser("validate", help="Validate the source/provenance contract.")
     v.set_defaults(func=cmd_validate)
 
-    r = sub.add_parser("resolve", help="Resolve a project protocol source to its parent act, file and locus provenance.")
+    r = sub.add_parser("resolve", help="Resolve a project source, generic part-whole ancestry, file and locus provenance.")
     r.add_argument("--project", required=True)
     r.add_argument("--source-id", required=True)
     r.add_argument("--locus")
