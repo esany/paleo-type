@@ -1,61 +1,59 @@
 # Corpus — canonical act, protocol and file layer
 
-This directory stores project-independent facts about archival acts/records, intellectually meaningful protocol/source units within them, and exact digital instantiations used for research.
+This directory stores project-independent facts about parent archival acts, the protocol/source records used by research, and the exact digital instantiations used for inspection.
 
 ## Human reading order
 
-1. `sources.tsv` — parent archival acts/records;
-2. `source-units.tsv` — protocol/source units within those acts;
-3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state, rights status and, where applicable, source-unit linkage;
-4. `source-data/<source_id>/` — reusable parent-act mappings such as export-image/PDF-page/folio crosswalks, optionally tagged to a source unit;
-5. `relationships.tsv` — evidence-status-controlled relationships;
+1. `archival-acts.tsv` — larger archival acts/holding units that contain one or more protocol records;
+2. `sources.tsv` — canonical protocol/source records with their parent `archival_act_id` and bounded folio range;
+3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state and rights status;
+4. `source-data/<source_id>/` — reusable protocol-level folio ↔ export-image ↔ PDF-page ↔ stable-URN crosswalks;
+5. `relationships.tsv` — evidence-status-controlled source-to-source claims;
 6. `events.tsv` — shared event/activity context.
 
 The minimum hierarchy is:
 
-`archival holding/signature → archival act/record → protocol/source unit → witness/locus → digital instantiation`
+`archival holding/signature → archival act → protocol/source record → witness/locus → digital instantiation`
 
-A provider/DigiRef record ID may identify either an act or a source unit. Its level must be established from archival context; never infer that all provider IDs have the same granularity.
+For this corpus the project-facing canonical `source_id` identifies the **protocol/source record**, not the larger act. A provider/DigiRef record ID is an external provenance/access identifier and may exist at a different archival level; never infer its semantic level from the number alone.
 
 ## Current Knau source group
 
-The project uses **four protocol/source units from three archival acts**:
+The project uses **four protocol records from three larger archival acts**:
 
-- `ThHStAW, EGA, Reg. Ii 4 Bd. II` — parent act *Visitation in Thüringen* → *Visitation im Amt Ziegenrück*, fol. 294r–313r;
-- `ThHStAW, EGA, Reg. Ii 5` — parent act *Registratur für die Superintendentur Neustadt (Orla) (Auszug)* → *Visitation im Amt Ziegenrück*, fol. 55v–66v;
-- `ThHStAW, EGA, Reg. Ii 3` — parent act *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* → *Visitation in Neustadt an der Orla*, fol. 41r–63v;
-- the same `Reg. Ii 3` act → *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
+- `ACT-THHSTAW-EGA-REG-II-4-BD-II` — *Visitation in Thüringen* → `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`, *Visitation im Amt Ziegenrück*, fol. 294r–313r;
+- `ACT-THHSTAW-EGA-REG-II-5` — *Registratur für die Superintendenz Neustadt an der Orla (Auszug)* → `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, *Visitation im Amt Ziegenrück*, fol. 55v–66v;
+- `ACT-THHSTAW-EGA-REG-II-3` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* → `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V`, *Visitation in Neustadt an der Orla*, fol. 41r–63v;
+- the same `ACT-THHSTAW-EGA-REG-II-3` → `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`, *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
 
-The last two are separate source units inside one act, not two archival acts. Archivportal Thüringen independently lists both units under archive signature `3`.
+The two Reg. Ii 3 protocol records therefore share one parent act. A second DigiRef/provider record does not create a second archival act.
 
 ## Machine contract and resolver
 
-`source-contract.json` defines lean machine-readable invariants. Run:
+`source-contract.json` defines the lean machine-readable invariants. Run:
 
 `python tools/source_contract.py validate`
 
-Resolve canonical provenance with either a parent act or, preferably for project work, the source unit:
+Resolve canonical provenance with:
 
-`python tools/source_contract.py resolve --project <project> --source-unit-id <source_unit_id> [--locus <folio>]`
-
-`--source-id <source_id>` remains available, but if a project uses multiple source units from one act the resolver requires `--source-unit-id` to disambiguate them.
+`python tools/source_contract.py resolve --project <project> --source-id <source_id> [--locus <folio>]`
 
 The resolver follows:
 
-`project role → protocol/source unit → parent archival act → exact file → parent-act crosswalk/locus`
+`project role → protocol/source record → parent archival act → exact file → protocol crosswalk/locus`
 
 Missing mappings are reported rather than guessed.
 
 ## Identity and ownership
 
-- parent archival act/record identity → `sources.tsv`;
-- reusable protocol/source-unit identity/title/extent/provider record → `source-units.tsv`;
-- exact file identity/preservation and optional unit linkage → `files.tsv`;
-- reusable act-wide folio/image/PDF mapping → `source-data/<source_id>/`;
-- project role and relevant locus → project `sources/sources.tsv`, referencing the relevant source unit;
+- parent archival-act identity → `archival-acts.tsv`;
+- canonical protocol/source identity, title, extent and protocol-level metadata → `sources.tsv`;
+- exact file identity/preservation → `files.tsv`;
+- reusable protocol-level folio/image/PDF/URN mapping → `source-data/<source_id>/`;
+- project role and relevant locus → project `sources/sources.tsv`;
 - project reading/analysis → project work directories.
 
-A shared signature does not collapse genuinely separate acts. Conversely, one act may contain many distinct protocol/source units. Do not create a second act merely because a portal exposes a separate unit-level record ID.
+This is deliberately small. There is no second protocol table and no database. Multiple protocols may point to one parent act; the same protocol may have different roles in different projects.
 
 ## Persistent identifiers
 
