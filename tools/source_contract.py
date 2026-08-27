@@ -88,6 +88,10 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             identity_seen[identity] = sid
         if bool(row.get("date_from")) != bool(row.get("date_to")):
             errors.append(f"{source_path}:{i}: date_from/date_to must be supplied together")
+        if bool(row.get("date_serial_from")) != bool(row.get("date_serial_to")):
+            errors.append(f"{source_path}:{i}: date_serial_from/date_serial_to must be supplied together")
+        if (row.get("date_serial_from") or row.get("date_serial_to")) and not row.get("date_calendar_label"):
+            errors.append(f"{source_path}:{i}: serial date values require date_calendar_label")
 
     file_cfg = contract["tables"]["files"]
     file_path = root / file_cfg["path"]
