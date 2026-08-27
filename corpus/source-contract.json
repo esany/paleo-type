@@ -18,9 +18,7 @@
         "archive",
         "fonds",
         "signature",
-        "record_id",
-        "title",
-        "digital_url"
+        "title"
       ],
       "identity_fields": [
         "archive",
@@ -67,7 +65,6 @@
         "source_id",
         "archival_title",
         "project_role",
-        "relevant_locus",
         "status"
       ]
     },
