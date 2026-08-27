@@ -12,7 +12,9 @@ State the scholarly purpose and current bounded working scope within the project
 
 ## Sources used
 
-Reference `sources/sources.tsv`. Summarize only what a human needs to understand: internal project sources and external comparison/control/context sources, with relevant loci. Internal/external status is derived from canonical `part_of` relations; canonical archival/file identity remains in `corpus/`.
+Reference `source-uses.tsv`. Summarize only what a human needs to understand: the canonical Sources actually used, their project-relative `research_function` values and relevant source-relative loci. Internal/external status is derived from canonical `part_of` relations; canonical Source/File identity remains in `corpus/`.
+
+When a concrete digital file/instance actually supports a use, reference the project-local use-evidence relation. Do not duplicate file identity/checksums or create a second folio truth in STATUS.
 
 ## Evidence and preservation state
 
@@ -24,7 +26,7 @@ Reference `../../methodology/research-gates.md`. Record only this project's curr
 
 ## Project relations
 
-Reference `../relationships.tsv` only if this historically independent project materially relates to another project. Historical/source relations belong in `corpus/relationships.tsv`.
+Reference `../relationships.tsv` only if this historically independent project materially relates to another project. Historical/source relations belong in `corpus/relationships.tsv`. Project→Source use never auto-creates a Project→Project relation.
 
 ## NEXT ACTION — canonical restart point
 
@@ -32,4 +34,4 @@ State one bounded next research action.
 
 ## Restartability test
 
-A new capable researcher must be able to identify the historical project root, distinguish structural/internal sources from external research sources, recover relevant loci and exact source exports/preservation state, understand current gate/activity state and continue from the exact next action without old chat.
+A new capable researcher must be able to identify the historical project root, derive structural/internal/external status, identify the Project→Source research functions and relevant loci, recover concrete use-evidence and exact source exports/preservation state, understand current gate/activity state and continue from the exact next action without old chat.

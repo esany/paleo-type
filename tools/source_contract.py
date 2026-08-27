@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+RESEARCH_FUNCTION_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
 
 
 def repo_root(explicit: str | None = None) -> Path:
@@ -106,10 +107,20 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             if rid in relation_by_id:
                 errors.append(f"{rel_path}:{i}: duplicate relation_id {rid}")
             relation_by_id[rid] = row
-        if row.get("predicate") != "part_of":
-            continue
         subject = row.get("subject_id", "")
         obj = row.get("object_id", "")
+        predicate = row.get("predicate", "")
+        if row.get("subject_locus") and subject not in source_by_id:
+            errors.append(f"{rel_path}:{i}: subject_locus requires canonical source subject {subject}")
+        if row.get("object_locus") and obj not in source_by_id:
+            errors.append(f"{rel_path}:{i}: object_locus requires canonical source object {obj}")
+        if predicate == "textually_corresponds_to":
+            if subject not in source_by_id:
+                errors.append(f"{rel_path}:{i}: textually_corresponds_to subject {subject} is not a corpus source node")
+            if obj not in source_by_id:
+                errors.append(f"{rel_path}:{i}: textually_corresponds_to object {obj} is not a corpus source node")
+        if predicate != "part_of":
+            continue
         if subject not in source_by_id:
             errors.append(f"{rel_path}:{i}: part_of subject {subject} is not a corpus source node")
         if obj not in source_by_id:
@@ -197,16 +208,16 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         if project_source_id and project_source_id not in source_by_id:
             errors.append(f"{path}: project_source_id {project_source_id} does not exist in corpus/sources.tsv")
 
-    project_cfg = contract["tables"]["project_sources"]
-    project_rows: dict[tuple[str, str], dict[str, str]] = {}
-    for path in sorted(root.glob(project_cfg["glob"])):
+    legacy_cfg = contract["tables"]["project_sources"]
+    legacy_project_rows: dict[tuple[str, str], dict[str, str]] = {}
+    for path in sorted(root.glob(legacy_cfg["glob"])):
         headers, rows = read_tsv(path)
-        check_headers(path, headers, project_cfg["required_columns"], errors)
+        check_headers(path, headers, legacy_cfg["required_columns"], errors)
         project_id = path.parents[1].name
         if project_id not in project_by_id:
             errors.append(f"{path}: no valid projects/{project_id}/project.yml definition")
         for i, row in enumerate(rows, start=2):
-            for field in project_cfg["required_nonempty"]:
+            for field in legacy_cfg["required_nonempty"]:
                 if not row.get(field):
                     errors.append(f"{path}:{i}: {field} must not be empty")
             sid = row.get("source_id", "")
@@ -214,9 +225,9 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                 errors.append(f"{path}:{i}: source_id {sid} does not exist in corpus/sources.tsv")
                 continue
             key = (project_id, sid)
-            if key in project_rows:
-                errors.append(f"{path}:{i}: duplicate project/source pair {project_id}/{sid}")
-            project_rows[key] = row
+            if key in legacy_project_rows:
+                errors.append(f"{path}:{i}: duplicate legacy project/source pair {project_id}/{sid}")
+            legacy_project_rows[key] = row
             title = row.get("archival_title", "")
             if title and title != source_by_id[sid].get("title", ""):
                 errors.append(f"{path}:{i}: archival_title differs from canonical source title for {sid}")
@@ -227,19 +238,96 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                 elif file_by_id[fid].get("source_id") != sid:
                     errors.append(f"{path}:{i}: primary_file_id {fid} belongs to another source")
 
+    use_cfg = contract["tables"]["project_source_uses"]
+    use_by_id: dict[str, dict[str, str]] = {}
+    uses_by_project_source: dict[tuple[str, str], list[dict[str, str]]] = {}
+    use_project: dict[str, str] = {}
+    for path in sorted(root.glob(use_cfg["glob"])):
+        headers, rows = read_tsv(path)
+        check_headers(path, headers, use_cfg["required_columns"], errors)
+        project_id = path.parent.name
+        if project_id not in project_by_id:
+            errors.append(f"{path}: no valid projects/{project_id}/project.yml definition")
+        for i, row in enumerate(rows, start=2):
+            for field in use_cfg["required_nonempty"]:
+                if not row.get(field):
+                    errors.append(f"{path}:{i}: {field} must not be empty")
+            use_id = row.get("use_id", "")
+            if use_id:
+                if use_id in use_by_id:
+                    errors.append(f"{path}:{i}: duplicate use_id {use_id}")
+                use_by_id[use_id] = row
+                use_project[use_id] = project_id
+            sid = row.get("source_id", "")
+            if sid not in source_by_id:
+                errors.append(f"{path}:{i}: source_id {sid} does not exist in corpus/sources.tsv")
+            function = row.get("research_function", "")
+            if function and not RESEARCH_FUNCTION_RE.match(function):
+                errors.append(
+                    f"{path}:{i}: research_function {function!r} must be lowercase kebab-case; vocabulary remains open"
+                )
+            if sid:
+                uses_by_project_source.setdefault((project_id, sid), []).append(row)
+
+    evidence_cfg = contract["tables"]["project_use_evidence"]
+    evidence_by_id: dict[str, dict[str, str]] = {}
+    evidence_by_use: dict[str, list[dict[str, str]]] = {}
+    for path in sorted(root.glob(evidence_cfg["glob"])):
+        headers, rows = read_tsv(path)
+        check_headers(path, headers, evidence_cfg["required_columns"], errors)
+        if "source_id" in headers:
+            errors.append(f"{path}: source_id must not be duplicated in use-evidence; resolve it through use_id")
+        project_id = path.parents[1].name
+        if project_id not in project_by_id:
+            errors.append(f"{path}: no valid projects/{project_id}/project.yml definition")
+        for i, row in enumerate(rows, start=2):
+            for field in evidence_cfg["required_nonempty"]:
+                if not row.get(field):
+                    errors.append(f"{path}:{i}: {field} must not be empty")
+            evidence_id = row.get("evidence_id", "")
+            if evidence_id:
+                if evidence_id in evidence_by_id:
+                    errors.append(f"{path}:{i}: duplicate evidence_id {evidence_id}")
+                evidence_by_id[evidence_id] = row
+            use_id = row.get("use_id", "")
+            if use_id not in use_by_id:
+                errors.append(f"{path}:{i}: use_id {use_id} does not exist in project source uses")
+            elif use_project.get(use_id) != project_id:
+                errors.append(f"{path}:{i}: use_id {use_id} belongs to another project")
+            fid = row.get("file_id", "")
+            if fid not in file_by_id:
+                errors.append(f"{path}:{i}: file_id {fid} does not exist in corpus/files.tsv")
+            elif use_id in use_by_id:
+                use_source_id = use_by_id[use_id].get("source_id", "")
+                file_source_id = file_by_id[fid].get("source_id", "")
+                if use_source_id and file_source_id != use_source_id:
+                    errors.append(
+                        f"{path}:{i}: file_id {fid} belongs to source {file_source_id}, not use source {use_source_id}"
+                    )
+            if use_id:
+                evidence_by_use.setdefault(use_id, []).append(row)
+
     for project_id, meta in project_by_id.items():
         root_id = meta.get("project_source_id", "")
         principal = meta.get("principal_source_id", "")
         if principal:
-            if (project_id, principal) not in project_rows:
-                errors.append(f"projects/{project_id}/project.yml: principal_source_id {principal} is not registered in sources/sources.tsv")
+            registered = (project_id, principal) in legacy_project_rows or bool(
+                uses_by_project_source.get((project_id, principal))
+            )
+            if not registered:
+                errors.append(
+                    f"projects/{project_id}/project.yml: principal_source_id {principal} is not registered in legacy or target project source use records"
+                )
             elif root_id and not is_within(principal, root_id, parents_by_source):
-                errors.append(f"projects/{project_id}/project.yml: principal_source_id {principal} is not structurally within project_source_id {root_id}")
-        if root_id and project_rows and not any(
+                errors.append(
+                    f"projects/{project_id}/project.yml: principal_source_id {principal} is not structurally within project_source_id {root_id}"
+                )
+        has_internal_use = any(
             pid == project_id and is_within(sid, root_id, parents_by_source)
-            for (pid, sid) in project_rows
-        ):
-            warnings.append(f"projects/{project_id}: no registered source lies within project_source_id {root_id}")
+            for (pid, sid) in set(legacy_project_rows) | set(uses_by_project_source)
+        ) if root_id else False
+        if root_id and (legacy_project_rows or uses_by_project_source) and not has_internal_use:
+            warnings.append(f"projects/{project_id}: no registered source/use lies within project_source_id {root_id}")
 
     cross_cfg = contract["tables"]["crosswalks"]
     allowed_mapping = set(contract["controlled_values"]["crosswalk.mapping_status"])
@@ -271,9 +359,12 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                 errors.append(f"{path}:{i}: stable_image_urn must start with 'urn:'")
         crosswalks_by_source[source_dir] = rows
 
-    for (project_id, sid), row in project_rows.items():
+    for (project_id, sid), row in legacy_project_rows.items():
         if row.get("status") == "active" and row.get("relevant_locus") and sid not in crosswalks_by_source:
-            warnings.append(f"projects/{project_id}: active source {sid} has a relevant_locus but no source-data crosswalk yet")
+            warnings.append(f"projects/{project_id}: active legacy source {sid} has a relevant_locus but no source-data crosswalk yet")
+    for (project_id, sid), rows in uses_by_project_source.items():
+        if any(row.get("status") == "active" and row.get("relevant_locus") for row in rows) and sid not in crosswalks_by_source:
+            warnings.append(f"projects/{project_id}: active source use {sid} has a relevant_locus but no source-data crosswalk yet")
 
     cache.update(
         sources=source_by_id,
@@ -281,7 +372,12 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         parents_by_source=parents_by_source,
         files=file_by_id,
         projects=project_by_id,
-        project_sources=project_rows,
+        project_sources=legacy_project_rows,
+        source_uses=use_by_id,
+        uses_by_project_source=uses_by_project_source,
+        use_project=use_project,
+        use_evidence=evidence_by_id,
+        evidence_by_use=evidence_by_use,
         crosswalks=crosswalks_by_source,
     )
     return errors, warnings, cache
@@ -319,6 +415,14 @@ def part_of_paths(source_id: str, source_by_id: dict[str, dict[str, str]], paren
     return paths
 
 
+def source_projects(source_id: str, projects: dict[str, dict[str, str]], parents: dict[str, list[str]]) -> list[str]:
+    return sorted(
+        project_id
+        for project_id, meta in projects.items()
+        if meta.get("project_source_id") and is_within(source_id, meta["project_source_id"], parents)
+    )
+
+
 def cmd_resolve(args: argparse.Namespace) -> int:
     root = repo_root(args.root)
     errors, warnings, cache = validate(root, load_contract(root))
@@ -327,27 +431,47 @@ def cmd_resolve(args: argparse.Namespace) -> int:
             print(f"ERROR: {item}", file=sys.stderr)
         return 1
 
-    key = (args.project, args.source_id)
-    project_row = cache["project_sources"].get(key)
-    if not project_row:
-        print(f"ERROR: source {args.source_id} is not registered in project {args.project}", file=sys.stderr)
-        return 2
-    source_row = cache["sources"][args.source_id]
     project_meta = cache["projects"].get(args.project)
     if not project_meta:
         print(f"ERROR: project {args.project} has no valid project.yml", file=sys.stderr)
         return 2
+    if args.source_id not in cache["sources"]:
+        print(f"ERROR: source {args.source_id} does not exist", file=sys.stderr)
+        return 2
+
+    key = (args.project, args.source_id)
+    legacy_project_row = cache["project_sources"].get(key)
+    project_uses = cache["uses_by_project_source"].get(key, [])
+    if not legacy_project_row and not project_uses:
+        print(f"ERROR: source {args.source_id} is not registered/used in project {args.project}", file=sys.stderr)
+        return 2
+
+    source_row = cache["sources"][args.source_id]
     project_root_id = project_meta.get("project_source_id", "")
     project_root = cache["sources"].get(project_root_id)
     if args.source_id == project_root_id:
-        project_scope = "project_root"
+        structural_status = "project_root"
     elif is_within(args.source_id, project_root_id, cache["parents_by_source"]):
-        project_scope = "internal"
+        structural_status = "internal"
     else:
-        project_scope = "external"
+        structural_status = "external"
 
-    fid = project_row.get("primary_file_id", "")
-    file_row = cache["files"].get(fid) if fid else None
+    legacy_file = None
+    if legacy_project_row:
+        fid = legacy_project_row.get("primary_file_id", "")
+        legacy_file = cache["files"].get(fid) if fid else None
+
+    resolved_uses = []
+    for use in project_uses:
+        evidence_records = []
+        for evidence in cache["evidence_by_use"].get(use["use_id"], []):
+            evidence_records.append(
+                {
+                    "evidence": evidence,
+                    "file": cache["files"].get(evidence.get("file_id", "")),
+                }
+            )
+        resolved_uses.append({"use": use, "evidence": evidence_records})
 
     rows = cache["crosswalks"].get(args.source_id, [])
     locus_matches = []
@@ -364,12 +488,18 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         "project": args.project,
         "project_definition": project_meta,
         "project_root_source": project_root,
-        "project_scope": project_scope,
-        "project_source": project_row,
+        "project_scope": structural_status,
+        "structural_status": structural_status,
         "source": source_row,
         "source_type": source_row.get("source_type") or None,
         "part_of_paths": part_of_paths(args.source_id, cache["sources"], cache["parents_by_source"]),
-        "primary_file": file_row,
+        "source_projects": source_projects(args.source_id, cache["projects"], cache["parents_by_source"]),
+        "project_source_uses": resolved_uses,
+        "research_functions": [use["research_function"] for use in project_uses],
+        "legacy_project_source": legacy_project_row,
+        "legacy_primary_file": legacy_file,
+        "project_source": legacy_project_row,
+        "primary_file": legacy_file,
         "locus": args.locus or None,
         "locus_matches": locus_matches,
         "warnings": warnings,
@@ -379,14 +509,17 @@ def cmd_resolve(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Validate and resolve paleo-type source provenance.")
+    parser = argparse.ArgumentParser(description="Validate and resolve paleo-type source provenance and project source use.")
     parser.add_argument("--root", help="Repository root; defaults to the script's repository.")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    v = sub.add_parser("validate", help="Validate the source/provenance contract.")
+    v = sub.add_parser("validate", help="Validate the source/provenance/project-use contract.")
     v.set_defaults(func=cmd_validate)
 
-    r = sub.add_parser("resolve", help="Resolve a project source against its project root, structural ancestry, file and locus provenance.")
+    r = sub.add_parser(
+        "resolve",
+        help="Resolve project/source structure, project research uses, explicit use-evidence, file provenance and optional locus.",
+    )
     r.add_argument("--project", required=True)
     r.add_argument("--source-id", required=True)
     r.add_argument("--locus")

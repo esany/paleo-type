@@ -25,13 +25,15 @@ Canonical historical/documentary source nodes, exact digital instantiations, reu
 ### 3. PROJECT
 `projects/<id>/`, `projects/relationships.tsv`
 
-A project is scholarly state anchored to **one historically independent source structure** through `project.yml: project_source_id`. In the current archival domain that root is an act. The current active research scope may be narrower than the project root, and the project may use external comparison/control/context sources without making them structural parts of the project.
+A project is scholarly state anchored to **one historically independent source structure** through `project.yml: project_source_id`. In the current archival domain that root is an act. The current active research scope may be narrower than the project root, and the project may use external sources without making them structural parts of the project.
+
+Project-relative Source use is represented separately from Source identity: target projects use one `source-uses.tsv` row per concrete `research_function`; concrete Project-use→File evidence is optional and separate in `research/use-evidence.tsv`. Internal/external status remains derived from canonical `part_of`.
 
 Generalisation test:
 
 > reusable rule for another comparable manuscript project → METHOD; canonical source/file/relationship truth → CORPUS; concrete work state relative to one historical project root → PROJECT.
 
-The current benchmark directory is `projects/ega-reg-ii-5-knau/`. Its historical project root is `ACT-THHSTAW-EGA-REG-II-5`; `Knau` is the current working focus, not the project boundary.
+The current benchmark directory is `projects/ega-reg-ii-5-knau/`. Its historical project root is `ACT-THHSTAW-EGA-REG-II-5`; `Knau` is the current working focus, not the project boundary. This project intentionally remains on the legacy source-register representation until its separately admitted loss-checked migration.
 
 ## Start here
 
@@ -39,9 +41,9 @@ The current benchmark directory is `projects/ega-reg-ii-5-knau/`. Its historical
 1. Read this README.
 2. Read `GOVERNING_OBJECTIVE.md` when evaluating purpose, precedence, Human-in-the-loop or consequential method/architecture change.
 3. For the current Reg. Ii 5 project: `projects/ega-reg-ii-5-knau/project.yml` and `STATUS.md`.
-4. For sources used by that project: `projects/ega-reg-ii-5-knau/sources/sources.tsv`.
-5. For generic research gates: `methodology/research-gates.md`.
-6. For project-root/source-use rules: `methodology/project-lifecycle.md`.
+4. For its current unmigrated Source-use state: `projects/ega-reg-ii-5-knau/sources/sources.tsv`; do not treat that legacy layout as the target project contract.
+5. For target Project→Source use semantics: `methodology/project-lifecycle.md`, plus `source-uses.tsv` and `research/use-evidence.tsv` in projects that use the target model.
+6. For generic research gates: `methodology/research-gates.md`.
 7. For source identity, part–whole structure, exact exports and preservation: `methodology/source-and-provenance.md`.
 8. For GitHub work sequencing: `MILESTONES.md`.
 
@@ -49,11 +51,12 @@ The current benchmark directory is `projects/ega-reg-ii-5-knau/`. Its historical
 1. read `GOVERNING_OBJECTIVE.md` and `AGENTS.md`;
 2. read the active project's `project.yml` and resolve `project_source_id`;
 3. establish and load all canonical rules/requirements applicable to the concrete task;
-4. read project `STATUS.md` and `sources/sources.tsv`;
-5. read the active gate in `methodology/research-gates.md`;
-6. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
-7. use the source resolver rather than reconstructing project membership from names/chat;
-8. continue from project `NEXT ACTION` unless inspected evidence requires a change.
+4. read project `STATUS.md`;
+5. read target `source-uses.tsv` and explicit use-evidence when present; for the current unmigrated Reg. Ii 5 project read its legacy `sources/sources.tsv` instead;
+6. read the active gate in `methodology/research-gates.md`;
+7. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and Source relations;
+8. use the source resolver rather than reconstructing project membership, research functions or File evidence from names/chat;
+9. continue from project `NEXT ACTION` unless inspected evidence requires a change.
 
 Old chat must never be required to reconstruct durable research state.
 
@@ -61,17 +64,17 @@ Old chat must never be required to reconstruct durable research state.
 
 A project follows the **historically independent documentary structure**, not the current research bundle.
 
-Every project has one `project_source_id` resolving to a canonical source node. A project may currently work on one passage, protocol, section or problem inside that root; this is `active_scope`, not project identity.
+Every project has one `project_source_id` resolving to a canonical Source node. A project may currently work on one passage, protocol, section or problem inside that root; this is `active_scope`, not project identity.
 
 Sources used in the project are classified structurally by the canonical `part_of` graph:
 
 - source = `project_source_id` → project root;
 - source `part_of*` project root → internal source;
-- otherwise → external research source.
+- otherwise, when used by the project → external research source.
 
-Project roles such as `principal`, `comparison`, `control`, `context` are separate research relations. An external source can be comparison/control/context without becoming part of the historical project structure.
+`research_function` is a Project→Source use semantic, not a Source property or structural flag. The same Source may have several research-function Uses in one project when the research genuinely requires them. `principal` is one such research function; it is not a second project-boundary anchor.
 
-A PDF, portal record, individual protocol or temporary comparison question does not automatically create a project. A distinct historically independent source structure does.
+A PDF, portal record, individual protocol or temporary comparison question does not automatically create a project. A historically independent source structure may receive a Project when it needs durable scholarly state.
 
 ## Generic source structure
 
@@ -94,21 +97,23 @@ Provider/DigiRef IDs, archival hierarchy and repository node boundaries are not 
 - `MILESTONES.md` — GitHub work-planning semantics; never scholarly truth.
 - `methodology/historical-source-workflow.md` — authoritative end-to-end scholarly method.
 - `methodology/research-gates.md` — canonical reusable G1–G6 requirements.
-- `methodology/project-lifecycle.md` — project-root, source-use and restartability rules.
-- `methodology/source-and-provenance.md` — source identity, part–whole structure, exact exports and preservation rules.
-- `templates/project/` — minimal new-project contract.
-- `corpus/sources.tsv` — canonical source-node inventory.
-- `corpus/files.tsv` — exact file/instantiation manifest with filename, SHA-256, coverage, storage/preservation state, intended repository path and rights state.
+- `methodology/project-lifecycle.md` — project-root, Project→Source use and restartability rules.
+- `methodology/source-and-provenance.md` — Source identity, part–whole structure, exact exports and preservation rules.
+- `templates/project/` — minimal target new-project contract.
+- `corpus/sources.tsv` — canonical Source-node inventory.
+- `corpus/files.tsv` — exact File/instantiation manifest with filename, SHA-256, coverage, storage/preservation state, intended repository path and rights state.
 - `corpus/source-data/<source_id>/` — reusable source-wide crosswalks/mappings.
-- `corpus/relationships.tsv` — structural `part_of` and historical/archival/textual source relationship claims.
+- `corpus/relationships.tsv` — structural `part_of` and historical/archival/textual Source-relation claims.
 - `corpus/events.tsv` — shared event/activity context.
 - `entities/` — recurring normalized identities; never manuscript readings.
 - project `project.yml` — project identity (`project_source_id`), scholarly purpose and active scope.
-- project `sources/sources.tsv` — sources actually used: source ID, project role, relevant locus and primary file.
+- project `source-uses.tsv` — project-relative Source research functions and source-relative relevant loci.
+- project `research/use-evidence.tsv` — explicit concrete Project-use→File/instance binding when needed; no File metadata is duplicated there.
+- current Reg. Ii 5 `sources/sources.tsv`, `primary_file_id` and `principal_source_id` — temporary legacy migration compatibility only until separately admitted migration.
 - project `sources/inspection-log.tsv` — project-specific inspection audit when useful.
 - project `STATUS.md` — actual evidence/gate state, preservation gaps and exact next action.
 - project work directories — created only when real work exists.
-- `projects/relationships.tsv` — relations only between genuine projects.
+- `projects/relationships.tsv` — explicit relations only between genuine projects; never inferred from Source use.
 - GitHub Issues/Milestones — planning/work metadata, never research truth.
 - Chat — transient workspace only.
 
@@ -122,6 +127,8 @@ The preserved original must remain byte-identical. OCR, crops, renders, rotation
 
 The repository is public. Where an archive export is marked `InC/1.0` and no redistribution authority has been established, the exact binary is not committed publicly by default. The preservation blocker remains explicit. A checksum + URN is not labelled equivalent backup.
 
+For target Project-use evidence, `research/use-evidence.tsv` references a canonical `file_id`. That File must belong in `corpus/files.tsv` to the same canonical Source as the referenced Project→Source use. Use-evidence is not a cross-Source claim-evidence mechanism.
+
 ## Current Reg. Ii 5 project
 
 Historical project root:
@@ -132,22 +139,22 @@ Current active scope:
 
 - Knau passage fol. 61v–63r inside the internal Ziegenrück protocol `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`.
 
-Sources currently used:
+Sources currently used in the **legacy, not-yet-migrated** register:
 
 1. **internal / principal** — Reg. Ii 5 / `00000129`, Ziegenrück protocol 55v–66v; active Knau locus 61v–63r.
 2. **external / comparison** — Reg. Ii 4 Bd. II / `00000089`, Knau locus 306v–309r.
 3. **external / control** — Reg. Ii 3 / `00000235`, *Pfarreinkommen Gössitz, Knau ...*, 303r–306r.
 4. **external / context** — Reg. Ii 3 / Neustadt protocol 41r–63v.
 
-Their canonical identities and structural `part_of` relations live in the corpus. Their research roles live only in the project source register.
+Their canonical identities and structural `part_of` relations live in the Corpus. Those legacy role/file fields remain readable only for migration compatibility; their later loss-checked mapping to `research_function` + separate use-evidence is specified, not performed, in Phase 1.
 
 ## Project relations versus source relations
 
-`projects/relationships.tsv` is only for relations between historically independent projects.
+`projects/relationships.tsv` is only for explicit relations between historically independent Projects.
 
-`corpus/relationships.tsv` describes claims about source nodes, including structural `part_of`.
+`corpus/relationships.tsv` describes claims about Source nodes, including structural `part_of`.
 
-Never use a project relation to encode source structure, and never let a project relation prove a historical/source relation.
+Never use a Project relation to encode Source structure, never derive Project→Project relations from Project→Source use, and never let a Project relation prove a historical/Source relation.
 
 ## Generic research gates
 
@@ -180,10 +187,12 @@ GitHub may use project-scoped Milestones to group discrete Issues. A Milestone i
 
 ## Feedback and anti-drift
 
-- source identity/file/crosswalk/structure correction → verify → update canonical corpus owner → update affected project consequences;
-- project root correction → update `project_source_id` → re-resolve all used sources through `part_of`;
-- project source role/locus changes → update project `sources/sources.tsv`, not canonical source identity or structural membership;
-- project discovers generic weakness → project learning/status → generalisability check → methodology/DECISIONS → bounded consistency pass;
+- Source identity/File/crosswalk/structure correction → verify → update canonical Corpus owner → update affected Project consequences;
+- Project root correction → update `project_source_id` → re-resolve all used Sources through `part_of`;
+- target Project→Source research-function/locus changes → update project `source-uses.tsv`, not canonical Source identity or structural membership;
+- concrete use→File evidence changes → update project `research/use-evidence.tsv`, while File identity/provenance remains in `corpus/files.tsv`;
+- current Reg. Ii 5 legacy Source-use changes remain in its legacy register until the separately admitted migration; do not create duplicate target truth merely for synchronization;
+- Project discovers generic weakness → project learning/status → generalisability check → methodology/DECISIONS → bounded consistency pass;
 - deferred improvement → trigger-based GitHub Issue;
 - ordinary implementation detail → Git history.
 
@@ -222,6 +231,9 @@ templates/
   project/
     project.yml
     STATUS.md
+    source-uses.tsv
+    research/
+      use-evidence.tsv
 corpus/
   sources.tsv
   files.tsv
@@ -240,12 +252,13 @@ projects/
     project.yml
     STATUS.md
     sources/
-      sources.tsv
+      sources.tsv              # legacy until separately admitted migration
       inspection-log.tsv
     transcription/
     apparatus/
     palaeography/
     research/
+      project-source-migration.tsv
     context/
 ```
 
@@ -254,17 +267,18 @@ Optional project directories exist only when real work requires them.
 ## Definition of done for repository architecture
 
 Another capable researcher/agent, given repository + controlled source material, can determine:
-- which historically independent source node defines each project;
-- which used sources are structurally internal versus external;
+- which historically independent Source node defines each Project;
+- which used Sources are structurally internal versus external by derivation;
 - what the current active research scope is;
-- which source/locus is principal/comparison/control/context;
-- which exact PDF/export was inspected, its checksum and preservation state;
+- which project-relative research functions/loci each used Source serves;
+- which exact File/instantiation supports each use when explicit use-evidence exists, while canonical File provenance remains in `corpus/files.tsv`;
 - where reusable crosswalks live;
-- what source relationships are actually evidenced;
+- what Source relations are actually evidenced;
 - what was inspected versus catalogued;
 - what the current transcription says and where it is uncertain/incomplete;
 - which generic gate is active and which concrete gaps remain;
 - what the exact next research action is;
-- which GitHub items are planning metadata rather than scholarly truth.
+- which GitHub items are planning metadata rather than scholarly truth;
+- whether a project is still on explicit legacy migration compatibility rather than silently mixing target and legacy truth.
 
-If old chat, manually duplicated membership flags, or reconciliation of contradictory project/source truth are required, the architecture has drifted and must be repaired.
+If old chat, manually duplicated structural-status flags, inferred File evidence or reconciliation of contradictory project/Source truth are required, the architecture has drifted and must be repaired.

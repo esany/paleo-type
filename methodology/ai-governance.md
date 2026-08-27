@@ -68,7 +68,19 @@ Before presenting a claim externally as reliable scholarship, raise the validati
 
 The user is not required to become the specialist reviewer. Expert review is an escalation path for consequential unresolved claims.
 
-## 5. When AI becomes a research method
+## 5. AI/HITL application of material research-system change admission
+
+The canonical general material research-system change-admission workflow is owned by `methodology/maintenance.md`. AI/HITL applies that rule as follows:
+
+- AI may analyse, derive requirements and propose a concept, but it may not infer or manufacture owner admission for a material implementation.
+- Silence, enthusiasm, prior autonomous work or repeated agreement are not implementation admission.
+- If work inside an admitted scope exposes a new material architecture or migration decision outside that scope, AI must stop the affected work and return that decision to the canonical admission path in `maintenance.md`.
+- Once the owner has explicitly admitted a sufficiently precise implementation scope, AI may execute the bounded implementation without asking the owner to micromanage routine implementation details.
+- Owner admission governs permission and scope for material system change; it never substitutes for qualified archival, palaeographic, historical, philological or other specialist validation.
+
+AI/method-compliance status and independent specialist validation remain separate statuses.
+
+## 6. When AI becomes a research method
 
 Routine expert assistance does not require a benchmark suite.
 
@@ -86,7 +98,7 @@ Before relying on such scaled outputs:
 
 Do not build this machinery in advance. Trigger it only when AI actually becomes a method rather than an assistant.
 
-## 6. Accountability
+## 7. Accountability
 
 AI may provide specialist assistance, comparisons, hypotheses and critique, but it is not an author, witness or accountable scholarly agent.
 
