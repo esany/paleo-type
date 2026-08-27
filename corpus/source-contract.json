@@ -35,6 +35,11 @@
         "signature",
         "record_id",
         "title",
+        "date_from",
+        "date_to",
+        "date_calendar_label",
+        "date_serial_from",
+        "date_serial_to",
         "folios",
         "digital_url"
       ],
