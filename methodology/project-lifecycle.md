@@ -1,173 +1,181 @@
-# Project lifecycle and source-group model
+# Project lifecycle and historical-source project model
 
 ## Purpose
 
-Define what a project is, how a source group enters a project, how source-level truth is reused without duplication, and how project findings feed back into corpus and method.
+Define what a project is, how its historical source structure is anchored, how internal and external sources are distinguished, and how project work reuses canonical corpus truth without duplication.
 
-This file is generic METHOD. Concrete project facts belong in `projects/<id>/`; canonical source identity, file identity and historical/source relationships belong in `corpus/`.
+This file is generic METHOD. Canonical source identity/relations/files live in `corpus/`; project work state lives in `projects/<id>/`.
 
 ## Project definition
 
-A **project is a bounded historical investigation / source-unlocking undertaking**: a specific source group investigated for a coherent scholarly purpose.
+A **project is anchored to one historically independent source structure**, represented by exactly one canonical `project_source_id` in `project.yml`.
 
-A project is **not**:
-- an archival record merely because it exists;
-- a PDF/export or digital instantiation;
-- a technical container for reusable source metadata;
-- an automatic one-to-one mirror of `corpus/sources.tsv`.
+In the current corpus that root is an archival act. The rule is structural rather than technical: the project boundary follows the historically independent documentary unit, not a convenient research bundle, portal export, PDF, place name or current question.
 
-A project may contain one principal source and several comparison/control/context sources, or several co-equal sources. The project boundary follows the research object and source group, not a storage convenience.
+A project may work only on a small locus of its root structure at a given time. `active_scope` is therefore allowed to be narrower than the project itself.
 
-Example: a Knau project may investigate a 1533 principal witness together with a related 1533 record and distinct 1529 control/context records. Those records remain separate sources inside one project unless a genuinely separate research undertaking is opened.
+A project may also use sources outside its root structure for comparison, control or context. Those sources remain **external** to the project even though they are registered for research use.
 
-## Source hierarchy inside a project
+## Structural membership
 
-Keep these levels distinct:
+Historical/documentary source nodes live in `corpus/sources.tsv`. Structural containment is represented generically in `corpus/relationships.tsv` with `part_of`.
 
-`project → source group → archival record/source → relevant locus → digital instantiation`
+For a project source `S` and project root `R`:
 
-A shared shelfmark does not collapse distinct archival records. If an archival volume contains separately catalogued/identified records or source sections, preserve each record's own canonical `source_id`, archival title, record ID and locus.
+- `S = R` → project root;
+- `S part_of* R` → structurally internal source;
+- otherwise → external research source.
 
-For example, two distinct Reg. Ii 3 records remain two project sources even though both belong to the same archival volume/signature.
+No separate `internal/external` field is required. The resolver derives this deterministically from the canonical `part_of` graph.
+
+This preserves the distinction between:
+
+- **historical structure** — source-to-source `part_of` relations;
+- **research function** — project-relative roles such as `principal`, `comparison`, `control`, `context`.
+
+A source can be external to a project and still be highly important to its research.
 
 ## Canonical ownership
 
 One fact has one canonical owner:
 
-- source/record identity and archival description → `corpus/sources.tsv`;
-- exact digital/export file identity, filename, checksum, coverage, storage state and rights → `corpus/files.tsv`;
+- source identity/type/description → `corpus/sources.tsv`;
+- historical/documentary structure and other source relations → `corpus/relationships.tsv`;
+- exact digital/export file identity, checksum, coverage, storage state and rights → `corpus/files.tsv`;
 - reusable source-wide image/PDF/export/folio crosswalk → `corpus/source-data/<source_id>/`;
-- historical/archival/textual source relationships → `corpus/relationships.tsv`;
-- project-source membership, project-relative function and project-relevant locus → `projects/<id>/sources/sources.tsv`;
-- project inspection events/details → `projects/<id>/sources/inspection-log.tsv` when needed;
+- project root identity → `project.yml: project_source_id`;
+- project-relative source function and relevant locus → `projects/<id>/sources/sources.tsv`;
+- project inspection details → `projects/<id>/sources/inspection-log.tsv` when needed;
 - project transcription/decisions/analysis/status → that project;
-- research-organisational project-to-project relations → `projects/relationships.tsv` only when multiple genuine projects exist and a material relation needs recording;
-- generic project/source-group rules → this file and `templates/project/`.
+- generic rules → `methodology/` and consequential cross-project decisions → `DECISIONS.md`.
 
-A project references canonical source/file records; it does not redefine them. Reusable source-wide crosswalks are not copied into every project.
-
-## Original source exports are first-class research assets
-
-The exact PDF/image export actually used for research is part of the evidential chain. A portal URL or URN is useful provenance but is **not a substitute for preserving the exact inspected export**.
-
-For central project source exports:
-- preserve the original filename and exact bytes;
-- record SHA-256 in `corpus/files.tsv`;
-- record the intended/actual repository path;
-- do not modify, recompress, OCR-overwrite or normalize the preserved original;
-- derived crops/renders/OCR belong separately and must point back to the original file ID;
-- if a public-repository rights constraint prevents committing the binary, mark preservation as incomplete/blocked explicitly rather than pretending a URL/URN is equivalent backup.
-
-The project is not restartable if its consequential source evidence depends on a transient chat attachment or an unrecorded local file.
+A project references canonical source nodes; it does not redefine them.
 
 ## Minimal project contract
 
-Create every new project from `templates/project/`, never by cloning an existing concrete project.
+Create every new project from `templates/project/`.
 
 Required at creation:
 1. unique project ID and human-readable title;
-2. bounded `research_object` / `active_scope` describing the investigation, not a storage unit;
-3. `sources/sources.tsv` listing the actual source group and each project's use of each source/locus;
-4. every referenced canonical source ID already exists in `corpus/sources.tsv`;
-5. every exact digital export used as evidence exists in `corpus/files.tsv` with checksum and storage/preservation state;
-6. `STATUS.md` records actual evidence state and a bounded `NEXT ACTION`;
-7. generic gates/method are referenced rather than copied;
-8. no empty future-proof directories.
+2. exactly one `project_source_id` resolving to the historically independent project root in `corpus/sources.tsv`;
+3. a scholarly `research_object` and bounded `active_scope` within that root;
+4. `sources/sources.tsv` listing the actual sources used and their project-relative roles/loci;
+5. every referenced source ID exists in `corpus/sources.tsv`;
+6. every exact digital export used as evidence exists in `corpus/files.tsv` with checksum and preservation state;
+7. `STATUS.md` records evidence state and one bounded `NEXT ACTION`;
+8. generic gates/method are referenced rather than copied;
+9. no empty future-proof directories.
 
-Optional directories are created only when real work exists: `transcription/`, `apparatus/`, `palaeography/`, `research/`, `context/`, `LEARNINGS.md`.
+If `principal_source_id` is present, it must be registered in the project and structurally lie within the `project_source_id` root.
 
 ## Project source register
 
-`projects/<id>/sources/sources.tsv` is the human-readable source-group entry point.
+`projects/<id>/sources/sources.tsv` is the human-readable research-use register.
 
 Required columns:
 
 `source_id | archival_title | project_role | relevant_locus | primary_file_id | status | notes`
 
-Semantically, each row is a **project-source membership relation plus its project-relative function and locus**, not an additional properties record for the source. The source keeps one stable canonical identity in the corpus; its function may differ legitimately between investigations.
+Each row states **how the project uses a canonical source**. It does not determine whether that source belongs structurally to the project; structural membership is derived from `part_of`.
 
 Rules:
-- one row represents one canonical archival/source record used by the project;
-- keep separately identified archival records separate even when they share archive, fonds or signature;
-- `project_role` describes the function of that source **in this investigation** (`principal`, `comparison`, `control`, `context`, etc.); it is project-relative and is not part of source identity;
-- the same canonical source may occur in another project's source register with a different `project_role` without changing `corpus/sources.tsv`;
-- `comparison` means “used for comparison in this investigation”; it does not assert a source-to-source relationship such as textual correspondence or dependence;
-- `relevant_locus` is project-specific and does not redefine the source's full archival extent;
-- `primary_file_id` points to `corpus/files.tsv`; additional files may be found there by `source_id`;
-- source relationships are not encoded here as historical facts; use `corpus/relationships.tsv` with evidence status.
+- one row represents one canonical source used by the project;
+- `project_role` is project-relative and never part of source identity;
+- `comparison`, `control`, `context` may legitimately be external sources;
+- `principal`, when declared in `project.yml`, must be internal to the project root;
+- `relevant_locus` is project-specific and does not redefine full source extent;
+- `primary_file_id` points to `corpus/files.tsv`;
+- source relationships remain in `corpus/relationships.tsv` with evidence status.
+
+## Current regression example
+
+The current Reg. Ii 5 project is rooted at:
+
+`ACT-THHSTAW-EGA-REG-II-5`
+
+Its Ziegenrück protocol `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` is structurally internal because it is `part_of` that act.
+
+The related Reg. Ii 4 Bd. II and Reg. Ii 3 sources are external comparison/control/context sources because their `part_of` ancestry terminates in different historical source roots.
+
+This distinction is derived, not manually duplicated.
+
+## Original source exports
+
+The exact PDF/image export actually used for research is part of the evidential chain. A portal URL or URN is useful provenance but is not a substitute for the exact inspected export.
+
+For consequential project source exports:
+- preserve original filename and exact bytes when rights permit;
+- record SHA-256 in `corpus/files.tsv`;
+- record coverage and preservation state;
+- keep derivatives separate;
+- if public-repository rights block preservation, state that explicitly.
 
 ## Project creation procedure
 
 Before creating a project:
-1. define the historical investigation / source-unlocking object;
-2. identify the bounded source group needed for it;
-3. verify/create canonical source records in `corpus/sources.tsv`;
-4. register exact available source exports in `corpus/files.tsv` and establish preservation state;
-5. instantiate `project.yml`, `STATUS.md`, and `sources/sources.tsv` from the generic template;
-6. add only directories required by actual work;
-7. add a project-to-project relation only if another genuine project is materially involved;
-8. run the Project Creation Check.
+1. identify the historically independent source structure that will be the project root;
+2. verify/create that canonical source node and necessary `part_of` relations in the corpus;
+3. set `project_source_id` to that root;
+4. identify the internal source nodes actually needed for current work;
+5. register any external comparison/control/context sources separately in the project source register;
+6. register exact source exports and preservation state;
+7. instantiate `project.yml`, `STATUS.md`, and `sources/sources.tsv`;
+8. run `python tools/source_contract.py validate`;
+9. use the resolver rather than reconstructing membership from names or chat.
 
-Do not create a project simply because a new archival record was discovered or a PDF was uploaded.
+Do not create a project merely because a PDF, protocol fragment, place, question or temporary comparison task exists. Create/split a project when a distinct historically independent source structure requires its own scholarly state.
 
-## Project Creation Check
+## Project creation check
 
 A project is valid only if all applicable checks pass:
 
-- [ ] project ID identifies an investigation, not a source/file surrogate;
-- [ ] research object and active scope are understandable to a historian without internal architecture knowledge;
-- [ ] source group is explicit in `sources/sources.tsv`;
-- [ ] distinct archival records/sections remain distinct source rows;
-- [ ] project-relative source functions are not treated as canonical source properties;
-- [ ] every source ID resolves to `corpus/sources.tsv`;
-- [ ] every exact evidence file resolves to `corpus/files.tsv` and has a checksum;
-- [ ] central original exports have an explicit preservation state and repository path/blocked reason;
+- [ ] `project_source_id` resolves to one canonical historical source root;
+- [ ] project identity follows the historical structure, not the current narrow locus or research convenience;
+- [ ] active scope may be narrower but is explicit;
+- [ ] every project source resolves to `corpus/sources.tsv`;
+- [ ] internal/external status is derivable from `part_of` rather than copied manually;
+- [ ] principal source, if any, lies inside the project root;
+- [ ] project-relative roles are not treated as canonical source properties;
+- [ ] every exact evidence file resolves to `corpus/files.tsv` with checksum/preservation state;
 - [ ] project-relevant loci are separated from full source extents;
-- [ ] reusable source-wide crosswalks have one canonical corpus source-data home;
-- [ ] source relationships remain in `corpus/relationships.tsv`;
-- [ ] project relations are used only between genuine research projects;
-- [ ] generic G1-G6 requirements are referenced, not copied;
-- [ ] no speculative empty directories were created;
-- [ ] another capable researcher can identify the investigation, source group, exact exports, current state and next action without chat.
+- [ ] reusable crosswalks have one canonical corpus home;
+- [ ] source relationships remain evidence-status-controlled in `corpus/relationships.tsv`;
+- [ ] generic G1–G6 requirements are referenced, not copied;
+- [ ] another capable researcher can identify the historical project root, internal material, external research sources, exact exports, current state and next action without chat.
 
-If the same machine-checkable creation error recurs, that is evidence for the smallest validation that catches it; do not automate pre-emptively.
+## Change propagation
 
-## Change propagation and anti-drift
+### Source identity/structure/file/crosswalk correction
 
-### Source identity/file/crosswalk correction
+`project discovery → verify → update corpus owner → update affected project consequences → bounded consistency pass`
 
-`project discovery → verify → update corpus owner → update only affected project references/consequences → bounded consistency pass`
+### Project root correction
 
-Never repair a source fact only in one project's copy.
+If evidence shows that `project_source_id` points to the wrong historical structure, correct the root first. Then re-resolve all project sources through `part_of`; do not manually relabel internal/external rows.
 
-### Project source-group change
+### Project source-use change
 
-Update `projects/<id>/sources/sources.tsv` first, then project status/work products whose scope changes. A change of project-relative function or locus does not by itself change canonical source identity or source-to-source relationships.
+Update `projects/<id>/sources/sources.tsv`. A changed role/locus does not change canonical source identity or structural membership.
 
 ### Generic methodological weakness
 
 `project observation → project LEARNING/status → explicit generalisability check → methodology/DECISIONS update → bounded consistency pass`
 
-A pilot tests method; it does not silently define method.
-
 ## Project relations
 
-Projects may have research-organisational relations such as `extends`, `shares-sources-with`, `provides-results-to` or other observed needs. Record them in `projects/relationships.tsv` only when there are multiple genuine investigations and the relation materially helps navigation or dependency tracking.
+Project-to-project relations are research-organisational only. Historical/documentary structure belongs in `corpus/relationships.tsv`.
 
 A project relation never proves a historical/source relation.
 
 ## Closure and restartability
 
-A completed/inactive project remains a scholarly provenance package. If superseded, state the successor explicitly; do not silently merge histories.
+A completed/inactive project remains a scholarly provenance package for its historical source root. If superseded or split because archival understanding changes, record that explicitly.
 
 At any time the repository should answer without chat:
-- what the project investigates;
-- which distinct archival records form its source group;
-- what project-relative function/locus each source has;
-- which exact original exports were used and where they are preserved;
-- which source relationships are actually evidenced;
-- what was inspected/read/decided;
-- which generic gate is active;
-- what the exact next research action is.
-
-If those answers require interpreting artificial source-as-project containers or recovering transient chat files, the model has drifted and must be repaired.
+- which historically independent source node defines the project;
+- which used sources are structural parts of it;
+- which used sources are external comparison/control/context;
+- what role/locus each source has in the work;
+- which exact exports were used and their preservation state;
+- which source relationships are evidenced;
+- which gate is active and what the next action is.
