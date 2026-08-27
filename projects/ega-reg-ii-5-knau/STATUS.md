@@ -4,22 +4,29 @@ Last checkpoint: 2026-08-27
 
 ## Overall research goal
 
-Produce a source-exact, critically controlled scholarly edition and historical understanding of the Knau material using the bounded protocol/source group registered in `sources/sources.tsv`. The principal diplomatic object is `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`; archival acts/records, protocol/source units, exact files and loci remain distinct.
+Produce a source-exact, critically controlled scholarly edition and historical understanding of the Knau material using the bounded protocol/source group registered in `sources/sources.tsv`. The principal diplomatic object is `ThHStAW, EGA, Reg. Ii 5, fol. 61v–63r`; archival acts, protocol/source units, exact files and loci remain distinct.
 
 Generic scholarly method is defined in `../../methodology/historical-source-workflow.md`; reusable maturity requirements are in `../../methodology/research-gates.md`; diplomatic requirements are in `../../methodology/transcription-guidelines.md`.
 
-## Archival records and protocol/source groups
+## Three archival acts / four protocol source units
 
-The project uses four protocol/source units, each anchored to its parent archival record/act. Project roles attach to the protocol/source units, not absolutely to the parent acts.
+The project uses four protocol/source units from three parent archival acts. Project roles attach to the protocol/source units, not absolutely to the parent acts.
 
-- principal: `UNIT-REG-II-5-00000129-ZIEGENRUECK-VIS` — *Visitation im Amt Ziegenrück*, fol. 55v–66v, within `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`; principal Knau locus fol. 61v–63r / export images 132–135; Registratur für die Superintendenz Neustadt an der Orla (Auszug);
-- comparison: `UNIT-REG-II-4-BD-II-00000089-ZIEGENRUECK-VIS` — *Visitation im Amt Ziegenrück*, fol. 294r–313r, within `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`; corresponding Knau locus fol. 306v–309r / export images 667–672;
-- control: `UNIT-REG-II-3-00000235-INCOME` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, within `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`; includes `Knaw Kirch Einkommen` on fol. 304r / export image 625;
-- context: `UNIT-REG-II-3-00000197-NEUSTADT-VIS` — *Visitation in Neustadt an der Orla*, fol. 41r–63v, within the parent act `THHSTAW-EGA-REG-II-3-STAT-VIS-00000197` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld*. Exact supplied range: 1529-05-23 to 1529-06-01; supplied calendar label `gregorian`; supplied serial values 2279668–2279677.
+- **principal** — `UNIT-REG-II-5-00000129-ZIEGENRUECK-VIS`: *Visitation im Amt Ziegenrück*, fol. 55v–66v, inside `THHSTAW-EGA-REG-II-5-ACT` — *Registratur für die Superintendentur Neustadt (Orla) (Auszug)*. Principal Knau locus: fol. 61v–63r / export images 132–135.
+- **comparison** — `UNIT-REG-II-4-BD-II-00000089-ZIEGENRUECK-VIS`: *Visitation im Amt Ziegenrück*, fol. 294r–313r, inside `THHSTAW-EGA-REG-II-4-BD-II-ACT` — *Visitation in Thüringen*. Corresponding Knau locus: fol. 306v–309r / export images 667–672.
+- **context** — `UNIT-REG-II-3-00000197-NEUSTADT-VIS`: *Visitation in Neustadt an der Orla*, fol. 41r–63v, inside `THHSTAW-EGA-REG-II-3-ACT` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld*. Exact supplied range: 1529-05-23 to 1529-06-01; supplied calendar label `gregorian`; supplied serial values 2279668–2279677.
+- **control** — `UNIT-REG-II-3-00000235-INCOME`: *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r, inside the **same** `THHSTAW-EGA-REG-II-3-ACT`. Includes `Knaw Kirch Einkommen` on fol. 304r / export image 625.
 
-The two Reg. Ii 3 parent records share the same archival volume/signature but are separate catalogued acts/records. They must not be collapsed. Conversely, the parent-act title `Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld` must not replace the protocol title `Visitation in Neustadt an der Orla`.
+Archivportal Thüringen independently lists both Reg. Ii 3 protocol units inside archive signature `3`; DigiRef unit record `stat_visitation_00000235` therefore does not create a second archival act.
 
-Canonical parent-record identities remain in `../../corpus/sources.tsv`; reusable protocol/source-unit identities in `../../corpus/source-units.tsv`; exact file identities/checksums in `../../corpus/files.tsv`; relationships in `../../corpus/relationships.tsv`.
+Canonical parent-act identities remain in `../../corpus/sources.tsv`; protocol/source-unit identities in `../../corpus/source-units.tsv`; exact file identities/checksums in `../../corpus/files.tsv`; relationships in `../../corpus/relationships.tsv`.
+
+## Digital addressing state
+
+- Reg. Ii 4 Bd. II / Knau 306v–309r: exact folio↔export-image↔PDF-page mapping **and stable per-image URNs recorded**.
+- Reg. Ii 5 / 55v–66v: folio↔export-image↔PDF-page mapping recorded; stable per-image URNs are **not yet recorded** and must not be inferred from neighboring identifiers.
+- Reg. Ii 3 / income unit 303r–306r: folio↔export-image↔PDF-page mapping recorded; stable per-image URNs are **not yet recorded**.
+- Reg. Ii 3 / Neustadt visitation 41r–63v: exact protocol extent and inspected export identity are known, but a canonical folio↔export-image/PDF-page crosswalk has **not yet been reconstructed** in the repo.
 
 ## Original-export preservation state
 
@@ -30,7 +37,7 @@ The exact four central archive-export PDFs used for this project are checksum-ve
 - `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-Neustadt-O-p41r-63v.pdf` — SHA-256 `451bb32b0bca077c4089966594e2bf234b39e87d9e087d3c1c2e2a569f31fd12`;
 - `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-303-306.pdf` — SHA-256 `963a29eff5cc98bb35cecc28e20c6ed3fcb835261e322f991e42b60662d54c06`.
 
-These PDFs are central preservation assets, not replaceable by URNs. The repository is public and the current archive exports are recorded as `InC/1.0`; therefore committing the binary bytes publicly is not treated as authorized by default. Until rights/authority for public redistribution is confirmed, repository preservation is **not complete**. The intended repository paths and this blocked state are recorded in `corpus/files.tsv` rather than falsely claiming the files are safely backed up in Git.
+These PDFs are central preservation assets, not replaceable by URNs. The repository is public and the current archive exports are recorded as `InC/1.0`; therefore committing the binary bytes publicly is not treated as authorized by default. Until rights/authority for public redistribution is confirmed, repository preservation is **not complete**.
 
 Legacy single-image Reg. Ii 5 PDF exports remain separately checksum-tracked for provenance.
 
@@ -61,7 +68,7 @@ G2 does **not** require every difficult token to be resolved.
 
 ## NEXT ACTION — canonical restart point
 
-Using the principal Reg. Ii 5 protocol/source unit, its parent-record source-data crosswalk and the exact checksum-identified archive export:
+Using the principal Reg. Ii 5 protocol/source unit, its parent-act source-data crosswalk and the exact checksum-identified archive export:
 1. inspect fol. 61v–63r for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
 2. assign editor line references only from direct physical inspection;
 3. map legacy rows to verified folio/physical-line loci while retaining export IDs as provenance;
@@ -78,4 +85,4 @@ The user must be able to inspect the current diplomatic text and source group wi
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the investigation object, parent archival acts/records, relevant protocol/source units, exact exports/preservation state, active gate, remaining G2 gaps, current text evidence and next action without old chat.
+A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the investigation object, three parent archival acts, four relevant protocol/source units, exact exports/preservation state, available/missing URNs and crosswalks, active gate, remaining G2 gaps, current text evidence and next action without old chat.
