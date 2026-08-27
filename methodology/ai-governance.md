@@ -68,7 +68,52 @@ Before presenting a claim externally as reliable scholarship, raise the validati
 
 The user is not required to become the specialist reviewer. Expert review is an escalation path for consequential unresolved claims.
 
-## 5. When AI becomes a research method
+## 5. Material research-system change admission
+
+Material changes to the research system require an explicit consequence-based admission path before development:
+
+`analysis → requirements → concept → owner review / explicit implementation admission → development → deterministic tests / scholarly loss checks → result review`
+
+This applies when a change materially alters:
+
+- shared METHOD;
+- the CORPUS information model or canonical ownership;
+- Project architecture or Project/Source invariants;
+- canonical research-data migration semantics;
+- other research-system rules where an error could change provenance, scholarly meaning, auditability or restartability.
+
+The stages have distinct purposes:
+
+1. **Analysis** — inspect the current canonical state and the demonstrated failure/need.
+2. **Requirements** — derive the applicable scholarly, epistemic, provenance, usability and technical requirements.
+3. **Concept** — state the smallest coherent change, alternatives, dependencies and non-goals.
+4. **Owner review / explicit admission** — the human owner decides whether a sufficiently precise material scope may enter development. Silence, enthusiasm, prior autonomous work or repeated model agreement are not admission.
+5. **Development** — implement only the admitted scope. A sufficiently precise admitted plan may be executed without asking the owner to micromanage routine implementation details.
+6. **Tests / scholarly loss checks** — run deterministic checks and proportional evidence/provenance/regression checks before treating the implementation as ready.
+7. **Result review** — compare the result with the admitted requirements and preserved research meaning; CI success alone is not scholarly acceptance.
+
+### What does not require a new admission loop
+
+Do not turn ordinary research into approval bureaucracy. A new material-architecture admission is not required merely for:
+
+- source inspection;
+- evidence logging;
+- transcription or bounded source work performed within an already admitted method/scope;
+- derived/rebuildable outputs;
+- routine repository maintenance that does not change research-system semantics;
+- implementation details already unambiguously covered by an explicit owner-admitted scope.
+
+If apparently routine work exposes a new material architecture/migration choice, stop that affected change and return to the admission path rather than silently expanding scope.
+
+### Owner approval is not specialist validation
+
+Owner admission governs purpose, priorities and permission to make a material research-system change. It does **not** establish palaeographic, archival, historical, philological or other specialist truth.
+
+Where consequential specialist judgement remains insufficiently supported, keep the claim unresolved or escalate it to qualified independent review. AI/method-compliance status and independent specialist validation remain separate statuses.
+
+No workflow engine is required. The rule is satisfied by an inspectable admitted scope, bounded implementation, proportional tests/loss checks and explicit result review.
+
+## 6. When AI becomes a research method
 
 Routine expert assistance does not require a benchmark suite.
 
@@ -86,7 +131,7 @@ Before relying on such scaled outputs:
 
 Do not build this machinery in advance. Trigger it only when AI actually becomes a method rather than an assistant.
 
-## 6. Accountability
+## 7. Accountability
 
 AI may provide specialist assistance, comparisons, hypotheses and critique, but it is not an author, witness or accountable scholarly agent.
 
