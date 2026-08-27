@@ -297,6 +297,13 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             fid = row.get("file_id", "")
             if fid not in file_by_id:
                 errors.append(f"{path}:{i}: file_id {fid} does not exist in corpus/files.tsv")
+            elif use_id in use_by_id:
+                use_source_id = use_by_id[use_id].get("source_id", "")
+                file_source_id = file_by_id[fid].get("source_id", "")
+                if use_source_id and file_source_id != use_source_id:
+                    errors.append(
+                        f"{path}:{i}: file_id {fid} belongs to source {file_source_id}, not use source {use_source_id}"
+                    )
             if use_id:
                 evidence_by_use.setdefault(use_id, []).append(row)
 
