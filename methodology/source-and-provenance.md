@@ -88,7 +88,7 @@ Therefore preserve both when available:
 - source identity + persistent identifier/URL at the level it actually identifies;
 - exact file identity + original filename + SHA-256 + coverage + preservation state.
 
-Do not downgrade a URN to a mere convenience link, and do not treat it as an equivalent backup of the exact export. Never synthesize a URN by extrapolating from neighboring image IDs or apparent URN patterns.
+Do not downgrade a URN to a mere convenience link, and do not treat it as an equivalent backup of the exact export. Never synthesize a URN by extrapolating from neighboring image IDs or apparent identifier patterns.
 
 ## Original-export preservation
 
@@ -132,17 +132,23 @@ A mapping that remains true for a source node regardless of project belongs once
 
 Typical example: a controlled `archival_folio ↔ export_image ↔ PDF_page ↔ stable_image_urn` crosswalk. Keep only loci assignable to that source node. If an exact export contains adjacent pages outside the evidenced boundary, record that fact in file provenance rather than forcing those pages into the source crosswalk.
 
-Project-specific statements such as "this investigation uses fol. 61v–63r as principal locus" belong in the project source register.
+Project-specific statements such as "the current scope uses fol. 61v–63r as principal locus" belong in the project source register.
 
 Do not copy the same source crosswalk into each consuming project.
 
-## Project source groups
+## Project anchoring and source use
 
-A project is an investigation, not a source container. Its source group is declared in:
+Every project is anchored to exactly one historically independent source root through `project.yml: project_source_id`. In the current archival domain that root is an act. The project root is a canonical source node in `corpus/sources.tsv`; no duplicate project-only copy of the act is created.
 
-`projects/<id>/sources/sources.tsv`
+`projects/<id>/sources/sources.tsv` lists the canonical source nodes actually used in the work and their project-relative roles/loci.
 
-That register references the canonical `source_id` actually used by the investigation, then records project role and relevant locus. Several project sources may share a larger `part_of` ancestor. Project role is a relation from project to source use, never an absolute source property.
+Structural membership is derived from the canonical source graph:
+
+- source equals `project_source_id` → project root;
+- source reaches `project_source_id` through one or more `part_of` relations → internal source;
+- otherwise → external source used for comparison, control, context or another research function.
+
+Project role is independent of structural membership. A source can be external and still be `comparison`, `control` or `context`; a current research question does not change the project root.
 
 ## Relationship register
 
@@ -176,7 +182,7 @@ A clearer witness may generate a test for an unclear token in another witness; i
 For consequential work determine:
 
 - archive/fonds/signature and the canonical source node actually used;
-- relevant `part_of` ancestry when it matters for provenance;
+- relevant `part_of` ancestry when it matters for provenance or project membership;
 - source title and evidenced boundary/locus;
 - persistent identifier/archival URL at the level it actually identifies, where available;
 - exact file ID and SHA-256 of the inspected export;
@@ -197,22 +203,23 @@ Never claim “all available sources” from accumulated examples alone. Corpus-
 
 ## Research priority
 
-Source inventory is not an invitation to transcribe everything. Prioritize sources by expected research value to the active investigation.
+Source inventory is not an invitation to transcribe everything. Prioritize work by expected research value within the active project root and its current bounded scope.
 
 ## Maintenance and restartability
 
-When source knowledge changes:
+When source/project knowledge changes:
 
 - source-node identity/type/title/boundary/provider identifiers → `corpus/sources.tsv`;
 - part–whole or other source relationship → `corpus/relationships.tsv`;
 - exact file/checksum/coverage/storage/rights → `corpus/files.tsv`;
 - reusable source crosswalk → `corpus/source-data/<source_id>/`;
-- project source membership/role/locus → project `sources/sources.tsv`;
+- project root → project `project.yml: project_source_id`;
+- project source use/role/locus → project `sources/sources.tsv`;
 - project inspection detail → project `sources/inspection-log.tsv` when needed;
 - project consequence/next action → project `STATUS.md`.
 
 Final test:
 
-> Could another capable researcher identify every source node in the investigation, traverse its evidenced part–whole context without assuming a fixed archival hierarchy, resolve persistent identifiers at the level they actually identify, recover or account for the exact inspected exports, understand project roles/loci, distinguish catalogue claims from demonstrated relationships, and continue without chat?
+> Could another capable researcher identify the historical project root, traverse its evidenced part–whole structure without assuming a fixed archival hierarchy, distinguish internal from external research sources, resolve persistent identifiers at the level they actually identify, recover or account for the exact inspected exports, understand project roles/loci, distinguish catalogue claims from demonstrated relationships, and continue without chat?
 
 If not, persist the missing minimum state.
