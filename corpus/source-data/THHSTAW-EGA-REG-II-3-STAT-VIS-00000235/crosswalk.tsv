@@ -1,0 +1,8 @@
+source_id	archival_folio	export_image	pdf_page	stable_image_urn	mapping_status	evidence	content_anchor	notes
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	303r	623	2		observed	folio number 303 visible	Gössitz pfarr Einkommen	
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	303v	624	3		inferred-high	verso sequence	Gössitz Kirch Einkommen	
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	304r	625	4		observed	folio number 304 visible	Knaw Kirch Einkommen	Directly relevant Knau subsection.
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	304v	626	5		inferred-high	verso sequence	Bahren Kirch Einkommen	
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	305r	627	6		observed	folio number 305 visible	Laßkaw pfarr Einkommen	
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	305v	628	7		inferred-high	verso sequence	continuation	
+THHSTAW-EGA-REG-II-3-STAT-VIS-00000235	306r	629	8		observed	folio number 306 visible	continuation / protocol end range	Protocol boundary ends at 306r; export image 630 is adjacent/unresolved context and is not assigned to this source record.
