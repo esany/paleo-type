@@ -384,6 +384,19 @@ class TargetProjectUseContractTests(unittest.TestCase):
         errors, _, _ = self.validate()
         self.assertTrue(any("file_id NO-SUCH-FILE does not exist" in error for error in errors))
 
+    def test_evidence_file_must_belong_to_use_source(self) -> None:
+        path = self.root / "projects" / "project-a" / "research" / "use-evidence.tsv"
+        rows = read_tsv(path)
+        rows[0]["file_id"] = "FILE-B"
+        write_tsv(path, list(rows[0]), rows)
+        errors, _, _ = self.validate()
+        self.assertTrue(
+            any(
+                "file_id FILE-B belongs to source SRC-OTHER-PROJECT, not use source SRC-INTERNAL" in error
+                for error in errors
+            )
+        )
+
     def test_use_evidence_rejects_redundant_source_id_column(self) -> None:
         path = self.root / "projects" / "project-a" / "research" / "use-evidence.tsv"
         rows = read_tsv(path)
