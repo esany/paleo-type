@@ -4,7 +4,7 @@ This file defines the generic archival/source-critical core for corpus work in `
 
 ## Purpose
 
-Historical research must distinguish the historical record from the way an archive/catalogue describes it and from the exact digital file through which it was inspected. Multiple protocol/source units may live in one archival act; multiple separately catalogued records may share a holding context; multiple exports may represent the same act or unit. None of these situations may be flattened for convenience.
+Historical research must distinguish a bounded historical/source record from the larger archival act that contains it, from the way a catalogue or portal describes either level, and from the exact digital file through which the source was inspected. Several protocol records may lie within one archival act; several exports may represent one protocol; provider record IDs may occur at different descriptive levels. None of these may be flattened for convenience.
 
 Keep three truth domains separate:
 
@@ -29,36 +29,36 @@ Do not implement RDF/RiC-O, a graph database or TEI authoring merely to claim st
 Distinguish:
 
 - **archival unit / holding context** — archive/fonds/shelfmark or other holding unit;
-- **archival act/record** — an intellectually/administratively meaningful archival record or act;
-- **protocol/source unit** — an evidenced, bounded intellectual/documentary unit within an act, such as one visitation protocol or income register section;
+- **archival act** — a larger archival/documentary unit that may contain one or several bounded records/protocols;
+- **record/source record** — an intellectually/documentarily meaningful bounded record used as a research source, for example one visitation protocol or one income record;
 - **witness** — a concrete textual witness relevant to a reading/collation problem;
 - **locus** — folio/page/region/line within a witness;
 - **instantiation** — scan, image, PDF/export or other representation actually used for inspection;
 - **research source** — catalogue/finding aid, edition, article, book or other secondary/control source.
 
-A shared shelfmark does not make genuinely separate acts one record. Conversely, a separate portal/DigiRef record ID does not automatically create a new archival act: a provider may expose a protocol/source unit within a larger act as its own digital record.
+A shared shelfmark does not collapse distinct protocol records. Conversely, a separate portal/DigiRef record ID does not automatically prove a separate archival act: a provider may expose a bounded protocol inside a larger act as its own digital record.
 
 A portal image number is never a folio merely because both are numbers. A PDF page is never a manuscript page unless demonstrated.
 
 ## Stable source identity
 
-Every parent archival act/record gets a stable local `source_id`. The canonical ID identifies the act/record, not its temporary project role and not automatically a provider-side unit record.
+Every canonical protocol/source record gets a stable local `source_id`. The ID identifies that bounded historical/intellectual record, not its temporary project role and not its parent act.
 
-Every reusable protocol/source unit gets a stable local `source_unit_id` once its identity/boundary is evidenced. Project roles normally attach to the source unit actually used, while the unit retains an explicit parent `source_id`.
+Where several canonical sources share a larger archival act, the parent is represented once by `archival_act_id`. The parent relation does not make the protocols one source.
 
-Prefer provenance-derived identities based on stable archive/fonds/signature/record context. Human-readable titles, dates, folios, provider record IDs and URLs remain separate fields. External URLs/URNs are attributes/evidence for identity, not replacements for local keys.
+Prefer provenance-derived source identity using stable archive/fonds/signature together with evidenced record identity or, when no protocol-level provider ID exists, a stable local identity derived from title and bounded locus. Human-readable title, date and folios remain separate fields. External provider IDs, URLs and URNs are provenance/access attributes, not replacements for the local key.
 
-Provider identifiers must retain their evidenced granularity. If `stat_visitation_x` identifies a protocol unit inside an act, record it on that unit rather than promoting it to the parent-act identity merely because it is persistent.
+Provider identifiers must retain their evidenced granularity. If a provider ID identifies a parent act, do not reuse it as though it were a protocol-level identity. If it identifies a bounded protocol, retain it on that protocol.
 
-Witness sigla are optional presentation aliases only and belong at the level they actually abbreviate.
+Witness sigla are optional presentation aliases only.
 
 ## Corpus inventory
 
-`corpus/sources.tsv` is the canonical inventory of parent archival acts/records and their inspection stage.
+`corpus/archival-acts.tsv` is the lean parent register for larger archival acts when this distinction is needed.
 
-`corpus/source-units.tsv` is the canonical inventory of reusable protocol/source units identified within those acts.
+`corpus/sources.tsv` is the canonical inventory of bounded protocol/source records and their parent `archival_act_id`.
 
-`corpus/files.tsv` is the canonical manifest of exact digital instantiations used in research. A file row points to its parent act and, when the file specifically instantiates a known unit, to `source_unit_id` as well.
+`corpus/files.tsv` is the canonical manifest of exact digital instantiations actually used in research. A file row identifies the protocol/source record whose material the export instantiates; exact export coverage may include adjacent pages, but adjacent material outside the source boundary must not silently become part of that source.
 
 Discovery is not inspection; inspection is not transcription; transcription is not collation.
 
@@ -70,10 +70,10 @@ They have a different evidential quality from the exact file used in research. A
 
 Therefore preserve both when available:
 
-- archive act/unit identity + persistent identifier/URL at the level it actually identifies;
+- parent act and protocol/source identity + persistent identifier/URL at the level it actually identifies;
 - exact file identity + original filename + SHA-256 + coverage + preservation state.
 
-Do not downgrade a URN to a mere convenience link, and do not treat it as an equivalent backup of the exact export. Never synthesize a URN by extrapolating from neighboring image IDs or URN patterns.
+Do not downgrade a URN to a mere convenience link, and do not treat it as an equivalent backup of the exact export. Never synthesize a URN by extrapolating from neighboring image IDs or apparent URN patterns.
 
 ## Original-export preservation
 
@@ -111,15 +111,15 @@ This repository records scholarly provenance and preservation state; it does not
 
 ## Reusable source data
 
-Parent-act-wide mapping that remains true regardless of project belongs once under:
+A mapping that remains true for a protocol/source record regardless of project belongs once under:
 
 `corpus/source-data/<source_id>/`
 
-Typical example: a controlled `export_image ↔ PDF_page ↔ archival_folio` crosswalk. When a mapped row falls within a known protocol/source unit, record `source_unit_id`; when a boundary image lies outside the unit or is unresolved, leave the unit link empty rather than forcing it.
+Typical example: a controlled `archival_folio ↔ export_image ↔ PDF_page ↔ stable_image_urn` crosswalk. Keep only loci assignable to that source record. If an exact export contains adjacent pages outside the evidenced protocol boundary, record that fact in file provenance rather than forcing those pages into the protocol crosswalk.
 
 Project-specific statements such as "this investigation uses fol. 61v–63r as principal locus" belong in the project source register.
 
-Do not copy the same source-wide crosswalk into each consuming project.
+Do not copy the same source crosswalk into each consuming project.
 
 ## Project source groups
 
@@ -127,11 +127,11 @@ A project is an investigation, not a source container. Its source group is decla
 
 `projects/<id>/sources/sources.tsv`
 
-That register references the parent act and, when known, the relevant protocol/source unit, then records project role and relevant locus. Multiple project rows may therefore point to different source units within the same parent act. Project role is a relation from project to unit/source use, never an absolute source property.
+That register references canonical protocol `source_id` values and records project role and relevant locus. Several project sources may share one parent archival act. Project role is a relation from project to source use, never an absolute source property.
 
 ## Relationship register
 
-`corpus/relationships.tsv` is the canonical place for explicit relationships between historical/source records, protocol units, events and entities.
+`corpus/relationships.tsv` is the canonical place for explicit relationships between historical/source records, events and entities.
 
 A relationship is itself a research claim and therefore has subject, predicate, object, status, evidence basis and limitation/note.
 
@@ -141,13 +141,13 @@ A catalogue statement such as “extract from X” remains metadata-level until 
 
 ## Event/activity context
 
-`corpus/events.tsv` records administrative/historical activities that connect records/units without implying textual identity. Event co-membership is contextual evidence, not proof of textual dependence.
+`corpus/events.tsv` records administrative/historical activities that connect records without implying textual identity. Event co-membership is contextual evidence, not proof of textual dependence.
 
 ## Witness and collation discipline
 
-When two units/witnesses may transmit related text:
+When two records/witnesses may transmit related text:
 
-1. identify each independently by canonical source/unit identity;
+1. identify each independently by canonical source identity;
 2. locate corresponding loci;
 3. inspect/read each witness independently;
 4. compare structure/wording;
@@ -160,9 +160,9 @@ A clearer witness may generate a test for an unclear token in another witness; i
 
 For consequential work determine:
 
-- archive/fonds/signature and parent act/record;
-- protocol/source-unit identity and extent when the claim concerns a bounded unit;
-- act/unit title and locus;
+- archive/fonds/signature and parent archival act;
+- canonical protocol/source identity and evidenced extent;
+- title and locus;
 - persistent identifier/archival URL at the level it actually identifies, where available;
 - exact file ID and SHA-256 of the inspected export;
 - whether that exact export is preserved and where;
@@ -188,17 +188,17 @@ Source inventory is not an invitation to transcribe everything. Prioritize sourc
 
 When source knowledge changes:
 
-- parent act identity/stage and act-level persistent identifiers → `corpus/sources.tsv`;
-- reusable protocol/source-unit identity/extent/provider identifiers → `corpus/source-units.tsv`;
-- exact file/checksum/coverage/storage/rights and unit linkage → `corpus/files.tsv`;
-- reusable parent-act crosswalk → `corpus/source-data/<source_id>/`;
-- source/unit relationship → `corpus/relationships.tsv`;
-- project source-unit membership/role/locus → project `sources/sources.tsv`;
+- parent act identity → `corpus/archival-acts.tsv`;
+- canonical protocol/source identity, extent and protocol-level provider identifiers → `corpus/sources.tsv`;
+- exact file/checksum/coverage/storage/rights → `corpus/files.tsv`;
+- reusable protocol crosswalk → `corpus/source-data/<source_id>/`;
+- source relationship → `corpus/relationships.tsv`;
+- project source membership/role/locus → project `sources/sources.tsv`;
 - project inspection detail → project `sources/inspection-log.tsv` when needed;
 - project consequence/next action → project `STATUS.md`.
 
 Final test:
 
-> Could another capable researcher identify every parent archival act in the investigation, distinguish the protocol/source units actually used, resolve their persistent identifiers at the correct level, recover or account for the exact inspected exports, understand project roles/loci, distinguish catalogue claims from demonstrated relationships, and continue without chat?
+> Could another capable researcher identify every protocol/source record in the investigation, place it in its parent archival act, resolve persistent identifiers at the level they actually identify, recover or account for the exact inspected exports, understand project roles/loci, distinguish catalogue claims from demonstrated relationships, and continue without chat?
 
 If not, persist the missing minimum state.
