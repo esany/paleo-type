@@ -86,10 +86,11 @@ Rules:
 
 - `use_id` resolves to one Project→Source use in the same Project;
 - `file_id` resolves to `corpus/files.tsv`;
+- the canonical Source owning that File in `corpus/files.tsv` must equal the `source_id` of the referenced use; use-evidence is a concrete instantiation binding for that Source, not cross-Source claim evidence;
 - `corpus/files.tsv` remains the sole owner of file identity, filename, SHA-256, coverage, storage/preservation and rights provenance;
 - use-evidence records only that this concrete use actually used this concrete file/instantiation;
 - one use may have zero, one or many evidence rows;
-- one file may support zero, one or many uses;
+- one file may support zero, one or many uses of its own Source;
 - evidence is never inferred from Source membership, `part_of` or mere file availability;
 - do not duplicate `source_id` in use-evidence when it is deterministically recoverable through `use_id`.
 
@@ -189,7 +190,7 @@ A project is valid only if all applicable checks pass:
 - [ ] internal/external status is derived from `part_of` rather than copied;
 - [ ] multiple research functions for one Source remain representable;
 - [ ] research functions are not treated as canonical Source properties;
-- [ ] each explicit use-evidence File resolves to `corpus/files.tsv`;
+- [ ] each explicit use-evidence File resolves to `corpus/files.tsv` and belongs to the same canonical Source as the referenced use;
 - [ ] exact File identity/provenance is not duplicated in Project use records;
 - [ ] source-relative relevant locus is distinct from digital evidence locator;
 - [ ] reusable crosswalks have one canonical corpus home;
@@ -214,7 +215,7 @@ If evidence shows that `project_source_id` points to the wrong historical struct
 
 Update the relevant `source-uses.tsv` row(s). A changed function/locus does not change canonical Source identity or structural membership.
 
-If concrete digital evidence for a use changes, update use-evidence while keeping File identity/provenance in `corpus/files.tsv`.
+If concrete digital evidence for a use changes, update use-evidence while keeping File identity/provenance in `corpus/files.tsv` and keeping the File bound to a use of its own canonical Source.
 
 ### Generic methodological weakness
 
