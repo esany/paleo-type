@@ -1,56 +1,61 @@
 {
-  "version": 2,
+  "version": 4,
   "tables": {
+    "archival_acts": {
+      "path": "corpus/archival-acts.tsv",
+      "key": "archival_act_id",
+      "required_columns": [
+        "archival_act_id",
+        "archive",
+        "fonds",
+        "signature",
+        "title",
+        "record_id",
+        "digital_url",
+        "status",
+        "evidence"
+      ],
+      "required_nonempty": [
+        "archival_act_id",
+        "archive",
+        "fonds",
+        "signature",
+        "status",
+        "evidence"
+      ]
+    },
     "sources": {
       "path": "corpus/sources.tsv",
       "key": "source_id",
       "required_columns": [
         "source_id",
+        "archival_act_id",
         "archive",
         "fonds",
         "signature",
         "record_id",
         "title",
-        "digital_url"
-      ],
-      "required_nonempty": [
-        "source_id",
-        "archive",
-        "fonds",
-        "signature",
-        "title"
-      ],
-      "identity_fields": [
-        "archive",
-        "fonds",
-        "signature",
-        "record_id"
-      ]
-    },
-    "source_units": {
-      "path": "corpus/source-units.tsv",
-      "key": "source_unit_id",
-      "required_columns": [
-        "source_unit_id",
-        "source_id",
-        "unit_type",
-        "title",
-        "folios",
         "date_from",
         "date_to",
         "date_calendar_label",
         "date_serial_from",
         "date_serial_to",
-        "status",
-        "evidence"
+        "folios",
+        "digital_url"
       ],
       "required_nonempty": [
-        "source_unit_id",
         "source_id",
-        "unit_type",
+        "archival_act_id",
+        "archive",
+        "fonds",
+        "signature",
         "title",
-        "status",
-        "evidence"
+        "folios"
+      ],
+      "identity_fields": [
+        "archival_act_id",
+        "title",
+        "folios"
       ]
     },
     "files": {
@@ -81,7 +86,6 @@
       "glob": "projects/*/sources/sources.tsv",
       "required_columns": [
         "source_id",
-        "source_unit_id",
         "archival_title",
         "project_role",
         "relevant_locus",
@@ -110,11 +114,10 @@
     }
   },
   "controlled_values": {
-    "source_units.status": [
+    "archival_acts.status": [
       "identified",
       "working",
-      "unresolved",
-      "rejected"
+      "unresolved"
     ],
     "files.storage_status": [
       "repo-preserved",

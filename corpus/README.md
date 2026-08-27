@@ -1,23 +1,32 @@
-# Corpus — canonical source, protocol and file layer
+# Corpus — canonical act, protocol and file layer
 
-This directory stores project-independent facts about archival records/acts, intellectually meaningful protocol/source units within them, and the exact digital instantiations used for research.
+This directory stores project-independent facts about parent archival acts, the protocol/source records used by research, and the exact digital instantiations used for inspection.
 
 ## Human reading order
 
-1. `sources.tsv` — archival/catalogued records or acts;
-2. `source-units.tsv` — protocol/source units within those records when identified;
-3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state, intended repository path and rights status;
-4. `source-data/<source_id>/` — reusable record-wide mappings such as export-image/PDF-page/folio crosswalks;
-5. `relationships.tsv` — evidence-status-controlled relationships;
+1. `archival-acts.tsv` — larger archival acts/holding units that contain one or more protocol records;
+2. `sources.tsv` — canonical protocol/source records with their parent `archival_act_id` and bounded folio range;
+3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state and rights status;
+4. `source-data/<source_id>/` — reusable protocol-level folio ↔ export-image ↔ PDF-page ↔ stable-URN crosswalks;
+5. `relationships.tsv` — evidence-status-controlled source-to-source claims;
 6. `events.tsv` — shared event/activity context.
 
 The minimum hierarchy is:
 
-`archival holding/signature → archival record/act → protocol/source unit → witness/locus → digital instantiation`
+`archival holding/signature → archival act → protocol/source record → witness/locus → digital instantiation`
 
-An act title, record ID or full act extent is not automatically the protocol/source-group identity. A protocol/source unit may be coterminous with its parent record, but the levels remain conceptually distinct.
+For this corpus the project-facing canonical `source_id` identifies the **protocol/source record**, not the larger act. A provider/DigiRef record ID is an external provenance/access identifier and may exist at a different archival level; never infer its semantic level from the number alone.
 
-For the Knau project, `ThHStAW, EGA, Reg. Ii 3 / stat_visitation_00000197` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* — is the parent archival act/record. Its relevant protocol/source unit is `UNIT-REG-II-3-00000197-NEUSTADT-VIS` — *Visitation in Neustadt an der Orla*, fol. 41r–63v, with supplied exact range 1529-05-23 to 1529-06-01. These protocol facts belong in `source-units.tsv`, not on the parent act row.
+## Current Knau source group
+
+The project uses **four protocol records from three larger archival acts**:
+
+- `ACT-THHSTAW-EGA-REG-II-4-BD-II` — *Visitation in Thüringen* → `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`, *Visitation im Amt Ziegenrück*, fol. 294r–313r;
+- `ACT-THHSTAW-EGA-REG-II-5` — *Registratur für die Superintendenz Neustadt an der Orla (Auszug)* → `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, *Visitation im Amt Ziegenrück*, fol. 55v–66v;
+- `ACT-THHSTAW-EGA-REG-II-3` — *Visitation in Jena, Neustadt an der Orla, Pößneck, Saalfeld* → `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V`, *Visitation in Neustadt an der Orla*, fol. 41r–63v;
+- the same `ACT-THHSTAW-EGA-REG-II-3` → `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235`, *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
+
+The two Reg. Ii 3 protocol records therefore share one parent act. A second DigiRef/provider record does not create a second archival act.
 
 ## Machine contract and resolver
 
@@ -27,20 +36,28 @@ For the Knau project, `ThHStAW, EGA, Reg. Ii 3 / stat_visitation_00000197` — *
 
 Resolve canonical provenance with:
 
-`python tools/source_contract.py resolve --project <project> --source-id <source_id> [--source-unit-id <source_unit_id>] [--locus <folio>]`
+`python tools/source_contract.py resolve --project <project> --source-id <source_id> [--locus <folio>]`
 
-The resolver follows project use to the parent archival record, protocol/source unit when present, selected primary file and record-wide crosswalk. Missing mappings are reported rather than guessed. If multiple protocol units from one act are used in a project, `--source-unit-id` disambiguates them.
+The resolver follows:
+
+`project role → protocol/source record → parent archival act → exact file → protocol crosswalk/locus`
+
+Missing mappings are reported rather than guessed.
 
 ## Identity and ownership
 
-- archival record/act identity → `sources.tsv`;
-- reusable protocol/source-unit identity, title, extent and unit-level dates → `source-units.tsv`;
+- parent archival-act identity → `archival-acts.tsv`;
+- canonical protocol/source identity, title, extent and protocol-level metadata → `sources.tsv`;
 - exact file identity/preservation → `files.tsv`;
-- reusable record-wide folio/image/PDF mapping → `source-data/<source_id>/`;
-- project role and relevant locus → project `sources/sources.tsv`, referencing both `source_id` and `source_unit_id` where the unit is known;
+- reusable protocol-level folio/image/PDF/URN mapping → `source-data/<source_id>/`;
+- project role and relevant locus → project `sources/sources.tsv`;
 - project reading/analysis → project work directories.
 
-A shared signature does not collapse separate acts/records. Conversely, one act may contain several protocol/source units. Do not invent a source-unit identifier until the unit is evidenced and delimited.
+This is deliberately small. There is no second protocol table and no database. Multiple protocols may point to one parent act; the same protocol may have different roles in different projects.
+
+## Persistent identifiers
+
+Stable image URNs are copied only when institutionally evidenced. Never synthesize a URN from neighboring identifiers or image-number patterns. A missing URN is a documented gap, not an invitation to guess.
 
 ## Exact original exports
 
