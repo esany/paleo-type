@@ -1,35 +1,12 @@
 {
-  "version": 4,
+  "version": 5,
   "tables": {
-    "archival_acts": {
-      "path": "corpus/archival-acts.tsv",
-      "key": "archival_act_id",
-      "required_columns": [
-        "archival_act_id",
-        "archive",
-        "fonds",
-        "signature",
-        "title",
-        "record_id",
-        "digital_url",
-        "status",
-        "evidence"
-      ],
-      "required_nonempty": [
-        "archival_act_id",
-        "archive",
-        "fonds",
-        "signature",
-        "status",
-        "evidence"
-      ]
-    },
     "sources": {
       "path": "corpus/sources.tsv",
       "key": "source_id",
       "required_columns": [
         "source_id",
-        "archival_act_id",
+        "source_type",
         "archive",
         "fonds",
         "signature",
@@ -45,17 +22,32 @@
       ],
       "required_nonempty": [
         "source_id",
-        "archival_act_id",
+        "source_type",
         "archive",
         "fonds",
         "signature",
-        "title",
-        "folios"
+        "title"
+      ]
+    },
+    "relationships": {
+      "path": "corpus/relationships.tsv",
+      "key": "relation_id",
+      "required_columns": [
+        "relation_id",
+        "subject_id",
+        "predicate",
+        "object_id",
+        "status",
+        "evidence_basis",
+        "notes"
       ],
-      "identity_fields": [
-        "archival_act_id",
-        "title",
-        "folios"
+      "required_nonempty": [
+        "relation_id",
+        "subject_id",
+        "predicate",
+        "object_id",
+        "status",
+        "evidence_basis"
       ]
     },
     "files": {
@@ -114,11 +106,6 @@
     }
   },
   "controlled_values": {
-    "archival_acts.status": [
-      "identified",
-      "working",
-      "unresolved"
-    ],
     "files.storage_status": [
       "repo-preserved",
       "external-controlled",
