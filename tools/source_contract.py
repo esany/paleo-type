@@ -28,10 +28,40 @@ def read_tsv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
     return headers, rows
 
 
+def read_simple_yaml_scalars(path: Path) -> dict[str, str]:
+    data: dict[str, str] = {}
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+            value = value[1:-1]
+        data[key.strip()] = value
+    return data
+
+
 def check_headers(path: Path, headers: list[str], required: list[str], errors: list[str]) -> None:
     missing = [name for name in required if name not in headers]
     if missing:
         errors.append(f"{path}: missing required columns: {', '.join(missing)}")
+
+
+def is_within(source_id: str, root_id: str, parents: dict[str, list[str]]) -> bool:
+    if source_id == root_id:
+        return True
+    seen: set[str] = set()
+    stack = list(parents.get(source_id, []))
+    while stack:
+        node = stack.pop()
+        if node == root_id:
+            return True
+        if node in seen:
+            continue
+        seen.add(node)
+        stack.extend(parents.get(node, []))
+    return False
 
 
 def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
@@ -148,12 +178,33 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                 elif digest and hashlib.sha256(binary.read_bytes()).hexdigest() != digest:
                     errors.append(f"{file_path}:{i}: sha256 mismatch for {rel}")
 
+    projects_cfg = contract["tables"]["projects"]
+    project_by_id: dict[str, dict[str, str]] = {}
+    for path in sorted(root.glob(projects_cfg["glob"])):
+        meta = read_simple_yaml_scalars(path)
+        for key in projects_cfg["required_keys"]:
+            if not meta.get(key):
+                errors.append(f"{path}: required project key {key} is missing or empty")
+        project_id = meta.get("id", "")
+        directory_id = path.parent.name
+        if project_id and project_id != directory_id:
+            errors.append(f"{path}: project id {project_id!r} must match directory {directory_id!r}")
+        if project_id:
+            if project_id in project_by_id:
+                errors.append(f"{path}: duplicate project id {project_id}")
+            project_by_id[project_id] = meta
+        project_source_id = meta.get("project_source_id", "")
+        if project_source_id and project_source_id not in source_by_id:
+            errors.append(f"{path}: project_source_id {project_source_id} does not exist in corpus/sources.tsv")
+
     project_cfg = contract["tables"]["project_sources"]
     project_rows: dict[tuple[str, str], dict[str, str]] = {}
     for path in sorted(root.glob(project_cfg["glob"])):
         headers, rows = read_tsv(path)
         check_headers(path, headers, project_cfg["required_columns"], errors)
         project_id = path.parents[1].name
+        if project_id not in project_by_id:
+            errors.append(f"{path}: no valid projects/{project_id}/project.yml definition")
         for i, row in enumerate(rows, start=2):
             for field in project_cfg["required_nonempty"]:
                 if not row.get(field):
@@ -175,6 +226,20 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                     errors.append(f"{path}:{i}: primary_file_id {fid} does not exist in corpus/files.tsv")
                 elif file_by_id[fid].get("source_id") != sid:
                     errors.append(f"{path}:{i}: primary_file_id {fid} belongs to another source")
+
+    for project_id, meta in project_by_id.items():
+        root_id = meta.get("project_source_id", "")
+        principal = meta.get("principal_source_id", "")
+        if principal:
+            if (project_id, principal) not in project_rows:
+                errors.append(f"projects/{project_id}/project.yml: principal_source_id {principal} is not registered in sources/sources.tsv")
+            elif root_id and not is_within(principal, root_id, parents_by_source):
+                errors.append(f"projects/{project_id}/project.yml: principal_source_id {principal} is not structurally within project_source_id {root_id}")
+        if root_id and project_rows and not any(
+            pid == project_id and is_within(sid, root_id, parents_by_source)
+            for (pid, sid) in project_rows
+        ):
+            warnings.append(f"projects/{project_id}: no registered source lies within project_source_id {root_id}")
 
     cross_cfg = contract["tables"]["crosswalks"]
     allowed_mapping = set(contract["controlled_values"]["crosswalk.mapping_status"])
@@ -215,6 +280,7 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         relationships=relation_by_id,
         parents_by_source=parents_by_source,
         files=file_by_id,
+        projects=project_by_id,
         project_sources=project_rows,
         crosswalks=crosswalks_by_source,
     )
@@ -267,6 +333,19 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         print(f"ERROR: source {args.source_id} is not registered in project {args.project}", file=sys.stderr)
         return 2
     source_row = cache["sources"][args.source_id]
+    project_meta = cache["projects"].get(args.project)
+    if not project_meta:
+        print(f"ERROR: project {args.project} has no valid project.yml", file=sys.stderr)
+        return 2
+    project_root_id = project_meta.get("project_source_id", "")
+    project_root = cache["sources"].get(project_root_id)
+    if args.source_id == project_root_id:
+        project_scope = "project_root"
+    elif is_within(args.source_id, project_root_id, cache["parents_by_source"]):
+        project_scope = "internal"
+    else:
+        project_scope = "external"
+
     fid = project_row.get("primary_file_id", "")
     file_row = cache["files"].get(fid) if fid else None
 
@@ -283,6 +362,9 @@ def cmd_resolve(args: argparse.Namespace) -> int:
 
     result = {
         "project": args.project,
+        "project_definition": project_meta,
+        "project_root_source": project_root,
+        "project_scope": project_scope,
         "project_source": project_row,
         "source": source_row,
         "source_type": source_row.get("source_type") or None,
@@ -304,7 +386,7 @@ def build_parser() -> argparse.ArgumentParser:
     v = sub.add_parser("validate", help="Validate the source/provenance contract.")
     v.set_defaults(func=cmd_validate)
 
-    r = sub.add_parser("resolve", help="Resolve a project source, generic part-whole ancestry, file and locus provenance.")
+    r = sub.add_parser("resolve", help="Resolve a project source against its project root, structural ancestry, file and locus provenance.")
     r.add_argument("--project", required=True)
     r.add_argument("--source-id", required=True)
     r.add_argument("--locus")
