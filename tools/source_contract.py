@@ -131,6 +131,11 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                     errors.append(f"{path}:{i}: primary_file_id {fid} does not exist in corpus/files.tsv")
                 elif file_by_id[fid].get("source_id") != sid:
                     errors.append(f"{path}:{i}: primary_file_id {fid} belongs to another source")
+            if row.get("status") == "unit-unresolved":
+                warnings.append(
+                    f"{path}:{i}: archival record {sid} is identified, but the relevant protocol/source unit "
+                    "inside the act is not yet canonically delimited"
+                )
 
     cross_cfg = contract["tables"]["crosswalks"]
     allowed_mapping = set(contract["controlled_values"]["crosswalk.mapping_status"])
@@ -227,10 +232,13 @@ def cmd_resolve(args: argparse.Namespace) -> int:
             )
             return 3
 
+    unit_status = "unresolved" if project_row.get("status") == "unit-unresolved" else "not-explicitly-modelled"
     result = {
         "project": args.project,
         "project_source": project_row,
-        "source": source_row,
+        "archival_record": source_row,
+        "source_level": "archival_record",
+        "protocol_source_unit_status": unit_status,
         "primary_file": file_row,
         "locus": args.locus or None,
         "locus_matches": locus_matches,
@@ -241,14 +249,17 @@ def cmd_resolve(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Validate and resolve paleo-type source provenance.")
+    parser = argparse.ArgumentParser(description="Validate and resolve paleo-type archival-record provenance.")
     parser.add_argument("--root", help="Repository root; defaults to the script's repository.")
     sub = parser.add_subparsers(dest="command", required=True)
 
     v = sub.add_parser("validate", help="Validate the source/provenance contract.")
     v.set_defaults(func=cmd_validate)
 
-    r = sub.add_parser("resolve", help="Resolve project/source/locus to canonical provenance.")
+    r = sub.add_parser(
+        "resolve",
+        help="Resolve project/archival-record/locus provenance without inventing protocol/source-unit identity.",
+    )
     r.add_argument("--project", required=True)
     r.add_argument("--source-id", required=True)
     r.add_argument("--locus")
