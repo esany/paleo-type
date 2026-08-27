@@ -26,3 +26,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python tools/source_contract.py validate
+      - run: python tools/source_contract.py resolve --project ega-reg-ii-5-knau --source-id THHSTAW-EGA-REG-II-5-STAT-VIS-00000129 --locus 62r > /dev/null
