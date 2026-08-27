@@ -45,7 +45,7 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Reason:** Digital archive exports expose multiple numbering systems and representations that are not interchangeable. Collapsing them can create false provenance.
 
-**Consequence:** Reusable source-wide crosswalks map these identifiers under `corpus/source-data/<source_id>/`; project source registers record only project-relative function/relevant locus. No folio is inferred from an export/image number alone.
+**Consequence:** Reusable source-wide crosswalks map these identifiers under `corpus/source-data/<source_id>/`; project source-use records carry project-relative function/relevant locus, while concrete Project-use→File evidence is separate. No folio is inferred from an export/image number alone.
 
 ## D-004 — Three truth domains must not silently rewrite each other
 
@@ -140,8 +140,26 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 ## D-014 — A project is anchored to one historically independent source structure
 
 **Status:** accepted by explicit human owner decision  
-**Decision:** Every project has exactly one canonical `project_source_id` identifying its historically independent source root. In the current archival domain this root is an act. Sources structurally contained in that root are internal; sources outside it may still be registered for comparison, control or context but remain external. Internal/external status is derived from the canonical `part_of` relations rather than copied into project metadata. Project-relative roles remain relations of the form `(project, source) → function` and do not alter source identity. Exact source exports remain first-class byte-identified research assets as established in D-012.
+**Decision:** Every project has exactly one canonical `project_source_id` identifying its historically independent source root. In the current archival domain this root is an act. Sources structurally contained in that root are internal; sources outside it may still be used for comparison, control or context but remain external. Internal/external status is derived from the canonical `part_of` relations rather than copied into project metadata. Project-relative research functions remain relations of the form `(project, source) → function` and do not alter source identity. Exact source exports remain first-class byte-identified research assets as established in D-012.
 
 **Reason:** A project should preserve the historically autonomous documentary structure rather than create a synthetic container from whatever source bundle a current question happens to use. This keeps historical structure stable while still allowing a narrow active research locus and external comparative evidence.
 
-**Consequence:** `project.yml` requires `project_source_id`; a declared `principal_source_id` must lie structurally within that root. The source resolver derives `project_root`, `internal` or `external` from `part_of`. Project scope may be narrower than the whole root, but it does not redefine project identity. D-012 is superseded only on project-boundary semantics; its rules on relative roles, source identity separation and exact-export provenance remain retained here.
+**Consequence:** `project.yml` requires `project_source_id`; the resolver derives project-root/internal/external status from `part_of`. Project scope may be narrower than the whole root, but it does not redefine project identity. The current Reg. Ii 5 `principal_source_id` remains temporarily supported only as legacy migration compatibility; target Principal semantics are governed by D-015. D-012 is superseded only on project-boundary semantics; its source-identity and exact-export provenance rationale remains retained here.
+
+## D-015 — Project→Source research use and concrete File evidence are separate
+
+**Status:** accepted by explicit human owner decision in the partial GOV-M4 synthesis / Phase-1 admission.  
+**Decision:** Represent Project→Source use as one row per concrete `research_function`, allowing several functions for the same Source. Keep `research_function` project-relative, open-vocabulary and non-inferred. Represent concrete digital evidence for a use separately as `use_id → file_id` with an optional instance-relative locator; `corpus/files.tsv` remains the sole canonical owner of File identity/provenance. `principal` is a research function, not a Source property or second Project boundary anchor.
+
+**Reason:** One coarse role per Project/Source collapses transdisciplinary use semantics, while storing one `primary_file_id` on that coarse relation conflates scholarly use with the exact digital instantiation used as evidence. Separating them preserves Source identity, allows multiple real research functions and keeps exact File provenance single-owned.
+
+**Consequence:** Target project records use `source-uses.tsv` and optional `research/use-evidence.tsv`. `source-uses.relevant_locus` is source-relative scholarly scope; `use-evidence.evidence_locator` is a locator within the concrete used digital instance. A use may have zero or many evidence records and one File may support many uses. No evidence or Project→Project relation is inferred automatically. During the Reg. Ii 5 transition, the legacy source register, `primary_file_id` and `principal_source_id` remain readable until a separately admitted loss-checked migration proves `old project-source row → new use_id → use-evidence → same file_id` for every current link.
+
+## D-016 — Material research-system changes require explicit admission before development
+
+**Status:** accepted by explicit human owner decision in Issue #58 / Phase-1 admission.  
+**Decision:** Material METHOD/CORPUS-model/Project-architecture/research-system changes follow `analysis → requirements → concept → owner review / explicit implementation admission → development → deterministic tests / scholarly loss checks → result review`. Routine source inspection, evidence logging, bounded research, transcription within an already admitted method/scope and implementation details already covered by a precise admitted scope do not require repeated approval loops.
+
+**Reason:** A technically plausible implementation can still be epistemically wrong if it is built before the owner has reviewed the material concept and scope. Conversely, requiring approval for every routine source action would obstruct scholarship without improving accountability.
+
+**Consequence:** Owner admission controls purpose, priorities and permission for material system change; it never substitutes for archival, palaeographic, historical or other qualified specialist validation. AI/method-compliance and independent specialist validation remain separate statuses. No workflow engine is required; `methodology/ai-governance.md` is the canonical operational owner of this admission rule.
