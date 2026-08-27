@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "tables": {
     "sources": {
       "path": "corpus/sources.tsv",
@@ -72,6 +72,15 @@
         "coverage",
         "storage_status",
         "rights_status"
+      ]
+    },
+    "projects": {
+      "glob": "projects/*/project.yml",
+      "required_keys": [
+        "id",
+        "project_source_id",
+        "source_register",
+        "canonical_status_file"
       ]
     },
     "project_sources": {
