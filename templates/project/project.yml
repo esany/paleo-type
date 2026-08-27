@@ -4,8 +4,7 @@ repository_role: "REQUIRED: why this historically independent source structure i
 project_source_id: "REQUIRED: canonical source_id of the historically independent project root"
 research_object: "REQUIRED: scholarly objective within this project source structure"
 active_scope: "REQUIRED: current bounded working scope; may be narrower than the whole project source"
-source_register: "sources/sources.tsv"
-principal_source_id: "OPTIONAL: canonical source ID when one internal source is principal"
+source_register: "source-uses.tsv"
 canonical_status_file: "STATUS.md"
 transcription_mode: "OPTIONAL until transcription begins"
 external_context_allowed_in_blind_reading: false
