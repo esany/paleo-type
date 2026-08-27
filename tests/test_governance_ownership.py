@@ -11,6 +11,10 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         decisions = (REPO / "DECISIONS.md").read_text(encoding="utf-8")
         maintenance = (REPO / "methodology" / "maintenance.md").read_text(encoding="utf-8")
         ai_governance = (REPO / "methodology" / "ai-governance.md").read_text(encoding="utf-8")
+        workflow = (
+            "analysis → requirements → concept → owner review / explicit implementation admission "
+            "→ development → deterministic tests / scholarly loss checks → result review"
+        )
 
         self.assertIn(
             "`methodology/maintenance.md` is the canonical operational owner of the general admission rule",
@@ -20,10 +24,12 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
             "This file is the canonical operational owner of the general consequence-based admission workflow",
             maintenance,
         )
+        self.assertIn(workflow, maintenance)
         self.assertIn(
             "The canonical general material research-system change-admission workflow is owned by `methodology/maintenance.md`",
             ai_governance,
         )
+        self.assertNotIn(workflow, ai_governance)
         self.assertNotIn(
             "`methodology/ai-governance.md` is the canonical operational owner of this admission rule",
             decisions,
