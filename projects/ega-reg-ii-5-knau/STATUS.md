@@ -1,6 +1,6 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 5
 
-Last checkpoint: 2026-08-27
+Last checkpoint: 2026-08-29
 
 ## Historical project root
 
@@ -34,6 +34,8 @@ The project source register records research function and relevant locus only. T
 
 Crosswalks are source-level. Adjacent pages present in an export but outside an evidenced source boundary are not silently assigned to that source.
 
+For the active G2 slice, the exact parent File was re-verified on 2026-08-29 and unprocessed baselines for fol. 61v–63r were rendered from canonical PDF pages 14–17. Durable reproduction/provenance is recorded in `research/g2-baseline-provenance.md`; project inspection state is recorded in `sources/inspection-log.tsv`.
+
 ## Original-export preservation state
 
 The exact four central archive-export PDFs used for this project are checksum-verified against `corpus/files.tsv`:
@@ -45,12 +47,14 @@ The exact four central archive-export PDFs used for this project are checksum-ve
 
 These PDFs are central preservation assets, not replaceable by URNs. The repository is public and the current archive exports are recorded as `InC/1.0`; therefore committing the binary bytes publicly is not treated as authorized by default. Until rights/authority for public redistribution is confirmed, repository preservation is **not complete**.
 
+The same public-redistribution caution applies to the four G2 baseline PNG derivatives. Their provenance is not uncertain, but no additional authority for public GitHub redistribution is documented. They therefore remain a controlled/local research working set when available; an authorized researcher can reconstruct them from the exact parent File and the durable render recipe in `research/g2-baseline-provenance.md`.
+
 Legacy single-image Reg. Ii 5 PDF exports remain separately checksum-tracked for provenance.
 
 ## Generic gate state
 
 - **G1 — Source and transmission basis secured:** substantially reached, but repository-local preservation of the central original exports remains a source-preservation gap pending rights resolution.
-- **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached.**
+- **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached. Checkpoint A physical/source-order inspection is in progress.**
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
 - **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
 - **G5 — Critically consolidated and proportionally validated text state:** not reached.
@@ -62,33 +66,60 @@ The existing `transcription/132.tsv`–`135.tsv` files are legacy working transc
 
 ## Active G2 project gaps
 
-1. direct folio-by-folio inspection of physical lineation and reading order on 61v–63r;
-2. source-specific layout/material description sufficient to preserve list/accounting/spatial meaning;
-3. verified mapping from legacy `132–135` working rows to archival folio/physical-line addresses where possible;
-4. explicit classification of source phenomena actually present;
-5. minimal compliant migration/extension without discarding prior readings/decisions;
-6. derived human-readable diplomatic witness view;
-7. full representation-completeness check across fol. 61v–63r.
+1. **Checkpoint A in progress:** provisional physical/source-order anchors and broad layout structure for all four folia are persisted in `research/g2-checkpoint-a-physical-inventory.md`; finer source-phenomenon inspection and verification/correction of those anchors remain open.
+2. verified mapping from legacy `132–135` working rows to archival folio/physical-line addresses where possible — **Checkpoint B, not yet started**;
+3. explicit loss audit for existing apparatus decisions, W/U/variant/unresolved states and palaeographic/numeral records — **Checkpoint B, not yet started**;
+4. smallest source-evidenced G2 representation, only after Checkpoints A and B;
+5. derived human-readable diplomatic witness view;
+6. full representation-completeness and transition/decision falsification across fol. 61v–63r.
 
 G2 does **not** require every difficult token to be resolved.
 
+## Current Checkpoint A research state
+
+The durable working inventory currently records these provisional human-review anchors:
+
+| folio | provisional physical-line anchors | broad visible structure |
+|---|---|---|
+| 61v | `61v-L01`…`L20` | display heading → two-line introduction → spatially organized list/accounting-like block → two prose paragraphs |
+| 62r | `62r-L01`…`L25` | three visually distinct prose paragraphs |
+| 62v | `62v-L01`…`L25` | three prose paragraphs, including a longer middle block |
+| 63r | `63r-L01`…`L11` | three-line continuation → new display heading → new prose paragraph |
+
+Broad observations already retained: 61v differs materially in layout from the following folia; left quantity/sign notation belongs provisionally to its list block rather than an independent marginal stream; recurrent abbreviation marks are visible; numeral/special-sign handling is clearly relevant at least on 61v; possible overwritten/cancelled loci on 61v and 62r require closer inspection; no separate marginal/interlinear stream is established; hand differentiation remains `not investigated`; visible edge wear has not been shown to cause target-text loss.
+
+These anchors are review fixtures, not a canonical G2 Line ontology. If closer pixel inspection finds a missed, doubled or falsely separated physical line, correct the working inventory rather than forcing the manuscript into the provisional numbering.
+
 ## NEXT ACTION — canonical restart point
 
-Using the internal principal Reg. Ii 5 protocol/source record, its source-data crosswalk and the exact checksum-identified archive export:
-1. inspect fol. 61v–63r for physical lineation, reading order, layout, headings/marginalia, corrections, damage/illegibility, abbreviations and any evidenced hand shifts;
-2. assign editor line references only from direct physical inspection;
-3. map legacy rows to verified folio/physical-line loci while retaining export IDs as provenance;
-4. choose the smallest structured representation required by the generic transcription guideline;
-5. migrate/extend the principal-witness transcription;
-6. produce the derived human-readable diplomatic witness view;
-7. run the generic G2 gate.
+Continue **#64 Checkpoint A**, not Checkpoint B and not G2 schema design:
 
-Do not let external comparison-source work displace this active G2 task.
+1. if the local baseline PNG working set is unavailable, use an authorized copy of the exact parent export and reproduce fol. 61v–63r from `research/g2-baseline-provenance.md` after SHA-256 verification;
+2. open `research/g2-checkpoint-a-physical-inventory.md` beside the unprocessed baseline images;
+3. visually verify/correct every provisional physical-line/source-order anchor;
+4. inspect and classify only the source phenomena actually supported by the pixels, with particular attention to the suspected overwritten/cancelled loci, abbreviations and numeral/special-sign behavior;
+5. preserve `not investigated`, `not observed` and `requires closer inspection` rather than forcing completeness;
+6. only when Checkpoint A is sufficiently stable for human source↔inventory comparison, proceed to #64 Checkpoint B against legacy `132.tsv`–`135.tsv`, `apparatus/decisions.tsv` and relevant palaeography/numeral records.
+
+Do not let external comparison-source work displace this active G2 task. Do not choose a final Line/Span/Phenomenon representation before the real Checkpoint-A/B evidence supports it.
 
 ## Human-in-the-loop state
 
-The user must be able to inspect the current diplomatic text and source group without understanding internal TSV architecture. No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded.
+The user must be able to inspect the current diplomatic/source-order work against the manuscript images without understanding internal TSV architecture. The immediate review path is:
+
+`authorized exact parent / reproduced unprocessed baseline → visible physical line/source order → research/g2-checkpoint-a-physical-inventory.md → later diplomatic witness → uncertainty/intervention → evidence/decision drill-down`.
+
+No independent qualified palaeographic expert review of the full Knau transcription has yet been recorded.
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the historical project root `ACT-THHSTAW-EGA-REG-II-5`, which used sources are internal versus external, exact exports/preservation state, available/missing URNs and crosswalks, active gate, remaining G2 gaps, current text evidence and next action without old chat.
+A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the historical project root `ACT-THHSTAW-EGA-REG-II-5`, which used sources are internal versus external, exact exports/preservation state, available/missing URNs and crosswalks, the reproducible G2 baseline derivation, the current physical/source-order inventory and its provisional limits, active gate, remaining G2 gaps, current text evidence and next action without old chat.
+
+Current durable restart path:
+
+- exact parent/file rights state → `corpus/files.tsv`;
+- canonical folio↔image↔PDF mapping → Source crosswalk;
+- baseline derivation + controlled/local storage boundary → `research/g2-baseline-provenance.md`;
+- inspection event → `sources/inspection-log.tsv`;
+- Checkpoint-A working source-order fixture → `research/g2-checkpoint-a-physical-inventory.md`;
+- active consequence/next action → this `STATUS.md`.
