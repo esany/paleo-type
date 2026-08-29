@@ -54,7 +54,7 @@ Legacy single-image Reg. Ii 5 PDF exports remain separately checksum-tracked for
 ## Generic gate state
 
 - **G1 — Source and transmission basis secured:** substantially reached, but repository-local preservation of the central original exports remains a source-preservation gap pending rights resolution.
-- **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached. Checkpoint A physical/source-order inspection is in progress.**
+- **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached. Checkpoint A baseline-level physical/source-order + phenomenon inventory is complete; owner visual review is pending; Checkpoint B has not started.**
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
 - **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
 - **G5 — Critically consolidated and proportionally validated text state:** not reached.
@@ -66,7 +66,7 @@ The existing `transcription/132.tsv`–`135.tsv` files are legacy working transc
 
 ## Active G2 project gaps
 
-1. **Checkpoint A in progress:** provisional physical/source-order anchors and broad layout structure for all four folia are persisted in `research/g2-checkpoint-a-physical-inventory.md`; finer source-phenomenon inspection and verification/correction of those anchors remain open.
+1. **Checkpoint A analytical inventory complete at baseline level:** physical/source-order anchors, broad layout and observed baseline-level phenomenon classes for all four folia are persisted in `research/g2-checkpoint-a-physical-inventory.md`; owner/human visual source↔anchor review remains pending.
 2. verified mapping from legacy `132–135` working rows to archival folio/physical-line addresses where possible — **Checkpoint B, not yet started**;
 3. explicit loss audit for existing apparatus decisions, W/U/variant/unresolved states and palaeographic/numeral records — **Checkpoint B, not yet started**;
 4. smallest source-evidenced G2 representation, only after Checkpoints A and B;
@@ -86,22 +86,31 @@ The durable working inventory currently records these provisional human-review a
 | 62v | `62v-L01`…`L25` | three prose paragraphs, including a longer middle block |
 | 63r | `63r-L01`…`L11` | three-line continuation → new display heading → new prose paragraph |
 
-Broad observations already retained: 61v differs materially in layout from the following folia; left quantity/sign notation belongs provisionally to its list block rather than an independent marginal stream; recurrent abbreviation marks are visible; numeral/special-sign handling is clearly relevant at least on 61v; possible overwritten/cancelled loci on 61v and 62r require closer inspection; no separate marginal/interlinear stream is established; hand differentiation remains `not investigated`; visible edge wear has not been shown to cause target-text loss.
+Baseline-level phenomenon inspection now establishes, without reconstructing uncertain text:
 
-These anchors are review fixtures, not a canonical G2 Line ontology. If closer pixel inspection finds a missed, doubled or falsely separated physical line, correct the working inventory rather than forcing the manuscript into the provisional numbering.
+- 61v differs materially in layout from the following folia; its left quantity/sign notation belongs provisionally to the list block rather than an independent marginal stream;
+- recurrent abbreviation marks are visible on all four folia;
+- numeral/special-sign handling is empirically relevant: spatial quantity/sign notation occurs on 61v and Arabic `80` is visible on 62r and 62v;
+- visible cancellation/deletion phenomena occur at least at `61v-L16` and `62r-L18`; deleted readings/replacement relations remain unresolved at this checkpoint;
+- no separate marginal/interlinear text stream is established at baseline level;
+- faint show-through is visible on 63r but has not been shown to obscure target text;
+- hand differentiation remains `not investigated`;
+- visible edge wear has not been shown to cause target-text loss.
+
+These anchors are review fixtures, not a canonical G2 Line ontology. Any source↔anchor mismatch found during human visual review must be corrected in the working inventory rather than forcing the manuscript into the provisional numbering.
 
 ## NEXT ACTION — canonical restart point
 
-Continue **#64 Checkpoint A**, not Checkpoint B and not G2 schema design:
+Remain at the Checkpoint-A/Checkpoint-B boundary; do **not** begin G2 schema design:
 
 1. if the local baseline PNG working set is unavailable, use an authorized copy of the exact parent export and reproduce fol. 61v–63r from `research/g2-baseline-provenance.md` after SHA-256 verification;
 2. open `research/g2-checkpoint-a-physical-inventory.md` beside the unprocessed baseline images;
-3. visually verify/correct every provisional physical-line/source-order anchor;
-4. inspect and classify only the source phenomena actually supported by the pixels, with particular attention to the suspected overwritten/cancelled loci, abbreviations and numeral/special-sign behavior;
-5. preserve `not investigated`, `not observed` and `requires closer inspection` rather than forcing completeness;
-6. only when Checkpoint A is sufficiently stable for human source↔inventory comparison, proceed to #64 Checkpoint B against legacy `132.tsv`–`135.tsv`, `apparatus/decisions.tsv` and relevant palaeography/numeral records.
+3. perform the owner/human visual source↔anchor review: every visible target text line must be findable under the recorded folio/local anchor, and the two recorded cancellation loci must be visibly locatable without requiring the owner to adjudicate their readings;
+4. correct any missed/doubled/reordered physical line or misclassified spatial stream before proceeding;
+5. if the visual review passes or only explicit unresolved specialist questions remain, begin #64 Checkpoint B against legacy `132.tsv`–`135.tsv`, `apparatus/decisions.tsv` and relevant palaeography/numeral records;
+6. do not re-adjudicate manuscript readings merely to make legacy mapping complete, and do not choose a final Line/Span/Phenomenon representation before Checkpoint B evidence exists.
 
-Do not let external comparison-source work displace this active G2 task. Do not choose a final Line/Span/Phenomenon representation before the real Checkpoint-A/B evidence supports it.
+Do not let external comparison-source work displace this active G2 task.
 
 ## Human-in-the-loop state
 
