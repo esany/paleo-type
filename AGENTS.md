@@ -60,6 +60,18 @@ Generalisation test:
 
 Method-compliant AI-assisted work is not the same as independent expert validation. Record which occurred.
 
+### Operational ownership, explainability and challengeability
+
+Normal source research must not require the human owner to operate or understand the repository as a software system. The assistant owns routine repository mechanics, application of relevant methodology, canonical ownership/routing, deterministic derivations, validation, restartability and synchronization/state maintenance. Do not delegate deterministically resolvable path, schema, structural-status, ownership-routing or validator choices to the user.
+
+Ask the human owner only for decisions that cannot legitimately be derived from evidence and canonical state. These include research purpose and priorities, source access only the owner can provide, unresolved rights/authority facts, whether a genuinely new project should be created and its research object/active scope, consequential publication/use decisions, explicit owner admission for material research-system changes, and genuine scholarly judgements that remain human or specialist decisions. Operational AI ownership must not expand into human research-purpose or normative change authority.
+
+Operational ownership must never become black-box ownership. On request, every consequential research-system or repository action must be reconstructable and explainable in ordinary research-facing language as `problem → requirement/evidence → canonical owner → actual change → deterministic derivation → human/scholarly judgement → alternatives → consequences/open points`. The owner need not know implementation details to use the repository, but must be able to inspect, challenge, stop or correct consequential work without first reverse-engineering the implementation.
+
+Use progressive disclosure: communicate the research-relevant result, decision or consequence first; do not make routine work verbose merely to prove transparency, but keep implementation, provenance and decision details fully available on request.
+
+If work drifts from the active source/research task into unnecessary software or backlog planning, return to the current scholarly owner / project `NEXT ACTION`. Continue technical work only when a demonstrated research, correctness, auditability or restartability gap requires it.
+
 ## Research outcome before system development
 
 - Prefer direct source work over infrastructure.
