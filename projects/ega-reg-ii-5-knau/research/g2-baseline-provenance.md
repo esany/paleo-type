@@ -1,6 +1,6 @@
 # G2 baseline working-set provenance — Reg. Ii 5 fol. 61v–63r
 
-Status: durable project research/provenance note for the #68 → #64 working path. This file records exact parent identity, the reproducible review baselines and the current recovery result. It is not a second owner of Source/File identity or of the canonical folio↔image↔PDF-page crosswalk.
+Status: durable project research/provenance note for the #68 → #64 working path. This file records exact parent identity, the reproducible review baselines and the current recovery/access result. It is not a second owner of Source/File identity or of the canonical folio↔image↔PDF-page crosswalk.
 
 ## Canonical parent
 
@@ -62,30 +62,44 @@ Re-running the documented Poppler command against the newly supplied byte-identi
 
 These hashes are useful fingerprints for identifying this specific historical Poppler working set. They do **not** establish the generic false invariant that every conforming renderer must produce byte-identical PNGs. The scientific invariant remains exact parent + exact page + disclosed rendering method/parameters → reproducible visual inspection.
 
-## Persistence and rights boundary
+## Persistence, rights and research-ready access
 
 The parent archive export is recorded as `InC/1.0`; this rights statement is not itself a public-redistribution licence.
 
 On 2026-08-30 the repository was changed from public to **private**, and the human project owner explicitly authorized controlled storage of this exact research source in the private project repository. This resolves the project's prior governance uncertainty about whether controlled private-repository storage is intended for this source. It does **not** create or assert public redistribution authority.
 
-Canonical intended repository path:
+Canonical intended parent repository path:
 
 `corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/1a03ea95927-120-143.pdf`
 
-A directory-level control note now exists at the corresponding `original/README.md`.
+A directory-level control note exists at the corresponding `original/README.md`. The exact parent PDF binary is **not yet verified present at that repository path**. Therefore do not change `corpus/files.tsv:storage_status` to `repo-preserved` until the binary exists there and its SHA-256 has been re-verified.
 
-The exact PDF binary is **not yet present at that repository path**. Therefore do not change `corpus/files.tsv:storage_status` to `repo-preserved` and do not claim durable fresh-context source access until the binary exists there and its SHA-256 has been re-verified.
+For direct visual research, the four baseline images are now attached to private Issue #84. GitHub exposes them as private `private-user-images` resources. On 2026-08-30 a fresh attachment URL was obtained from a newly fetched #84 issue comment and successfully retrieved through the connected authorized GitHub work context. This is the concrete fresh-context access test required by #68/#78: the active source pixels can be recovered without relying on the old chat or another manual source upload.
 
 Current state:
 
 - **identity/provenance:** durable and PASS;
 - **reproducible derivation:** durable and PASS;
-- **actual image availability in the 2026-08-30 work context:** PASS because the exact parent was supplied and the baselines were re-created;
-- **controlled private-repository storage authority:** PASS / explicitly authorized by the human project owner on 2026-08-30;
-- **repository binary presence:** PENDING;
-- **durable fresh-context access without another manual source-supply action:** PENDING until binary presence + SHA verification pass.
+- **controlled private-repository storage authority:** PASS / explicitly owner-authorized;
+- **four private #84 baseline image attachments:** PRESENT;
+- **fresh-context visual access via private #84 attachment route:** PASS / retrieval route tested 2026-08-30;
+- **exact parent PDF binary at reserved repository path:** PENDING / preservation only, nonblocking for #64 Checkpoint B.
 
-An identifier, repository path, README or render recipe alone is not considered equivalent to actual inspectable source pixels.
+The four historical SHA-256 values above remain fingerprints of the exact locally reproduced Poppler baselines. The Issue attachments were not each independently re-hashed as part of the access test, so attachment availability must not be described as a fresh four-file byte-identity verification.
+
+This demonstrates why the project distinguishes two layers:
+
+```text
+research-ready visual access
+→ actual images openable by the current/fresh authorized research context
+
+exact parent preservation
+→ canonical parent binary retained and checksum-verifiable at the durable preservation location
+```
+
+The first now passes for fol. 61v–63r. The second remains open and must not block the active scholarly semantic-loss audit.
+
+An identifier, repository path, README or render recipe alone is still not considered equivalent to actual inspectable source pixels.
 
 ## Derivative-byte identity
 
@@ -95,6 +109,6 @@ If later rendering uses another implementation/version while preserving the inte
 
 ## Current scholarly use
 
-The recovered baselines support #64 Checkpoint A/B work. On 2026-08-30 they were used for the explicit source↔anchor structural validation recorded in `research/g2-checkpoint-a-physical-inventory.md`.
+The baselines support #64 Checkpoint A/B work. On 2026-08-30 they were used for the explicit source↔anchor structural validation recorded in `research/g2-checkpoint-a-physical-inventory.md`; the private #84 attachment route now supplies restartable visual access for the same active slice.
 
 Processed crops/rotation/contrast derivatives are not part of this baseline record. If later source work uses such a transformation consequentially, #68 governs proportional provenance and the unprocessed representation remains available for critical comparison.
