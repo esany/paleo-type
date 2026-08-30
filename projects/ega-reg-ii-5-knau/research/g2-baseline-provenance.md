@@ -64,16 +64,28 @@ These hashes are useful fingerprints for identifying this specific historical Po
 
 ## Persistence and rights boundary
 
-The parent archive export is recorded as `InC/1.0` / `preservation-blocked-public-redistribution`; no additional public-redistribution authority for the exact PDF or derived page images is documented. Neither the PDF nor the PNG baselines are therefore committed publicly by this project merely to make source work convenient.
+The parent archive export is recorded as `InC/1.0`; this rights statement is not itself a public-redistribution licence.
 
-This must not be confused with research availability:
+On 2026-08-30 the repository was changed from public to **private**, and the human project owner explicitly authorized controlled storage of this exact research source in the private project repository. This resolves the project's prior governance uncertainty about whether controlled private-repository storage is intended for this source. It does **not** create or assert public redistribution authority.
+
+Canonical intended repository path:
+
+`corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/1a03ea95927-120-143.pdf`
+
+A directory-level control note now exists at the corresponding `original/README.md`.
+
+The exact PDF binary is **not yet present at that repository path**. Therefore do not change `corpus/files.tsv:storage_status` to `repo-preserved` and do not claim durable fresh-context source access until the binary exists there and its SHA-256 has been re-verified.
+
+Current state:
 
 - **identity/provenance:** durable and PASS;
 - **reproducible derivation:** durable and PASS;
-- **actual image availability in the 2026-08-30 work context:** PASS because the exact parent was newly supplied and the baselines were re-created;
-- **durable fresh-context access without another manual source-supply action:** still unresolved and owned operationally by #68 / generically by #78.
+- **actual image availability in the 2026-08-30 work context:** PASS because the exact parent was supplied and the baselines were re-created;
+- **controlled private-repository storage authority:** PASS / explicitly authorized by the human project owner on 2026-08-30;
+- **repository binary presence:** PENDING;
+- **durable fresh-context access without another manual source-supply action:** PENDING until binary presence + SHA verification pass.
 
-An identifier or render recipe alone is not considered equivalent to actual inspectable source pixels.
+An identifier, repository path, README or render recipe alone is not considered equivalent to actual inspectable source pixels.
 
 ## Derivative-byte identity
 
