@@ -11,10 +11,10 @@ THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	59v	128	10		inferred-high	paired verso fo
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	60r	129	11		observed	visible manuscript folio number 60		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	60v	130	12		inferred-high	paired verso following observed 60r		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61r	131	13		observed	visible manuscript folio number 61		Precedes Knau heading
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61v	132	14		inferred-high	paired verso after observed 61r and before observed 62r	Knawe heading; itemized entry	Legacy working image K132
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62r	133	15		observed	visible manuscript folio number 62	continuation of Knau prose	Legacy working image K133
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62v	134	16		inferred-high	paired verso after observed 62r and before observed 63r	continuation of Knau prose	Legacy working image K134
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63r	135	17		observed	visible manuscript folio number 63	end of prior passage at top; new large heading below	Legacy working image K135; boundary page
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61v	132	14		inferred-high	paired verso after observed 61r and before observed 62r	Knawe heading; itemized entry	Legacy working image K132; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0130.tif`; this is not asserted as a URN
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62r	133	15		observed	visible manuscript folio number 62	continuation of Knau prose	Legacy working image K133; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0131.tif`; this is not asserted as a URN
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62v	134	16		inferred-high	paired verso after observed 62r and before observed 63r	continuation of Knau prose	Legacy working image K134; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0132.tif`; this is not asserted as a URN
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63r	135	17		observed	visible manuscript folio number 63	end of prior passage at top; new large heading below	Legacy working image K135; boundary page; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0133.tif`; this is not asserted as a URN
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63v	136	18		inferred-high	paired verso after observed 63r and before observed 64r	Schondorff heading	Confirms Knau has ended before this page
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	64r	137	19		observed	visible manuscript folio number 64	Boris heading	
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	64v	138	20		inferred-high	paired verso after observed 64r and before observed 65r		
