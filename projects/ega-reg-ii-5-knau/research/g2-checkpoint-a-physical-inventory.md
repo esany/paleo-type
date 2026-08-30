@@ -1,8 +1,8 @@
 # G2 Checkpoint A — physical/source-order inventory, Reg. Ii 5 fol. 61v–63r
 
-Status: **baseline-level physical/source-order and source-phenomenon inventory completed; owner visual review not yet recorded.** This fixture is based on direct visual inspection of the unprocessed baselines derived from the exact canonical parent File. It is not a canonical Line/Span/Phenomenon model.
+Status: **PASS — baseline-level physical/source-order and source-phenomenon inventory visually re-validated against the recovered exact unprocessed baselines on 2026-08-30.** This is an AI-assisted Source Research structural validation under #64/#72, not independent specialist validation and not a canonical Line/Span/Phenomenon model.
 
-Image/reproduction provenance is recorded in `research/g2-baseline-provenance.md`. The local line references below are provisional human-review anchors assigned top-to-bottom. They do not adjudicate uncertain readings and must be corrected if later inspection reveals a missed, doubled, or falsely separated physical line.
+Image/reproduction provenance is recorded in `research/g2-baseline-provenance.md`. The local line references below remain provisional scholarly source-order anchors: they do not adjudicate uncertain readings and remain correctable if later finer source inspection demonstrates a structural error.
 
 ## fol. 61v / export image 132 / PDF page 14
 
@@ -21,6 +21,10 @@ Working physical-line references: **`61v-L01` … `61v-L20`**.
 - Damage/illegibility: page-edge wear is visible, but no target-text loss caused by that wear is established from the baseline.
 - Hand shift: **not investigated**; no hand change is asserted.
 
+### 2026-08-30 source↔anchor review
+
+**PASS.** All twenty recorded source-order lines/units are visually findable in the recovered exact baseline in the recorded order. No missed, doubled or reordered physical line was detected. The spatial list/accounting block remains visually distinct from the following prose and its left quantity/sign notation is not a separate marginal stream. The cancellation assigned to `61v-L16` is visibly locatable without adjudicating the deleted reading. Large pen flourishes do not create additional text lines.
+
 ## fol. 62r / export image 133 / PDF page 15
 
 Working physical-line references: **`62r-L01` … `62r-L25`**.
@@ -35,6 +39,10 @@ Working physical-line references: **`62r-L01` … `62r-L25`**.
 - Marginal/interlinear material: no separate marginal or interlinear text stream observed in the target writing area.
 - Damage/illegibility: no text-bearing damage established in the principal writing area from the baseline.
 - Hand shift: **not investigated**; none asserted.
+
+### 2026-08-30 source↔anchor review
+
+**PASS.** The 11 + 7 + 7 physical-line grouping is visually recoverable as three consecutive prose blocks and accounts for the target text without a missed/doubled/reordered line. The cancellation at `62r-L18` is visibly locatable; Arabic `80` begins `62r-L19`. No separate marginal/interlinear text stream is required to account for the visible target writing.
 
 ## fol. 62v / export image 134 / PDF page 16
 
@@ -51,6 +59,10 @@ Working physical-line references: **`62v-L01` … `62v-L25`**.
 - Damage/illegibility: no text-bearing damage established in the principal writing area from the baseline.
 - Hand shift: **not investigated**; none asserted.
 
+### 2026-08-30 source↔anchor review
+
+**PASS.** The 7 + 12 + 6 line grouping is visually recoverable in source order and accounts for the target text without a missed/doubled/reordered physical line. The very large initial flourishes remain graphical extensions of their paragraph openings rather than additional text streams. Arabic `80` is visibly locatable in `62v-L01`.
+
 ## fol. 63r / export image 135 / PDF page 17
 
 Working physical-line references: **`63r-L01` … `63r-L11`**.
@@ -66,6 +78,10 @@ Working physical-line references: **`63r-L01` … `63r-L11`**.
 - Show-through: faint reversed/background writing is visible in the lower-left blank area, consistent with show-through from writing on the other side/adjacent leaf; it is not treated as a separate text stream and has not been shown to obscure target text.
 - Damage/illegibility: page-edge wear is visible, but no target-text loss is established.
 - Hand shift: **not investigated**; none asserted.
+
+### 2026-08-30 source↔anchor review
+
+**PASS.** The three-line continuation, one display heading and seven-line following paragraph are visually distinct and recoverable in the recorded order. No missed/doubled/reordered target text unit was detected. The faint lower-left show-through is visible but does not form a target text stream or obstruct the recorded source order.
 
 ## Cross-folio Checkpoint-A observations
 
@@ -94,7 +110,7 @@ Working physical-line references: **`63r-L01` … `63r-L11`**.
 | show-through affecting interpretation | no material effect established | no material effect established | no material effect established | show-through visible; no target-text obstruction established |
 | hand shift | not investigated | not investigated | not investigated | not investigated |
 
-## Human-visible review state
+## Human-visible / Source Research review state
 
 | Review step | 61v | 62r | 62v | 63r |
 |---|---|---|---|---|
@@ -102,8 +118,21 @@ Working physical-line references: **`63r-L01` … `63r-L11`**.
 | provisional physical lines/order mapped | done | done | done | done |
 | broad layout/section structure inventoried | done | done | done | done |
 | baseline-level source phenomena inventoried | done | done | done | done |
-| owner visual source↔anchor review | pending | pending | pending | pending |
+| AI-assisted Source Research source↔anchor structural review | **PASS** | **PASS** | **PASS** | **PASS** |
 | legacy rows mapped (Checkpoint B) | pending | pending | pending | pending |
 | decisions mapped (Checkpoint B) | pending | pending | pending | pending |
 
-Checkpoint A is now sufficiently explicit for human source↔inventory review: each visible target text line has a provisional source-order anchor, and the source phenomena that materially affect the representation at baseline level are recorded without forcing their readings. **Checkpoint B has not begun.** The next action is owner/human visual review of these anchors against the unprocessed baseline images; any mismatch is corrected here before legacy-row mapping starts.
+## Checkpoint-A result
+
+**PASS.** The recovered exact baselines support the persisted source-order inventory for all four folia. No structural correction is required before Checkpoint B.
+
+This result does **not** mean:
+
+- every difficult manuscript token is resolved;
+- hand differentiation has been investigated;
+- a final Line/Span/Phenomenon representation has been selected;
+- AI-assisted structural review constitutes qualified independent specialist validation.
+
+It means only that the current physical/source-order anchors are adequate to begin the next source-evidenced task.
+
+**NEXT ACTION under #64:** begin Checkpoint B by mapping legacy `transcription/132.tsv`–`135.tsv`, `apparatus/decisions.tsv` and relevant palaeography/numeral records back to these exact source units; preserve partial/ambiguous/unresolved mappings and do not re-adjudicate readings merely to force completeness.
