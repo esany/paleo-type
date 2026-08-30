@@ -28,7 +28,7 @@ The project source register records research function and relevant locus only. T
 ## Digital addressing state
 
 - Reg. Ii 4 Bd. II / Knau 306v–309r: exact folio↔export-image↔PDF-page mapping **and stable per-image URNs recorded**.
-- Reg. Ii 5 / protocol 55v–66v: folio↔export-image↔PDF-page mapping recorded. Stable per-image URNs are **not established** from the inspected export and must not be inferred. For active fol. 61v–63r, directly observed provider derivative/TIFF labels are now recorded in the Source crosswalk: `stat_derivate_00000416:/ThHStAW_RegIi_5_0130.tif` through `_0133.tif`.
+- Reg. Ii 5 / protocol 55v–66v: folio↔export-image↔PDF-page mapping recorded. Stable per-image URNs are **not established** from the inspected export and must not be inferred. For active fol. 61v–63r, directly observed provider derivative/TIFF labels are recorded in the Source crosswalk: `stat_derivate_00000416:/ThHStAW_RegIi_5_0130.tif` through `_0133.tif`.
 - Reg. Ii 5 exact parent export: local File `FILE-REG-II-5-00000129-EXCERPT`; provider file object `stat_file_00000033` is directly evidenced on the export metadata page and remains distinct from Source/provider record `stat_visitation_00000129`.
 - Reg. Ii 3 / Pfarreinkommen 303r–306r: folio↔export-image↔PDF-page mapping recorded; stable per-image URNs are **not yet recorded**.
 - Reg. Ii 3 / Neustadt 41r–63v: exact protocol extent and inspected export identity are known, but a canonical folio↔export-image/PDF-page crosswalk has **not yet been reconstructed** in the repo.
@@ -46,31 +46,33 @@ The exact four central archive-export PDFs used for this project are checksum-ve
 - `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-Neustadt-O-p41r-63v.pdf` — SHA-256 `451bb32b0bca077c4089966594e2bf234b39e87d9e087d3c1c2e2a569f31fd12`;
 - `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-303-306.pdf` — SHA-256 `963a29eff5cc98bb35cecc28e20c6ed3fcb835261e322f991e42b60662d54c06`.
 
-These PDFs are central research assets, not replaceable by URNs. The repository is now **private**. On 2026-08-30 the human project owner explicitly authorized controlled storage of the Reg. Ii 5 source in this private project repository. This authorizes the intended private research-storage use; it does not assert a public redistribution right for the `InC/1.0` archive export.
+These PDFs are central research assets, not replaceable by identifiers. The repository is now **private**. On 2026-08-30 the human project owner explicitly authorized controlled storage of the Reg. Ii 5 source in this private project repository. This authorizes the intended private research-storage use; it does not assert a public redistribution right for the `InC/1.0` archive export.
 
-The canonical Reg. Ii 5 binary target is already recorded in `corpus/files.tsv`:
+The canonical Reg. Ii 5 parent-binary target is recorded in `corpus/files.tsv`:
 
 `corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/1a03ea95927-120-143.pdf`
 
-A control README now exists in that directory, but the exact PDF binary is **not yet present at the target path**. Consequently the file remains `preservation-blocked-public-redistribution` rather than `repo-preserved` until byte presence and SHA-256 are verified.
+A control README exists in that directory, but the exact parent PDF binary is **not yet verified present at the target path**. Consequently the File must not be marked `repo-preserved` until byte presence and SHA-256 are verified. This is a preservation item, not a blocker for the active fol. 61v–63r research slice.
 
-For Reg. Ii 5, distinguish current work-context availability from durable restartability:
+For active visual research, four unprocessed baseline images are now attached to private Issue #84. A fresh authorized connector retrieval from a newly fetched `private-user-images` attachment URL succeeded on 2026-08-30. This demonstrates that the Issue-attachment route can restore actual inspectable pixels to a fresh connected work context. The attachment route is therefore the current research-ready visual-access carrier for fol. 61v–63r. The four attachment bytes have **not** been separately re-hashed as a new acceptance condition; their historical baseline fingerprints remain the locally reproduced Poppler fixture fingerprints recorded in `research/g2-baseline-provenance.md`.
+
+Current state:
 
 ```text
-exact parent identity / SHA                         PASS
-canonical folio↔image↔PDF mapping                  PASS
-reproducible baseline derivation                   PASS
-actual parent/baseline access in current context   PASS (2026-08-30 supplied copy)
-private-repository storage authority               PASS (owner authorized 2026-08-30)
-repository binary presence                         PENDING
-durable fresh-context access without re-supply     PENDING until repo binary + SHA verification pass
+exact parent identity / SHA                                      PASS
+canonical folio↔image↔PDF mapping                               PASS
+reproducible baseline derivation                                PASS
+controlled private storage authority                            PASS
+private #84 baseline attachments present                        PASS
+fresh-context visual retrieval route via private #84 attachment PASS (tested 2026-08-30)
+exact parent binary committed + SHA reverified in repo           PENDING — preservation only, nonblocking
 ```
 
-The current visual source task can proceed because the exact pixels are available now. A future context must still stop direct visual claims if it cannot open the source bytes; path/identifier/render recipe alone do not count as image access.
+Thus **research-ready visual availability for the active fol. 61v–63r slice is PASS**. Exact parent-PDF repository preservation remains a distinct open preservation task. Identifier/path/recipe alone would still be insufficient if the private image-access route ceased to work.
 
 ## Generic gate state
 
-- **G1 — Source and transmission basis secured:** substantially reached; for Reg. Ii 5 controlled private-repository storage is now owner-authorized, but the exact binary still awaits ingestion and SHA verification before repository-local preservation is PASS.
+- **G1 — Source and transmission basis secured:** substantially reached. For Reg. Ii 5, controlled private storage is authorized and the active fol. 61v–63r images have a tested fresh-context retrieval route; exact parent-PDF repository preservation remains pending as a nonblocking preservation item.
 - **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached. Checkpoint A physical/source-order + baseline phenomenon inventory has passed explicit source↔anchor structural review; Checkpoint B semantic-loss mapping is now the active next task.**
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
 - **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
@@ -120,7 +122,7 @@ These anchors are review fixtures, not a canonical G2 Line ontology. The structu
 
 Proceed to **#64 Checkpoint B**. Do **not** begin G2 schema design.
 
-1. keep the exact Reg. Ii 5 fol. 61v–63r pixels available beside the mapping work; if actual pixel access is lost in a future context, stop direct visual claims and restore access through #68 rather than substituting metadata/legacy text;
+1. obtain/open the four private #84 baseline attachments for fol. 61v–63r beside the mapping work; if actual pixel access fails, stop direct visual claims and restore access through #68 rather than substituting metadata/legacy text;
 2. use `research/g2-checkpoint-a-physical-inventory.md` as the physical/source-order anchor fixture;
 3. map each legacy `transcription/132.tsv`–`135.tsv` row to the exact folio/local physical-line unit(s) where the source permits;
 4. map `apparatus/decisions.tsv`, relevant palaeography records and numeral records to the same exact source units;
@@ -128,6 +130,8 @@ Proceed to **#64 Checkpoint B**. Do **not** begin G2 schema design.
 6. identify demonstrated semantic loss: collapsed physical lines/spatial structure, visible source material absent from legacy representation, addressing too coarse for consequential decisions, or uncertainty/revision history that cannot be reconstructed;
 7. do **not** re-adjudicate manuscript readings merely to make mapping complete;
 8. after Checkpoint B evidence is sufficient, hand material findings to Domain Review (#73) for consequence/requirement classification before any generic G2/Dev conclusion.
+
+Exact parent-PDF repository preservation may proceed independently under #68 and must not displace or block Checkpoint B.
 
 Do not let external comparison-source work displace this active G2 task.
 
@@ -141,17 +145,18 @@ No independent qualified palaeographic expert review of the full Knau transcript
 
 ## Restartability test
 
-A new capable researcher/agent must be able to determine from repository + preserved/controlled sources: the historical project root `ACT-THHSTAW-EGA-REG-II-5`, which used sources are internal versus external, exact exports/preservation/access state, available/missing provider identifiers and URNs, the G2 baseline derivation/fingerprints, the Checkpoint-A physical/source-order inventory and PASS status, active gate, remaining G2 gaps, current text evidence and next action without old chat.
+A new capable researcher/agent must be able to determine from repository + controlled sources: the historical project root `ACT-THHSTAW-EGA-REG-II-5`, which used sources are internal versus external, exact exports/preservation/access state, available/missing provider identifiers and URNs, the G2 baseline derivation/fingerprints, the Checkpoint-A physical/source-order inventory and PASS status, active gate, remaining G2 gaps, current text evidence and next action without old chat.
 
 Current durable restart path:
 
 - exact parent/file rights, storage authority and provider-file state → `corpus/files.tsv`;
-- intended private binary location + expected SHA → `corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/README.md`;
+- intended private parent-binary location + expected SHA → `corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/README.md`;
 - canonical folio↔image↔PDF mapping + observed provider image locators → Source crosswalk;
-- baseline derivation + recovered fingerprints + current/durable access distinction → `research/g2-baseline-provenance.md`;
+- baseline derivation + recovered fingerprints + tested private-attachment access distinction → `research/g2-baseline-provenance.md`;
+- actual private visual working images → Issue #84 attachments; fresh retrieval route tested 2026-08-30;
 - inspection events → `sources/inspection-log.tsv`;
 - Checkpoint-A source-order fixture and structural PASS → `research/g2-checkpoint-a-physical-inventory.md`;
 - active consequence/next action → this `STATUS.md`;
-- durable fresh-context access completion → #68 / generic derivation #78.
+- generic evidence-availability derivation → #78; operational source-access/preservation owner → #68.
 
-A repository-only restart still does **not** imply that source pixels are accessible until the exact binary is actually present and openable. The next preservation operation is therefore binary ingestion at the reserved path followed by SHA verification; only then may repository-local source access be marked PASS.
+For the active fol. 61v–63r slice, a fresh connected authorized work context can now recover actual image pixels from #84 rather than depending on the old chat. Exact parent-PDF repository preservation remains a separate, still-open preservation task and must not be confused with the already-passed visual-access gate.
