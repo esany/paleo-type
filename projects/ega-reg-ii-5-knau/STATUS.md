@@ -46,7 +46,13 @@ The exact four central archive-export PDFs used for this project are checksum-ve
 - `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-Neustadt-O-p41r-63v.pdf` — SHA-256 `451bb32b0bca077c4089966594e2bf234b39e87d9e087d3c1c2e2a569f31fd12`;
 - `1529-Visitationsprotkolle-ThHStAW-EGA-Reg. Ii 3-303-306.pdf` — SHA-256 `963a29eff5cc98bb35cecc28e20c6ed3fcb835261e322f991e42b60662d54c06`.
 
-These PDFs are central research assets, not replaceable by URNs. The repository is public and the current archive exports are recorded as `InC/1.0`; therefore committing the binary bytes publicly is not treated as authorized by default.
+These PDFs are central research assets, not replaceable by URNs. The repository is now **private**. On 2026-08-30 the human project owner explicitly authorized controlled storage of the Reg. Ii 5 source in this private project repository. This authorizes the intended private research-storage use; it does not assert a public redistribution right for the `InC/1.0` archive export.
+
+The canonical Reg. Ii 5 binary target is already recorded in `corpus/files.tsv`:
+
+`corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/1a03ea95927-120-143.pdf`
+
+A control README now exists in that directory, but the exact PDF binary is **not yet present at the target path**. Consequently the file remains `preservation-blocked-public-redistribution` rather than `repo-preserved` until byte presence and SHA-256 are verified.
 
 For Reg. Ii 5, distinguish current work-context availability from durable restartability:
 
@@ -55,14 +61,16 @@ exact parent identity / SHA                         PASS
 canonical folio↔image↔PDF mapping                  PASS
 reproducible baseline derivation                   PASS
 actual parent/baseline access in current context   PASS (2026-08-30 supplied copy)
-durable fresh-context access without re-supply     unresolved — #68 / #78
+private-repository storage authority               PASS (owner authorized 2026-08-30)
+repository binary presence                         PENDING
+durable fresh-context access without re-supply     PENDING until repo binary + SHA verification pass
 ```
 
-The current visual source task can proceed because the exact pixels are available now. This does **not** close the generic/durable evidence-access problem: a future context must not claim research-ready access from identifiers/render recipes alone.
+The current visual source task can proceed because the exact pixels are available now. A future context must still stop direct visual claims if it cannot open the source bytes; path/identifier/render recipe alone do not count as image access.
 
 ## Generic gate state
 
-- **G1 — Source and transmission basis secured:** substantially reached, but repository-local preservation / durable controlled access to central original exports remains a source-preservation/access gap pending rights/access resolution.
+- **G1 — Source and transmission basis secured:** substantially reached; for Reg. Ii 5 controlled private-repository storage is now owner-authorized, but the exact binary still awaits ingestion and SHA verification before repository-local preservation is PASS.
 - **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached. Checkpoint A physical/source-order + baseline phenomenon inventory has passed explicit source↔anchor structural review; Checkpoint B semantic-loss mapping is now the active next task.**
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
 - **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
@@ -137,12 +145,13 @@ A new capable researcher/agent must be able to determine from repository + prese
 
 Current durable restart path:
 
-- exact parent/file rights and provider-file state → `corpus/files.tsv`;
+- exact parent/file rights, storage authority and provider-file state → `corpus/files.tsv`;
+- intended private binary location + expected SHA → `corpus/source-files/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/original/README.md`;
 - canonical folio↔image↔PDF mapping + observed provider image locators → Source crosswalk;
 - baseline derivation + recovered fingerprints + current/durable access distinction → `research/g2-baseline-provenance.md`;
 - inspection events → `sources/inspection-log.tsv`;
 - Checkpoint-A source-order fixture and structural PASS → `research/g2-checkpoint-a-physical-inventory.md`;
 - active consequence/next action → this `STATUS.md`;
-- durable fresh-context access gap → #68 / generic derivation #78.
+- durable fresh-context access completion → #68 / generic derivation #78.
 
-A repository-only restart still does **not** imply that protected source pixels are accessible; actual authorized image access must be tested in the new work context.
+A repository-only restart still does **not** imply that source pixels are accessible until the exact binary is actually present and openable. The next preservation operation is therefore binary ingestion at the reserved path followed by SHA verification; only then may repository-local source access be marked PASS.
