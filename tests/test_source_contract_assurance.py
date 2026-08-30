@@ -239,6 +239,46 @@ class SourceContractAssuranceRegressionTests(unittest.TestCase):
         errors, _, _ = self.validate()
         self.assertTrue(any("must be lowercase kebab-case; vocabulary remains open" in error for error in errors))
 
+    def test_crosswalk_row_source_must_match_source_data_owner(self) -> None:
+        path = self.root / "corpus" / "source-data" / "SRC-A" / "crosswalk.tsv"
+        write_tsv(
+            path,
+            ["source_id", "archival_folio", "export_image", "pdf_page", "stable_image_urn", "mapping_status"],
+            [
+                {
+                    "source_id": "SRC-B",
+                    "archival_folio": "1r",
+                    "export_image": "10",
+                    "pdf_page": "1",
+                    "stable_image_urn": "",
+                    "mapping_status": "observed",
+                }
+            ],
+        )
+
+        errors, _, _ = self.validate()
+        self.assertTrue(any("row source_id 'SRC-B' must match directory SRC-A" in error for error in errors))
+
+    def test_crosswalk_requires_at_least_one_digital_locator(self) -> None:
+        path = self.root / "corpus" / "source-data" / "SRC-A" / "crosswalk.tsv"
+        write_tsv(
+            path,
+            ["source_id", "archival_folio", "export_image", "pdf_page", "stable_image_urn", "mapping_status"],
+            [
+                {
+                    "source_id": "SRC-A",
+                    "archival_folio": "1r",
+                    "export_image": "",
+                    "pdf_page": "",
+                    "stable_image_urn": "",
+                    "mapping_status": "observed",
+                }
+            ],
+        )
+
+        errors, _, _ = self.validate()
+        self.assertTrue(any("at least one digital locator is required" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()
