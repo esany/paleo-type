@@ -3,3 +3,10 @@ page_id	line_id	region	reading	status	alternatives	evidence_note
 135	02	knau-close	dem pfarrer jerlich acht pfennig zu	observed		Direct reinspection supports written-out `acht` and `pfennig`
 135	03	knau-close	pfarrrecht geben /	observed		Direct reinspection supports complete closing phrase
 135	04	new-entry	[large new heading begins]	observed		Heading text intentionally not inferred here; marks verified Knau boundary
+135	05	new-entry	Dem pfarrer zu Knawe haben auff Beuelh	working		Direct visual inspection of image 135; `Beuelh`, especially final cluster `lh`, remains the least secure part of the line
+135	06	new-entry	durch die Visitatores, aus dem closter	observed		Direct visual inspection of image 135; diplomatic spelling retained
+135	07	new-entry	Burgel Jerlich zehen gulden Jerlich	observed		Direct visual inspection of image 135; visible `u` form retained without modernizing to `ü`
+135	08	new-entry	halb auff agustini / vnnd die andern	observed		Direct visual inspection of image 135; `agustini` retained as written, without calendrical normalization
+135	09	new-entry	helfft vff pfingsten fellig / vnnd auff	working		Direct visual inspection of image 135; `fellig` remains the weakest reading in this line
+135	10	new-entry	agustini / des xlvij Jhars damit	working		Direct visual inspection of image 135; `xlvij` retained only as the written Roman-sign sequence; exact graphematic security remains open and no year normalization is inferred
+135	11	new-entry	anzufahren verordent	observed		Direct visual inspection of image 135; diplomatic spelling retained
