@@ -10,11 +10,11 @@ This is the central lightweight quality routine for substantive research work. I
 2. **Layer separation** — Are `OBSERVATION → READING → NORMALIZATION → IDENTIFICATION → INTERPRETATION` still distinct, with no silent promotion between them?
 3. **Independence** — Is additional support genuinely additional evidence, or merely repetition of an earlier AI/model reading, context-derived plausibility, or a dependent derivative?
 4. **Persistence** — Did every changed research truth reach its canonical record (transcription, decision log, source audit/register, palaeographic evidence, learnings, `STATUS.md` as applicable)?
-5. **Goal alignment** — Did this work reduce consequential uncertainty or produce a usable research result, rather than drift into generic research, tooling, methodological ceremony or fluent interpretation unsupported by evidence?
+5. **Goal alignment** — Did this work reduce consequential uncertainty or produce a usable research result **for the owner-grounded research purpose/current scope**, rather than drift into generic research, tooling, methodological ceremony, a convenient available source, or fluent interpretation unsupported by evidence? Internal consistency among project files is not evidence that a materially changed priority was owner-authorized.
 
 ### Fail rule
 
-If a consequential point fails one of the relevant questions, the work block is **not complete for that point**. Do not repair the failure by making the prose more confident. Instead choose the shortest discriminating action: reinspect the image, compare a genuine same-hand anchor, inspect the actual external passage, preserve a variant/unresolved state, correct the canonical record, or escalate when independent specialist validation is warranted.
+If a consequential point fails one of the relevant questions, the work block is **not complete for that point**. Do not repair the failure by making the prose more confident. Instead choose the shortest discriminating action: reinspect the image, compare a genuine same-hand anchor, inspect the actual external passage, preserve a variant/unresolved state, correct the canonical record, restore the last owner-grounded work target, or escalate when independent specialist validation is warranted.
 
 An unresolved result can pass the integrity check. An unsupported resolved result cannot.
 
@@ -26,7 +26,7 @@ Use only the relevant branch of the check:
 - **comparison anchor added/changed** → inspected-image basis, independence, palaeographic persistence;
 - **external source used** → access/status, exact passage inspected, claim/source fit, source-audit persistence;
 - **historical identification/interpretation added** → separation from reading, explicit evidential basis, source/inference distinction;
-- **work block ended or next action changed** → goal alignment, `STATUS.md` restartability, missing durable state;
+- **work block ended or next action changed** → owner-grounded goal alignment, `STATUS.md` restartability, work-target authority, missing durable state;
 - **new tool/model/workflow proposed** → identify the current research bottleneck it solves and prefer the simpler direct test when that is faster;
 - **AI/HTR automation begins shaping corpus-level findings** → trigger the formal evaluation requirements in `ai-governance.md`.
 
@@ -42,11 +42,13 @@ Checks:
 
 - current executable role/stage is correct;
 - canonical owner and handoff target are correct;
+- the current work target is traceable to owner-grounded purpose/priority/scope rather than inferred from project root, `principal`, internal/external status, upload order, evidence availability, metadata verification or a technical/architecture fixture;
+- a support prerequisite has not silently become the research objective merely because it was necessary or recently completed;
 - downstream work is not being executed early;
 - material-change admission is present when required;
 - owner-reserved purpose/rights/publication decisions have not been inferred by AI.
 
-Machine-checkable owner/stage/admission facts may be verified deterministically where canonical state is explicit. This review does not certify scholarly truth.
+Machine-checkable owner/stage/admission facts may be verified deterministically where canonical state is explicit. This review does not certify scholarly truth or infer research priority from structural facts.
 
 ### Evidence / provenance / availability review
 
@@ -59,7 +61,7 @@ Checks:
 - rights/storage boundaries are respected;
 - identifiers or metadata are not substituted for source inspection.
 
-Technical identity/access checks may be deterministic. Scholarly adequacy of what the evidence means remains a domain judgement.
+Technical identity/access checks may be deterministic. Scholarly adequacy of what the evidence means remains a domain judgement. Evidence availability does not establish that the available Source is the authorized current work target.
 
 ### Technical assurance review
 
@@ -75,7 +77,7 @@ Checks, as applicable:
 - preservation of declared scope and non-goals;
 - honest platform/tool boundary where repo code cannot solve the decisive problem.
 
-A technical `PASS` certifies only the technical properties actually tested.
+A technical `PASS` certifies only the technical properties actually tested. Correct bytes, checksums, routing and reproducibility do not certify a research-priority decision.
 
 ### Scholarly adequacy review
 
@@ -89,6 +91,7 @@ Checks:
 
 - consequential result and `NEXT ACTION` are understandable without the originating chat;
 - current state is persisted in canonical owners;
+- the current work target remains explainable from owner-grounded research purpose/priority/scope, not merely because several canonical files agree with each other;
 - the human owner is not forced to act as repository operator or substitute specialist;
 - a fresh capable context can resume from canonical state plus authorized evidence;
 - consequential actions remain explainable as `problem → requirement/evidence → owner → change → deterministic vs judgement → consequences/open points`.
@@ -97,7 +100,7 @@ Checks:
 
 Human Owner review is required only where existing governance reserves the decision: research purpose/priorities, unresolved rights/authority facts, genuinely new project/scope, consequential publication/use, material research-system change admission, or Governing Objective amendment.
 
-Do not convert this into routine approval for ordinary source work or bounded implementation already covered by an admitted scope.
+Do not convert this into routine approval for ordinary source work or bounded implementation already covered by an admitted scope. Conversely, do not let a technically necessary prerequisite or internally consistent repository rewrite stand in for an owner-reserved priority/scope decision.
 
 ### Review status separation
 
@@ -111,7 +114,7 @@ HUMAN/GOVERNANCE REVIEW  pass | fail | pending | not-triggered
 RESTARTABILITY           pass | fail | pending | not-triggered
 ```
 
-A `pass` in one dimension must never be represented as a `pass` in another.
+A `pass` in one dimension must never be represented as a `pass` in another. In particular, restartability/freshness may faithfully reproduce an unauthorized or incorrectly inferred priority; fresh state is not authority-valid state.
 
 ### Cross-role handoff quality
 
@@ -165,7 +168,9 @@ When useful, classify failures as:
 - `false_consensus` — repeated model outputs treated as independent evidence;
 - `normalization_leakage` — modern form substituted for manuscript form;
 - `segmentation_error` — wrong line/region boundaries distorted reading;
-- `notation_error` — numeral/currency/measure sign read as ordinary text.
+- `notation_error` — numeral/currency/measure sign read as ordinary text;
+- `priority_drift` — correct or newly available Source/File/support evidence was silently promoted into a different current research target without owner-grounded purpose/priority/scope authority;
+- `role_priority_conflation` — structural status or a research-function label such as `principal` was treated as if it selected what must be worked on next.
 
 ## Learning loop
 
