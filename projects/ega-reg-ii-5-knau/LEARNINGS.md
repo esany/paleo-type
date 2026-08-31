@@ -89,3 +89,15 @@ Observed failure: after correcting source granularity, the project itself was st
 Corrective practice: bind each project to one `project_source_id`. Current scope may be narrow; external sources may be used; neither changes project identity. Determine whether any used source is internal or external from its canonical `part_of` ancestry relative to the project root.
 
 Generalizable: yes; promoted through `methodology/project-lifecycle.md`, `AGENTS.md`, the source resolver and `DECISIONS.md` D-014.
+
+## L012 — correct Source/File identity masked research-priority drift
+
+Observed failure: the Reg. Ii 4 Bd. II comparison export was correctly distinguished from Reg. Ii 5 at the File/Source layer, and the later Reg. Ii 5 export was correctly verified as Reg. Ii 5. Nevertheless, repeated assistant-requested Reg. Ii 5 ingest/provenance/G2 work displaced the owner's original Reg. Ii 4 comparison-material strand. Once `project.yml`, `STATUS.md` and architecture Issues consistently described Reg. Ii 5 as principal/current work, fresh contexts reproduced that priority even though the byte/source checks themselves were correct.
+
+The first durable promotion occurred when the working Reg. Ii 5 material was labelled the `current principal witness` and the project `NEXT ACTION` was changed to obtain/ingest the complete Reg. Ii 5 export. Later exact-File verification made that source work valid, but did not retroactively supply authority for the research-priority shift. The existing source audit meanwhile retained the Reg. Ii 4 Knau locus at fol. 306v–309r as inspected comparison material with detailed local collation as its next scholarly step.
+
+Corrective practice: keep Source/File identity, project structural status, Project→Source research function and current work target/NEXT ACTION distinct. Neither `project_source_id`, `principal`, upload order, file availability, metadata richness nor a technical/architecture fixture may silently select the current scholarly priority. A material change of active source/question must be traceable to owner-grounded research purpose/priority/scope. Correct support work remains valid even when its promotion to current priority was not.
+
+Project correction: preserve the completed Reg. Ii 5 G2/source work as valid evidence and fixture; restore the current scholarly work target to the already inspected Reg. Ii 4 Bd. II comparison locus and its detailed local collation against Reg. Ii 5, without reclassifying Reg. Ii 4 as `principal`.
+
+Generalizable: yes; promoted to `methodology/project-lifecycle.md`, `methodology/workflow.md` and `methodology/quality-and-learning.md`.
