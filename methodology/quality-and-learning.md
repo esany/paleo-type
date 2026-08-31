@@ -30,6 +30,97 @@ Use only the relevant branch of the check:
 - **new tool/model/workflow proposed** → identify the current research bottleneck it solves and prefer the simpler direct test when that is faster;
 - **AI/HTR automation begins shaping corpus-level findings** → trigger the formal evaluation requirements in `ai-governance.md`.
 
+## Cross-role assurance reviews
+
+Quality assurance is split by competence and authority. No single model/chat/CI result may certify all dimensions of a consequential change.
+
+Use the following review lenses only when triggered by the work. Each review must state what it can certify and what remains outside its authority.
+
+### Role / authority review
+
+Checks:
+
+- current executable role/stage is correct;
+- canonical owner and handoff target are correct;
+- downstream work is not being executed early;
+- material-change admission is present when required;
+- owner-reserved purpose/rights/publication decisions have not been inferred by AI.
+
+Machine-checkable owner/stage/admission facts may be verified deterministically where canonical state is explicit. This review does not certify scholarly truth.
+
+### Evidence / provenance / availability review
+
+Checks:
+
+- exact evidence identity and provenance;
+- the evidence level actually inspected matches the claim;
+- required visual evidence is `STAGED` and `VISION-INSPECTABLE` in the target context when the task requires it;
+- transformation/rebuild provenance is sufficient;
+- rights/storage boundaries are respected;
+- identifiers or metadata are not substituted for source inspection.
+
+Technical identity/access checks may be deterministic. Scholarly adequacy of what the evidence means remains a domain judgement.
+
+### Technical assurance review
+
+Checks, as applicable:
+
+- traceability to demonstrated problem and applicable requirements;
+- smallest adequate mechanism rather than speculative infrastructure;
+- referential integrity and canonical ownership;
+- deterministic acceptance tests for deterministic properties;
+- migration/semantic-loss/rebuildability/provenance fixtures;
+- no parallel truth store;
+- security/rights leakage controls;
+- preservation of declared scope and non-goals;
+- honest platform/tool boundary where repo code cannot solve the decisive problem.
+
+A technical `PASS` certifies only the technical properties actually tested.
+
+### Scholarly adequacy review
+
+Owned by Domain Review and, where triggered, qualified specialist review. It checks whether a returned implementation or transformed representation preserves required scholarly meaning, evidence layers, uncertainty, source phenomena, provenance and research usability.
+
+`CI PASS` or Dev self-review cannot satisfy this review.
+
+### Human / restartability / challengeability review
+
+Checks:
+
+- consequential result and `NEXT ACTION` are understandable without the originating chat;
+- current state is persisted in canonical owners;
+- the human owner is not forced to act as repository operator or substitute specialist;
+- a fresh capable context can resume from canonical state plus authorized evidence;
+- consequential actions remain explainable as `problem → requirement/evidence → owner → change → deterministic vs judgement → consequences/open points`.
+
+### Governance / purpose review
+
+Human Owner review is required only where existing governance reserves the decision: research purpose/priorities, unresolved rights/authority facts, genuinely new project/scope, consequential publication/use, material research-system change admission, or Governing Objective amendment.
+
+Do not convert this into routine approval for ordinary source work or bounded implementation already covered by an admitted scope.
+
+### Review status separation
+
+Where multiple reviews apply, keep their status distinct rather than collapsing them into one generic QA flag:
+
+```text
+TECHNICAL ASSURANCE      pass | fail | pending | not-triggered
+SCHOLARLY ADEQUACY       pass | fail | pending | not-triggered
+SPECIALIST VALIDATION    pass | fail | pending | not-triggered
+HUMAN/GOVERNANCE REVIEW  pass | fail | pending | not-triggered
+RESTARTABILITY           pass | fail | pending | not-triggered
+```
+
+A `pass` in one dimension must never be represented as a `pass` in another.
+
+### Cross-role handoff quality
+
+At a Senior Domain → Senior Dev/RSE handoff, quality is sufficient when Dev can reconstruct the demonstrated problem, evidence/reproduction fixture, research consequence, established domain semantics, unresolved/non-investigated state, required system property, scope/non-goals and domain return question **without** being given an implementation design.
+
+At the Dev → Domain return, quality is sufficient when Domain Review can inspect what changed, which deterministic tests passed, which limits remain, whether any migration/loss/provenance risk remains, and the exact scholarly adequacy question **without** re-running the Dev chat.
+
+If either side must replay the other chat to understand consequential state, the handoff fails restartability.
+
 ## Adversarial evidence spot-check
 
 Formal consistency is not evidence of correctness. At useful checkpoints, perform a small adversarial sample of consequential `working` readings or claims and actively try to falsify them.
