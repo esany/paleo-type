@@ -34,7 +34,7 @@ Use only the relevant branch of the check:
 
 Quality assurance is split by competence and authority. No single model/chat/CI result may certify all dimensions of a consequential change.
 
-Use the following review lenses only when triggered by the work. Each review must state what it can certify and what remains outside its authority.
+Use the following review lenses only when triggered by the work. Each review must state what it can certify and what remains outside its authority. Review semantic completeness and actual state, not compliance with preferred wording or a template. A review that invents mandatory field syntax where the required meaning is already reconstructable is itself process overhead, not added assurance.
 
 ### Role / authority review
 
@@ -54,7 +54,7 @@ Checks:
 
 - exact evidence identity and provenance;
 - the evidence level actually inspected matches the claim;
-- required visual evidence is `STAGED` and `VISION-INSPECTABLE` in the target context when the task requires it;
+- required visual evidence is `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the same object in the same target context when the task requires it; only then is `VISUAL EVIDENCE READY = PASS`;
 - transformation/rebuild provenance is sufficient;
 - rights/storage boundaries are respected;
 - identifiers or metadata are not substituted for source inspection.
@@ -118,6 +118,8 @@ A `pass` in one dimension must never be represented as a `pass` in another.
 At a Senior Domain → Senior Dev/RSE handoff, quality is sufficient when Dev can reconstruct the demonstrated problem, evidence/reproduction fixture, research consequence, established domain semantics, unresolved/non-investigated state, required system property, scope/non-goals and domain return question **without** being given an implementation design.
 
 At the Dev → Domain return, quality is sufficient when Domain Review can inspect what changed, which deterministic tests passed, which limits remain, whether any migration/loss/provenance risk remains, and the exact scholarly adequacy question **without** re-running the Dev chat.
+
+For any role-to-role handoff, assess the **meaning**, not literal headings: if the receiver can reconstruct the current role/stage, executable action, prerequisite/evidence state, cursor, completion, non-goals, persistence obligation and return target unambiguously, absence of a preferred label is not a defect. Conversely, presence of all labels does not rescue contradictory or semantically incomplete state.
 
 If either side must replay the other chat to understand consequential state, the handoff fails restartability.
 
