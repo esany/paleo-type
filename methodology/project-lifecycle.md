@@ -74,6 +74,25 @@ Rules:
 
 The validator controls only syntax/referential integrity, not a closed function ontology or specialist research judgement.
 
+### Research function is not current work priority
+
+Keep four states distinct:
+
+```text
+SOURCE / FILE IDENTITY                 what historical/digital object this is
+PROJECT STRUCTURAL STATUS              root | internal | external, derived from source structure
+PROJECT→SOURCE RESEARCH FUNCTION       principal | comparison | control | context | other evidenced function
+CURRENT WORK TARGET / NEXT ACTION      which source/question is to be worked on now
+```
+
+Correct identity or structural status does not authorize a research function, and a research function does not select the current work target. In particular, `project_source_id`, `principal`, source availability, upload order, newly verified metadata, an exact-file match, or a technical/architecture fixture must not silently promote that Source into the current scholarly priority.
+
+The current work target must be traceable to the project's owner-grounded `research_object` / `active_scope` or to an explicit later purpose/priority/scope decision. A supporting prerequisite may be completed without becoming the research objective that it supports.
+
+An external `comparison` or `control` Source may legitimately be the current work target while an internal `principal` Source remains the principal witness. Current priority therefore must not be reconstructed from structural membership or the label `principal`.
+
+If satisfying a provenance, access, migration, architecture or other support prerequisite would materially redirect the active source/question, stop the priority change. Preserve the completed support work, compare the proposed new target against the owner-grounded research purpose/current scope, and require an explicit purpose/priority/scope basis before changing `active_scope` or `NEXT ACTION`. Internal consistency among self-authored project files is not sufficient evidence that such a priority change was authorized.
+
 ## Use-specific digital evidence — Variant B
 
 Concrete File/Image evidence is separate from Project→Source research function.
@@ -148,7 +167,7 @@ Its Ziegenrück protocol `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` is structurall
 
 The related Reg. Ii 4 Bd. II and Reg. Ii 3 sources are external research sources because their `part_of` ancestry terminates in different historical roots.
 
-The current Knau focus remains active scope/pilot/falsification fixture; it does not redefine the project root.
+The current Knau focus remains active scope/pilot/falsification fixture; it does not redefine the project root. The external Reg. Ii 4 comparison locus may be the current scholarly work target without changing either project root or the Reg. Ii 5 principal-witness function.
 
 ## Original source exports
 
@@ -190,6 +209,8 @@ A project is valid only if all applicable checks pass:
 - [ ] internal/external status is derived from `part_of` rather than copied;
 - [ ] multiple research functions for one Source remain representable;
 - [ ] research functions are not treated as canonical Source properties;
+- [ ] current work target is not inferred from `project_source_id`, structural status, research-function labels, file availability/upload order or support fixtures;
+- [ ] a consequential change of `active_scope` / `NEXT ACTION` is traceable to owner-grounded purpose/priority/scope rather than repository self-consistency alone;
 - [ ] each explicit use-evidence File resolves to `corpus/files.tsv` and belongs to the same canonical Source as the referenced use;
 - [ ] exact File identity/provenance is not duplicated in Project use records;
 - [ ] source-relative relevant locus is distinct from digital evidence locator;
@@ -217,6 +238,8 @@ Update the relevant `source-uses.tsv` row(s). A changed function/locus does not 
 
 If concrete digital evidence for a use changes, update use-evidence while keeping File identity/provenance in `corpus/files.tsv` and keeping the File bound to a use of its own canonical Source.
 
+A change in source use, evidence availability or technical support does not by itself authorize a change in current research priority. Synchronize `active_scope` / `STATUS.md` only from an owner-grounded purpose/priority/scope basis.
+
 ### Generic methodological weakness
 
 `project observation → project LEARNING/status → explicit generalisability check → methodology/DECISIONS update → bounded consistency pass`
@@ -239,4 +262,5 @@ At any time the repository should answer without chat:
 - what source-relative loci matter;
 - which exact digital files actually support which uses;
 - which Source→Source claims are evidenced;
-- which gate is active and what the next action is.
+- which gate is active and what the next action is;
+- which owner-grounded purpose/priority/scope basis authorizes the current work target when it changed materially.
