@@ -10,11 +10,13 @@ This is the central lightweight quality routine for substantive research work. I
 2. **Layer separation** — Are `OBSERVATION → READING → NORMALIZATION → IDENTIFICATION → INTERPRETATION` still distinct, with no silent promotion between them?
 3. **Independence** — Is additional support genuinely additional evidence, or merely repetition of an earlier AI/model reading, context-derived plausibility, or a dependent derivative?
 4. **Persistence** — Did every changed research truth reach its canonical record (transcription, decision log, source audit/register, palaeographic evidence, learnings, `STATUS.md` as applicable)?
-5. **Goal alignment** — Did this work reduce consequential uncertainty or produce a usable research result **for the owner-grounded research purpose/current scope**, rather than drift into generic research, tooling, methodological ceremony, a convenient available source, or fluent interpretation unsupported by evidence? Internal consistency among project files is not evidence that a materially changed priority was owner-authorized.
+5. **Goal alignment** — Did this work reduce consequential uncertainty or produce a usable research result **for the owner-grounded Project/purpose/current scope**, rather than drift into generic research, tooling, methodological ceremony, a convenient available Source, or fluent interpretation unsupported by evidence? Internal consistency among project files is not evidence that the Project definition or a materially changed priority was owner-authorized.
 
 ### Fail rule
 
-If a consequential point fails one of the relevant questions, the work block is **not complete for that point**. Do not repair the failure by making the prose more confident. Instead choose the shortest discriminating action: reinspect the image, compare a genuine same-hand anchor, inspect the actual external passage, preserve a variant/unresolved state, correct the canonical record, restore the last owner-grounded work target, or escalate when independent specialist validation is warranted.
+If a consequential point fails one of the relevant questions, the work block is **not complete for that point**. Do not repair the failure by making the prose more confident. Instead choose the shortest discriminating action: reinspect the image, compare a genuine same-hand anchor, inspect the actual external passage, preserve a variant/unresolved state, correct the canonical record, or escalate when independent specialist validation is warranted.
+
+If the failure is missing owner authority for Project creation/boundary or current priority, preserve the valid evidence/work already completed, record the missing authority state, and **do not invent a replacement Project or NEXT ACTION**. Restore a prior target only when that target itself has an owner-grounded authority basis.
 
 An unresolved result can pass the integrity check. An unsupported resolved result cannot.
 
@@ -26,6 +28,7 @@ Use only the relevant branch of the check:
 - **comparison anchor added/changed** → inspected-image basis, independence, palaeographic persistence;
 - **external source used** → access/status, exact passage inspected, claim/source fit, source-audit persistence;
 - **historical identification/interpretation added** → separation from reading, explicit evidential basis, source/inference distinction;
+- **Project created/redefined** → explicit human-owner Project decision, source-root anchoring only after that decision, prior-state/restartability preservation;
 - **work block ended or next action changed** → owner-grounded goal alignment, `STATUS.md` restartability, work-target authority, missing durable state;
 - **new tool/model/workflow proposed** → identify the current research bottleneck it solves and prefer the simpler direct test when that is faster;
 - **AI/HTR automation begins shaping corpus-level findings** → trigger the formal evaluation requirements in `ai-governance.md`.
@@ -40,15 +43,16 @@ Use the following review lenses only when triggered by the work. Each review mus
 
 Checks:
 
+- the Project itself, when materialized or re-bounded, is traceable to a human-owner decision rather than inferred from Source structure, an archival act, a PDF, a place focus or an AI-created working bundle;
 - current executable role/stage is correct;
 - canonical owner and handoff target are correct;
-- the current work target is traceable to owner-grounded purpose/priority/scope rather than inferred from project root, `principal`, internal/external status, upload order, evidence availability, metadata verification or a technical/architecture fixture;
+- the current work target is traceable to owner-grounded purpose/priority/scope rather than inferred from Project root, `principal`, internal/external status, upload order, evidence availability, metadata verification or a technical/architecture fixture;
 - a support prerequisite has not silently become the research objective merely because it was necessary or recently completed;
 - downstream work is not being executed early;
 - material-change admission is present when required;
-- owner-reserved purpose/rights/publication decisions have not been inferred by AI.
+- owner-reserved purpose/Project/scope/rights/publication decisions have not been inferred by AI.
 
-Machine-checkable owner/stage/admission facts may be verified deterministically where canonical state is explicit. This review does not certify scholarly truth or infer research priority from structural facts.
+Machine-checkable owner/stage/admission facts may be verified deterministically where canonical state is explicit. This review does not certify scholarly truth, create Projects, or infer research priority from structural facts.
 
 ### Evidence / provenance / availability review
 
@@ -61,7 +65,7 @@ Checks:
 - rights/storage boundaries are respected;
 - identifiers or metadata are not substituted for source inspection.
 
-Technical identity/access checks may be deterministic. Scholarly adequacy of what the evidence means remains a domain judgement. Evidence availability does not establish that the available Source is the authorized current work target.
+Technical identity/access checks may be deterministic. Scholarly adequacy of what the evidence means remains a domain judgement. Evidence availability does not establish that the available Source is a Project or the authorized current work target.
 
 ### Technical assurance review
 
@@ -77,7 +81,7 @@ Checks, as applicable:
 - preservation of declared scope and non-goals;
 - honest platform/tool boundary where repo code cannot solve the decisive problem.
 
-A technical `PASS` certifies only the technical properties actually tested. Correct bytes, checksums, routing and reproducibility do not certify a research-priority decision.
+A technical `PASS` certifies only the technical properties actually tested. Correct bytes, checksums, routing and reproducibility do not certify Project creation, Project boundary or a research-priority decision.
 
 ### Scholarly adequacy review
 
@@ -91,16 +95,18 @@ Checks:
 
 - consequential result and `NEXT ACTION` are understandable without the originating chat;
 - current state is persisted in canonical owners;
+- owner-defined Project identity/boundary is distinguishable from Source structure and AI-created historical scopes;
 - the current work target remains explainable from owner-grounded research purpose/priority/scope, not merely because several canonical files agree with each other;
+- consequential prior work/checkpoint state remains recoverable after Project-model or path migrations;
 - the human owner is not forced to act as repository operator or substitute specialist;
 - a fresh capable context can resume from canonical state plus authorized evidence;
 - consequential actions remain explainable as `problem → requirement/evidence → owner → change → deterministic vs judgement → consequences/open points`.
 
 ### Governance / purpose review
 
-Human Owner review is required only where existing governance reserves the decision: research purpose/priorities, unresolved rights/authority facts, genuinely new project/scope, consequential publication/use, material research-system change admission, or Governing Objective amendment.
+Human Owner review is required only where existing governance reserves the decision: research purpose/priorities, **whether/what Project exists and its boundary**, unresolved rights/authority facts, genuinely new scope, consequential publication/use, material research-system change admission, or Governing Objective amendment.
 
-Do not convert this into routine approval for ordinary source work or bounded implementation already covered by an admitted scope. Conversely, do not let a technically necessary prerequisite or internally consistent repository rewrite stand in for an owner-reserved priority/scope decision.
+Do not convert this into routine approval for ordinary source work or bounded implementation already covered by an admitted scope. Conversely, do not let Source independence, a technically necessary prerequisite or an internally consistent repository rewrite stand in for an owner-reserved Project/priority/scope decision.
 
 ### Review status separation
 
@@ -114,7 +120,7 @@ HUMAN/GOVERNANCE REVIEW  pass | fail | pending | not-triggered
 RESTARTABILITY           pass | fail | pending | not-triggered
 ```
 
-A `pass` in one dimension must never be represented as a `pass` in another. In particular, restartability/freshness may faithfully reproduce an unauthorized or incorrectly inferred priority; fresh state is not authority-valid state.
+A `pass` in one dimension must never be represented as a `pass` in another. In particular, restartability/freshness may faithfully reproduce an unauthorized or incorrectly inferred Project/scope/priority; fresh state is not authority-valid state.
 
 ### Cross-role handoff quality
 
@@ -169,8 +175,10 @@ When useful, classify failures as:
 - `normalization_leakage` — modern form substituted for manuscript form;
 - `segmentation_error` — wrong line/region boundaries distorted reading;
 - `notation_error` — numeral/currency/measure sign read as ordinary text;
+- `project_scope_inference` — a Source, archival structure or AI-created working bundle was materialized/reused as Project identity without human-owner authority;
 - `priority_drift` — correct or newly available Source/File/support evidence was silently promoted into a different current research target without owner-grounded purpose/priority/scope authority;
-- `role_priority_conflation` — structural status or a research-function label such as `principal` was treated as if it selected what must be worked on next.
+- `role_priority_conflation` — structural status or a research-function label such as `principal` was treated as if it selected what must be worked on next;
+- `work_state_loss` — a structural migration preserved data objects but removed consequential checkpoint/evidence-limit/restart state from ordinary auditability.
 
 ## Learning loop
 
