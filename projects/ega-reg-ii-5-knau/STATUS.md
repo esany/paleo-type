@@ -37,15 +37,16 @@ The exact parent binary is not yet verified present there; repository preservati
 
 ## Evidence availability state
 
-The project now distinguishes three different states:
+The project distinguishes atomic evidence states from the derived execution gate:
 
 ```text
-RETRIEVABLE       an authorized tool/path can recover bytes
-STAGED            the required evidence object is present in the target work context
-VISION-INSPECTABLE the target Source Research context can actually inspect the pixels
+RETRIEVABLE          an authorized tool/path can recover bytes
+STAGED                the required evidence object is present in the target work context
+VISION-INSPECTABLE    the target Source Research context can actually inspect the pixels
+VISUAL EVIDENCE READY = STAGED + VISION-INSPECTABLE for the same object in the same target context
 ```
 
-Historical #84 testing established exact evidence identity and a private attachment retrieval route, but later fresh-context execution showed that this does **not** imply that a new Source Research context already has a staged, vision-inspectable image.
+Historical #84 testing established exact evidence identity and a private attachment retrieval route, but that did not imply that a later Source Research context already had a staged, vision-inspectable image. The subsequent bounded #72 execution received image 135 directly in its target context and actually inspected the manuscript pixels.
 
 Current state:
 
@@ -56,17 +57,18 @@ reproducible baseline derivation                            PASS
 controlled private storage authority                        PASS
 private #84 baseline attachments present                    PASS
 historical private-attachment retrievability                PASS / evidenced
-image 135 staged in the next target #72 context             PENDING — owned by #85/#68
-image 135 vision-inspectable in that target #72 context     PENDING — required before #72 resumes
+image 135 STAGED in the completed #72 target context        PASS — context-bound
+image 135 VISION-INSPECTABLE in that #72 target context     PASS — actual pixel inspection
+VISUAL EVIDENCE READY for the completed #72 execution       PASS — context-bound
 exact parent binary committed + SHA reverified in repo       PENDING — preservation only
 ```
 
-Do not translate historical retrieval success into `EVIDENCE STAGED` for another chat/context. For visual Source Research the executable gate is the actual evidence object already present and inspectable in that target context.
+These target-context PASS states certify the completed #72 execution only. They must not be inherited automatically by a future chat/context without a new target-context check.
 
 ## Generic gate state
 
 - **G1 — Source and transmission basis secured:** substantially reached for identity, provenance and controlled use; parent-binary preservation remains separately pending.
-- **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached.** Checkpoint A, Checkpoint B and the bounded Checkpoint-B Domain Review are complete. Project-local completion of `63r-L05–L11` remains open, and GOV-M4 synthesis has not yet admitted a final implementation.
+- **G2 — Principal witness completely and diplomatically represented:** **ACTIVE — not reached.** Checkpoint A, Checkpoint B, the bounded Checkpoint-B Domain Review and the project-local `63r-L05–L11` completion are complete. GOV-M4 synthesis has not yet admitted a final implementation, and this status does not independently assert that all remaining G2 exit conditions are satisfied.
 - **G3 — Internal palaeographic and notational analysis completed:** not reached.
 - **G4 — Comparison witnesses/controls independently assessed and collated:** not reached.
 - **G5 — Critically consolidated and proportionally validated text state:** not reached.
@@ -82,8 +84,8 @@ Do not translate historical retrieval success into `EVIDENCE STAGED` for another
    - canonical physical Source-unit/locus addressing independent of legacy row IDs;
    - lossless preservation of materially relevant source-order/spatial association;
    - explicit representation of confirmed source phenomena/interventions distinct from read/editorial text.
-6. **Project-local remaining Source Research:** `63r-L05–L11` is validated physical text without current `135.tsv` coverage. This is research completion, not independent evidence of a system gap.
-7. **Specialist review:** not globally triggered; difficult consequential scholarly cases remain consequence-driven.
+6. **Project-local `63r-L05–L11` Source Research — COMPLETE.** Direct visual inspection of image 135 supplied diplomatic coverage for all seven physical lines in `transcription/135.tsv`, commit `74ff4be9266e791bdb2ef4a925f6b51a03455a7a`. `63r-L05`, `L09` and `L10` remain `working`; the open points are `Beuelh` (especially final `lh`), `fellig`, and exact graphematic security of `xlvij`. No chronological normalization or identification was performed.
+7. **Senior/specialist review:** not globally triggered. If `63r-L10 xlvij` later becomes consequential as a chronological claim, route that exact graphematic reading for bounded Senior Scholarly Review before interpreting it as a year; no such interpretation is currently canonical.
 
 Positive non-results remain first-class: D001–D011 decision/history semantics are materially useful; unresolved W1–W6, deleted wording, fine localization and hand identity remain scholarly uncertainty/research rather than automatic system defects; no demonstrated target-text consequence follows from 63r show-through.
 
@@ -93,40 +95,27 @@ Positive non-results remain first-class: D001–D011 decision/history semantics 
 
 Use only the three bounded capability candidates above as the G2-specific synthesis input. Determine the smallest adequate representation/enforcement/acceptance fixtures without reopening abstract architecture.
 
-**No Dev implementation is authorized merely by the completed Domain Review.** Existing D-016 / `methodology/maintenance.md` admission remains authoritative for material change.
+**No Dev implementation is authorized merely by the completed Domain Review or by the completed `63r-L05–L11` transcription.** Existing D-016 / `methodology/maintenance.md` admission remains authoritative for material change.
 
-### B. Project-local 63r completion — #68 → #85 → #72
+### B. Project-local 63r completion — COMPLETE / return to #64
 
-The next visual Source Research action is blocked only on target-context evidence staging:
+The prior staging path `#68 → #85 → #72` has now produced its intended execution result for this fixture: image 135 was present and visually inspectable in the target Source Research context, `63r-L05–L11` was directly inspected, and the seven-line diplomatic first pass is persisted in `transcription/135.tsv`.
 
-```text
-#68 evidence-availability owner
-→ #85 concrete staging/feasibility task
-→ actual image 135 present in target context
-→ VISION-INSPECTABLE
-→ EVIDENCE STAGED = PASS
-→ #72 Source Research resumes directly at 63r-L05
-→ complete through 63r-L11
-→ persist result
-→ return to #64
-```
-
-Until #85 demonstrates target-context staging PASS, or image 135 is directly provided to that Source Research conversation, do **not** start another #72 context with instructions to discover/retrieve the image from #84. Evidence discovery/retrieval mechanics are upstream technical work, not Source Research.
+Do not restart #72 merely to repeat this completed task. The three `working` readings remain valid research states. Escalate only if a later consequential use requires stronger adjudication.
 
 ### C. Deterministic assurance — #86
 
-#86 owns the planning/falsification of generic work-context assurance: sticky prerequisites, invalidation events, execution cursor, progress/delta checks, circuit breaking, Issue/Handoff contracts, cross-role hard reviews and canonical-state freshness. It is **not** an implemented workflow framework and is not the scholarly NEXT ACTION.
+#86 owns the planning/falsification of generic work-context assurance: sticky prerequisites, invalidation events, execution cursor, progress/delta checks, circuit breaking, Issue/Handoff contracts, cross-role hard reviews and canonical-state freshness. The completed #85→#72 target-context fixture may now be consumed as evidence. #86 is not the scholarly NEXT ACTION and does not authorize a workflow engine.
 
 ## NEXT ACTION — canonical restart point
 
-There is no remaining #73 execution step for the completed Checkpoint-B fixture.
+There is no remaining #73 execution step for the completed Checkpoint-B fixture and no remaining `63r-L05–L11` execution step for #72.
 
-Run the two admitted parallel paths without conflating them:
+Current paths:
 
-1. **#25/#64:** continue bounded GOV-M4 synthesis from the three confirmed capability candidates; do not infer schema or Dev admission.
-2. **#85 under #68/#74:** execute capability/feasibility testing for one-shot staging of fol. 63r / image 135 into a fresh Source Research target context. Prefer existing connector mechanics; use a tiny helper only if it materially crosses the real boundary; otherwise record the platform/orchestrator boundary instead of building dead repo infrastructure.
-3. **After target-context `EVIDENCE STAGED = PASS`: #72** resumes only the scholarly task `63r-L05–L11`, persists it, and returns to #64.
-4. **#86:** consume #85 and the prior loop/STATUS-drift fixtures to determine the smallest generic deterministic assurance actually justified. Do not prebuild a workflow engine.
+1. **#64 / #25:** consume the completed project-local 63r return and continue bounded GOV-M4 synthesis from the three confirmed capability candidates; do not infer schema or Dev admission.
+2. **Consequence-driven scholarly review only if triggered:** if `63r-L10 xlvij` is later used as chronological evidence, first obtain bounded Senior Scholarly Review of the graphematic reading; do not infer `1547` or another normalized year from the current working transcription alone.
+3. **#86:** consume the completed target-context staging/execution fixture together with the prior loop/STATUS-drift fixtures to test the smallest generic deterministic assurance actually justified. Do not prebuild a workflow engine.
 
 Exact parent-PDF repository preservation may proceed independently under #68 and must not displace these active paths.
 
@@ -141,11 +130,12 @@ AI-assisted Source Research and Domain Review remain distinct from independent q
 A fresh capable context must be able to reconstruct without old chat:
 
 - project/source identity and current G2 scope;
-- exact evidence identity/provenance and the distinction `retrievable ≠ staged ≠ vision-inspectable`;
+- exact evidence identity/provenance and the distinction `retrievable ≠ staged ≠ vision-inspectable`, plus the derived `VISUAL EVIDENCE READY` gate;
 - Checkpoint A PASS, Checkpoint B COMPLETE and Domain Review COMPLETE;
 - the three bounded GOV-M4 synthesis candidates and the absence of a new REQ-* gap;
-- the remaining project-local `63r-L05–L11` task and its #85 staging prerequisite;
-- the two parallel active paths and their authority boundaries;
+- project-local `63r-L05–L11` Source Research COMPLETE with its three retained `working` readings;
+- the fact that the successful image-135 staging/vision PASS was context-bound to the completed #72 execution and must not be generalized to future contexts;
+- the current #64/#25 synthesis path and consequence-driven scholarly-review trigger;
 - the exact current NEXT ACTION.
 
 Durable restart pointers:
@@ -155,7 +145,8 @@ Durable restart pointers:
 - Checkpoint A → `research/g2-checkpoint-a-physical-inventory.md`;
 - Checkpoint B → `research/g2-checkpoint-b-semantic-loss.md`;
 - Domain Review → `research/g2-domain-review-checkpoint-b.md`;
-- concrete target-context staging → #85 under #68;
+- completed image-135 diplomatic coverage → `transcription/135.tsv`;
+- concrete target-context staging fixture → #85 under #68;
 - generic availability workflow → #78;
 - work-context/handoff semantics → #77;
 - deterministic assurance planning → #86;
