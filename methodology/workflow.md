@@ -69,6 +69,8 @@ RETURN / REVIEW CONDITION
 
 Do not freeze these labels into a mandatory serialization when the same semantics can be derived more simply. The invariant is reconstructability and role clarity, not form-filling.
 
+Assurance review is **semantic, not lexical/template-based**. Do not reject or rewrite a handoff merely because it lacks a literal field heading such as `COMPLETION CONDITION:` when the required role, stage, prerequisite, cursor, completion, scope and return meaning are already unambiguous. Add structure only when it prevents a demonstrated ambiguity or loss.
+
 ### Sticky prerequisites
 
 A prerequisite whose state is deterministically established as `PASS` remains `PASS` for the current work context until an explicit invalidation event occurs. Valid invalidation events include actual retrieval failure, checksum/identity contradiction, rights/authority change, or a canonical state change that makes the earlier test stale.
@@ -77,26 +79,45 @@ Re-entering an already-passed prerequisite without an invalidation event is a wo
 
 ### Evidence staging for visual work
 
-For source-critical visual work keep these states distinct:
+For source-critical visual work keep these raw states distinct:
 
 ```text
 RETRIEVABLE        an authorized tool/path can recover bytes
 STAGED              the required evidence object is present in the target work context
-VISION-INSPECTABLE  the target scholarly context can actually inspect the pixels
+VISION-INSPECTABLE  the target scholarly context can actually inspect the required pixels
 ```
 
-A visual Source Research context is executable only when the required evidence is already staged and vision-inspectable in that target context. Historical retrieval success in another session is not `EVIDENCE STAGED` for a new session.
-
-The scholarly role receives one of two executable states:
+Do not overload `STAGED` as a synonym for complete visual research readiness. The derived execution gate is:
 
 ```text
-EVIDENCE STAGED
-→ execute scholarship
-
-EVIDENCE NOT STAGED
-→ return to evidence-availability/staging owner
-→ do not ask the scholarly role to discover or repair the access path
+VISUAL EVIDENCE READY = PASS
+iff STAGED = PASS
+and VISION-INSPECTABLE = PASS
+for the same evidence object in the same target context
 ```
+
+Historical retrieval success in another session is neither `STAGED = PASS` nor `VISUAL EVIDENCE READY = PASS` for a new target context.
+
+An upstream staging owner may assert `STAGED = PASS` when the required object has actually been delivered into the intended target context. If vision-inspectability has not already been demonstrated in that same target context, the scholarly context may perform exactly one local inspectability preflight as its first action:
+
+```text
+STAGED = PASS
+→ local pixel-inspectability check
+→ VISION-INSPECTABLE = PASS
+→ VISUAL EVIDENCE READY = PASS
+→ execute scholarship
+```
+
+If that local check fails:
+
+```text
+VISION-INSPECTABLE = FAIL
+→ VISUAL EVIDENCE READY = FAIL / EVIDENCE NOT READY
+→ return to evidence-availability/staging owner
+→ no evidence search, retrieval diagnosis or access repair inside the scholarly role
+```
+
+Avoid using the shorthand `EVIDENCE STAGED = PASS` as a composite readiness token, because it collapses raw object presence and inspectability into one ambiguous state.
 
 Evidence-access/staging mechanics belong upstream. If the decisive staging capability lies outside repository/tool control, record the platform/orchestrator boundary instead of building repo code that cannot cross it.
 
