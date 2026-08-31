@@ -45,6 +45,177 @@ An unresolved but well-tested result may pass; an unsupported resolved result ma
 ### S9 — Edition/publication
 Define an explicit edition concept, then derive the user-facing edition from the consolidated research state. Do not introduce new manuscript readings at the presentation stage. Match publication/interchange technology to a concrete scholarly need.
 
+## Cross-role work-context contract
+
+Role/chat contexts are execution environments, not durable owners of project knowledge or generic workflow mechanics. A fresh capable context must reconstruct its task from canonical repository state, controlled evidence and the bounded Issue/handoff that activates the role.
+
+For consequential work, the executable context must be able to determine, preferably by derivation rather than copied prose:
+
+```text
+ROLE / RESPONSIBILITY
+TASK / ISSUE OWNER
+CURRENT EXECUTABLE STAGE
+FIRST / NEXT BOUNDED ACTION
+PREREQUISITES: unknown | pass | fail
+INVALIDATION EVENT for any sticky PASS
+EVIDENCE REQUIRED
+EVIDENCE STATE / ACCESS STATE
+EXECUTION CURSOR
+COMPLETION CONDITION
+OUT OF SCOPE / NOT AUTHORIZED
+HANDOFF TARGET
+RETURN / REVIEW CONDITION
+```
+
+Do not freeze these labels into a mandatory serialization when the same semantics can be derived more simply. The invariant is reconstructability and role clarity, not form-filling.
+
+### Sticky prerequisites
+
+A prerequisite whose state is deterministically established as `PASS` remains `PASS` for the current work context until an explicit invalidation event occurs. Valid invalidation events include actual retrieval failure, checksum/identity contradiction, rights/authority change, or a canonical state change that makes the earlier test stale.
+
+Re-entering an already-passed prerequisite without an invalidation event is a work-context execution fault, not research progress.
+
+### Evidence staging for visual work
+
+For source-critical visual work keep these states distinct:
+
+```text
+RETRIEVABLE        an authorized tool/path can recover bytes
+STAGED              the required evidence object is present in the target work context
+VISION-INSPECTABLE  the target scholarly context can actually inspect the pixels
+```
+
+A visual Source Research context is executable only when the required evidence is already staged and vision-inspectable in that target context. Historical retrieval success in another session is not `EVIDENCE STAGED` for a new session.
+
+The scholarly role receives one of two executable states:
+
+```text
+EVIDENCE STAGED
+→ execute scholarship
+
+EVIDENCE NOT STAGED
+→ return to evidence-availability/staging owner
+→ do not ask the scholarly role to discover or repair the access path
+```
+
+Evidence-access/staging mechanics belong upstream. If the decisive staging capability lies outside repository/tool control, record the platform/orchestrator boundary instead of building repo code that cannot cross it.
+
+### Progress / delta and loop control
+
+A repeated action, delegation or return is justified only when at least one material state changes, for example:
+
+- new evidence was inspected;
+- uncertainty/decision state changed;
+- the bounded question became narrower;
+- canonical state advanced;
+- a prerequisite was invalidated;
+- escalation level changed for a stated reason.
+
+A repeated delegation with no evidence/state/question delta is a `no-progress / delegation-loop candidate`. Do not bounce it indefinitely between role contexts. Preserve the research state, route the execution/process defect to the technical/process owner, and resume the scholarly role only from a valid executable state.
+
+This rule applies to settled process mechanics, not to legitimate scholarly iteration where new inspection, comparison or judgement changes the evidential state.
+
+## Senior Domain → Senior Dev interface
+
+The primary competence boundary for a demonstrated research-system/process problem is the **Senior Domain / scholarly review → Senior Development/RSE** interface. Junior/bounded Source Research contexts may expose a failure, but they are not owners of generic workflow, connector, state-control or QA repair.
+
+The scholarly/domain side supplies enough information to make the technical problem reconstructable without prescribing the implementation:
+
+```text
+DEMONSTRATED PROBLEM
+EVIDENCE / REPRODUCTION POINTER
+RESEARCH CONSEQUENCE
+ESTABLISHED DOMAIN SEMANTICS / REQUIRED MEANING
+UNRESOLVED / NOT INVESTIGATED
+REQUIRED SYSTEM PROPERTY
+SCOPE / NON-GOALS
+DOMAIN ACCEPTANCE / RETURN QUESTION
+```
+
+The domain side stops before connector architecture, retry logic, state-machine design, storage/platform selection or other technical mechanism choices unless those mechanics are themselves already governed by an admitted requirement.
+
+The Dev/RSE side then owns:
+
+```text
+REHYDRATE canonical state
+→ VERIFY scope / authority / requirements
+→ CAPABILITY / FEASIBILITY TEST
+→ BOUND repo vs platform responsibility
+→ DESIGN smallest adequate mechanism
+→ EXECUTE admitted deterministic mechanics
+→ VERIFY technical invariants / regression / provenance / restartability
+→ PERSIST consequential result
+→ RETURN to the correct scholarly/domain owner
+```
+
+Dev must not use the technical task to re-adjudicate manuscript readings, scholarly classification, research purpose or other owner-reserved semantics. A technical `PASS` is never scholarly acceptance.
+
+## Consequential technical Issue contract
+
+A consequential technical/process Issue is the reviewable interface between problem classification and implementation. It is ready for Dev only when the following are reconstructable, deriving stable facts from canonical state where safe rather than duplicating them:
+
+```text
+DEMONSTRATED PROBLEM / FAILURE
+EVIDENCE / REPRODUCTION FIXTURE
+CANONICAL OWNER / AUTHORITY
+DEPENDENCIES / PREREQUISITES
+BOUNDED SCOPE
+EXPLICIT NON-GOALS
+DETERMINISTIC ACCEPTANCE CRITERIA
+SCHOLARLY / DOMAIN / HUMAN ACCEPTANCE CRITERIA where applicable
+PERSISTENCE / RESTARTABILITY OBLIGATION
+REQUIRED REVIEW LENSES
+RETURN / CLOSE CONDITION
+```
+
+For material research-system changes, this Issue contract does not replace the admission workflow in `maintenance.md`. It supplies a bounded technical interface only after the relevant authority/admission state is satisfied.
+
+A domain/process observation must not be translated automatically into a Dev requirement. The scholarly/domain review first determines whether the problem is incomplete research, project-local, already covered by existing requirements, genuinely reusable/systemic, specialist-dependent, or no action.
+
+## State transition and canonical freshness
+
+A completed stage or handoff is not restartable if the canonical restart surface still points to the prior stage.
+
+Whenever a consequential stage or `NEXT ACTION` changes, perform the smallest bounded freshness pass:
+
+```text
+result persisted in its canonical owner
+→ project STATUS/NEXT ACTION synchronized where applicable
+→ handoff points to current canonical state
+→ stale prior prose is not treated as current authority
+```
+
+This is a structural consistency check. It does not decide whether a scholarly gate is scientifically satisfied.
+
+## Review points in the flow
+
+Use consequence-scaled review at real transitions rather than continuous ceremony:
+
+```text
+ROLE / TASK START
+→ role/authority + prerequisite/evidence-state check
+
+WORK / ITERATION
+→ progress/delta + circuit break only when triggered
+
+RESULT HANDOFF
+→ persistence + unresolved/non-result + request completeness
+
+PRE-DEV
+→ requirement/scope/authority/admission review
+
+DEV / PRE-MERGE
+→ technical assurance + provenance/loss/rebuild checks as applicable
+
+DEV RETURN
+→ scholarly/domain adequacy review where the change carries scholarly meaning
+
+STATE TRANSITION
+→ canonical freshness + restartability
+```
+
+The relevant review may be performed by a fresh/independent context when consequence or self-review risk warrants it. Do not create permanent new roles merely to name review lenses.
+
 ## Research-state persistence
 
 When research truth changes, update its canonical owner during the same work block when practical:
