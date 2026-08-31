@@ -1,0 +1,10 @@
+id: "ega-reg-ii-4-bd-ii"
+title: "ThHStAW, EGA, Reg. Ii 4 Bd. II"
+repository_role: "Owner-defined project for scholarly work on the Reg. Ii 4 Bd. II archival act; initial work concerns Knau-related material and may expand"
+project_source_id: "ACT-THHSTAW-EGA-REG-II-4-BD-II"
+research_object: "Source-based research within Reg. Ii 4 Bd. II, initially using the already identified Knau-related material; additional sections may be activated as research requires"
+active_scope: "Initial Knau-related scope includes the currently identified Ziegenrück Source and its mapped Knau locus; structural membership or earlier comparison use does not assign the next priority"
+source_register: "source-uses.tsv"
+canonical_status_file: "STATUS.md"
+transcription_mode: "conservative graphematic working transcription when activated"
+external_context_allowed_in_blind_reading: false
