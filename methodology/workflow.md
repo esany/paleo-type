@@ -71,6 +71,25 @@ Do not freeze these labels into a mandatory serialization when the same semantic
 
 Assurance review is **semantic, not lexical/template-based**. Do not reject or rewrite a handoff merely because it lacks a literal field heading such as `COMPLETION CONDITION:` when the required role, stage, prerequisite, cursor, completion, scope and return meaning are already unambiguous. Add structure only when it prevents a demonstrated ambiguity or loss.
 
+### Current-work-target authority
+
+At task start and whenever `NEXT ACTION` changes, distinguish four different questions:
+
+```text
+SOURCE / FILE IDENTITY             what evidence object this is
+STRUCTURAL / RESEARCH ROLE         where it sits and what function it serves
+EVIDENCE / PREREQUISITE STATE      whether required support is available
+CURRENT WORK TARGET                which source/question is authorized to execute now
+```
+
+A correct answer to the first three does not determine the fourth. Do not infer the current scholarly target from `project_source_id`, `principal`, internal/external status, upload order, exact-file availability, newly verified metadata, a staged image, a migration fixture, an architecture Issue, or whichever prerequisite required the most recent effort.
+
+The current work target must be traceable to owner-grounded research purpose / `active_scope`, or to an explicit later purpose/priority/scope decision. A supporting technical, provenance, access or architecture task may be necessary and valid without becoming the research objective that it supports.
+
+If repository state is internally consistent around a current target but the authority basis for the priority change is missing, classify a **priority-authority gap**. Preserve valid completed evidence/support work, do not rewrite Source identity or research functions merely to repair the priority, and restore/derive the next scholarly action from the last owner-grounded purpose/scope plus the current evidential state. Ask the Human Owner only when the surviving canonical state does not resolve a genuinely new purpose/priority/scope choice.
+
+An external comparison/control source may be the current executable scholarly target while an internal principal witness remains principal. `principal` is not a priority token.
+
 ### Sticky prerequisites
 
 A prerequisite whose state is deterministically established as `PASS` remains `PASS` for the current work context until an explicit invalidation event occurs. Valid invalidation events include actual retrieval failure, checksum/identity contradiction, rights/authority change, or a canonical state change that makes the earlier test stale.
@@ -202,11 +221,14 @@ Whenever a consequential stage or `NEXT ACTION` changes, perform the smallest bo
 ```text
 result persisted in its canonical owner
 → project STATUS/NEXT ACTION synchronized where applicable
+→ current work target still traceable to owner-grounded purpose/priority/scope
 → handoff points to current canonical state
 → stale prior prose is not treated as current authority
 ```
 
-This is a structural consistency check. It does not decide whether a scholarly gate is scientifically satisfied.
+Freshness is not authority. A perfectly synchronized set of project files can still carry an incorrectly inferred priority; the work-target authority check must therefore accompany consequential cursor changes.
+
+This is a structural/authority consistency check. It does not decide whether a scholarly gate is scientifically satisfied.
 
 ## Review points in the flow
 
@@ -214,7 +236,7 @@ Use consequence-scaled review at real transitions rather than continuous ceremon
 
 ```text
 ROLE / TASK START
-→ role/authority + prerequisite/evidence-state check
+→ role/authority + current-work-target authority + prerequisite/evidence-state check
 
 WORK / ITERATION
 → progress/delta + circuit break only when triggered
@@ -232,7 +254,7 @@ DEV RETURN
 → scholarly/domain adequacy review where the change carries scholarly meaning
 
 STATE TRANSITION
-→ canonical freshness + restartability
+→ canonical freshness + work-target authority + restartability
 ```
 
 The relevant review may be performed by a fresh/independent context when consequence or self-review risk warrants it. Do not create permanent new roles merely to name review lenses.
@@ -264,7 +286,7 @@ Do not make a future researcher recover durable state from chat.
 
 Project `STATUS.md` identifies the active gate and records only project-specific evidence, unmet requirements/blockers, validation state and the smallest next source/evidence action.
 
-If a proposed activity cannot be tied to an unmet generic gate requirement, an invalid prerequisite or necessary evidence, do not perform it as current research work.
+If a proposed activity cannot be tied to an unmet generic gate requirement, an invalid prerequisite or necessary evidence, do not perform it as current research work. Even when it can, a support/gate task does not override an owner-grounded current research priority merely because it is technically ready.
 
 ## Method / corpus / project discipline
 
