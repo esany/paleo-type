@@ -121,39 +121,39 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 ## D-012 — A project is an investigation over a source group; exact exports are first-class assets
 
-**Status:** superseded by D-014  
-**Decision:** Define a project as a bounded historical investigation / source-unlocking undertaking over one or more distinct canonical source records. Do not create projects automatically for archival records or files. Project-source membership, project-relative function (`principal`, `control`, `context`, `comparison`, etc.) and project-relevant locus live in `projects/<id>/sources/sources.tsv`; these functions are relations of the form `(project, source) → function`, not properties of the canonical source. The same source may therefore have different functions in different projects without changing `corpus/sources.tsv`. Canonical source identity remains in `corpus/sources.tsv`; reusable source-wide crosswalks live in `corpus/source-data/<source_id>/`. Source-to-source claims such as `extract_of` or demonstrated textual correspondence remain separate in `corpus/relationships.tsv`. Exact original exports used as evidence are first-class research assets tracked byte-exactly in `corpus/files.tsv` and should be repository-preserved when rights/authority permit.
+**Status:** superseded by D-014 and clarified by D-017  
+**Decision:** Define a project as a bounded historical investigation / source-unlocking undertaking over one or more distinct canonical source records. Do not create projects automatically for archival records or files. Project-source membership, project-relative function (`principal`, `control`, `context`, `comparison`, etc.) and project-relevant locus live in project research-use records; these functions are relations of the form `(project, source) → function`, not properties of the canonical source. Canonical source identity remains in `corpus/sources.tsv`; reusable source-wide crosswalks live in `corpus/source-data/<source_id>/`. Exact original exports used as evidence are first-class research assets tracked byte-exactly in `corpus/files.tsv`.
 
-**Reason:** Historians investigate coherent source groups, not technical source wrappers. A source has stable identity but no absolute research role: its function arises only within a concrete investigation. Conflating project-relative function with source identity or with source-to-source relationships would create false cross-project semantics. The source-unit model created apparent duplicate projects and artificial project-to-project relations. At the same time, relying on URNs/portal links without preserving the exact inspected PDF is inadequate for reproducibility and personal source safeguarding.
+**Reason:** Historians investigate coherent source groups, not technical source wrappers. A source has stable identity but no absolute research role: its function arises only within a concrete investigation.
 
-**Consequence:** Retained only as historical rationale. D-014 keeps project-relative roles and exact-export provenance but replaces the investigation-defined project boundary with a historically independent source-root boundary.
+**Consequence:** Retained as historical rationale. D-014 established source-root anchoring; D-017 makes explicit that the human owner, not the Source graph, decides whether and what Project exists.
 
 ## D-013 — Governing scholarly objective has precedence over derived method and architecture
 
 **Status:** accepted by explicit human owner decision during GOV-M1 / Issue #41.  
 **Decision:** Establish `GOVERNING_OBJECTIVE.md` as the single highest-order, implementation-independent statement of repository purpose, governing invariants, precedence and human material-change authority. Methodology, information models, AI/HITL workflows, software, automation, GitHub workflow and presentation are derived means and may not silently weaken that objective.
 
-**Reason:** The mission is already expressed across several repository files, but without one canonical precedence point a locally reasonable AI/engineering optimization could gradually substitute a proxy goal or reinterpret lower-level rules as authority to change the research purpose.
+**Reason:** Without one canonical precedence point a locally reasonable AI/engineering optimization could gradually substitute a proxy goal or reinterpret lower-level rules as authority to change the research purpose.
 
-**Consequence:** Lower-level files should reference rather than restate the governing objective. Material amendments to it require an explicit human owner decision and visible rationale; routine research remains lean. The objective does not freeze current formats, standards, models, gates, GitHub or the Knau pilot.
+**Consequence:** Lower-level files should reference rather than restate the governing objective. Material amendments require an explicit human owner decision and visible rationale.
 
-## D-014 — A project is anchored to one historically independent source structure
+## D-014 — An established Project is anchored to one historically independent source structure
 
-**Status:** accepted by explicit human owner decision  
-**Decision:** Every project has exactly one canonical `project_source_id` identifying its historically independent source root. In the current archival domain this root is an act. Sources structurally contained in that root are internal; sources outside it may still be used for comparison, control or context but remain external. Internal/external status is derived from the canonical `part_of` relations rather than copied into project metadata. Project-relative research functions remain relations of the form `(project, source) → function` and do not alter source identity. Exact source exports remain first-class byte-identified research assets as established in D-012.
+**Status:** accepted; authority/materialization semantics clarified by D-017  
+**Decision:** Once the human owner has established a Project, it has exactly one canonical `project_source_id` identifying the historical Source root that anchors it. Sources structurally contained in that root are internal; Sources outside it may still be used for comparison, control or context but remain external. Internal/external status is derived from canonical `part_of` relations rather than copied. Project-relative research functions do not alter Source identity.
 
-**Reason:** A project should preserve the historically autonomous documentary structure rather than create a synthetic container from whatever source bundle a current question happens to use. This keeps historical structure stable while still allowing a narrow active research locus and external comparative evidence.
+**Reason:** A Project needs a stable documentary anchor without being redefined by whatever source bundle a current question happens to use.
 
-**Consequence:** `project.yml` requires `project_source_id`; the resolver derives project-root/internal/external status from `part_of`. Project scope may be narrower than the whole root, but it does not redefine project identity. The current Reg. Ii 5 `principal_source_id` remains temporarily supported only as legacy migration compatibility; target Principal semantics are governed by D-015. D-012 is superseded only on project-boundary semantics; its source-identity and exact-export provenance rationale remains retained here.
+**Consequence:** `project_source_id` supports deterministic structural resolution **after Project selection**. It is not a rule that every historically independent Source structure must become a Project and is not authority for Project creation, current scope or priority.
 
 ## D-015 — Project→Source research use and concrete File evidence are separate
 
 **Status:** accepted by explicit human owner decision in the partial GOV-M4 synthesis / Phase-1 admission.  
 **Decision:** Represent Project→Source use as one row per concrete `research_function`, allowing several functions for the same Source. Keep `research_function` project-relative, open-vocabulary and non-inferred. Represent concrete digital evidence for a use separately as `use_id → file_id` with an optional instance-relative locator; `corpus/files.tsv` remains the sole canonical owner of File identity/provenance. `principal` is a research function, not a Source property or second Project boundary anchor.
 
-**Reason:** One coarse role per Project/Source collapses transdisciplinary use semantics, while storing one `primary_file_id` on that coarse relation conflates scholarly use with the exact digital instantiation used as evidence. Separating them preserves Source identity, allows multiple real research functions and keeps exact File provenance single-owned.
+**Reason:** One coarse role per Project/Source collapses transdisciplinary use semantics, while storing one `primary_file_id` on that coarse relation conflates scholarly use with the exact digital instantiation used as evidence.
 
-**Consequence:** Target project records use `source-uses.tsv` and optional `research/use-evidence.tsv`. `source-uses.relevant_locus` is source-relative scholarly scope; `use-evidence.evidence_locator` is a locator within the concrete used digital instance. A use may have zero or many evidence records and one File may support many uses. No evidence or Project→Project relation is inferred automatically. During the Reg. Ii 5 transition, the legacy source register, `primary_file_id` and `principal_source_id` remain readable until a separately admitted loss-checked migration proves `old project-source row → new use_id → use-evidence → same file_id` for every current link.
+**Consequence:** Target project records use `source-uses.tsv` and optional `research/use-evidence.tsv`. No evidence, role, priority or Project→Project relation is inferred automatically. During the Reg. Ii 5 transition, legacy role/file fields remain readable until a separately admitted loss-checked migration proves preservation of existing links and work state.
 
 ## D-016 — Material research-system changes require explicit admission before development
 
@@ -162,4 +162,15 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Reason:** A technically plausible implementation can still be epistemically wrong if it is built before the owner has reviewed the material concept and scope. Conversely, requiring approval for every routine source action would obstruct scholarship without improving accountability.
 
-**Consequence:** Owner admission controls purpose, priorities and permission for material system change; it never substitutes for archival, palaeographic, historical or other qualified specialist validation. AI/method-compliance and independent specialist validation remain separate statuses. No workflow engine is required. `methodology/maintenance.md` is the canonical operational owner of the general admission rule; `methodology/ai-governance.md` owns only its AI/HITL-specific application and consequences and references the canonical workflow.
+**Consequence:** Owner admission controls purpose, priorities and permission for material system change; it never substitutes for specialist validation. `methodology/maintenance.md` remains the canonical operational owner of the admission rule.
+
+## D-017 — Project materialization and boundary are human-owner decisions
+
+**Status:** accepted by explicit human owner clarification on 2026-08-31  
+**Decision:** Canonical Source structure, `part_of`, archival independence, File availability, an AI-created working scope or an existing research-function label may **not** create or define a Project by inference. The human owner decides whether a Project exists and its scholarly boundary. After that decision, `project_source_id` anchors the Project to canonical historical Source structure and deterministic derivation may resolve internal/external membership. Project-relative research functions remain dynamic relations within that Project and do not determine Project identity or current priority.
+
+For the current church-visitation material the owner defines three Projects at act level: **Reg. Ii 3, Reg. Ii 4 Bd. II and Reg. Ii 5**. Reg. Ii 3 already contains at least two separately identified internal Source/section nodes (fol. 41r–63v and fol. 303r–306r). `Knau` is an initial/historical research focus, not an owner-defined Project identity; further sections may be added.
+
+**Reason:** The earlier repository first let AI create a `Knau` benchmark Project and later let successive structural models reinterpret that AI-created scope as if it were owner-grounded. Separately, deleting temporary source-unit Project wrappers preserved much Source/File/crosswalk data but removed their visible STATUS/restart checkpoints from `main`. An internally consistent repository therefore ceased to provide an adequate check against its own earlier AI-generated Project narrative.
+
+**Consequence:** Project creation/routing must expose the owner decision explicitly. Structural migrations must preserve or visibly link consequential prior work/checkpoint state as an audit surface, even when obsolete wrappers are removed. The current Projects are materialized at Li 3/Li 4 Bd. II/Li 5 act level; internal sections remain Corpus Source nodes; roles/functions are assigned only when actually used. The legacy directory/id `ega-reg-ii-5-knau` is retained temporarily for lossless compatibility and must not be read as current Project identity. No manuscript NEXT ACTION is inferred by this correction.
