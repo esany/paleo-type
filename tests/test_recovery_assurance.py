@@ -66,6 +66,38 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("legacy verification/recovery evidence", projects_readme)
         self.assertIn("witness-specific scientific use requires fresh Source/File/locus verification", projects_readme)
 
+    def test_method_and_migration_do_not_repromote_legacy_g2_as_li5_witness_truth(self) -> None:
+        lifecycle = (REPO / "methodology" / "project-lifecycle.md").read_text(encoding="utf-8")
+        self.assertIn("verification/recovery evidence and a systems/methodology falsification fixture", lifecycle)
+        self.assertIn("must each be re-established from their own canonical Source/File/locus", lifecycle)
+        self.assertNotIn("The preserved Reg. Ii 5/Knau work remains valid project work", lifecycle)
+
+        migration = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "project-source-migration.tsv")
+        by_id = {row["fixture_id"]: row for row in migration}
+        ambiguous_ids = {
+            "TRANS-132", "TRANS-133", "TRANS-134", "TRANS-135",
+            "APPARATUS-001", "LEXICON-001", "NUM-IJ", "NUM-1", "NUM-80",
+            "NUM-VIERTEL", "NUM-GROSCH", "NUM-PFENNIG",
+            "NUM-W1", "NUM-W2", "NUM-W3", "NUM-W4", "NUM-W5", "NUM-W6",
+        }
+        for fixture_id in ambiguous_ids:
+            row = by_id[fixture_id]
+            self.assertIn("legacy-witness-provenance.tsv", row["target_location"])
+            self.assertEqual("reclassified-2026-09-02", row["status"])
+            self.assertNotIn("Reg. Ii 5 internal source-specific scholarly work", row["target_location"])
+
+        c2 = by_id["NUM-C2"]
+        self.assertIn("USE-REGII3-00000235-NOTATION-CONTROL", c2["target_location"])
+        self.assertEqual("preserved-linked-2026-09-02", c2["status"])
+
+        inspection = by_id["INSPECTION-STATUS-001"]
+        self.assertEqual("corrected-2026-09-02", inspection["status"])
+        self.assertIn("partially-transcribed to images-inspected", inspection["loss_test"])
+
+        sources = read_tsv(REPO / "corpus" / "sources.tsv")
+        li5_source = next(row for row in sources if row["source_id"] == "THHSTAW-EGA-REG-II-5-STAT-VIS-00000129")
+        self.assertEqual("images-inspected", li5_source["inspection_status"])
+
     def test_removed_source_unit_work_state_remains_visible_without_restoring_wrappers(self) -> None:
         li3 = (REPO / "projects" / "ega-reg-ii-3" / "STATUS.md").read_text(encoding="utf-8")
         li4 = (REPO / "projects" / "ega-reg-ii-4-bd-ii" / "STATUS.md").read_text(encoding="utf-8")
