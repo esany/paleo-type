@@ -4,8 +4,7 @@ repository_role: "Current owner-defined project for scholarly work on the Reg. I
 project_source_id: "ACT-THHSTAW-EGA-REG-II-5"
 research_object: "Source-based scholarly research within Reg. Ii 5; preserved Knau/G2 work remains valid evidence and work history without defining the current research priority"
 active_scope: "No new owner-selected active manuscript/source-research scope is currently recorded; completed and working Knau locus research remains preserved in STATUS and project research records"
-source_register: "sources/sources.tsv"
-principal_source_id: "THHSTAW-EGA-REG-II-5-STAT-VIS-00000129"
+source_register: "source-uses.tsv"
 canonical_status_file: "STATUS.md"
 transcription_mode: "conservative graphematic working transcription"
 external_context_allowed_in_blind_reading: false
