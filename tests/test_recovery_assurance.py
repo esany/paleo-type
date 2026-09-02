@@ -36,8 +36,35 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("previously inspected Knau-related sections", li3)
         self.assertIn("No owner-selected active scholarly scope is currently recorded", li4)
         self.assertIn("previously inspected Ziegenrück/Knau material", li4)
-        self.assertIn("No new owner-selected active manuscript/source-research scope is currently recorded", li5)
-        self.assertIn("completed and working Knau locus research remains preserved", li5)
+        self.assertIn("No owner-selected active manuscript/source-research scope is currently recorded", li5)
+        self.assertIn("legacy transcription/apparatus/palaeography material may be consulted for checking", li5)
+        self.assertNotIn("completed and working Knau locus research remains preserved", li5)
+
+    def test_reg_ii_3_4_5_source_hierarchy_stays_explicit(self) -> None:
+        relationships = read_tsv(REPO / "corpus" / "relationships.tsv")
+        part_of = {(row["subject_id"], row["object_id"]) for row in relationships if row["predicate"] == "part_of"}
+        self.assertIn(("THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V", "ACT-THHSTAW-EGA-REG-II-3"), part_of)
+        self.assertIn(("THHSTAW-EGA-REG-II-3-STAT-VIS-00000235", "ACT-THHSTAW-EGA-REG-II-3"), part_of)
+        self.assertIn(("THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089", "ACT-THHSTAW-EGA-REG-II-4-BD-II"), part_of)
+        self.assertIn(("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", "ACT-THHSTAW-EGA-REG-II-5"), part_of)
+
+        readme = (REPO / "projects" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("separate material Sources/witnesses", readme)
+        self.assertIn("fol. 306v–309r / export images 667–672", readme)
+        self.assertIn("fol. 55v–66v", readme)
+
+    def test_legacy_diplomatic_material_is_quarantined_from_current_li5_truth(self) -> None:
+        li5 = (REPO / "projects" / "ega-reg-ii-5-knau" / "STATUS.md").read_text(encoding="utf-8")
+        project = (REPO / "projects" / "ega-reg-ii-5-knau" / "project.yml").read_text(encoding="utf-8")
+        projects_readme = (REPO / "projects" / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("Legacy diplomatic material — verification/recovery only", li5)
+        self.assertIn("no longer treated as canonical current Li 5 transcription state", li5)
+        self.assertIn("witness attribution unresolved or potentially mixed", li5)
+        self.assertIn("No current diplomatic transcription of Reg. Ii 5 is declared", li5)
+        self.assertIn("not canonical current transcription state", project)
+        self.assertIn("legacy verification/recovery evidence", projects_readme)
+        self.assertIn("witness-specific scientific use requires fresh Source/File/locus verification", projects_readme)
 
     def test_removed_source_unit_work_state_remains_visible_without_restoring_wrappers(self) -> None:
         li3 = (REPO / "projects" / "ega-reg-ii-3" / "STATUS.md").read_text(encoding="utf-8")
@@ -57,8 +84,8 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
 
         self.assertIn("251ce9ed39e04bb852e0232dbcce21c68bd4c3a7", li5)
         self.assertIn("08c08bd6f90635210fbeff3f2d19cd0a485cc0b9", li5)
-        self.assertIn("not activated for source-wide transcription", li5)
-        self.assertIn("No new owner-selected manuscript/source-research task is currently recorded", li5)
+        self.assertIn("699fa6eada61db483dfca950193412715d9603a5", li5)
+        self.assertIn("No owner-selected manuscript/source-research task is currently recorded", li5)
 
         self.assertIn("source-unit", projects_readme.lower())
         self.assertIn("STATUS", projects_readme)
