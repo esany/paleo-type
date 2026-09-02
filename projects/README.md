@@ -12,17 +12,37 @@ This present decision does not retroactively certify every earlier repository st
 
 Each Project's current purpose and scope are owned by its `project.yml`; gate/restart state and any authorized `NEXT ACTION` are owned by its `STATUS.md`. Project-relative Source functions are owned by `source-uses.tsv`, with exact Project-use→File evidence in `research/use-evidence.tsv` when needed. Do not reconstruct current priority from this orientation file, Source identity, `part_of`, a historic `principal` use or old chat.
 
-## Known internal sections/source nodes
+## Canonical Source hierarchy for the current visitation material
 
-These are current Corpus facts, not Project-role or Project-priority assignments:
+These are Source/CORPUS facts, not research-role or Project-priority assignments:
 
-- **Reg. Ii 3** contains at least two separately identified internal Source nodes:
-  - `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V` — *Visitation in Neustadt an der Orla*, fol. 41r–63v;
-  - `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
-- **Reg. Ii 4 Bd. II** currently has the identified internal Ziegenrück Source node `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`, fol. 294r–313r.
-- **Reg. Ii 5** currently has the identified internal Ziegenrück Source node `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, fol. 55v–66v.
+1. **ThHStAW, EGA, Reg. Ii 3** — overlying archival act `ACT-THHSTAW-EGA-REG-II-3`
+   - `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V` — *Visitation in Neustadt an der Orla*, fol. 41r–63v;
+   - `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r.
+2. **ThHStAW, EGA, Reg. Ii 4 Bd. II** — overlying archival act `ACT-THHSTAW-EGA-REG-II-4-BD-II`
+   - `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — *Visitation im Amt Ziegenrück*, fol. 294r–313r; Knau passage fol. 306v–309r / export images 667–672.
+3. **ThHStAW, EGA, Reg. Ii 5** — overlying archival act `ACT-THHSTAW-EGA-REG-II-5`
+   - `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*, fol. 55v–66v; a separate transmission described by archival metadata as an extract related to the Reg. Ii 4 Bd. II Ziegenrück record.
+
+The two Ziegenrück records in Reg. Ii 4 Bd. II and Reg. Ii 5 are separate material Sources/witnesses. Textual correspondence or an extract relation does not merge their identity, foliation, image numbering, File provenance or diplomatic readings. The two Reg. Ii 3 records are likewise separate Sources inside the same Reg. Ii 3 act.
 
 Additional sections may be registered as evidence establishes them. Structural membership does not itself assign a research function, create a Project or set a priority.
+
+## Legacy Knau/G2 diplomatic material
+
+The older Knau/G2 material currently preserved under `projects/ega-reg-ii-5-knau/` was created as an AI-organized research/benchmark strand before the present Source/Project separation was stabilized. On 2026-09-02 the owner clarified that this old material is needed primarily for **checking, recovery and methodology validation**, not as the basis for current Source structure.
+
+Direct comparison of the separately supplied Reg. Ii 4 Bd. II and Reg. Ii 5 Ziegenrück PDFs showed that the old diplomatic corpus cannot safely be assigned wholesale to Li 5 from legacy path/page labels alone. The parallel transmissions are close enough that earlier work may contain imported/comparison readings or mixed witness assumptions.
+
+Therefore:
+
+- `projects/ega-reg-ii-5-knau/transcription/132.tsv`–`135.tsv`, related apparatus/palaeography and G2 research records are **legacy verification/recovery evidence**;
+- they are not canonical current Li 5 transcription truth;
+- witness-specific scientific use requires fresh Source/File/locus verification;
+- legacy readings remain preserved and must not be silently reassigned to Li 4 or Li 5 merely because they resemble one witness;
+- new diplomatic work starts from the explicitly targeted canonical Source and exact File.
+
+This quarantine is semantic, not destructive: old research history remains inspectable, but it no longer determines current Source identity, Project scope or transcription authority.
 
 ## Historical-state recovery / audit
 
@@ -51,20 +71,14 @@ Git history is an audit source, not current Project authority.
 
 The former Reg. Ii 5 `sources/sources.tsv` compatibility register has been loss-checked and migrated. It is no longer an accepted Project source-use owner.
 
-The four preserved historical research functions now live in:
-
-- `projects/ega-reg-ii-5-knau/source-uses.tsv`;
-
-and their exact historical File bindings in:
-
-- `projects/ega-reg-ii-5-knau/research/use-evidence.tsv`.
+The four preserved historical research functions now live in `projects/ega-reg-ii-5-knau/source-uses.tsv`, with their exact historical File bindings in `projects/ega-reg-ii-5-knau/research/use-evidence.tsv`. Those rows preserve how the historical Knau strand used Sources; they do **not** establish the witness provenance of every line in the legacy diplomatic corpus.
 
 Their historical `active/identified` state is retained as migration evidence without promoting those uses to current Project scope or `NEXT ACTION`. `principal_source_id` is no longer part of the target Project contract.
 
 ## Crosswalk/URN recovery facts
 
 - Reg. Ii 4 Bd. II fol. 306v–309r / export images 667–672 has six page-specific `urn:nbn:...` values in the canonical crosswalk. Those URNs were already present when the Reg. Ii 4 Knau crosswalk was first created and remain preserved.
-- The canonical Reg. Ii 5 crosswalk currently has no values in `stable_image_urn`; it preserves folio/export/PDF mapping plus provider derivative/TIFF labels observed in the PDF footer. The earliest repository crosswalk for this export likewise did not contain per-page URNs. If a separate provider/export crosswalk supplied page URNs for Reg. Ii 5, that evidence is not currently preserved in the repository and must be recovered from that source rather than inferred.
-- The current Reg. Ii 3 / `00000235` crosswalk has no page URNs; the earlier Project crosswalk also lacked them. The `41r–63v` Reg. Ii 3 Source currently has no canonical page crosswalk at all; its historical STATUS explicitly said that a detailed page/folio crosswalk had not yet been curated.
+- The canonical Reg. Ii 5 crosswalk currently has no values in `stable_image_urn`; it preserves folio/export/PDF mapping plus provider derivative/TIFF labels observed in the PDF footer. If a separate provider/export crosswalk supplied page URNs for Reg. Ii 5, that evidence is not currently preserved in the repository and must be recovered rather than inferred.
+- The current Reg. Ii 3 / `00000235` crosswalk has no page URNs; the `41r–63v` Reg. Ii 3 Source currently has no canonical page crosswalk at all.
 
-Do not generalize one Source's identifier availability to another.
+Do not generalize one Source's identifier availability, page numbering, readings or work-state to another.
