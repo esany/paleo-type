@@ -57,6 +57,31 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertIn("after Project selection", status_template)
         self.assertIn("only when an authorized next action exists", status_template)
 
+    def test_method_uses_target_project_use_owners_not_removed_reg_ii_5_compatibility(self) -> None:
+        lifecycle = (REPO / "methodology" / "project-lifecycle.md").read_text(encoding="utf-8")
+        provenance = (REPO / "methodology" / "source-and-provenance.md").read_text(encoding="utf-8")
+        li5_project = (REPO / "projects" / "ega-reg-ii-5-knau" / "project.yml").read_text(encoding="utf-8")
+
+        self.assertIn("Project→Source research function and source-relative relevant locus → `projects/<id>/source-uses.tsv`", lifecycle)
+        self.assertIn("concrete Project-use→File evidence binding → `projects/<id>/research/use-evidence.tsv`", lifecycle)
+        self.assertIn("Reg. Ii 5 completed structured-use migration", lifecycle)
+        self.assertIn("old Project→Source register `sources/sources.tsv`", lifecycle)
+        self.assertIn("are no longer canonical compatibility owners", lifecycle)
+        self.assertIn("Project→Source research function/locus → project `source-uses.tsv`", provenance)
+        self.assertIn("concrete Project-use→File binding → project `research/use-evidence.tsv`", provenance)
+        self.assertNotIn("project source use/role/locus → project `sources/sources.tsv`", provenance)
+        self.assertIn('source_register: "source-uses.tsv"', li5_project)
+        self.assertNotIn("principal_source_id:", li5_project)
+
+    def test_method_distinguishes_identity_from_research_ready_availability(self) -> None:
+        provenance = (REPO / "methodology" / "source-and-provenance.md").read_text(encoding="utf-8")
+        workflow = (REPO / "methodology" / "historical-source-workflow.md").read_text(encoding="utf-8")
+
+        self.assertIn("Identifiability, reproducibility and research-ready availability are separate properties", provenance)
+        self.assertIn("verify an actual authorized access path", provenance)
+        self.assertIn("identifiability**, **reproducibility** and **research-ready availability", workflow)
+        self.assertIn("does not prove that a fresh authorized work context can actually open the evidence", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()
