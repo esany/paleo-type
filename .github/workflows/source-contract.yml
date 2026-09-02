@@ -3,6 +3,11 @@ name: source-contract
 on:
   pull_request:
     paths:
+      - 'DECISIONS.md'
+      - 'methodology/historical-source-workflow.md'
+      - 'methodology/project-lifecycle.md'
+      - 'methodology/source-and-provenance.md'
+      - 'requirements/source-project-owner-admission-2026-09-02.md'
       - 'corpus/**'
       - 'projects/*/project.yml'
       - 'projects/*/source-uses.tsv'
@@ -19,6 +24,11 @@ on:
   push:
     branches: [main]
     paths:
+      - 'DECISIONS.md'
+      - 'methodology/historical-source-workflow.md'
+      - 'methodology/project-lifecycle.md'
+      - 'methodology/source-and-provenance.md'
+      - 'requirements/source-project-owner-admission-2026-09-02.md'
       - 'corpus/**'
       - 'projects/*/project.yml'
       - 'projects/*/source-uses.tsv'
