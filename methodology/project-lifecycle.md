@@ -176,7 +176,7 @@ Within Reg. Ii 3, the currently known internal Source nodes include both the Neu
 
 Reg. Ii 4 Bd. II and Reg. Ii 5 likewise have their currently identified internal Ziegenrück Source nodes. Cross-act comparison/correspondence does not merge the Projects and does not fix permanent `principal/comparison/control/context` roles.
 
-The preserved Reg. Ii 5/Knau work remains valid project work and a G2 falsification fixture. Its historical role/use records are retained as historical state, not as current scope. `Knau` does not define any of the three Project identities.
+The preserved Knau/G2 corpus under the legacy Reg. Ii 5 project path remains valuable **verification/recovery evidence and a systems/methodology falsification fixture**. Its witness-specific diplomatic claims are not current scientific authority: Reg. Ii 4 Bd. II and Reg. Ii 5 must each be re-established from their own canonical Source/File/locus before any legacy reading is promoted. Historical role/use records remain historical state, not current scope or line-level witness provenance. `Knau` does not define any of the three Project identities.
 
 ## Original source exports
 
