@@ -121,12 +121,12 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 ## D-012 — A project is an investigation over a source group; exact exports are first-class assets
 
-**Status:** superseded by D-014 and clarified by D-017  
+**Status:** superseded by D-014 and clarified by D-017/D-018  
 **Decision:** Define a project as a bounded historical investigation / source-unlocking undertaking over one or more distinct canonical source records. Do not create projects automatically for archival records or files. Project-source membership, project-relative function (`principal`, `control`, `context`, `comparison`, etc.) and project-relevant locus live in project research-use records; these functions are relations of the form `(project, source) → function`, not properties of the canonical source. Canonical source identity remains in `corpus/sources.tsv`; reusable source-wide crosswalks live in `corpus/source-data/<source_id>/`. Exact original exports used as evidence are first-class research assets tracked byte-exactly in `corpus/files.tsv`.
 
 **Reason:** Historians investigate coherent source groups, not technical source wrappers. A source has stable identity but no absolute research role: its function arises only within a concrete investigation.
 
-**Consequence:** Retained as historical rationale. D-014 established source-root anchoring; D-017 makes explicit that the human owner, not the Source graph, decides whether and what Project exists.
+**Consequence:** Retained as historical rationale. D-014 established source-root anchoring; D-018 now governs current Project-purpose/materialization semantics.
 
 ## D-013 — Governing scholarly objective has precedence over derived method and architecture
 
@@ -139,8 +139,8 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 ## D-014 — An established Project is anchored to one historically independent source structure
 
-**Status:** accepted; authority/materialization semantics clarified by D-017  
-**Decision:** Once the human owner has established a Project, it has exactly one canonical `project_source_id` identifying the historical Source root that anchors it. Sources structurally contained in that root are internal; Sources outside it may still be used for comparison, control or context but remain external. Internal/external status is derived from canonical `part_of` relations rather than copied. Project-relative research functions do not alter Source identity.
+**Status:** accepted; materialization semantics clarified by D-018  
+**Decision:** Once a Project has been established for a scholarly purpose, it has one canonical `project_source_id` identifying the historical Source root used as its documentary anchor. Sources structurally contained in that root are internal; Sources outside it may still be used for comparison, control or context but remain external. Internal/external status is derived from canonical `part_of` relations rather than copied. Project-relative research functions do not alter Source identity.
 
 **Reason:** A Project needs a stable documentary anchor without being redefined by whatever source bundle a current question happens to use.
 
@@ -166,11 +166,20 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 ## D-017 — Project materialization and boundary are human-owner decisions
 
-**Status:** accepted by explicit human owner clarification on 2026-08-31  
-**Decision:** Canonical Source structure, `part_of`, archival independence, File availability, an AI-created working scope or an existing research-function label may **not** create or define a Project by inference. The human owner decides whether a Project exists and its scholarly boundary. After that decision, `project_source_id` anchors the Project to canonical historical Source structure and deterministic derivation may resolve internal/external membership. Project-relative research functions remain dynamic relations within that Project and do not determine Project identity or current priority.
+**Status:** historical decision record under authority audit; current semantics are clarified/superseded by D-018  
+**Decision recorded on 2026-08-31:** Canonical Source structure, `part_of`, archival independence, File availability, an AI-created working scope or an existing research-function label may not create or define a Project by inference. The record also stated that the human owner had defined Reg. Ii 3, Reg. Ii 4 Bd. II and Reg. Ii 5 as three act-level Projects.
 
-For the current church-visitation material the owner defines three Projects at act level: **Reg. Ii 3, Reg. Ii 4 Bd. II and Reg. Ii 5**. Reg. Ii 3 already contains at least two separately identified internal Source/section nodes (fol. 41r–63v and fol. 303r–306r). `Knau` is an initial/historical research focus, not an owner-defined Project identity; further sections may be added.
+**Authority note:** Git proves that this wording was committed and later treated as canonical. It does **not** independently prove that the complete specification was explicitly human-authorized in exactly this form on 2026-08-31. Do not use this historical status line as retrospective evidence of human semantic admission.
 
-**Reason:** The earlier repository first let AI create a `Knau` benchmark Project and later let successive structural models reinterpret that AI-created scope as if it were owner-grounded. Separately, deleting temporary source-unit Project wrappers preserved much Source/File/crosswalk data but removed their visible STATUS/restart checkpoints from `main`. An internally consistent repository therefore ceased to provide an adequate check against its own earlier AI-generated Project narrative.
+**Consequence:** Retain D-017 as audit history. Its valid failure observation — Source/File/structure must not silently become Project authority — is preserved by D-018. The current Li 3 / Li 4 / Li 5 organization is now supported by the separate explicit owner decision of 2026-09-02, not by retroactive certification of D-017.
 
-**Consequence:** Project creation/routing must expose the owner decision explicitly. Structural migrations must preserve or visibly link consequential prior work/checkpoint state as an audit surface, even when obsolete wrappers are removed. The current Projects are materialized at Li 3/Li 4 Bd. II/Li 5 act level; internal sections remain Corpus Source nodes; roles/functions are assigned only when actually used. The legacy directory/id `ega-reg-ii-5-knau` is retained temporarily for lossless compatibility and must not be read as current Project identity. No manuscript NEXT ACTION is inferred by this correction.
+## D-018 — Projects are purpose-established; `project_source_id` is a post-selection documentary anchor
+
+**Status:** accepted by explicit human owner decision on 2026-09-02; bounded implementation explicitly admitted the same day  
+**Decision:** A Project is a durable scholarly investigation/work container established because there is a research purpose. A Source, File, archival structure, `part_of`, upload order, evidence availability, inherited AI scope or research-function label does not by itself create a Project. After Project selection, `project_source_id` records the stable canonical Source anchor used for deterministic structural resolution; it does not establish research purpose, Project existence or the current scholarly NEXT ACTION. Source/File intake may complete without any Project: `CORPUS_ONLY / NO_PROJECT_YET` is a valid routing outcome.
+
+For the current visitation material, the owner presently chooses to continue Reg. Ii 3, Reg. Ii 4 Bd. II and Reg. Ii 5 as act-oriented Projects as an application of this generic rule. This is a current decision, not retrospective proof of the full D-017 authority claim.
+
+**Reason:** Historical recovery showed that Source/File/crosswalk information can survive while work-state visibility and authority provenance drift. It also showed that internally consistent repository state and owner-account commits can still encode AI-derived Project/priority interpretations. Project purpose therefore remains a human scholarly decision, while deterministic code owns only stable structural mechanics after that decision.
+
+**Consequence:** Corpus intake must not require Project creation. Project bootstrap/routing must expose the non-derivable research decision rather than infer it. Structural migrations must preserve information, consequential work state and authority auditability separately. Current Li 3 / Li 4 / Li 5 reconciliation proceeds loss-checked under the 2026-09-02 bounded implementation admission recorded in `requirements/source-project-owner-admission-2026-09-02.md`.
