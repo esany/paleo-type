@@ -3,9 +3,10 @@
 
 This adapter derives only deterministic facts from an exact supplied file:
 SHA-256 identity, an exact canonical File match, its canonical Source, existing
-crosswalk presence and Projects whose documentary roots structurally contain
-that Source. It never creates or selects a Project, Source relation,
-research_function, rights interpretation or scholarly priority.
+crosswalk presence, structural Project containment and the part of evidence
+readiness that canonical File state can actually establish. It never creates
+or selects a Project, Source relation, research_function, rights interpretation,
+external-access claim or scholarly priority.
 """
 from __future__ import annotations
 
@@ -16,6 +17,30 @@ import sys
 from pathlib import Path
 
 import source_contract
+
+
+def evidence_readiness(root: Path, file_row: dict[str, str]) -> dict:
+    storage = file_row.get("storage_status", "")
+    repository_path = file_row.get("repository_path", "")
+    if storage == "repo-preserved" and repository_path:
+        # source_contract.validate has already checked path existence and SHA equality.
+        return {
+            "identifiable": True,
+            "repository_available": True,
+            "research_ready_now": "ESTABLISHED_LOCAL",
+            "basis": "repo-preserved canonical File with repository path and SHA verified by source-contract",
+            "access_path": str((root / repository_path).resolve()),
+        }
+    return {
+        "identifiable": True,
+        "repository_available": False,
+        "research_ready_now": "NOT_ESTABLISHED",
+        "basis": (
+            "canonical File identity/storage state does not establish that a fresh authorized context can open the evidence now; "
+            "external/institutional retrieval or controlled persistence must be verified separately"
+        ),
+        "access_path": None,
+    }
 
 
 def inspect_file(root: Path, file_path: Path) -> tuple[int, dict]:
@@ -37,6 +62,13 @@ def inspect_file(root: Path, file_path: Path) -> tuple[int, dict]:
             "source": None,
             "structurally_containing_projects": [],
             "crosswalk_available": False,
+            "evidence_readiness": {
+                "identifiable": False,
+                "repository_available": False,
+                "research_ready_now": "NOT_ESTABLISHED",
+                "basis": "exact canonical File identity is unresolved",
+                "access_path": None,
+            },
             "project_routing": {
                 "requires_explicit_decision": True,
                 "allowed_outcomes": ["existing-project", "candidate-new-project", "corpus-only"],
@@ -73,6 +105,7 @@ def inspect_file(root: Path, file_path: Path) -> tuple[int, dict]:
         "source": source_row,
         "structurally_containing_projects": containing_projects,
         "crosswalk_available": source_id in cache["crosswalks"],
+        "evidence_readiness": evidence_readiness(root, file_row),
         "project_routing": {
             "requires_explicit_decision": True,
             "allowed_outcomes": ["existing-project", "candidate-new-project", "corpus-only"],
@@ -81,6 +114,7 @@ def inspect_file(root: Path, file_path: Path) -> tuple[int, dict]:
         "human_or_scholarly_questions": [
             "Should this established Source/File be used in an existing Project, be considered for a new purpose-established Project, or remain Corpus-only?",
             "If used by a Project, what evidenced research function and relevant locus does it serve?",
+            "If evidence_readiness is NOT_ESTABLISHED and direct inspection is required, which authorized access/retrieval path is actually usable now?",
         ],
         "warnings": warnings,
     }
