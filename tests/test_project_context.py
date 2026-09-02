@@ -54,8 +54,13 @@ class ProjectContextRegressionTests(unittest.TestCase):
         self.assertEqual("historical", principal["use"]["status"])
         self.assertEqual("principal", principal["use"]["research_function"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", principal["evidence"][0]["file"]["file_id"])
-        self.assertIn("No new owner-selected manuscript/source-research task is currently recorded", result["canonical_status"]["text"])
+        self.assertIn("No owner-selected manuscript/source-research task is currently recorded", result["canonical_status"]["text"])
+        self.assertIn("No current diplomatic transcription of Reg. Ii 5 is declared", result["canonical_status"]["text"])
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
+        self.assertIn(
+            "witness attribution of legacy diplomatic material from project path, page_id or textual similarity",
+            result["execution_boundary"]["do_not_infer"],
+        )
         readiness = {
             item["file"]["file_id"]: item["evidence_readiness"]["research_ready_now"]
             for item in result["internal_source_files"]
@@ -82,6 +87,7 @@ class ProjectContextRegressionTests(unittest.TestCase):
         refs = result["canonical_references"]
         self.assertIn("projects/ega-reg-ii-5-knau/source-uses.tsv", refs["project_files"])
         self.assertIn("projects/ega-reg-ii-5-knau/research/use-evidence.tsv", refs["project_files"])
+        self.assertIn("projects/ega-reg-ii-5-knau/research/legacy-witness-provenance.tsv", refs["project_files"])
         self.assertEqual(
             {row["source_id"] for row in canonical_uses},
             set(row["use"]["source_id"] for row in result["project_source_uses"]),
@@ -91,7 +97,8 @@ class ProjectContextRegressionTests(unittest.TestCase):
     def test_context_does_not_promote_historical_use_to_current_scope_or_action(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         project = result["project_definition"]
-        self.assertIn("No new owner-selected active", project["active_scope"])
+        self.assertIn("No owner-selected active", project["active_scope"])
+        self.assertIn("must not be promoted as Li 5 evidence without fresh witness-specific verification", project["active_scope"])
         self.assertTrue(all(item["use"]["status"] == "historical" for item in result["project_source_uses"]))
         self.assertIn("must not invent one", result["execution_boundary"]["note"])
 
