@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import unittest
 from pathlib import Path
 
@@ -81,6 +82,46 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertIn("verify an actual authorized access path", provenance)
         self.assertIn("identifiability**, **reproducibility** and **research-ready availability", workflow)
         self.assertIn("does not prove that a fresh authorized work context can actually open the evidence", workflow)
+
+    def test_binding_agents_use_purpose_first_target_model(self) -> None:
+        agents = (REPO / "AGENTS.md").read_text(encoding="utf-8")
+        self.assertIn("A Project exists because a concrete scholarly investigation/research purpose has been established", agents)
+        self.assertIn("Project purpose → project_source_id documentary anchor", agents)
+        self.assertIn("projects/<id>/source-uses.tsv", agents)
+        self.assertIn("research/use-evidence.tsv", agents)
+        self.assertIn("staged and inspectable in the current target context", agents)
+        self.assertNotIn("Project identity follows historical structure", agents)
+        self.assertNotIn("`projects/<id>/sources/sources.tsv` is the human-readable research-use entry point", agents)
+        self.assertNotIn("read project `sources/sources.tsv`", agents)
+
+    def test_readme_is_orientation_not_legacy_parallel_truth(self) -> None:
+        readme = (REPO / "README.md").read_text(encoding="utf-8")
+        projects_readme = (REPO / "projects" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("orientation view", readme)
+        self.assertIn("Do not copy their current scopes into this README", readme)
+        self.assertIn("three owner-accepted Projects", readme)
+        self.assertIn("former Reg. Ii 5 `sources/sources.tsv` compatibility register has been loss-checked and migrated", projects_readme)
+        self.assertNotIn("legacy, not-yet-migrated", readme)
+        self.assertNotIn("The repository is public", readme)
+        self.assertNotIn("Knau` is the current working focus", readme)
+        self.assertNotIn("sources/sources.tsv              # legacy", readme)
+
+    def test_project_contract_v8_closes_purpose_owner_and_legacy_gaps(self) -> None:
+        contract = json.loads((REPO / "corpus" / "source-contract.json").read_text(encoding="utf-8"))
+        projects = contract["tables"]["projects"]
+        self.assertEqual(8, contract["version"])
+        self.assertIn("research_object", projects["required_keys"])
+        self.assertIn("active_scope", projects["required_keys"])
+        self.assertEqual(["source-uses.tsv"], projects["allowed_source_registers"])
+        self.assertIn("principal_source_id", projects["forbidden_legacy_keys"])
+        self.assertEqual("projects/*/sources/sources.tsv", projects["legacy_source_register_glob"])
+
+    def test_source_assurance_runs_without_semantic_path_filter(self) -> None:
+        workflow = (REPO / ".github" / "workflows" / "source-contract.yml").read_text(encoding="utf-8")
+        self.assertIn("pull_request:\n", workflow)
+        self.assertNotIn("paths:", workflow)
+        self.assertIn("formal/deterministic consistency", workflow)
+        self.assertIn("does **not** by itself establish manuscript truth", workflow)
 
 
 if __name__ == "__main__":
