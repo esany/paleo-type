@@ -55,8 +55,17 @@ jobs:
               external = json.load(fh)
           assert internal['project_scope'] == 'internal', internal['project_scope']
           assert internal['structural_status'] == 'internal', internal['structural_status']
-          assert internal['project_source_uses'] == [], internal['project_source_uses']
-          assert internal['legacy_primary_file']['file_id'] == 'FILE-REG-II-5-00000129-EXCERPT'
+          assert internal['legacy_primary_file'] is None, internal['legacy_primary_file']
+          assert internal['research_functions'] == ['principal'], internal['research_functions']
+          assert len(internal['project_source_uses']) == 1, internal['project_source_uses']
+          iuse = internal['project_source_uses'][0]
+          assert iuse['use']['status'] == 'historical', iuse['use']
+          assert iuse['evidence'][0]['file']['file_id'] == 'FILE-REG-II-5-00000129-EXCERPT'
           assert external['project_scope'] == 'external', external['project_scope']
           assert external['structural_status'] == 'external', external['structural_status']
+          assert external['research_functions'] == ['textual-comparison'], external['research_functions']
+          assert len(external['project_source_uses']) == 1, external['project_source_uses']
+          euse = external['project_source_uses'][0]
+          assert euse['use']['status'] == 'historical', euse['use']
+          assert euse['evidence'][0]['file']['file_id'] == 'FILE-REG-II-4-II-00000089-EXPORT'
           PY
