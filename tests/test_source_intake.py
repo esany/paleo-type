@@ -117,6 +117,10 @@ class SourceIntakeRegressionTests(unittest.TestCase):
             self.assertTrue(result["project_routing"]["requires_explicit_decision"])
             self.assertIn("corpus-only", result["project_routing"]["allowed_outcomes"])
             self.assertIn("does not mean this File/Source is currently used", result["project_routing"]["note"])
+            self.assertTrue(result["evidence_readiness"]["identifiable"])
+            self.assertFalse(result["evidence_readiness"]["repository_available"])
+            self.assertEqual("NOT_ESTABLISHED", result["evidence_readiness"]["research_ready_now"])
+            self.assertIn("does not establish", result["evidence_readiness"]["basis"])
 
     def test_unmatched_file_stops_before_source_crosswalk_or_project_inference(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -132,6 +136,8 @@ class SourceIntakeRegressionTests(unittest.TestCase):
             self.assertIsNone(result["source"])
             self.assertEqual([], result["structurally_containing_projects"])
             self.assertFalse(result["crosswalk_available"])
+            self.assertFalse(result["evidence_readiness"]["identifiable"])
+            self.assertEqual("NOT_ESTABLISHED", result["evidence_readiness"]["research_ready_now"])
             self.assertTrue(result["project_routing"]["requires_explicit_decision"])
             self.assertIn("Do not infer Source identity", result["project_routing"]["note"])
 
