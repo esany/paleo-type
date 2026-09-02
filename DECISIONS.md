@@ -162,7 +162,7 @@ Each entry should remain short: **decision, reason, consequence**, and where use
 
 **Reason:** A technically plausible implementation can still be epistemically wrong if it is built before the owner has reviewed the material concept and scope. Conversely, requiring approval for every routine source action would obstruct scholarship without improving accountability.
 
-**Consequence:** Owner admission controls purpose, priorities and permission for material system change; it never substitutes for specialist validation. `methodology/maintenance.md` remains the canonical operational owner of the admission rule.
+**Consequence:** Owner admission controls purpose, priorities and permission for material system change; it never substitutes for specialist validation. `methodology/maintenance.md` is the canonical operational owner of the general admission rule.
 
 ## D-017 — Project materialization and boundary are human-owner decisions
 
