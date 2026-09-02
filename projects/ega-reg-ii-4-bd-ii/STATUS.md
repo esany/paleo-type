@@ -1,10 +1,12 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 4 Bd. II
 
-Last checkpoint: 2026-08-31
+Last checkpoint: 2026-09-02
 
 ## Project authority and root
 
-The human owner has defined Reg. Ii 4 Bd. II as one Project, anchored at `ACT-THHSTAW-EGA-REG-II-4-BD-II`. `Knau` is an initial research focus, not the Project identity. Further sections may be added.
+The human owner explicitly confirmed on 2026-09-02 that Reg. Ii 4 Bd. II should currently continue as one act-oriented Project, anchored at `ACT-THHSTAW-EGA-REG-II-4-BD-II`, as an application of D-018. This current authority does not retroactively certify the complete historical D-017 wording.
+
+`Knau` is a preserved historical research focus, not the Project identity and not a current priority selector. Further sections may be activated when an owner-grounded research question requires them.
 
 ## Known internal section/source node
 
@@ -27,12 +29,12 @@ The old source-unit Project files were later removed from `main`, but the Source
 
 ## Research/gate state
 
-No new source-research priority is asserted by this project-structure correction. The earlier observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not make comparison the permanent function of this Source inside its own Project.
+No new source-research priority is asserted by the 2026-09-02 Project confirmation or this reconciliation. The earlier observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not make comparison the permanent function of this Source inside its own Project or select it as the current task.
 
 ## NEXT ACTION — canonical restart point
 
-Do not infer a manuscript task from Project creation, the existence of the Knau crosswalk, or prior comparison use. When the owner selects the next Reg. Ii 4 Bd. II research question, activate only the required section/locus and record its project-relative function at that time.
+No owner-selected manuscript/source-research task is currently recorded. Do not infer one from Project creation, the existence of the Knau crosswalk, preserved comparison evidence or prior AI scope. When the owner selects the next Reg. Ii 4 Bd. II research question, activate only the required section/locus and record its project-relative function at that time.
 
 ## Restartability
 
-A fresh context can identify the Reg. Ii 4 Bd. II Project, current internal Source, recovered prior work state, exact File provenance, page-level URNs for the mapped Knau locus and the absence of an owner-selected next manuscript task without recovering old chat.
+A fresh context can identify the currently owner-confirmed Reg. Ii 4 Bd. II Project, current internal Source, recovered prior work state, exact File provenance, page-level URNs for the mapped Knau locus and the absence of an owner-selected next manuscript task without recovering old chat.
