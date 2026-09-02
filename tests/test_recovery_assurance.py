@@ -58,7 +58,7 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("251ce9ed39e04bb852e0232dbcce21c68bd4c3a7", li5)
         self.assertIn("08c08bd6f90635210fbeff3f2d19cd0a485cc0b9", li5)
         self.assertIn("not activated for source-wide transcription", li5)
-        self.assertIn("No new manuscript/source-research task is selected", li5)
+        self.assertIn("No new owner-selected manuscript/source-research task is currently recorded", li5)
 
         self.assertIn("source-unit", projects_readme.lower())
         self.assertIn("STATUS", projects_readme)
