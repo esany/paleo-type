@@ -27,7 +27,7 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 
 
 class SourceIntakeRegressionTests(unittest.TestCase):
-    def make_repo(self, tmp: str, known_bytes: bytes) -> Path:
+    def make_repo(self, tmp: str, known_bytes: bytes, storage_status: str = "external-controlled") -> Path:
         root = Path(tmp) / "repo"
         (root / "corpus").mkdir(parents=True)
         shutil.copy(REPO / "corpus" / "source-contract.json", root / "corpus" / "source-contract.json")
@@ -59,6 +59,7 @@ class SourceIntakeRegressionTests(unittest.TestCase):
         file_headers = contract["tables"]["files"]["required_columns"]
         if "repository_path" not in file_headers:
             file_headers = file_headers + ["repository_path"]
+        repository_path = "corpus/source-files/SRC-A/original/known.pdf" if storage_status == "repo-preserved" else ""
         file_row = {header: "" for header in file_headers}
         file_row.update(
             file_id="FILE-A",
@@ -67,17 +68,30 @@ class SourceIntakeRegressionTests(unittest.TestCase):
             sha256=hashlib.sha256(known_bytes).hexdigest(),
             role="archive export",
             coverage="fixture",
-            storage_status="external-controlled",
+            storage_status=storage_status,
+            repository_path=repository_path,
             rights_status="fixture",
         )
         write_tsv(root / "corpus" / "files.tsv", file_headers, [file_row])
+        if repository_path:
+            binary = root / repository_path
+            binary.parent.mkdir(parents=True, exist_ok=True)
+            binary.write_bytes(known_bytes)
 
         project = root / "projects" / "project-a"
         project.mkdir(parents=True)
         (project / "project.yml").write_text(
-            'id: project-a\nproject_source_id: ROOT-A\nsource_register: "source-uses.tsv"\ncanonical_status_file: STATUS.md\n',
+            'id: project-a\n'
+            'project_source_id: ROOT-A\n'
+            'research_object: "Fixture scholarly investigation"\n'
+            'active_scope: "Fixture scope"\n'
+            'source_register: "source-uses.tsv"\n'
+            'canonical_status_file: STATUS.md\n',
             encoding="utf-8",
         )
+        (project / "STATUS.md").write_text("# Fixture status\n", encoding="utf-8")
+        use_headers = contract["tables"]["project_source_uses"]["required_columns"]
+        write_tsv(project / "source-uses.tsv", use_headers, [])
         return root
 
     def run_intake(self, root: Path, input_file: Path) -> tuple[int, dict]:
@@ -117,10 +131,34 @@ class SourceIntakeRegressionTests(unittest.TestCase):
             self.assertTrue(result["project_routing"]["requires_explicit_decision"])
             self.assertIn("corpus-only", result["project_routing"]["allowed_outcomes"])
             self.assertIn("does not mean this File/Source is currently used", result["project_routing"]["note"])
-            self.assertTrue(result["evidence_readiness"]["identifiable"])
-            self.assertFalse(result["evidence_readiness"]["repository_available"])
-            self.assertEqual("NOT_ESTABLISHED", result["evidence_readiness"]["research_ready_now"])
-            self.assertIn("does not establish", result["evidence_readiness"]["basis"])
+            readiness = result["evidence_readiness"]
+            self.assertTrue(readiness["identifiable"])
+            self.assertFalse(readiness["verified_local_bytes"])
+            self.assertFalse(readiness["repository_available"])
+            self.assertEqual("NOT_ASSESSED", readiness["target_context_staged"])
+            self.assertEqual("NOT_ASSESSED", readiness["vision_inspectable"])
+            self.assertEqual("NOT_ESTABLISHED", readiness["research_ready_now"])
+            self.assertIn("does not establish local exact bytes", readiness["basis"])
+
+    def test_repo_preserved_exact_bytes_still_do_not_prove_target_context_readiness(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            known = b"repo-preserved-exact-bytes"
+            root = self.make_repo(tmp, known, storage_status="repo-preserved")
+            supplied = Path(tmp) / "supplied.pdf"
+            supplied.write_bytes(known)
+
+            rc, result = self.run_intake(root, supplied)
+
+            self.assertEqual(0, rc)
+            readiness = result["evidence_readiness"]
+            self.assertTrue(readiness["identifiable"])
+            self.assertTrue(readiness["verified_local_bytes"])
+            self.assertTrue(readiness["repository_available"])
+            self.assertTrue(readiness["access_path"].endswith("corpus/source-files/SRC-A/original/known.pdf"))
+            self.assertEqual("NOT_ASSESSED", readiness["target_context_staged"])
+            self.assertEqual("NOT_ASSESSED", readiness["vision_inspectable"])
+            self.assertEqual("NOT_ESTABLISHED", readiness["research_ready_now"])
+            self.assertIn("does not establish delivery/staging", readiness["basis"])
 
     def test_unmatched_file_stops_before_source_crosswalk_or_project_inference(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -136,8 +174,11 @@ class SourceIntakeRegressionTests(unittest.TestCase):
             self.assertIsNone(result["source"])
             self.assertEqual([], result["structurally_containing_projects"])
             self.assertFalse(result["crosswalk_available"])
-            self.assertFalse(result["evidence_readiness"]["identifiable"])
-            self.assertEqual("NOT_ESTABLISHED", result["evidence_readiness"]["research_ready_now"])
+            readiness = result["evidence_readiness"]
+            self.assertFalse(readiness["identifiable"])
+            self.assertFalse(readiness["verified_local_bytes"])
+            self.assertEqual("NOT_ASSESSED", readiness["target_context_staged"])
+            self.assertEqual("NOT_ESTABLISHED", readiness["research_ready_now"])
             self.assertTrue(result["project_routing"]["requires_explicit_decision"])
             self.assertIn("Do not infer Source identity", result["project_routing"]["note"])
 
