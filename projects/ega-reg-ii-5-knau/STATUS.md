@@ -24,11 +24,16 @@ A later source-unit model temporarily kept a separate Reg. Ii 5 Source STATUS. A
 
 The subsequent Reg. Ii 5 G2 work is valid source/research work at the level actually established. The correction of Project identity does not erase or downgrade evidence merely because the organizing Project narrative was AI-generated.
 
-## Legacy project-relative research functions
+## Migrated historical project-relative research functions
 
-`sources/sources.tsv` is still the legacy compatibility register used by the existing Reg. Ii 5 migration boundary. Labels such as `principal`, `comparison`, `control` and `context` describe historical/project-relative organization of the Knau investigation. They are **not** canonical Source properties, not permanent roles within Li 3/4/5, and not selectors of the next task.
+The former compatibility register `sources/sources.tsv` was loss-checked and removed on 2026-09-02 after its four historical Project→Source meanings and exact File bindings were materialized in the target owners:
 
-Reg. Ii 4 Bd. II and Reg. Ii 3 now have their own currently owner-confirmed act Projects. Cross-act textual/source relations remain canonical in `corpus/relationships.tsv`; a future project-relative use is recorded only when the research actually uses that Source in that Project.
+- `source-uses.tsv` now contains four `status=historical` uses: `principal`, `textual-comparison`, `notation-control`, and `historical-context`;
+- each row preserves the old `active`/`identified` state explicitly as `legacy_status=...` in its evidence basis rather than presenting it as current Project scope;
+- `research/use-evidence.tsv` preserves the four former `primary_file_id` relations as use-specific evidence pointing to the **same** canonical File IDs;
+- `project.yml: principal_source_id` was removed as a redundant legacy duplicate; `project_source_id` remains the sole documentary Project anchor.
+
+These historical functions describe the preserved Knau investigation. They are **not** canonical Source properties, not permanent roles within Li 3/4/5, and not selectors of the next task. Cross-act textual/source relations remain canonical in `corpus/relationships.tsv`; a future current Project-relative use is added only when research actually establishes it.
 
 ## Digital addressing / provenance
 
@@ -72,7 +77,7 @@ No scientific result is invalidated by this structure reconciliation. No new pal
 
 **No new owner-selected manuscript/source-research task is currently recorded.**
 
-The structural/recovery reconciliation is complete at this checkpoint. Continue substantive source work only from a subsequently owner-selected research question/priority or an already bounded task whose authority is independently established. Do not reconstruct the next task from the legacy `Knau` slug, from old AI-created `active_scope`, from `principal/comparison` labels, or from whichever evidence is easiest to access.
+The structural/recovery reconciliation is complete at this checkpoint. Continue substantive source work only from a subsequently owner-selected research question/priority or an already bounded task whose authority is independently established. Do not reconstruct the next task from the legacy `Knau` slug, from old AI-created `active_scope`, from historical `principal`/comparison functions, or from whichever evidence is easiest to access.
 
 ## Restartability test
 
@@ -81,6 +86,7 @@ A fresh capable context must be able to reconstruct without old chat:
 - Project identity = currently owner-confirmed Reg. Ii 5 act, despite the legacy `-knau` directory/id;
 - the Ziegenrück Source and Knau locus are internal/preserved work, not the Project definition or current active scope;
 - earlier Knau scope and role labels were AI-organized/project-relative rather than retrospective owner authority;
+- the former legacy role register has been migrated into historical `source-uses.tsv` plus exact `research/use-evidence.tsv` bindings without promoting those uses to current priority;
 - the deleted source-unit STATUS/checkpoint state is recoverable through the historical snapshot documented in `projects/README.md`;
 - exact Reg. Ii 5 File/crosswalk/provenance state, including File coverage 120–143 versus Source crosswalk 120–142, and the current absence of page-specific stable URNs in the repository;
 - identifiability/reproducibility are distinct from currently verified fresh-context evidence availability;
