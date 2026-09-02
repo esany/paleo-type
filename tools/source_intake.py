@@ -4,9 +4,9 @@
 This adapter derives only deterministic facts from an exact supplied file:
 SHA-256 identity, an exact canonical File match, its canonical Source, existing
 crosswalk presence, structural Project containment and the part of evidence
-readiness that canonical File state can actually establish. It never creates
+availability that canonical File state can actually establish. It never creates
 or selects a Project, Source relation, research_function, rights interpretation,
-external-access claim or scholarly priority.
+external-access claim, target-context staging state or scholarly priority.
 """
 from __future__ import annotations
 
@@ -20,26 +20,40 @@ import source_contract
 
 
 def evidence_readiness(root: Path, file_row: dict[str, str]) -> dict:
+    """Report only evidence facts derivable from canonical File state.
+
+    A repo-preserved File can establish that exact verified bytes exist at a
+    project-visible filesystem path. It cannot establish that another/fresh
+    work context has received the object, can open it, or (for visual research)
+    can inspect its pixels. Action-specific research readiness therefore remains
+    NOT_ESTABLISHED until the target context proves the required staging/access.
+    """
     storage = file_row.get("storage_status", "")
     repository_path = file_row.get("repository_path", "")
-    if storage == "repo-preserved" and repository_path:
-        # source_contract.validate has already checked path existence and SHA equality.
-        return {
-            "identifiable": True,
-            "repository_available": True,
-            "research_ready_now": "ESTABLISHED_LOCAL",
-            "basis": "repo-preserved canonical File with repository path and SHA verified by source-contract",
-            "access_path": str((root / repository_path).resolve()),
-        }
+    verified_local_bytes = bool(storage == "repo-preserved" and repository_path)
+    access_path = str((root / repository_path).resolve()) if verified_local_bytes else None
+
+    if verified_local_bytes:
+        basis = (
+            "source-contract establishes exact SHA-verified repository bytes at the recorded path; "
+            "this does not establish delivery/staging into the target work context or visual inspectability"
+        )
+    else:
+        basis = (
+            "canonical File identity/storage state does not establish local exact bytes for this repository context; "
+            "external/institutional retrieval or controlled persistence must be verified separately, and any retrieved "
+            "object must still be staged/inspectable in the target context when the task requires it"
+        )
+
     return {
         "identifiable": True,
-        "repository_available": False,
+        "verified_local_bytes": verified_local_bytes,
+        "repository_available": verified_local_bytes,
+        "access_path": access_path,
+        "target_context_staged": "NOT_ASSESSED",
+        "vision_inspectable": "NOT_ASSESSED",
         "research_ready_now": "NOT_ESTABLISHED",
-        "basis": (
-            "canonical File identity/storage state does not establish that a fresh authorized context can open the evidence now; "
-            "external/institutional retrieval or controlled persistence must be verified separately"
-        ),
-        "access_path": None,
+        "basis": basis,
     }
 
 
@@ -64,10 +78,13 @@ def inspect_file(root: Path, file_path: Path) -> tuple[int, dict]:
             "crosswalk_available": False,
             "evidence_readiness": {
                 "identifiable": False,
+                "verified_local_bytes": False,
                 "repository_available": False,
+                "access_path": None,
+                "target_context_staged": "NOT_ASSESSED",
+                "vision_inspectable": "NOT_ASSESSED",
                 "research_ready_now": "NOT_ESTABLISHED",
                 "basis": "exact canonical File identity is unresolved",
-                "access_path": None,
             },
             "project_routing": {
                 "requires_explicit_decision": True,
@@ -114,7 +131,7 @@ def inspect_file(root: Path, file_path: Path) -> tuple[int, dict]:
         "human_or_scholarly_questions": [
             "Should this established Source/File be used in an existing Project, be considered for a new purpose-established Project, or remain Corpus-only?",
             "If used by a Project, what evidenced research function and relevant locus does it serve?",
-            "If evidence_readiness is NOT_ESTABLISHED and direct inspection is required, which authorized access/retrieval path is actually usable now?",
+            "If direct inspection is required, has the exact evidence actually been staged/opened in the target context, and for visual work is it vision-inspectable there?",
         ],
         "warnings": warnings,
     }
