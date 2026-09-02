@@ -39,6 +39,24 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
             decisions,
         )
 
+    def test_project_template_keeps_purpose_separate_from_documentary_anchor(self) -> None:
+        decisions = (REPO / "DECISIONS.md").read_text(encoding="utf-8")
+        template = (REPO / "templates" / "project" / "project.yml").read_text(encoding="utf-8")
+        status_template = (REPO / "templates" / "project" / "STATUS.md").read_text(encoding="utf-8")
+
+        self.assertIn(
+            "## D-018 — Projects are purpose-established; `project_source_id` is a post-selection documentary anchor",
+            decisions,
+        )
+        self.assertIn("why this scholarly investigation/work container exists", template)
+        self.assertIn("REQUIRED after Project selection", template)
+        self.assertIn("scholarly research purpose that establishes this Project", template)
+        self.assertNotIn("why this historically independent source structure is being worked on", template)
+        self.assertIn("## Research purpose and Project authority", status_template)
+        self.assertIn("## Documentary Source anchor", status_template)
+        self.assertIn("after Project selection", status_template)
+        self.assertIn("only when an authorized next action exists", status_template)
+
 
 if __name__ == "__main__":
     unittest.main()
