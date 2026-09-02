@@ -86,16 +86,28 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("canonical Source crosswalk maps 120–142", admission)
         self.assertIn("image 143 / fol. 67r is adjacent File context outside the Source boundary", admission)
 
-    def test_legacy_role_and_relevance_information_is_not_removed_before_loss_checked_mapping(self) -> None:
-        legacy = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "sources" / "sources.tsv")
-        self.assertEqual({"principal", "comparison", "control", "context"}, {row["project_role"] for row in legacy})
+    def test_role_and_relevance_cleanup_occurs_only_with_loss_checked_target_mapping(self) -> None:
+        self.assertFalse((REPO / "projects" / "ega-reg-ii-5-knau" / "sources" / "sources.tsv").exists())
+
+        uses = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "source-uses.tsv")
+        self.assertEqual(
+            {"principal", "textual-comparison", "notation-control", "historical-context"},
+            {row["research_function"] for row in uses},
+        )
+        self.assertTrue(all(row["status"] == "historical" for row in uses))
+        self.assertTrue(all("legacy_status=" in row["evidence_basis"] for row in uses))
+
+        evidence = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "use-evidence.tsv")
+        self.assertEqual(4, len(evidence))
+        self.assertTrue(all(row["status"] == "historical" for row in evidence))
 
         sources = read_tsv(REPO / "corpus" / "sources.tsv")
-        self.assertTrue(any(row.get("relevance") for row in sources))
+        self.assertTrue(all(not row.get("relevance") for row in sources))
+        self.assertTrue(all(row.get("inspection_status") for row in sources))
 
         migration = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "project-source-migration.tsv")
         relevance = [row for row in migration if row["fixture_id"].startswith("CORPUS-REL-")]
-        self.assertTrue(relevance)
+        self.assertEqual(7, len(relevance))
         self.assertTrue(all(row["transformation"] == "remove-after-loss-checked-migration" for row in relevance))
 
 
