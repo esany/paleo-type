@@ -35,7 +35,7 @@ Every durable statement belongs to exactly one level:
 
 1. **METHOD** — `methodology/`, `AGENTS.md`, `DECISIONS.md`: reusable scholarly rules/gates that should remain valid for another comparable manuscript investigation.
 2. **CORPUS** — `corpus/`, `entities/`: canonical archival source identity, exact digital instantiations, reusable source-wide mappings, source/event/entity relationships and recurring normalized identities.
-3. **PROJECT** — `projects/<id>/`: scholarly state anchored to one historically independent source structure identified by `project_source_id`, including current scope, source uses/roles, observations, readings, comparisons, decisions, gate state and next action.
+3. **PROJECT** — `projects/<id>/`: durable scholarly state for a purpose-established investigation, including its documentary anchor, current scope, source uses, observations, readings, comparisons, decisions, gate state and next action.
 
 Generalisation test:
 
@@ -43,11 +43,11 @@ Generalisation test:
 
 - yes → METHOD;
 - no, but it is canonical source/file/reusable mapping/relationship truth → CORPUS;
-- no, it is concrete work state relative to one historical project root → PROJECT.
+- no, it is concrete work state relative to one scholarly investigation → PROJECT.
 
-**Project identity follows historical structure.** Every project has exactly one `project_source_id` pointing to the historically independent source root. In the current archival domain that root is an act. Current research scope may be narrower, and external comparison/control/context sources may be used, but neither the current question nor the assembled comparison set may redefine the project boundary.
+**A Project exists because a concrete scholarly investigation/research purpose has been established.** Source/File existence, upload order, archival structure, `part_of`, a current question or a comparison bundle does not create a Project. Once a Project exists, it has exactly one `project_source_id` pointing to its canonical documentary Source anchor for deterministic structural resolution. That anchor does not establish Project existence, purpose, research priority or `NEXT ACTION`. Current research scope may be narrower than the anchor, and external comparison/control/context Sources may be used without changing canonical Source identity.
 
-**A pilot tests the method; it does not define it.** Generic scholarly maturity requirements live once in `methodology/research-gates.md`; a project `STATUS.md` records only its own state/gaps against them.
+**A pilot tests the method; it does not define it.** Generic scholarly maturity requirements live once in `methodology/research-gates.md`; a project `STATUS.md` records only its own state/gaps against them. Promote a pilot finding into generic METHOD only after a generalisability check; otherwise keep it project-specific.
 
 ## Human–AI division of labour
 
@@ -99,7 +99,8 @@ If work drifts from the active source/research task into unnecessary software or
 - Never hide disagreement between readings or source relationships; record it.
 - Never claim same hand merely because material is in the same record/date/office.
 - Never create source-as-project wrappers merely to own crosswalks or file metadata.
-- Never let a current research bundle, place focus or comparison set redefine the historically independent project root.
+- Never create, select or redefine a Project merely from Source/File existence, archival structure, `part_of`, an upload, current research bundle, place focus or comparison set.
+- Never let `project_source_id` silently determine Project purpose, research priority or `NEXT ACTION`.
 - Never encode project source use as a project-to-project relation when the target is actually an archival source.
 - Never ask the user to settle specialist questions merely because the assistant is uncertain.
 - Never make the user synchronize repository state the assistant can maintain.
@@ -107,6 +108,7 @@ If work drifts from the active source/research task into unnecessary software or
 - Never upload rights-unclear/restricted material externally merely for convenience.
 - Never claim an exact source export is repository-preserved when its binary bytes are absent.
 - Never treat URL/URN + checksum as equivalent to preservation of the exact inspected export.
+- Never treat identifiable/preserved/retrievable evidence as equivalent to evidence staged and inspectable in the current target context.
 - Never overwrite an original export with OCR, crop, compression, rotation or another derivative.
 - Never treat scaled AI/HTR output as validated research data without appropriate evaluation.
 - Never add infrastructure “for later” without a current need; preserve rationale as a lean Issue instead.
@@ -150,9 +152,9 @@ Reading status is not the same as source-phenomenon type. Follow `methodology/tr
 
 Distinguish:
 
-`project_source_id → source node → part_of descendants/ancestors → witness → locus → instantiation`
+`Project purpose → project_source_id documentary anchor → Source node → part_of descendants/ancestors → witness → locus → instantiation`
 
-The project root is a historical/source structure, while project roles and active scope are research-organisation facts. Structural membership is derived from canonical `part_of` relations.
+The Project purpose is a scholarly/owner decision. `project_source_id` is the post-selection documentary anchor. Structural membership is derived from canonical `part_of` relations; project-relative research functions and active scope are separate research-organisation facts.
 
 Portal image numbers, archival folios, PDF pages, export sequence and legacy working IDs are distinct identifiers.
 
@@ -164,9 +166,11 @@ Canonical records:
 - source/event/entity and structural `part_of` relationships → `corpus/relationships.tsv`;
 - administrative/historical activity context → `corpus/events.tsv`;
 - repeated normalized identities → `entities/`;
-- project root → project `project.yml: project_source_id`;
-- project source use/role/relevant locus → project `sources/sources.tsv`;
-- project-specific inspection audit → project `sources/inspection-log.tsv` when useful.
+- Project purpose/documentary anchor/current scope → project `project.yml`;
+- Project→Source research function/relevant locus → project `source-uses.tsv`;
+- concrete Project-use→File evidence when needed → project `research/use-evidence.tsv`;
+- project-specific inspection audit → project `sources/inspection-log.tsv` when useful;
+- gate/gaps/restart state/authorized `NEXT ACTION` → project `STATUS.md`.
 
 A relationship is a research claim. `metadata-supported` is not verified textual correspondence.
 
@@ -183,23 +187,21 @@ For consequential file-based work identify the exact original export used and pr
 - actual/intended repository path;
 - rights/authority state.
 
-A portal URL/URN helps relocation but is not the preserved export. If a public-repository rights constraint prevents committing the exact binary, mark preservation as blocked/incomplete. Do not downgrade this requirement to a link-only surrogate.
+A portal URL/URN helps relocation but is not the preserved export. If redistribution rights or repository policy prevent committing the exact binary, mark preservation as blocked/incomplete. Do not downgrade this requirement to a link-only surrogate.
 
 Derived images/renders/OCR must be distinguishable from the original and point back to the original file ID.
 
-## Project source-group discipline
+## Project source-use discipline
 
-`projects/<id>/sources/sources.tsv` is the human-readable research-use entry point.
+`projects/<id>/source-uses.tsv` is the target-model canonical Project→Source research-use owner. `projects/<id>/research/use-evidence.tsv` separately binds a concrete use to an exact canonical File only where that evidence relation is needed.
 
-For every project source record preserve:
+For every Project Source use preserve as applicable:
 - canonical `source_id`;
-- archival title;
-- project role (`principal`, `comparison`, `control`, `context`, etc.);
-- relevant project locus;
-- primary exact file ID;
-- status/limitations.
+- project-relative `research_function`;
+- relevant source locus;
+- status and evidence basis/limitations.
 
-Project role is not source identity and does not determine structural membership. A source is internal when it is the project root or reaches that root through canonical `part_of`; otherwise it is external. The same source may have a different research role in another project without changing its canonical identity.
+Do not duplicate canonical Source title, File identity/checksum/storage/rights, or structural `root/internal/external` flags into the use record. Project research function is not Source identity and does not determine structural membership. A Source is internal when it is the Project anchor or reaches that anchor through canonical `part_of`; otherwise a used Source is external. The same Source may have a different research function in another Project without changing its canonical identity.
 
 Two records sharing `ThHStAW, EGA, Reg. Ii 3` remain distinct when their archive record IDs/titles/loci differ.
 
@@ -223,7 +225,8 @@ For consequential work determine what was actually inspected:
 - digital record/image/URN where available as secondary provenance;
 - PDF/export/image numbering as separate fields;
 - whether export is complete for the claimed range;
-- whether working image is original or derived/cropped/scaled.
+- whether working image is original or derived/cropped/scaled;
+- for visual work, whether the required evidence is actually staged and vision-inspectable in the target work context.
 
 Do not rely on transient chat attachment as the only durable evidence identity.
 
@@ -245,20 +248,20 @@ Follow `methodology/ai-governance.md`.
 Before continuing existing research:
 1. read `GOVERNING_OBJECTIVE.md` and this file;
 2. read `README.md` if repository structure is not already established;
-3. read project `project.yml` and resolve `project_source_id`;
+3. read project `project.yml`, including research purpose/current scope, and resolve `project_source_id` as its documentary anchor;
 4. read project `STATUS.md`;
-5. read project `sources/sources.tsv`;
+5. read project `source-uses.tsv` and `research/use-evidence.tsv` when present/relevant;
 6. read the active generic gate in `methodology/research-gates.md`;
 7. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
 8. read relevant project decision rows and `LEARNINGS.md`;
 9. load every additional methodology/governance requirement applicable to the task; if applicability is unclear, inspect the canonical owner before acting;
-10. continue from `NEXT ACTION` unless inspected evidence requires a change.
+10. continue from an authorized project `NEXT ACTION` when one exists; if none is recorded, do not invent one from historical work state, Source structure or chat context.
 
 When changing a substantive reading, preserve prior reading, new reading, evidence type and residual uncertainty in appropriate canonical records.
 
 When changing a source relationship, preserve previous status where consequential, cite basis and do not upgrade beyond demonstrated evidence.
 
-When changing project source role/locus, update the project source register without rewriting canonical source identity or project-root membership.
+When changing project source function/locus, update `source-uses.tsv` without rewriting canonical source identity, structural membership or current priority by implication.
 
 ## Lean decision discipline
 
@@ -278,21 +281,23 @@ Do not create ADR ceremony or duplicate truth stores.
 Follow `methodology/maintenance.md`.
 
 After a material canonical or structural change, run a bounded repo-wide consistency pass checking for:
-- project roots that do not resolve or do not match the intended historical structure;
+- project documentary anchors that do not resolve or contradict the declared Project state;
+- Project purpose/scope claims accidentally inferred from Source structure;
 - project facts leaked into methodology;
 - generic rules duplicated inside projects;
 - distinct archival records accidentally collapsed;
 - duplicate/stale source crosswalks;
-- source/file/project references that no longer resolve;
+- source/file/project/use references that no longer resolve;
 - source preservation claims that do not match actual binary/rights state;
 - stale gate/milestone references;
-- contradictory project `STATUS.md` claims.
+- contradictory project `STATUS.md` claims;
+- stale human-facing/agent-facing orientation surfaces that contradict canonical owners.
 
 Final restartability test:
 
-> Could another capable researcher identify the historical project root, distinguish its structural sources from external research sources, recover the exact exports/preservation state and continue correctly from repository + controlled source material without recovering this chat?
+> Could another capable researcher identify the Project's scholarly purpose, resolve its documentary Source anchor, distinguish structural Sources from external research Sources, recover the exact exports/preservation and current evidence-access state, and continue correctly from repository + controlled source material without recovering this chat?
 
-If not, persist the minimum missing state.
+If not, persist the minimum missing canonical state or repair the derived/context surface that failed to expose it.
 
 ## GitHub Issue and Milestone discipline
 
@@ -329,11 +334,13 @@ Before completing consequential work, check what is relevant.
 - Has independent expert validation been distinguished from AI-assisted method compliance?
 
 **Method/corpus/project ownership**
-- Does `project_source_id` identify the historically independent project root rather than the current research bundle?
-- Are internal sources structurally derived from `part_of` and external sources kept external?
+- Does the Project have an explicit scholarly purpose independent of Source/File existence?
+- Does `project_source_id` resolve as the Project's post-selection documentary Source anchor without being treated as purpose/priority authority?
+- Are internal Sources structurally derived from `part_of` and external Sources kept external?
+- Are Project→Source research functions and concrete use→File evidence kept separate from Source/File identity?
 - Is each distinct archival record preserved independently?
 - Is each durable statement stored at the correct level?
-- Did a project-specific fact accidentally become a generic rule?
+- Did a project-specific fact accidentally become a generic rule without a generalisability check?
 - Did the project copy generic gate requirements instead of recording only its state against them?
 
 **Technisch / research-data**
@@ -343,6 +350,7 @@ Before completing consequential work, check what is relevant.
 - Are changed IDs/relations referentially coherent?
 - Did changed research truth reach its canonical home?
 - Is the simplest maintainable representation being used?
+- For the current action, is required evidence merely identifiable/reproducible, or actually accessible/staged/inspectable as needed?
 - Can another capable researcher restart without chat?
 
 If the same machine-checkable structural error class recurs, implement the smallest validation that catches it. Do not build validation infrastructure speculatively.
@@ -360,8 +368,9 @@ Ask:
 - Is a claimed source relationship demonstrated or only metadata-supported?
 - Is corroboration genuinely independent?
 - Did a clearer witness overwrite the witness under transcription?
-- Did the current question or comparison set silently redefine the historical project root?
+- Did Source/File structure, current question or comparison set silently create/redefine Project purpose or priority?
 - Is the exact inspected export actually preserved as claimed?
+- Is required visual evidence actually staged/vision-inspectable rather than merely identifiable or retrievable?
 - Did I update the correct method/corpus/project canonical record?
 - Did the pilot accidentally define generic method?
 - Did I mistake a GitHub planning state for scholarly/evidential state?
