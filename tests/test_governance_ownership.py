@@ -123,6 +123,26 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertIn("formal/deterministic consistency", workflow)
         self.assertIn("does **not** by itself establish manuscript truth", workflow)
 
+    def test_maintenance_is_purpose_first_and_legacy_closed(self) -> None:
+        maintenance = (REPO / "methodology" / "maintenance.md").read_text(encoding="utf-8")
+        self.assertIn("Project research purpose, documentary anchor and active scope", maintenance)
+        self.assertIn("a Project exists because a concrete scholarly research purpose has been established", maintenance)
+        self.assertIn("post-selection documentary Source anchor", maintenance)
+        self.assertIn("must not be recreated", maintenance)
+        self.assertIn("distinguish byte availability from target-context readiness", maintenance)
+        self.assertNotIn("current Reg. Ii 5 project remains intentionally on the legacy", maintenance)
+        self.assertNotIn("current unmigrated Reg. Ii 5", maintenance)
+        self.assertNotIn("project = historical source-root anchored state", maintenance)
+
+    def test_maintenance_requires_generic_fit_before_generic_promotion(self) -> None:
+        maintenance = (REPO / "methodology" / "maintenance.md").read_text(encoding="utf-8")
+        self.assertIn("## Systemic integration and Generic-Fit", maintenance)
+        self.assertIn("fuse | refine | reframe | supersede | conflict | reject | defer", maintenance)
+        self.assertIn("deliberate **non-changes**", maintenance)
+        self.assertIn("A single case can falsify a bad generic assumption", maintenance)
+        self.assertIn("does not automatically define the replacement generic model", maintenance)
+        self.assertIn("not a new lifecycle, schema or mandatory state machine", maintenance)
+
 
 if __name__ == "__main__":
     unittest.main()
