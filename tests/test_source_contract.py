@@ -140,7 +140,12 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         )
         by_id = {row["fixture_id"]: row for row in rows}
         self.assertEqual("remove-duplicate-only-during-later-migration", by_id["PRINCIPAL-001"]["transformation"])
-        self.assertEqual("no-change", by_id["INSPECTION-STATUS-001"]["transformation"])
+        self.assertEqual(
+            "correct-after-witness-provenance-clarification-2026-09-02",
+            by_id["INSPECTION-STATUS-001"]["transformation"],
+        )
+        self.assertEqual("corrected-2026-09-02", by_id["INSPECTION-STATUS-001"]["status"])
+        self.assertIn("partially-transcribed to images-inspected", by_id["INSPECTION-STATUS-001"]["loss_test"])
         relevance = [row for row in rows if row["fixture_id"].startswith("CORPUS-REL-")]
         self.assertEqual(7, len(relevance))
         self.assertTrue(all(row["transformation"] == "remove-after-loss-checked-migration" for row in relevance))
