@@ -107,6 +107,8 @@ For every central original export used by a project:
 7. make preservation state explicit (`repo-preserved`, `external-controlled`, `preservation-blocked-public-redistribution`, etc.);
 8. if rights/access constraints prevent repository storage, state the blocker explicitly. Do not claim that checksum + URN constitutes equivalent backup.
 
+Identifiability, reproducibility and research-ready availability are separate properties. A known File ID/SHA, stable identifier, crosswalk or render recipe does not by itself prove that a fresh authorized work context can open the evidence needed for the current action. Where direct inspection is required, verify an actual authorized access path before treating the evidence as research-ready.
+
 ## Rights statements and preservation decisions
 
 Record the rights statement actually supplied with the object/export. Do not replace a known rights state with generic `rights unclear` wording.
@@ -132,23 +134,23 @@ A mapping that remains true for a source node regardless of project belongs once
 
 Typical example: a controlled `archival_folio ↔ export_image ↔ PDF_page ↔ stable_image_urn` crosswalk. Keep only loci assignable to that source node. If an exact export contains adjacent pages outside the evidenced boundary, record that fact in file provenance rather than forcing those pages into the source crosswalk.
 
-Project-specific statements such as "the current scope uses fol. 61v–63r as principal locus" belong in the project source register.
+Project-specific statements such as a research function and its source-relative relevant locus belong in the Project's `source-uses.tsv`. A historical use may remain represented there as historical work-state without becoming the current active scope.
 
 Do not copy the same source crosswalk into each consuming project.
 
 ## Project anchoring and source use
 
-Every project is anchored to exactly one historically independent source root through `project.yml: project_source_id`. In the current archival domain that root is an act. The project root is a canonical source node in `corpus/sources.tsv`; no duplicate project-only copy of the act is created.
+A Project exists because a human owner has established a durable scholarly purpose/boundary. After Project selection, `project.yml: project_source_id` records the canonical historical Source anchor used for structural resolution. The anchor makes Project↔Source structure reconstructable; Source existence or structure does not itself create a Project.
 
-`projects/<id>/sources/sources.tsv` lists the canonical source nodes actually used in the work and their project-relative roles/loci.
+`projects/<id>/source-uses.tsv` records actual Project→Source research functions/loci. Concrete File evidence for a use is recorded separately in `projects/<id>/research/use-evidence.tsv` when needed. Historical/project-relative functions may be retained with historical status; they do not select the current scholarly priority.
 
 Structural membership is derived from the canonical source graph:
 
 - source equals `project_source_id` → project root;
 - source reaches `project_source_id` through one or more `part_of` relations → internal source;
-- otherwise → external source used for comparison, control, context or another research function.
+- otherwise → external source when used by the Project.
 
-Project role is independent of structural membership. A source can be external and still be `comparison`, `control` or `context`; a current research question does not change the project root.
+Research function is independent of structural membership. An external Source may serve comparison/control/context or another function; an internal Source may have no active research function. Neither structural status nor a research-function label chooses the current `NEXT ACTION`.
 
 ## Relationship register
 
@@ -187,11 +189,12 @@ For consequential work determine:
 - persistent identifier/archival URL at the level it actually identifies, where available;
 - exact file ID and SHA-256 of the inspected export;
 - whether that exact export is preserved and where;
+- whether the required representation is actually accessible in the current authorized work context when direct inspection is needed;
 - folio, portal image, PDF page, export sequence and legacy IDs as separate identifiers;
 - whether export coverage is complete for the claim;
 - whether a working derivative differs from the original.
 
-Do not rely on a transient chat attachment as the only durable evidence identity.
+Do not rely on a transient chat attachment as the only durable evidence identity. Do not report evidence as research-ready merely because its identity and reproduction recipe are known.
 
 ## Entities and authority control
 
@@ -203,7 +206,7 @@ Never claim “all available sources” from accumulated examples alone. Corpus-
 
 ## Research priority
 
-Source inventory is not an invitation to transcribe everything. Prioritize work by expected research value within the active project root and its current bounded scope.
+Source inventory is not an invitation to transcribe everything. Prioritize work by the owner-grounded Project purpose/current scope and the research value of the bounded question. Source structure, File availability, old role labels or evidence convenience do not choose the current work target.
 
 ## Maintenance and restartability
 
@@ -213,13 +216,16 @@ When source/project knowledge changes:
 - part–whole or other source relationship → `corpus/relationships.tsv`;
 - exact file/checksum/coverage/storage/rights → `corpus/files.tsv`;
 - reusable source crosswalk → `corpus/source-data/<source_id>/`;
-- project root → project `project.yml: project_source_id`;
-- project source use/role/locus → project `sources/sources.tsv`;
-- project inspection detail → project `sources/inspection-log.tsv` when needed;
-- project consequence/next action → project `STATUS.md`.
+- Project purpose/root/current bounded scope → project `project.yml`;
+- Project→Source research function/locus → project `source-uses.tsv`;
+- concrete Project-use→File binding → project `research/use-evidence.tsv`;
+- project inspection detail → existing Project research/inspection owner when needed;
+- project consequence/authorized next action or explicit absence of one → project `STATUS.md`.
+
+Derived intake/context helpers may compose these canonical owners for navigation and restart, but they are rebuildable views and must not become parallel truth.
 
 Final test:
 
-> Could another capable researcher identify the historical project root, traverse its evidenced part–whole structure without assuming a fixed archival hierarchy, distinguish internal from external research sources, resolve persistent identifiers at the level they actually identify, recover or account for the exact inspected exports, understand project roles/loci, distinguish catalogue claims from demonstrated relationships, and continue without chat?
+> Could another capable researcher identify the Project's human-authorized purpose and documentary anchor, traverse its evidenced part–whole structure without assuming a fixed archival hierarchy, distinguish structural status from Project-relative research use, resolve persistent identifiers at the level they actually identify, recover or account for the exact inspected exports, determine whether required evidence is actually accessible now, distinguish historical work-state from current priority, and continue from the canonical STATUS without old chat?
 
-If not, persist the missing minimum state.
+If not, persist the missing minimum state in the appropriate existing canonical owner.
