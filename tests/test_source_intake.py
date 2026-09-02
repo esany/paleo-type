@@ -21,6 +21,11 @@ def write_tsv(path: Path, headers: list[str], rows: list[dict[str, str]]) -> Non
         writer.writerows(rows)
 
 
+def read_tsv(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8", newline="") as fh:
+        return list(csv.DictReader(fh, delimiter="\t"))
+
+
 class SourceIntakeRegressionTests(unittest.TestCase):
     def make_repo(self, tmp: str, known_bytes: bytes) -> Path:
         root = Path(tmp) / "repo"
@@ -84,6 +89,16 @@ class SourceIntakeRegressionTests(unittest.TestCase):
         )
         payload = json.loads(proc.stdout or proc.stderr)
         return proc.returncode, payload
+
+    def test_current_canonical_file_rows_do_not_duplicate_exact_sha_identity(self) -> None:
+        rows = read_tsv(REPO / "corpus" / "files.tsv")
+        by_sha: dict[str, list[str]] = {}
+        for row in rows:
+            digest = row.get("sha256", "")
+            if digest:
+                by_sha.setdefault(digest, []).append(row["file_id"])
+        duplicates = {digest: file_ids for digest, file_ids in by_sha.items() if len(file_ids) > 1}
+        self.assertEqual({}, duplicates)
 
     def test_exact_sha_match_derives_file_source_and_structural_project_without_selecting_use(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
