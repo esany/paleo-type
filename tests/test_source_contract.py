@@ -33,7 +33,9 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 
 class CurrentRepositoryRegressionTests(unittest.TestCase):
     def test_current_repository_validates_migrated_historical_project_state(self) -> None:
-        errors, _, cache = source_contract.validate(REPO, source_contract.load_contract(REPO))
+        contract = source_contract.load_contract(REPO)
+        self.assertEqual(8, contract["version"])
+        errors, _, cache = source_contract.validate(REPO, contract)
         self.assertEqual([], errors)
         self.assertFalse(cache["project_sources"])
         self.assertEqual(4, len(cache["source_uses"]))
@@ -49,6 +51,13 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertEqual("USE-REGII5-00000129-PRINCIPAL", evidence["use_id"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", evidence["file_id"])
         self.assertEqual("historical", evidence["status"])
+
+        for project_id, meta in cache["projects"].items():
+            self.assertTrue(meta["research_object"], project_id)
+            self.assertTrue(meta["active_scope"], project_id)
+            self.assertEqual("source-uses.tsv", meta["source_register"])
+            self.assertTrue((REPO / "projects" / project_id / meta["source_register"]).is_file())
+            self.assertTrue((REPO / "projects" / project_id / meta["canonical_status_file"]).is_file())
 
     def test_current_resolver_uses_target_use_evidence_without_legacy_primary_file(self) -> None:
         args = SimpleNamespace(
@@ -146,6 +155,22 @@ class TargetProjectUseContractTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.tmp.cleanup()
 
+    def _write_project(self, project_id: str, root_id: str) -> None:
+        project = self.root / "projects" / project_id
+        project.mkdir(parents=True, exist_ok=True)
+        (project / "project.yml").write_text(
+            f'id: {project_id}\n'
+            f'project_source_id: {root_id}\n'
+            'research_object: "Fixture scholarly investigation"\n'
+            'active_scope: "No active scope in fixture"\n'
+            'source_register: "source-uses.tsv"\n'
+            'canonical_status_file: STATUS.md\n',
+            encoding="utf-8",
+        )
+        (project / "STATUS.md").write_text("# Fixture status\n", encoding="utf-8")
+        use_headers = source_contract.load_contract(REPO)["tables"]["project_source_uses"]["required_columns"]
+        write_tsv(project / "source-uses.tsv", use_headers, [])
+
     def _write_base_fixture(self) -> None:
         (self.root / "corpus").mkdir(parents=True)
         shutil.copy(REPO / "corpus" / "source-contract.json", self.root / "corpus" / "source-contract.json")
@@ -228,13 +253,8 @@ class TargetProjectUseContractTests(unittest.TestCase):
         ]
         write_tsv(self.root / "corpus" / "files.tsv", file_headers, file_rows)
 
-        for project_id, root_id in [("project-a", "ROOT-A"), ("project-b", "ROOT-B")]:
-            project = self.root / "projects" / project_id
-            project.mkdir(parents=True)
-            (project / "project.yml").write_text(
-                f'id: {project_id}\nproject_source_id: {root_id}\nsource_register: "source-uses.tsv"\ncanonical_status_file: STATUS.md\n',
-                encoding="utf-8",
-            )
+        self._write_project("project-a", "ROOT-A")
+        self._write_project("project-b", "ROOT-B")
 
         use_headers = source_contract.load_contract(REPO)["tables"]["project_source_uses"]["required_columns"]
         use_rows = [
@@ -354,15 +374,39 @@ class TargetProjectUseContractTests(unittest.TestCase):
         self.assertEqual("FILE-B", resolved["project_source_uses"][0]["evidence"][0]["file"]["file_id"])
         self.assertNotIn("project-a", resolved["source_projects"])
 
-    def test_duplicate_project_root_is_not_a_hard_failure(self) -> None:
-        project = self.root / "projects" / "project-c"
-        project.mkdir(parents=True)
-        (project / "project.yml").write_text(
-            'id: project-c\nproject_source_id: ROOT-B\nsource_register: "source-uses.tsv"\ncanonical_status_file: STATUS.md\n',
-            encoding="utf-8",
-        )
+    def test_duplicate_project_anchor_is_not_a_hard_failure(self) -> None:
+        self._write_project("project-c", "ROOT-B")
         errors, _, _ = self.validate()
         self.assertEqual([], errors)
+
+    def test_missing_research_object_fails(self) -> None:
+        path = self.root / "projects" / "project-a" / "project.yml"
+        text = path.read_text(encoding="utf-8").replace('research_object: "Fixture scholarly investigation"\n', "")
+        path.write_text(text, encoding="utf-8")
+        errors, _, _ = self.validate()
+        self.assertTrue(any("required project key research_object is missing or empty" in error for error in errors))
+
+    def test_missing_declared_status_file_fails(self) -> None:
+        (self.root / "projects" / "project-a" / "STATUS.md").unlink()
+        errors, _, _ = self.validate()
+        self.assertTrue(any("canonical_status_file points to missing file" in error for error in errors))
+
+    def test_missing_declared_source_register_fails(self) -> None:
+        (self.root / "projects" / "project-a" / "source-uses.tsv").unlink()
+        errors, _, _ = self.validate()
+        self.assertTrue(any("source_register points to missing file" in error for error in errors))
+
+    def test_legacy_source_register_fails_closed(self) -> None:
+        legacy = self.root / "projects" / "project-a" / "sources" / "sources.tsv"
+        write_tsv(legacy, ["source_id"], [])
+        errors, _, _ = self.validate()
+        self.assertTrue(any("legacy Project source register is no longer allowed" in error for error in errors))
+
+    def test_principal_source_id_legacy_key_fails(self) -> None:
+        path = self.root / "projects" / "project-a" / "project.yml"
+        path.write_text(path.read_text(encoding="utf-8") + "principal_source_id: SRC-INTERNAL\n", encoding="utf-8")
+        errors, _, _ = self.validate()
+        self.assertTrue(any("legacy project key principal_source_id is no longer allowed" in error for error in errors))
 
     def test_invalid_use_source_fails(self) -> None:
         path = self.root / "projects" / "project-a" / "source-uses.tsv"
