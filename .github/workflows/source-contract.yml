@@ -13,6 +13,7 @@ on:
       - 'templates/source/**'
       - 'tools/source_contract.py'
       - 'tools/source_intake.py'
+      - 'tools/project_context.py'
       - 'tests/**'
       - '.github/workflows/source-contract.yml'
   push:
@@ -28,6 +29,7 @@ on:
       - 'templates/source/**'
       - 'tools/source_contract.py'
       - 'tools/source_intake.py'
+      - 'tools/project_context.py'
       - 'tests/**'
       - '.github/workflows/source-contract.yml'
 
