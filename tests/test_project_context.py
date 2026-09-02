@@ -32,11 +32,18 @@ class ProjectContextRegressionTests(unittest.TestCase):
         self.assertIn("No owner-selected manuscript/source-research task is currently recorded", result["canonical_status"]["text"])
         self.assertIn("must not invent one", result["execution_boundary"]["note"])
 
-    def test_reg_ii_5_context_preserves_legacy_state_without_promoting_it(self) -> None:
+    def test_reg_ii_5_context_uses_target_historical_state_without_promoting_it(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         self.assertEqual("ACT-THHSTAW-EGA-REG-II-5", result["documentary_anchor"]["source_id"])
-        self.assertTrue(result["legacy_project_source_uses"])
-        self.assertEqual([], result["project_source_uses"])
+        self.assertEqual([], result["legacy_project_source_uses"])
+        self.assertEqual(4, len(result["project_source_uses"]))
+        principal = next(
+            row for row in result["project_source_uses"]
+            if row["use"]["use_id"] == "USE-REGII5-00000129-PRINCIPAL"
+        )
+        self.assertEqual("historical", principal["use"]["status"])
+        self.assertEqual("principal", principal["use"]["research_function"])
+        self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", principal["evidence"][0]["file"]["file_id"])
         self.assertIn("No new owner-selected manuscript/source-research task is currently recorded", result["canonical_status"]["text"])
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
         readiness = {
