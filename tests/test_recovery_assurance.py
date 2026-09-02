@@ -24,7 +24,8 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("accepted by explicit human owner decision on 2026-09-02", decisions)
         self.assertIn("RETROSPECTIVE AUTHORITY", admission)
         self.assertIn("CURRENT OWNER INTENT / AUTHORITY", admission)
-        self.assertIn("not retrospectively", admission.lower())
+        self.assertIn("certify historical d-017 authority retroactively", admission.lower())
+        self.assertIn("must not be rewritten as proof", admission.lower())
 
     def test_removed_source_unit_work_state_remains_visible_without_restoring_wrappers(self) -> None:
         li3 = (REPO / "projects" / "ega-reg-ii-3" / "STATUS.md").read_text(encoding="utf-8")
