@@ -27,6 +27,18 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("certify historical d-017 authority retroactively", admission.lower())
         self.assertIn("must not be rewritten as proof", admission.lower())
 
+    def test_current_project_scopes_do_not_promote_historical_knau_work_to_current_priority(self) -> None:
+        li3 = (REPO / "projects" / "ega-reg-ii-3" / "project.yml").read_text(encoding="utf-8")
+        li4 = (REPO / "projects" / "ega-reg-ii-4-bd-ii" / "project.yml").read_text(encoding="utf-8")
+        li5 = (REPO / "projects" / "ega-reg-ii-5-knau" / "project.yml").read_text(encoding="utf-8")
+
+        self.assertIn("No owner-selected active scholarly scope is currently recorded", li3)
+        self.assertIn("previously inspected Knau-related sections", li3)
+        self.assertIn("No owner-selected active scholarly scope is currently recorded", li4)
+        self.assertIn("previously inspected Ziegenrück/Knau material", li4)
+        self.assertIn("No new owner-selected active manuscript/source-research scope is currently recorded", li5)
+        self.assertIn("completed and working Knau locus research remains preserved", li5)
+
     def test_removed_source_unit_work_state_remains_visible_without_restoring_wrappers(self) -> None:
         li3 = (REPO / "projects" / "ega-reg-ii-3" / "STATUS.md").read_text(encoding="utf-8")
         li4 = (REPO / "projects" / "ega-reg-ii-4-bd-ii" / "STATUS.md").read_text(encoding="utf-8")
