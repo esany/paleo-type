@@ -2,8 +2,9 @@
 """Compile a read-only restart context from canonical paleo-type state.
 
 The output is rebuildable derived state. It deliberately does not infer a
-scholarly NEXT ACTION, research function, Project purpose, evidence access or
-authority that is not already represented by canonical owners.
+scholarly NEXT ACTION, research function, Project purpose, evidence access,
+witness attribution or authority that is not already represented by canonical
+owners.
 """
 from __future__ import annotations
 
@@ -31,6 +32,7 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
     status_path = project_dir / status_name
     source_register_path = project_dir / source_register_name
     use_evidence_path = project_dir / "research" / "use-evidence.tsv"
+    legacy_witness_provenance_path = project_dir / "research" / "legacy-witness-provenance.tsv"
 
     root_id = project.get("project_source_id", "")
     internal_sources = []
@@ -92,6 +94,8 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
     ]
     if use_evidence_path.is_file():
         project_files.append(f"projects/{project_id}/research/use-evidence.tsv")
+    if legacy_witness_provenance_path.is_file():
+        project_files.append(f"projects/{project_id}/research/legacy-witness-provenance.tsv")
 
     crosswalk_paths = [
         f"corpus/source-data/{source_id}/crosswalk.tsv"
@@ -139,10 +143,11 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
                 "Project existence or purpose from Source/File structure",
                 "research_function from structural containment",
                 "current scholarly NEXT ACTION from historical work, active evidence or legacy labels",
+                "witness attribution of legacy diplomatic material from project path, page_id or textual similarity",
                 "research-ready evidence availability from identity/reproducibility/byte availability alone",
                 "scholarly readings or interpretations from deterministic structure",
             ],
-            "note": "Use canonical STATUS for current/restart state. If STATUS records no authorized NEXT ACTION, this derived context must not invent one.",
+            "note": "Use canonical STATUS for current/restart state. If STATUS records no authorized NEXT ACTION, this derived context must not invent one. If a legacy witness-provenance owner is present, honor it before promoting old diplomatic material.",
         },
         "warnings": warnings,
     }
