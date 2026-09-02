@@ -26,10 +26,11 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
         return 2, {"status": "ERROR", "error": f"project {project_id} has no valid project.yml"}
 
     project_dir = root / "projects" / project_id
-    status_name = project.get("canonical_status_file", "STATUS.md")
+    status_name = project["canonical_status_file"]
+    source_register_name = project["source_register"]
     status_path = project_dir / status_name
-    if not status_path.is_file():
-        return 2, {"status": "ERROR", "error": f"canonical status file is missing: {status_path}"}
+    source_register_path = project_dir / source_register_name
+    use_evidence_path = project_dir / "research" / "use-evidence.tsv"
 
     root_id = project.get("project_source_id", "")
     internal_sources = []
@@ -51,7 +52,7 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
     evidence_files.sort(key=lambda row: row["file"].get("file_id", ""))
 
     target_uses = []
-    for (pid, sid), rows in cache["uses_by_project_source"].items():
+    for (pid, _sid), rows in cache["uses_by_project_source"].items():
         if pid != project_id:
             continue
         for use in rows:
@@ -67,11 +68,35 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
                     ],
                 }
             )
+    target_uses.sort(key=lambda row: row["use"].get("use_id", ""))
 
-    legacy_uses = [
-        row
-        for (pid, _), row in cache["project_sources"].items()
-        if pid == project_id
+    used_source_ids = {root_id} | internal_ids | {
+        item["use"].get("source_id", "") for item in target_uses
+    }
+    used_source_ids.discard("")
+    evidence_file_ids = {
+        evidence["file"].get("file_id", "")
+        for item in target_uses
+        for evidence in item["evidence"]
+        if evidence.get("file")
+    }
+    evidence_file_ids |= {
+        item["file"].get("file_id", "") for item in evidence_files
+    }
+    evidence_file_ids.discard("")
+
+    project_files = [
+        f"projects/{project_id}/project.yml",
+        f"projects/{project_id}/{status_name}",
+        f"projects/{project_id}/{source_register_name}",
+    ]
+    if use_evidence_path.is_file():
+        project_files.append(f"projects/{project_id}/research/use-evidence.tsv")
+
+    crosswalk_paths = [
+        f"corpus/source-data/{source_id}/crosswalk.tsv"
+        for source_id in sorted(used_source_ids)
+        if source_id in cache["crosswalks"]
     ]
 
     return 0, {
@@ -86,14 +111,24 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
             "methodology/historical-source-workflow.md",
             "methodology/project-lifecycle.md",
             "methodology/source-and-provenance.md",
-            f"projects/{project_id}/project.yml",
-            f"projects/{project_id}/{status_name}",
+            *project_files,
         ],
+        "canonical_references": {
+            "corpus_owners": [
+                "corpus/source-contract.json",
+                "corpus/sources.tsv",
+                "corpus/relationships.tsv",
+                "corpus/files.tsv",
+            ],
+            "project_files": project_files,
+            "source_ids": sorted(used_source_ids),
+            "file_ids": sorted(evidence_file_ids),
+            "crosswalk_paths": crosswalk_paths,
+        },
         "project_definition": project,
         "documentary_anchor": cache["sources"].get(root_id),
         "internal_sources": internal_sources,
         "project_source_uses": target_uses,
-        "legacy_project_source_uses": legacy_uses,
         "internal_source_files": evidence_files,
         "canonical_status": {
             "path": f"projects/{project_id}/{status_name}",
@@ -104,7 +139,7 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
                 "Project existence or purpose from Source/File structure",
                 "research_function from structural containment",
                 "current scholarly NEXT ACTION from historical work, active evidence or legacy labels",
-                "research-ready evidence availability from identity/reproducibility alone",
+                "research-ready evidence availability from identity/reproducibility/byte availability alone",
                 "scholarly readings or interpretations from deterministic structure",
             ],
             "note": "Use canonical STATUS for current/restart state. If STATUS records no authorized NEXT ACTION, this derived context must not invent one.",
@@ -114,7 +149,7 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Compile rebuildable project restart context from canonical repository state.")
+    parser = argparse.ArgumentParser(description="Compile rebuildable Project restart context from canonical repository state.")
     parser.add_argument("--project", required=True)
     parser.add_argument("--root", help="Repository root; defaults to the script's repository.")
     return parser
