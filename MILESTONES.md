@@ -38,7 +38,7 @@ Do not encode canonical Project status, source truth, reading confidence or owne
 ## Scheduling rule
 
 > **Open Issue with a Milestone = scheduled in that GitHub work sequence.**  
-> **Open Issue without a Milestone = unscheduled/backlog unless another explicit planning decision says otherwise.**
+> **Open Issue without a Milestone = unscheduled/backlog.**
 
 This rule applies to Issues, not to all research activity. A Project `STATUS.md` may contain an authorized immediate scholarly action without creating an Issue when issue tracking adds no value.
 
@@ -151,7 +151,7 @@ Interpret GitHub as follows:
 - `GOV-*` → scheduled research-system/governance work;
 - `<project> / G*` → scheduled scholarly Issue work contributing to a Project gate;
 - labels → affected domain(s)/kind;
-- no Milestone → unscheduled/backlog unless explicitly stated otherwise;
+- no Milestone → unscheduled/backlog;
 - Project `project.yml` / `STATUS.md` → Project purpose/scope and actual restart/gate/authorized-next-action state;
 - Corpus/Project research records → canonical evidence and research truth;
 - D-016 record/owner decision → material implementation admission where required.
