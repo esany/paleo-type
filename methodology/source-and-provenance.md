@@ -99,16 +99,14 @@ For every central original export used in research:
 4. record actual/intended controlled path;
 5. preserve original bytes unchanged;
 6. keep OCR/crops/renders/rotations/compression as separate derivatives with parent provenance;
-7. use the controlled `storage_status` vocabulary from `corpus/source-contract.json`;
+7. use the exact controlled `storage_status` vocabulary from `corpus/source-contract.json` rather than defining values in prose;
 8. state rights/access blockers explicitly rather than calling a link/checksum an equivalent backup.
-
-Current controlled values include `repo-preserved`, `external-controlled` and `preservation-blocked-public-redistribution`. Prose must not invent synonymous storage-state literals.
 
 ## Rights statements and preservation decisions
 
 Record the rights statement actually supplied with the object/export. A rights statement is not automatically a licence or redistribution permission.
 
-For `InC/1.0`, preserve the known protected-rights state and keep public redistribution/storage authority as a separate question. `preservation-blocked-public-redistribution` is a preservation/storage state, not a legal conclusion beyond the documented authority basis.
+For `InC/1.0`, preserve the known protected-rights state and keep public redistribution/storage authority as a separate question. Any `storage_status` used for that situation must come from the executable Source Contract and does not by itself create a legal conclusion beyond the documented authority basis.
 
 Repository visibility, repository privacy and owner storage authorization are distinct from public redistribution rights.
 
