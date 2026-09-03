@@ -2,46 +2,49 @@
 
 ## Purpose
 
-These gates define **reusable scholarly maturity states** for projects in `paleo-type`. They are not schedules, task lists or project-specific milestone definitions. The authoritative end-to-end method is `historical-source-workflow.md`; these gates answer when a project may claim a given research state has been reached.
+These gates define **reusable scholarly maturity states** for Projects in `paleo-type`. They are not schedules, task lists or Project-specific milestone definitions. The authoritative end-to-end method is `historical-source-workflow.md`; these gates answer when a Project may claim a given research state has been reached.
 
-A concrete project records only its own status, unmet requirements and next action in `projects/<id>/STATUS.md`.
+A concrete Project records only its own status, unmet requirements and authorized next action, when one exists, in `projects/<id>/STATUS.md`.
 
-GitHub may use a project-scoped Milestone such as `<project> / G2 — Diplomatic representation` to group discrete Issues that contribute to one of these gates. That Milestone is a **work-planning mirror only**: its progress/closure does not establish scholarly gate attainment, and its description must not duplicate or redefine the generic requirements below. See `MILESTONES.md`.
+GitHub may use a Project-scoped Milestone such as `<project> / G2 — Diplomatic representation` to group discrete Issues that contribute to one of these gates. That Milestone is a **work-planning mirror only**: its progress/closure does not establish scholarly gate attainment, research priority or D-016 implementation admission, and its description must not duplicate or redefine the generic requirements below. See `MILESTONES.md`.
 
-> A project may advance only when the relevant gate requirements are demonstrably met. Activity alone does not complete a gate.
+> A Project may claim a gate only when the relevant requirements are demonstrably met. Activity alone does not complete a gate.
 
-Later evidence may reopen an earlier gate. Consequential revision must remain traceable. Explicitly unresolved evidence is compatible with a passed gate when the gate requires representation/testing rather than forced resolution.
+Later evidence or justified re-adjudication may reopen an earlier gate. Consequential revision must remain traceable. Explicitly unresolved evidence is compatible with a passed gate when the gate requires representation/testing rather than forced resolution.
 
 ---
 
 ## G1 — Source and transmission basis secured
 
 ### Target state
-The project's bounded source group can be reconstructed: every principal/comparison/control/context record is independently identified; project roles/loci are explicit; exact digital instantiations used as evidence are byte-identifiable and recoverable or have an explicit preservation blocker; archival description, digital instantiation and demonstrated textual relationships remain distinct.
+The Project's source basis can be reconstructed from its canonical owners: material Sources used by the investigation are independently identified, Project-relative research functions/loci are explicit where applicable, exact digital instantiations used as evidence are byte-identifiable and recoverable or have an explicit preservation blocker, and archival description, digital instantiation and demonstrated textual relationships remain distinct.
+
+Project existence, purpose and current priority are governed by `project-lifecycle.md` and Project state; satisfying G1 does not create a Project or select `NEXT ACTION`.
 
 ### Requirements
-- the project source group is explicit and human-readable in `projects/<id>/sources/sources.tsv`;
-- principal source/witness has an unambiguous canonical identity;
-- every material comparison/control/context source is independently identified rather than collapsed by shared archive/signature/topic;
-- archive/fonds/signature/record/title/locus and persistent/digital identifiers are recorded where available;
-- project-relevant locus is separated from the source's full archival extent;
+- actual Project→Source research use is explicit in `projects/<id>/source-uses.tsv` when such use exists;
+- every material Source used in the investigation has an unambiguous canonical identity independent of its Project-relative function;
+- material comparison/control/context Sources are independently identified rather than collapsed by shared archive/signature/topic;
+- archive/fonds/signature/record/title/locus and persistent/digital identifiers are recorded where available and relevant;
+- Project-relevant Source locus is separated from the Source's full archival extent;
 - archival locus is mapped independently of portal/export/PDF numbering;
-- each consequential digital file/instantiation has exact filename, SHA-256, coverage and preservation/storage state in `corpus/files.tsv`;
+- each consequential digital File/instantiation has exact filename, SHA-256, coverage and preservation/storage state in `corpus/files.tsv`;
+- concrete Project-use→File evidence is recorded in `research/use-evidence.tsv` when needed rather than inferred from Source membership or File availability;
 - the exact inspected export is recoverable from its controlled preservation location, or the repository states a concrete unresolved preservation blocker; URL/URN + checksum alone is not misrepresented as equivalent backup;
 - reusable source-wide crosswalks distinguish folio/page, image, PDF/export and working identifiers and have one canonical source-data home;
-- source roles in the project are distinguished from historical/source relationships;
-- source relationships are stated only at the level supported by inspected evidence;
+- Project-relative research functions are distinguished from historical/Source relationships and from current work priority;
+- Source relationships are stated only at the level supported by inspected evidence;
 - catalogue/finding-aid claims remain distinguishable from manuscript/collation findings;
-- project source basis can be reconstructed from repository state without chat.
+- Project source/evidence basis can be reconstructed from repository state without chat.
 
 ### Exit gate
-A competent third party can identify every material source record in the investigation, understand its project role/locus, recover or account for the exact inspected instantiation, and understand what is actually known about relevant source relationships.
+A competent third party can identify every material Source used in the investigation, understand its evidenced Project-relative function/locus where applicable, recover or account for the exact inspected instantiation, and understand what is actually known about relevant Source relationships.
 
 ### Permitted residual uncertainty
 Textual dependence, scribal relationship, finer chronology or record-stage relationships may remain unresolved when explicitly labelled. A rights/access preservation blocker may remain only if the exact byte identity is controlled and the limitation is explicit; it is not silently treated as full repository preservation.
 
 ### Reopen when
-Source identity, source-group membership/role, locus mapping, digital-file identity/preservation state, provenance, project boundary or a consequential source relationship is shown to be wrong or materially incomplete.
+Source identity, Project→Source use/locus, digital-File identity/preservation state, provenance or a consequential Source relationship is shown to be wrong or materially incomplete. A Project-purpose or priority change is a separate authority/state event; it does not become a G1 inference.
 
 ---
 
@@ -153,14 +156,14 @@ The principal witness has a complete, coherent and evidence-auditable transcript
 - principal transcription remains G2-compliant and conventionally consistent;
 - every consequential reading has appropriate research/source-phenomenon status;
 - important working readings/relationships undergo adversarial falsification attempts proportional to consequence;
-- rejected semantic/fluent reconstructions do not re-enter without new evidence;
+- rejected semantic/fluent reconstructions do not casually recycle into the text as if rejection had never occurred; any re-adjudication is traceable to its basis, which may be new evidence, reinspection or reevaluation of existing evidence, correction of a recognized prior error, qualified review, or a materially relevant method change;
 - palaeographic/collation-driven changes are traceable;
 - source relationships remain stated at demonstrated level;
 - manuscript forms remain separate from normalization/identification;
 - consequential numeral/currency/measure readings use the strongest available relevant evidence;
 - residual uncertainties are discoverable and evidential limits explained where consequential;
-- bounded consistency checking confirms coherence among transcription, apparatus, palaeography, source audit, corpus relations and project status;
-- the project states which consequential specialist claims have or have not received **independent qualified human review**;
+- bounded consistency checking confirms coherence among transcription, apparatus, palaeography, source audit, corpus relations and Project status;
+- the Project states which consequential specialist claims have or have not received **independent qualified human review**;
 - method-compliant AI-assisted work is never labelled expert-validated without such review.
 
 ### Exit gate
@@ -170,7 +173,7 @@ A third party can audit consequential readings from consolidated text back to so
 Explicit unresolved readings, expansions and transmission questions are allowed.
 
 ### Reopen when
-A material source-reading error, provenance error, invalid comparison anchor or consequential undocumented decision is discovered.
+A material source-reading error, provenance error, invalid comparison anchor, consequential undocumented decision, or justified re-adjudication changes the consolidated state.
 
 ---
 
@@ -205,19 +208,19 @@ Post-publication/source review reveals a material error, new evidence changes a 
 
 ---
 
-## Progression and project usage
+## Progression and Project usage
 
 `G1 source basis → G2 diplomatic representation → G3 internal analysis → G4 controlled comparison → G5 critical consolidation/validation → G6 edition`
 
-The sequence expresses dependency, not an irreversible waterfall. Projects may perform supporting work from a later gate when necessary, but the active gate remains the controlling maturity claim.
+The sequence expresses dependency, not an irreversible waterfall. Projects may perform supporting work from a later gate when necessary, but gate state remains an evidence-based maturity claim, not a priority selector.
 
 Project `STATUS.md` records only:
-- overall project goal;
+- overall Project goal/purpose reference as needed for restart;
 - gate state (`reached`, `active`, `not reached`, `reopened`);
-- project-specific unmet requirements/blockers;
+- Project-specific unmet requirements/blockers;
 - validation/review state where consequential;
-- exact next action.
+- authorized next action when one exists, or its explicit absence.
 
-GitHub project-gate Milestones may group scheduled Issues for human navigation, but they do not alter this ownership model or the evidence required to change gate state.
+GitHub Project-gate Milestones may group scheduled Issues for human navigation, but they do not alter this ownership model, authorize a scholarly work target, satisfy D-016 admission, or change the evidence required to change gate state.
 
-Do not duplicate these generic gate requirements inside individual projects or GitHub Milestone descriptions.
+Do not duplicate these generic gate requirements inside individual Projects or GitHub Milestone descriptions.

@@ -26,7 +26,7 @@ If a project-specific file conflicts with this generic method, preserve the proj
 
 1. **METHOD (`methodology/`, `AGENTS.md`, `DECISIONS.md`)** — rules that should remain valid for another comparable historical-handwriting investigation.
 2. **CORPUS (`corpus/`, `entities/`)** — canonical archival/source identities, exact digital instantiations, reusable source-wide mappings, source/event/entity relationships and normalized identities.
-3. **PROJECT (`projects/<id>/`)** — a bounded historical investigation / source-unlocking undertaking over a coherent source group, including project-specific source roles/loci, observations, transcription, comparison evidence, decisions and research state.
+3. **PROJECT (`projects/<id>/`)** — a durable scholarly investigation/work container established for a research purpose. It references canonical Sources/Files and carries project-specific source uses/loci, observations, transcription, comparison evidence, decisions and research state. Source/File/archival structure alone does not create a Project.
 
 Generalisation/ownership test:
 
@@ -37,6 +37,58 @@ Generalisation/ownership test:
 - no, it concerns one investigation's source role/locus/reading/state → project.
 
 A source record or PDF is not automatically a project. Separately identified archival records remain separate sources even when they share a volume/signature. Project facts may illustrate a method in discussion, but they must not become normative method merely because the pilot exhibited them.
+
+## Source/File intake and Project routing
+
+Source/File intake precedes and is independent of Project materialization. A supplied file may be fully registered as canonical Corpus state even when no Project exists yet. `CORPUS_ONLY / NO_PROJECT_YET` is therefore a valid completed routing outcome, not a workflow failure.
+
+Use the following canonical decision order for a newly supplied or discovered digital source representation:
+
+```text
+supplied/discovered file
+→ establish exact File identity/checksum where consequential
+→ match/reuse a known canonical File or keep the File identity unresolved/distinct
+→ establish/verify which historical Source the File instantiates
+→ establish only evidenced Source→Source structure/relations
+→ record/reuse File→Source provenance and rights/preservation state
+→ reuse/create source-wide folio/image/PDF correspondence only when evidenced
+→ explicit Project routing decision
+     ├─ existing Project
+     ├─ candidate new Project
+     └─ Corpus-only / no Project yet
+→ create only project-relative use/evidence/state actually required by the selected route
+→ run deterministic integrity checks
+→ update Project STATUS/NEXT ACTION only when Project state actually changes and an authorized next action exists
+→ test restartability from repository state plus the authorized evidence-access mechanism
+```
+
+The route is not inferred from whichever Project is active in chat or from Source structure. Before any Project-specific mutation, establish explicitly which of the three routing outcomes applies. A `candidate new Project` becomes a Project only after a human research-purpose decision establishes that a durable investigation/work container is wanted; `project_source_id` is then selected as the documentary Source anchor for deterministic structural resolution. It does not itself create the Project or select its research priority.
+
+### Deterministic intake facts versus judgement
+
+Once the relevant inputs exist, software may determine or check stable facts such as:
+
+- SHA-256 equality with a canonical File;
+- canonical Source/File/Project/use reference integrity;
+- Source ancestry and `root | internal | external` status after Project selection;
+- whether a canonical source-wide crosswalk exists for the established Source;
+- whether explicit use-evidence points to a File of the same canonical Source;
+- checksum/path/storage constraints already defined by the Source Contract.
+
+Software must **not** infer from filename, page count, OCR, visual similarity, archival proximity, current chat, or structural containment:
+
+- historical Source identity where the evidence is unresolved;
+- a Source relationship not already evidenced;
+- whether a Source should be used in a Project;
+- a Project's existence, research purpose or current scope;
+- `research_function` or relevant scholarly locus;
+- rights/redistribution authority requiring human/institutional judgement;
+- the current scholarly NEXT ACTION;
+- palaeographic, philological, editorial or historical truth.
+
+`python tools/source_intake.py <file>` is a read-only convenience adapter for the deterministic part of this sequence. Its output is a derived inspection/routing view, not canonical research state and not Project-creation authority.
+
+For active visual source work, intake/restartability must also preserve the distinction among **identifiability**, **reproducibility** and **research-ready availability**. Knowing the File ID/SHA/crosswalk or a render recipe does not prove that a fresh authorized work context can actually open the evidence required for the next scholarly action. See `source-and-provenance.md` and the applicable Project status for the concrete access state.
 
 ## Research-question control
 
@@ -95,7 +147,7 @@ When a standards version materially changes a repository rule, document the insp
 ## S1 — Establish investigation source group and provenance
 **Question:** Which distinct archival/source records form the investigation, what role/locus does each have, and how can the exact inspected instantiations be recovered?
 
-Required method: define the bounded project source group; independently identify every material source record; preserve separately catalogued/identified records even when they share a volume/signature; distinguish archival unit, record, witness, locus and instantiation; record each source's project role and relevant locus without rewriting canonical source identity; preserve archival/catalogue identifiers and stable digital identifiers; for consequential file-based work record exact original filename, SHA-256, coverage and preservation/storage state; treat URL/URN as secondary provenance rather than equivalent backup; keep folio/page, portal image, export sequence, PDF page and working IDs separate; distinguish catalogue statements from direct observations; model copy/extract/parallel/event relationships as claims with evidential status.
+Required method: for a purpose-established Project, define the bounded investigation source group; independently identify every material source record; preserve separately catalogued/identified records even when they share a volume/signature; distinguish archival unit, record, witness, locus and instantiation; record each source's project role and relevant locus without rewriting canonical source identity; preserve archival/catalogue identifiers and stable digital identifiers; for consequential file-based work record exact original filename, SHA-256, coverage and preservation/storage state; treat URL/URN as secondary provenance rather than equivalent backup; keep folio/page, portal image, export sequence, PDF page and working IDs separate; distinguish catalogue statements from direct observations; model copy/extract/parallel/event relationships as claims with evidential status. Corpus-only Source/File intake may precede this Project activity and does not need to manufacture a Project or research function.
 
 **Completion evidence:** a third party can reconstruct the project source group, distinguish its archival records and their roles/loci, and recover or explicitly account for the exact inspected instantiations without chat.
 
