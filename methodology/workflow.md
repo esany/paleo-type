@@ -115,6 +115,8 @@ VISION-INSPECTABLE = FAIL
 → do not simulate scholarship from metadata/transcription alone
 ```
 
+After this failure the scholarly role does **not** perform upstream evidence search, retrieval diagnosis or access repair. It returns the blocker to the evidence-availability/staging owner and resumes only from a newly valid executable state.
+
 Do not use `EVIDENCE STAGED = PASS` as an ambiguous composite token.
 
 If the decisive staging capability lies outside repository/tool control, record the platform boundary instead of building repo machinery that cannot cross it.
