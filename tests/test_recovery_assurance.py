@@ -27,15 +27,18 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("certify historical d-017 authority retroactively", admission.lower())
         self.assertIn("must not be rewritten as proof", admission.lower())
 
-    def test_current_project_scopes_do_not_promote_historical_knau_work_to_current_priority(self) -> None:
+    def test_current_project_scopes_require_owner_selection_and_do_not_promote_legacy_knau(self) -> None:
         li3 = (REPO / "projects" / "ega-reg-ii-3" / "project.yml").read_text(encoding="utf-8")
         li4 = (REPO / "projects" / "ega-reg-ii-4-bd-ii" / "project.yml").read_text(encoding="utf-8")
         li5 = (REPO / "projects" / "ega-reg-ii-5-knau" / "project.yml").read_text(encoding="utf-8")
 
         self.assertIn("No owner-selected active scholarly scope is currently recorded", li3)
         self.assertIn("previously inspected Knau-related sections", li3)
-        self.assertIn("No owner-selected active scholarly scope is currently recorded", li4)
-        self.assertIn("previously inspected Ziegenrück/Knau material", li4)
+        self.assertIn("Owner-selected 2026-09-03", li4)
+        self.assertIn("THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089", li4)
+        self.assertIn("fol. 306v–309r / export images 667–672", li4)
+        self.assertIn("legacy Li 5/Knau material is checking/recovery evidence only after independent inspection", li4)
+        self.assertNotIn("No owner-selected active scholarly scope is currently recorded", li4)
         self.assertIn("No owner-selected active manuscript/source-research scope is currently recorded", li5)
         self.assertIn("legacy transcription/apparatus/palaeography material may be consulted for checking", li5)
         self.assertNotIn("completed and working Knau locus research remains preserved", li5)

@@ -1,12 +1,12 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 4 Bd. II
 
-Last checkpoint: 2026-09-02
+Last checkpoint: 2026-09-03
 
 ## Project authority and root
 
 The human owner explicitly confirmed on 2026-09-02 that Reg. Ii 4 Bd. II should currently continue as one act-oriented Project, anchored at `ACT-THHSTAW-EGA-REG-II-4-BD-II`, as an application of D-018. This current authority does not retroactively certify the complete historical D-017 wording.
 
-`Knau` is a preserved historical research focus, not the Project identity and not a current priority selector. Further sections may be activated when an owner-grounded research question requires them.
+On 2026-09-03 the human owner selected the **Knau passage of the Reg. Ii 4 Bd. II Ziegenrück Source** as the current manuscript/source-research target. This activates a bounded research locus; it does not redefine the Project boundary and does not assign a permanent Project→Source research-function label by itself.
 
 ## Known internal section/source node
 
@@ -14,7 +14,7 @@ The human owner explicitly confirmed on 2026-09-02 that Reg. Ii 4 Bd. II should 
 
 This is a separate material Source/witness from the Reg. Ii 5 Ziegenrück record fol. 55v–66v. Their archival extract/correspondence relation does not merge witness identity, foliation, image numbering, File provenance or diplomatic readings.
 
-`source-uses.tsv` remains empty until an actual current project-relative research function needs to be recorded.
+`source-uses.tsv` remains empty until an actual project-relative research function needs to be recorded. The current work target is carried by the owner-selected `active_scope`/`NEXT ACTION`, not by inferring a `principal`, `comparison` or other research function.
 
 ## Recovered prior work state
 
@@ -44,14 +44,24 @@ The canonical current classification of that legacy corpus is recorded in `proje
 
 ## Research/gate state
 
-No current diplomatic transcription of the Reg. Ii 4 Knau locus is declared merely from the legacy Knau/G2 corpus. No new source-research priority is asserted by Project confirmation or this reconciliation.
+The current target is now the Reg. Ii 4 Knau locus itself. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus. Any new reading must be established independently against the Reg. Ii 4 Source/File/locus.
 
-The observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not assign a permanent comparison role or select the next task.
+The observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not assign a permanent comparison role and must not supply graphemes for the independent first reading.
 
 ## NEXT ACTION — canonical restart point
 
-No owner-selected manuscript/source-research task is currently recorded. Do not infer one from Project creation, the Knau crosswalk, preserved comparison evidence or the legacy mixed-provenance corpus. When the owner selects a Reg. Ii 4 research question, activate the required Source/locus and start from the exact Reg. Ii 4 File before consulting legacy readings.
+**Begin independent source-exact inspection of the Reg. Ii 4 Bd. II Knau passage at fol. 306v / export image 667 and proceed through fol. 309r / image 672.**
+
+Execution order:
+
+1. verify that the exact Reg. Ii 4 evidence for image 667 is staged and visually inspectable in the active target context;
+2. read/transcribe from Reg. Ii 4 itself in physical/source order, preserving diplomatic spelling, abbreviation signs, layout-relevant uncertainty and unresolved readings;
+3. continue sequentially through images 668–672 / fol. 307r–309r;
+4. only after an independent Reg. Ii 4 reading exists may legacy Knau/G2 or Reg. Ii 5 material be consulted as checking/collation evidence;
+5. do not promote any legacy reading merely because it matches this witness.
+
+If image 667 is not staged/vision-inspectable, stop at the evidence prerequisite and obtain/stage the exact Reg. Ii 4 image rather than substituting Li 5 or legacy text.
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the absence of a current manuscript task, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the required start at image 667, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
