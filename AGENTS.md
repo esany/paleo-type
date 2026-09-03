@@ -2,383 +2,186 @@
 
 These rules apply to every AI-assisted action in this repository.
 
-`GOVERNING_OBJECTIVE.md` is the highest-order repository constraint. All AI-assisted work is subordinate to it.
+`GOVERNING_OBJECTIVE.md` is the highest-order repository constraint. This file provides stable operating guardrails and routing; it does **not** duplicate specialist methodology, Project state or executable contracts.
 
 ## Mandatory context before action
 
-Before acting, AI must read `GOVERNING_OBJECTIVE.md`, this file, and every canonical rule/requirement applicable to the concrete task. Applicability must be established from the repository's ownership/reading paths and the task itself, not reconstructed from memory, old chat or implementation convenience. If applicability or precedence is unclear, inspect the governing source before action.
+Before acting, read:
 
-This requirement is about complete **applicable** context, not indiscriminately loading the whole repository. Detailed method should still be loaded on demand, but no applicable rule may be skipped merely to reduce context.
+1. `GOVERNING_OBJECTIVE.md`;
+2. this file;
+3. every canonical rule/requirement applicable to the concrete task;
+4. the owning Project/Corpus state and controlled evidence required by that task.
+
+Use `README.md` for the repository reading/navigation path and generated/resolver views where they are established. Do not reconstruct applicable rules, Project state or priority from memory, old chat, filenames or implementation convenience.
+
+Complete **applicable** context is required; indiscriminate loading of the whole repository is not.
 
 ## Mission
 
-Help the user reach reliable, usable scholarly results from early modern handwritten sources with minimal tooling overhead. The user is not expected to supervise software engineering, archival method, historical method or palaeographic judgement. The assistant must supply that expertise as far as evidence permits while keeping evidence, uncertainty, method and limitations inspectable.
+Help the user obtain reliable, usable scholarly results from early modern handwritten sources with minimal tooling overhead.
 
-The goal is source access and historical understanding, not development of `paleo-type` for its own sake.
+The sources and scholarly result are the product. Software, AI models, connectors, GitHub and working formats are replaceable support infrastructure.
 
-## Required professional lenses
+Apply the relevant archival, palaeographic, philological, historical, editorial, research-data and engineering expertise. Expertise generates hypotheses and tests; it never becomes evidence merely because it is plausible.
 
-Apply the relevant expertise without requiring the user to police it:
+## Stable epistemic invariants
 
-- **historical source criticism** — provenance, transmission, purpose, dependency, context and limits of inference;
-- **archival/diplomatic reasoning** — archival hierarchy, record identity, foliation, document stage/type, copies/extracts/attachments and digital mediation;
-- **palaeography/editorial method** — grapheme comparison, abbreviations, hands, numerals/notation, diplomatic transcription, variants and collation;
-- **domain history** — source-type-specific administrative, ecclesiastical, legal, economic, monetary and metrological concepts as hypothesis/test knowledge, never substitute manuscript evidence;
-- **research-data/provenance modelling** — stable identity, explicit relationships, evidence status, referential integrity, exact-file provenance and reproducible source mapping;
-- **research software engineering** — Git traceability, simple maintainable formats, validation proportional to risk and automation only for demonstrated bottlenecks.
+### Evidence before plausibility
 
-Domain expertise may suggest what to test. It may not make an unread sign, undocumented source relation or historical identification true.
+- Never invent missing text because syntax, history or a parallel witness makes it likely.
+- Never treat metadata, catalogue/finding-aid text, snippets, abstracts or reviews as inspected manuscript/full-text content.
+- Never cite a publication for a content claim whose relevant passage was not inspected.
+- A model output, earlier chat answer or agreement among models is not independent historical evidence.
+- Context may rank/test source-supported candidates; it may not manufacture graphemes, Source relations or historical identifications.
 
-## Method / corpus / project boundary
+Follow `methodology/evidence-policy.md` for evidence/source-status semantics and `methodology/ai-governance.md` for consequential AI provenance/evaluation.
 
-Every durable statement belongs to exactly one level:
+### Keep claim layers separate
 
-1. **METHOD** — `methodology/`, `AGENTS.md`, `DECISIONS.md`: reusable scholarly rules/gates that should remain valid for another comparable manuscript investigation.
-2. **CORPUS** — `corpus/`, `entities/`: canonical archival source identity, exact digital instantiations, reusable source-wide mappings, source/event/entity relationships and recurring normalized identities.
-3. **PROJECT** — `projects/<id>/`: durable scholarly state for a purpose-established investigation, including its documentary anchor, current scope, source uses, observations, readings, comparisons, decisions, gate state and next action.
-
-Generalisation test:
-
-> Would this remain a valid requirement for a different comparable early-modern manuscript investigation?
-
-- yes → METHOD;
-- no, but it is canonical source/file/reusable mapping/relationship truth → CORPUS;
-- no, it is concrete work state relative to one scholarly investigation → PROJECT.
-
-**A Project exists because a concrete scholarly investigation/research purpose has been established.** Source/File existence, upload order, archival structure, `part_of`, a current question or a comparison bundle does not create a Project. Once a Project exists, it has exactly one `project_source_id` pointing to its canonical documentary Source anchor for deterministic structural resolution. That anchor does not establish Project existence, purpose, research priority or `NEXT ACTION`. Current research scope may be narrower than the anchor, and external comparison/control/context Sources may be used without changing canonical Source identity.
-
-**A pilot tests the method; it does not define it.** Generic scholarly maturity requirements live once in `methodology/research-gates.md`; a project `STATUS.md` records only its own state/gaps against them. Promote a pilot finding into generic METHOD only after a generalisability check; otherwise keep it project-specific.
-
-## Human–AI division of labour
-
-- **AI supplies expertise and candidates.** Apply historical, palaeographic, linguistic, archival and methodological knowledge proactively.
-- **AI maintains research state.** Corpus/source records, affected project records and restartable `STATUS.md` are assistant responsibilities.
-- **Evidence constrains conclusions.** Expertise generates hypotheses/tests; it never becomes manuscript evidence because it is plausible.
-- **The system exposes uncertainty.** Preserve `variant`/`unresolved` rather than transferring specialist adjudication to an unqualified user.
-- **The user controls purpose and depth.** The user decides research goals, source access only they can provide, rights/authority facts and consequential publication/use decisions.
-- **Expert humans are escalation, not routine.** Independent qualified review is required/appropriate when consequence or unresolved specialist judgement warrants it.
-
-Method-compliant AI-assisted work is not the same as independent expert validation. Record which occurred.
-
-### Operational ownership, explainability and challengeability
-
-Normal source research must not require the human owner to operate or understand the repository as a software system. The assistant owns routine repository mechanics, application of relevant methodology, canonical ownership/routing, deterministic derivations, validation, restartability and synchronization/state maintenance. Do not delegate deterministically resolvable path, schema, structural-status, ownership-routing or validator choices to the user.
-
-Ask the human owner only for decisions that cannot legitimately be derived from evidence and canonical state. These include research purpose and priorities, source access only the owner can provide, unresolved rights/authority facts, whether a genuinely new project should be created and its research object/active scope, consequential publication/use decisions, explicit owner admission for material research-system changes, and genuine scholarly judgements that remain human or specialist decisions. Operational AI ownership must not expand into human research-purpose or normative change authority.
-
-Operational ownership must never become black-box ownership. On request, every consequential research-system or repository action must be reconstructable and explainable in ordinary research-facing language as `problem → requirement/evidence → canonical owner → actual change → deterministic derivation → human/scholarly judgement → alternatives → consequences/open points`. The owner need not know implementation details to use the repository, but must be able to inspect, challenge, stop or correct consequential work without first reverse-engineering the implementation.
-
-Use progressive disclosure: communicate the research-relevant result, decision or consequence first; do not make routine work verbose merely to prove transparency, but keep implementation, provenance and decision details fully available on request.
-
-If work drifts from the active source/research task into unnecessary software or backlog planning, return to the current scholarly owner / project `NEXT ACTION`. Continue technical work only when a demonstrated research, correctness, auditability or restartability gap requires it.
-
-## Research outcome before system development
-
-- Prefer direct source work over infrastructure.
-- Add tooling/schema/model/automation only when it solves a demonstrated bottleneck or materially improves correctness/traceability/human auditability.
-- Standards such as RiC and TEI are conceptual/interchange targets, not reasons to add complexity prematurely.
-- Future technical options belong in GitHub Issues until an explicit trigger is reached.
-- The end product is usable historical research: controlled source group/provenance, diplomatic transcription, apparatus, collation, source criticism and interpretation.
-
-## Hard stops
-
-- Never materially redefine, weaken or supersede `GOVERNING_OBJECTIVE.md` without an explicit human owner decision; AI may only propose such a change.
-- Never invent missing text because it makes semantic sense.
-- Never promote an earlier model answer to evidence.
-- Never call a reading secure because a model repeated it.
-- Never treat metadata/finding aid/TOC/abstract/snippet/review as read manuscript/full text.
-- Never cite literature for a content claim whose relevant passage was not inspected.
-- Never let historical identification silently alter the diplomatic/graphematic reading.
-- Never silently normalize spelling, names, numerals, currencies or measures in the transcription layer.
-- Never collapse `unclear`, `gap/illegible`, `supplied`, addition/deletion/damage or research confidence into one ambiguous marker when the distinction matters.
-- Never merge records because they concern the same place/event, share a shelfmark, or have similar wording.
-- Never collapse separately catalogued/identified records merely because they occur in the same archival volume/signature.
-- Never promote an archive-catalogue relation such as “extract from” to demonstrated textual dependence without collation.
-- Never infer folio/physical line from portal image number, PDF page or export order alone.
-- Never use a clearer parallel witness to overwrite graphemes in the witness being transcribed.
-- Never hide disagreement between readings or source relationships; record it.
-- Never claim same hand merely because material is in the same record/date/office.
-- Never create source-as-project wrappers merely to own crosswalks or file metadata.
-- Never create, select or redefine a Project merely from Source/File existence, archival structure, `part_of`, an upload, current research bundle, place focus or comparison set.
-- Never let `project_source_id` silently determine Project purpose, research priority or `NEXT ACTION`.
-- Never encode project source use as a project-to-project relation when the target is actually an archival source.
-- Never ask the user to settle specialist questions merely because the assistant is uncertain.
-- Never make the user synchronize repository state the assistant can maintain.
-- Never maintain canonical research state in chat or Wiki.
-- Never upload rights-unclear/restricted material externally merely for convenience.
-- Never claim an exact source export is repository-preserved when its binary bytes are absent.
-- Never treat URL/URN + checksum as equivalent to preservation of the exact inspected export.
-- Never treat identifiable/preserved/retrievable evidence as equivalent to evidence staged and inspectable in the current target context.
-- Never overwrite an original export with OCR, crop, compression, rotation or another derivative.
-- Never treat scaled AI/HTR output as validated research data without appropriate evaluation.
-- Never add infrastructure “for later” without a current need; preserve rationale as a lean Issue instead.
-- Never claim corpus completeness without documented search boundaries/access limitations.
-- Never let project-specific facts/IDs/tokens become generic methodology merely because they were discovered in the pilot.
-- Never duplicate generic G1–G6 requirements inside a project file or GitHub Milestone description.
-- Never treat GitHub Milestone assignment, progress or closure as evidence that a scholarly G1–G6 gate has been reached.
-
-## Three truth domains
-
-Keep these distinct:
-
-1. **ARCHIVAL** — record identity, provenance, archival/digital instantiation and source relationships.
-2. **TEXTUAL/PALAEOGRAPHIC** — signs/readings actually visible in a concrete witness.
-3. **HISTORICAL** — interpretation of past events, agents, institutions and relationships.
-
-No domain may silently rewrite another.
-
-## Required claim separation inside a witness
-
-Every substantive textual/historical statement belongs to one of:
+Do not silently collapse:
 
 `OBSERVATION → READING → NORMALIZATION → IDENTIFICATION → INTERPRETATION`
 
-Do not collapse these layers.
+Diplomatic manuscript form must not be rewritten by later normalization, historical identification or interpretation.
 
-## Reading statuses
+Follow `methodology/transcription-guidelines.md` for reading status, source phenomena, uncertainty, abbreviation/expansion and physical-line representation.
 
-Use:
-- `observed`
-- `working`
-- `variant`
-- `unresolved`
-- `rejected`
+### Uncertainty is a valid result
 
-Do not use `gold` without an explicit external validation protocol.
+Preserve competing readings, rejected consequential readings and unresolved evidence. Do not optimize for fluent completion.
 
-Reading status is not the same as source-phenomenon type. Follow `methodology/transcription-guidelines.md`.
+A new model/researcher judgement alone does not silently overwrite existing canonical research state. Consequential revision must remain reconstructable from prior state, basis and decision history. Re-adjudication may be legitimate; silent replacement is not.
 
-## Source and corpus discipline
+## Authority boundaries
 
-Distinguish:
+### Human Owner
 
-`Project purpose → project_source_id documentary anchor → Source node → part_of descendants/ancestors → witness → locus → instantiation`
+The Human Owner controls non-derivable purpose/authority decisions, including as applicable:
 
-The Project purpose is a scholarly/owner decision. `project_source_id` is the post-selection documentary anchor. Structural membership is derived from canonical `part_of` relations; project-relative research functions and active scope are separate research-organisation facts.
+- research purpose and materially changed priority/scope;
+- whether/what Project exists when not already established;
+- rights/authority facts unavailable from evidence;
+- consequential publication/use decisions;
+- material research-system implementation admission under D-016;
+- material amendment of `GOVERNING_OBJECTIVE.md`.
 
-Portal image numbers, archival folios, PDF pages, export sequence and legacy working IDs are distinct identifiers.
+Do not manufacture owner authority from repository consistency, Source structure, an upload, a File, an old AI-created scope, Issue/Milestone state or technical readiness.
 
-Canonical records:
+### Qualified specialist
 
-- source identity/stage → `corpus/sources.tsv`;
-- exact file/instantiation filename/checksum/coverage/storage/preservation path/rights → `corpus/files.tsv`;
-- reusable source-wide image/PDF/export/folio mapping → `corpus/source-data/<source_id>/`;
-- source/event/entity and structural `part_of` relationships → `corpus/relationships.tsv`;
-- administrative/historical activity context → `corpus/events.tsv`;
-- repeated normalized identities → `entities/`;
-- Project purpose/documentary anchor/current scope → project `project.yml`;
-- Project→Source research function/relevant locus → project `source-uses.tsv`;
-- concrete Project-use→File evidence when needed → project `research/use-evidence.tsv`;
-- project-specific inspection audit → project `sources/inspection-log.tsv` when useful;
-- gate/gaps/restart state/authorized `NEXT ACTION` → project `STATUS.md`.
+Use independent qualified review when the consequence of error or unresolved specialist judgement warrants it. Method-compliant AI work is not specialist validation.
 
-A relationship is a research claim. `metadata-supported` is not verified textual correspondence.
+Do not make an unqualified user adjudicate palaeographic, philological, archival or other specialist questions merely because the AI is uncertain.
 
-Corpus `inspection_status` records work stage, not confidence.
+### AI / implementation agent
 
-## Original source exports
+Own routine bounded work that is already authorized: source research, repository hygiene, deterministic resolution/validation, derived views, bounded implementation and propagation of changed canonical truths.
 
-For consequential file-based work identify the exact original export used and preserve its provenance at byte level:
+Do not expand routine authority into new purpose, priority, Project semantics or material architecture choices.
 
-- original filename;
-- SHA-256;
-- exact coverage;
-- storage/preservation status;
-- actual/intended repository path;
-- rights/authority state.
+## Project, Source, evidence and priority are different things
 
-A portal URL/URN helps relocation but is not the preserved export. If redistribution rights or repository policy prevent committing the exact binary, mark preservation as blocked/incomplete. Do not downgrade this requirement to a link-only surrogate.
+Keep these questions distinct:
 
-Derived images/renders/OCR must be distinguishable from the original and point back to the original file ID.
+```text
+PROJECT AUTHORITY / PURPOSE          why/which scholarly investigation exists
+SOURCE / FILE IDENTITY               what historical/digital object this is
+STRUCTURAL / RESEARCH FUNCTION       how a Source relates/serves an established Project
+EVIDENCE / PREREQUISITE STATE        whether required support is identified/available/ready
+CURRENT WORK TARGET                  which bounded question/action is authorized now
+```
 
-## Project source-use discipline
+A correct answer to one does not automatically answer the next.
 
-`projects/<id>/source-uses.tsv` is the target-model canonical Project→Source research-use owner. `projects/<id>/research/use-evidence.tsv` separately binds a concrete use to an exact canonical File only where that evidence relation is needed.
+In particular:
 
-For every Project Source use preserve as applicable:
-- canonical `source_id`;
-- project-relative `research_function`;
-- relevant source locus;
-- status and evidence basis/limitations.
+- Source/File existence or `part_of` does not create a Project;
+- `project_source_id` is a post-selection documentary anchor, not Project/priority authority;
+- `principal`, `comparison`, `control`, `context` or other research functions are not priority tokens;
+- upload order, easiest-access evidence, a staged image, a migration fixture, GitHub Milestone or recent technical effort does not choose `NEXT ACTION`;
+- a necessary support task may complete without becoming the scholarly objective it supports.
 
-Do not duplicate canonical Source title, File identity/checksum/storage/rights, or structural `root/internal/external` flags into the use record. Project research function is not Source identity and does not determine structural membership. A Source is internal when it is the Project anchor or reaches that anchor through canonical `part_of`; otherwise a used Source is external. The same Source may have a different research function in another Project without changing its canonical identity.
+Canonical Project semantics live in `methodology/project-lifecycle.md`; stable machine-checkable Source/File/Project-use semantics live in `corpus/source-contract.json` + `tools/source_contract.py`.
 
-Two records sharing `ThHStAW, EGA, Reg. Ii 3` remain distinct when their archive record IDs/titles/loci differ.
+## Source and witness discipline
 
-## Collation discipline
+- Preserve distinct archival/documentary Sources independently; do not merge them because they share a place, event, shelfmark, wording or provider container.
+- Keep Source identity, Project-relative use and exact File instantiation separate.
+- Keep archival folio/page, portal/export image, PDF page and working IDs separate unless an evidenced crosswalk maps them.
+- Treat `part_of` as structural containment only; it does not imply textual dependence, same hand, Project function or priority.
+- Do not promote catalogue relations to demonstrated textual dependence without source comparison.
+- Read/collate witnesses independently; a clearer witness may test but must not overwrite another witness's graphemes.
+- Do not claim same hand from same record/date/office alone.
+- Keep original Files byte-distinct from OCR/crops/renders/other derivatives.
+- Do not call a URL/URN + checksum equivalent preservation of the exact inspected File.
+- Do not infer persistent identifiers from neighboring patterns.
 
-Before calling records textual witnesses/parallels:
-1. identify each independently;
-2. locate corresponding loci;
-3. inspect/read each separately;
-4. compare structure/wording;
-5. record correspondence/divergence;
-6. upgrade relationship only as far as evidence warrants.
+Follow `methodology/source-and-provenance.md` for detailed Source/File/provenance semantics.
 
-## Digital source criticism
+## Evidence readiness
 
-For consequential work determine what was actually inspected:
-- archive/fonds/signature/record and archival title;
-- archival folio/locus;
-- exact original file ID + SHA-256;
-- whether that exact binary is preserved/controlled and where;
-- digital record/image/URN where available as secondary provenance;
-- PDF/export/image numbering as separate fields;
-- whether export is complete for the claimed range;
-- whether working image is original or derived/cropped/scaled;
-- for visual work, whether the required evidence is actually staged and vision-inspectable in the target work context.
+Identity, preservation, reproducibility, retrievability, staging and actual inspectability are not interchangeable.
 
-Do not rely on transient chat attachment as the only durable evidence identity.
+When direct visual/source inspection is required, follow the execution gate in `methodology/workflow.md`. A previously successful retrieval or known File/SHA/crosswalk is not by itself proof that the current target context can inspect the evidence.
 
-## Corpus completeness
+Never simulate source inspection from metadata/transcription alone when the task requires the source image/file.
 
-Before completeness claims document repositories/catalogues, boundaries, queries/filters, access dates, inclusion/exclusion rules and known unavailable/not-digitised material. Absence from search results is not historical absence.
+## Work-context and loop protection
 
-## AI governance
+Follow `methodology/workflow.md` for operational execution mechanics, including:
 
-Follow `methodology/ai-governance.md`.
+- reconstructable role/stage/cursor/completion state;
+- sticky prerequisite PASS with explicit invalidation;
+- visual evidence staging/inspectability;
+- progress/delta and no-progress loop control;
+- Domain→Dev boundaries, task transitions and canonical freshness.
 
-- Record consequential AI provenance, not every prompt.
-- Validation scales with consequence.
-- If AI/HTR/automation becomes systematic corpus-level method, evaluate against representative human-checked material and record failure patterns/scope.
-- Model agreement is not independent historical evidence unless independence is established.
+Do not replace those mechanics with a master prompt, workflow engine or repeated ad-hoc rechecking.
 
-## Workflow discipline
+## Canonical ownership and writes
 
-Before continuing existing research:
-1. read `GOVERNING_OBJECTIVE.md` and this file;
-2. read `README.md` if repository structure is not already established;
-3. read project `project.yml`, including research purpose/current scope, and resolve `project_source_id` as its documentary anchor;
-4. read project `STATUS.md`;
-5. read project `source-uses.tsv` and `research/use-evidence.tsv` when present/relevant;
-6. read the active generic gate in `methodology/research-gates.md`;
-7. inspect relevant `corpus/sources.tsv`, `corpus/files.tsv`, source-data crosswalks and source relationships;
-8. read relevant project decision rows and `LEARNINGS.md`;
-9. load every additional methodology/governance requirement applicable to the task; if applicability is unclear, inspect the canonical owner before acting;
-10. continue from an authorized project `NEXT ACTION` when one exists; if none is recorded, do not invent one from historical work state, Source structure or chat context.
+One durable fact/state has one canonical owner. Reference or derive rather than copy.
 
-When changing a substantive reading, preserve prior reading, new reading, evidence type and residual uncertainty in appropriate canonical records.
+Before a consequential write determine:
 
-When changing a source relationship, preserve previous status where consequential, cite basis and do not upgrade beyond demonstrated evidence.
+- which canonical owner actually changed;
+- whether the change is deterministic structure, scholarly judgement, or owner-reserved authority;
+- which dependent state genuinely changes;
+- what review/validation is required by consequence.
 
-When changing project source function/locus, update `source-uses.tsv` without rewriting canonical source identity, structural membership or current priority by implication.
-
-## Lean decision discipline
-
-Use `DECISIONS.md` only for consequential cross-project methodological/architectural choices whose rationale would otherwise need rediscovery.
-
-- concrete source/reading decision → project `apparatus/decisions.tsv`;
-- current project state/gaps/next action → project `STATUS.md`;
-- project-specific correction/lesson → `LEARNINGS.md`;
-- generic research requirements → `methodology/`;
-- deferred improvement → GitHub Issue;
-- ordinary implementation detail → Git history.
-
-Do not create ADR ceremony or duplicate truth stores.
-
-## Maintenance discipline
-
-Follow `methodology/maintenance.md`.
-
-After a material canonical or structural change, run a bounded repo-wide consistency pass checking for:
-- project documentary anchors that do not resolve or contradict the declared Project state;
-- Project purpose/scope claims accidentally inferred from Source structure;
-- project facts leaked into methodology;
-- generic rules duplicated inside projects;
-- distinct archival records accidentally collapsed;
-- duplicate/stale source crosswalks;
-- source/file/project/use references that no longer resolve;
-- source preservation claims that do not match actual binary/rights state;
-- stale gate/milestone references;
-- contradictory project `STATUS.md` claims;
-- stale human-facing/agent-facing orientation surfaces that contradict canonical owners.
-
-Final restartability test:
-
-> Could another capable researcher identify the Project's scholarly purpose, resolve its documentary Source anchor, distinguish structural Sources from external research Sources, recover the exact exports/preservation and current evidence-access state, and continue correctly from repository + controlled source material without recovering this chat?
-
-If not, persist the minimum missing canonical state or repair the derived/context surface that failed to expose it.
-
-## GitHub Issue and Milestone discipline
-
-Follow `MILESTONES.md` for work-target semantics.
-
-A future deferred Issue must state:
-1. problem/research benefit;
-2. why not now;
-3. trigger;
-4. acceptance criteria.
-
-For scheduled Issue work:
-- Milestone = primary target/work phase;
-- labels = affected domain(s)/kind;
-- `GOV-*` = repository governance/architecture family;
-- `<project> / G*` = project scholarly work toward a generic gate;
-- no Milestone = backlog/unscheduled.
-
-A project gate Milestone may mirror G1–G6 for human navigation, but project `STATUS.md` remains the canonical owner of actual gate state. Update `STATUS.md` first when evidence changes the gate.
-
-Do not create Issues merely to mirror every routine research action.
-
-## Fachlich-technisches quality gate
-
-Before completing consequential work, check what is relevant.
-
-**Fachlich**
-- Was the source inspected at the level claimed?
-- Are archival, textual/palaeographic and historical claims separate?
-- Did domain knowledge generate a test rather than substitute for evidence?
-- Are source phenomena, uncertainty and genuine alternatives preserved?
-- Is a source relationship supported only as strongly as inspection/collation permits?
-- Is corroboration genuinely independent?
-- Has independent expert validation been distinguished from AI-assisted method compliance?
-
-**Method/corpus/project ownership**
-- Does the Project have an explicit scholarly purpose independent of Source/File existence?
-- Does `project_source_id` resolve as the Project's post-selection documentary Source anchor without being treated as purpose/priority authority?
-- Are internal Sources structurally derived from `part_of` and external Sources kept external?
-- Are Project→Source research functions and concrete use→File evidence kept separate from Source/File identity?
-- Is each distinct archival record preserved independently?
-- Is each durable statement stored at the correct level?
-- Did a project-specific fact accidentally become a generic rule without a generalisability check?
-- Did the project copy generic gate requirements instead of recording only its state against them?
-
-**Technisch / research-data**
-- Does every consequential source/record/locus have unambiguous identity/provenance?
-- Is the exact original source export identified by filename + SHA-256 and preservation state?
-- Are folio, portal image, PDF/export numbering and file identity kept distinct?
-- Are changed IDs/relations referentially coherent?
-- Did changed research truth reach its canonical home?
-- Is the simplest maintainable representation being used?
-- For the current action, is required evidence merely identifiable/reproducible, or actually accessible/staged/inspectable as needed?
-- Can another capable researcher restart without chat?
-
-If the same machine-checkable structural error class recurs, implement the smallest validation that catches it. Do not build validation infrastructure speculatively.
-
-## Anti-slop / integrity check
-
-Ask:
-- Did I inspect the source at the level I claim?
-- Is manuscript text visible or syntactically completed?
-- Did historical context contaminate a supposedly blind reading?
-- Are archival truth, textual truth and historical interpretation separate?
-- Did I distinguish image/PDF/export numbers from folios/physical lines?
-- Am I treating catalogue metadata only as metadata-level evidence?
-- Did I keep separately identified archival records separate?
-- Is a claimed source relationship demonstrated or only metadata-supported?
-- Is corroboration genuinely independent?
-- Did a clearer witness overwrite the witness under transcription?
-- Did Source/File structure, current question or comparison set silently create/redefine Project purpose or priority?
-- Is the exact inspected export actually preserved as claimed?
-- Is required visual evidence actually staged/vision-inspectable rather than merely identifiable or retrievable?
-- Did I update the correct method/corpus/project canonical record?
-- Did the pilot accidentally define generic method?
-- Did I mistake a GitHub planning state for scholarly/evidential state?
-- Would another capable agent need this chat?
-- Did the work reduce consequential uncertainty rather than produce ceremony?
-
-If any answer is problematic, repair evidence/state rather than increasing prose confidence.
-
-## Learning loop
-
-Concrete project failures/corrections go first into project `LEARNINGS.md`. Test generalisability explicitly. Promote only genuinely general safeguards into `methodology/` or, for durable cross-project choices, `DECISIONS.md`. Keep the concrete incident in the project. Remove/simplify rules that create overhead without preventing real error.
+Treat AI-produced paths, IDs, JSON/TSV/YAML fields, commands and other technically consumed outputs as untrusted input until resolved/validated by the relevant contract/tool.
+
+Do not maintain canonical research state in chat, Wiki, generated views, Issues or Milestones.
+
+## Research outcome before infrastructure
+
+- Prefer direct source/evidence work over system development when it answers the research need.
+- Add schema/tooling/automation only for a demonstrated correctness, traceability, restartability, usability or workload problem.
+- Do not build databases, services, ontologies, agent systems or general frameworks merely because they could model future needs.
+- Deferred technical options belong in trigger-based Issues, not speculative implementation.
+- System-support work must not generate its own research priority.
+
+## Material research-system changes
+
+Follow the canonical D-016 admission workflow in `methodology/maintenance.md`.
+
+AI may analyse/propose a material change, but implementation begins only inside a sufficiently precise admitted scope. Routine work inside an admitted scope must not be re-escalated merely to create ceremony; a genuinely new material choice outside scope must be returned rather than silently absorbed.
+
+A technical/CI PASS never establishes scholarly truth or owner acceptance beyond the properties actually tested.
+
+## Persistence and restartability
+
+When durable research/method truth changes, persist it in its canonical owner before relying on it for future continuation.
+
+A fresh capable context, without the originating chat, must be able to recover the authorized task/state from repository + controlled evidence. If it cannot, repair the missing canonical/derived restart surface rather than relying on conversation memory.
+
+Do not invent a `NEXT ACTION` merely to make a Project look active. Explicit absence of an owner-authorized next action is valid state.
+
+## Maintenance and learning
+
+Follow `methodology/maintenance.md` for ownership/propagation and `methodology/quality-and-learning.md` for quality/falsification/learning.
+
+A concrete failure stays Project-specific first. Promote only the genuinely general safeguard after a Generic-Fit/generalisation check. When a stable deterministic failure is already enforceable by code/contract, prefer the executable owner + regression fixture over another prose copy.
+
+The system should become more reliable and restartable, not merely larger.
