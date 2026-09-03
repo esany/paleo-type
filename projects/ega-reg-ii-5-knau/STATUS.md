@@ -1,87 +1,78 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 5
 
-Last checkpoint: 2026-08-31
+Last checkpoint: 2026-09-02
 
 ## Project authority and identity
 
-The human owner has defined **Reg. Ii 5 as one Project**, anchored at `ACT-THHSTAW-EGA-REG-II-5`.
+The human owner confirmed on 2026-09-02 that **Reg. Ii 5 continues as an act-oriented Project**, anchored at `ACT-THHSTAW-EGA-REG-II-5`. The directory/id `ega-reg-ii-5-knau` is a legacy path from an earlier AI-organized Knau benchmark; `Knau` is not the Project boundary and does not select a current priority.
 
-The current directory/id `ega-reg-ii-5-knau` is a legacy path from an earlier AI-created Knau benchmark. `Knau` was not an owner-defined Project boundary. Do not infer Project identity, permanent research function or current priority from that path, from `principal`, from Source/File availability, or from the fact that a bounded Reg. Ii 5 G2 fixture was executed.
+## Canonical Source structure
 
-The directory is not renamed in this correction because a path migration must preserve all existing research references and history losslessly. Until such a migration is separately admitted, `project_source_id` and this STATUS carry the authoritative Project identity.
+Keep archival container, concrete Source record and research use distinct.
 
-## Known internal section/source node
+- `ACT-THHSTAW-EGA-REG-II-5` — archival act / documentary Project anchor: **ThHStAW, EGA, Reg. Ii 5**.
+- `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — concrete internal Source record: **Visitation im Amt Ziegenrück**, fol. 55v–66v, described in archival metadata as an extract related to the Reg. Ii 4 Bd. II Ziegenrück transmission.
+- `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — separate Source record in the separate archival act **Reg. Ii 4 Bd. II**, fol. 294r–313r; its Knau passage is fol. 306v–309r / export images 667–672.
+- The two Reg. Ii 3 records remain separate Sources inside the Reg. Ii 3 archival act and are not witnesses of the Ziegenrück text merely because they were historically used for context/control.
 
-`THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*, fol. 55v–66v — is currently an internal Source node by canonical `part_of` relation.
+The Reg. Ii 4 and Reg. Ii 5 Ziegenrück records are therefore separate material witnesses/transmissions. Close textual correspondence does not collapse their identities.
 
-The preserved Knau locus is fol. 61v–63r / export images 132–135. It is a researched locus inside this Project, not the definition of the Project itself. Further sections may be activated later.
+## Legacy diplomatic material — verification/recovery only
+
+The historical Knau/G2 files under this legacy Project path — including `transcription/132.tsv` through `135.tsv`, apparatus, palaeography and associated G2 research records — are preserved because they document earlier work and remain useful for checking readings, failure modes and migration loss.
+
+**They are no longer treated as canonical current Li 5 transcription state.**
+
+Owner clarification and direct comparison of the separately supplied Reg. Ii 4 Bd. II and Reg. Ii 5 Ziegenrück PDFs on 2026-09-02 showed that the earlier working corpus cannot safely be assigned wholesale to one witness from its legacy path/page labels alone. The two transmissions are closely parallel, and historical work phases may have imported or compared readings across them. Until witness provenance is re-established line by line, the old diplomatic material has status **legacy verification/recovery evidence; witness attribution unresolved or potentially mixed**.
+
+Consequences:
+
+- preserve every old reading, uncertainty, apparatus decision and palaeographic observation;
+- do not delete or silently normalize the old material;
+- do not cite `transcription/132.tsv`–`135.tsv` as proof of a Reg. Ii 5 reading without fresh witness-specific inspection;
+- do not move a legacy reading into Reg. Ii 4 merely because it matches that witness; attribution requires explicit Source/File/locus verification;
+- any new diplomatic work starts from an explicitly identified canonical Source, exact File and locus;
+- comparison between Reg. Ii 4 and Reg. Ii 5 is witness-to-witness collation, not reuse of a shared transcription.
 
 ## Historical work-state audit
 
-The earliest repository Project metadata (`251ce9ed39e04bb852e0232dbcce21c68bd4c3a7`) created `ega-reg-ii-5-knau` and the Knau scope as an AI-organized benchmark. The following checkpoint (`08c08bd6f90635210fbeff3f2d19cd0a485cc0b9`) froze useful working readings and uncertainties, but it does not constitute owner authority for Project identity.
+The earliest repository Project metadata (`251ce9ed39e04bb852e0232dbcce21c68bd4c3a7`) created `ega-reg-ii-5-knau` and the Knau scope as an AI-organized benchmark. Checkpoint `08c08bd6f90635210fbeff3f2d19cd0a485cc0b9` froze useful working readings and uncertainties, but it does not establish their witness provenance or owner authority for Project identity.
 
-A later source-unit model temporarily kept a separate Reg. Ii 5 Source STATUS. At snapshot `699fa6eada61db483dfca950193412715d9603a5`, that STATUS recorded the exact export/mapping as provenance-controlled and the Source as not activated for source-wide transcription. Those source-unit Project surfaces were later removed from `main`. Their reusable Source/File/crosswalk facts survive in `corpus/`; `projects/README.md` now records the recovery path so the old work state remains available as an audit/checkpoint rather than hidden only in Git history.
+Snapshot `699fa6eada61db483dfca950193412715d9603a5` preserves the later source-unit state. Git history remains an audit/recovery source, not current scientific authority.
 
-The subsequent Reg. Ii 5 G2 work is valid source/research work at the level actually established. The correction of Project identity does not erase or downgrade evidence merely because the organizing Project narrative was AI-generated.
-
-## Legacy project-relative research functions
-
-`sources/sources.tsv` is still the legacy compatibility register used by the existing Reg. Ii 5 migration boundary. Labels such as `principal`, `comparison`, `control` and `context` describe historical/project-relative organization of the Knau investigation. They are **not** canonical Source properties, not permanent roles within Li 3/4/5, and not selectors of the next task.
-
-Reg. Ii 4 Bd. II and Reg. Ii 3 now have their own owner-defined act Projects. Cross-act textual/source relations remain canonical in `corpus/relationships.tsv`; a future project-relative use is recorded only when the research actually uses that Source in that Project.
+The former compatibility register `sources/sources.tsv` was loss-checked and removed. Its historical research functions remain in `source-uses.tsv` with `status=historical`, and exact historical File bindings remain in `research/use-evidence.tsv`. These rows document how the old Knau investigation used Sources; they do not establish the witness provenance of every legacy diplomatic line.
 
 ## Digital addressing / provenance
 
-For `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`:
+For the canonical Reg. Ii 5 Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`:
 
-- exact inspected parent File: `FILE-REG-II-5-00000129-EXCERPT` / `1a03ea95927-120-143.pdf`;
-- canonical folio ↔ export-image ↔ PDF-page mapping exists for the section;
-- the canonical crosswalk currently has **no page-specific values in `stable_image_urn`**;
-- for fol. 61v–63r it preserves provider derivative/TIFF labels directly observed in the PDF footer, e.g. `stat_derivate_00000416:/ThHStAW_RegIi_5_0130.tif`; these are not represented as URNs;
-- the earliest repository crosswalks for this exact Reg. Ii 5 export likewise contained no per-page URNs.
+- canonical File identity/provenance is owned by `corpus/files.tsv`;
+- canonical Source crosswalk is owned by `corpus/source-data/THHSTAW-EGA-REG-II-5-STAT-VIS-00000129/crosswalk.tsv`;
+- Source boundary is fol. 55v–66v;
+- the PDF/export may contain adjacent context beyond that Source boundary;
+- identifiability/reproducibility do not by themselves establish that evidence is staged and inspectable in a fresh target context.
 
-This is a repository-evidence statement, not a claim that the provider never exposed page URNs. If a separate provider/export crosswalk supplied them, that evidence is not currently preserved here and must be recovered from the actual source rather than inferred.
+For the separate Reg. Ii 4 Bd. II Ziegenrück Source, its own File, crosswalk, page-specific URNs and fol. 306v–309r / images 667–672 remain canonical under that Source. Never substitute one witness's image numbering, TIFF labels, folios or readings for the other.
 
-The exact parent binary has a canonical private-repository target path but has not yet been verified present there; preservation status remains separate from evidence identity and prior source inspection.
+## Current research state
 
-## Preserved Reg. Ii 5 G2 research state
+No current diplomatic transcription of Reg. Ii 5 is declared by this STATUS.
 
-The following durable work remains valid and restartable:
-
-1. Checkpoint A physical/source-order inventory — `research/g2-checkpoint-a-physical-inventory.md` — PASS.
-2. Checkpoint B legacy/apparatus semantic-loss audit — `research/g2-checkpoint-b-semantic-loss.md` — COMPLETE, with partial/ambiguous/unresolved mappings retained where appropriate.
-3. Checkpoint-B Domain Review — `research/g2-domain-review-checkpoint-b.md` — COMPLETE; no new generic REQ family was required.
-4. Project-local `63r-L05–L11` Source Research — `transcription/135.tsv` — COMPLETE first pass; `63r-L05`, `L09` and `L10` remain `working` where graphematic certainty is limited.
-5. The three bounded reusable G2 capability candidates remain evidence for GOV-M4 synthesis: exact physical source-unit/locus targeting; preservation of materially meaningful source order/spatial association; explicit preservation of confirmed source phenomena/interventions.
-
-These findings are evidence/results, not authority to choose the next research question.
-
-## Related-source evidence
-
-`corpus/relationships.tsv` records the observed textual correspondence between the Reg. Ii 4 Bd. II Knau locus fol. 306v–309r and Reg. Ii 5 fol. 61v–63r. That claim remains distinct from any project-relative comparison role or current priority.
-
-`research/source-audit.tsv` retains the historical Knau-oriented audit of external material. Treat its former `next_step` fields as the next step **within that historical bounded strand**, not as owner authority for the Project-wide current NEXT ACTION.
-
-## Current gate/support state
-
-The completed Reg. Ii 5 fixtures may continue to support #64/#25 GOV-M4 synthesis and #86 assurance analysis. Such support tracks do not redefine the Project or select a manuscript task.
-
-No scientific result is invalidated by this structure correction. No new palaeographic/editorial claim is made here.
+The old G2/Knau material remains available as a **test and recovery fixture** for methodology, semantic-loss checks, provenance auditing and comparison. Any scientific result that depends on the identity of the manuscript witness must be re-established against the explicitly targeted Source/File before being promoted into new canonical research state.
 
 ## NEXT ACTION — canonical restart point
 
-**No new manuscript/source-research task is selected by this correction.**
+**No owner-selected manuscript/source-research task is currently recorded.**
 
-The current structural/recovery action is complete. Continue substantive source work only from a subsequently owner-selected research question/priority or an already bounded task whose authority is independently established. Do not reconstruct the next task from the legacy `Knau` slug, from old AI-created `active_scope`, from `principal/comparison` labels, or from whichever evidence is easiest to access.
+When substantive work resumes, first choose the intended Source record explicitly (for example Reg. Ii 4 Bd. II Ziegenrück or Reg. Ii 5 Ziegenrück), bind the exact File/locus, and only then create or promote diplomatic readings. Legacy Knau material may be consulted as a check after independent witness-specific inspection; it must not determine the target witness by inference.
 
 ## Restartability test
 
-A fresh capable context must be able to reconstruct without old chat:
+A fresh capable context must be able to reconstruct without old chat that:
 
-- Project identity = owner-defined Reg. Ii 5 act, despite the legacy `-knau` directory/id;
-- the Ziegenrück Source and Knau locus are internal/preserved work, not the Project definition;
-- earlier Knau scope and role labels were AI-organized/project-relative rather than owner authority;
-- the deleted source-unit STATUS/checkpoint state is recoverable through the historical snapshot documented in `projects/README.md`;
-- exact Reg. Ii 5 File/crosswalk/provenance state and the current absence of page-specific stable URNs in the repository;
-- all completed G2 research fixtures and retained uncertainties;
-- no new owner-selected manuscript NEXT ACTION is currently encoded by this correction.
+- Reg. Ii 5 is an archival-act Project anchor, not the identity of every old Knau work item;
+- Reg. Ii 4 Bd. II and Reg. Ii 5 contain separate Ziegenrück Source records and must remain separate witnesses;
+- the two Reg. Ii 3 records are separate Sources inside Reg. Ii 3 and served historical context/control functions only;
+- legacy `transcription/132.tsv`–`135.tsv` and related G2 material are verification/recovery evidence with unresolved or potentially mixed witness attribution, not current Li 5 transcription truth;
+- exact Source/File/locus identification is required before any old reading is promoted into new canonical diplomatic work;
+- no current manuscript NEXT ACTION is inferred from the legacy Knau path or old work state.

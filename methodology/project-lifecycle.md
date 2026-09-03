@@ -12,9 +12,9 @@ This file is generic METHOD. Canonical source identity/relations/files live in `
 
 Once the owner has decided that a Project exists, it is anchored to exactly one canonical historical Source root through `project_source_id`. That anchor makes the Project structurally reconstructable; it does not create the Project and does not choose the research priority.
 
-For the current church-visitation corpus, the owner has explicitly chosen one Project per act: Reg. Ii 3, Reg. Ii 4 Bd. II and Reg. Ii 5. Their internal protocol/section nodes remain Sources related by `part_of`. Initial work may focus on Knau-related material and may later expand to further sections.
+For the current church-visitation corpus, the owner has explicitly chosen one Project per act: Reg. Ii 3, Reg. Ii 4 Bd. II and Reg. Ii 5. Their internal protocol/section nodes remain Sources related by `part_of`. Preserved Knau-related work remains valid historical/research state, but no current scholarly scope is inferred from that history.
 
-The source-root rule is therefore structural, not generative: after Project selection, `project_source_id` should point to the historically independent documentary unit that anchors that Project. Current scope may be narrower than the whole root.
+The source-root rule is therefore structural, not generative: after Project selection, `project_source_id` should point to the historically independent documentary unit that anchors that Project. Current scope may be narrower than the whole root or explicitly unset until an owner-grounded question activates it.
 
 A Project may also use Sources outside its root structure for comparison, control or context. Those Sources remain **external** to the Project even though they are used in its research.
 
@@ -57,7 +57,7 @@ A Project references canonical Source/File nodes; it does not redefine them.
 
 ## Project→Source use
 
-The target project-local use table is:
+The canonical project-local use table is:
 
 `use_id | source_id | research_function | relevant_locus | status | evidence_basis | notes`
 
@@ -72,6 +72,7 @@ Rules:
 - `research_function` is Project-relative, open vocabulary and never a Source property;
 - functions are not inferred automatically from Source type, `part_of`, another Project, shared event or textual similarity;
 - functions are dynamic: they may change as the investigation changes, with consequential changes preserved rather than silently rewritten;
+- historical uses may remain explicitly historical so prior work-state survives without being promoted to current scope;
 - `principal` is a research function, not a Project boundary, Source identity or priority selector;
 - `relevant_locus` is the source-relative scholarly scope of that use and does not redefine the Source's full extent;
 - Project→Source use never creates a Project→Project relation.
@@ -142,7 +143,7 @@ Required at creation:
 1. owner-confirmed Project existence/boundary and scholarly purpose;
 2. unique Project ID and human-readable title;
 3. exactly one `project_source_id` resolving to the canonical Source root that anchors the owner-defined Project;
-4. a scholarly `research_object` and bounded `active_scope`; the scope may be narrower than the whole Project Source and may explicitly be undecided beyond an initial focus;
+4. a scholarly `research_object` and bounded `active_scope`; the scope may be narrower than the whole Project Source and may explicitly remain unset until a research question is selected;
 5. `source-uses.tsv` for actual Project→Source research uses, created/populated only as use exists;
 6. every referenced Source ID exists in `corpus/sources.tsv`;
 7. every exact digital export used as evidence exists in `corpus/files.tsv` with checksum and preservation state;
@@ -153,23 +154,15 @@ Required at creation:
 
 A new Project does not require a `principal` use at creation and does not require a manuscript NEXT ACTION to be invented merely to make the Project look active.
 
-## Legacy compatibility during the Reg. Ii 5 migration boundary
+## Reg. Ii 5 completed structured-use migration and remaining legacy path
 
-The current Reg. Ii 5 Project still lives under legacy directory/id `ega-reg-ii-5-knau` and stores Project→Source use in `sources/sources.tsv` with `project_role`, `relevant_locus` and `primary_file_id`, plus `project.yml: principal_source_id`.
+Reg. Ii 5 still lives under the legacy directory/id `ega-reg-ii-5-knau`, but the old Project→Source register `sources/sources.tsv` and `project.yml: principal_source_id` are no longer canonical compatibility owners. Their four evidenced Knau-era Project→Source functions have been loss-checked into `source-uses.tsv`, and the same four exact File bindings have been preserved in `research/use-evidence.tsv`.
 
-This is historical compatibility, not owner authority for the old Knau Project definition. The owner-defined Project is Reg. Ii 5 at act level; the legacy path remains until a separately admitted, loss-checked path/reference migration is justified.
+The migrated uses are explicitly historical work-state. Their former `active` / `identified` labels and role meanings remain recoverable through the migration record and current historical use rows; they do **not** establish a current Knau scope, current `principal` priority or current manuscript NEXT ACTION.
 
-During this transition:
+The old register was removed only after the target representation and exact File bindings were present and regression-protected. The executed migration record remains in `research/project-source-migration.tsv`; it distinguishes completed structured-use cleanup from still-deferred G2 transcription/line/span/phenomenon migration.
 
-- the validator/resolver may read the legacy register so existing research state remains valid and restartable;
-- target `source-uses.tsv` / `use-evidence.tsv` records are validated independently when present;
-- legacy `primary_file_id` is **not** automatically materialized as target use-evidence;
-- `principal_source_id` may remain temporarily as migration compatibility but is not a target structural invariant beyond `project_source_id`;
-- legacy role labels remain historical/project-relative use evidence, not permanent Source roles or priority selectors;
-- the migration specification must preserve every current `primary_file_id` as `old project-source row → new use_id → use-evidence → same file_id` before legacy fields are removed;
-- migration must also preserve/recover consequential work-state/checkpoint information, not only structured Source/File/readings rows.
-
-This compatibility is a transition, not permission to maintain two permanent canonical truths.
+The remaining `ega-reg-ii-5-knau` directory/id is therefore a path/history compatibility issue only. Any later path/reference rename must be separately loss-checked so research references, provenance, STATUS/recovery pointers and scholarly history remain intact.
 
 ## Current visitation-project example
 
@@ -183,7 +176,7 @@ Within Reg. Ii 3, the currently known internal Source nodes include both the Neu
 
 Reg. Ii 4 Bd. II and Reg. Ii 5 likewise have their currently identified internal Ziegenrück Source nodes. Cross-act comparison/correspondence does not merge the Projects and does not fix permanent `principal/comparison/control/context` roles.
 
-The legacy Reg. Ii 5/Knau work remains valid project work and a G2 falsification fixture. `Knau` is an initial/historical research focus and may coexist with later sections; it does not define any of the three Project identities.
+The preserved Knau/G2 corpus under the legacy Reg. Ii 5 project path remains valuable **verification/recovery evidence and a systems/methodology falsification fixture**. Its witness-specific diplomatic claims are not current scientific authority: Reg. Ii 4 Bd. II and Reg. Ii 5 must each be re-established from their own canonical Source/File/locus before any legacy reading is promoted. Historical role/use records remain historical state, not current scope or line-level witness provenance. `Knau` does not define any of the three Project identities.
 
 ## Original source exports
 
@@ -198,6 +191,8 @@ For consequential Project source exports:
 - if public-repository rights block preservation, state that explicitly;
 - Project use-evidence references `file_id` rather than copying File metadata.
 
+Identifiability and reproducibility do not automatically establish that the evidence is accessible in the current authorized work context. Direct source work must separately verify research-ready availability.
+
 ## Project creation procedure
 
 Before creating a Project:
@@ -211,7 +206,7 @@ Before creating a Project:
 7. instantiate `project.yml`, `STATUS.md`, and needed use records;
 8. recover/migrate consequential prior work-state/checkpoint information if this Project supersedes an older organization;
 9. run `python tools/source_contract.py validate`;
-10. use the resolver rather than reconstructing structural membership or File evidence from names/chat.
+10. use the resolver and generated read-only context/intake helpers rather than reconstructing structural membership, File evidence or current scope from names/chat.
 
 Do not create a Project merely because a PDF, protocol fragment, archival act, place, question, current source group or temporary comparison task exists. Source discovery/intake may remain Corpus-only until the owner chooses Project routing.
 
@@ -225,6 +220,7 @@ A Project is valid only if all applicable checks pass:
 - [ ] every Project→Source use resolves to `corpus/sources.tsv`;
 - [ ] internal/external status is derived from `part_of` rather than copied;
 - [ ] multiple/dynamic research functions for one Source remain representable;
+- [ ] historical research functions remain distinguishable from current active scope;
 - [ ] research functions are not treated as canonical Source properties;
 - [ ] current work target is not inferred from `project_source_id`, structural status, research-function labels, File availability/upload order, old AI scopes or support fixtures;
 - [ ] a consequential change of `active_scope` / `NEXT ACTION` is traceable to owner-grounded purpose/priority/scope rather than repository self-consistency alone;
@@ -236,7 +232,7 @@ A Project is valid only if all applicable checks pass:
 - [ ] no Project→Project relation is inferred from Project→Source use;
 - [ ] consequential old work/checkpoint state remains recoverable when Project organization changes;
 - [ ] generic G1–G6 requirements are referenced, not copied;
-- [ ] another capable researcher can identify Project authority/root/sections, research functions, exact evidence files, current state and authorized next action—or the explicit absence of one—without old chat.
+- [ ] another capable researcher can identify Project authority/root/sections, research functions, exact evidence files, evidence-readiness limits, current state and authorized next action—or the explicit absence of one—without old chat.
 
 No duplicate-Project-root or ancestor/descendant-root prohibition is implied by this checklist.
 
@@ -284,9 +280,10 @@ At any time the repository should answer without chat:
 - which canonical Source root anchors each Project;
 - which Sources are structurally internal or external by derivation;
 - which sections/source nodes are currently known inside the Project;
-- which concrete research functions each used Source serves, if any;
+- which concrete research functions each used Source serves, including whether a use is historical rather than current;
 - what source-relative loci matter;
 - which exact digital Files actually support which uses;
+- whether evidence needed for a direct action is actually research-ready in the current authorized context;
 - which Source→Source claims are evidenced;
 - what prior work/checkpoint state remains relevant after structural migrations;
 - which gate is active and what the next action is, or that no owner-grounded next action is currently selected;

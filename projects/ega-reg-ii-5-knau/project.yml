@@ -1,11 +1,10 @@
 id: ega-reg-ii-5-knau
 title: "ThHStAW, EGA, Reg. Ii 5"
-repository_role: "Owner-defined project for scholarly work on the Reg. Ii 5 archival act; legacy directory/id retains the earlier AI-created Knau scope pending a separately loss-checked path migration"
+repository_role: "Current owner-defined project for scholarly work on the Reg. Ii 5 archival act; legacy directory/id retains the earlier AI-created Knau scope pending a separately loss-checked path migration"
 project_source_id: "ACT-THHSTAW-EGA-REG-II-5"
-research_object: "Source-based research within Reg. Ii 5; preserved work currently includes Knau-related material and may expand to further sections"
-active_scope: "Preserved current work includes the Ziegenrück section and the Knau locus fol. 61v–63r; Knau is a historical/initial research focus, not the Project identity, and this correction does not infer the next scholarly task"
-source_register: "sources/sources.tsv"
-principal_source_id: "THHSTAW-EGA-REG-II-5-STAT-VIS-00000129"
+research_object: "Source-based scholarly research within Reg. Ii 5. Historical Knau/G2 diplomatic material is retained only as verification/recovery evidence because its witness attribution may mix or conflate the Reg. Ii 4 Bd. II and Reg. Ii 5 Ziegenrück transmissions; it is not canonical current transcription state."
+active_scope: "No owner-selected active manuscript/source-research scope is currently recorded. Any new diplomatic work must start from an explicitly identified Source/File/locus; legacy transcription/apparatus/palaeography material may be consulted for checking but must not be promoted as Li 5 evidence without fresh witness-specific verification."
+source_register: "source-uses.tsv"
 canonical_status_file: "STATUS.md"
-transcription_mode: "conservative graphematic working transcription"
+transcription_mode: "conservative graphematic working transcription when a specific witness/locus is explicitly activated"
 external_context_allowed_in_blind_reading: false
