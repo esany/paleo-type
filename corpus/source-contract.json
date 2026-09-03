@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "tables": {
     "sources": {
       "path": "corpus/sources.tsv",
@@ -81,25 +81,17 @@
       "required_keys": [
         "id",
         "project_source_id",
+        "research_object",
+        "active_scope",
         "source_register",
         "canonical_status_file"
-      ]
-    },
-    "project_sources": {
-      "glob": "projects/*/sources/sources.tsv",
-      "required_columns": [
-        "source_id",
-        "archival_title",
-        "project_role",
-        "relevant_locus",
-        "primary_file_id",
-        "status"
       ],
-      "required_nonempty": [
-        "source_id",
-        "archival_title",
-        "project_role",
-        "status"
+      "allowed_source_registers": [
+        "source-uses.tsv"
+      ],
+      "legacy_source_register_glob": "projects/*/sources/sources.tsv",
+      "forbidden_legacy_keys": [
+        "principal_source_id"
       ]
     },
     "project_source_uses": {

@@ -32,18 +32,34 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 
 
 class CurrentRepositoryRegressionTests(unittest.TestCase):
-    def test_current_repository_validates_without_migrating_legacy_project_state(self) -> None:
-        errors, _, cache = source_contract.validate(REPO, source_contract.load_contract(REPO))
+    def test_current_repository_validates_migrated_historical_project_state(self) -> None:
+        contract = source_contract.load_contract(REPO)
+        self.assertEqual(8, contract["version"])
+        errors, _, cache = source_contract.validate(REPO, contract)
         self.assertEqual([], errors)
-        legacy = cache["project_sources"][
-            ("ega-reg-ii-5-knau", "THHSTAW-EGA-REG-II-5-STAT-VIS-00000129")
-        ]
-        self.assertEqual("principal", legacy["project_role"])
-        self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", legacy["primary_file_id"])
-        self.assertFalse(cache["source_uses"])
-        self.assertFalse(cache["use_evidence"])
+        self.assertFalse(cache["project_sources"])
+        self.assertEqual(4, len(cache["source_uses"]))
+        self.assertEqual(4, len(cache["use_evidence"]))
 
-    def test_current_legacy_resolver_keeps_primary_file_separate_from_target_use_evidence(self) -> None:
+        principal = cache["source_uses"]["USE-REGII5-00000129-PRINCIPAL"]
+        self.assertEqual("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", principal["source_id"])
+        self.assertEqual("principal", principal["research_function"])
+        self.assertEqual("historical", principal["status"])
+        self.assertIn("legacy_status=active", principal["evidence_basis"])
+
+        evidence = cache["use_evidence"]["EVID-REGII5-00000129-PRINCIPAL"]
+        self.assertEqual("USE-REGII5-00000129-PRINCIPAL", evidence["use_id"])
+        self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", evidence["file_id"])
+        self.assertEqual("historical", evidence["status"])
+
+        for project_id, meta in cache["projects"].items():
+            self.assertTrue(meta["research_object"], project_id)
+            self.assertTrue(meta["active_scope"], project_id)
+            self.assertEqual("source-uses.tsv", meta["source_register"])
+            self.assertTrue((REPO / "projects" / project_id / meta["source_register"]).is_file())
+            self.assertTrue((REPO / "projects" / project_id / meta["canonical_status_file"]).is_file())
+
+    def test_current_resolver_uses_target_use_evidence_without_legacy_primary_file(self) -> None:
         args = SimpleNamespace(
             root=str(REPO),
             project="ega-reg-ii-5-knau",
@@ -56,11 +72,15 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertEqual(0, rc)
         resolved = json.loads(out.getvalue())
         self.assertEqual("internal", resolved["structural_status"])
-        self.assertEqual([], resolved["project_source_uses"])
-        self.assertEqual([], resolved["research_functions"])
+        self.assertEqual(["principal"], resolved["research_functions"])
+        self.assertIsNone(resolved["legacy_project_source"])
+        self.assertIsNone(resolved["legacy_primary_file"])
+        self.assertEqual(1, len(resolved["project_source_uses"]))
+        target = resolved["project_source_uses"][0]
+        self.assertEqual("historical", target["use"]["status"])
         self.assertEqual(
             "FILE-REG-II-5-00000129-EXCERPT",
-            resolved["legacy_primary_file"]["file_id"],
+            target["evidence"][0]["file"]["file_id"],
         )
 
     def test_rel008_uses_pure_source_ids_and_separate_loci_without_strength_change(self) -> None:
@@ -76,19 +96,22 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertIn("Direct visual inspection of both loci", row["evidence_basis"])
         self.assertIn("not yet a claim of verbatim copying", row["notes"])
 
-    def test_migration_fixture_accounts_for_every_current_primary_file_id(self) -> None:
-        legacy_rows = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "sources" / "sources.tsv")
+    def test_migration_fixture_accounts_for_every_target_use_evidence_file_id(self) -> None:
         migration_rows = read_tsv(
             REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "project-source-migration.tsv"
         )
-        evidence_rows = [row for row in migration_rows if row["fixture_id"].startswith("EVID-")]
-        self.assertEqual(4, len(evidence_rows))
-        for legacy in legacy_rows:
-            file_id = legacy["primary_file_id"]
-            matches = [row for row in evidence_rows if row["old_value"] == file_id]
+        fixture_evidence = [row for row in migration_rows if row["fixture_id"].startswith("EVID-")]
+        actual_evidence = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "use-evidence.tsv")
+        self.assertEqual(4, len(fixture_evidence))
+        self.assertEqual(4, len(actual_evidence))
+        actual_files = [row["file_id"] for row in actual_evidence]
+        self.assertEqual(4, len(set(actual_files)))
+        for fixture in fixture_evidence:
+            file_id = fixture["old_value"]
+            matches = [row for row in actual_evidence if row["file_id"] == file_id]
             self.assertEqual(1, len(matches), file_id)
-            self.assertIn(file_id, matches[0]["loss_test"])
-            self.assertIn("use-evidence.tsv", matches[0]["target_location"])
+            self.assertIn(file_id, fixture["loss_test"])
+            self.assertIn("use-evidence.tsv", fixture["target_location"])
 
     def test_c2_numeral_observation_is_mapped_exactly_once_without_upgrade(self) -> None:
         numeral = next(
@@ -117,7 +140,12 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         )
         by_id = {row["fixture_id"]: row for row in rows}
         self.assertEqual("remove-duplicate-only-during-later-migration", by_id["PRINCIPAL-001"]["transformation"])
-        self.assertEqual("no-change", by_id["INSPECTION-STATUS-001"]["transformation"])
+        self.assertEqual(
+            "correct-after-witness-provenance-clarification-2026-09-02",
+            by_id["INSPECTION-STATUS-001"]["transformation"],
+        )
+        self.assertEqual("corrected-2026-09-02", by_id["INSPECTION-STATUS-001"]["status"])
+        self.assertIn("partially-transcribed to images-inspected", by_id["INSPECTION-STATUS-001"]["loss_test"])
         relevance = [row for row in rows if row["fixture_id"].startswith("CORPUS-REL-")]
         self.assertEqual(7, len(relevance))
         self.assertTrue(all(row["transformation"] == "remove-after-loss-checked-migration" for row in relevance))
@@ -131,6 +159,22 @@ class TargetProjectUseContractTests(unittest.TestCase):
 
     def tearDown(self) -> None:
         self.tmp.cleanup()
+
+    def _write_project(self, project_id: str, root_id: str) -> None:
+        project = self.root / "projects" / project_id
+        project.mkdir(parents=True, exist_ok=True)
+        (project / "project.yml").write_text(
+            f'id: {project_id}\n'
+            f'project_source_id: {root_id}\n'
+            'research_object: "Fixture scholarly investigation"\n'
+            'active_scope: "No active scope in fixture"\n'
+            'source_register: "source-uses.tsv"\n'
+            'canonical_status_file: STATUS.md\n',
+            encoding="utf-8",
+        )
+        (project / "STATUS.md").write_text("# Fixture status\n", encoding="utf-8")
+        use_headers = source_contract.load_contract(REPO)["tables"]["project_source_uses"]["required_columns"]
+        write_tsv(project / "source-uses.tsv", use_headers, [])
 
     def _write_base_fixture(self) -> None:
         (self.root / "corpus").mkdir(parents=True)
@@ -214,13 +258,8 @@ class TargetProjectUseContractTests(unittest.TestCase):
         ]
         write_tsv(self.root / "corpus" / "files.tsv", file_headers, file_rows)
 
-        for project_id, root_id in [("project-a", "ROOT-A"), ("project-b", "ROOT-B")]:
-            project = self.root / "projects" / project_id
-            project.mkdir(parents=True)
-            (project / "project.yml").write_text(
-                f'id: {project_id}\nproject_source_id: {root_id}\nsource_register: "source-uses.tsv"\ncanonical_status_file: STATUS.md\n',
-                encoding="utf-8",
-            )
+        self._write_project("project-a", "ROOT-A")
+        self._write_project("project-b", "ROOT-B")
 
         use_headers = source_contract.load_contract(REPO)["tables"]["project_source_uses"]["required_columns"]
         use_rows = [
@@ -340,15 +379,39 @@ class TargetProjectUseContractTests(unittest.TestCase):
         self.assertEqual("FILE-B", resolved["project_source_uses"][0]["evidence"][0]["file"]["file_id"])
         self.assertNotIn("project-a", resolved["source_projects"])
 
-    def test_duplicate_project_root_is_not_a_hard_failure(self) -> None:
-        project = self.root / "projects" / "project-c"
-        project.mkdir(parents=True)
-        (project / "project.yml").write_text(
-            'id: project-c\nproject_source_id: ROOT-B\nsource_register: "source-uses.tsv"\ncanonical_status_file: STATUS.md\n',
-            encoding="utf-8",
-        )
+    def test_duplicate_project_anchor_is_not_a_hard_failure(self) -> None:
+        self._write_project("project-c", "ROOT-B")
         errors, _, _ = self.validate()
         self.assertEqual([], errors)
+
+    def test_missing_research_object_fails(self) -> None:
+        path = self.root / "projects" / "project-a" / "project.yml"
+        text = path.read_text(encoding="utf-8").replace('research_object: "Fixture scholarly investigation"\n', "")
+        path.write_text(text, encoding="utf-8")
+        errors, _, _ = self.validate()
+        self.assertTrue(any("required project key research_object is missing or empty" in error for error in errors))
+
+    def test_missing_declared_status_file_fails(self) -> None:
+        (self.root / "projects" / "project-a" / "STATUS.md").unlink()
+        errors, _, _ = self.validate()
+        self.assertTrue(any("canonical_status_file points to missing file" in error for error in errors))
+
+    def test_missing_declared_source_register_fails(self) -> None:
+        (self.root / "projects" / "project-a" / "source-uses.tsv").unlink()
+        errors, _, _ = self.validate()
+        self.assertTrue(any("source_register points to missing file" in error for error in errors))
+
+    def test_legacy_source_register_fails_closed(self) -> None:
+        legacy = self.root / "projects" / "project-a" / "sources" / "sources.tsv"
+        write_tsv(legacy, ["source_id"], [])
+        errors, _, _ = self.validate()
+        self.assertTrue(any("legacy Project source register is no longer allowed" in error for error in errors))
+
+    def test_principal_source_id_legacy_key_fails(self) -> None:
+        path = self.root / "projects" / "project-a" / "project.yml"
+        path.write_text(path.read_text(encoding="utf-8") + "principal_source_id: SRC-INTERNAL\n", encoding="utf-8")
+        errors, _, _ = self.validate()
+        self.assertTrue(any("legacy project key principal_source_id is no longer allowed" in error for error in errors))
 
     def test_invalid_use_source_fails(self) -> None:
         path = self.root / "projects" / "project-a" / "source-uses.tsv"

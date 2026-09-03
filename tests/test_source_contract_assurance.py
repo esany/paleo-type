@@ -127,15 +127,21 @@ class SourceContractAssuranceRegressionTests(unittest.TestCase):
         ]
         write_tsv(self.root / "corpus" / "files.tsv", file_headers, file_rows)
 
+        use_headers = contract["tables"]["project_source_uses"]["required_columns"]
         for project_id, root_id in [("project-a", "ROOT-A"), ("project-b", "ROOT-B")]:
             project = self.root / "projects" / project_id
             project.mkdir(parents=True)
             (project / "project.yml").write_text(
-                f'id: {project_id}\nproject_source_id: {root_id}\nsource_register: "source-uses.tsv"\ncanonical_status_file: STATUS.md\n',
+                f'id: {project_id}\n'
+                f'project_source_id: {root_id}\n'
+                'research_object: "Fixture scholarly investigation"\n'
+                'active_scope: "Fixture active scope"\n'
+                'source_register: "source-uses.tsv"\n'
+                'canonical_status_file: STATUS.md\n',
                 encoding="utf-8",
             )
+            (project / "STATUS.md").write_text("# Fixture status\n", encoding="utf-8")
 
-        use_headers = contract["tables"]["project_source_uses"]["required_columns"]
         write_tsv(
             self.root / "projects" / "project-a" / "source-uses.tsv",
             use_headers,

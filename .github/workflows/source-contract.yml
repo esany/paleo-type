@@ -2,32 +2,11 @@ name: source-contract
 
 on:
   pull_request:
-    paths:
-      - 'corpus/**'
-      - 'projects/*/project.yml'
-      - 'projects/*/source-uses.tsv'
-      - 'projects/*/sources/**'
-      - 'projects/*/research/use-evidence.tsv'
-      - 'projects/*/research/project-source-migration.tsv'
-      - 'templates/project/**'
-      - 'templates/source/**'
-      - 'tools/source_contract.py'
-      - 'tests/**'
-      - '.github/workflows/source-contract.yml'
   push:
     branches: [main]
-    paths:
-      - 'corpus/**'
-      - 'projects/*/project.yml'
-      - 'projects/*/source-uses.tsv'
-      - 'projects/*/sources/**'
-      - 'projects/*/research/use-evidence.tsv'
-      - 'projects/*/research/project-source-migration.tsv'
-      - 'templates/project/**'
-      - 'templates/source/**'
-      - 'tools/source_contract.py'
-      - 'tests/**'
-      - '.github/workflows/source-contract.yml'
+
+permissions:
+  contents: read
 
 jobs:
   validate:
@@ -37,9 +16,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python tools/source_contract.py validate
-      - run: python -m unittest discover -s tests -p 'test_*.py'
-      - name: Resolve project-scope regression
+      - name: Validate canonical Source/File/Project-use contract
+        run: python tools/source_contract.py validate
+      - name: Run deterministic and governance regressions
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Compile fresh-process Project contexts
+        run: |
+          python tools/project_context.py --project ega-reg-ii-3 > /tmp/reg-ii-3-context.json
+          python tools/project_context.py --project ega-reg-ii-4-bd-ii > /tmp/reg-ii-4-context.json
+          python tools/project_context.py --project ega-reg-ii-5-knau > /tmp/reg-ii-5-context.json
+      - name: Resolve real-data Project/Source regression
         run: |
           python tools/source_contract.py resolve --project ega-reg-ii-5-knau --source-id THHSTAW-EGA-REG-II-5-STAT-VIS-00000129 --locus 62r > /tmp/internal.json
           python tools/source_contract.py resolve --project ega-reg-ii-5-knau --source-id THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089 > /tmp/external.json
@@ -51,8 +37,27 @@ jobs:
               external = json.load(fh)
           assert internal['project_scope'] == 'internal', internal['project_scope']
           assert internal['structural_status'] == 'internal', internal['structural_status']
-          assert internal['project_source_uses'] == [], internal['project_source_uses']
-          assert internal['legacy_primary_file']['file_id'] == 'FILE-REG-II-5-00000129-EXCERPT'
+          assert internal['legacy_primary_file'] is None, internal['legacy_primary_file']
+          assert internal['research_functions'] == ['principal'], internal['research_functions']
+          assert len(internal['project_source_uses']) == 1, internal['project_source_uses']
+          iuse = internal['project_source_uses'][0]
+          assert iuse['use']['status'] == 'historical', iuse['use']
+          assert iuse['evidence'][0]['file']['file_id'] == 'FILE-REG-II-5-00000129-EXCERPT'
           assert external['project_scope'] == 'external', external['project_scope']
           assert external['structural_status'] == 'external', external['structural_status']
+          assert external['research_functions'] == ['textual-comparison'], external['research_functions']
+          assert len(external['project_source_uses']) == 1, external['project_source_uses']
+          euse = external['project_source_uses'][0]
+          assert euse['use']['status'] == 'historical', euse['use']
+          assert euse['evidence'][0]['file']['file_id'] == 'FILE-REG-II-4-II-00000089-EXPORT'
           PY
+      - name: Human-readable assurance boundary
+        if: always()
+        run: |
+          {
+            echo '## paleo-type source/project assurance'
+            echo
+            echo '- Contract validation, regressions, fresh-process context compilation and real-data resolver checks were executed.'
+            echo '- A passing workflow establishes formal/deterministic consistency for the checked invariants.'
+            echo '- It does **not** by itself establish manuscript truth, specialist validity, target-context evidence staging/vision inspectability, Human Owner acceptance, or merge/release authority.'
+          } >> "$GITHUB_STEP_SUMMARY"
