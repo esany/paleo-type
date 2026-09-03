@@ -115,7 +115,7 @@ Do not restate those models here merely to make maintenance self-contained.
 
 ### Controlled-value rule
 
-Where a stable semantic is controlled executably, prose must use or reference that owner rather than invent synonyms. For File storage/preservation state, `corpus/source-contract.json` is the controlled-value owner; the current blocked value is `preservation-blocked-public-redistribution`. A new preservation vocabulary requires a separate deliberate semantic change, not prose drift.
+Where a stable semantic is controlled executably, prose must reference that owner rather than define or alias its value set. For File storage/preservation state, `corpus/source-contract.json` is the sole controlled-value owner. Any vocabulary change belongs there through a deliberate semantic change, not through prose drift.
 
 ## Maintenance triggers
 
