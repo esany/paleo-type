@@ -49,6 +49,18 @@ def check_headers(path: Path, headers: list[str], required: list[str], errors: l
         errors.append(f"{path}: missing required columns: {', '.join(missing)}")
 
 
+def validate_project_relative_file(project_dir: Path, raw: str, field: str, errors: list[str]) -> Path | None:
+    rel = Path(raw)
+    if rel.is_absolute() or ".." in rel.parts:
+        errors.append(f"{project_dir / 'project.yml'}: {field} must be a project-relative path without '..': {raw!r}")
+        return None
+    target = project_dir / rel
+    if not target.is_file():
+        errors.append(f"{project_dir / 'project.yml'}: {field} points to missing file {raw!r}")
+        return None
+    return target
+
+
 def is_within(source_id: str, root_id: str, parents: dict[str, list[str]]) -> bool:
     if source_id == root_id:
         return True
@@ -191,11 +203,17 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
 
     projects_cfg = contract["tables"]["projects"]
     project_by_id: dict[str, dict[str, str]] = {}
+    allowed_source_registers = set(projects_cfg.get("allowed_source_registers", []))
+    forbidden_legacy_keys = projects_cfg.get("forbidden_legacy_keys", [])
     for path in sorted(root.glob(projects_cfg["glob"])):
         meta = read_simple_yaml_scalars(path)
         for key in projects_cfg["required_keys"]:
             if not meta.get(key):
                 errors.append(f"{path}: required project key {key} is missing or empty")
+        for key in forbidden_legacy_keys:
+            if meta.get(key):
+                errors.append(f"{path}: legacy project key {key} is no longer allowed")
+
         project_id = meta.get("id", "")
         directory_id = path.parent.name
         if project_id and project_id != directory_id:
@@ -204,39 +222,30 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
             if project_id in project_by_id:
                 errors.append(f"{path}: duplicate project id {project_id}")
             project_by_id[project_id] = meta
+
         project_source_id = meta.get("project_source_id", "")
         if project_source_id and project_source_id not in source_by_id:
             errors.append(f"{path}: project_source_id {project_source_id} does not exist in corpus/sources.tsv")
 
-    legacy_cfg = contract["tables"]["project_sources"]
-    legacy_project_rows: dict[tuple[str, str], dict[str, str]] = {}
-    for path in sorted(root.glob(legacy_cfg["glob"])):
-        headers, rows = read_tsv(path)
-        check_headers(path, headers, legacy_cfg["required_columns"], errors)
-        project_id = path.parents[1].name
-        if project_id not in project_by_id:
-            errors.append(f"{path}: no valid projects/{project_id}/project.yml definition")
-        for i, row in enumerate(rows, start=2):
-            for field in legacy_cfg["required_nonempty"]:
-                if not row.get(field):
-                    errors.append(f"{path}:{i}: {field} must not be empty")
-            sid = row.get("source_id", "")
-            if sid not in source_by_id:
-                errors.append(f"{path}:{i}: source_id {sid} does not exist in corpus/sources.tsv")
-                continue
-            key = (project_id, sid)
-            if key in legacy_project_rows:
-                errors.append(f"{path}:{i}: duplicate legacy project/source pair {project_id}/{sid}")
-            legacy_project_rows[key] = row
-            title = row.get("archival_title", "")
-            if title and title != source_by_id[sid].get("title", ""):
-                errors.append(f"{path}:{i}: archival_title differs from canonical source title for {sid}")
-            fid = row.get("primary_file_id", "")
-            if fid:
-                if fid not in file_by_id:
-                    errors.append(f"{path}:{i}: primary_file_id {fid} does not exist in corpus/files.tsv")
-                elif file_by_id[fid].get("source_id") != sid:
-                    errors.append(f"{path}:{i}: primary_file_id {fid} belongs to another source")
+        source_register = meta.get("source_register", "")
+        if source_register:
+            if allowed_source_registers and source_register not in allowed_source_registers:
+                errors.append(
+                    f"{path}: source_register {source_register!r} is not an allowed target Project source-use owner"
+                )
+            validate_project_relative_file(path.parent, source_register, "source_register", errors)
+
+        status_file = meta.get("canonical_status_file", "")
+        if status_file:
+            validate_project_relative_file(path.parent, status_file, "canonical_status_file", errors)
+
+    legacy_glob = projects_cfg.get("legacy_source_register_glob")
+    if legacy_glob:
+        for legacy_path in sorted(root.glob(legacy_glob)):
+            errors.append(
+                f"{legacy_path}: legacy Project source register is no longer allowed after loss-checked migration; "
+                "use project source-uses.tsv plus research/use-evidence.tsv"
+            )
 
     use_cfg = contract["tables"]["project_source_uses"]
     use_by_id: dict[str, dict[str, str]] = {}
@@ -248,6 +257,10 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         project_id = path.parent.name
         if project_id not in project_by_id:
             errors.append(f"{path}: no valid projects/{project_id}/project.yml definition")
+        elif project_by_id[project_id].get("source_register") != path.name:
+            errors.append(
+                f"{path}: Project declares source_register {project_by_id[project_id].get('source_register')!r}, not {path.name!r}"
+            )
         for i, row in enumerate(rows, start=2):
             for field in use_cfg["required_nonempty"]:
                 if not row.get(field):
@@ -309,24 +322,13 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
 
     for project_id, meta in project_by_id.items():
         root_id = meta.get("project_source_id", "")
-        principal = meta.get("principal_source_id", "")
-        if principal:
-            registered = (project_id, principal) in legacy_project_rows or bool(
-                uses_by_project_source.get((project_id, principal))
-            )
-            if not registered:
-                errors.append(
-                    f"projects/{project_id}/project.yml: principal_source_id {principal} is not registered in legacy or target project source use records"
-                )
-            elif root_id and not is_within(principal, root_id, parents_by_source):
-                errors.append(
-                    f"projects/{project_id}/project.yml: principal_source_id {principal} is not structurally within project_source_id {root_id}"
-                )
+        project_use_pairs = [
+            (pid, sid) for (pid, sid) in uses_by_project_source if pid == project_id
+        ]
         has_internal_use = any(
-            pid == project_id and is_within(sid, root_id, parents_by_source)
-            for (pid, sid) in set(legacy_project_rows) | set(uses_by_project_source)
+            is_within(sid, root_id, parents_by_source) for _, sid in project_use_pairs
         ) if root_id else False
-        if root_id and (legacy_project_rows or uses_by_project_source) and not has_internal_use:
+        if root_id and project_use_pairs and not has_internal_use:
             warnings.append(f"projects/{project_id}: no registered source/use lies within project_source_id {root_id}")
 
     cross_cfg = contract["tables"]["crosswalks"]
@@ -359,9 +361,6 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                 errors.append(f"{path}:{i}: stable_image_urn must start with 'urn:'")
         crosswalks_by_source[source_dir] = rows
 
-    for (project_id, sid), row in legacy_project_rows.items():
-        if row.get("status") == "active" and row.get("relevant_locus") and sid not in crosswalks_by_source:
-            warnings.append(f"projects/{project_id}: active legacy source {sid} has a relevant_locus but no source-data crosswalk yet")
     for (project_id, sid), rows in uses_by_project_source.items():
         if any(row.get("status") == "active" and row.get("relevant_locus") for row in rows) and sid not in crosswalks_by_source:
             warnings.append(f"projects/{project_id}: active source use {sid} has a relevant_locus but no source-data crosswalk yet")
@@ -372,7 +371,7 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         parents_by_source=parents_by_source,
         files=file_by_id,
         projects=project_by_id,
-        project_sources=legacy_project_rows,
+        project_sources={},
         source_uses=use_by_id,
         uses_by_project_source=uses_by_project_source,
         use_project=use_project,
@@ -440,10 +439,9 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         return 2
 
     key = (args.project, args.source_id)
-    legacy_project_row = cache["project_sources"].get(key)
     project_uses = cache["uses_by_project_source"].get(key, [])
-    if not legacy_project_row and not project_uses:
-        print(f"ERROR: source {args.source_id} is not registered/used in project {args.project}", file=sys.stderr)
+    if not project_uses:
+        print(f"ERROR: source {args.source_id} is not used in project {args.project}", file=sys.stderr)
         return 2
 
     source_row = cache["sources"][args.source_id]
@@ -455,11 +453,6 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         structural_status = "internal"
     else:
         structural_status = "external"
-
-    legacy_file = None
-    if legacy_project_row:
-        fid = legacy_project_row.get("primary_file_id", "")
-        legacy_file = cache["files"].get(fid) if fid else None
 
     resolved_uses = []
     for use in project_uses:
@@ -496,10 +489,10 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         "source_projects": source_projects(args.source_id, cache["projects"], cache["parents_by_source"]),
         "project_source_uses": resolved_uses,
         "research_functions": [use["research_function"] for use in project_uses],
-        "legacy_project_source": legacy_project_row,
-        "legacy_primary_file": legacy_file,
-        "project_source": legacy_project_row,
-        "primary_file": legacy_file,
+        "legacy_project_source": None,
+        "legacy_primary_file": None,
+        "project_source": None,
+        "primary_file": None,
         "locus": args.locus or None,
         "locus_matches": locus_matches,
         "warnings": warnings,
@@ -509,16 +502,16 @@ def cmd_resolve(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Validate and resolve paleo-type source provenance and project source use.")
+    parser = argparse.ArgumentParser(description="Validate and resolve paleo-type source provenance and Project source use.")
     parser.add_argument("--root", help="Repository root; defaults to the script's repository.")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    v = sub.add_parser("validate", help="Validate the source/provenance/project-use contract.")
+    v = sub.add_parser("validate", help="Validate the source/provenance/Project-use contract.")
     v.set_defaults(func=cmd_validate)
 
     r = sub.add_parser(
         "resolve",
-        help="Resolve project/source structure, project research uses, explicit use-evidence, file provenance and optional locus.",
+        help="Resolve Project/Source structure, Project research uses, explicit use-evidence, File provenance and optional locus.",
     )
     r.add_argument("--project", required=True)
     r.add_argument("--source-id", required=True)

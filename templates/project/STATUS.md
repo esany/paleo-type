@@ -2,13 +2,17 @@
 
 Last checkpoint: YYYY-MM-DD
 
-## Historical project root
+## Research purpose and Project authority
 
-State the historically independent source structure identified by `project.yml: project_source_id`. Do not redefine the project from the current narrow research question.
+State the scholarly research purpose for which this Project exists and the current owner-grounded Project boundary at the level that cannot be derived. Do not infer Project existence from Source/File/archival structure, `part_of`, upload order, evidence availability or an inherited AI working bundle.
 
-## Research purpose and active scope
+## Documentary Source anchor
 
-State the scholarly purpose and current bounded working scope within the project root. The active scope may be narrower than the full project source structure.
+State the canonical documentary Source root identified by `project.yml: project_source_id`. This anchor is used for deterministic structural resolution **after Project selection**; it does not create the Project, define its research purpose or choose the current research priority.
+
+## Active scope
+
+State the current bounded working scope. It may be narrower than the documentary Source root and must not silently redefine Project identity.
 
 ## Sources used
 
@@ -26,12 +30,12 @@ Reference `../../methodology/research-gates.md`. Record only this project's curr
 
 ## Project relations
 
-Reference `../relationships.tsv` only if this historically independent project materially relates to another project. Historical/source relations belong in `corpus/relationships.tsv`. Project→Source use never auto-creates a Project→Project relation.
+Reference `../relationships.tsv` only if this Project materially relates to another Project. Historical/source relations belong in `corpus/relationships.tsv`. Project→Source use never auto-creates a Project→Project relation.
 
 ## NEXT ACTION — canonical restart point
 
-State one bounded next research action.
+State one bounded next research action **only when an authorized next action exists**. If none has been selected, state that explicitly rather than inferring one from Source structure, research-function labels, File availability, old scopes or repository consistency.
 
 ## Restartability test
 
-A new capable researcher must be able to identify the historical project root, derive structural/internal/external status, identify the Project→Source research functions and relevant loci, recover concrete use-evidence and exact source exports/preservation state, understand current gate/activity state and continue from the exact next action without old chat.
+A new capable researcher must be able to identify the Project's scholarly purpose/authority basis, its documentary Source anchor, derive structural/internal/external status, identify Project→Source research functions and relevant loci, recover concrete use-evidence and exact source exports/preservation state, understand current gate/activity state and continue from the exact authorized next action—or recognize the explicit absence of one—without old chat.

@@ -1,12 +1,12 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 3
 
-Last checkpoint: 2026-08-31
+Last checkpoint: 2026-09-02
 
 ## Project authority and root
 
-The human owner has defined Reg. Ii 3 as one Project, anchored at `ACT-THHSTAW-EGA-REG-II-3`. The earlier AI/source-unit model that treated individual records as separate Projects is historical only.
+The human owner explicitly confirmed on 2026-09-02 that Reg. Ii 3 should currently continue as one act-oriented Project, anchored at `ACT-THHSTAW-EGA-REG-II-3`, as an application of D-018. This current authority does not retroactively certify the complete historical D-017 wording or the earlier AI/source-unit model.
 
-`Knau` is an initial research focus, not the Project identity. Further sections may be added. No current research function or priority is inferred merely from a Source being internal to the act.
+`Knau` is a preserved historical research focus, not the Project identity and not a current priority selector. Further sections may be activated when an owner-grounded research question requires them. No current research function or priority is inferred merely from a Source being internal to the act.
 
 ## Known internal sections/source nodes
 
@@ -35,12 +35,12 @@ Those source-unit Project files were later removed from `main`; the Source/File 
 
 ## Research/gate state
 
-No new source-research priority is asserted by this project-structure correction. Existing inspected evidence remains valid at the level originally recorded. Initial work may concern Knau-related loci, but the owner may activate other sections later.
+No new source-research priority is asserted by the 2026-09-02 Project confirmation or this reconciliation. Existing inspected evidence remains valid at the level originally recorded. Historical Knau-related work remains preserved without becoming the active scope.
 
 ## NEXT ACTION — canonical restart point
 
-Do not infer a manuscript task from Project creation, Source order or prior AI roles. When the owner selects the next Reg. Ii 3 research question, activate only the required section/locus and record its project-relative function at that time.
+No owner-selected manuscript/source-research task is currently recorded. Do not infer one from Project creation, Source order, preserved Knau work or prior AI roles. When the owner selects the next Reg. Ii 3 research question, activate only the required section/locus and record its project-relative function at that time.
 
 ## Restartability
 
-A fresh context can identify one Reg. Ii 3 Project, its two currently known internal sections, their recovered prior work state, exact File provenance, current crosswalk limits and the absence of an owner-selected next manuscript task without recovering old chat.
+A fresh context can identify one currently owner-confirmed Reg. Ii 3 Project, its two currently known internal sections, their recovered prior work state, exact File provenance, current crosswalk limits and the absence of an owner-selected next manuscript task without recovering old chat.

@@ -1,24 +1,24 @@
 source_id	archival_folio	export_image	pdf_page	stable_image_urn	mapping_status	evidence	content_anchor	notes
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	55v	120	2		inferred-high	sequence from paired recto/verso structure; 121 visibly numbered 56		Export begins mid-volume; not part of current Knau passage
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	56r	121	3		observed	visible manuscript folio number 56		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	55v	120	2		inferred-high	sequence immediately preceding observed 56r		Source record begins at 55v.
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	56r	121	3		observed	folio number 56 visible		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	56v	122	4		inferred-high	paired verso following observed 56r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	57r	123	5		observed	visible manuscript folio number 57		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	57r	123	5		observed	folio number 57 visible		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	57v	124	6		inferred-high	paired verso following observed 57r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	58r	125	7		observed	visible manuscript folio number 58		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	58r	125	7		observed	folio number 58 visible		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	58v	126	8		inferred-high	paired verso following observed 58r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	59r	127	9		observed	visible manuscript folio number 59		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	59r	127	9		observed	folio number 59 visible		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	59v	128	10		inferred-high	paired verso following observed 59r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	60r	129	11		observed	visible manuscript folio number 60		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	60r	129	11		observed	folio number 60 visible		
 THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	60v	130	12		inferred-high	paired verso following observed 60r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61r	131	13		observed	visible manuscript folio number 61		Precedes Knau heading
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61v	132	14		inferred-high	paired verso after observed 61r and before observed 62r	Knawe heading; itemized entry	Legacy working image K132; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0130.tif`; this is not asserted as a URN
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62r	133	15		observed	visible manuscript folio number 62	continuation of Knau prose	Legacy working image K133; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0131.tif`; this is not asserted as a URN
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62v	134	16		inferred-high	paired verso after observed 62r and before observed 63r	continuation of Knau prose	Legacy working image K134; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0132.tif`; this is not asserted as a URN
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63r	135	17		observed	visible manuscript folio number 63	end of prior passage at top; new large heading below	Legacy working image K135; boundary page; provider image label directly observed in exact export footer: `stat_derivate_00000416:/ThHStAW_RegIi_5_0133.tif`; this is not asserted as a URN
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63v	136	18		inferred-high	paired verso after observed 63r and before observed 64r	Schondorff heading	Confirms Knau has ended before this page
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	64r	137	19		observed	visible manuscript folio number 64	Boris heading	
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	64v	138	20		inferred-high	paired verso after observed 64r and before observed 65r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	65r	139	21		observed	visible manuscript folio number 65		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	65v	140	22		inferred-high	paired verso after observed 65r and before observed 66r		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	66r	141	23		observed	visible manuscript folio number 66		
-THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	66v	142	24		inferred-high	paired verso after observed 66r		Protocol boundary ends at 66v; export image 143 / fol. 67r is adjacent file context and not part of this source record.
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61r	131	13		observed	folio number 61 visible		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	61v	132	14		inferred-high	paired verso following observed 61r	Knawe heading	
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62r	133	15		observed	folio number 62 visible		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	62v	134	16		inferred-high	paired verso following observed 62r		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63r	135	17		observed	folio number 63 visible	end of Knau passage; new heading below	
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	63v	136	18		inferred-high	paired verso following observed 63r	Schondorff heading	
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	64r	137	19		observed	folio number 64 visible	Boris heading	
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	64v	138	20		inferred-high	paired verso following observed 64r		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	65r	139	21		observed	folio number 65 visible		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	65v	140	22		inferred-high	paired verso following observed 65r		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	66r	141	23		observed	folio number 66 visible		
+THHSTAW-EGA-REG-II-5-STAT-VIS-00000129	66v	142	24		inferred-high	paired verso following observed 66r		Source record ends at 66v; export image 143 / fol. 67r is adjacent file context and is not assigned to this source record.

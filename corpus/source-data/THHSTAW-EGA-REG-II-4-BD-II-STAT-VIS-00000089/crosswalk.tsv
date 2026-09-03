@@ -1,7 +1,40 @@
 source_id	archival_folio	export_image	pdf_page	stable_image_urn	mapping_status	evidence	content_anchor	notes
-THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	306v	667	27	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6674	inferred-high	continuous recto/verso sequence immediately before directly numbered 307r; image 667 visibly begins `Knawe` entry	Knawe entry	Beginning of currently mapped locus; crosswalk coverage is intentionally partial, not a claim about the full protocol.
-THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	307r	668	28	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6689	observed	folio number 307 visible at lower right		Mapped source locus.
-THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	307v	669	29	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6694	inferred-high	continuous verso between directly controlled 307r and 308r		Mapped source locus.
-THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	308r	670	30	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6707	observed	folio number 308 visible at lower right		Mapped source locus.
-THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	308v	671	31	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6716	inferred-high	continuous verso between directly controlled 308r and 309r		Mapped source locus.
-THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	309r	672	32	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6722	observed	folio number 309 visible at lower right; next heading begins below		End of currently mapped locus.
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	294r	642	2	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6428	observed	folio number 294 visible		Source record begins at 294r.
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	294v	643	3	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6432	inferred-high	paired verso following observed 294r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	295r	644	4	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6445	observed	folio number 295 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	295v	645	5	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6456	inferred-high	paired verso following observed 295r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	296r	646	6	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6466	observed	folio number 296 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	296v	647	7	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6478	inferred-high	paired verso following observed 296r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	297r	648	8	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6486	observed	folio number 297 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	297v	649	9	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6496	inferred-high	paired verso following observed 297r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	298r	650	10	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6509	observed	folio number 298 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	298v	651	11	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6512	inferred-high	paired verso following observed 298r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	299r	652	12	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6523	observed	folio number 299 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	299v	653	13	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6538	inferred-high	paired verso following observed 299r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	300r	654	14	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6545	observed	folio number 300 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	300v	655	15	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6554	inferred-high	paired verso following observed 300r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	301r	656	16	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6561	observed	folio number 301 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	301v	657	17	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6571	inferred-high	paired verso following observed 301r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	302r	658	18	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6587	observed	folio number 302 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	302v	659	19	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6590	inferred-high	paired verso following observed 302r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	303r	660	20	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6603	observed	folio number 303 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	303v	661	21	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6614	inferred-high	paired verso following observed 303r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	304r	662	22	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6627	observed	folio number 304 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	304v	663	23	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6634	inferred-high	paired verso following observed 304r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	305r	664	24	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6646	observed	folio number 305 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	305v	665	25	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6651	inferred-high	paired verso following observed 305r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	306r	666	26	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6666	observed	folio number 306 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	306v	667	27	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6674	inferred-high	paired verso following observed 306r	Knawe entry	
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	307r	668	28	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6689	observed	folio number 307 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	307v	669	29	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6694	inferred-high	paired verso following observed 307r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	308r	670	30	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6707	observed	folio number 308 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	308v	671	31	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6716	inferred-high	paired verso following observed 308r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	309r	672	32	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6722	observed	folio number 309 visible	end of Knau passage; next heading begins below	
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	309v	673	33	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6730	inferred-high	paired verso following observed 309r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	310r	674	34	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6747	observed	folio number 310 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	310v	675	35	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6758	inferred-high	paired verso following observed 310r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	311r	676	36	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6761	observed	folio number 311 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	311v	677	37	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6777	inferred-high	paired verso following observed 311r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	312r	678	38	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6780	observed	folio number 312 visible		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	312v	679	39	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6798	inferred-high	paired verso following observed 312r		
+THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089	313r	680	40	urn:nbn:de:urmel-b0ae7945-6a9a-427a-8c8e-33763cd36adb5-00000243-6801	observed	folio number 313 visible		Source record ends at 313r; export image 681 / following verso is adjacent file context and is not assigned to this source record.
