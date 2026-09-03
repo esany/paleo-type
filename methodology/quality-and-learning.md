@@ -1,116 +1,119 @@
 # Quality and learning
 
+## Purpose
+
+This file owns the lightweight **quality, falsification, certification-boundary and learning** routines for consequential work.
+
+It does not redefine Project authority, Source/File semantics, evidence states, workflow mechanics or Dev authority. Those remain in their primary owners and are checked here only for the quality consequence relevant to the review.
+
 ## Continuous research integrity check
 
-This is the central lightweight quality routine for substantive research work. It is a **research gate**, not a reporting ritual. Run the relevant checks when research truth changes and at the end of a substantive work block. Do not run a full checklist for every token.
+Run the relevant questions when consequential research truth changes and at the end of a substantive work block. This is a research-quality gate, not a reporting ritual; do not run a full checklist for every token.
 
 ### Five integrity questions
 
-1. **Evidence** — Does each consequential new claim rest on material actually inspected at the level claimed (image, passage, full text, metadata only)?
-2. **Layer separation** — Are `OBSERVATION → READING → NORMALIZATION → IDENTIFICATION → INTERPRETATION` still distinct, with no silent promotion between them?
-3. **Independence** — Is additional support genuinely additional evidence, or merely repetition of an earlier AI/model reading, context-derived plausibility, or a dependent derivative?
-4. **Persistence** — Did every changed research truth reach its canonical record (transcription, decision log, source audit/register, palaeographic evidence, learnings, `STATUS.md` as applicable)?
-5. **Goal alignment** — Did this work reduce consequential uncertainty or produce a usable research result **for the owner-grounded Project/purpose/current scope**, rather than drift into generic research, tooling, methodological ceremony, a convenient available Source, or fluent interpretation unsupported by evidence? Internal consistency among project files is not evidence that the Project definition or a materially changed priority was owner-authorized.
+1. **Evidence** — Does each consequential claim rest on material actually inspected at the level claimed?
+2. **Layer separation** — Are `OBSERVATION → READING → NORMALIZATION → IDENTIFICATION → INTERPRETATION` still distinct?
+3. **Independence** — Is additional support genuinely independent evidence rather than repeated model output, contextual plausibility or a dependent derivative?
+4. **Persistence** — Did changed durable truth reach its canonical owner?
+5. **Goal alignment** — Did the work advance the authorized Project/research purpose rather than drift into convenient evidence, generic research, tooling or ceremony?
+
+Internal repository consistency is not by itself evidence of scholarly correctness or owner authority.
 
 ### Fail rule
 
-If a consequential point fails one of the relevant questions, the work block is **not complete for that point**. Do not repair the failure by making the prose more confident. Instead choose the shortest discriminating action: reinspect the image, compare a genuine same-hand anchor, inspect the actual external passage, preserve a variant/unresolved state, correct the canonical record, or escalate when independent specialist validation is warranted.
+If a consequential point fails a relevant question, that point is not complete. Use the shortest discriminating response: reinspect evidence, test a genuine comparison, inspect the actual external passage, preserve `variant`/`unresolved`, repair canonical state, return an authority gap, or escalate to qualified specialist review when consequence warrants it.
 
-If the failure is missing owner authority for Project creation/boundary or current priority, preserve the valid evidence/work already completed, record the missing authority state, and **do not invent a replacement Project or NEXT ACTION**. Restore a prior target only when that target itself has an owner-grounded authority basis.
+Do not repair a failed check by making prose more confident.
 
-An unresolved result can pass the integrity check. An unsupported resolved result cannot.
+An unresolved but adequately evidenced/tested result may pass. An unsupported resolved result may not.
 
-### Event-triggered use
+If Project/priority authority is missing, follow `project-lifecycle.md`: preserve valid completed work and do not invent a replacement Project or `NEXT ACTION`.
 
-Use only the relevant branch of the check:
+## Event-triggered quality use
 
-- **reading changed** → evidence, layer separation, independence, transcription/decision persistence;
-- **comparison anchor added/changed** → inspected-image basis, independence, palaeographic persistence;
-- **external source used** → access/status, exact passage inspected, claim/source fit, source-audit persistence;
-- **historical identification/interpretation added** → separation from reading, explicit evidential basis, source/inference distinction;
-- **Project created/redefined** → explicit human-owner Project decision, source-root anchoring only after that decision, prior-state/restartability preservation;
-- **work block ended or next action changed** → owner-grounded goal alignment, `STATUS.md` restartability, work-target authority, missing durable state;
-- **new tool/model/workflow proposed** → identify the current research bottleneck it solves and prefer the simpler direct test when that is faster;
-- **AI/HTR automation begins shaping corpus-level findings** → trigger the formal evaluation requirements in `ai-governance.md`.
+Apply only the relevant branch:
+
+- **reading changed** → evidence, layer separation, independence, decision/persistence trace;
+- **comparison anchor changed** → exact inspected evidence, independence, recoverable anchor;
+- **external source used** → actual access level, passage/claim fit, source audit;
+- **identification/interpretation added** → separation from reading and traceable evidential basis;
+- **Project/priority state changed** → authority/restartability quality using `project-lifecycle.md`;
+- **work block / transition ended** → persistence, target alignment and restartability using `workflow.md`;
+- **tool/model/workflow proposed** → demonstrated need, smallest adequate mechanism, no speculative infrastructure;
+- **systematic AI/HTR begins shaping corpus findings** → formal evaluation trigger in `ai-governance.md`;
+- **material research-system change** → D-016/result-review boundary in `maintenance.md`.
 
 ## Cross-role assurance reviews
 
-Quality assurance is split by competence and authority. No single model/chat/CI result may certify all dimensions of a consequential change.
+No single model/chat/CI result certifies every dimension of a consequential change. Keep review dimensions distinct and state only what the review can establish.
 
-Use the following review lenses only when triggered by the work. Each review must state what it can certify and what remains outside its authority. Review semantic completeness and actual state, not compliance with preferred wording or a template. A review that invents mandatory field syntax where the required meaning is already reconstructable is itself process overhead, not added assurance.
+Reviews are **semantic, not lexical/template-based**. Missing a preferred heading is not a defect when the required meaning is reconstructable; a complete-looking template does not rescue contradictory state.
 
 ### Role / authority review
 
-Checks:
+Quality question:
 
-- the Project itself, when materialized or re-bounded, is traceable to a human-owner decision rather than inferred from Source structure, an archival act, a PDF, a place focus or an AI-created working bundle;
-- current executable role/stage is correct;
-- canonical owner and handoff target are correct;
-- the current work target is traceable to owner-grounded purpose/priority/scope rather than inferred from Project root, `principal`, internal/external status, upload order, evidence availability, metadata verification or a technical/architecture fixture;
-- a support prerequisite has not silently become the research objective merely because it was necessary or recently completed;
-- downstream work is not being executed early;
-- material-change admission is present when required;
-- owner-reserved purpose/Project/scope/rights/publication decisions have not been inferred by AI.
+> Is the actor executing the correct bounded role/stage/target with the authority required by the primary owner?
 
-Machine-checkable owner/stage/admission facts may be verified deterministically where canonical state is explicit. This review does not certify scholarly truth, create Projects, or infer research priority from structural facts.
+Check the relevant authority facts through `project-lifecycle.md`, `maintenance.md` and `workflow.md`; do not redefine them here.
+
+This review may detect Project/priority inference, support-task drift, premature downstream execution or missing D-016 admission. It does not create Project authority or certify scholarly truth.
 
 ### Evidence / provenance / availability review
 
-Checks:
+Quality question:
 
-- exact evidence identity and provenance;
-- the evidence level actually inspected matches the claim;
-- required visual evidence is `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the same object in the same target context when the task requires it; only then is `VISUAL EVIDENCE READY = PASS`;
-- transformation/rebuild provenance is sufficient;
-- rights/storage boundaries are respected;
-- identifiers or metadata are not substituted for source inspection.
+> Is the exact evidence/provenance/access state sufficient for the claim/action actually being performed?
 
-Technical identity/access checks may be deterministic. Scholarly adequacy of what the evidence means remains a domain judgement. Evidence availability does not establish that the available Source is a Project or the authorized current work target.
+Use `source-and-provenance.md`, `evidence-policy.md` and the target-context execution gate in `workflow.md`.
+
+This review distinguishes formal identity/access checks from scholarly interpretation. Evidence availability does not establish Project authority or current priority.
 
 ### Technical assurance review
 
-Checks, as applicable:
+Quality question:
 
-- traceability to demonstrated problem and applicable requirements;
-- smallest adequate mechanism rather than speculative infrastructure;
-- referential integrity and canonical ownership;
-- deterministic acceptance tests for deterministic properties;
-- migration/semantic-loss/rebuildability/provenance fixtures;
+> Does the implementation solve the demonstrated problem inside admitted scope while preserving deterministic invariants, provenance, restartability and declared non-goals?
+
+As applicable inspect:
+
+- traceability to requirements/failure fixture;
+- smallest adequate mechanism;
+- referential/canonical ownership integrity;
+- deterministic acceptance/regression tests;
+- migration/semantic-loss/rebuildability/provenance evidence;
 - no parallel truth store;
-- security/rights leakage controls;
-- preservation of declared scope and non-goals;
-- honest platform/tool boundary where repo code cannot solve the decisive problem.
+- security/rights/platform boundary;
+- scope/non-goals preservation.
 
-A technical `PASS` certifies only the technical properties actually tested. Correct bytes, checksums, routing and reproducibility do not certify Project creation, Project boundary or a research-priority decision.
+A technical `PASS` certifies only the properties actually tested. It is not scholarly adequacy, Project authority or Human Owner acceptance.
 
 ### Scholarly adequacy review
 
-Owned by Domain Review and, where triggered, qualified specialist review. It checks whether a returned implementation or transformed representation preserves required scholarly meaning, evidence layers, uncertainty, source phenomena, provenance and research usability.
+Quality question:
 
-`CI PASS` or Dev self-review cannot satisfy this review.
+> Does the returned representation/implementation preserve required scholarly meaning, uncertainty, source phenomena, provenance and research usability?
+
+This is Domain Review and, where triggered, qualified specialist territory. `CI PASS` or Dev self-review cannot satisfy independent scholarly/specialist validation.
 
 ### Human / restartability / challengeability review
 
-Checks:
+Quality question:
 
-- consequential result and `NEXT ACTION` are understandable without the originating chat;
-- current state is persisted in canonical owners;
-- owner-defined Project identity/boundary is distinguishable from Source structure and AI-created historical scopes;
-- the current work target remains explainable from owner-grounded research purpose/priority/scope, not merely because several canonical files agree with each other;
-- consequential prior work/checkpoint state remains recoverable after Project-model or path migrations;
-- the human owner is not forced to act as repository operator or substitute specialist;
-- a fresh capable context can resume from canonical state plus authorized evidence;
-- consequential actions remain explainable as `problem → requirement/evidence → owner → change → deterministic vs judgement → consequences/open points`.
+> Can a fresh capable human/AI context understand and challenge the consequential state/action without the originating chat or hidden implementation assumptions?
+
+Check that canonical owners are reachable, volatile state is not copied as authority, prior consequential work remains recoverable, the user is not forced to act as repository operator/substitute specialist, and the authorized continuation state is reconstructable.
 
 ### Governance / purpose review
 
-Human Owner review is required only where existing governance reserves the decision: research purpose/priorities, **whether/what Project exists and its boundary**, unresolved rights/authority facts, genuinely new scope, consequential publication/use, material research-system change admission, or Governing Objective amendment.
+Human Owner review is required only where governance reserves the decision, such as research purpose/material priority, whether/what Project exists where not already established, unresolved rights/authority facts, consequential publication/use, material research-system admission or Governing Objective amendment.
 
-Do not convert this into routine approval for ordinary source work or bounded implementation already covered by an admitted scope. Conversely, do not let Source independence, a technically necessary prerequisite or an internally consistent repository rewrite stand in for an owner-reserved Project/priority/scope decision.
+Do not turn this into routine approval for ordinary scholarship or bounded implementation inside an admitted scope.
 
-### Review status separation
+## Review-status separation
 
-Where multiple reviews apply, keep their status distinct rather than collapsing them into one generic QA flag:
+Where several dimensions apply, keep them separate rather than collapsing them into one generic QA flag:
 
 ```text
 TECHNICAL ASSURANCE      pass | fail | pending | not-triggered
@@ -120,74 +123,87 @@ HUMAN/GOVERNANCE REVIEW  pass | fail | pending | not-triggered
 RESTARTABILITY           pass | fail | pending | not-triggered
 ```
 
-A `pass` in one dimension must never be represented as a `pass` in another. In particular, restartability/freshness may faithfully reproduce an unauthorized or incorrectly inferred Project/scope/priority; fresh state is not authority-valid state.
+A `pass` in one dimension must never be represented as a `pass` in another.
 
-### Cross-role handoff quality
+Fresh/restartable state may faithfully reproduce bad authority or bad scholarship; restartability alone is not validation of the reproduced truth.
 
-At a Senior Domain → Senior Dev/RSE handoff, quality is sufficient when Dev can reconstruct the demonstrated problem, evidence/reproduction fixture, research consequence, established domain semantics, unresolved/non-investigated state, required system property, scope/non-goals and domain return question **without** being given an implementation design.
+## Cross-role handoff quality
 
-At the Dev → Domain return, quality is sufficient when Domain Review can inspect what changed, which deterministic tests passed, which limits remain, whether any migration/loss/provenance risk remains, and the exact scholarly adequacy question **without** re-running the Dev chat.
+Use the execution semantics in `workflow.md`; assess whether the receiver can reconstruct the consequential meaning without replaying the sender's chat.
 
-For any role-to-role handoff, assess the **meaning**, not literal headings: if the receiver can reconstruct the current role/stage, executable action, prerequisite/evidence state, cursor, completion, non-goals, persistence obligation and return target unambiguously, absence of a preferred label is not a defect. Conversely, presence of all labels does not rescue contradictory or semantically incomplete state.
+### Domain → Dev
 
-If either side must replay the other chat to understand consequential state, the handoff fails restartability.
+Quality is sufficient when Dev can reconstruct the demonstrated problem, evidence/reproduction fixture, research consequence, established domain meaning, unresolved/non-investigated state, required system property, scope/non-goals and return question **without** being handed an implementation design.
+
+### Dev → Domain
+
+Quality is sufficient when Domain Review can inspect what changed, which deterministic checks passed, which limits/migration/loss/provenance risks remain, and the exact scholarly adequacy question **without** replaying the Dev chat.
+
+Presence/absence of literal field labels is not the criterion; reconstructable, non-contradictory meaning is.
 
 ## Adversarial evidence spot-check
 
-Formal consistency is not evidence of correctness. At useful checkpoints, perform a small adversarial sample of consequential `working` readings or claims and actively try to falsify them.
+Formal consistency is not evidence of correctness. At useful checkpoints, sample a small number of consequential `working` readings/claims and actively try to falsify them.
 
 For each sampled item:
 
-1. return to the underlying primary evidence without treating the current reading as ground truth;
-2. generate graphically/evidentially viable alternatives where possible;
-3. test the current reading against same-hand forms or a genuinely independent primary control;
-4. check whether historical context or previous AI output contaminated the apparent certainty;
-5. downgrade to `variant` or `unresolved` if the evidence does not discriminate.
+1. return to the underlying evidence without treating the current reading as ground truth;
+2. generate evidentially viable alternatives where possible;
+3. test against appropriate internal/independent evidence;
+4. check for context leakage or previous-AI contamination;
+5. downgrade to `variant`/`unresolved` when the evidence does not discriminate.
 
-Keep this lean: sample a few **consequential** items, not random easy words and not every row. Increase the sample or validation strength only when the observed failure rate, novelty of the hand/notation, or consequence of error warrants it.
+Keep the sample consequence-driven. Expand it only when failure rate, novelty or consequence warrants stronger validation.
 
-The spot-check is successful when it can expose and correct error; it is not intended to confirm that the repository is internally consistent.
+The spot-check succeeds when it can expose/correct error; it is not a ritual for confirming internal consistency.
 
-## Quality gates
+## Two specific scholarly quality gates
 
-Before a reading is used as a comparison anchor:
+### Comparison anchors
 
-- it must be visible in an inspected primary image;
-- its status and alternatives must be recorded;
-- it must not depend solely on historical plausibility;
-- if it is important, seek at least one independent same-hand comparison or external primary parallel.
+Before using a reading as a comparison anchor:
 
-Before research literature affects interpretation:
+- the relevant primary evidence was actually inspected;
+- status/alternatives are visible;
+- the anchor does not depend solely on historical plausibility;
+- important use has appropriate internal or independent control proportional to consequence.
 
-- the relevant passage must actually have been read;
-- source status and page/passage must be logged;
-- distinguish the author's claim from our inference.
+### Research literature
+
+Before literature materially affects interpretation:
+
+- the relevant passage was actually read;
+- exact source/access/passages are traceable as appropriate;
+- the author's claim is distinguished from our inference.
 
 ## Error taxonomy
 
-When useful, classify failures as:
+Use these labels only when they help diagnose/prevent a real failure:
 
 - `silhouette_guess` — whole-word shape guessed without grapheme control;
 - `semantic_completion` — syntax/context filled missing signs;
-- `context_leakage` — historical knowledge altered blind reading;
+- `context_leakage` — external/historical context altered source reading prematurely;
 - `source_laundering` — metadata/snippet treated as read content;
-- `false_consensus` — repeated model outputs treated as independent evidence;
-- `normalization_leakage` — modern form substituted for manuscript form;
+- `false_consensus` — repeated model output treated as independent evidence;
+- `normalization_leakage` — normalized form replaced manuscript form;
 - `segmentation_error` — wrong line/region boundaries distorted reading;
 - `notation_error` — numeral/currency/measure sign read as ordinary text;
-- `project_scope_inference` — a Source, archival structure or AI-created working bundle was materialized/reused as Project identity without human-owner authority;
-- `priority_drift` — correct or newly available Source/File/support evidence was silently promoted into a different current research target without owner-grounded purpose/priority/scope authority;
-- `role_priority_conflation` — structural status or a research-function label such as `principal` was treated as if it selected what must be worked on next;
-- `work_state_loss` — a structural migration preserved data objects but removed consequential checkpoint/evidence-limit/restart state from ordinary auditability.
+- `project_scope_inference` — Project identity/boundary inferred without owner authority;
+- `priority_drift` — support/available evidence silently became the current target;
+- `role_priority_conflation` — structural/research function was treated as priority;
+- `work_state_loss` — migration/cleanup preserved objects but lost consequential restart/checkpoint state.
+
+Do not create a new generic taxonomy entry merely because one isolated incident occurred; apply Generic-Fit first.
 
 ## Learning loop
 
-1. Log concrete project failure/correction in `LEARNINGS.md`.
+1. Record the concrete Project failure/correction where its evidence lives.
 2. State the observed failure mode and corrective practice.
-3. Apply it to the current project.
-4. Promote it to general methodology only if it is methodologically general, not a source-specific fact.
-5. Remove or simplify rules that create overhead without preventing real errors.
+3. Apply it to the current case.
+4. Promote only the genuinely general safeguard after Generic-Fit.
+5. If the generic safeguard is deterministic, prefer the executable owner + regression fixture over another prose copy.
+6. Remove/simplify rules that add overhead without preventing demonstrated error.
 
-A failed integrity check or adversarial spot-check is learning input: record the concrete project failure when it changes how future work should proceed. Promote only the generalizable corrective rule.
+A failed integrity/adversarial check is useful evidence about the method. Preserve the concrete case; do not generalize its incidental details.
 
 The system should become more reliable, not merely larger.
