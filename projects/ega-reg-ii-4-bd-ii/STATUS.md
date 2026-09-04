@@ -54,15 +54,18 @@ To prevent old mixed or parallel material from being reintroduced as silent read
 
 - `research/knau-fol306v-309r-evidence-lock.md` owns the immediate evidence/read-order/legacy-release lock for this bounded first-reading task.
 - `research/knau-fol306v-309r-contamination-matrix.tsv` records the concrete allowed/forbidden use classes for Reg. Ii 4 evidence, Reg. Ii 5 parallels, legacy G2/Knau material, the prior chat draft and domain context.
-- `transcription/fol306v-309r-first-reading.tsv` is the source-exact first-reading table.
+- `transcription/README.md` defines the human-auditable information hierarchy for this transcription layer.
+- independent first readings are stored one folio per file under `transcription/first-reading/`; stable Source/File/image/PDF metadata remains in its canonical corpus/evidence owners instead of being copied into every row.
 
 The active upload/preflight in the 2026-09-03/04 work context showed the target pages visually inspectable, including page 27 / image 667 through page 32 / image 672. Because that upload path is target-context evidence rather than repository preservation, any new execution context must re-establish staging and pixel-inspectability before source inspection.
 
 ## 2026-09-04 fol. 306v / image 667 progress
 
-The first independent Reg. Ii 4 working pass for fol. 306v / export image 667 has been entered into `transcription/fol306v-309r-first-reading.tsv` as rows `306v-01` through `306v-21`.
+The first independent Reg. Ii 4 working pass for fol. 306v / export image 667 is stored in `transcription/first-reading/306v.tsv` as rows `306v-01` through `306v-21`.
 
-This is not a polished edition and not a collation result. It is a source-exact diplomatic first-reading draft from image 667 itself. Reg. Ii 5, legacy G2/Knau and the prior chat draft did not supply wording. The rows intentionally retain `unresolved`, `unclear`, visible abbreviation layers, layout/divider rows, possible source phenomena and `not_collated` status.
+The table is deliberately human-first: `reading_order` and `diplomatic_reading` are the leading columns; line/source structure, phenomena, epistemic status, alternatives and only consequential local notes follow. Repeated Source ID, folio/image/PDF provenance, generic creation provenance and row-level `not_collated` metadata were removed from the row surface because those facts are stable or stage-level and are recoverable from canonical corpus/evidence owners and Git history.
+
+This is not a polished edition and not a collation result. It is a source-exact diplomatic first-reading draft from image 667 itself. Reg. Ii 5, legacy G2/Knau and the prior chat draft did not supply wording. The rows intentionally retain `unresolved`, `unclear`, visible abbreviation layers, layout/divider rows and possible source phenomena.
 
 Main unresolved areas carried forward:
 
@@ -84,8 +87,8 @@ Execution order:
 
 1. verify that the exact Reg. Ii 4 evidence for image 668 is staged and visually inspectable in the active target context;
 2. read/transcribe from Reg. Ii 4 itself in physical/source order, preserving diplomatic spelling, abbreviation signs, layout-relevant uncertainty and unresolved readings;
-3. append rows to `transcription/fol306v-309r-first-reading.tsv`;
-4. continue sequentially through images 669–672 / fol. 307v–309r;
+3. create `transcription/first-reading/307r.tsv` in the same human-first structure;
+4. continue sequentially through separate folio files for images 669–672 / fol. 307v–309r;
 5. only after an independent Reg. Ii 4 reading for fol. 306v–309r exists may legacy Knau/G2 or Reg. Ii 5 material be consulted as checking/collation evidence;
 6. do not promote any legacy reading merely because it matches this witness.
 
@@ -93,6 +96,6 @@ If the required image is not staged/vision-inspectable, stop at the evidence pre
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the completed first-reading rows for image 667, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the completed `transcription/first-reading/306v.tsv`, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
 
-It must also load the 2026-09-04 project-local evidence lock and contamination matrix before continuing `transcription/fol306v-309r-first-reading.tsv`. The current safe cursor is fol. 307r / image 668: detailed line-by-line first reading from the Reg. Ii 4 image itself, not from Reg. Ii 5, legacy G2/Knau, domain context or the unadjudicated preliminary chat draft.
+It must also load the 2026-09-04 project-local evidence lock and contamination matrix before continuing the folio-local first-reading series. The current safe cursor is fol. 307r / image 668: detailed line-by-line first reading from the Reg. Ii 4 image itself, not from Reg. Ii 5, legacy G2/Knau, domain context or the unadjudicated preliminary chat draft.
