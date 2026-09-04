@@ -1,6 +1,6 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 4 Bd. II
 
-Last checkpoint: 2026-09-03
+Last checkpoint: 2026-09-04
 
 ## Project authority and root
 
@@ -39,7 +39,7 @@ The canonical current classification of that legacy corpus is recorded in `proje
 
 - Exact inspected export: `FILE-REG-II-4-II-00000089-EXPORT` in `corpus/files.tsv`.
 - Canonical crosswalk: fol. 306v–309r ↔ export images 667–672 ↔ PDF pages 27–32.
-- The six mapped pages each have a distinct page-specific `urn:nbn:de:urmel-...` value in the canonical crosswalk. These values were already present when the crosswalk was first created and are not inferred from the PDF-page sequence.
+- The six mapped pages each have a distinct page-specific `urn:nbn:...` value in the canonical crosswalk. These values were already present when the crosswalk was first created and are not inferred from the PDF-page sequence.
 - The crosswalk is intentionally partial; it does not claim page-level mapping for the full act/protocol.
 
 ## Research/gate state
@@ -47,6 +47,16 @@ The canonical current classification of that legacy corpus is recorded in `proje
 The current target is now the Reg. Ii 4 Knau locus itself. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus. Any new reading must be established independently against the Reg. Ii 4 Source/File/locus.
 
 The observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not assign a permanent comparison role and must not supply graphemes for the independent first reading.
+
+## 2026-09-04 source-local first-reading locks
+
+To prevent old mixed or parallel material from being reintroduced as silent reading evidence, the Reg. Ii 4 Knau task now has project-local execution controls:
+
+- `research/knau-fol306v-309r-evidence-lock.md` owns the immediate evidence/read-order/legacy-release lock for this bounded first-reading task.
+- `research/knau-fol306v-309r-contamination-matrix.tsv` records the concrete allowed/forbidden use classes for Reg. Ii 4 evidence, Reg. Ii 5 parallels, legacy G2/Knau material, the prior chat draft and domain context.
+- `transcription/fol306v-309r-first-reading.tsv` has been initialized as the source-exact first-reading table with only its header. This is intentional: no legacy row and no unadjudicated chat-draft line has been promoted to canonical transcription truth.
+
+The active upload/preflight in the 2026-09-03/04 work context showed the target pages visually inspectable, including page 27 / image 667 through page 32 / image 672. Because that upload path is target-context evidence rather than repository preservation, any new execution context must re-establish staging and pixel-inspectability before source inspection.
 
 ## NEXT ACTION — canonical restart point
 
@@ -65,3 +75,5 @@ If image 667 is not staged/vision-inspectable, stop at the evidence prerequisite
 ## Restartability
 
 A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the required start at image 667, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
+
+It must also load the 2026-09-04 project-local evidence lock and contamination matrix before populating `transcription/fol306v-309r-first-reading.tsv`. The current safe cursor is still fol. 306v / image 667: detailed line-by-line first reading from the Reg. Ii 4 image itself, not from Reg. Ii 5, legacy G2/Knau, domain context or the unadjudicated preliminary chat draft.
