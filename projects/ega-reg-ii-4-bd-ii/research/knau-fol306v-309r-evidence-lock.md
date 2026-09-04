@@ -14,7 +14,7 @@ Current bounded target:
 - Source: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`
 - Historical locus: Knau passage, fol. 306v-309r
 - Digital locus: export images 667-672 / PDF pages 27-32
-- Start cursor: fol. 306v / export image 667
+- Current cursor: fol. 307r / export image 668
 - Mode: independent diplomatic first reading from Reg. Ii 4 Bd. II itself
 
 ## Evidence state for the active work context
@@ -58,27 +58,29 @@ Legacy Knau/G2 or Reg. Ii 5 material may be opened for textual comparison only a
 
 If these conditions are not met, the correct action is to continue Reg. Ii 4 inspection, not to consult clearer or older material.
 
-## First-reading row requirements
+## First-reading representation
 
-Each future transcription row must preserve at least:
+First-reading data are stored one archival folio per file under `transcription/first-reading/`. This keeps a file's visible scope identical to the source unit actually inspected and avoids a range-named file appearing complete while only one folio has been read.
 
-- canonical `source_id`;
-- folio/page;
-- export image and PDF page as provenance/crosswalk values;
-- editor-assigned physical line reference;
-- reading order and region where relevant;
-- diplomatic written reading;
-- source phenomena separate from research confidence;
-- research status and graphically viable alternatives;
-- abbreviation/editorial supply only as separate information where needed;
-- evidence note for consequential uncertainty or revision;
-- collation status showing `not_collated` until the release gate has been passed.
+Stable scope/provenance facts — canonical Source ID, folio-to-export/PDF mapping, File identity and generic direct-inspection provenance — are resolved from the Project/corpus/evidence owners and are not repeated on every row. The row table is ordered around the changing scholarly information:
+
+1. `reading_order`;
+2. `diplomatic_reading`;
+3. `line_ref`;
+4. `region` where relevant;
+5. `source_phenomena`;
+6. `research_status`;
+7. graphically viable `alternatives`;
+8. separate `abbreviation_layer` / `editorial_supply` where needed;
+9. consequential local `evidence_note`.
+
+The independent first-reading files do not carry a mutable `collation_status` column. Before the release gate they are by definition independent first-reading material; later comparison belongs in a separate collation layer so that opening a parallel witness cannot silently redefine first-reading provenance.
 
 A fluent full line with hidden uncertainty is worse than a narrower visible unresolved span.
 
 ## 2026-09-04 image 667 first-reading progress
 
-`transcription/fol306v-309r-first-reading.tsv` now contains a first source-exact working row set for fol. 306v / export image 667: rows `306v-01` through `306v-21`.
+`transcription/first-reading/306v.tsv` contains the first source-exact working row set for fol. 306v / export image 667: rows `306v-01` through `306v-21`.
 
 This is an independent Reg. Ii 4 image-667 reading pass. Reg. Ii 5, legacy G2/Knau files and the prior chat draft were not used to supply wording. The result deliberately preserves unresolved spans and possible source phenomena rather than normalizing the account list into fluent prose.
 
@@ -87,8 +89,7 @@ Known limits of the image-667 pass:
 - several top-account amount/measure lines remain `unresolved` or `working`;
 - the left accounting signs are flagged as visible but not yet separately adjudicated;
 - `Lehnherr:` and some names/measure terms remain working readings;
-- the `wachs` line has a possible cancellation/entry-flourish phenomenon that is not yet classified as deletion;
-- all image-667 rows remain `not_collated`.
+- the `wachs` line has a possible cancellation/entry-flourish phenomenon that is not yet classified as deletion.
 
 This progress does not release legacy/parallels for comparison, because the release gate applies to the full fol. 306v-309r first-reading draft.
 
@@ -96,7 +97,7 @@ This progress does not release legacy/parallels for comparison, because the rele
 
 Next executable action:
 
-> Continue independent source-exact inspection with fol. 307r / export image 668 from the Reg. Ii 4 PDF and append physical-line first-reading rows to `transcription/fol306v-309r-first-reading.tsv`. Do not consult Reg. Ii 5, legacy G2/Knau or the unadjudicated prior chat draft as wording evidence.
+> Continue independent source-exact inspection with fol. 307r / export image 668 from the Reg. Ii 4 PDF and create `transcription/first-reading/307r.tsv` in the same human-auditable column order. Do not consult Reg. Ii 5, legacy G2/Knau or the unadjudicated prior chat draft as wording evidence.
 
 After images 668-672 are independently represented and marked, legacy/parallels may be opened only under the release gate above.
 
