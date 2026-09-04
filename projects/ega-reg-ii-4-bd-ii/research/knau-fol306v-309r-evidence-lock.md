@@ -76,13 +76,29 @@ Each future transcription row must preserve at least:
 
 A fluent full line with hidden uncertainty is worse than a narrower visible unresolved span.
 
+## 2026-09-04 image 667 first-reading progress
+
+`transcription/fol306v-309r-first-reading.tsv` now contains a first source-exact working row set for fol. 306v / export image 667: rows `306v-01` through `306v-21`.
+
+This is an independent Reg. Ii 4 image-667 reading pass. Reg. Ii 5, legacy G2/Knau files and the prior chat draft were not used to supply wording. The result deliberately preserves unresolved spans and possible source phenomena rather than normalizing the account list into fluent prose.
+
+Known limits of the image-667 pass:
+
+- several top-account amount/measure lines remain `unresolved` or `working`;
+- the left accounting signs are flagged as visible but not yet separately adjudicated;
+- `Lehnherr:` and some names/measure terms remain working readings;
+- the `wachs` line has a possible cancellation/entry-flourish phenomenon that is not yet classified as deletion;
+- all image-667 rows remain `not_collated`.
+
+This progress does not release legacy/parallels for comparison, because the release gate applies to the full fol. 306v-309r first-reading draft.
+
 ## Current execution cursor
 
 Next executable action:
 
-> Reinspect fol. 306v / image 667 from the Reg. Ii 4 PDF and build the physical-line first-reading rows from the image itself. Do not populate rows from legacy material or from the unadjudicated chat draft.
+> Continue independent source-exact inspection with fol. 307r / export image 668 from the Reg. Ii 4 PDF and append physical-line first-reading rows to `transcription/fol306v-309r-first-reading.tsv`. Do not consult Reg. Ii 5, legacy G2/Knau or the unadjudicated prior chat draft as wording evidence.
 
-After image 667 is line-adjudicated, continue in source order through images 668-672.
+After images 668-672 are independently represented and marked, legacy/parallels may be opened only under the release gate above.
 
 ## Invalidation triggers
 
