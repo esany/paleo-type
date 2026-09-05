@@ -1,12 +1,13 @@
 # Reg. Ii 4 Bd. II Knau fol. 306v-309r — evidence lock and contamination control
 
 Created: 2026-09-04
+Reconciled: 2026-09-05
 
 ## Authority and scope
 
 This project-local file records the execution lock for the owner-selected current task in `projects/ega-reg-ii-4-bd-ii/STATUS.md` and `project.yml`.
 
-It does not create a new Project, Source, Project->Source use, research priority or textual-dependence claim. It only constrains how the already-authorized Reg. Ii 4 Bd. II Knau first reading is executed and later checked.
+It does not create a new Project, Source, Project->Source use, research priority or textual-dependence claim. It only constrains how the already-authorized Reg. Ii 4 Bd. II Knau first reading is executed, internally tested and later compared.
 
 Current bounded target:
 
@@ -32,35 +33,55 @@ The 2026-09-03/04 active target context additionally had the uploaded PDF `1533-
 | fol. 308v | 31 | 671 |
 | fol. 309r | 32 | 672 |
 
-This is a target-context visual-evidence PASS for the current session only. If the work context changes, staging and pixel-inspectability must be re-established for the same evidence object instead of relying on this prose.
+This is a target-context visual-evidence PASS for that work context only. If the work context changes, staging and pixel-inspectability must be re-established for the same evidence object instead of relying on this prose.
+
+## Internal Reg. Ii 4 comparison rule during first reading
+
+Witness independence means independence from external/parallel wording; it does **not** require folio isolation inside the same Reg. Ii 4 witness.
+
+For a difficult first-reading locus:
+
+1. inspect and localize the target graph/sign in Reg. Ii 4 first;
+2. classify the actual problem before comparison where useful: grapheme, abbreviation, numeral/accounting sign, segmentation, source phenomenon, possible hand issue, etc.;
+3. only then inspect directly and exactly locatable internal Reg. Ii 4 comparanda anywhere in fol. 306v-309r when they are relevant to that problem;
+4. compare discriminating graphical/sign features, including evidence that fails to discriminate, rather than searching for or copying an expected word;
+5. keep `same witness/source` distinct from `same hand`; hand relevance is a separate palaeographic claim;
+6. keep lexical, onomastic, metrological and historical context downstream of graphically viable candidates;
+7. if a consequential comparison materially supports, rejects or fails to decide a reading, preserve the exact anchor and concise reasoning in the owning research/transcription record; do not build a general survey register merely because direct inspection was broader.
+
+A later folio may therefore provide an internal comparison anchor for an earlier difficult graph without becoming wording authority for that earlier locus. Source-order remains the persistence/traversal order; palaeographic learning may iterate within the same witness.
 
 ## Contamination lock
 
-The following separation is mandatory until a complete independent Reg. Ii 4 first-reading draft exists for fol. 306v-309r.
+The following separation is mandatory until the project-local release gate below is satisfied.
 
-| Material | Status before independent first reading | Allowed use | Forbidden use |
+| Material | Status before external comparison release | Allowed use | Forbidden use |
 |---|---|---|---|
-| Reg. Ii 4 Bd. II, Source `...00000089`, images 667-672 | Primary evidence | visual inspection, physical-line inventory, diplomatic reading, uncertainty marking | none |
-| Reg. Ii 5 Ziegenrück material | quarantined parallel/legacy material | method warning, later controlled collation | wording source, line mapping, grapheme supply, same-hand assumption |
-| Legacy G2/Knau files and old TSV/apparatus/palaeography | contaminated until Source/File/locus attribution is re-established | recovery/checking after release gate | promotion as Reg. Ii 4 reading, silent import, automatic witness attribution |
+| Reg. Ii 4 Bd. II, Source `...00000089`, images 667-672 | primary evidence / same-witness internal comparison space | target-first visual inspection; physical-line inventory; diplomatic first reading; uncertainty marking; exact internal graphematic/sign comparison after target observation | expected-word copying; semantic completion of unread graphs; treating same source/record as same-hand proof |
+| Reg. Ii 5 Ziegenrück material | quarantined parallel material | method warning; later controlled collation after release gate | wording source; line mapping for first reading; grapheme supply; same-hand assumption |
+| Legacy G2/Knau files and old TSV/apparatus/palaeography | contaminated until Source/File/locus attribution is re-established | recovery/checking after release gate | promotion as Reg. Ii 4 reading; silent import; automatic witness attribution |
 | Prior chat draft of image 667 | unadjudicated local draft | cursor memory and risk signal only | canonical line text unless each row is reinspected against image 667 |
-| Early-modern visitation/domain knowledge | contextual hypothesis/control | generate questions, rank alternatives after graphical inspection | replace unread graphemes, normalize diplomatic spelling, infer names/amounts |
+| Early-modern visitation/domain knowledge | contextual hypothesis/control | generate questions; test/rank graphically viable candidates after source inspection | replace unread graphemes; normalize diplomatic spelling; infer names/amounts as manuscript text |
 
 ## Release gate for legacy/parallels
 
-Legacy Knau/G2 or Reg. Ii 5 material may be opened for textual comparison only after all of the following are true:
+Reg. Ii 5 or legacy Knau/G2 material may be opened for **textual comparison/collation** only after all of the following are true for the current Reg. Ii 4 locus:
 
-1. fol. 306v-309r has a complete independent Reg. Ii 4 first-reading draft in source order;
-2. every unresolved, unclear, damaged, supplied, deleted, added or otherwise non-ordinary locus is explicitly marked;
-3. physical line references are stable enough to cite and compare;
-4. the comparison record identifies itself as collation/checking, not as original first reading;
-5. any promoted correction explains the inspected Reg. Ii 4 graphical basis and does not rely on parallel wording alone.
+1. fol. 306v-309r has a complete independent Reg. Ii 4 first-reading representation in source order;
+2. the G2 completeness audit has established that every relevant visible source unit is represented and consequential uncertainty/source phenomena remain discoverable;
+3. the systematic internal palaeographic/philological pass over consequential `working`/`unresolved` loci is complete for the current roadmap, with unresolved results retained where internal evidence does not decide;
+4. physical line references are stable enough to cite and compare;
+5. the comparison record identifies itself as collation/checking, not as original first reading;
+6. any later promoted Reg. Ii 4 correction explains the inspected Reg. Ii 4 graphical basis and does not rely on parallel wording alone;
+7. legacy material is used only where its exact Source/File/locus provenance is adequate for the specific comparison claim.
 
-If these conditions are not met, the correct action is to continue Reg. Ii 4 inspection, not to consult clearer or older material.
+If these conditions are not met, the correct action is to continue Reg. Ii 4 representation/internal testing, not to consult a clearer external witness for wording.
+
+This is a **project-local current release rule**, not a new universal claim that every future project must complete an identical G3 sequence before any external comparison.
 
 ## First-reading representation
 
-First-reading data are stored one archival folio per file under `transcription/first-reading/`. This keeps a file's visible scope identical to the source unit actually inspected and avoids a range-named file appearing complete while only one folio has been read.
+First-reading data are stored one archival folio per file under `transcription/first-reading/`. These files are work/data partitions of the authorized Reg. Ii 4 first-reading representation; their directory hierarchy does not create a new scholarly parent entity or a second owner of Project state.
 
 Stable scope/provenance facts — canonical Source ID, folio-to-export/PDF mapping, File identity and generic direct-inspection provenance — are resolved from the Project/corpus/evidence owners and are not repeated on every row. The row table is ordered around the changing scholarly information:
 
@@ -74,7 +95,9 @@ Stable scope/provenance facts — canonical Source ID, folio-to-export/PDF mappi
 8. separate `abbreviation_layer` / `editorial_supply` where needed;
 9. consequential local `evidence_note`.
 
-The independent first-reading files do not carry a mutable `collation_status` column. Before the release gate they are by definition independent first-reading material; later comparison belongs in a separate collation layer so that opening a parallel witness cannot silently redefine first-reading provenance.
+When an internal same-witness comparison materially affects a consequential reading, `evidence_note` may carry the exact comparison locus and concise discriminating reason. Routine direct inspection that does not affect a decision need not be serialized as a separate survey dataset.
+
+The independent first-reading files do not carry a mutable `collation_status` column. Later external comparison belongs in a separate collation layer so that opening a parallel witness cannot silently redefine first-reading provenance.
 
 A fluent full line with hidden uncertainty is worse than a narrower visible unresolved span.
 
@@ -91,15 +114,15 @@ Known limits of the image-667 pass:
 - `Lehnherr:` and some names/measure terms remain working readings;
 - the `wachs` line has a possible cancellation/entry-flourish phenomenon that is not yet classified as deletion.
 
-This progress does not release legacy/parallels for comparison, because the release gate applies to the full fol. 306v-309r first-reading draft.
+This progress does not release legacy/parallels for comparison, because the release gate applies to the complete Reg. Ii 4 representation plus its G2/internal-adjudication sequence.
 
 ## Current execution cursor
 
 Next executable action:
 
-> Continue independent source-exact inspection with fol. 307r / export image 668 from the Reg. Ii 4 PDF and create `transcription/first-reading/307r.tsv` in the same human-auditable column order. Do not consult Reg. Ii 5, legacy G2/Knau or the unadjudicated prior chat draft as wording evidence.
+> Re-establish visual readiness for fol. 307r / export image 668 in the active context. Inspect and localize the target forms on 307r itself before seeking comparison forms. Then use only problem-driven, exactly locatable internal Reg. Ii 4 comparanda from fol. 306v-309r where needed, keeping the target graph primary and same-witness comparison distinct from same-hand inference. Persist `transcription/first-reading/307r.tsv` in source order. Do not consult Reg. Ii 5, legacy G2/Knau or the unadjudicated prior chat draft as wording evidence.
 
-After images 668-672 are independently represented and marked, legacy/parallels may be opened only under the release gate above.
+Continue sequential persistence through images 669-672 / fol. 307v-309r. Internal palaeographic recognition may iterate across the same Reg. Ii 4 locus. External/legacy textual comparison remains closed until the release gate above is satisfied.
 
 ## Invalidation triggers
 
