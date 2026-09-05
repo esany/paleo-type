@@ -1,6 +1,6 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 4 Bd. II
 
-Last checkpoint: 2026-09-04
+Last checkpoint: 2026-09-05
 
 ## Project authority and root
 
@@ -28,10 +28,10 @@ The historical diplomatic material preserved under `projects/ega-reg-ii-5-knau/`
 
 Current rule:
 
-- use the old Knau/G2 files only as checking/recovery material;
+- use the old Knau/G2 files only as checking/recovery material after the project-local release gate;
 - for a Reg. Ii 4 diplomatic claim, inspect the Reg. Ii 4 Source/File/locus itself;
-- only after that independent inspection may a matching legacy reading be promoted as Reg. Ii 4 evidence;
-- do not treat similarity to the parallel Reg. Ii 5 transmission as witness identity.
+- do not treat similarity to the parallel Reg. Ii 5 transmission as witness identity;
+- do not use Reg. Ii 5 or legacy wording to supply graphemes during the independent Reg. Ii 4 first reading or the systematic internal adjudication pass.
 
 The canonical current classification of that legacy corpus is recorded in `projects/ega-reg-ii-5-knau/research/legacy-witness-provenance.tsv`.
 
@@ -44,17 +44,19 @@ The canonical current classification of that legacy corpus is recorded in `proje
 
 ## Research/gate state
 
-The current target is now the Reg. Ii 4 Knau locus itself. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus. Any new reading must be established independently against the Reg. Ii 4 Source/File/locus.
+The current target is the Reg. Ii 4 Knau locus itself. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus. Any new reading must be established against the Reg. Ii 4 Source/File/locus itself.
 
-The observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not assign a permanent comparison role and must not supply graphemes for the independent first reading.
+`Independent first reading` means **witness independence from external/parallel wording, not folio isolation within Reg. Ii 4**. Source-order remains the persistence and traversal order. After a difficult target graph/sign has first been observed and localized in Reg. Ii 4, directly inspected and exactly locatable internal comparanda from the same Reg. Ii 4 locus may be used for graphematic recognition. The target graph remains primary evidence; comparison must use discriminating graphical/sign features rather than expected wording or semantic plausibility. Same Source/record does not establish same hand.
+
+The observed correspondence with Reg. Ii 5 remains a separate Source-relationship claim in `corpus/relationships.tsv`; it does not assign a permanent comparison role and must not supply graphemes for the independent first reading or internal Reg. Ii 4 adjudication.
 
 ## 2026-09-04 source-local first-reading locks
 
-To prevent old mixed or parallel material from being reintroduced as silent reading evidence, the Reg. Ii 4 Knau task now has project-local execution controls:
+To prevent old mixed or parallel material from being reintroduced as silent reading evidence, the Reg. Ii 4 Knau task has project-local execution controls:
 
-- `research/knau-fol306v-309r-evidence-lock.md` owns the immediate evidence/read-order/legacy-release lock for this bounded first-reading task.
+- `research/knau-fol306v-309r-evidence-lock.md` owns the immediate evidence/read-order/internal-comparison/legacy-release lock for this bounded first-reading task.
 - `research/knau-fol306v-309r-contamination-matrix.tsv` records the concrete allowed/forbidden use classes for Reg. Ii 4 evidence, Reg. Ii 5 parallels, legacy G2/Knau material, the prior chat draft and domain context.
-- `transcription/README.md` defines the human-auditable information hierarchy for this transcription layer.
+- `transcription/README.md` defines transcription-layer conventions and folio-local storage/representation; it does not own Project cursor, progress or release state.
 - independent first readings are stored one folio per file under `transcription/first-reading/`; stable Source/File/image/PDF metadata remains in its canonical corpus/evidence owners instead of being copied into every row.
 
 The active upload/preflight in the 2026-09-03/04 work context showed the target pages visually inspectable, including page 27 / image 667 through page 32 / image 672. Because that upload path is target-context evidence rather than repository preservation, any new execution context must re-establish staging and pixel-inspectability before source inspection.
@@ -77,20 +79,21 @@ Main unresolved areas carried forward:
 - the source phenomenon of the `wachs` line in `306v-19`;
 - the internal phrase after `meßing wagen` in `306v-20`.
 
-The legacy/parallels release gate is still closed because fol. 306v–309r is not yet independently represented in full.
+The legacy/parallels release gate is still closed.
 
 ## NEXT ACTION — canonical restart point
 
-**Continue independent source-exact inspection with fol. 307r / export image 668 and proceed through fol. 309r / image 672.**
+**Continue the independent source-exact Reg. Ii 4 first-reading work at fol. 307r / export image 668, using problem-driven internal Reg. Ii 4 comparison only after target observation, and persist the remaining folios through fol. 309r / image 672 in source order.**
 
-Execution order:
+Execution order and evidence discipline:
 
 1. verify that the exact Reg. Ii 4 evidence for image 668 is staged and visually inspectable in the active target context;
-2. read/transcribe from Reg. Ii 4 itself in physical/source order, preserving diplomatic spelling, abbreviation signs, layout-relevant uncertainty and unresolved readings;
-3. create `transcription/first-reading/307r.tsv` in the same human-first structure;
-4. continue sequentially through separate folio files for images 669–672 / fol. 307v–309r;
-5. only after an independent Reg. Ii 4 reading for fol. 306v–309r exists may legacy Knau/G2 or Reg. Ii 5 material be consulted as checking/collation evidence;
-6. do not promote any legacy reading merely because it matches this witness.
+2. inspect fol. 307r itself first, establish physical/documentary structure and localize difficult target graphemes/signs before searching for comparison forms or applying lexical/domain expectations;
+3. where a target problem actually requires comparison, inspect directly and exactly locatable same-witness Reg. Ii 4 comparanda anywhere in fol. 306v–309r; compare discriminating graphical/sign features, keep `same witness` distinct from `same hand`, and retain `unresolved` when the target does not discriminate;
+4. persist `transcription/first-reading/307r.tsv` in the established human-first structure, recording only consequential comparison anchors/reasons where they materially support, reject or fail to decide a reading;
+5. continue the same target-first procedure through separate folio files for images 669–672 / fol. 307v–309r while preserving source-order persistence; palaeographic learning may iterate across the same Reg. Ii 4 locus;
+6. after the complete first-reading representation exists, perform the G2 completeness audit and then the systematic whole-locus internal palaeographic/philological adjudication of consequential working/unresolved loci;
+7. keep Reg. Ii 5 and legacy G2/Knau closed as textual comparison/wording evidence until that internal sequence satisfies the project-local release gate; any later external collation must preserve witness independence and the first-reading audit trail.
 
 If the required image is not staged/vision-inspectable, stop at the evidence prerequisite and obtain/stage the exact Reg. Ii 4 image rather than substituting Li 5 or legacy text.
 
@@ -98,4 +101,4 @@ If the required image is not staged/vision-inspectable, stop at the evidence pre
 
 A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the completed `transcription/first-reading/306v.tsv`, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
 
-It must also load the 2026-09-04 project-local evidence lock and contamination matrix before continuing the folio-local first-reading series. The current safe cursor is fol. 307r / image 668: detailed line-by-line first reading from the Reg. Ii 4 image itself, not from Reg. Ii 5, legacy G2/Knau, domain context or the unadjudicated preliminary chat draft.
+It must load the project-local evidence lock and contamination matrix before continuing the folio-local first-reading series. The current safe cursor is fol. 307r / image 668. Start from the target image itself; internal Reg. Ii 4 comparanda may be used only as exact, graphically relevant same-witness evidence after the target problem is observed. Reg. Ii 5, legacy G2/Knau, domain context and the unadjudicated preliminary chat draft must not supply the manuscript wording.
