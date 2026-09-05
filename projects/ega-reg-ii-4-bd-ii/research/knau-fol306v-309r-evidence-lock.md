@@ -15,7 +15,7 @@ Current bounded target:
 - Source: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`
 - Historical locus: Knau passage, fol. 306v-309r
 - Digital locus: export images 667-672 / PDF pages 27-32
-- Current cursor: fol. 307r / export image 668
+- Current cursor: fol. 307v / export image 669
 - Mode: independent diplomatic first reading from Reg. Ii 4 Bd. II itself
 
 ## Evidence state for the active work context
@@ -34,6 +34,8 @@ The 2026-09-03/04 active target context additionally had the uploaded PDF `1533-
 | fol. 309r | 32 | 672 |
 
 This is a target-context visual-evidence PASS for that work context only. If the work context changes, staging and pixel-inspectability must be re-established for the same evidence object instead of relying on this prose.
+
+For the 2026-09-05 fol. 307r execution, the active context re-verified the staged PDF against the canonical SHA-256 for `FILE-REG-II-4-II-00000089-EXPORT` and pixel-inspected image 668 / PDF page 28 before transcription. The next target image 669 must still pass the local visual-readiness check before new manuscript reading begins.
 
 ## Internal Reg. Ii 4 comparison rule during first reading
 
@@ -116,13 +118,21 @@ Known limits of the image-667 pass:
 
 This progress does not release legacy/parallels for comparison, because the release gate applies to the complete Reg. Ii 4 representation plus its G2/internal-adjudication sequence.
 
+## 2026-09-05 image 668 first-reading progress
+
+`transcription/first-reading/307r.tsv` contains the source-exact working representation for fol. 307r / export image 668 as rows `307r-01` through `307r-19`.
+
+All nineteen relevant physical units are represented. Consequential local same-witness comparisons are recorded only where they materially affect a reading: the p-initial second heading remains `parem|paren` after comparison with `307r-11`/`307r-15`, and the upper G-like sequence remains unresolved because `306v-02` does not provide a discriminating basis for a `-dorff` completion. Numeral/accounting signs remain uninterpreted. These are working AI-assisted readings, not independent specialist validation.
+
+This folio-level progress does not release legacy/parallels and does not claim whole-locus G2/G3 completion.
+
 ## Current execution cursor
 
 Next executable action:
 
-> Re-establish visual readiness for fol. 307r / export image 668 in the active context. Inspect and localize the target forms on 307r itself before seeking comparison forms. Then use only problem-driven, exactly locatable internal Reg. Ii 4 comparanda from fol. 306v-309r where needed, keeping the target graph primary and same-witness comparison distinct from same-hand inference. Persist `transcription/first-reading/307r.tsv` in source order. Do not consult Reg. Ii 5, legacy G2/Knau or the unadjudicated prior chat draft as wording evidence.
+> Re-establish visual readiness for fol. 307v / export image 669 in the active context. Inspect and localize the target forms on 307v itself before seeking comparison forms. Then use only problem-driven, exactly locatable internal Reg. Ii 4 comparanda from fol. 306v-309r where needed, keeping the target graph primary and same-witness comparison distinct from same-hand inference. Persist `transcription/first-reading/307v.tsv` in source order. Do not consult Reg. Ii 5, legacy G2/Knau or unadjudicated prior drafts as wording evidence.
 
-Continue sequential persistence through images 669-672 / fol. 307v-309r. Internal palaeographic recognition may iterate across the same Reg. Ii 4 locus. External/legacy textual comparison remains closed until the release gate above is satisfied.
+Continue sequential persistence through images 670-672 / fol. 308r-309r. Internal palaeographic recognition may iterate across the same Reg. Ii 4 locus. External/legacy textual comparison remains closed until the release gate above is satisfied.
 
 ## Invalidation triggers
 
