@@ -1,0 +1,20 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	Kirchhauß zů Laßa	307r-01	church_account_a_heading	heading|large_script	observed		zů not expanded		
+002	It̄ ⟦unclear: G…⟧	307r-02	church_account_a	main_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		Target after It̄ begins with a G-like majuscule. Direct Reg. Ii 4 anchor 306v-02 / image 667 (`Crependorff`) shows a discriminating d/or/ff sequence not reproduced clearly here; comparison does not justify a -dorff completion.
+003	It̄ ⟦unclear⟧ der pfarrer	307r-03	church_account_a	main_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		
+004	ahn außstehenden geldt, ⟦unclear⟧ alle	307r-04	church_account_a_continuation	continuation_line|unclear|left_quantity_sign_visible|possible_cancellation_or_entry_mark	working	außstehenden|außstehnden			Visible continuation; intervening text remains unresolved and the left mark is not interpreted as a value.
+005	⟦unclear⟧	307r-05	church_account_a_continuation	continuation_line|unclear	unresolved				Visible physical line retained without semantic completion.
+006	silbernn kelich	307r-06	church_account_a	main_entry|left_quantity_sign_visible	working	silbernn|silbern			
+007	Kirchhauß zů ⟦unclear: parem⟧,	307r-07	church_account_b_heading	section_heading|large_script|unclear_span	working	parem|paren	zů not expanded		Target initial has the descending p-form also directly visible in 307r-11 `pfarr` and 307r-15 `pfarrer`; this supports p- over b-. Final minims do not discriminate `parem` from `paren`; no same-hand claim is made.
+008	It̄ ⟦unclear: numeral/accounting notation + text⟧	307r-08	church_account_b	main_entry|abbreviation|unclear|numeral_or_accounting_sign|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		Numeral/accounting signs are preserved as an unresolved sign sequence; no value or unit is inferred.
+009	silbernn kelich	307r-09	church_account_b	main_entry|left_quantity_sign_visible	working	silbernn|silbern			
+010	It̄ ⟦unclear: numeral/accounting notation + text⟧	307r-10	church_account_b	main_entry|abbreviation|unclear|numeral_or_accounting_sign|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		Numeral/accounting signs remain uninterpreted; no amount or unit is supplied.
+011	Inventarium der pfarr knaw	307r-11	inventory_heading	section_heading	observed				
+012	It̄ ⟦unclear⟧ den kelch,	307r-12	inventory	inventory_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		The final sequence `den kelch` is visually separable; preceding word/signs remain unresolved.
+013	It̄ ⟦unclear⟧	307r-13	inventory	inventory_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		
+014	It̄ ⟦unclear⟧ buch	307r-14	inventory	inventory_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		Line ending `buch` is visible; preceding word(s) remain unresolved.
+015	Im knawen Ist verordent, das der pfarrer	307r-15	prose_note	prose|unclear_span	working	knawen|knaw			Working line reading from the target graph; no historical normalization or external wording used.
+016	die drey Dorff ⟦unclear⟧	307r-16	prose_note	prose|unclear	unresolved	Dorff|Dorff?			Visible opening retained; remainder not completed from syntax or context.
+017	vnd ⟦unclear⟧ mit den ⟦unclear⟧	307r-17	prose_note	prose|unclear	unresolved				
+018	⟦unclear⟧ der ⟦unclear⟧ auf	307r-18	prose_note	prose|unclear	unresolved				
+019	⟦unclear⟧ soll,	307r-19	prose_note	prose|unclear	unresolved				Final `soll` is a working partial reading; preceding sequence remains unresolved.
