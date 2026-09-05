@@ -79,19 +79,33 @@ Main unresolved areas carried forward:
 - the source phenomenon of the `wachs` line in `306v-19`;
 - the internal phrase after `meßing wagen` in `306v-20`.
 
+## 2026-09-05 fol. 307r / image 668 progress
+
+The independent Reg. Ii 4 working first-reading representation for fol. 307r / export image 668 is stored in `transcription/first-reading/307r.tsv` as rows `307r-01` through `307r-19`. The exact export was re-verified against `FILE-REG-II-4-II-00000089-EXPORT`, image 668 was pixel-inspected, and the nineteen relevant physical units were represented in source order.
+
+This is a conservative working representation, not a polished reading and not G2/G3 completion. It preserves unresolved graphemes, abbreviation signs, accounting/numeral sign classes and five physical prose lines without semantic completion. Reg. Ii 5, legacy G2/Knau and prior parallel wording did not supply the text.
+
+Restart-relevant unresolved/problem areas carried forward include:
+
+- `307r-02`: the upper account entry begins with a G-like target sequence, but direct comparison with the Reg. Ii 4 `Crependorff` sequence at `306v-02` does not discriminate enough to justify a `-dorff` completion;
+- `307r-07`: the second church heading is securely p-initial by target-first comparison with `307r-11` `pfarr` and `307r-15` `pfarrer`, while `parem` versus `paren` remains unresolved; this is not a same-hand claim;
+- `307r-08` and `307r-10`: numeral/accounting notation remains uninterpreted rather than converted into values or units;
+- `307r-12` through `307r-14`: inventory entries retain unresolved internal spans;
+- `307r-15` through `307r-19`: the prose note is represented line-by-line with unresolved spans rather than syntactic reconstruction.
+
 The legacy/parallels release gate is still closed.
 
 ## NEXT ACTION — canonical restart point
 
-**Continue the independent source-exact Reg. Ii 4 first-reading work at fol. 307r / export image 668, using problem-driven internal Reg. Ii 4 comparison only after target observation, and persist the remaining folios through fol. 309r / image 672 in source order.**
+**Continue the independent source-exact Reg. Ii 4 first-reading work at fol. 307v / export image 669, using problem-driven internal Reg. Ii 4 comparison only after target observation, and persist the remaining folios through fol. 309r / image 672 in source order.**
 
 Execution order and evidence discipline:
 
-1. verify that the exact Reg. Ii 4 evidence for image 668 is staged and visually inspectable in the active target context;
-2. inspect fol. 307r itself first, establish physical/documentary structure and localize difficult target graphemes/signs before searching for comparison forms or applying lexical/domain expectations;
+1. verify that the exact Reg. Ii 4 evidence for image 669 is staged and visually inspectable in the active target context;
+2. inspect fol. 307v itself first, establish physical/documentary structure and localize difficult target graphemes/signs before searching for comparison forms or applying lexical/domain expectations;
 3. where a target problem actually requires comparison, inspect directly and exactly locatable same-witness Reg. Ii 4 comparanda anywhere in fol. 306v–309r; compare discriminating graphical/sign features, keep `same witness` distinct from `same hand`, and retain `unresolved` when the target does not discriminate;
-4. persist `transcription/first-reading/307r.tsv` in the established human-first structure, recording only consequential comparison anchors/reasons where they materially support, reject or fail to decide a reading;
-5. continue the same target-first procedure through separate folio files for images 669–672 / fol. 307v–309r while preserving source-order persistence; palaeographic learning may iterate across the same Reg. Ii 4 locus;
+4. persist `transcription/first-reading/307v.tsv` in the established human-first structure, recording only consequential comparison anchors/reasons where they materially support, reject or fail to decide a reading;
+5. continue the same target-first procedure through separate folio files for images 670–672 / fol. 308r–309r while preserving source-order persistence; palaeographic learning may iterate across the same Reg. Ii 4 locus;
 6. after the complete first-reading representation exists, perform the G2 completeness audit and then the systematic whole-locus internal palaeographic/philological adjudication of consequential working/unresolved loci;
 7. keep Reg. Ii 5 and legacy G2/Knau closed as textual comparison/wording evidence until that internal sequence satisfies the project-local release gate; any later external collation must preserve witness independence and the first-reading audit trail.
 
@@ -99,6 +113,6 @@ If the required image is not staged/vision-inspectable, stop at the evidence pre
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the completed `transcription/first-reading/306v.tsv`, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected current target at fol. 306v–309r / images 667–672, the persisted `transcription/first-reading/306v.tsv` and `transcription/first-reading/307r.tsv`, and the fact that old Knau/G2 readings are verification/recovery material rather than canonical Li 4 transcription unless independently re-established against this witness.
 
-It must load the project-local evidence lock and contamination matrix before continuing the folio-local first-reading series. The current safe cursor is fol. 307r / image 668. Start from the target image itself; internal Reg. Ii 4 comparanda may be used only as exact, graphically relevant same-witness evidence after the target problem is observed. Reg. Ii 5, legacy G2/Knau, domain context and the unadjudicated preliminary chat draft must not supply the manuscript wording.
+It must load the project-local evidence lock and contamination matrix before continuing the folio-local first-reading series. The current safe cursor is fol. 307v / image 669. Start from the target image itself; internal Reg. Ii 4 comparanda may be used only as exact, graphically relevant same-witness evidence after the target problem is observed. Reg. Ii 5, legacy G2/Knau, domain context and unadjudicated prior drafts must not supply the manuscript wording.
