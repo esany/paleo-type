@@ -13,7 +13,7 @@ reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_statu
 012	It̄ ⟦unclear⟧ den kelch,	307r-12	inventory	inventory_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		The final sequence `den kelch` is visually separable; preceding word/signs remain unresolved.
 013	It̄ ⟦unclear⟧	307r-13	inventory	inventory_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		
 014	It̄ ⟦unclear⟧ buch	307r-14	inventory	inventory_entry|abbreviation|unclear|left_quantity_sign_visible	unresolved		It̄ preserved as written Item-like abbreviation		Line ending `buch` is visible; preceding word(s) remain unresolved.
-015	Im knawen Ist verordent, das der pfarrer	307r-15	prose_note	prose|unclear_span	working				Working line reading from the target graph; no historical normalization or external wording used.
+015	Im knawen Ist verordent, das der pfarrer	307r-15	prose_note	prose	working				Working line reading from the target graph; no historical normalization or external wording used.
 016	die drey Dorff ⟦unclear⟧	307r-16	prose_note	prose|unclear	unresolved				Visible opening retained; remainder not completed from syntax or context.
 017	vnd ⟦unclear⟧ mit den ⟦unclear⟧	307r-17	prose_note	prose|unclear	unresolved				
 018	⟦unclear⟧ der ⟦unclear⟧ auf	307r-18	prose_note	prose|unclear	unresolved				
