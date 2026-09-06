@@ -1,10 +1,10 @@
 id: "ega-reg-ii-3"
 title: "ThHStAW, EGA, Reg. Ii 3"
-repository_role: "Current owner-defined project for scholarly work on the Reg. Ii 3 archival act"
+repository_role: "Current owner-defined project for scholarly work within the Reg. Ii 3 signature-level archival unit; the currently modelled visitation records are bounded source groups within that unit, not the whole file"
 project_source_id: "ACT-THHSTAW-EGA-REG-II-3"
-research_object: "Source-based scholarly research within Reg. Ii 3; concrete questions, Source uses and loci are activated when research purpose requires them"
-active_scope: "No owner-selected active scholarly scope is currently recorded; previously inspected Knau-related sections and their historical work state remain preserved in STATUS and canonical Source/File records"
+research_object: "Source-based scholarly research within Reg. Ii 3; concrete source groups, questions and loci are activated when research purpose requires them"
+active_scope: "No owner-selected active scholarly scope is currently recorded; previously inspected Knau-related sections (bounded source groups) and their historical work state remain preserved in STATUS and canonical Source/File records"
 source_register: "source-uses.tsv"
-canonical_status_file: "STATUS.md"
+canonical_status_file: STATUS.md
 transcription_mode: "conservative graphematic working transcription when activated"
 external_context_allowed_in_blind_reading: false
