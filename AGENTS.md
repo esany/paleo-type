@@ -154,6 +154,16 @@ Treat AI-produced paths, IDs, JSON/TSV/YAML fields, commands and other technical
 
 Do not maintain canonical research state in chat, Wiki, generated views, Issues or Milestones.
 
+### Repository-first research persistence
+
+Ephemeral chat/tool execution environments are not working stores for persistable or restart-relevant research state.
+
+When an authorized repository write path is available, create or update persistable research artifacts directly in their canonical repository owner or intended working branch. Do not first maintain TSV, Markdown, JSON, YAML or similar research-state files in a chat/tool sandbox for later promotion to Git.
+
+Local execution storage is allowed for non-authoritative technical processing needed to inspect or transform evidence, for example staged source bytes, PDF renders, crops or temporary calculations. Such transient objects must not become the sole carrier of readings, decisions, evidence notes, Project state or other results needed to restart or audit the research.
+
+If the required repository write path is unavailable or fails, stop at that technical blocker rather than substituting local research-state persistence. Exploratory reasoning may remain transient in chat; once it becomes a persistable research result, write it to the applicable canonical owner under the normal authority/review rules.
+
 ## Research outcome before infrastructure
 
 - Prefer direct source/evidence work over system development when it answers the research need.
