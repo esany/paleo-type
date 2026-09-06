@@ -4,7 +4,7 @@ This directory stores project-independent facts about historical/documentary Sou
 
 ## Human reading order
 
-1. `sources.tsv` — canonical Source nodes at whatever evidenced granularity is needed (for example archival act, protocol record, section);
+1. `sources.tsv` — canonical Source nodes at whatever evidenced granularity is needed (for example archival unit, bounded source group/document group, section);
 2. `relationships.tsv` — explicit evidence-status-controlled relations between nodes, including generic `part_of` containment and source-relative loci where a bounded relation requires them;
 3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state and rights status;
 4. `source-data/<source_id>/` — reusable source-level folio ↔ export-image ↔ PDF-page ↔ stable-URN crosswalks;
@@ -14,9 +14,11 @@ There is no hard-coded archival hierarchy in the storage model. The generic stru
 
 `source node --part_of--> source node`
 
-A node's `source_type` describes what it is; it does not trigger a separate table or special resolver logic. This permits evidenced structures such as protocol → act, section → protocol, attachment → file unit, volume → series, or deeper nesting without schema changes.
+A node's `source_type` describes what it is; it does not trigger a separate table or special resolver logic. This permits evidenced structures such as source group → archival unit, section → source group, attachment → file unit, volume → series, or deeper nesting without schema changes.
 
 `part_of` is directed from part to whole. The validator requires both endpoints to exist and rejects cycles. Multiple parent relations are allowed when the evidence genuinely requires them; the resolver reports all resulting ancestry paths rather than choosing one silently.
+
+A DigiRef/provider title, record ID or folio range is never promoted automatically to the identity or extent of the complete archival unit. In the present Reg. Ii material, DigiRef's research-facing visitation records are modelled as bounded `source_group` nodes within signature-level `archival_unit` roots unless stronger evidence establishes a different granularity. A `source_group` can be a protocol, extract, income register or other bounded document group; the type does not assert that the group is exactly one physical document.
 
 ## Source identity and relation loci
 
@@ -26,14 +28,14 @@ This separation is deliberately modest: it fixes Source identity ≠ locus witho
 
 ## Current Knau source group
 
-The current corpus has seven relevant Source nodes: three larger archival acts and four project-facing protocol records. The four protocols remain four distinct Sources; their containment is expressed only through `part_of` relations.
+The current corpus has seven relevant Source nodes: three signature-level archival units and four bounded project-facing source groups. The four source groups remain four distinct Sources; their containment is expressed only through `part_of` relations.
 
 - `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089` — *Visitation im Amt Ziegenrück*, fol. 294r–313r — `part_of` `ACT-THHSTAW-EGA-REG-II-4-BD-II` (*Visitation in Thüringen*);
-- `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*, fol. 55v–66v — `part_of` `ACT-THHSTAW-EGA-REG-II-5` (*Registratur für die Superintendenz Neustadt an der Orla (Auszug)*);
+- `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*, fol. 55v–66v — `part_of` `ACT-THHSTAW-EGA-REG-II-5` (*Registratur für die Superintendentur Neustadt (Orla) (Auszug)*);
 - `THHSTAW-EGA-REG-II-3-PROT-NEUSTADT-41R-63V` — *Visitation in Neustadt an der Orla*, fol. 41r–63v — `part_of` `ACT-THHSTAW-EGA-REG-II-3`;
 - `THHSTAW-EGA-REG-II-3-STAT-VIS-00000235` — *Pfarreinkommen Gössitz, Knau (mit Laskau, Bahren), Liebschütz (mit Liebengrün)*, fol. 303r–306r — `part_of` the same `ACT-THHSTAW-EGA-REG-II-3`.
 
-The shared Reg. Ii 3 whole therefore does not collapse the two protocol records into one Source.
+The shared Reg. Ii 3 archival unit therefore does not collapse its separate source groups into one Source. Conversely, the title or folio extent of one source group must not be read as a description of the whole archival unit.
 
 ## Machine contract and resolver
 
