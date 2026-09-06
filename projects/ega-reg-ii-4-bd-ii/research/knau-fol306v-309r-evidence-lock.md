@@ -15,8 +15,8 @@ Current bounded target:
 - Source: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`
 - Historical locus: Knau passage, fol. 306v-309r
 - Digital locus: export images 667-672 / PDF pages 27-32
-- Current execution state: G2 diplomatic-representation completeness PASS; next step #98 systematic internal adjudication
-- Mode: Reg. Ii 4 internal analysis; external textual comparison remains locked
+- Current execution state: G2 diplomatic-representation completeness PASS; #98 systematic internal adjudication COMPLETE; release-gate evaluation pending branch review/merge
+- Mode: Reg. Ii 4 internal analysis; external textual comparison remains locked until an explicit post-merge release decision
 
 ## Evidence state for the active work context
 
@@ -41,6 +41,8 @@ For the 2026-09-06 remaining-folio execution, the same canonical Reg. Ii 4 expor
 
 For the 2026-09-06 G2 audit, the full image set 667–672 remained directly inspectable and was checked against all six folio-local TSV partitions and the canonical crosswalk.
 
+For the 2026-09-06 #98 systematic internal adjudication, consequential targets were directly reinspected against the exact Reg. Ii 4 images and exactly locatable same-witness anchors. The project-local audit `research/knau-fol306v-309r-g3-adjudication.tsv` records all 34 consequential loci/clusters with no pending row. The pass retained unresolved and specialist-review outcomes where the internal evidence did not decide, did not infer values from accounting/measure signs, and did not open Reg. Ii 5 or legacy wording as textual evidence.
+
 ## Internal Reg. Ii 4 comparison rule
 
 Witness independence means independence from external/parallel wording; it does **not** require folio isolation inside the same Reg. Ii 4 witness.
@@ -59,7 +61,7 @@ A later folio may therefore provide an internal comparison anchor for an earlier
 
 ## Contamination lock
 
-The following separation is mandatory until the project-local release gate below is satisfied.
+The following separation is mandatory until the project-local release gate below is satisfied and explicitly released.
 
 | Material | Status before external comparison release | Allowed use | Forbidden use |
 |---|---|---|---|
@@ -81,15 +83,15 @@ Reg. Ii 5 or legacy Knau/G2 material may be opened for **textual comparison/coll
 6. any later promoted Reg. Ii 4 correction explains the inspected Reg. Ii 4 graphical basis and does not rely on parallel wording alone;
 7. legacy material is used only where its exact Source/File/locus provenance is adequate for the specific comparison claim.
 
-Current gate state after the #97 audit:
+Current gate state after the #98 internal adjudication, pending branch review/merge and explicit release evaluation:
 
 - condition 1: **met** — complete six-folio working first-reading representation present;
 - condition 2: **met** — #97 G2 completeness audit PASS;
-- condition 3: **not yet met** — #98 systematic internal adjudication pending;
+- condition 3: **met on the #98 branch** — the systematic internal adjudication covers all 34 consequential loci/clusters with no pending item; unresolved/specialist-review results are explicitly retained where internal evidence does not decide;
 - condition 4: **met for the current Reg. Ii 4 locus** — folio-local physical line references are sequential, unique and source-order stable;
-- conditions 5–7: remain requirements for any later #99 comparison and do not authorize textual comparison while condition 3 is open.
+- conditions 5–7: remain binding requirements for #99 itself and do not by themselves supply wording or relax Reg. Ii 4 graphical/provenance obligations.
 
-**External textual comparison remains closed.**
+**External textual comparison remains closed until the reviewed #98 state is merged and the release decision is explicitly recorded.**
 
 ## First-reading representation
 
@@ -124,7 +126,7 @@ The complete authorized locus is represented by:
 - `308v.tsv`: `308v-01`–`308v-25`;
 - `309r.tsv`: `309r-01`–`309r-05`.
 
-The 309r file ends at the Knau boundary and excludes the following new Ziegenrück heading. Working/unresolved spans remain explicit; numeral/measure/accounting contexts are not silently converted into values. Later direct Reg. Ii 4 target forms of `Greffendorff`/`greffendorff` are present, but they have not been used to alter `307r-02` during first-reading persistence.
+The 309r file ends at the Knau boundary and excludes the following new Ziegenrück heading. Working/unresolved spans remain explicit; numeral/measure/accounting contexts are not silently converted into values. Later direct Reg. Ii 4 target forms of `Greffendorff`/`greffendorff` are present. During #98, those forms were used only as internal comparison anchors; `307r-02` was promoted to working `Greffendorff` because direct reinspection established the relevant graphical architecture on the 307r target itself, with the earlier `306v-02 Crependorff` negative-control history retained.
 
 ## 2026-09-06 #97 G2 completeness audit
 
@@ -140,13 +142,19 @@ The G2 audit passed after direct image/TSV traversal of all six folio sides. The
 
 The human-readable whole-locus presentation `transcription/derived/knau-fol306v-309r-first-reading.md` is explicitly non-canonical and deterministically derived from the six folio TSVs. It is not a second transcription truth.
 
+## 2026-09-06 #98 systematic internal adjudication
+
+The systematic internal G3 pass is complete on the #98 branch. Its 34-locus/cluster audit records exact internal anchors, positive and negative discriminators, adjudication outcomes and any specialist-review condition. No pending item remains.
+
+Consequential diplomatic re-adjudications are persisted in their folio owners: `307r-02` is working `It̄ Greffendorff`, `307r-07` is working `Kirchhauß zů paren,` with `parem` retained as a residual graphical alternative, and `307v-16` is narrowed to a p-initial unresolved place form. Remaining unresolved outcomes stay explicit and do not constitute an unfinished systematic #98 task.
+
 ## Current execution state
 
 Next executable action:
 
-> Run #98: systematically re-adjudicate every consequential `working`/`unresolved` Reg. Ii 4 locus against the complete internal same-witness comparison space. Preserve target-first graphical evidence, positive and negative discriminators, alternatives and residual uncertainty. Reopen `307r-02` specifically against the later directly observed `Greffendorff` forms, but promote only if the 307r target graph itself supports it. Keep same witness distinct from same hand and keep Reg. Ii 5 / legacy wording closed.
+> Review and merge the #98 branch, then evaluate every release-gate condition explicitly. Do not open Reg. Ii 5 or legacy wording until the merged canonical evidence owner records a positive release decision.
 
-After #98 is complete, evaluate all release-gate conditions explicitly before #99 begins.
+If the reviewed merge preserves the current #98 result, condition 3 is satisfied for the roadmap. Conditions 5–7 remain binding constraints on the subsequent controlled collation and must be carried into #99 rather than treated as prior wording evidence.
 
 ## Invalidation triggers
 
