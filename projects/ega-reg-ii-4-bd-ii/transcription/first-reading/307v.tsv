@@ -14,7 +14,7 @@ reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_statu
 013	sollen,	307v-13	decree_c	prose|short_line	observed				
 014	Das dem kirchner zů knawen aufs der	307v-14	decree_d	prose|paragraph_initial|large_initial	working		zů not expanded		
 015	kirchen zů Laßa ⟦unclear⟧, vnd	307v-15	decree_d	prose|unclear	unresolved		zů not expanded		
-016	aus der kirchen zů ⟦unclear: p/b…⟧ ⟦unclear⟧	307v-16	decree_d	prose|unclear|toponym_candidate	unresolved	p…|b…	zů not expanded		Initial descender/loop is visible but not adjudicated here; no normalized place identity supplied.
+016	aus der kirchen zů ⟦unclear: p…⟧ ⟦unclear⟧	307v-16	decree_d	prose|unclear|toponym_candidate	unresolved		zů not expanded		#98 direct reinspection supports a p-initial target: the descending/looped initial agrees with directly inspected Reg. Ii 4 p-forms at 307r-07, 307r-11 `pfarr` and 307r-15 `pfarrer`. The interior and ending are not promoted to a full place-name reading; no same-hand claim or normalized identity is made.
 017	⟦unclear⟧ soll ⟦unclear⟧	307v-17	decree_d	prose|unclear	unresolved				
 018	dem pfarrer zů ⟦unclear⟧ der ⟦unclear⟧	307v-18	decree_d	prose|unclear	unresolved		zů not expanded		
 019	⟦unclear⟧ sein soll,	307v-19	decree_d	prose|unclear	unresolved				
