@@ -1,7 +1,7 @@
 # Reg. Ii 4 Bd. II Knau fol. 306v-309r — evidence lock and contamination control
 
 Created: 2026-09-04
-Reconciled: 2026-09-05
+Reconciled: 2026-09-06
 
 ## Authority and scope
 
@@ -15,8 +15,8 @@ Current bounded target:
 - Source: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`
 - Historical locus: Knau passage, fol. 306v-309r
 - Digital locus: export images 667-672 / PDF pages 27-32
-- Current cursor: fol. 307v / export image 669
-- Mode: independent diplomatic first reading from Reg. Ii 4 Bd. II itself
+- Current execution state: complete independent working first-reading representation present; next step #97 G2 completeness audit
+- Mode: Reg. Ii 4 internal representation/audit; external textual comparison remains locked
 
 ## Evidence state for the active work context
 
@@ -35,7 +35,9 @@ The 2026-09-03/04 active target context additionally had the uploaded PDF `1533-
 
 This is a target-context visual-evidence PASS for that work context only. If the work context changes, staging and pixel-inspectability must be re-established for the same evidence object instead of relying on this prose.
 
-For the 2026-09-05 fol. 307r execution, the active context re-verified the staged PDF against the canonical SHA-256 for `FILE-REG-II-4-II-00000089-EXPORT` and pixel-inspected image 668 / PDF page 28 before transcription. The next target image 669 must still pass the local visual-readiness check before new manuscript reading begins.
+For the 2026-09-05 fol. 307r execution, the active context re-verified the staged PDF against the canonical SHA-256 for `FILE-REG-II-4-II-00000089-EXPORT` and pixel-inspected image 668 / PDF page 28 before transcription.
+
+For the 2026-09-06 remaining-folio execution, the same canonical Reg. Ii 4 export and folio/image/PDF mapping were rechecked and images 669–672 were pixel-inspected before the prepared local first-reading files were persisted. The exact first-reading row counts are 22 / 25 / 25 / 5 for 307v / 308r / 308v / 309r respectively; 309r stops at the Knau boundary before the following Ziegenrück heading.
 
 ## Internal Reg. Ii 4 comparison rule during first reading
 
@@ -76,6 +78,12 @@ Reg. Ii 5 or legacy Knau/G2 material may be opened for **textual comparison/coll
 5. the comparison record identifies itself as collation/checking, not as original first reading;
 6. any later promoted Reg. Ii 4 correction explains the inspected Reg. Ii 4 graphical basis and does not rely on parallel wording alone;
 7. legacy material is used only where its exact Source/File/locus provenance is adequate for the specific comparison claim.
+
+Current gate state after completion of the six folio-local working first-reading files:
+
+- condition 1: **met at working-representation level**;
+- conditions 2 and 3: **not yet met** (#97 and #98 pending);
+- conditions 4–7: not sufficient to release external textual comparison before #97/#98 complete.
 
 If these conditions are not met, the correct action is to continue Reg. Ii 4 representation/internal testing, not to consult a clearer external witness for wording.
 
@@ -126,19 +134,32 @@ All nineteen relevant physical units are represented. Consequential local same-w
 
 This folio-level progress does not release legacy/parallels and does not claim whole-locus G2/G3 completion.
 
-## Current execution cursor
+## 2026-09-06 images 669–672 first-reading progress
+
+The remaining folio-local working first-reading representations are present as:
+
+- `307v.tsv`: `307v-01`–`307v-22`;
+- `308r.tsv`: `308r-01`–`308r-25`;
+- `308v.tsv`: `308v-01`–`308v-25`;
+- `309r.tsv`: `309r-01`–`309r-05`.
+
+All 77 relevant visible units from these four images are represented. The 309r file ends at the Knau boundary and excludes the following new Ziegenrück heading. Working/unresolved spans remain explicit; numeral/measure/accounting contexts are not silently converted into values. Later direct Reg. Ii 4 target forms of `Greffendorff`/`greffendorff` are present, but they have not been used to alter `307r-02`; that whole-locus internal comparison belongs to #98.
+
+Together with `306v.tsv` and `307r.tsv`, the complete authorized fol. 306v–309r locus now has an independent Reg. Ii 4 working first-reading representation. This satisfies release-gate condition 1 only; it does not establish G2 or systematic G3 completion.
+
+## Current execution state
 
 Next executable action:
 
-> Re-establish visual readiness for fol. 307v / export image 669 in the active context. Inspect and localize the target forms on 307v itself before seeking comparison forms. Then use only problem-driven, exactly locatable internal Reg. Ii 4 comparanda from fol. 306v-309r where needed, keeping the target graph primary and same-witness comparison distinct from same-hand inference. Persist `transcription/first-reading/307v.tsv` in source order. Do not consult Reg. Ii 5, legacy G2/Knau or unadjudicated prior drafts as wording evidence.
+> Run #97 G2 completeness audit over the six folio-local Reg. Ii 4 first-reading files. Verify physical/source-order completeness, stable line references, boundaries, abbreviations, source phenomena, numeral/accounting/measure sign preservation, explicit uncertainty and absence of external-witness wording. Confirm that 309r stops at the Knau boundary. Any whole-locus human-readable view must be deterministically derived rather than maintained as a second transcription truth.
 
-Continue sequential persistence through images 670-672 / fol. 308r-309r. Internal palaeographic recognition may iterate across the same Reg. Ii 4 locus. External/legacy textual comparison remains closed until the release gate above is satisfied.
+If #97 passes, record G2 in the canonical Project state and proceed immediately to #98 systematic internal palaeographic/philological adjudication. Reg. Ii 5 and legacy G2/Knau remain closed as textual comparison/wording evidence until #98 is complete and the release gate is explicitly satisfied.
 
 ## Invalidation triggers
 
 Re-run the evidence prerequisite if:
 
-- the active work context no longer has the uploaded PDF or render/crop set;
+- the active work context no longer has the uploaded PDF or render/crop set for a new direct source-inspection claim;
 - the inspected image does not match `FILE-REG-II-4-II-00000089-EXPORT` / image 667-672;
 - a later corpus/crosswalk correction changes the folio/image/PDF-page mapping;
 - visual inspectability fails or a different derivative is substituted.

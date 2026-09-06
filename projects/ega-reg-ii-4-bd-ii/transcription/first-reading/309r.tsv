@@ -1,0 +1,6 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	⟦unclear⟧ Greffendorff	309r-01	knau_closing	prose|unclear|paragraph_initial|large_initial	unresolved	Greffendorff|Greffendorf			The closing Knau text is heavily obscured/overwritten in this line; the final name form is the clearest alphabetic sequence.
+002	⟦unclear⟧ wolff	309r-02	knau_closing	prose|unclear|overwriting_or_heavy_overlap	unresolved				Visible strokes overlap strongly; only the final `wolff` sequence is retained.
+003	⟦unclear⟧ hat,	309r-03	knau_closing	prose|unclear	unresolved				
+004	mit ⟦unclear⟧	309r-04	knau_closing	prose|unclear	unresolved				
+005	Anno ⟦unclear/non-text flourish⟧	309r-05	knau_closing	closing_line|unclear_source_phenomenon|flourish	unresolved				The visible `Anno`-like opening is followed by a long flourish/sign sequence not interpreted as a date or value.

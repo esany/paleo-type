@@ -1,0 +1,23 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	Das die ⟦unclear⟧ zů knawen, dem pfarrer	307v-01	decree_a	prose|paragraph_initial|large_initial	unresolved		zů not expanded		
+002	die ⟦unclear⟧, so ⟦unclear⟧	307v-02	decree_a	prose|unclear	unresolved				
+003	aufs dem gotzhaus ⟦unclear⟧, vnd ⟦unclear⟧	307v-03	decree_a	prose|unclear	unresolved				
+004	sollen, das soll der ⟦unclear⟧, so die ⟦unclear⟧	307v-04	decree_a	prose|unclear	unresolved				
+005	die ⟦unclear⟧ noch ⟦unclear⟧ der gebrauch	307v-05	decree_a	prose|unclear	unresolved				
+006	Das dem pfarrer aufs einem ⟦unclear⟧	307v-06	decree_b	prose|paragraph_initial|large_initial|marginal_cross_visible	unresolved				
+007	zů knawen, ⟦unclear⟧, jerlich ein	307v-07	decree_b	prose|unclear	unresolved		zů not expanded		
+008	selben, ⟦unclear⟧, Vber alles	307v-08	decree_b	prose|unclear	unresolved				
+009	ambt der pfarrer einkommen,	307v-09	decree_b	prose	working				
+010	Das die bey Laßa dem pfarrer die ⟦unclear⟧	307v-10	decree_c	prose|paragraph_initial|large_initial	unresolved				
+011	vnd ⟦unclear⟧, so sie ⟦unclear⟧ aus	307v-11	decree_c	prose|unclear	unresolved				
+012	jrer kirchen ⟦unclear⟧, ⟦unclear⟧ sein	307v-12	decree_c	prose|unclear	unresolved				
+013	sollen,	307v-13	decree_c	prose|short_line	observed				
+014	Das dem kirchner zů knawen aufs der	307v-14	decree_d	prose|paragraph_initial|large_initial	working		zů not expanded		
+015	kirchen zů Laßa ⟦unclear⟧, vnd	307v-15	decree_d	prose|unclear	unresolved		zů not expanded		
+016	aus der kirchen zů ⟦unclear: p/b…⟧ ⟦unclear⟧	307v-16	decree_d	prose|unclear|toponym_candidate	unresolved	p…|b…	zů not expanded		Initial descender/loop is visible but not adjudicated here; no normalized place identity supplied.
+017	⟦unclear⟧ soll ⟦unclear⟧	307v-17	decree_d	prose|unclear	unresolved				
+018	dem pfarrer zů ⟦unclear⟧ der ⟦unclear⟧	307v-18	decree_d	prose|unclear	unresolved		zů not expanded		
+019	⟦unclear⟧ sein soll,	307v-19	decree_d	prose|unclear	unresolved				
+020	Das Wolff vom Greffendorff dem	307v-20	decree_e	prose|paragraph_initial|large_initial|marginal_cross_visible	working	Greffendorff|Greffendorf			The place/name form is read from this target line itself; no external witness or normalization used.
+021	pfarrer zů knawen, alles ⟦unclear⟧ soll	307v-21	decree_e	prose|unclear	unresolved		zů not expanded		
+022	Vber ⟦unclear⟧ dem ⟦unclear⟧ hat	307v-22	decree_e	prose|unclear	unresolved				
