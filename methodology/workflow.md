@@ -121,6 +121,31 @@ Do not use `EVIDENCE STAGED = PASS` as an ambiguous composite token.
 
 If the decisive staging capability lies outside repository/tool control, record the platform boundary instead of building repo machinery that cannot cross it.
 
+## Repository-first persistence in execution contexts
+
+Keep transient evidence processing distinct from research-state persistence.
+
+```text
+EPHEMERAL TECHNICAL PROCESSING
+staged source bytes | renders | crops | temporary calculations
+
+PERSISTABLE / RESTART-RELEVANT RESEARCH STATE
+readings | decisions | evidence notes | Project state | durable research artifacts
+```
+
+The first class may exist temporarily in the target execution environment when required for source inspection or technical computation. The second class must not use the chat/tool sandbox as an intermediate working store when an authorized repository write path is available.
+
+For persistable research state:
+
+1. resolve the scholarly object and its canonical owner/artifact role before creating or changing a file;
+2. use the intended repository working branch as the working persistence surface;
+3. once a bounded result is ready to persist, create/update it directly through the authorized repository write path rather than first writing a local TSV/Markdown/JSON/YAML research file for later promotion;
+4. keep exploratory reasoning transient until it becomes a persistable result; not every hypothesis or scratch thought requires a commit;
+5. if a repository write fails or becomes unavailable, preserve the already-canonical state and report that technical blocker; do not create a local research-state fallback whose later recovery would depend on the originating execution context;
+6. where a temporary image/derivative materially supports a consequential result, preserve the required provenance under the applicable Source/File/evidence rules before relying on that result in a future context.
+
+This is an execution rule, not a requirement to store source binaries in Git or to commit every intermediate thought. Rights/access rules still govern source-byte persistence, and `maintenance.md` still governs canonical ownership and propagation.
+
 ## Progress / delta and loop control
 
 A repeated action, delegation or return is justified only when at least one material state changes, for example:
