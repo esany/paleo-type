@@ -1,0 +1,26 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	Der die vier ⟦unclear⟧, so ⟦unclear⟧ der pfarrer	308v-01	decree_i	prose|paragraph_initial|large_initial|marginal_cross_visible|numeral_word_visible	unresolved				
+002	an der ⟦unclear⟧ zů knawen jerlichs ⟦unclear⟧	308v-02	decree_i	prose|unclear	unresolved		zů not expanded		
+003	gehabt, soll der pfarrer die ⟦unclear⟧	308v-03	decree_i	prose|unclear	unresolved				
+004	an ⟦unclear⟧ und gebrauch	308v-04	decree_i	prose|unclear	unresolved				
+005	⟦unclear⟧ Wolff von greffendorff ⟦unclear⟧	308v-05	decree_i	prose|unclear	unresolved	greffendorff|Greffendorff			Name sequence is graphically visible but surrounding syntax remains unresolved.
+006	⟦unclear⟧ der pfarrer ⟦unclear⟧ sollen,	308v-06	decree_i	prose|unclear	unresolved				
+007	Das Wolff von greffendorff dem pfarr⟦unclear⟧	308v-07	decree_j	prose|paragraph_initial|large_initial|marginal_cross_visible|unclear	working	greffendorff|Greffendorff			Name is read from the target line; final `pfarr…` sequence remains incomplete.
+008	zů knawen, aufs einem ⟦unclear⟧	308v-08	decree_j	prose|unclear	unresolved		zů not expanded		
+009	und ⟦unclear⟧ aber ⟦unclear⟧ zů seinen	308v-09	decree_j	prose|unclear	unresolved		zů not expanded		
+010	⟦unclear⟧ hat, ⟦unclear⟧	308v-10	decree_j	prose|unclear	unresolved				
+011	soll der pfarrer anderweits ⟦unclear⟧	308v-11	decree_j	prose|unclear	unresolved				
+012	haben, wenn es der ⟦unclear⟧, ⟦unclear⟧	308v-12	decree_j	prose|unclear	unresolved				
+013	des ⟦unclear⟧ ⟦unclear⟧, für sein	308v-13	decree_j	prose|unclear	unresolved				
+014	haus, ⟦unclear⟧ und ⟦unclear⟧	308v-14	decree_j	prose|unclear	unresolved				
+015	und ob er etwa an bier etwas vberig	308v-15	decree_j	prose	working	vberig|uberig			
+016	haben wurdt, solchs aufs ⟦unclear⟧	308v-16	decree_j	prose|unclear	unresolved				
+017	⟦unclear⟧ noch haben soll,	308v-17	decree_j	prose|unclear	unresolved				
+018	Von dem andern bey der ⟦unclear⟧, den Wolff von	308v-18	decree_k	prose|paragraph_initial|large_initial|marginal_cross_visible|unclear	unresolved				
+019	greffendorff ⟦unclear⟧, soll ⟦unclear⟧	308v-19	decree_k	prose|unclear	unresolved	greffendorff|Greffendorff			
+020	dem pfarrer ein ander ⟦unclear⟧ an der ⟦unclear⟧	308v-20	decree_k	prose|unclear	unresolved				
+021	⟦unclear⟧, und denselben gebrauch	308v-21	decree_k	prose|unclear	unresolved				
+022	lassen,	308v-22	decree_k	prose|short_line	observed				
+023	Es soll auch ein ⟦unclear⟧ zů knawen	308v-23	decree_l	prose|paragraph_initial|large_initial|marginal_cross_visible|unclear	unresolved		zů not expanded		
+024	dem pfarrer jerlich aufs ⟦unclear⟧ zů	308v-24	decree_l	prose|unclear	unresolved		zů not expanded		
+025	⟦unclear⟧ geben,	308v-25	decree_l	prose|unclear	unresolved				
