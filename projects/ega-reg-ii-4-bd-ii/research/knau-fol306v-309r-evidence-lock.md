@@ -15,8 +15,8 @@ Current bounded target:
 - Source: `THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089`
 - Historical locus: Knau passage, fol. 306v-309r
 - Digital locus: export images 667-672 / PDF pages 27-32
-- Current execution state: G2 diplomatic-representation completeness PASS; #98 systematic internal adjudication COMPLETE; release-gate evaluation pending branch review/merge
-- Mode: Reg. Ii 4 internal analysis; external textual comparison remains locked until an explicit post-merge release decision
+- Current execution state: G2 PASS; #98 systematic internal adjudication COMPLETE; project-local gate RELEASED for #99 controlled collation
+- Mode: controlled external collation/checking may begin only under the separate #99 collation record and the constraints below
 
 ## Evidence state for the active work context
 
@@ -61,13 +61,13 @@ A later folio may therefore provide an internal comparison anchor for an earlier
 
 ## Contamination lock
 
-The following separation is mandatory until the project-local release gate below is satisfied and explicitly released.
+The following separation remains mandatory before and during #99. Release authorizes controlled comparison; it does not collapse evidence classes.
 
 | Material | Status before external comparison release | Allowed use | Forbidden use |
 |---|---|---|---|
 | Reg. Ii 4 Bd. II, Source `...00000089`, images 667-672 | primary evidence / same-witness internal comparison space | target-first visual inspection; physical-line inventory; diplomatic first reading; uncertainty marking; exact internal graphematic/sign comparison after target observation | expected-word copying; semantic completion of unread graphs; treating same source/record as same-hand proof |
-| Reg. Ii 5 Ziegenrück material | quarantined parallel material | method warning; later controlled collation after release gate | wording source; line mapping for first reading; grapheme supply; same-hand assumption |
-| Legacy G2/Knau files and old TSV/apparatus/palaeography | contaminated until Source/File/locus attribution is re-established | recovery/checking after release gate | promotion as Reg. Ii 4 reading; silent import; automatic witness attribution |
+| Reg. Ii 5 Ziegenrück material | quarantined parallel material | method warning; controlled collation after release gate | wording source for original first reading; silent grapheme supply; same-hand assumption |
+| Legacy G2/Knau files and old TSV/apparatus/palaeography | provenance-controlled recovery/checking material after release | checking/collation only where exact Source/File/locus provenance is adequate for the specific claim | promotion as Reg. Ii 4 reading; silent import; automatic witness attribution |
 | Prior chat draft of image 667 | unadjudicated local draft | cursor memory and risk signal only | canonical line text unless each row is reinspected against image 667 |
 | Early-modern visitation/domain knowledge | contextual hypothesis/control | generate questions; test/rank graphically viable candidates after source inspection | replace unread graphemes; normalize diplomatic spelling; infer names/amounts as manuscript text |
 
@@ -83,15 +83,19 @@ Reg. Ii 5 or legacy Knau/G2 material may be opened for **textual comparison/coll
 6. any later promoted Reg. Ii 4 correction explains the inspected Reg. Ii 4 graphical basis and does not rely on parallel wording alone;
 7. legacy material is used only where its exact Source/File/locus provenance is adequate for the specific comparison claim.
 
-Current gate state after the #98 internal adjudication, pending branch review/merge and explicit release evaluation:
+Gate evaluation after #98 merge and #99 record setup:
 
 - condition 1: **met** — complete six-folio working first-reading representation present;
 - condition 2: **met** — #97 G2 completeness audit PASS;
-- condition 3: **met on the #98 branch** — the systematic internal adjudication covers all 34 consequential loci/clusters with no pending item; unresolved/specialist-review results are explicitly retained where internal evidence does not decide;
-- condition 4: **met for the current Reg. Ii 4 locus** — folio-local physical line references are sequential, unique and source-order stable;
-- conditions 5–7: remain binding requirements for #99 itself and do not by themselves supply wording or relax Reg. Ii 4 graphical/provenance obligations.
+- condition 3: **met** — #98 systematic internal adjudication is merged on `main`; all 34 consequential loci/clusters have an adjudicated or explicit specialist-review result and no pending item remains;
+- condition 4: **met** — folio-local physical line references are sequential, unique and source-order stable;
+- condition 5: **met** — `research/knau-fol306v-309r-controlled-collation.md` explicitly identifies itself as the #99 controlled collation/checking record, not an original first-reading or diplomatic-text owner, and currently contains no external comparison entry;
+- condition 6: **met as a binding #99 record rule** — the collation record requires direct Reg. Ii 4 target reinspection and a Reg. Ii 4 graphical basis before any externally prompted Reg. Ii 4 correction can be promoted; parallel wording alone is explicitly insufficient;
+- condition 7: **met as a binding use/provenance rule** — legacy material may enter the collation record only where exact Source/File/locus provenance is adequate for the specific claim; no legacy comparison entry has yet been made.
 
-**External textual comparison remains closed until the reviewed #98 state is merged and the release decision is explicitly recorded.**
+**Gate decision: RELEASED for #99 controlled external collation.**
+
+This release permits comparison material to be inspected only inside the #99 workflow after the exact comparison Source/File/locus and current evidence access are verified. It does not make Reg. Ii 5 or legacy wording evidence for the original Reg. Ii 4 first reading, does not authorize silent correction of Reg. Ii 4, and does not establish same-hand or textual-dependence claims in advance.
 
 ## First-reading representation
 
@@ -111,7 +115,7 @@ Stable scope/provenance facts — canonical Source ID, folio-to-export/PDF mappi
 
 When an internal same-witness comparison materially affects a consequential reading, `evidence_note` may carry the exact comparison locus and concise discriminating reason. Routine direct inspection that does not affect a decision need not be serialized as a separate survey dataset.
 
-The independent first-reading files do not carry a mutable `collation_status` column. Later external comparison belongs in a separate collation layer so that opening a parallel witness cannot silently redefine first-reading provenance.
+The independent first-reading files do not carry a mutable `collation_status` column. External comparison belongs in the separate #99 collation record so that opening a parallel witness cannot silently redefine first-reading provenance.
 
 A fluent full line with hidden uncertainty is worse than a narrower visible unresolved span.
 
@@ -144,7 +148,7 @@ The human-readable whole-locus presentation `transcription/derived/knau-fol306v-
 
 ## 2026-09-06 #98 systematic internal adjudication
 
-The systematic internal G3 pass is complete on the #98 branch. Its 34-locus/cluster audit records exact internal anchors, positive and negative discriminators, adjudication outcomes and any specialist-review condition. No pending item remains.
+The systematic internal G3 pass is complete. Its 34-locus/cluster audit records exact internal anchors, positive and negative discriminators, adjudication outcomes and any specialist-review condition. No pending item remains.
 
 Consequential diplomatic re-adjudications are persisted in their folio owners: `307r-02` is working `It̄ Greffendorff`, `307r-07` is working `Kirchhauß zů paren,` with `parem` retained as a residual graphical alternative, and `307v-16` is narrowed to a p-initial unresolved place form. Remaining unresolved outcomes stay explicit and do not constitute an unfinished systematic #98 task.
 
@@ -152,9 +156,9 @@ Consequential diplomatic re-adjudications are persisted in their folio owners: `
 
 Next executable action:
 
-> Review and merge the #98 branch, then evaluate every release-gate condition explicitly. Do not open Reg. Ii 5 or legacy wording until the merged canonical evidence owner records a positive release decision.
+> Run #99 controlled external collation. First verify the exact comparison Source/File/locus and current evidence access, then add comparison findings only to `research/knau-fol306v-309r-controlled-collation.md`. Reinspect Reg. Ii 4 itself before any externally prompted principal-witness correction, and use legacy material only where claim-specific provenance is adequate.
 
-If the reviewed merge preserves the current #98 result, condition 3 is satisfied for the roadmap. Conditions 5–7 remain binding constraints on the subsequent controlled collation and must be carried into #99 rather than treated as prior wording evidence.
+The first-reading and G3 records remain frozen/traceable independent evidence layers. #99 may discover agreements, variants or reasons to reinspect Reg. Ii 4, but external wording never becomes a substitute for the Reg. Ii 4 graph.
 
 ## Invalidation triggers
 

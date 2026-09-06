@@ -28,10 +28,10 @@ The historical diplomatic material preserved under `projects/ega-reg-ii-5-knau/`
 
 Current rule:
 
-- use the old Knau/G2 files only as checking/recovery material after the project-local release gate;
-- for a Reg. Ii 4 diplomatic claim, inspect the Reg. Ii 4 Source/File/locus itself;
+- after the project-local release gate, old Knau/G2 files may be used only as controlled checking/recovery material where the exact Source/File/locus provenance is adequate for the specific comparison claim;
+- for a Reg. Ii 4 diplomatic claim or externally prompted correction, inspect the Reg. Ii 4 Source/File/locus itself;
 - do not treat similarity to the parallel Reg. Ii 5 transmission as witness identity;
-- do not use Reg. Ii 5 or legacy wording to supply graphemes during the independent Reg. Ii 4 first reading or the systematic internal adjudication pass.
+- do not use Reg. Ii 5 or legacy wording as a substitute for Reg. Ii 4 graphical evidence.
 
 The canonical current classification of that legacy corpus is recorded in `projects/ega-reg-ii-5-knau/research/legacy-witness-provenance.tsv`.
 
@@ -52,11 +52,12 @@ The observed correspondence with Reg. Ii 5 remains a separate Source-relationshi
 
 ## Project-local execution controls
 
-- `research/knau-fol306v-309r-evidence-lock.md` owns the immediate evidence/internal-comparison/legacy-release lock for this bounded task.
+- `research/knau-fol306v-309r-evidence-lock.md` owns the immediate evidence/internal-comparison/external-release lock for this bounded task.
 - `research/knau-fol306v-309r-contamination-matrix.tsv` records concrete allowed/forbidden use classes.
 - `transcription/README.md` defines transcription-layer conventions and folio-local storage; it does not own Project cursor, progress or release state.
 - `research/knau-fol306v-309r-g3-adjudication.tsv` records the project-local #98 internal test paths for consequential loci; it is not a second transcription owner.
-- the actual diplomatic reading/status remains owned by the folio-local TSVs under `transcription/first-reading/`.
+- `research/knau-fol306v-309r-controlled-collation.md` is the separate #99 controlled comparison/checking record; it is not an original first-reading or diplomatic-text owner.
+- the actual Reg. Ii 4 diplomatic reading/status remains owned by the folio-local TSVs under `transcription/first-reading/`.
 
 ## First-reading representation
 
@@ -106,16 +107,30 @@ Important consciously unresolved/specialist areas remain:
 
 These unresolved outcomes do not leave an open systematic internal #98 task: the internal Reg. Ii 4 evidence has been exhausted at the required level and the limits are explicitly recorded.
 
+## 2026-09-06 release-gate decision
+
+**Project-local release gate: PASS for #99 controlled external collation.**
+
+Conditions 1–4 are materially satisfied by the complete first reading, G2 PASS, merged #98 internal adjudication and stable physical line references. Condition 5 is instantiated by `research/knau-fol306v-309r-controlled-collation.md`, which explicitly identifies itself as controlled collation/checking and currently contains no external comparison entry. Conditions 6 and 7 are carried as binding record/use rules: any externally prompted Reg. Ii 4 correction requires direct Reg. Ii 4 reinspection and graphical basis, and legacy material may be used only where claim-specific Source/File/locus provenance is adequate.
+
+This release does not retroactively alter first-reading provenance and does not make parallel wording an authority for Reg. Ii 4. No external comparison wording has yet been recorded in the #99 collation record.
+
 ## NEXT ACTION — canonical restart point
 
-**Evaluate the project-local release gate after the #98 branch is reviewed and merged. Do not open Reg. Ii 5 or legacy wording until that release decision is explicitly carried by the canonical evidence owner.**
+**Run #99: controlled external collation with independently established comparison material.**
 
-Release evaluation must verify each condition in `research/knau-fol306v-309r-evidence-lock.md`. Conditions 1, 2 and 4 were already met before #98; #98 completion supplies the evidence for condition 3. Conditions governing the later comparison record, Reg. Ii 4 graphical basis for any promoted correction, and claim-specific legacy provenance remain binding during #99.
+First bounded actions:
 
-If the gate is explicitly released, the next scholarly stage is #99 controlled external collation. If a gate condition is not met, repair that concrete condition without reopening #96/#97 or consulting an external witness for wording.
+1. verify the exact Reg. Ii 5 comparison Source/File/locus and current evidence access before reading it for collation;
+2. verify that the comparison witness is independently represented/read sufficiently for the intended correspondence claim;
+3. only then add explicit mappings/findings to `research/knau-fol306v-309r-controlled-collation.md`;
+4. if legacy G2/Knau material is considered, admit it only claim-by-claim where exact Source/File/locus provenance is adequate;
+5. reinspect the Reg. Ii 4 target itself before any externally prompted Reg. Ii 4 correction; parallel wording alone is insufficient.
+
+Do not reopen #96/#97/#98 merely because external comparison reveals a variant or motivates a new Reg. Ii 4 reinspection. Preserve the independent first-reading and G3 audit trails.
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, and the #98 audit record `research/knau-fol306v-309r-g3-adjudication.tsv`.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, the completed #98 audit `research/knau-fol306v-309r-g3-adjudication.tsv`, the positive project-local release decision, and the separate #99 record `research/knau-fol306v-309r-controlled-collation.md`.
 
-The current scholarly state on this branch is **G2 PASS / #98 systematic internal adjudication COMPLETE / release-gate evaluation pending merge**. The consequential diplomatic changes are carried by `307r.tsv` and `307v.tsv`; other unresolved outcomes remain explicit in their existing folio owners and in the #98 audit. Reg. Ii 5 and legacy G2/Knau remain closed as textual comparison evidence until an explicit post-merge release decision.
+The current scholarly state on this branch is **G2 PASS / #98 COMPLETE / release gate PASS / #99 controlled external collation next**. No external comparison entry has yet been added. Reg. Ii 5 and adequately provenanced legacy material may now be inspected only within the controlled #99 workflow; they remain separate witnesses/checking material and cannot silently rewrite Reg. Ii 4.
