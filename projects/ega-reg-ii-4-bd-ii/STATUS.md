@@ -111,40 +111,44 @@ These unresolved outcomes do not leave an open systematic internal #98 task: the
 
 **Project-local release gate: PASS for #99 controlled external collation.**
 
-Conditions 1–4 are materially satisfied by the complete first reading, G2 PASS, merged #98 internal adjudication and stable physical line references. Condition 5 is instantiated by `research/knau-fol306v-309r-controlled-collation.md`, which explicitly identifies itself as controlled collation/checking and currently contains no external comparison entry. Conditions 6 and 7 are carried as binding record/use rules: any externally prompted Reg. Ii 4 correction requires direct Reg. Ii 4 reinspection and graphical basis, and legacy material may be used only where claim-specific Source/File/locus provenance is adequate.
+Conditions 1–4 are materially satisfied by the complete first reading, G2 PASS, merged #98 internal adjudication and stable physical line references. Condition 5 is instantiated by `research/knau-fol306v-309r-controlled-collation.md`, which explicitly identifies itself as controlled collation/checking. Conditions 6 and 7 remain binding record/use rules: any externally prompted Reg. Ii 4 correction requires direct Reg. Ii 4 reinspection and graphical basis, and legacy material may be used only where claim-specific Source/File/locus provenance is adequate.
 
 This release does not retroactively alter first-reading provenance and does not make parallel wording an authority for Reg. Ii 4.
 
-## 2026-09-06 #99 comparison-evidence preflight
+## 2026-09-06 #99 controlled external collation
 
-**Comparison Source/File/locus identity: PASS. Current source-image access: BLOCKED in this execution context.**
+**#99 controlled collation: COMPLETE.**
 
-The exact intended comparison witness is now bound as:
+The exact comparison witness was staged in the execution context as the canonical Reg. Ii 5 File and verified before reading:
 
 - Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` — *Visitation im Amt Ziegenrück*, fol. 55v–66v;
-- canonical File `FILE-REG-II-5-00000129-EXCERPT` / `1a03ea95927-120-143.pdf`, SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical File `FILE-REG-II-5-00000129-EXCERPT` / `1a03ea95927-120-143.pdf`;
+- verified SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - Knau locus fol. 61v–63r = export images 132–135 = PDF pages 14–17.
 
-The documented repository byte path for that File is not present on `main`/the #99 branch, and `corpus/files.tsv` explicitly does not assert byte presence there. The old Reg. Ii 5-path `132.tsv`–`135.tsv` material is not used as a substitute because the Reg. Ii 5 Project STATUS classifies it as legacy verification/recovery evidence with unresolved or potentially mixed witness attribution and declares no current Reg. Ii 5 diplomatic transcription.
+All four Reg. Ii 5 target pages were rendered and directly pixel-inspected. The comparison traversed the entire Reg. Ii 4 Knau locus `306v-01`–`309r-05` against Reg. Ii 5 fol. 61v–63r at explicit textual-unit level. The canonical detailed mappings are owned by `research/knau-fol306v-309r-controlled-collation.md`.
 
-No external comparison wording has therefore been inspected or recorded in #99 yet. This is an evidence-access prerequisite, not a failure of the release gate and not a reason to reopen #96/#97/#98.
+Main collation result:
+
+- both witnesses share the Knau opening/account structure and a substantial sequence of later decree units;
+- Reg. Ii 5 is not a line-for-line duplicate: it omits/condenses the Reg. Ii 4 `Lehnherr` / church-account / inventory material and several decree units, and it resegments shared material across different physical lines/folios;
+- agreement, variants, omissions, structural/order differences and numeral/measure differences are explicitly represented in the #99 owner;
+- no same-hand claim was inferred from textual similarity;
+- no legacy `132.tsv`–`135.tsv` wording was used as a substitute for source inspection;
+- every externally suggestive Reg. Ii 4 locus remained subject to direct Reg. Ii 4 graphical authority.
+
+No Reg. Ii 4 diplomatic reading changed as a consequence of collation. In particular, the completed #98 results `307r-02 = Greffendorff`, `307r-07 = paren` with residual `parem`, and the p-initial-only unresolved state at `307v-16` remain canonical and were not overwritten from the parallel witness.
+
+The source-relationship claim in `corpus/relationships.tsv` is now sharpened only to the demonstrated level: **selective/condensed textual correspondence with a substantial shared decree sequence plus documented omissions and resegmentation**. It does not assert verbatim copying, complete line equivalence or same hand.
 
 ## NEXT ACTION — canonical restart point
 
-**Stage and pixel-inspect the exact Reg. Ii 5 comparison evidence for fol. 61v–63r / images 132–135, then begin witness-specific controlled collation.**
+The bounded Reg. Ii 4 Knau workflow through #99 is complete. Do **not** reopen #96/#97/#98/#99 absent a concrete new source or specialist finding.
 
-Required sequence:
-
-1. obtain the exact canonical File `FILE-REG-II-5-00000129-EXCERPT` or source-identical images 132–135 in the active execution context;
-2. verify File/image identity against the canonical SHA/File record and crosswalk;
-3. establish pixel-inspectability for fol. 61v–63r;
-4. read the Reg. Ii 5 comparison witness directly and independently enough for explicit mapping;
-5. add the first mappings/findings only to `research/knau-fol306v-309r-controlled-collation.md`;
-6. use legacy G2/Knau material only claim-by-claim after exact provenance is adequate;
-7. reinspect the Reg. Ii 4 target itself before any externally prompted Reg. Ii 4 correction; parallel wording alone is insufficient.
+The next action is owner/roadmap selection of the next research target or a separately scoped specialist follow-up if one of the consciously unresolved palaeographic/metrological areas becomes consequential. Any such follow-up must preserve the existing first-reading and #98/#99 audit trail rather than rewriting it retrospectively.
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, the completed #98 audit `research/knau-fol306v-309r-g3-adjudication.tsv`, the positive project-local release decision, and the separate #99 record `research/knau-fol306v-309r-controlled-collation.md`.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, completed #98 internal adjudication, release gate PASS, and the completed #99 record `research/knau-fol306v-309r-controlled-collation.md`.
 
-The current scholarly state on this branch is **G2 PASS / #98 COMPLETE / release gate PASS / #99 comparison identity verified / exact Reg. Ii 5 image evidence not currently staged**. No external comparison entry exists yet.
+The current scholarly state is **G2 PASS / #98 COMPLETE / release gate PASS / #99 COMPLETE / no Reg. Ii 4 diplomatic correction from external collation**.
