@@ -106,26 +106,38 @@ The exact Reg. Ii 4 export and folio/image/PDF mapping were rechecked for this e
 
 The representation remains deliberately conservative. `working`/`unresolved` spans are visible, numeral/measure/accounting contexts are not silently converted into values, and no same-hand claim follows from same-witness recurrence. Direct target readings of `Greffendorff`/`greffendorff` occur on later Reg. Ii 4 folios, but they have **not** been used to silently revise `307r-02`; that consequential cross-locus question belongs to the systematic #98 internal adjudication.
 
-The full authorized locus fol. 306v–309r is therefore now represented as an independent Reg. Ii 4 **working first-reading representation**. This does **not** by itself establish G2 completeness, G3 completion or external-witness release.
+The full authorized locus fol. 306v–309r is therefore now represented as an independent Reg. Ii 4 **working first-reading representation**.
 
-The legacy/parallels release gate is still closed.
+## 2026-09-06 #97 G2 completeness audit
+
+**G2 diplomatic-representation completeness: PASS.**
+
+The audit traversed all six folio-local TSVs against the directly inspected Reg. Ii 4 images 667–672 and the canonical crosswalk. It verified 117 relevant source units in source order with folio-local line counts `21 / 19 / 22 / 25 / 25 / 5`; sequential and unique `line_ref` values; the common ten-column transcription structure; preserved headings/lists/prose/continuations, abbreviation signs, numeral/accounting/measure problem classes, layout/source phenomena and explicit uncertainty; and the Knau boundary on 309r before the following Ziegenrück heading.
+
+No missing relevant physical unit, hidden semantic supply, normalized replacement of a diplomatic form or external Reg. Ii 5/legacy wording import was found. `unresolved` and `working` readings remain compatible with this G2 result.
+
+A human-readable whole-locus view is stored at `transcription/derived/knau-fol306v-309r-first-reading.md`. It is explicitly non-canonical and deterministically derived from the six folio TSVs by source-order traversal of `line_ref` + `diplomatic_reading`; it is not a second manually maintained transcription truth.
+
+G2 completion does **not** establish systematic G3 adjudication and does not release Reg. Ii 5 or legacy G2/Knau for textual comparison. The legacy/parallels release gate remains closed.
 
 ## NEXT ACTION — canonical restart point
 
-**Run #97: the G2 completeness audit over the complete Reg. Ii 4 Knau first-reading representation, fol. 306v–309r / images 667–672.**
+**Run #98: systematic whole-locus internal palaeographic/philological adjudication of consequential `working`/`unresolved` loci across fol. 306v–309r.**
 
-Audit discipline:
+Execution discipline:
 
-1. traverse all six folio TSVs in source order and verify that every relevant visible physical unit is represented with stable folio-local line references;
-2. verify folio/image boundaries, headings, lists, prose/continuations, abbreviations, numeral/accounting/measure signs, source phenomena and explicit uncertainty without semantic filling;
-3. verify that 309r ends at the actual Knau boundary and does not absorb the following Ziegenrück heading;
-4. verify that no Reg. Ii 5, legacy G2/Knau or parallel wording entered the independent Reg. Ii 4 representation;
-5. derive any human-readable whole-locus witness view deterministically from the folio-local data plus canonical source metadata rather than creating a second manually edited transcription truth;
-6. if G2 passes, record that state in the canonical owners and proceed immediately to #98 systematic internal palaeographic/philological adjudication; if it does not, repair the actual owning folio/source-state record and rerun the audit;
-7. keep Reg. Ii 5 and legacy G2/Knau closed as textual comparison/wording evidence through #98 and until the project-local release gate is explicitly satisfied.
+1. regenerate the consequential-locus inventory from the six current first-reading TSVs rather than relying on an old hand list;
+2. for each consequential target, reinspect the Reg. Ii 4 target graph/sign, preserve the first-reading state, classify the problem, and test all relevant exactly locatable internal Reg. Ii 4 comparanda using discriminating positive and negative features;
+3. keep same-witness recurrence distinct from same-hand evidence; treat abbreviations and numeral/accounting/measure notation as potentially distinct sign systems;
+4. use philological, onomastic, metrological or historical context only after graphical candidate formation and inspect an appropriate Fachquelle when such domain evidence materially supports a consequential conclusion;
+5. preserve traceable alternatives and `unresolved` outcomes; record independent specialist-validation need where a high-consequence specialist question cannot responsibly be closed by this internal analysis;
+6. specifically reopen `307r-02` against the later directly observed Reg. Ii 4 `Greffendorff` forms, but promote it only if the 307r target graph itself now supports the stronger reading;
+7. keep Reg. Ii 5 and legacy G2/Knau closed as wording evidence throughout #98.
+
+After #98 is complete, evaluate every condition of the project-local release gate explicitly before #99 is opened.
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected Knau locus fol. 306v–309r / images 667–672, and all six persisted folio-local working first-reading files: `306v.tsv`, `307r.tsv`, `307v.tsv`, `308r.tsv`, `308v.tsv`, `309r.tsv`.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk/URN state, the owner-selected Knau locus fol. 306v–309r / images 667–672, all six persisted folio-local working first-reading files, and the derived non-canonical whole-locus view.
 
-The current scholarly execution state is **#97 G2 completeness audit pending**; there is no further folio cursor inside the bounded first-reading sequence. Internal Reg. Ii 4 comparanda remain available for later #98 target-first adjudication, but Reg. Ii 5, legacy G2/Knau, domain context and unadjudicated prior drafts must not supply manuscript wording before the release gate is satisfied.
+The current scholarly state is **G2 PASS / #98 systematic internal adjudication pending**. There is no folio cursor inside the completed first-reading sequence. Reg. Ii 5, legacy G2/Knau, domain context and unadjudicated prior drafts must not supply manuscript wording before the release gate is explicitly satisfied.
