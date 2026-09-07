@@ -1,12 +1,14 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 4 Bd. II
 
-Last checkpoint: 2026-09-06
+Last checkpoint: 2026-09-07
 
 ## Project authority and root
 
 The human owner explicitly confirmed on 2026-09-02 that Reg. Ii 4 Bd. II should currently continue as one act-oriented Project, anchored at `ACT-THHSTAW-EGA-REG-II-4-BD-II`, as an application of D-018. This current authority does not retroactively certify the complete historical D-017 wording.
 
-On 2026-09-03 the human owner selected the **Knau passage of the Reg. Ii 4 Bd. II Ziegenrück Source** as the current manuscript/source-research target. This activates a bounded research locus; it does not redefine the Project boundary and does not assign a permanent Project→Source research-function label by itself.
+On 2026-09-03 the human owner selected the **Knau passage of the Reg. Ii 4 Bd. II Ziegenrück Source** as a bounded manuscript/source-research target. That target was completed through #96–#99 on 2026-09-06. It did not redefine the Project boundary, and completion does not create a new current research priority.
+
+On 2026-09-07 the admitted A-R reconciliation aligned current Project state with that completed workflow: `project.yml:active_scope` now records that no owner-selected active scholarly scope exists, while the actual completed principal and controlled-comparison Source uses are preserved as `historical` in `source-uses.tsv` with exact File bindings in `research/use-evidence.tsv`. Historical research function remains distinct from current NEXT ACTION.
 
 ## Known internal section/source node
 
@@ -14,7 +16,7 @@ On 2026-09-03 the human owner selected the **Knau passage of the Reg. Ii 4 Bd. I
 
 This is a separate material Source/witness from the Reg. Ii 5 Ziegenrück record fol. 55v–66v. Their archival extract/correspondence relation does not merge witness identity, foliation, image numbering, File provenance or diplomatic readings.
 
-`source-uses.tsv` remains empty until an actual project-relative research function needs to be recorded. The current work target is carried by the owner-selected `active_scope`/`NEXT ACTION`, not by inferring a `principal`, `comparison` or other research function.
+The completed Project-relative research functions are now explicitly preserved in `source-uses.tsv`: Reg. Ii 4 Ziegenrück/Knau as the historical principal direct-reading use and Reg. Ii 5 Ziegenrück/Knau as the historical controlled textual-comparison use. These rows document actual completed use only; they do not select current priority. Their concrete File bindings are recorded separately in `research/use-evidence.tsv`.
 
 ## Recovered prior work state
 
@@ -44,7 +46,7 @@ The canonical current classification of that legacy corpus is recorded in `proje
 
 ## Research/gate state
 
-The current target is the Reg. Ii 4 Knau locus itself. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus. Any Reg. Ii 4 reading must be established against the Reg. Ii 4 Source/File/locus itself.
+The bounded Reg. Ii 4 Knau target is complete through #99. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus, and no new active manuscript target is currently selected. Any future Reg. Ii 4 reading must continue to be established against the Reg. Ii 4 Source/File/locus itself.
 
 `Independent first reading` means **witness independence from external/parallel wording, not folio isolation within Reg. Ii 4**. Directly inspected and exactly locatable internal comparanda from the same Reg. Ii 4 locus may be used for graphematic recognition after the target problem is observed. The target graph remains primary evidence; comparison must use discriminating graphical/sign features rather than expected wording or semantic plausibility. Same Source/record does not establish same hand.
 
@@ -145,10 +147,10 @@ The source-relationship claim in `corpus/relationships.tsv` is now sharpened onl
 
 The bounded Reg. Ii 4 Knau workflow through #99 is complete. Do **not** reopen #96/#97/#98/#99 absent a concrete new source or specialist finding.
 
-The next action is owner/roadmap selection of the next research target or a separately scoped specialist follow-up if one of the consciously unresolved palaeographic/metrological areas becomes consequential. Any such follow-up must preserve the existing first-reading and #98/#99 audit trail rather than rewriting it retrospectively.
+No owner-selected next manuscript/source-research target is currently recorded. The next action, when authorized, is owner/roadmap selection of a new research target or a separately scoped specialist follow-up if one of the consciously unresolved palaeographic/metrological areas becomes consequential. Any such follow-up must preserve the existing first-reading and #98/#99 audit trail rather than rewriting it retrospectively.
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, completed #98 internal adjudication, release gate PASS, and the completed #99 record `research/knau-fol306v-309r-controlled-collation.md`.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, completed #98 internal adjudication, release gate PASS, the completed #99 record `research/knau-fol306v-309r-controlled-collation.md`, the historical Project→Source uses and their exact File bindings, and the absence of a current owner-selected manuscript target.
 
-The current scholarly state is **G2 PASS / #98 COMPLETE / release gate PASS / #99 COMPLETE / no Reg. Ii 4 diplomatic correction from external collation**.
+The current scholarly state is **G2 PASS / #98 COMPLETE / release gate PASS / #99 COMPLETE / no Reg. Ii 4 diplomatic correction from external collation / no current owner-selected active scholarly scope**.
