@@ -2,6 +2,8 @@
 
 This file records project-specific lessons. It is not evidence for manuscript readings.
 
+Cross-project synthesis: `requirements/source-context-model-synthesis-2026-09-07.md`.
+
 ## L001 — whole-word silhouette guessing caused major errors
 
 Observed failure: early readings such as `welch` versus later `wolff`, and other fluent-looking words, were produced before enough same-hand grapheme evidence existed.
@@ -111,5 +113,45 @@ Consequence: Git history still contained the old state, so evidence was not dest
 Corrective practice: structural migrations must perform a semantic-loss check not only for Source/File/research rows but also for consequential work-state/restartability information. Historical state may remain non-canonical, but a current audit pointer must make it discoverable without archaeological Git reconstruction.
 
 Current repair: `projects/README.md` records the recovery snapshot and deletion sequence; owner-defined Li 3 and Li 4 Projects expose recovered prior state in their STATUS files; this Reg. Ii 5 STATUS does the same without reviving source-as-project semantics.
+
+Generalizable: yes.
+
+## L014 — evidence provenance must be claim/artifact-level, not directory-level
+
+Observed failure: after the Reg. Ii 4/Reg. Ii 5 witness separation was clarified, the safest immediate reaction was to quarantine the historical Knau/G2 material under this legacy path. That was correct for the old diplomatic rows and witness-dependent apparatus where attribution could not be trusted from path/page labels alone. However, the same directory later contains `g2-baseline-provenance.md` and `g2-checkpoint-a-physical-inventory.md`, whose evidence chain is independently exact and explicitly Reg. Ii 5.
+
+Corrective practice: determine scientific authority from the concrete artifact/claim’s Source/File/locus provenance and evidence class. A path can explain history; it cannot establish or revoke witness identity by itself.
+
+Generalizable: yes.
+
+## L015 — protective quarantine must be as narrow as the uncertainty
+
+Observed failure/risk: `research/legacy-witness-provenance.tsv` currently contains a wildcard classification for `research/g2-*`. This safely prevents overpromotion but also catches later exact-source direct-image G2 artifacts whose witness provenance is actually established.
+
+Corrective practice: quarantine only the claims/artifacts that inherit unresolved witness provenance. Preserve later directly established evidence at the level it actually supports, without using that fact to promote older readings.
+
+Generalizable: yes.
+
+## L016 — physical/source-order observation and diplomatic reading are different evidential layers
+
+Direct Reg. Ii 5 Checkpoint-A inspection securely established physical order/layout and phenomena such as the 61v accounting/list block and cancellations at 61v-L16 and 62r-L18. It did not thereby validate the old diplomatic text row-by-row.
+
+Corrective practice: preserve direct source observation, diplomatic reading, source phenomenon, editorial expansion/supply, normalization and interpretation as separable layers with their own evidence status.
+
+Generalizable: yes; aligned with existing palaeographic/editorial requirements.
+
+## L017 — research-ready access is distinct from identity and reproducibility
+
+Observed failure: an exact File ID/SHA and a reproducible render recipe can exist while a fresh research context still cannot open the actual pixels. Conversely, an accessible derivative is not automatically a fresh byte-level verification of the canonical parent.
+
+Corrective practice: distinguish evidence identifiability, reproducibility and current authorized research-ready accessibility.
+
+Generalizable: yes; this is the core fixture behind #68/#78.
+
+## L018 — source-specific addressing needs must not become a universal manuscript ontology
+
+The real 61v–63r G2 work demonstrates that physical Line is necessary for this source and that finer line-local targeting is sometimes required. It does not establish that every future Source must be represented as folio→line→span.
+
+Corrective practice: require unambiguous recoverable targets at the granularity justified by the source/claim, while letting different source types use different physical/logical structures.
 
 Generalizable: yes.
