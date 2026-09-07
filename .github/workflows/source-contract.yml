@@ -41,7 +41,8 @@ jobs:
           assert internal['research_functions'] == ['principal'], internal['research_functions']
           assert len(internal['project_source_uses']) == 1, internal['project_source_uses']
           iuse = internal['project_source_uses'][0]
-          assert iuse['use']['status'] == 'historical', iuse['use']
+          assert iuse['use']['status'] == 'active', iuse['use']
+          assert iuse['evidence'][0]['evidence']['status'] == 'active', iuse['evidence'][0]['evidence']
           assert iuse['evidence'][0]['file']['file_id'] == 'FILE-REG-II-5-00000129-EXCERPT'
           assert external['project_scope'] == 'external', external['project_scope']
           assert external['structural_status'] == 'external', external['structural_status']
