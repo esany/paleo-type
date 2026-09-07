@@ -42,6 +42,24 @@ class ProjectContextRegressionTests(unittest.TestCase):
         self.assertIn("projects/ega-reg-ii-3/STATUS.md", refs["project_files"])
         self.assertIn("projects/ega-reg-ii-3/source-uses.tsv", refs["project_files"])
 
+    def test_reg_ii_4_context_preserves_completed_uses_without_current_priority(self) -> None:
+        result = self.compile("ega-reg-ii-4-bd-ii")
+        self.assertEqual("ACT-THHSTAW-EGA-REG-II-4-BD-II", result["documentary_anchor"]["source_id"])
+        self.assertIn("No owner-selected active scholarly scope is currently recorded", result["project_definition"]["active_scope"])
+        self.assertEqual(2, len(result["project_source_uses"]))
+        by_function = {item["use"]["research_function"]: item for item in result["project_source_uses"]}
+        self.assertEqual({"principal", "textual-comparison"}, set(by_function))
+        self.assertTrue(all(item["use"]["status"] == "historical" for item in result["project_source_uses"]))
+        self.assertEqual(
+            "FILE-REG-II-4-II-00000089-EXPORT",
+            by_function["principal"]["evidence"][0]["file"]["file_id"],
+        )
+        self.assertEqual(
+            "FILE-REG-II-5-00000129-EXCERPT",
+            by_function["textual-comparison"]["evidence"][0]["file"]["file_id"],
+        )
+        self.assertIn("No owner-selected next manuscript/source-research target is currently recorded", result["canonical_status"]["text"])
+
     def test_reg_ii_5_context_uses_target_historical_state_without_promoting_it(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         self.assertEqual("ACT-THHSTAW-EGA-REG-II-5", result["documentary_anchor"]["source_id"])
@@ -55,7 +73,7 @@ class ProjectContextRegressionTests(unittest.TestCase):
         self.assertEqual("principal", principal["use"]["research_function"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", principal["evidence"][0]["file"]["file_id"])
         self.assertIn("No owner-selected manuscript/source-research task is currently recorded", result["canonical_status"]["text"])
-        self.assertIn("No current diplomatic transcription of Reg. Ii 5 is declared", result["canonical_status"]["text"])
+        self.assertIn("No current canonical diplomatic transcription of Reg. Ii 5 is declared", result["canonical_status"]["text"])
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
         self.assertIn(
             "witness attribution of legacy diplomatic material from project path, page_id or textual similarity",
