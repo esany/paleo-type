@@ -38,8 +38,8 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         errors, _, cache = source_contract.validate(REPO, contract)
         self.assertEqual([], errors)
         self.assertFalse(cache["project_sources"])
-        self.assertEqual(4, len(cache["source_uses"]))
-        self.assertEqual(4, len(cache["use_evidence"]))
+        self.assertEqual(6, len(cache["source_uses"]))
+        self.assertEqual(6, len(cache["use_evidence"]))
 
         principal = cache["source_uses"]["USE-REGII5-00000129-PRINCIPAL"]
         self.assertEqual("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", principal["source_id"])
@@ -51,6 +51,24 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertEqual("USE-REGII5-00000129-PRINCIPAL", evidence["use_id"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", evidence["file_id"])
         self.assertEqual("historical", evidence["status"])
+
+        li4_principal = cache["source_uses"]["USE-REGII4PROJ-REGII4-00000089-PRINCIPAL"]
+        self.assertEqual("THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089", li4_principal["source_id"])
+        self.assertEqual("principal", li4_principal["research_function"])
+        self.assertEqual("historical", li4_principal["status"])
+
+        li4_comparison = cache["source_uses"]["USE-REGII4PROJ-REGII5-00000129-TEXTUAL-COMPARISON"]
+        self.assertEqual("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", li4_comparison["source_id"])
+        self.assertEqual("textual-comparison", li4_comparison["research_function"])
+        self.assertEqual("historical", li4_comparison["status"])
+
+        li4_principal_evidence = cache["use_evidence"]["EVID-REGII4PROJ-REGII4-00000089-PRINCIPAL"]
+        self.assertEqual("USE-REGII4PROJ-REGII4-00000089-PRINCIPAL", li4_principal_evidence["use_id"])
+        self.assertEqual("FILE-REG-II-4-II-00000089-EXPORT", li4_principal_evidence["file_id"])
+
+        li4_comparison_evidence = cache["use_evidence"]["EVID-REGII4PROJ-REGII5-00000129-TEXTUAL-COMPARISON"]
+        self.assertEqual("USE-REGII4PROJ-REGII5-00000129-TEXTUAL-COMPARISON", li4_comparison_evidence["use_id"])
+        self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", li4_comparison_evidence["file_id"])
 
         for project_id, meta in cache["projects"].items():
             self.assertTrue(meta["research_object"], project_id)
