@@ -60,7 +60,7 @@ class ProjectContextRegressionTests(unittest.TestCase):
         )
         self.assertIn("No owner-selected next manuscript/source-research target is currently recorded", result["canonical_status"]["text"])
 
-    def test_reg_ii_5_context_uses_target_historical_state_without_promoting_it(self) -> None:
+    def test_reg_ii_5_context_exposes_owner_selected_editorial_target_without_legacy_promotion(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         self.assertEqual("ACT-THHSTAW-EGA-REG-II-5", result["documentary_anchor"]["source_id"])
         self.assertNotIn("legacy_project_source_uses", result)
@@ -69,11 +69,18 @@ class ProjectContextRegressionTests(unittest.TestCase):
             row for row in result["project_source_uses"]
             if row["use"]["use_id"] == "USE-REGII5-00000129-PRINCIPAL"
         )
-        self.assertEqual("historical", principal["use"]["status"])
+        self.assertEqual("active", principal["use"]["status"])
         self.assertEqual("principal", principal["use"]["research_function"])
+        self.assertEqual("fol. 61v–63r", principal["use"]["relevant_locus"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", principal["evidence"][0]["file"]["file_id"])
-        self.assertIn("No owner-selected manuscript/source-research task is currently recorded", result["canonical_status"]["text"])
-        self.assertIn("No current canonical diplomatic transcription of Reg. Ii 5 is declared", result["canonical_status"]["text"])
+        self.assertEqual("active", principal["evidence"][0]["evidence"]["status"])
+        self.assertIn("Owner-selected 2026-09-07 source-exact editorial development", result["project_definition"]["active_scope"])
+        self.assertIn("#115", result["project_definition"]["active_scope"])
+        self.assertIn("Execute #115: begin with WP-0 and then fol. 61v", result["canonical_status"]["text"])
+        self.assertIn("No current canonical diplomatic transcription of Reg. Ii 5 is yet declared", result["canonical_status"]["text"])
+        self.assertIn("same-witness Reg. Ii 5 internal comparanda are admissible", result["canonical_status"]["text"])
+        self.assertIn("Reg. Ii 4 wording remains excluded", result["canonical_status"]["text"])
+        self.assertIn("Package B is triggered only by demonstrated editoric semantic loss", result["canonical_status"]["text"])
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
         self.assertIn(
             "witness attribution of legacy diplomatic material from project path, page_id or textual similarity",
@@ -112,13 +119,17 @@ class ProjectContextRegressionTests(unittest.TestCase):
         )
         self.assertTrue({row["file_id"] for row in canonical_evidence}.issubset(set(refs["file_ids"])))
 
-    def test_context_does_not_promote_historical_use_to_current_scope_or_action(self) -> None:
+    def test_current_scope_does_not_repromote_legacy_or_historical_comparison_uses(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         project = result["project_definition"]
-        self.assertIn("No owner-selected active", project["active_scope"])
-        self.assertIn("must not be promoted as Li 5 evidence without fresh witness-specific verification", project["active_scope"])
-        self.assertTrue(all(item["use"]["status"] == "historical" for item in result["project_source_uses"]))
-        self.assertIn("must not invent one", result["execution_boundary"]["note"])
+        self.assertIn("Owner-selected 2026-09-07", project["active_scope"])
+        self.assertIn("independent witness-specific Editionsbaustein", project["active_scope"])
+        by_id = {item["use"]["use_id"]: item["use"] for item in result["project_source_uses"]}
+        self.assertEqual("active", by_id["USE-REGII5-00000129-PRINCIPAL"]["status"])
+        self.assertEqual("historical", by_id["USE-REGII4-00000089-TEXTUAL-COMPARISON"]["status"])
+        self.assertEqual("historical", by_id["USE-REGII3-00000235-NOTATION-CONTROL"]["status"])
+        self.assertEqual("historical", by_id["USE-REGII3-NEUSTADT-HISTORICAL-CONTEXT"]["status"])
+        self.assertIn("current scholarly NEXT ACTION from historical work, active evidence or legacy labels", result["execution_boundary"]["do_not_infer"])
 
 
 if __name__ == "__main__":
