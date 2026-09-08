@@ -1,14 +1,14 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 4 Bd. II
 
-Last checkpoint: 2026-09-07
+Last checkpoint: 2026-09-08
 
 ## Project authority and root
 
 The human owner explicitly confirmed on 2026-09-02 that Reg. Ii 4 Bd. II should currently continue as one act-oriented Project, anchored at `ACT-THHSTAW-EGA-REG-II-4-BD-II`, as an application of D-018. This current authority does not retroactively certify the complete historical D-017 wording.
 
-On 2026-09-03 the human owner selected the **Knau passage of the Reg. Ii 4 Bd. II Ziegenrück Source** as a bounded manuscript/source-research target. That target was completed through #96–#99 on 2026-09-06. It did not redefine the Project boundary, and completion does not create a new current research priority.
+On 2026-09-03 the human owner selected the **Knau passage of the Reg. Ii 4 Bd. II Ziegenrück Source** as a bounded manuscript/source-research target. The scheduled work-package sequence #96–#99 for that target ended on 2026-09-06. This is **workflow/task completion**, not a claim that every Knau reading is resolved, that the whole Ziegenrück Source is transcribed, or that G5/G6 has been reached. The bounded work did not redefine the Project boundary and does not create a new current research priority.
 
-On 2026-09-07 the admitted A-R reconciliation aligned current Project state with that completed workflow: `project.yml:active_scope` now records that no owner-selected active scholarly scope exists, while the actual completed principal and controlled-comparison Source uses are preserved as `historical` in `source-uses.tsv` with exact File bindings in `research/use-evidence.tsv`. Historical research function remains distinct from current NEXT ACTION.
+On 2026-09-07 the admitted A-R reconciliation aligned current Project state with that completed work sequence: `project.yml:active_scope` now records that no owner-selected active scholarly scope exists, while the actual historical principal and controlled-comparison Source uses are preserved as `historical` in `source-uses.tsv` with exact File bindings in `research/use-evidence.tsv`. Historical research function remains distinct from current NEXT ACTION.
 
 ## Known internal section/source node
 
@@ -16,7 +16,7 @@ On 2026-09-07 the admitted A-R reconciliation aligned current Project state with
 
 This is a separate material Source/witness from the Reg. Ii 5 Ziegenrück record fol. 55v–66v. Their archival extract/correspondence relation does not merge witness identity, foliation, image numbering, File provenance or diplomatic readings.
 
-The completed Project-relative research functions are now explicitly preserved in `source-uses.tsv`: Reg. Ii 4 Ziegenrück/Knau as the historical principal direct-reading use and Reg. Ii 5 Ziegenrück/Knau as the historical controlled textual-comparison use. These rows document actual completed use only; they do not select current priority. Their concrete File bindings are recorded separately in `research/use-evidence.tsv`.
+The historical Project-relative research functions are explicitly preserved in `source-uses.tsv`: Reg. Ii 4 Ziegenrück/Knau as the principal direct-reading use of the bounded locus and Reg. Ii 5 Ziegenrück/Knau as the controlled textual-comparison use. These rows document actual historical use only; they do not select current priority or imply higher scholarly maturity. Their concrete File bindings are recorded separately in `research/use-evidence.tsv`.
 
 ## Recovered prior work state
 
@@ -46,7 +46,20 @@ The canonical current classification of that legacy corpus is recorded in `proje
 
 ## Research/gate state
 
-The bounded Reg. Ii 4 Knau target is complete through #99. No current diplomatic transcription is declared merely from the legacy Knau/G2 corpus, and no new active manuscript target is currently selected. Any future Reg. Ii 4 reading must continue to be established against the Reg. Ii 4 Source/File/locus itself.
+The gate-evaluated textual scope below is **only the bounded Knau locus fol. 306v–309r**. No gate claim here applies automatically to the whole Ziegenrück Source fol. 294r–313r or the whole Reg. Ii 4 Bd. II archival act.
+
+| Gate / activity | State | Evaluated scope | Meaning / residual limit |
+|---|---|---|---|
+| G1 source/transmission basis | `reached` | #96–#99 investigation source group for Knau | Reg. Ii 4 principal and Reg. Ii 5 comparison Source/File/locus/provenance are reconstructable; preservation blockers remain explicit where applicable. |
+| G2 diplomatic representation | `reached` | Reg. Ii 4 fol. 306v–309r | All 117 relevant visible units are represented in source order. This is **representation completeness**, not full reading resolution. |
+| reading resolution | `incomplete / residual uncertainty explicit` | Reg. Ii 4 fol. 306v–309r | Numerous `working`/`unresolved` readings, accounting/measure signs, overwriting and other difficult loci remain. This is compatible with G2. |
+| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties within fol. 306v–309r | #98 systematically tested all inventoried consequential uncertainties internally and handed unresolved cases forward; G3 does not mean every reading was solved. |
+| #99 controlled collation work package | `complete` | Reg. Ii 4 fol. 306v–309r ↔ Reg. Ii 5 fol. 61v–63r | Valid bounded comparison work and transmission findings; task completion does not itself establish G4. |
+| G4 controlled comparison | `not reached` | same Knau witness pair | Reg. Ii 5 was directly inspected for #99 comparison anchors, but no current independent canonical Reg. Ii 5 diplomatic witness representation exists from which a reviewer can reconstruct that witness as required for a fresh G4 claim. #115 is rebuilding that basis. |
+| G5 critical consolidation/validation | `not reached` | bounded Knau edition target | No critically consolidated G5 text state is claimed; G4 is not reached and residual specialist/editorial validation remains. |
+| G6 scholarly edition | `not reached` | bounded Knau edition target | No scholarly edition has been produced. |
+
+No new active manuscript target is currently selected in this Project. Any future Reg. Ii 4 reading must continue to be established against the Reg. Ii 4 Source/File/locus itself.
 
 `Independent first reading` means **witness independence from external/parallel wording, not folio isolation within Reg. Ii 4**. Directly inspected and exactly locatable internal comparanda from the same Reg. Ii 4 locus may be used for graphematic recognition after the target problem is observed. The target graph remains primary evidence; comparison must use discriminating graphical/sign features rather than expected wording or semantic plausibility. Same Source/record does not establish same hand.
 
@@ -63,7 +76,7 @@ The observed correspondence with Reg. Ii 5 remains a separate Source-relationshi
 
 ## First-reading representation
 
-The complete authorized locus is represented in source order by:
+The entire bounded authorized locus is represented in source order by:
 
 - `306v.tsv`: `306v-01`–`306v-21`;
 - `307r.tsv`: `307r-01`–`307r-19`;
@@ -78,7 +91,9 @@ The representation remains deliberately conservative. `working`/`unresolved` spa
 
 ## 2026-09-06 #97 G2 completeness audit
 
-**G2 diplomatic-representation completeness: PASS.**
+**G2 diplomatic-representation completeness: PASS for the bounded Knau locus.**
+
+Here `completeness` means that every relevant visible source unit in fol. 306v–309r is represented at the required diplomatic level. It does **not** mean that every word/sign is securely read or that a finished diplomatic/critical edition exists.
 
 The audit traversed all six folio-local TSVs against the directly inspected Reg. Ii 4 images 667–672 and the canonical crosswalk. It verified 117 relevant source units in source order with folio-local line counts `21 / 19 / 22 / 25 / 25 / 5`; sequential and unique `line_ref` values; the common ten-column transcription structure; preserved headings/lists/prose/continuations, abbreviation signs, numeral/accounting/measure problem classes, layout/source phenomena and explicit uncertainty; and the Knau boundary on 309r before the following Ziegenrück heading.
 
@@ -88,7 +103,7 @@ A human-readable whole-locus view is stored at `transcription/derived/knau-fol30
 
 ## 2026-09-06 #98 systematic internal adjudication
 
-**Systematic Reg. Ii 4 internal G3 adjudication: COMPLETE.**
+**#98 systematic internal adjudication: COMPLETE; G3 reached for the bounded locus at the current internal-evidence level.**
 
 The #98 inventory was regenerated from the six current folio TSVs and persisted directly in `research/knau-fol306v-309r-g3-adjudication.tsv`. It contains 34 consequential loci/clusters covering all current `working`/`unresolved` problem areas. Every inventory row now records an internal evidential result or an explicit specialist-review condition; no `pending` row remains.
 
@@ -107,19 +122,21 @@ Important consciously unresolved/specialist areas remain:
 - `309r-01`–`309r-04`: heavy overlap/overwriting prevents responsible recovery beyond the surviving alphabetic islands; qualified palaeographic review and/or better imaging is required for consequential fuller recovery;
 - `309r-05`: the `Anno`-like opening is followed by a non-ordinary flourish/sign sequence that does not support a year or value from the current evidence; specialist review/better imaging is required if dating becomes consequential.
 
-These unresolved outcomes do not leave an open systematic internal #98 task: the internal Reg. Ii 4 evidence has been exhausted at the required level and the limits are explicitly recorded.
+These unresolved outcomes do not leave an open systematic internal #98 task: the internal Reg. Ii 4 evidence has been exhausted at the required level and the limits are explicitly recorded. They also do not become resolved merely because the G3 analysis gate is reached.
 
 ## 2026-09-06 release-gate decision
 
 **Project-local release gate: PASS for #99 controlled external collation.**
 
-Conditions 1–4 are materially satisfied by the complete first reading, G2 PASS, merged #98 internal adjudication and stable physical line references. Condition 5 is instantiated by `research/knau-fol306v-309r-controlled-collation.md`, which explicitly identifies itself as controlled collation/checking. Conditions 6 and 7 remain binding record/use rules: any externally prompted Reg. Ii 4 correction requires direct Reg. Ii 4 reinspection and graphical basis, and legacy material may be used only where claim-specific Source/File/locus provenance is adequate.
+This was a project-local contamination-control release decision, not one of the generic G1–G6 maturity claims.
+
+Conditions 1–4 are materially satisfied by the bounded first-reading representation, G2 PASS, merged #98 internal adjudication and stable physical line references. Condition 5 is instantiated by `research/knau-fol306v-309r-controlled-collation.md`, which explicitly identifies itself as controlled collation/checking. Conditions 6 and 7 remain binding record/use rules: any externally prompted Reg. Ii 4 correction requires direct Reg. Ii 4 reinspection and graphical basis, and legacy material may be used only where claim-specific Source/File/locus provenance is adequate.
 
 This release does not retroactively alter first-reading provenance and does not make parallel wording an authority for Reg. Ii 4.
 
 ## 2026-09-06 #99 controlled external collation
 
-**#99 controlled collation: COMPLETE.**
+**#99 controlled-collation work package: COMPLETE. This is not by itself a G4 PASS.**
 
 The exact comparison witness was staged in the execution context as the canonical Reg. Ii 5 File and verified before reading:
 
@@ -129,6 +146,8 @@ The exact comparison witness was staged in the execution context as the canonica
 - Knau locus fol. 61v–63r = export images 132–135 = PDF pages 14–17.
 
 All four Reg. Ii 5 target pages were rendered and directly pixel-inspected. The comparison traversed the entire Reg. Ii 4 Knau locus `306v-01`–`309r-05` against Reg. Ii 5 fol. 61v–63r at explicit textual-unit level. The canonical detailed mappings are owned by `research/knau-fol306v-309r-controlled-collation.md`.
+
+The Reg. Ii 5 anchors in #99 were deliberately limited to directly inspected material sufficient for the bounded comparison claims; they were not persisted as a current independent diplomatic Reg. Ii 5 witness transcription. Under the current generic G4 contract, #99 therefore remains valid controlled-collation evidence without being promoted into a fresh G4 gate claim.
 
 Main collation result:
 
@@ -145,12 +164,12 @@ The source-relationship claim in `corpus/relationships.tsv` is now sharpened onl
 
 ## NEXT ACTION — canonical restart point
 
-The bounded Reg. Ii 4 Knau workflow through #99 is complete. Do **not** reopen #96/#97/#98/#99 absent a concrete new source or specialist finding.
+The scheduled Reg. Ii 4 Knau work-package sequence through #99 is complete. This means the authorized #96–#99 tasks were carried through; it does **not** mean that every Knau reading is resolved or that a G5/G6 edition state exists. Do **not** reopen #96/#97/#98/#99 absent a concrete new source or specialist finding.
 
 No owner-selected next manuscript/source-research target is currently recorded. The next action, when authorized, is owner/roadmap selection of a new research target or a separately scoped specialist follow-up if one of the consciously unresolved palaeographic/metrological areas becomes consequential. Any such follow-up must preserve the existing first-reading and #98/#99 audit trail rather than rewriting it retrospectively.
 
 ## Restartability
 
-A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the complete six-folio first-reading representation, #97 G2 PASS, completed #98 internal adjudication, release gate PASS, the completed #99 record `research/knau-fol306v-309r-controlled-collation.md`, the historical Project→Source uses and their exact File bindings, and the absence of a current owner-selected manuscript target.
+A fresh context must identify the Reg. Ii 4 Bd. II Project, its separate Ziegenrück Source, exact File/crosswalk state, the bounded six-folio Knau first-reading representation, G1/G2/G3 state for that bounded scope, the completed #99 controlled-collation work package, the explicit absence of a current G4/G5/G6 claim, the historical Project→Source uses and their exact File bindings, and the absence of a current owner-selected manuscript target.
 
-The current scholarly state is **G2 PASS / #98 COMPLETE / release gate PASS / #99 COMPLETE / no Reg. Ii 4 diplomatic correction from external collation / no current owner-selected active scholarly scope**.
+The current scholarly state is **Knau fol. 306v–309r only: G1 reached / G2 reached as representational completeness with unresolved readings remaining / G3 reached at current internal evidence / #99 work package complete but G4 not reached / G5 not reached / G6 not reached / no current owner-selected active scholarly scope**.

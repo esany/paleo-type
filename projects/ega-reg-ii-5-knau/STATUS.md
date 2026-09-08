@@ -1,6 +1,6 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 5
 
-Last checkpoint: 2026-09-07
+Last checkpoint: 2026-09-08
 
 ## Project authority and identity
 
@@ -58,7 +58,7 @@ Consequences:
 
 ## Later exact-source G2 research artifacts — bounded direct authority
 
-The legacy directory later accumulated four `research/g2-*` artifacts with evidential roles that are **not** inherited from the unresolved witness provenance of the older diplomatic corpus. Their authority follows their own Source/File/locus chain and is classified explicitly in `research/legacy-witness-provenance.tsv`:
+The legacy directory later accumulated four `research/g2-*` artifacts with evidential roles that are **not** inherited from the unresolved witness provenance of the older diplomatic corpus. The historical `g2-*` filename/phase label does **not** itself mean that the current Reg. Ii 5 Project has reached generic G2. Their authority follows their own Source/File/locus chain and is classified explicitly in `research/legacy-witness-provenance.tsv`:
 
 - `research/g2-baseline-provenance.md` — exact Reg. Ii 5 Source/File/SHA/crosswalk/render and research-access provenance;
 - `research/g2-checkpoint-a-physical-inventory.md` — direct Reg. Ii 5 visual observations of physical/source order, layout and bounded source phenomena on fol. 61v–63r;
@@ -124,7 +124,7 @@ Visitational organization, administrative process, social/economic interpretatio
 
 **Reg. Ii 5 is not folio-isolated.** Exact, source-bound same-witness comparanda elsewhere in Reg. Ii 5 may be used for graphematic/palaeographic testing after the target problem is observed. Same Source/record still does not prove same hand.
 
-**Reg. Ii 4 wording is excluded as reading authority during the independent Reg. Ii 5 basis.** The already completed Reg. Ii 4↔Reg. Ii 5 collation remains valid historical research evidence but may not pre-supply the new Reg. Ii 5 wording.
+**Reg. Ii 4 wording is excluded as reading authority during the independent Reg. Ii 5 basis.** The already completed Reg. Ii 4↔Reg. Ii 5 controlled-collation work remains valid historical research evidence but may not pre-supply the new Reg. Ii 5 wording or be treated as a current G4 gate for this Project.
 
 After the independent Reg. Ii 5 basis is sufficiently established, a controlled external comparison may open. Any externally prompted Reg. Ii 5 correction still requires direct Reg. Ii 5 reinspection and target-graph evidence.
 
@@ -170,13 +170,23 @@ For the canonical Reg. Ii 5 Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`:
 
 For the separate Reg. Ii 4 Bd. II Ziegenrück Source, its own File, crosswalk, page-specific URNs and fol. 306v–309r / images 667–672 remain canonical under that Source. Never substitute one witness's image numbering, TIFF labels, folios, dates or readings for the other.
 
-## Current research state
+## Current research state / edition lifecycle
 
-No current canonical diplomatic transcription of Reg. Ii 5 is yet declared by this STATUS. **#115 is the active work to build that witness-specific editorial basis from Reg. Ii 5 itself.**
+No current canonical diplomatic transcription of Reg. Ii 5 is yet declared. The gate-evaluated active target is **Reg. Ii 5 fol. 61v–63r only**. No gate claim for this target applies automatically to the whole Ziegenrück Source fol. 55v–66v or the whole Reg. Ii 5 act.
+
+| Gate / activity | State | Evaluated scope | Meaning / residual limit |
+|---|---|---|---|
+| G1 source/transmission basis | `reached` | active #115 Knau source group/locus | Principal Reg. Ii 5 Source/File/SHA/crosswalk and separate relevant comparison/context Sources are identified with explicit evidence/provenance limits. |
+| #115 source-exact editorial work package | `active` | Reg. Ii 5 fol. 61v–63r | Current research task. Its eventual Issue completion will not automatically establish every gate it touches. |
+| G2 diplomatic representation | `active / not reached` | Reg. Ii 5 fol. 61v–63r | 81 physical anchors and bounded source phenomena exist, but no current canonical witness-specific diplomatic transcription yet represents all units/readings at G2 level. |
+| G3 internal analysis | `not reached` | same locus | Historical G2-labelled observations are not a systematic current witness-specific G3 analysis; difficult readings must first be established from Reg. Ii 5 itself and then internally tested. |
+| G4 controlled comparison | `not reached` | Reg. Ii 5 ↔ Reg. Ii 4 Knau loci | Reg. Ii 4 wording remains closed until the independent Reg. Ii 5 basis is established; historical #99 comparison evidence is not a substitute for this Project's current G4 progression. |
+| G5 critical consolidation/validation | `not reached` | bounded Knau edition target | No consolidated/validated current Reg. Ii 5 text state exists. |
+| G6 scholarly edition | `not reached` | bounded Knau edition target | No scholarly edition has been produced. #115 is an Editionsbaustein. |
 
 The old diplomatic transcription/apparatus/palaeography remains a verification/recovery fixture with unresolved or potentially mixed witness attribution. Separately, the explicitly classified `research/g2-*` artifacts remain usable according to their own bounded evidence roles, including direct Reg. Ii 5 physical/source-order observations where actually revalidated.
 
-Any new diplomatic result must be established against the explicitly targeted Source/File/locus. Existing direct physical observation must not be mistaken for diplomatic reading, and source-bound semantic-loss/domain analysis must not be mistaken for manuscript text.
+Any new diplomatic result must be established against the explicitly targeted Source/File/locus. Existing direct physical observation must not be mistaken for diplomatic reading, source-bound semantic-loss/domain analysis must not be mistaken for manuscript text, and completion of a work package must not be mistaken for a higher gate or finished edition.
 
 ## NEXT ACTION — canonical restart point
 
@@ -190,7 +200,7 @@ Any new diplomatic result must be established against the explicitly targeted So
 6. Use exact Reg. Ii 5 internal comparanda where useful; keep Reg. Ii 4 wording closed until the independent Reg. Ii 5 basis reaches controlled-comparison release.
 7. If a real editoric finding cannot be represented without semantic loss, stop only that affected persistence step, define the smallest missing information requirement and route a bounded change; otherwise continue reading.
 
-Issue #115 owns the work checklist. This STATUS owns the current scholarly/restart state.
+Issue #115 owns the work checklist. This STATUS owns the current scholarly/restart state and any formal G1–G6 gate claim.
 
 ## Restartability
 
@@ -201,9 +211,10 @@ A fresh capable context must be able to reconstruct without old chat that:
 - exact File/SHA/crosswalk identity is established, while current pixel staging/inspectability must still be checked in the execution context;
 - Reg. Ii 4 Bd. II and Reg. Ii 5 contain separate Ziegenrück witnesses and must remain independently read;
 - legacy `transcription/132.tsv`–`135.tsv`, apparatus and witness-dependent legacy palaeography are verification/recovery evidence, not current Reg. Ii 5 transcription truth;
-- the exact-source G2 artifacts retain only their stated provenance/physical-observation/loss-analysis authority;
+- the exact-source `g2-*` artifacts retain only their stated provenance/physical-observation/loss-analysis authority and do not constitute a current G2 PASS;
 - 81 working physical anchors exist for 61v–63r, but they are structural evidence rather than a current diplomatic text;
 - same-witness Reg. Ii 5 internal comparanda are admissible; Reg. Ii 4 wording remains excluded until independent witness basis/release;
 - reading, identification, contextual role, hand hypothesis and dating claims retain separate evidence/status and do not inherit certainty from one another;
 - Package B is triggered only by demonstrated editoric semantic loss and must return immediately to source work after the smallest adequate repair;
+- the current lifecycle is **G1 reached / G2 active-not reached / G3–G6 not reached** for fol. 61v–63r, with #115 as the active work package rather than a gate claim;
 - the immediate cursor is WP-0 → fol. 61v, not an abstract schema/migration programme.

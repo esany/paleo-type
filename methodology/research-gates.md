@@ -12,6 +12,20 @@ GitHub may use a Project-scoped Milestone such as `<project> / G2 — Diplomatic
 
 Later evidence or justified re-adjudication may reopen an earlier gate. Consequential revision must remain traceable. Explicitly unresolved evidence is compatible with a passed gate when the gate requires representation/testing rather than forced resolution.
 
+## Scope and completion semantics
+
+Every gate claim is **scope-bound**. It applies to the explicitly evaluated Project research target/locus and source group, not automatically to the whole Project root, archival act or full extent of a Source. A Project may therefore reach G2 for one bounded locus while other parts of the same Source or archival unit remain untranscribed. The evaluated scope must be visible in Project `STATUS.md` whenever a gate is claimed.
+
+Keep these completion meanings distinct:
+
+- **work package / Issue complete** — the scheduled task or review was carried through; this does not by itself establish a scholarly gate;
+- **representation complete for a locus** — every relevant source unit in the evaluated locus is represented at the required diplomatic level; readings may remain `working`, `variant` or `unresolved`;
+- **internal analysis complete at the available evidence level** — required internal tests were performed and unresolved questions were explicitly handed forward; this does not mean every reading was solved;
+- **gate reached** — the requirements of that gate are satisfied for the stated evaluated scope;
+- **edition produced** — a G6 publication/edition claim, not a synonym for G2–G5 completion.
+
+A lower gate never inherits the meaning of a higher one. In particular, G2/G3/G4 attainment does not imply a critically consolidated G5 text state or a G6 scholarly edition. Avoid unqualified phrases such as `transcription complete`, `target complete` or `edition complete` when the intended claim is only task completion, representational coverage or completion of one analytical pass.
+
 ---
 
 ## G1 — Source and transmission basis secured
@@ -38,7 +52,7 @@ Project existence, purpose and current priority are governed by `project-lifecyc
 - Project source/evidence basis can be reconstructed from repository state without chat.
 
 ### Exit gate
-A competent third party can identify every material Source used in the investigation, understand its evidenced Project-relative function/locus where applicable, recover or account for the exact inspected instantiation, and understand what is actually known about relevant Source relationships.
+A competent third party can identify every material Source used in the evaluated investigation scope, understand its evidenced Project-relative function/locus where applicable, recover or account for the exact inspected instantiation, and understand what is actually known about relevant Source relationships.
 
 ### Permitted residual uncertainty
 Textual dependence, scribal relationship, finer chronology or record-stage relationships may remain unresolved when explicitly labelled. A rights/access preservation blocker may remain only if the exact byte identity is controlled and the limitation is explicit; it is not silently treated as full repository preservation.
@@ -51,7 +65,7 @@ Source identity, Project→Source use/locus, digital-File identity/preservation 
 ## G2 — Principal witness completely and diplomatically represented
 
 ### Target state
-Every relevant physical text area of the principal witness is represented in a conservative, human-auditable diplomatic transcription conforming to `transcription-guidelines.md`. Completeness means complete **representation of the source**, not complete resolution of every sign.
+Every relevant physical text area of the principal witness **within the explicitly evaluated target/locus** is represented in a conservative, human-auditable diplomatic transcription conforming to `transcription-guidelines.md`. Completeness means complete **representation of that evaluated source scope**, not transcription of source material outside the bounded scope and not complete resolution of every sign.
 
 ### Requirements
 - archival folio/page is part of the primary scholarly address;
@@ -64,12 +78,12 @@ Every relevant physical text area of the principal witness is represented in a c
 - editorial supply/expansion is distinguishable from written source text;
 - additions, deletions/cancellations and damage are representable and recorded when observed;
 - abbreviation sign and editor-provided expansion remain separate;
-- hand shifts are recorded only when palaeographically supported;
+- observable writing-characteristic changes / possible hand shifts may be recorded conservatively as source observations; a distinct-hand hypothesis requires separate palaeographic support and a named scribe/person identification requires still further evidence;
 - research status is separate from source-phenomenon description;
 - normalization/identification remains outside the diplomatic reading;
 - consequential unresolved/variant loci are discoverable from the structured transcription;
 - a human-readable folio/page and line-addressable diplomatic witness view can be derived from canonical data without manual re-transcription or a second text truth;
-- text boundaries are sufficiently represented to establish scope.
+- text boundaries are sufficiently represented to establish the evaluated scope.
 
 ### Evidence/method allowed
 Direct inspection of the principal witness and non-content-generating technical image enhancement. Internal comparison may assist recognition but may not replace source representation.
@@ -78,20 +92,20 @@ Direct inspection of the principal witness and non-content-generating technical 
 Compliant principal-witness transcription, provenance/crosswalk mapping, consequential decision trail, and a derived human-readable diplomatic witness view.
 
 ### Exit gate
-A reviewer can traverse the source in physical order, locate every relevant source unit, distinguish written/uncertain/illegible/supplied or other observed phenomena, and read the diplomatic witness without interpreting machine-only fragments.
+A reviewer can traverse the **evaluated locus** in physical order, locate every relevant source unit, distinguish written/uncertain/illegible/supplied or other observed phenomena, and read the diplomatic witness without interpreting machine-only fragments.
 
 ### Permitted residual uncertainty
 Letters, words, abbreviations, numerals, measures, names and syntax may remain `variant` or `unresolved`.
 
 ### Reopen when
-Omitted source text, incorrect physical-line/layout mapping, boundary error, misclassified source phenomenon or semantic reconstruction is discovered.
+Omitted source text, incorrect physical-line/layout mapping, boundary error, misclassified source phenomenon or semantic reconstruction is discovered within the evaluated scope, or the scope itself is shown to have been wrongly bounded.
 
 ---
 
 ## G3 — Internal palaeographic and notational analysis completed
 
 ### Target state
-Consequential uncertainties in the principal witness have been systematically tested against relevant internal palaeographic evidence before stronger reliance on external parallels.
+Consequential uncertainties **within the evaluated scope** have been systematically tested against relevant internal palaeographic evidence before stronger reliance on external parallels.
 
 ### Requirements
 - consequential uncertain loci are inventoried by evidence class;
@@ -108,7 +122,7 @@ Consequential uncertainties in the principal witness have been systematically te
 - unresolved problems are handed forward rather than forced closed.
 
 ### Exit gate
-For every consequential uncertainty, a reviewer can see what internal evidence was tested, why a conclusion followed or why the reading remains unresolved.
+For every consequential uncertainty in the evaluated scope, a reviewer can see what internal evidence was tested, why a conclusion followed or why the reading remains unresolved.
 
 ### Permitted residual uncertainty
 Any reading may remain unresolved after adequate testing.
@@ -121,7 +135,7 @@ New internal/same-hand evidence appears, an anchor is invalidated or later colla
 ## G4 — Comparison witnesses/controls independently assessed and collated
 
 ### Target state
-Relevant comparison sources are used according to demonstrated evidential roles and independently read before systematic collation with the principal witness.
+Relevant comparison sources/loci for the evaluated scope are used according to demonstrated evidential roles and independently read before systematic collation with the principal witness.
 
 ### Requirements
 - each comparison/control source remains independently identified;
@@ -136,7 +150,7 @@ Relevant comparison sources are used according to demonstrated evidential roles 
 - consequential changes to principal-witness readings are logged rather than silently overwritten.
 
 ### Exit gate
-A reviewer can distinguish what each witness/source independently says, where they correspond/diverge and which transmission claims are warranted.
+A reviewer can distinguish what each witness/source independently says **for the evaluated comparison scope**, where they correspond/diverge and which transmission claims are warranted.
 
 ### Permitted residual uncertainty
 Exact genetic dependence and individual variants may remain unresolved.
@@ -149,7 +163,7 @@ A comparison witness is materially re-read, a locus mapping changes, a supposed 
 ## G5 — Critically consolidated and proportionally validated text state
 
 ### Target state
-The principal witness has a complete, coherent and evidence-auditable transcription incorporating internal analysis and controlled comparison, with uncertainty, revision history and validation status preserved.
+Within the evaluated scope, the principal witness has a complete, coherent and evidence-auditable **consolidated transcription state** incorporating internal analysis and controlled comparison, with uncertainty, revision history and validation status preserved. Here `complete` means that the required source representation and consolidation are present for the scope; it does not mean that every reading has been resolved.
 
 ### Requirements
 - relevant G1–G4 requirements are satisfied or explicitly reopened;
@@ -167,7 +181,7 @@ The principal witness has a complete, coherent and evidence-auditable transcript
 - method-compliant AI-assisted work is never labelled expert-validated without such review.
 
 ### Exit gate
-A third party can audit consequential readings from consolidated text back to source and decision history; the remaining work is editorial representation rather than missing core source work.
+A third party can audit consequential readings from the consolidated scoped text back to source and decision history; the remaining work for that edition target is editorial representation/presentation rather than missing core source work.
 
 ### Permitted residual uncertainty
 Explicit unresolved readings, expansions and transmission questions are allowed.
@@ -180,7 +194,7 @@ A material source-reading error, provenance error, invalid comparison anchor, co
 ## G6 — Scholarly edition produced and quality-controlled
 
 ### Target state
-A usable scholarly edition is produced from G5 without erasing distinctions among manuscript evidence, editorial intervention, normalization/identification and historical commentary.
+A usable scholarly edition for an explicitly declared edition scope is produced from G5 without erasing distinctions among manuscript evidence, editorial intervention, normalization/identification and historical commentary.
 
 ### Requirements
 - an explicit edition concept states purpose, audience, scope, source/witness basis, edition type and presentation strategy;
@@ -198,7 +212,7 @@ A usable scholarly edition is produced from G5 without erasing distinctions amon
 - publication/data format is selected for actual scholarly use and preservation/interoperability; additional infrastructure is introduced only when justified by a concrete dissemination requirement.
 
 ### Exit gate
-A reader can use the edition while a specialist can distinguish source text, uncertainty, editorial intervention, variant evidence, normalization/identification and interpretation, and can audit consequential claims.
+A reader can use the scoped edition while a specialist can distinguish source text, uncertainty, editorial intervention, variant evidence, normalization/identification and interpretation, and can audit consequential claims.
 
 ### Permitted residual uncertainty
 Publication does not convert unresolved evidence into certainty.
@@ -212,13 +226,15 @@ Post-publication/source review reveals a material error, new evidence changes a 
 
 `G1 source basis → G2 diplomatic representation → G3 internal analysis → G4 controlled comparison → G5 critical consolidation/validation → G6 edition`
 
-The sequence expresses dependency, not an irreversible waterfall. Projects may perform supporting work from a later gate when necessary, but gate state remains an evidence-based maturity claim, not a priority selector.
+The sequence expresses dependency, not an irreversible waterfall. Projects may perform supporting work from a later gate when necessary, but gate state remains an evidence-based maturity claim, not a priority selector. A completed Issue/work package may contribute to a gate without establishing it.
 
 Project `STATUS.md` records only:
 - overall Project goal/purpose reference as needed for restart;
+- **evaluated scope/locus for every gate claim**;
 - gate state (`reached`, `active`, `not reached`, `reopened`);
-- Project-specific unmet requirements/blockers;
+- Project-specific unmet requirements/blockers and residual uncertainty relevant to understanding that state;
 - validation/review state where consequential;
+- work-package/activity completion separately when it matters for restart, without presenting it as a gate claim;
 - authorized next action when one exists, or its explicit absence.
 
 GitHub Project-gate Milestones may group scheduled Issues for human navigation, but they do not alter this ownership model, authorize a scholarly work target, satisfy D-016 admission, or change the evidence required to change gate state.

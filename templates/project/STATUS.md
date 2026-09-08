@@ -28,6 +28,21 @@ State what has actually been inspected, at what level, and what remains metadata
 
 Reference `../../methodology/research-gates.md`. Record only this project's current state and concrete gaps.
 
+For every gate claim, make the **evaluated scope/locus explicit**. A gate reached for one bounded locus is not a claim that the whole Source, Project root or archival act has reached that gate.
+
+Keep activity/task completion and scholarly maturity separate. Where useful, use a compact project-specific summary such as:
+
+| Gate/activity | State | Evaluated scope | Meaning / residual limit |
+|---|---|---|---|
+| G2 | `reached` | exact locus | source representation complete for this locus; unresolved readings remain |
+| work package #… | `complete` | exact task | task finished; no automatic higher-gate claim |
+| G5 | `not reached` | same edition target | consolidation/validation still outstanding |
+| G6 | `not reached` | declared edition scope | no scholarly edition produced yet |
+
+Do not use bare `complete` as a synonym for all of `task complete`, `representation complete`, `reading resolved`, `gate reached` and `edition produced`. State which meaning is intended. Explicit unresolved evidence may remain compatible with a reached gate when `research-gates.md` permits it.
+
+If no owner-selected bounded scholarly scope exists, say that no current gate progression/claim is being activated rather than inferring maturity from Source/File/crosswalk availability alone.
+
 ## Project relations
 
 Reference `../relationships.tsv` only if this Project materially relates to another Project. Historical/source relations belong in `corpus/relationships.tsv`. Project→Source use never auto-creates a Project→Project relation.
@@ -38,4 +53,4 @@ State one bounded next research action **only when an authorized next action exi
 
 ## Restartability test
 
-A new capable researcher must be able to identify the Project's scholarly purpose/authority basis, its documentary Source anchor, derive structural/internal/external status, identify Project→Source research functions and relevant loci, recover concrete use-evidence and exact source exports/preservation state, understand current gate/activity state and continue from the exact authorized next action—or recognize the explicit absence of one—without old chat.
+A new capable researcher must be able to identify the Project's scholarly purpose/authority basis, its documentary Source anchor, derive structural/internal/external status, identify Project→Source research functions and relevant loci, recover concrete use-evidence and exact source exports/preservation state, distinguish gate attainment from work-package completion and residual unresolved evidence, and continue from the exact authorized next action—or recognize the explicit absence of one—without old chat.
