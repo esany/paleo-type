@@ -1,6 +1,6 @@
 # STATUS — ThHStAW, EGA, Reg. Ii 3
 
-Last checkpoint: 2026-09-07
+Last checkpoint: 2026-09-08
 
 ## Project authority and root
 
@@ -38,16 +38,18 @@ The canonical owner of these reusable mappings is `corpus/source-data/<source_id
 
 ## Research/gate state
 
-No new source-research priority is asserted by the 2026-09-02 Project confirmation or this consistency repair. Existing inspected evidence remains valid at the level originally recorded. Historical Knau-related work remains preserved without becoming the active scope.
+No owner-selected bounded scholarly target is currently active, so **no current G1–G6 progression or gate claim is asserted for a Reg. Ii 3 edition target**. Gate maturity is evaluated only for an explicitly selected Project research scope/locus; it is not inherited from archival/source registration alone.
 
-The 2026-09-07 correction is maintenance only: it aligns this restart surface with the already-existing canonical Neustadt crosswalk and does not activate transcription, source interpretation or a new research use.
+The existing Source/File identities, inspected-export provenance and crosswalks are valuable prerequisite evidence. Their availability does **not** by itself mean that a Project-relative G1 investigation scope has been selected, that G2 diplomatic representation exists, or that any later edition gate has been reached.
+
+Historical Knau-related work remains preserved at the level originally evidenced without becoming the active scope. The 2026-09-07 crosswalk correction was maintenance only: it aligned this restart surface with the already-existing canonical Neustadt crosswalk and did not activate transcription, source interpretation, a research use or gate progression.
 
 ## NEXT ACTION — canonical restart point
 
-No owner-selected manuscript/source-research task is currently recorded. Do not infer one from Project creation, Source order, preserved Knau work, crosswalk completeness or prior AI roles. When the owner selects the next Reg. Ii 3 research question, activate only the required section/locus and record its project-relative function at that time.
+No owner-selected manuscript/source-research task is currently recorded. Do not infer one from Project creation, Source order, preserved Knau work, crosswalk completeness, File readiness or prior AI roles. When the owner selects the next Reg. Ii 3 research question, activate only the required section/locus, record its project-relative function at that time and evaluate gate state for that bounded research scope rather than for the act as a whole.
 
 ## Restartability
 
-A fresh context can identify one currently owner-confirmed Reg. Ii 3 Project, its two currently known internal sections, their recovered prior work state, exact File provenance, the canonical crosswalks and their evidence limits, and the absence of an owner-selected next manuscript task without recovering old chat.
+A fresh context can identify one currently owner-confirmed Reg. Ii 3 Project, its two currently known internal sections, their recovered prior work state, exact File provenance, the canonical crosswalks and their evidence limits, the **absence of any currently activated edition-gate progression**, and the absence of an owner-selected next manuscript task without recovering old chat.
 
-For Neustadt 41r–63v specifically, restart must preserve that the mapping exists for fol. 41r–63v / images 83–128 / PDF pages 2–47, that rectos are directly observed while paired versos are `inferred-high`, and that no page-specific stable image URNs are currently recorded.
+For Neustadt 41r–63v specifically, restart must preserve that the mapping exists for fol. 41r–63v / images 83–128 / PDF pages 2–47, that rectos are directly observed while paired versos are `inferred-high`, and that no page-specific stable image URNs are currently recorded. None of those mapping facts is itself a diplomatic-transcription or edition-completion claim.
