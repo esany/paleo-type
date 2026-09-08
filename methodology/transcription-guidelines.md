@@ -66,8 +66,12 @@ Physical/material damage affecting the text must be distinguished from an ordina
 ### Abbreviation and expansion
 The written abbreviation/sign belongs to the diplomatic source layer. Any editor-provided expansion is a separate editorial value/layer. Do not silently replace abbreviation with expansion.
 
-### Hand shift
-Record a hand shift only when palaeographic evidence supports a distinct hand. Same record/date/office or textual similarity is not hand identity.
+### Writing-characteristic change, hand hypothesis and scribe identity
+Observable differences or changes in writing characteristics may be recorded conservatively as direct source observations or a `possible hand shift` when the image supports that description. This does **not** by itself create a discrete hand identity.
+
+Promote an observed change to a distinct-hand hypothesis only after palaeographic comparison of discriminating graphical features and exact comparison loci. Any identification of that hypothesized hand with a named historical person/scribe is a further, separately evidenced claim.
+
+Same record/date/office, textual similarity or an event/administrative role is not hand identity.
 
 ## Uncertainty and alternatives
 
@@ -87,7 +91,7 @@ Before declaring a locus completely represented, check the source for relevant t
 - additions/deletions/corrections;
 - damage/illegibility;
 - abbreviation practices;
-- possible hand shifts.
+- observable writing-characteristic changes / possible hand shifts.
 
 Record `not investigated` rather than assuming absence if the question has not actually been checked.
 
@@ -131,6 +135,8 @@ Avoid pseudo-precision percentages. Use evidence-bearing statuses and explain re
 ## Normalization and identification
 
 Normalization, person/place identification and historical interpretation belong outside the diplomatic transcription. A normalized historical identity must never overwrite a manuscript reading.
+
+`Outside the diplomatic transcription` is an **epistemic-layer rule, not a mandatory chronological deferral**. Text-near annotation and editorical identification/contextualization may grow in the same source-work pass when they are persisted as separate claims/layers with their own evidence and status. They do not become diplomatic text merely because they are investigated concurrently.
 
 ## G2 exit condition
 
