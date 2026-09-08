@@ -6,7 +6,9 @@ Last checkpoint: 2026-09-08
 
 The human owner confirmed on 2026-09-02 that **Reg. Ii 5 continues as an act-oriented Project**, anchored at `ACT-THHSTAW-EGA-REG-II-5`. The directory/id `ega-reg-ii-5-knau` is a legacy path from an earlier AI-organized Knau benchmark; `Knau` is not the Project boundary.
 
-On 2026-09-07 the human owner selected a new bounded scholarly target: **source-exact editorial development of the Reg. Ii 5 Ziegenrück witness at fol. 61v–63r**, tracked in #115. This is an Editionsbaustein, not a completed scientific edition and not authority for an abstract transcription/person-role/date ontology.
+On 2026-09-07 the human owner selected a bounded scholarly target: **source-exact editorial development of the Reg. Ii 5 Ziegenrück witness at fol. 61v–63r**, tracked in #115. That bounded work package was completed on 2026-09-08 as an **Editionsbaustein**, not a completed scientific edition and not authority for an abstract transcription/person-role/date ontology.
+
+`project.yml:active_scope` now records that **no owner-selected active scholarly scope exists after #115 completion**. A later G5/G6 or source-wide target requires fresh human-owner selection rather than being inferred automatically from gate progression.
 
 ## Canonical Source structure
 
@@ -19,34 +21,34 @@ Keep archival container, concrete Source record and research use distinct.
 
 The Reg. Ii 4 and Reg. Ii 5 Ziegenrück records are separate material witnesses/transmissions. Close textual correspondence does not collapse their identities, dates, hands, production stages or diplomatic readings.
 
-## Current active Source use and exact evidence
+## Completed #115 Source use and exact evidence
 
-The current principal Project-relative Source use is:
+The completed Project-relative principal use is preserved in `source-uses.tsv` as historical:
 
 - use `USE-REGII5-00000129-PRINCIPAL`;
 - Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`;
 - relevant locus fol. 61v–63r;
-- status `active` for #115.
+- status `historical` after #115 completion.
 
-The exact active File binding is:
+The exact evidence binding is likewise preserved as historical in `research/use-evidence.tsv`:
 
 - evidence `EVID-REGII5-00000129-PRINCIPAL`;
 - File `FILE-REG-II-5-00000129-EXCERPT`;
 - export images 132–135;
 - SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f` in canonical `corpus/files.tsv`.
 
-The previous Knau-era principal use and File relation remain recoverable through Git/migration history. Reactivation does not retroactively validate any legacy diplomatic line.
+Historical status means completed research use, not invalidated evidence. It does not imply future target-context pixel readiness.
 
-**Evidence identity is not automatically current target-context readiness.** WP-0 was executed on 2026-09-08 against current repository state: Source/File/SHA/crosswalk identity passed and the artifact-ownership preflight passed. In the current research session the exact uploaded Reg. Ii 5 PDF was staged and its SHA-256 matched `FILE-REG-II-5-00000129-EXCERPT`. The target pages were rendered and visually inspected as source-identical evidence before their respective pixel-dependent readings: fol. 61v = image 132 = PDF page 14, fol. 62r = image 133 = page 15, fol. 62v = image 134 = page 16, and fol. 63r = image 135 = page 17. For each worked target page in that execution context, `STAGED = PASS` and `VISION-INSPECTABLE = PASS`, therefore `VISUAL EVIDENCE READY = PASS` under `methodology/workflow.md`.
+During the 2026-09-08 research session the exact uploaded Reg. Ii 5 PDF was staged and its SHA-256 matched `FILE-REG-II-5-00000129-EXCERPT`. The target pages were rendered and visually inspected as source-identical evidence before their respective pixel-dependent readings: fol. 61v = image 132 = PDF page 14, fol. 62r = image 133 = page 15, fol. 62v = image 134 = page 16, and fol. 63r = image 135 = page 17. For each worked target page in that execution context, `STAGED = PASS` and `VISION-INSPECTABLE = PASS`, therefore `VISUAL EVIDENCE READY = PASS` under `methodology/workflow.md`.
 
 Current folio-local first-reading partitions were persisted directly to their canonical owners after independent target-pixel passes:
 
-- `transcription/first-reading/61v.tsv` — commit `e26eaf5fec37b2cc927c033c356a1f514a7c0dc2`;
-- `transcription/first-reading/62r.tsv` — commit `e79d679553d3039c582dc99eabdea368d31a193b`;
-- `transcription/first-reading/62v.tsv` — commit `7c28026426433df90b67c2420bb7f03c990f9a63`;
-- `transcription/first-reading/63r.tsv` — commit `ebb909042813c5886b184522721e6c30e41b73cf`.
+- `transcription/first-reading/61v.tsv` — initial commit `e26eaf5fec37b2cc927c033c356a1f514a7c0dc2`;
+- `transcription/first-reading/62r.tsv` — initial commit `e79d679553d3039c582dc99eabdea368d31a193b`;
+- `transcription/first-reading/62v.tsv` — initial commit `7c28026426433df90b67c2420bb7f03c990f9a63`, later G3 refinement commit `b5644250c813fa756c5c4995b5cc22d965bc6674`;
+- `transcription/first-reading/63r.tsv` — initial commit `ebb909042813c5886b184522721e6c30e41b73cf`.
 
-For each folio, legacy `transcription/132.tsv`–`135.tsv` was consulted only after the independent Reg. Ii 5 target-pixel pass and only as recovery/verification material. Reg. Ii 4 wording was not used as reading authority.
+For each folio, legacy `transcription/132.tsv`–`135.tsv` was consulted only after the independent Reg. Ii 5 target-pixel pass and only as recovery/verification material. Reg. Ii 4 wording was not used as reading authority until the independent Reg. Ii 5 G2/G3 basis was complete and controlled comparison was formally opened.
 
 ## Legacy diplomatic material — verification/recovery only
 
@@ -62,7 +64,7 @@ Consequences:
 - do not delete or silently normalize the old material;
 - do not cite `transcription/132.tsv`–`135.tsv` as proof of a Reg. Ii 5 reading without fresh witness-specific inspection;
 - do not move a legacy reading into Reg. Ii 4 merely because it matches that witness; attribution requires explicit Source/File/locus verification;
-- new diplomatic work starts from the explicitly identified Reg. Ii 5 Source, exact File and locus;
+- current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`;
 - comparison between Reg. Ii 4 and Reg. Ii 5 is witness-to-witness collation, not reuse of a shared transcription.
 
 ## Later exact-source G2 research artifacts — bounded direct authority
@@ -76,9 +78,7 @@ The legacy directory later accumulated four `research/g2-*` artifacts with evide
 
 These artifacts retain scientific authority **only at the level they actually claim**. Direct Reg. Ii 5 physical observations such as source order and recorded cancellations are not downgraded merely because the files live in the legacy directory. Conversely, none validates `transcription/132.tsv`–`135.tsv` row-by-row, resolves old witness attribution, establishes same hand, or promotes an old diplomatic reading into current Reg. Ii 5 truth.
 
-The 2026-09-07 A-R reconciliation removed the former blanket `research/g2-*` quarantine and replaced it with explicit artifact-level classifications. This was a provenance-boundary correction only; no manuscript reading, source relationship or unresolved scholarly question was re-adjudicated.
-
-## Exact-source structural starting fixture for #115
+## Exact-source structural fixture and current G2 representation
 
 Checkpoint A directly validated 81 provisional physical/source-order anchors against the exact Reg. Ii 5 baselines:
 
@@ -87,75 +87,76 @@ Checkpoint A directly validated 81 provisional physical/source-order anchors aga
 - 62v: `L01–L25`;
 - 63r: `L01–L11`.
 
-These anchors may be reused as bounded structural evidence, subject to correction if fresh direct inspection finds a structural error. They are not current diplomatic text by themselves.
+The four folio-local canonical first-reading partitions now represent **all 81 established physical anchors** in source order. The whole-locus review found no missing, doubled or reordered relevant source unit relative to the exact-source structural fixture. Explicitly unresolved readings remain valid representation rather than being completed from grammar, domain expectation or legacy wording.
 
-Established direct source phenomena at this level include:
+The current partitions preserve the consequential visible source phenomena required by the target: the 61v list/accounting region and its unresolved quantity/sign notation; cancellation at `61v-L16`; cancellation at `62r-L18`; written Arabic `80` at `62r-L19` and `62v-L01`; the 63r display heading at `L04` separately from its unresolved reading; and representation of the previously legacy-uncovered visible `63r-L05–L11`. The 63r lower-page show-through is not promoted into a target text stream because no target-text obstruction is established. Hand differentiation remains `not investigated`.
 
-- list/accounting structure on 61v;
-- recurrent visible abbreviation marks;
-- cancellation at `61v-L16`;
-- cancellation at `62r-L18`;
-- Arabic `80` at `62r-L19` and `62v-L01`;
-- no hand differentiation was established: it remained `not investigated`.
-
-Checkpoint B and its Domain Review demonstrate that the legacy representation collapses physical lineation in places, omits explicit cancellation phenomena, uses some coarse/ad-hoc targets and lacks legacy coverage for visible `63r-L05–L11`. Those findings are loss/research fixtures; they do not preselect a universal replacement schema.
-
-### Current diplomatic first-reading partitions and whole-locus G2 review
-
-The four folio-local canonical first-reading partitions now represent **all 81 established physical anchors** in Reg. Ii 5 fol. 61v–63r: 20 lines on 61v, 25 on 62r, 25 on 62v and 11 on 63r. The whole-locus review found no missing, doubled or reordered relevant source unit relative to the exact-source structural fixture. Explicitly unresolved readings remain valid representation rather than being completed from grammar, domain expectation or legacy wording.
-
-The current partitions preserve the consequential visible source phenomena required by the target: the 61v list/accounting region and its unresolved quantity/sign notation; cancellation at `61v-L16`; cancellation at `62r-L18`; written Arabic `80` at `62r-L19` and `62v-L01`; the 63r display heading at `L04` separately from its unresolved reading; and current representation of the previously legacy-uncovered visible `63r-L05–L11`. The 63r lower-page show-through is not promoted into a target text stream because no target-text obstruction is established. Hand differentiation remains `not investigated`.
-
-A direct target-graph recheck on 62r also rejected one fluent legacy carry-over: the opening of `62r-L24` is represented as `So`, not as a second Arabic `80`. This is a witness-specific re-adjudication from the Reg. Ii 5 pixels, not a semantic normalization. On 63r, `agustini`, `pfingsten` and `xlvij Jhars` are retained as written date expressions/sign sequence; no calendar date or absolute year is inferred in the diplomatic layer.
+A direct target-graph recheck on 62r rejected one fluent legacy carry-over: the opening of `62r-L24` is represented as `So`, not as a second Arabic `80`. On 63r, `agustini`, `pfingsten` and `xlvij Jhars` are retained as written date expressions/sign sequence; no calendar date or absolute year is inferred in the diplomatic layer.
 
 The current lean TSV representation carries reading order, line reference, region, source phenomena, research status, alternatives, abbreviation layer, editorial supply and evidence notes without material loss for the findings encountered. The whole-locus semantic-loss check therefore remains **PASS: no Package-B/D-016 representation change is triggered**.
 
-A human-readable whole-locus witness view is now present at `transcription/derived/61v-63r-first-reading.md`. It is explicitly derived/rebuildable from the four folio TSVs by fixed folio order plus `reading_order`; it is not a second canonical text owner and must not be edited to change readings or status.
+A human-readable whole-locus witness view is present at `transcription/derived/61v-63r-first-reading.md`. It is explicitly derived/rebuildable from the four folio TSVs by fixed folio order plus `reading_order`; it is not a second canonical text owner. It was refreshed after the G3 `62v-L11` promotion.
 
 The #95 preflight/post-write regression fixture passed and Issue #95 is closed as `completed`: no range-named canonical transcription file, no README/state duplicate, no overwrite/promotion of legacy 132–135, and no row-wise duplication of stable Source/File/SHA/crosswalk truth was introduced.
 
-## Project-local editorial execution discipline for #115
+## G3 internal palaeographic/notational review
 
-The next work follows existing generic method (`historical-source-workflow.md`, `transcription-guidelines.md`, `research-gates.md`) through a **project-specific source-exact editorial vertical slice**. This is not claimed as a standardized four-stage external model.
+`research/g3-internal-review-61v-63r.md` owns the bounded G3 analytical record; it is not a second transcription owner. The review systematically inventoried consequential uncertainty classes and tested them against admissible Reg. Ii 5 internal evidence without opening Reg. Ii 4 wording.
 
-### 1. Diplomatic source observation / reading
+Key results:
 
-Record the material/source-exact state actually supported by the pixels: physical order, written signs, abbreviations, cancellations/additions/overwriting, relevant layout, damage/unreadability and observable changes in script features.
+- the recurrent surname-like graph sequence is demonstrably recurrent but exact spelling remains unresolved; repetition does not establish historical identity or same hand;
+- the two genuine Arabic `80` forms (`62r-L19`, `62v-L01`) discriminate graphically from lexical `So` at `62r-L24`;
+- 61v accounting signs remain unresolved because current internal evidence does not support a lossless sign→value mapping;
+- deleted text at `61v-L16` and `62r-L18` remains unresolved while the cancellation phenomena remain secure;
+- higher-resolution exact-source reinspection justified one row-level promotion: `62v-L11 = acker / zu seinem steinbruch gemacht`;
+- remaining dense 62v and 62r prose uncertainties were reinspected and explicitly handed forward unresolved where no internal comparator discriminated them;
+- the 63r heading remains `⟦unclear heading: Zulage?⟧`; `agustini`, `pfingsten` and `xlvij` remain manuscript-level wording/sign evidence only;
+- no same-hand comparator group was established; same Source/record was not treated as same-hand proof;
+- no material semantic-loss/System trigger arose.
 
-An observable script-feature change or possible hand change does **not** by itself create a discrete hand identity. A `HAND-X` hypothesis requires separate palaeographic analysis; identification of a hand with a historical person is a still further claim.
+**G3 is reached for fol. 61v–63r at the current internal-evidence level.** This means the internal test paths and residual limits are explicit; it does not mean every difficult sign or word is solved.
 
-### 2. Text-near editorial development
+## G4 controlled Reg. Ii 4 comparison
 
-Where present, keep manuscript name/place forms, titles/offices/functions, date formulations, addressing, explicit relationships/statements and textual structure locus-bound. The manuscript form is an editorial finding and must not be replaced by a normalized identity.
+After the independent Reg. Ii 5 G2/G3 basis was complete, Reg. Ii 4 was opened for controlled comparison using its independently established G2/G3 diplomatic state. Pairwise comparison truth remains owned in the pre-existing canonical cross-witness record:
 
-### 3. Identification, contextual role, dating and text-critical claims
+`projects/ega-reg-ii-4-bd-ii/research/knau-fol306v-309r-controlled-collation.md`
 
-Each requires its own evidence and status. In particular:
+The 2026-09-08 revalidation deliberately reused that owner rather than creating a second collation file under this Project.
 
-- diplomatic reading confidence does not determine identification confidence;
-- identification does not determine contextual role;
-- contextual/event association does not determine scribe/hand;
-- a date is always a claim about a specified target/context (archival unit, event, textual date, production/excerpt stage, etc.);
-- similar/corresponding text does not transfer a date from one witness/context to another;
-- textual correspondence/variant/omission/condensation/resegmentation across witnesses is permitted only after the relevant witnesses have been independently established and loci controlled.
+Current mapping confirms:
 
-### 4. Historical interpretation stays downstream
+- selective/condensed textual correspondence with a substantial shared decree sequence;
+- substantial Reg. Ii 4 Lehnherr/church-account/inventory and decree material absent as separate units from Reg. Ii 5;
+- different physical segmentation/resegmentation across shared units;
+- agreement/variant/numeral and source-phenomenon differences without cross-witness copying of unresolved diplomatic text;
+- no basis for same-hand, same-date, direct-copy or priority claims from similarity alone.
 
-Visitational organization, administrative process, social/economic interpretation and causal production/redaction history are not silently presented as direct manuscript observations. They may be developed later from the established editoric/source-critical evidence.
+The revalidation also corrects the historical #99 lower-boundary description. Reg. Ii 5 `63r-L04` is **not** a demonstrated next-place heading: it is the unresolved display heading `⟦unclear heading: Zulage?⟧`, followed by Knawe/pfarrer text through `63r-L11`. The shared short closing decree is narrowed to Reg. Ii 4 `308v-23`–`308v-25` ↔ Reg. Ii 5 `63r-L01`–`63r-L03`. Reg. Ii 4 `309r-01`–`309r-05` and Reg. Ii 5 `63r-L04`–`63r-L11` are treated as divergent ending material with no secure current correspondence.
 
-## Witness independence and admissible comparison
+Externally tempting completions were not imported: Reg. Ii 4 `Greffendorff` does not settle the Reg. Ii 5 surname spelling; Reg. Ii 4 parallel wording does not complete the dense 62v spans, cancellations, accounting signs or date interpretation. No comparison-driven Reg. Ii 5 row change was justified beyond the already logged internal G3 promotion.
 
-**Reg. Ii 5 is not folio-isolated.** Exact, source-bound same-witness comparanda elsewhere in Reg. Ii 5 may be used for graphematic/palaeographic testing after the target problem is observed. Same Source/record still does not prove same hand.
+**G4 is reached for the bounded pair Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r.**
 
-**Reg. Ii 4 wording is excluded as reading authority during the independent Reg. Ii 5 basis.** The already completed Reg. Ii 4↔Reg. Ii 5 controlled-collation work remains valid historical research evidence but may not pre-supply the new Reg. Ii 5 wording or be treated as a current G4 gate for this Project.
+## Project-local editorial execution discipline
 
-After the independent Reg. Ii 5 basis is sufficiently established and the current G3 internal review has been documented, a controlled external comparison may open. Any externally prompted Reg. Ii 5 correction still requires direct Reg. Ii 5 reinspection and target-graph evidence.
+The completed #115 work followed existing generic method (`historical-source-workflow.md`, `transcription-guidelines.md`, `research-gates.md`) through a project-specific source-exact editorial vertical slice.
+
+Keep these distinctions for any future reuse:
+
+- source observation / diplomatic reading ≠ identification;
+- identification ≠ contextual role;
+- contextual/event association ≠ scribe/hand;
+- written date expression/sign sequence ≠ normalized calendar date or production date;
+- textual correspondence ≠ same hand, direct copy, same date or priority;
+- historical interpretation remains downstream of the established source-critical evidence.
 
 ## Source-driven Semantic-Loss / Package-B rule
 
 Person/role/date and related Package-B work is **not a standalone architecture programme**.
 
-Use this loop:
+Use this loop if future source work exposes a real loss:
 
 ```text
 source inspection
@@ -169,8 +170,6 @@ source inspection
 → return immediately to the source
 ```
 
-The currently demonstrated flat `corpus/sources.tsv:persons` / role-note problem is real, but it is not repaired by merely adding/removing names from a flat list. Any role/person/date structural change must be driven by the concrete editoric claims that need preservation, while keeping person identity, text mention, contextual role and hand/scribe hypothesis distinct.
-
 No universal agent/role/date/hand/locus ontology is authorized by #115.
 
 ## Historical work-state audit
@@ -179,7 +178,7 @@ The earliest repository Project metadata (`251ce9ed39e04bb852e0232dbcce21c68bd4c
 
 Snapshot `699fa6eada61db483dfca950193412715d9603a5` preserves the later source-unit state. Git history remains an audit/recovery source, not current scientific authority.
 
-The former compatibility register `sources/sources.tsv` was loss-checked and removed. Its historical research functions remain in `source-uses.tsv`; the Reg. Ii 5 fol. 61v–63r principal function is now explicitly reactivated for #115 while the other preserved comparison/control/context uses remain historical. Exact File bindings remain in `research/use-evidence.tsv` with the same current/historical distinction.
+The former compatibility register `sources/sources.tsv` was loss-checked and removed. Completed Project-relative uses are preserved as `historical` in `source-uses.tsv`; exact File bindings remain in `research/use-evidence.tsv` with the same completed/historical distinction.
 
 ## Digital addressing / provenance
 
@@ -195,56 +194,57 @@ For the separate Reg. Ii 4 Bd. II Ziegenrück Source, its own File, crosswalk, p
 
 ## Current research state / edition lifecycle
 
-A current canonical witness-specific first-reading representation now covers **all 81 physical anchors of Reg. Ii 5 fol. 61v–63r** in four folio-local partitions. The gate-evaluated scope is this bounded locus only. No gate claim here applies automatically to the whole Ziegenrück Source fol. 55v–66v or the whole Reg. Ii 5 act.
+The gate-evaluated textual scope below is **Reg. Ii 5 fol. 61v–63r only**, with G4 comparison against the bounded Reg. Ii 4 Knau locus. No gate claim here applies automatically to the whole Ziegenrück Source fol. 55v–66v or the whole Reg. Ii 5 act.
 
 | Gate / activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
-| G1 source/transmission basis | `reached` | active #115 Knau source group/locus | Principal Reg. Ii 5 Source/File/SHA/crosswalk and separate relevant comparison/context Sources are identified with explicit evidence/provenance limits. |
-| #115 source-exact editorial work package | `active` | Reg. Ii 5 fol. 61v–63r | WP-0 through WP-4 and the G2-quality whole-locus representation review are complete; later internal/comparison/consolidation work remains. Issue completion is not implied. |
-| G2 diplomatic representation | `reached` | Reg. Ii 5 fol. 61v–63r | All 81 relevant physical anchors are represented in source order with folio/line address, layout region, uncertainty/illegibility, source phenomena, cancellation/numeral handling, abbreviation/supply separation and research status. A derived readable witness view exists. Unresolved readings remain permitted residual uncertainty. |
-| G3 internal analysis | `active / not reached` | same locus | Some same-witness tests already exist (recurrent surname-like graph sequence; genuine `80` versus `So`; bounded notation checks), but consequential unresolved loci have not yet been systematically inventoried and tested by evidence class. |
-| G4 controlled comparison | `not reached` | Reg. Ii 5 ↔ Reg. Ii 4 Knau loci | Reg. Ii 4 wording remains closed until the independent Reg. Ii 5 internal basis has been systematically reviewed and controlled-comparison release is documented. Historical #99 evidence is not a substitute for current G4 progression. |
-| G5 critical consolidation/validation | `not reached` | bounded Knau edition target | No critically consolidated/validated current Reg. Ii 5 text state exists. |
-| G6 scholarly edition | `not reached` | bounded Knau edition target | No scholarly edition has been produced. #115 remains an Editionsbaustein. |
+| G1 source/transmission basis | `reached` | completed #115 source group/locus | Principal Reg. Ii 5 Source/File/SHA/crosswalk and separate comparison/context Sources are identified with explicit evidence/provenance limits. |
+| #115 source-exact editorial work package | `complete` | Reg. Ii 5 fol. 61v–63r | WP-0–WP-6 and the acceptance checks were carried through. Work-package completion is not a G5/G6 claim. |
+| G2 diplomatic representation | `reached` | Reg. Ii 5 fol. 61v–63r | All 81 relevant physical anchors are represented in source order with uncertainty and source phenomena preserved; a derived readable view exists. |
+| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in the same locus | Consequential uncertainty classes were systematically inventoried/tested; justified promotion was persisted; residual non-discriminating loci are explicitly handed forward unresolved. |
+| G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Both witnesses are independently represented/reviewed; corresponding units, variants, omissions, resegmentation and divergent lower ending are explicitly mapped without cross-witness rewriting. |
+| G5 critical consolidation/validation | `not reached` | bounded Knau edition target | No owner-selected G5 task or critically consolidated/validated text state is claimed. Residual specialist/editorial validation remains possible but is not automatically authorized by G4 attainment. |
+| G6 scholarly edition | `not reached` | bounded Knau edition target | No scholarly edition has been produced. #115 produced an Editionsbaustein only. |
 
-The old diplomatic transcription/apparatus/palaeography remains a verification/recovery fixture with unresolved or potentially mixed witness attribution. Separately, the explicitly classified `research/g2-*` artifacts remain usable according to their own bounded evidence roles. G2 is reached now because the current witness-specific four-folio representation and whole-locus review satisfy the current gate requirements for the stated locus, not because historical files were labelled `g2-*`.
-
-Any new diplomatic result or correction must remain established against the explicitly targeted Source/File/locus. Completion of G2 does not imply G3 analysis, G4 collation, a G5 consolidated text or a finished edition.
+Reading resolution remains incomplete in places and this is compatible with G2–G4. Residual uncertainty includes the Reg. Ii 5 surname-like spelling, 61v accounting values/signs, deleted text at two cancellations, several 62r/62v prose spans, exact 63r heading spelling, date normalization/interpretation, and hand differentiation.
 
 ## NEXT ACTION — canonical restart point
 
-**WP-0–WP-4 and the WP-5 G2-quality whole-locus representation review are complete. G2 is reached for Reg. Ii 5 fol. 61v–63r. The next bounded source-research action is the systematic G3 internal palaeographic/notational review of consequential unresolved loci.**
+**No owner-selected next scholarly action is currently authorized after completion of #115.**
 
-1. In any fresh execution context, re-establish `STAGED` + `VISION-INSPECTABLE` for the exact Reg. Ii 5 page(s) before pixel-dependent reinspection; prior-context readiness is not inherited.
-2. Inventory consequential unresolved/variant loci from the four current `transcription/first-reading/*.tsv` partitions by evidence class rather than attempting to solve every marked uncertainty indiscriminately.
-3. Localize grapheme/sign sequences before lexical completion. Use exact Reg. Ii 5 same-witness comparanda only where evidentially relevant; same Source/record still does not prove same hand.
-4. Test the recurrent surname-like graph sequence across its current Reg. Ii 5 loci without forcing an exact spelling or historical identity if the graphs do not discriminate.
-5. Test consequential numeral/measure/accounting signs, including the 61v list notation and the established contrast between genuine Arabic `80` (`62r-L19`, `62v-L01`) and `So` at `62r-L24`; keep written sign, expansion and interpretation separate.
-6. Test the unresolved 63r heading and date/sign sequence only against admissible internal evidence. Preserve `agustini`, `pfingsten`, `xlvij` and any unresolved heading form as manuscript-level evidence unless a stronger reading is graphically demonstrated; do not infer calendar dates, year, role or document stage from wording alone.
-7. Persist any justified reading/status/evidence changes directly in the affected folio TSV rows with traceable evidence notes. Do not create a parallel uncertainty/transcription truth merely to conduct G3.
-8. If internal evidence does not discriminate, retain the uncertainty explicitly. If a real finding cannot be represented without material semantic loss, route only that bounded loss through the existing minimal D-016 path; otherwise do not add schema/infrastructure.
-9. Only after the independent Reg. Ii 5 internal basis is systematically documented may WP-6 open Reg. Ii 4 for controlled witness-to-witness comparison. Any externally prompted correction must return to the Reg. Ii 5 target pixels.
+Do not infer automatic progression to G5/G6, source-wide transcription, historical interpretation, ontology work or software work from the fact that G1–G4 are reached for this bounded target. The next action requires human-owner selection of a new research target.
 
-Issue #115 owns the work checklist. This STATUS owns the current scholarly/restart state and formal G1–G6 gate claims.
+If a future owner-selected task returns to this Editionsbaustein:
+
+1. reconstruct the current text from the four folio-local `transcription/first-reading/*.tsv` owners and the derived view;
+2. use `research/g3-internal-review-61v-63r.md` for the internal-test audit and the existing Reg. Ii 4 controlled-collation record for G4 mappings;
+3. re-establish `STAGED` + `VISION-INSPECTABLE` before any new pixel-dependent Reg. Ii 5 reinspection;
+4. preserve residual uncertainties unless new evidence discriminates them;
+5. any externally prompted diplomatic correction must return to the relevant target witness graph;
+6. any new G5/G6 claim must satisfy the generic gate requirements and receive explicit owner-selected scope rather than being inferred from #115 completion.
+
+Issue #115 owns the completed work checklist/history. This STATUS owns the current scholarly/restart state and formal G1–G6 claims.
 
 ## Restartability
 
 A fresh capable context must be able to reconstruct without old chat that:
 
-- Reg. Ii 5 is an archival-act Project anchor and #115 is the current bounded source-research task;
-- the active target is the separate Reg. Ii 5 Ziegenrück Source at fol. 61v–63r / images 132–135 / PDF pages 14–17;
+- Reg. Ii 5 remains an archival-act Project anchor, but no owner-selected active scholarly scope exists after #115 completion;
+- the completed Editionsbaustein target was the separate Reg. Ii 5 Ziegenrück Source at fol. 61v–63r / images 132–135 / PDF pages 14–17;
 - exact File/SHA/crosswalk identity is established for `FILE-REG-II-5-00000129-EXCERPT`;
-- in the 2026-09-08 research session the exact PDF SHA was re-established and each target page 14–17 was rendered/vision-inspected before its pixel-dependent first-reading work;
-- current canonical diplomatic observations are partitioned folio-locally in `transcription/first-reading/61v.tsv`, `62r.tsv`, `62v.tsv`, `63r.tsv`; together they represent all 81 established physical anchors;
-- `transcription/derived/61v-63r-first-reading.md` is a derived/rebuildable human-readable view only, not a second text owner;
-- legacy `transcription/132.tsv`–`135.tsv`, apparatus and witness-dependent legacy palaeography remain verification/recovery evidence; they were consulted only after independent target-pixel passes and are not current Reg. Ii 5 text truth;
-- the whole-locus review found no missing/doubled/reordered relevant source unit and preserved the consequential visible phenomena, including cancellations `61v-L16` and `62r-L18`, Arabic `80` at `62r-L19` and `62v-L01`, and the unresolved 63r heading; hand differentiation remains `not investigated`;
-- `62r-L24` is currently read from the Reg. Ii 5 target graph as `So ...`, explicitly rejecting the legacy claim of a second `80` there;
-- manuscript date expressions on 63r are not normalized into calendar/date-production claims;
-- no material semantic-loss/System trigger arose from WP-0–WP-5 G2 representation work; the existing lean representation remains adequate;
-- #95's first-write/post-write ownership fixture passed and Issue #95 is closed `completed`; no artifact ontology/manifest/system was introduced;
-- Reg. Ii 4 Bd. II and Reg. Ii 5 are separate Ziegenrück witnesses; Reg. Ii 4 wording remains excluded from current reading authority until controlled G4 release;
-- same-witness Reg. Ii 5 internal comparanda are admissible, while same record does not establish same hand;
-- reading, identification, contextual role, hand hypothesis and dating claims retain separate evidence/status and do not inherit certainty from one another;
-- the current lifecycle for **Reg. Ii 5 fol. 61v–63r only** is **G1 reached / G2 reached / G3 active-not reached / G4–G6 not reached**; #115 remains active and the result is an Editionsbaustein, not a finished edition;
-- the immediate cursor is **systematically inventory and test consequential unresolved loci against admissible Reg. Ii 5 internal evidence → persist only justified row-level changes → retain unresolved where evidence does not discriminate → then assess controlled Reg. Ii 4 release**, not renewed provenance work or an abstract schema/migration programme.
+- in the 2026-09-08 source session each target page 14–17 was staged/rendered/vision-inspected before its first-reading work;
+- canonical diplomatic observations are owned by `transcription/first-reading/61v.tsv`, `62r.tsv`, `62v.tsv`, `63r.tsv`; together they represent all 81 established physical anchors;
+- `transcription/derived/61v-63r-first-reading.md` is derived/rebuildable only, not a second text owner;
+- legacy `transcription/132.tsv`–`135.tsv`, apparatus and witness-dependent legacy palaeography remain verification/recovery evidence, not current Reg. Ii 5 text truth;
+- the whole-locus review found no missing/doubled/reordered relevant source unit and preserved cancellations `61v-L16`/`62r-L18`, Arabic `80` at `62r-L19`/`62v-L01`, and the unresolved 63r heading;
+- `62r-L24` is `So ...`, not a second `80`;
+- G3 systematically tested consequential internal uncertainties; `62v-L11 = acker / zu seinem steinbruch gemacht` is the current justified G3 promotion, while many other loci remain explicitly unresolved;
+- hand differentiation remains `not investigated`; recurrence never became same-hand proof;
+- controlled Reg. Ii 4 comparison was opened only after the independent Reg. Ii 5 G2/G3 basis; pairwise mappings are owned by `projects/ega-reg-ii-4-bd-ii/research/knau-fol306v-309r-controlled-collation.md`;
+- the historical #99 lower-boundary claim was corrected: Reg. Ii 5 `63r-L04` is not a next-place heading; Reg. Ii 5 `63r-L04`–`L11` has no secure current counterpart in Reg. Ii 4 `309r-01`–`309r-05`;
+- textual correspondence remains selective/condensed with omissions/resegmentation and does not prove direct copy, same hand, date or priority;
+- no material semantic-loss/System trigger arose; no artifact ontology/manifest/system was introduced;
+- completed Project-relative Source/File uses are now historical; no current priority is inferred from them;
+- the current lifecycle for the bounded target is **G1 reached / G2 reached / G3 reached at current internal evidence / G4 reached / G5 not reached / G6 not reached**;
+- #115 is a completed **Editionsbaustein**, not a finished edition;
+- the immediate cursor is **none until a human owner selects a new scholarly target**.
