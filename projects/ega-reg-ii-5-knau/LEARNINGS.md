@@ -10,6 +10,8 @@ Observed failure: early readings such as `welch` versus later `wolff`, and other
 
 Corrective practice: prefer local grapheme comparison and repeated same-hand forms. Do not promote a word because its silhouette and syntax look plausible.
 
+**Current qualification (2026-09-08):** Repeated forms are admissible comparanda only when they are exactly localized and graphically relevant to the target question. Occurrence in the same Source, record or textual environment is not same-hand evidence. Treat a comparison as same-hand evidence only after hand identity has been independently established.
+
 Generalizable: yes; reflected in `methodology/quality-and-learning.md`.
 
 ## L002 — semantic coherence is dangerous during first transcription
@@ -34,7 +36,9 @@ Observed issue: itemized income/measure passages were substantially harder than 
 
 Corrective practice: collect numerals, currency and measure signs across pages before interpreting individual tokens.
 
-Generalizable: likely; currently implemented as a project workflow and palaeography table.
+**Current qualification (2026-09-08):** The underlying need for graphical/notational comparison remains valid, but the current method is target-problem-driven rather than concordance-driven. Localize a consequential unresolved sign or graph first, formulate the discriminating question, and only then seek exactly located relevant comparanda. Do not build or extend a concordance merely because similar forms exist. `palaeography/*` is not a current witness-reading owner; legacy entries retain only the authority assigned in `research/legacy-witness-provenance.tsv`.
+
+Generalizable: likely; the historical artifact-first implementation is retained here as a lesson, not as the current workflow.
 
 ## L005 — metadata was overstated as source content
 
@@ -165,3 +169,11 @@ Because the already accumulated Knau text could contain direct readings, later r
 Corrective practice: establish target witness identity and exact Source/File/locus provenance before promoting diplomatic readings. Textual similarity, project path, export-image label or a previous synthesized transcription must never be used to infer witness provenance. Preserve legacy readings and uncertainty as recovery/checking evidence, but re-establish any reading that is to regain scientific witness authority directly against the target Source/File/locus.
 
 Generalizable: yes. **Textual identity or correspondence is not witness provenance.**
+
+## L020 — legacy artifact topology can reactivate a superseded method
+
+Observed risk: even after the scientific authority of old material was narrowed, directory names and historical learning language such as `palaeography/`, `lexicon.tsv`, `numerals.tsv`, `apparatus/`, “same-hand forms” and “concordance” can still make an earlier artifact-first workflow look like the current research architecture. A capable fresh context can therefore be pulled back toward building or extending repertories even though current method requires a concrete target problem first.
+
+Corrective practice: retain historical/recovery artifacts, but make their current epistemic role visible at the directory entry point and qualify superseded recommendations in place rather than rewriting the historical record. Path, filename or historical usefulness does not confer current-owner authority. New comparison work starts from a localized unresolved target and exact evidence question; auxiliary structures are created only on demonstrated semantic-loss or recurring-use need.
+
+Generalizable: yes as a restartability/maintenance failure pattern; the present repair remains Project-local because generic canonical-ownership and restartability rules already exist.
