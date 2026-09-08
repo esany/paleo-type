@@ -67,7 +67,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `62v-L08` Das wolff von ⟦unclear: grevendorff?⟧ dem pfarrer /
 - `62v-L09` ⟦unclear⟧ zu Knawe / mit einem ⟦unclear⟧
 - `62v-L10` ⟦unclear⟧
-- `62v-L11` acker / zu seinem ⟦unclear: steinbruch?⟧ gemacht
+- `62v-L11` acker / zu seinem steinbruch gemacht
 - `62v-L12` ⟦unclear⟧ soll der pfarrer wider /
 - `62v-L13` ⟦unclear⟧
 - `62v-L14` ⟦unclear⟧
