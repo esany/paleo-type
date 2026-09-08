@@ -155,3 +155,13 @@ The real 61v–63r G2 work demonstrates that physical Line is necessary for this
 Corrective practice: require unambiguous recoverable targets at the granularity justified by the source/claim, while letting different source types use different physical/logical structures.
 
 Generalizable: yes.
+
+## L019 — text identity was stabilized before witness identity
+
+Observed failure: the earliest Knau working transcription was persisted from an accumulated chat/reading state before every diplomatic reading had exact Source/File/locus witness provenance. The initial benchmark stabilized working images `132–135` as one Knau text and only afterwards reconstructed their archival source identity. A historical intermediate correction even attached that working text to the wrong Reg.-Ii.-5 provider record `stat_visitation_00000128`; Reg. Ii 4 Bd. II was then localized independently as a separate parallel witness.
+
+Because the already accumulated Knau text could contain direct readings, later re-readings and comparison-witness knowledge from different work phases, neither the legacy project path nor `page_id` values `132–135` can establish witness attribution for an individual diplomatic reading. `Potentially mixed` therefore describes unresolved reading provenance, not a claim that every legacy row literally combines both witnesses.
+
+Corrective practice: establish target witness identity and exact Source/File/locus provenance before promoting diplomatic readings. Textual similarity, project path, export-image label or a previous synthesized transcription must never be used to infer witness provenance. Preserve legacy readings and uncertainty as recovery/checking evidence, but re-establish any reading that is to regain scientific witness authority directly against the target Source/File/locus.
+
+Generalizable: yes. **Textual identity or correspondence is not witness provenance.**
