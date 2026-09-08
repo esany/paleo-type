@@ -47,6 +47,21 @@ Diplomatic manuscript form must not be rewritten by later normalization, histori
 
 Follow `methodology/transcription-guidelines.md` for reading status, source phenomena, uncertainty, abbreviation/expansion and physical-line representation.
 
+### Preserve semantic context across domains and translations
+
+A consequential term means what its **owning scholarly/technical context or contract** defines; lexical identity, familiar wording or a plausible translation does not establish semantic equivalence.
+
+Do not silently collapse terms that happen to look alike across archival science, diplomatics, palaeography, philology, scholarly editing, historical interpretation, research-data/software engineering, GitHub/API/CI contexts or ordinary human language. In particular:
+
+- a technical field/token asserts only the semantics defined by its contract; schema validity, a resolver result or CI `PASS` does not create a scholarly claim;
+- human wording is not automatically normalized into a technical status, controlled value or specialist term;
+- a specialist term from one domain is not automatically reused with another domain's meaning;
+- German↔English, technical↔scholarly, domain↔domain and expert↔ordinary-language translations must preserve the original claim type, target/scope, evidence/authority level and uncertainty; translation must not silently add precision, certainty or causal meaning;
+- when a one-to-one translation is unsafe, qualify the term by context (for example `Textzeuge` versus historical/legal witness, Project `research_function` versus historical role, technical `owner` versus Human Owner) and preserve the original contract term where machine-facing precision matters;
+- lexical similarity is never by itself a mapping rule. If the target vocabulary cannot carry the source meaning losslessly, preserve the distinction or mark the mapping unresolved rather than forcing equivalence.
+
+This is a boundary discipline, not a global glossary or universal ontology. The relevant domain/contract owner remains authoritative for local meaning. Follow the semantic-boundary execution check in `methodology/workflow.md` and the durable cross-project decision D-019 in `DECISIONS.md`.
+
 ### Uncertainty is a valid result
 
 Preserve competing readings, rejected consequential readings and unresolved evidence. Do not optimize for fluent completion.
