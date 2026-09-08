@@ -49,6 +49,48 @@ These are required meanings, not a mandatory serialization/template. Assurance i
 
 Stable Project/Source/File facts should be resolved/derived from their canonical owners rather than recopied into handoffs.
 
+## Semantic-boundary and translation check
+
+Whenever a **consequential meaning crosses a boundary** — scholarly domain → scholarly domain, Domain → Dev/RSE, Dev/RSE → Domain, machine field/token → human explanation, human language → structured value, or German ↔ English — perform a meaning-preservation check before treating the expressions as equivalent.
+
+Resolve, as applicable:
+
+```text
+SOURCE SEMANTIC OWNER / CONTRACT
+SOURCE TERM + CLAIM TYPE
+TARGET / OBJECT / SCOPE
+EVIDENCE / AUTHORITY / REVIEW LEVEL
+UNCERTAINTY / STATUS
+
+TARGET SEMANTIC OWNER / CONSUMER
+PROPOSED TARGET TERM / FIELD / EXPLANATION
+LOSS / GAIN / AMBIGUITY CHECK
+```
+
+Rules:
+
+1. **Lexical equality is not a mapping rule.** The same word may denote different things in archival, diplomatic, palaeographic, philological, editorial, historical, workflow, GitHub/API or software contexts.
+2. **Contract semantics are local.** A machine-facing field/token means only what its owning contract defines. Technical validity or `PASS` cannot silently acquire scholarly meaning.
+3. **Human wording is not a status code.** Ordinary language may express a broader or vaguer judgement; do not silently normalize it into a gate, confidence value, controlled vocabulary or specialist claim.
+4. **Translation may simplify wording, not epistemic content.** Preserve claim type, target/scope, evidence/authority level, uncertainty and relevant residual limits. Do not add certainty, precision, identity, chronology, causality or disciplinary interpretation during translation.
+5. **Qualify polysemy instead of globalizing it.** Prefer contextual forms such as `Textzeuge` / historical witness, Project `research_function` / historical role, technical owner / Human Owner, or `G2 representation completeness` / reading resolution where ambiguity matters.
+6. **Keep machine precision where required.** In human-facing explanation, retain the exact contract token alongside the explanation when translation alone could blur an operative distinction.
+7. **No forced mapping.** If the target vocabulary cannot carry the source meaning without loss or gain, preserve the original distinction and mark the mapping/explanation as partial or unresolved.
+8. **Automate only stable semantics.** Deterministic vocabulary or mapping checks are appropriate only after the relevant meanings are stable and formally owned; open scholarly semantics remain a domain judgement.
+
+Examples of forbidden implicit conversions:
+
+```text
+technical / CI PASS       ≠ scholarly validation
+G2 PASS                   ≠ every reading resolved / transcription "finished"
+Project research_function principal ≠ historical principal actor/role
+canonical Source node     ≠ any generic citation/information source
+textual witness           ≠ historical/legal witness
+same wording              ≠ same identity / date / hand / production stage
+```
+
+This check does not create a universal glossary, translation registry or ontology. `AGENTS.md` owns the universal guardrail; D-019 records the durable cross-project decision. The owning scholarly/technical contract remains authoritative for each local meaning.
+
 ## Current-work-target authority
 
 At task start and whenever `NEXT ACTION` changes, verify that the current executable target is traceable to the canonical Project purpose/scope or another explicit authority source.
@@ -180,6 +222,8 @@ SCOPE / NON-GOALS
 DOMAIN ACCEPTANCE / RETURN QUESTION
 ```
 
+Before Dev treats a domain phrase as a field, enum, status, entity, relation or acceptance token, apply the semantic-boundary check above. A technically convenient name is not authority to collapse distinct domain meanings.
+
 The domain side does not prescribe connector architecture, retry logic, state-machine design, storage/platform selection or other implementation mechanics unless already governed by the admitted requirement.
 
 The Dev/RSE side then owns:
@@ -197,6 +241,8 @@ REHYDRATE canonical state
 ```
 
 Dev does not re-adjudicate manuscript readings, scholarly classification, research purpose or other owner-reserved semantics. Technical `PASS` is not scholarly acceptance.
+
+When Dev returns a result, translate technical outcomes back into the owning domain's language without upgrading them: state exactly which deterministic property passed/failed, what scholarly meaning remains untested and what domain review is still required.
 
 ## Consequential technical Issue contract
 
@@ -297,6 +343,7 @@ A fresh capable context passes the workflow/restart test when it can answer with
 - where the execution cursor/completion boundary lies;
 - what is explicitly out of scope;
 - what changed since the prior state;
-- who receives the result and under what return condition.
+- who receives the result and under what return condition;
+- for any consequential cross-domain/technical/human wording, what semantic owner defines it and whether the translation preserved scope, status and uncertainty.
 
-If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, or inferring priority from structural/support state, the execution surface is not restartable.
+If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, inferring priority from structural/support state, or relying on an unstated semantic conversion between domains, the execution surface is not restartable.
