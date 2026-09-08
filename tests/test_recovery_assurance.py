@@ -135,7 +135,8 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("08c08bd6f90635210fbeff3f2d19cd0a485cc0b9", li5)
         self.assertIn("699fa6eada61db483dfca950193412715d9603a5", li5)
         self.assertIn("#115 is the current bounded source-research task", li5)
-        self.assertIn("WP-0 → fol. 61v", li5)
+        self.assertIn("WP-0 evidence-identity/crosswalk and artifact-ownership preflight were executed successfully", li5)
+        self.assertIn("stage/supply exact 61v/image 132 pixels", li5)
 
         self.assertIn("source-unit", projects_readme.lower())
         self.assertIn("STATUS", projects_readme)
