@@ -37,7 +37,7 @@ The exact active File binding is:
 
 The previous Knau-era principal use and File relation remain recoverable through Git/migration history. Reactivation does not retroactively validate any legacy diplomatic line.
 
-**Evidence identity is not current target-context readiness.** At execution time the source-work context must still establish `STAGED` and `VISION-INSPECTABLE` for the required Reg. Ii 5 pixels under `methodology/workflow.md` before making new pixel-dependent readings.
+**Evidence identity is not current target-context readiness.** WP-0 was executed on 2026-09-08 against current repository state: Source/File/SHA/crosswalk identity passed, and the artifact-ownership preflight passed at the pre-mutation decision level. In that checked execution context, however, target pixels were **NOT READY**: the reserved repository path did not contain the PDF, and no source-identical Reg. Ii 5 PDF/image 132 was staged locally. This is an execution-context access blocker, not a Source-identity failure. No new pixel-dependent reading may be made until `STAGED` and `VISION-INSPECTABLE` are established under `methodology/workflow.md`.
 
 ## Legacy diplomatic material — verification/recovery only
 
@@ -190,12 +190,12 @@ Any new diplomatic result must be established against the explicitly targeted So
 
 ## NEXT ACTION — canonical restart point
 
-**Execute #115: begin with WP-0 and then fol. 61v.**
+**WP-0 is executed. The current blocker is target-context pixel access, not Source/File identity or artifact ownership.**
 
-1. Rehydrate Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, File `FILE-REG-II-5-00000129-EXCERPT`, fol. 61v / image 132 / PDF page 14 and the canonical crosswalk.
-2. Verify current target-context `STAGED` + `VISION-INSPECTABLE` pixel readiness.
-3. Before creating any new canonical transcription artifact, perform artifact-ownership preflight. Do not overwrite or silently promote legacy `transcription/132.tsv`–`135.tsv`.
-4. Reinspect and independently read `61v-L01–L20` from Reg. Ii 5 itself, preserving source phenomena and uncertainty.
+1. Stage/supply the exact canonical Reg. Ii 5 export or source-identical fol. 61v / image 132 pixels in the active execution context.
+2. Verify the staged evidence against Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, File `FILE-REG-II-5-00000129-EXCERPT`, the canonical SHA/crosswalk and fol. 61v = image 132 = PDF page 14; establish `STAGED` + `VISION-INSPECTABLE`.
+3. Reinspect and independently read `61v-L01–L20` from Reg. Ii 5 itself, preserving source phenomena and uncertainty, and persist the first current diplomatic partition as `transcription/first-reading/61v.tsv`. Do not overwrite or silently promote legacy `transcription/132.tsv`–`135.tsv`.
+4. After that first actual `61v.tsv` write, run the pending #95 post-write duplicate-owner falsification check; if the ownership decision behaves as expected, #95 can be narrowed/closed rather than expanded into generic artifact machinery.
 5. Add text-near names/titles/functions/date expressions only where actually present and keep identifications/roles/dating claims separate with their own evidence/status.
 6. Use exact Reg. Ii 5 internal comparanda where useful; keep Reg. Ii 4 wording closed until the independent Reg. Ii 5 basis reaches controlled-comparison release.
 7. If a real editoric finding cannot be represented without semantic loss, stop only that affected persistence step, define the smallest missing information requirement and route a bounded change; otherwise continue reading.
@@ -208,7 +208,9 @@ A fresh capable context must be able to reconstruct without old chat that:
 
 - Reg. Ii 5 is an archival-act Project anchor and #115 is the current bounded source-research task;
 - the active target is the separate Reg. Ii 5 Ziegenrück Source at fol. 61v–63r / images 132–135;
-- exact File/SHA/crosswalk identity is established, while current pixel staging/inspectability must still be checked in the execution context;
+- exact File/SHA/crosswalk identity is established;
+- WP-0 evidence-identity/crosswalk and artifact-ownership preflight were executed successfully on 2026-09-08; the first real `61v.tsv` post-write duplicate-owner check for #95 is still pending;
+- the latest checked execution context did **not** have the required Reg. Ii 5 pixels staged/vision-inspectable, so a fresh context must stage/supply and verify the exact evidence before any new reading rather than repeating provenance/ownership analysis;
 - Reg. Ii 4 Bd. II and Reg. Ii 5 contain separate Ziegenrück witnesses and must remain independently read;
 - legacy `transcription/132.tsv`–`135.tsv`, apparatus and witness-dependent legacy palaeography are verification/recovery evidence, not current Reg. Ii 5 transcription truth;
 - the exact-source `g2-*` artifacts retain only their stated provenance/physical-observation/loss-analysis authority and do not constitute a current G2 PASS;
@@ -217,4 +219,4 @@ A fresh capable context must be able to reconstruct without old chat that:
 - reading, identification, contextual role, hand hypothesis and dating claims retain separate evidence/status and do not inherit certainty from one another;
 - Package B is triggered only by demonstrated editoric semantic loss and must return immediately to source work after the smallest adequate repair;
 - the current lifecycle is **G1 reached / G2 active-not reached / G3–G6 not reached** for fol. 61v–63r, with #115 as the active work package rather than a gate claim;
-- the immediate cursor is WP-0 → fol. 61v, not an abstract schema/migration programme.
+- the immediate cursor is **stage/supply exact 61v/image 132 pixels → verify identity/readiness → independently read 61v-L01–L20 → persist `first-reading/61v.tsv` → run #95 post-write duplicate-owner check**, not WP-0 repetition or an abstract schema/migration programme.
