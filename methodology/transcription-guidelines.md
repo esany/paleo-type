@@ -136,7 +136,7 @@ Avoid pseudo-precision percentages. Use evidence-bearing statuses and explain re
 
 Normalization, person/place identification and historical interpretation belong outside the diplomatic transcription. A normalized historical identity must never overwrite a manuscript reading.
 
-`Outside the diplomatic transcription` is an **epistemic-layer rule, not a mandatory chronological deferral**. Text-near annotation and editorical identification/contextualization may grow in the same source-work pass when they are persisted as separate claims/layers with their own evidence and status. They do not become diplomatic text merely because they are investigated concurrently.
+`Outside the diplomatic transcription` is an **epistemic-layer rule, not a mandatory chronological deferral**. Text-near annotation and editorial identification/contextualization may grow in the same source-work pass when they are persisted as separate claims/layers with their own evidence and status. They do not become diplomatic text merely because they are investigated concurrently.
 
 ## G2 exit condition
 
