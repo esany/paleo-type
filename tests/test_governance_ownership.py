@@ -41,6 +41,18 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         )
         self.assertNotIn(workflow, ai_governance)
 
+    def test_semantic_boundary_rule_has_durable_owner_chain(self) -> None:
+        """Protect the demonstrated D-019 owner chain without validating open semantics by string."""
+        agents = (REPO / "AGENTS.md").read_text(encoding="utf-8")
+        workflow = (REPO / "methodology" / "workflow.md").read_text(encoding="utf-8")
+        decisions = (REPO / "DECISIONS.md").read_text(encoding="utf-8")
+        requirements = (REPO / "requirements" / "domain-requirements.tsv").read_text(encoding="utf-8")
+
+        self.assertIn("### Preserve semantic context across domains and translations", agents)
+        self.assertIn("## Semantic-boundary and translation check", workflow)
+        self.assertIn("## D-019 — Meaning is context-owned", decisions)
+        self.assertIn("REQ-GWP-011\tresearch-data-stewardship\t", requirements)
+
     def test_project_contract_v8_closes_purpose_owner_and_legacy_gaps(self) -> None:
         contract = json.loads((REPO / "corpus" / "source-contract.json").read_text(encoding="utf-8"))
         projects = contract["tables"]["projects"]
