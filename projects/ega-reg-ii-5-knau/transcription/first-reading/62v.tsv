@@ -1,0 +1,26 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	⟦unclear⟧ 80 der	62v-L01	prose_1	continuous_text|arabic_numeral|unclear_span	unresolved		Arabic `80` preserved as written; no value interpretation supplied		Independent target-pixel reading from the staged Reg. Ii 5 page 16/image 134; the numeral is directly visible and the surrounding graph sequence remains unresolved.
+002	pfarrern aus der ⟦unclear⟧ / zu Knawe	62v-L02	prose_1	continuous_text|separator|unclear_span	unresolved	Mulß			Clear word islands are retained from the target witness; the middle noun is not normalized or contextually supplied.
+003	⟦unclear⟧ soll der pfarrer	62v-L03	prose_1	continuous_text|unclear_span	unresolved				The final clause is visually supportable; the opening graph sequence remains unresolved.
+004	die ⟦unclear⟧	62v-L04	prose_1	continuous_text|unclear_span	unresolved				No economic or land-description completion is supplied from context.
+005	vnnd ⟦unclear⟧ / wolff	62v-L05	prose_1	continuous_text|separator|unclear_span	unresolved				`vnnd`, the separator and final `wolff` are visually supportable; intervening words remain unresolved.
+006	von ⟦unclear: grevendorff?⟧ ⟦unclear⟧	62v-L06	prose_1	continuous_text|unclear_span	unresolved	greuendorff; grefendorff			The surname-like graph sequence recurs elsewhere in the same witness, but exact graphematic spelling and historical identity remain unresolved.
+007	dem pfarrern widerumb zustellen	62v-L07	prose_1	continuous_text	working	zu stellen			Direct target-pixel reading; no administrative interpretation is asserted.
+008	Das wolff von ⟦unclear: grevendorff?⟧ dem pfarrer /	62v-L08	prose_2	continuous_text|large_initial|unclear_span|separator	unresolved	greuendorff; grefendorff			Independent target-pixel reading first; legacy 134 was consulted only afterwards as recovery/verification and does not settle the surname spelling.
+009	⟦unclear⟧ zu Knawe / mit einem ⟦unclear⟧	62v-L09	prose_2	continuous_text|separator|unclear_span	unresolved	pfarrlehen			`zu Knawe / mit einem` is directly supportable; the flanking lexical forms remain unresolved rather than reconstructed from syntax.
+010	⟦unclear⟧	62v-L10	prose_2	continuous_text|unclear_span	unresolved				The physical line is represented without importing the legacy land/garden reconstruction.
+011	acker / zu seinem ⟦unclear: steinbruch?⟧ gemacht	62v-L11	prose_2	continuous_text|separator|unclear_span	unresolved	steinbruch			`acker / zu seinem` and final `gemacht` are visually supportable; the central noun is retained only as a graphically plausible candidate.
+012	⟦unclear⟧ soll der pfarrer wider /	62v-L12	prose_2	continuous_text|separator|unclear_span	unresolved				The clear clause is preserved while the opening sequence remains unresolved.
+013	⟦unclear⟧	62v-L13	prose_2	continuous_text|unclear_span	unresolved				No semantic reconstruction is used to force the reading.
+014	⟦unclear⟧	62v-L14	prose_2	continuous_text|unclear_span	unresolved				Physical-line coverage is preserved; lexical resolution remains pending direct palaeographic work.
+015	⟦unclear⟧	62v-L15	prose_2	continuous_text|unclear_span	unresolved				Physical-line coverage is preserved without smoothing the land/wood clause.
+016	⟦unclear⟧	62v-L16	prose_2	continuous_text|unclear_span	unresolved				No source correction/cancellation is asserted; the line remains diplomatically unresolved.
+017	⟦unclear⟧	62v-L17	prose_2	continuous_text|unclear_span	unresolved				The visible line is retained as unresolved rather than completed from grammatical expectation.
+018	⟦unclear⟧	62v-L18	prose_2	continuous_text|unclear_span	unresolved				No cancellation is observed at baseline level; lexical reading remains unresolved.
+019	⟦unclear⟧ soll /	62v-L19	prose_2	continuous_text|separator|unclear_span	unresolved				Final `soll /` is visually supportable; the preceding graph sequence remains unresolved.
+020	Von dem acker / ⟦unclear⟧	62v-L20	prose_3	continuous_text|large_initial|separator|unclear_span	unresolved				Paragraph opening and `Von dem acker /` are directly legible; following words remain unresolved.
+021	wolff von ⟦unclear: grevendorff?⟧ / auch ein	62v-L21	prose_3	continuous_text|unclear_span|separator	unresolved	greuendorff; grefendorff			Repeated surname-like token is preserved as unresolved; no person identification is asserted.
+022	⟦unclear⟧ / Soll er dem pfarrer ein	62v-L22	prose_3	continuous_text|separator|unclear_span	unresolved				The clause after the separator is directly supportable; the opening token remains unresolved.
+023	andern acker / ⟦unclear⟧	62v-L23	prose_3	continuous_text|separator|unclear_span	unresolved				`andern acker /` is visually supportable; the remaining locus description is not supplied from context.
+024	⟦unclear⟧ / vnnd denselbigen	62v-L24	prose_3	continuous_text|separator|unclear_span	unresolved				Final `vnnd denselbigen` is visually supportable; the opening graph sequence remains unresolved.
+025	gebrauchen lassen	62v-L25	prose_3	continuous_text	working				Final line directly legible on the target witness.
