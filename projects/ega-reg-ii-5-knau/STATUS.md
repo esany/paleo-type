@@ -172,7 +172,7 @@ For the separate Reg. Ii 4 Bd. II Ziegenrück Source, its own File, crosswalk, p
 
 ## Current research state / edition lifecycle
 
-The gate-evaluated active target is **Reg. Ii 5 fol. 61v–63r only**. No gate claim for this target applies automatically to the whole Ziegenrück Source fol. 55v–66v or the whole Reg. Ii 5 act.
+No current canonical diplomatic transcription of Reg. Ii 5 is yet declared. The gate-evaluated active target is **Reg. Ii 5 fol. 61v–63r only**. No gate claim for this target applies automatically to the whole Ziegenrück Source fol. 55v–66v or the whole Reg. Ii 5 act.
 
 | Gate / activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
