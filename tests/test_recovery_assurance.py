@@ -40,11 +40,11 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("completed through #96–#99 on 2026-09-06", li4)
         self.assertIn("No owner-selected active scholarly scope is currently recorded", li4)
         self.assertIn("historical principal/comparison uses remain preserved", li4)
-        self.assertIn("No owner-selected active scholarly scope after completion of #115", li5)
-        self.assertIn("completed bounded Editionsbaustein", li5)
-        self.assertIn("fol. 61v–63r", li5)
-        self.assertIn("#115", li5)
-        self.assertIn("A new G5/G6 or source-wide target requires fresh human-owner selection", li5)
+        self.assertIn("#123 problembezogene interne Relektüre", li5)
+        self.assertIn("Editionslocus remains fol. 61v–63r", li5)
+        self.assertIn("fol. 55v–66v", li5)
+        self.assertIn("does not authorize source-wide transcription", li5)
+        self.assertIn("does not automatically select G5/G6", li5)
         self.assertNotIn("completed and working Knau locus research remains preserved", li5)
 
     def test_reg_ii_3_4_5_source_hierarchy_stays_explicit(self) -> None:
@@ -71,7 +71,7 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("witness attribution unresolved or potentially mixed", li5)
         self.assertIn("current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", li5)
         self.assertIn("Later exact-source G2 research artifacts — bounded direct authority", li5)
-        self.assertIn("none validates `transcription/132.tsv`–`135.tsv` row-by-row", li5)
+        self.assertIn("None validates `transcription/132.tsv`–`135.tsv` row-by-row", li5)
         self.assertIn("not canonical current transcription state", project)
         self.assertIn("legacy verification/recovery evidence", projects_readme)
         self.assertIn("witness-specific scientific use requires fresh Source/File/locus verification", projects_readme)
@@ -137,7 +137,9 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("699fa6eada61db483dfca950193412715d9603a5", li5)
         self.assertIn("That bounded work package was completed on 2026-09-08 as an **Editionsbaustein**", li5)
         self.assertIn("current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", li5)
-        self.assertIn("No owner-selected next scholarly action is currently authorized after completion of #115", li5)
+        self.assertIn("#123 is the current owner-selected active scholarly work package", li5)
+        self.assertIn("No manuscript reading under #123 has yet begun", li5)
+        self.assertIn("WP-R1 — finite target-matrix verification", li5)
 
         self.assertIn("source-unit", projects_readme.lower())
         self.assertIn("STATUS", projects_readme)
@@ -174,7 +176,9 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
             {row["research_function"] for row in uses},
         )
         by_function = {row["research_function"]: row for row in uses}
-        self.assertEqual("historical", by_function["principal"]["status"])
+        self.assertEqual("active", by_function["principal"]["status"])
+        self.assertEqual("fol. 61v–63r", by_function["principal"]["relevant_locus"])
+        self.assertIn("#123", by_function["principal"]["evidence_basis"])
         self.assertEqual("historical", by_function["textual-comparison"]["status"])
         self.assertEqual("historical", by_function["notation-control"]["status"])
         self.assertEqual("historical", by_function["historical-context"]["status"])
@@ -183,8 +187,15 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         evidence = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "use-evidence.tsv")
         self.assertEqual(4, len(evidence))
         by_evidence = {row["evidence_id"]: row for row in evidence}
-        self.assertEqual("historical", by_evidence["EVID-REGII5-00000129-PRINCIPAL"]["status"])
-        self.assertTrue(all(row["status"] == "historical" for row in by_evidence.values()))
+        self.assertEqual("active", by_evidence["EVID-REGII5-00000129-PRINCIPAL"]["status"])
+        self.assertIn("#123", by_evidence["EVID-REGII5-00000129-PRINCIPAL"]["evidence_basis"])
+        self.assertTrue(
+            all(
+                row["status"] == "historical"
+                for evidence_id, row in by_evidence.items()
+                if evidence_id != "EVID-REGII5-00000129-PRINCIPAL"
+            )
+        )
 
         sources = read_tsv(REPO / "corpus" / "sources.tsv")
         self.assertTrue(all(not row.get("relevance") for row in sources))
