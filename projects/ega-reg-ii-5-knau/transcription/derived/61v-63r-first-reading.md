@@ -47,8 +47,8 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `62r-L16` sollen alsdan die bawren dem pfarrer
 - `62r-L17` pflegen was sonsten ein ander nachbar
 - `62r-L18` zu ⟦deletion: Knawe⟧ jerlich zugeben pflegt /
-- `62r-L19` Von des pfarrholtz / 80 ⟦unclear⟧ von gemeinen /
-- `62r-L20` dorff / ⟦unclear⟧ dem pfarrer
+- `62r-L19` Von des pfarrholtz / 80 wolff von gemeinen /
+- `62r-L20` dorff / dem gemeinswalde dem pfarrer
 - `62r-L21` abhauwen lassen vnnd ⟦unclear⟧
 - `62r-L22` soll er dem pfarrer dargegen in
 - `62r-L23` seinem holtz / an der ⟦unclear⟧ geben
