@@ -341,3 +341,84 @@ Cluster C is complete at the currently available internal-evidence level:
 - G3 has been fully re-evaluated and is again reached at current internal-evidence level.
 
 Immediate next bounded target is **cluster D — cancellations/deleted text at `61v-L16` and `62r-L18`**. It is target-pixel-first. Cluster-C readiness does not carry to D; fresh target readiness is required before any pixel-dependent D claim.
+
+## Cluster D execution — cancellations/deleted text at 61v-L16 / 62r-L18
+
+### Evidence readiness
+
+Cluster D was opened only after a fresh question-specific check in this execution context:
+
+- the supplied PDF bytes matched canonical `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical crosswalk was rechecked for `61v = export image 132 = PDF p14` and `62r = export image 133 = PDF p15`;
+- exact PDF pages 14 and 15 were freshly rendered at 600 dpi;
+- `61v-L16` and `62r-L18` were individually localized and enlarged before any lexical completion;
+- the comparison controls used below are nearby secure target-witness forms on those same freshly rendered pages.
+
+For the two cancellation targets and those actually used same-page controls in this execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+No readiness claim follows for E1 or later clusters.
+
+### 61v-L16 — surviving graph and comparison
+
+The cancellation is a real source phenomenon, but the underlying word is not wholly destroyed. The heavy cancellation stroke crosses the opening portion while leaving enough of the underlying graph visible to localize a word-length and letter sequence independently of syntax.
+
+Visible target features include:
+
+- an opening tall/descending `pf`-type complex surviving beneath/alongside the cancellation;
+- a compact medial minim/round-stroke run of the same scale as the nearby secure `pfarrern` form;
+- comparable overall word width;
+- a surviving terminal articulation compatible with the secure same-page `pfarrern` at `61v-L12`.
+
+The nearby secure `61v-L12` form was used only after those target features were localized. It is graphically discriminating for the actual surviving strokes; the surrounding phrase or expected administrative wording was not used as reading evidence.
+
+Returning to the target after comparison supports the deleted written word itself as **`pfarrern`**. This is a `READING` claim about surviving manuscript graph, not a reconstruction from grammar or a historical interpretation.
+
+### 62r-L18 — surviving graph and comparison
+
+The struck token after secure `zu` likewise retains substantial underlying writing. A heavy diagonal cancellation stroke traverses the word, but surviving portions remain visible before, below and after it.
+
+The target itself supplies:
+
+- a recoverable opening form and word boundary;
+- an internal/terminal run compatible with `-nawe` at the written-graph level;
+- word width and terminal movement matching secure same-page `Knawe` forms in the surrounding running text.
+
+Only after this target localization were nearby secure `Knawe` occurrences on the same exact page used as graphical controls. Their value is limited to the written-form comparison; no place identification or contextual necessity is used to manufacture the word.
+
+Target recheck supports the deleted written token as **`Knawe`**.
+
+### Diplomatic promotions
+
+Both promotions are persisted only in the canonical folio-local TSV owners while the cancellation remains explicit:
+
+- `61v-L16`: `⟦deletion: pfarrern⟧ einkommen /`;
+- `62r-L18`: `zu ⟦deletion: Knawe⟧ jerlich zugeben pflegt /`.
+
+Both rows move from `unresolved` deleted wording to `working` deleted readings; the source phenomenon `deletion` remains represented. No deleted text is silently restored as ordinary uncancelled prose. The derived `61v-63r-first-reading.md` view is regenerated from those two canonical changes.
+
+No Reg. Ii 4 wording, Legacy transcription/apparatus/palaeography, expected formula, person/place identity or external script typology supplied either promotion.
+
+### G3 consequence
+
+Cluster D produced new relevant internal graphical evidence for two deletion residuals explicitly handed forward by G3. The affected subproblems were therefore treated as **G3 `reopened` during evaluation**. The newly testable evidence has now been fully assessed and the two bounded deleted readings promoted while the deletion phenomena themselves remain explicit.
+
+Final state after this evaluation is again **G3 `reached at current internal evidence level`** for the assessed fol. 61v–63r residuals. This does not imply that all other unresolved text is solved or that G5/G6 is reached.
+
+### Cluster D result / hand-off
+
+Cluster D is complete at the available internal-evidence level:
+
+- both cancellation phenomena remain explicit;
+- `61v-L16` deleted wording is promoted to `pfarrern`;
+- `62r-L18` deleted wording is promoted to `Knawe`;
+- both promotions are target-graph-led and checked against nearby same-page written-form controls;
+- no source-wide cancellation inventory or lexical search was performed;
+- no identity or historical-function claim follows from the written forms;
+- G3 has been fully re-evaluated and is again reached at current internal-evidence level.
+
+Immediate next bounded target is **E1 — the two unresolved spans at `62r-L01`**. It remains target-pixel-first: fresh readiness, segmentation and stable graphical edges must precede any same-Source comparator search.

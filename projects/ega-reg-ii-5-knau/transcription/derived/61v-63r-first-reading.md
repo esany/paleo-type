@@ -21,7 +21,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `61v-L13` zu Knawe / Laßgaw vnnd Bharen
 - `61v-L14` jerlich 1 silbern grosch / gereicht
 - `61v-L15` werden soll / neben alles andern d̄
-- `61v-L16` ⟦deletion: unclear⟧ einkommen /
+- `61v-L16` ⟦deletion: pfarrern⟧ einkommen /
 - `61v-L17` Das wolff von ⟦unclear: grevendorff?⟧ dem
 - `61v-L18` pfarrern zu Knawe / alles ⟦illegible⟧
 - `61v-L19` soll was er dem pfarrlehen ⟦illegible⟧
@@ -46,7 +46,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `62r-L15` vorlassen wurden / von denselbigen huff
 - `62r-L16` sollen alsdan die bawren dem pfarrer
 - `62r-L17` pflegen was ⟦unclear: sonsten?⟧ ein ander nachbar
-- `62r-L18` zu ⟦deletion: unclear; possibly Knawe⟧ jerlich zugeben pflegt /
+- `62r-L18` zu ⟦deletion: Knawe⟧ jerlich zugeben pflegt /
 - `62r-L19` Von des pfarrholtz / 80 ⟦unclear⟧ von gemeinen /
 - `62r-L20` dorff / ⟦unclear⟧ dem pfarrer
 - `62r-L21` abhauwen lassen vnnd ⟦unclear⟧
