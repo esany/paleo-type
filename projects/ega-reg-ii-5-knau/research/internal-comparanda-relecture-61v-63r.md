@@ -206,6 +206,15 @@ When an external claim is triggered, record here:
 
 An inaccessible standard work does not block unrelated direct source-internal comparison. The unsupported higher claim stays unresolved or specialist validation remains pending.
 
+Cluster C triggered two narrow external checks after target morphology had already been localized. Both underlying pages were opened directly on 2026-09-09; neither is used to identify or value a Reg. Ii 5 target sign:
+
+| reference | evidence status / inspected passage | supports | does not support |
+|---|---|---|---|
+| Universität Zürich, **Ad fontes**, `Tutorium / Masse, Zahlen und Geld / Zahlen`, `https://www.adfontes.uzh.ch/tutorium/masse-zahlen-und-geld/zahlen` | institution-hosted explanatory page opened directly; section around the Roman/indisch-arabic numeral discussion states that Roman signs were used through the Middle Ages and that in 15th-century commercial books Roman and Arabic numerals still alternate | historical coexistence and mixed use of Roman and Arabic numeral systems; reason not to force one modern numeral repertoire onto an older account/list context | no identification of any German 1533 Reg. Ii 5 sign; no sign→value mapping; no measure/accounting-function claim |
+| The National Archives (UK), **Roman numerals**, `https://www.nationalarchives.gov.uk/help-with-your-research/reading-old-documents/roman-numerals/` | institutional palaeographic guide opened directly; examples include `I or j = 1`, `II or ij = 2`, `III or iij = 3`, `VI or vj = 6`, `VII or vij = 7`, `VIII or viij = 8` | existence in British palaeographic practice of terminal-`j`-like Roman-numeral morphology; reason to test such morphology rather than normalize from modern expectations | because this is a British guide, it does not assign a German 1533 target form; no Reg. Ii 5 reading, value, metrological unit or accounting function follows |
+
+These references are contextual controls only. Cluster C's positive result remains source-internal and morphology-first.
+
 ## Cluster B execution — `hanns` + following name-like tokens at 62r-L06 / L09
 
 ### Evidence readiness
@@ -261,3 +270,74 @@ Cluster B is complete at the available internal-evidence level:
 - no historical identity claim follows.
 
 Immediate next bounded target is **cluster C — 61v-L04–L09 quantity/accounting notation**. The notation protocol above must govern that work. First action is fresh target-pixel readiness and sign-by-sign morphological localization; no sign value, measure value or economic interpretation may be inferred before the written sign class itself is established.
+
+## Cluster C execution — 61v-L04–L09 quantity/accounting notation
+
+### Evidence readiness and address confidence
+
+Cluster C was opened only after a fresh question-specific evidence check in the execution context:
+
+- the staged supplied PDF matched canonical `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical target crosswalk was rechecked: `61v = export image 132 = PDF p14`;
+- PDF p14 was freshly rendered at 600 dpi and `61v-L04`–`L09` were individually localized/enlarged;
+- the later same-Source comparator used below is digitally addressed exactly as **export image 130 = PDF p12**;
+- the crosswalk labels that comparator as **fol. 60v with confidence `inferred-high`**, not `observed`; the folio label is therefore carried only at that lower evidential level while image/page identity remains exact.
+
+For the target block and the actually used comparator image in this execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+No readiness claim follows for cluster D or any later target.
+
+### Target sign-by-sign morphology
+
+The left-side material at `61v-L04`–`L09` is not graphically supportable as six repetitions of one ordinary numeral. Before any value/function hypothesis, the following target-level morphology was distinguished:
+
+- **L04:** compact multi-stroke form with a curved/rounded opening, short minim-like interior articulation and a terminal descending/outgoing stroke;
+- **L05:** shorter compact form; closer to the L04/L06 compact family than to the more conspicuously crossed or large-loop forms, but not promoted as the same exact written sign;
+- **L06:** compact curved/minim/terminal-stroke morphology materially related to L04 at sign-class level;
+- **L07:** visibly different, with a stronger crossed/diagonal articulation; it is not collapsed into the L04/L06 compact class;
+- **L08:** visibly larger looped/extended opening and longer movement than the compact forms; it is treated as a separate morphology;
+- **L09:** returns to a compact rounded/minim-like morphology with terminal extension, related at broad sign-class level to the compact group but not assigned an exact value or diplomatic sign name.
+
+The secure Arabic `1` already present inside L07 and the secure written `ij` at L02 were rechecked only as negative/shape controls. Neither justifies reading the unresolved left-side signs as one specific Arabic or Roman sequence.
+
+### Targeted same-Source comparator
+
+Only after the target morphologies had been separated was the same Source inspected for a list/accounting context containing graphically relevant compact sign forms. A useful comparator was found at **export image 130 = PDF p12**; canonical crosswalk folio label **60v (`inferred-high`)**.
+
+The comparator contains a left-side notation column in another list-like passage with multiple compact rounded/minim/terminal-stroke forms alongside visibly different sign shapes. It therefore discriminates one consequential point: the target block participates in a **heterogeneous, recurrent source-internal notation repertoire**, rather than being best represented as six indistinct copies of one ordinary digit.
+
+The comparator does **not** provide an independently secured value, unit or expansion for the relevant forms. It therefore cannot license a lossless sign→value mapping. No source-wide transcription or notation inventory was created; the search stopped once this graphically defined comparison question was answered.
+
+### Target recheck / diplomatic consequence
+
+Returning to `61v-L04`–`L09` after the comparator check does not make any exact written sign sequence sufficiently secure for promotion. In particular, no `vj`/`vij`/`viij`-type reading, Arabic value, measure sign, money sign, unit expansion or accounting value is promoted.
+
+**Canonical `transcription/first-reading/61v.tsv` remains unchanged.** The rows remain `unresolved`, and no derived-view regeneration is required because there is no diplomatic TSV change.
+
+This is a positive research result without a diplomatic reading change: source-internal evidence now supports morphological sign-class differentiation and recurrence more strongly, while the sign names/values remain unresolved.
+
+### G3 consequence
+
+The image-130/PDF-p12 comparator is new relevant internal evidence for the earlier G3 accounting-notation residual. Under the established reopen rule, the affected subproblem was therefore treated as **G3 `reopened` during the cluster-C evaluation**. Full assessment strengthened the source-internal sign-class/repertoire claim but still did not support a lossless sign→value mapping or invalidate any physical anchor.
+
+Final state after evaluation is again **G3 `reached at current internal evidence level`** for this bounded residual. This explicitly does not mean that the L04–L09 signs are read, valued, normalized or historically interpreted.
+
+### Cluster C result / hand-off
+
+Cluster C is complete at the currently available internal-evidence level:
+
+- the six left-side target forms are not collapsed into one sign;
+- multiple morphologically distinguishable sign classes are supported;
+- exact same-Source comparator address is `export image 130 = PDF p12`; `fol. 60v` is retained only as an `inferred-high` crosswalk label;
+- the comparator supports a heterogeneous, recurrent source-internal notation repertoire;
+- no exact sign reading or sign→value/unit mapping is justified;
+- `61v.tsv` remains unchanged and unresolved;
+- no metrological, monetary, economic or administrative interpretation is inferred;
+- G3 has been fully re-evaluated and is again reached at current internal-evidence level.
+
+Immediate next bounded target is **cluster D — cancellations/deleted text at `61v-L16` and `62r-L18`**. It is target-pixel-first. Cluster-C readiness does not carry to D; fresh target readiness is required before any pixel-dependent D claim.
