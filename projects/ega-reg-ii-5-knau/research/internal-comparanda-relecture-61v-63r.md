@@ -77,3 +77,58 @@ The search must be driven by the localized stroke pattern, not by the expected h
 No case authorizes fol. 55v–66v browsing without a prior target feature.
 
 Immediate next action: **WP-R2 for cluster A** — verify exact File/SHA/crosswalk in the current execution context, establish `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the six target surname loci and only then inspect any additional folio needed for a graphically defined same-Source comparator search.
+
+## Cluster A execution — current-context readiness and targeted same-Source search
+
+### Evidence readiness
+
+Cluster A was reopened for pixel-dependent work only after fresh current-context provenance checks.
+
+- canonical File: `FILE-REG-II-5-00000129-EXCERPT`;
+- canonical Source: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`;
+- canonical File SHA-256: `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- the supplied/staged PDF bytes in this execution context matched that SHA exactly;
+- canonical crosswalk rechecked: `61v = export image 132 = PDF p14`, `62r = image 133 = p15`, `62v = image 134 = p16`;
+- exact-source pages 14–16 were rendered at 600 dpi and visually inspected in this execution context.
+
+The six target occurrences were individually localized and inspected:
+
+- `61v-L03`;
+- `61v-L17`;
+- `62r-L12`;
+- `62v-L06`;
+- `62v-L08`;
+- `62v-L21`.
+
+For this bounded cluster in this execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+This is a cluster-A readiness result only; it is not a blanket readiness claim for all later #123 target clusters or comparator pages.
+
+### Target-feature localization
+
+Across all six target occurrences, the surname-like graph remains materially recurrent. The disputed medial portion can now be localized as a compact run of small/minim/round-letter strokes between the stable opening of the graph and the later tall `d`/ending complex. The six target instances are mutually compatible in that overall topology, but their own pixels do not by themselves justify collapsing the retained `grevendorff` / `greuendorff` / `grefendorff` alternatives to one exact diplomatic spelling.
+
+Secure nearby `f`-bearing writing was inspected only as a letterform control. It confirms that an ordinary secure `f` in this witness context can present a more distinctive long/tall form than the compact disputed medial run, but this control is not sufficient on its own to promote or delete a surname candidate. The target graph therefore remains the authority and remains unresolved.
+
+### Targeted same-Source comparator search
+
+After the target feature had been localized, the remaining same-Source range was inspected only for a graphically relevant occurrence of the same surname-like sequence: fol. `55v–61r` and `63v–66v` (canonical PDF pages 2–13 and 18–24). This was a targeted visual search, not a transcription or lexical inventory of those folia.
+
+No clearly repeated same-surname graph with a more discriminating medial sequence was located outside the Editionslocus in this pass. The display heading `Schondorff` at fol. `63v` is same-Source evidence for a `-dorff`-like ending, but it does not reproduce the disputed medial segment and is therefore non-discriminating for cluster A. It is not used to settle the target surname.
+
+### Cluster A result
+
+**No reading promotion is justified.** The six canonical TSV rows remain unchanged and `unresolved`; no derived-text regeneration is required.
+
+The negative result is itself the bounded #123 finding: an exact-source, current-context target reinspection plus a targeted search of the remainder of the Source did not produce a suitable internal comparator that discriminates the surname spelling beyond the already established recurrence.
+
+No Reg. Ii 4 wording, historical identity, Legacy `transcription/132.tsv`–`135.tsv`, `palaeography/*` or `apparatus/*` material was used as reading authority.
+
+Because cluster A produced no new relevant comparator that makes an existing G3 finding newly testable and invalidated no anchor, **G3 remains `reached at current internal evidence level`**; it is not reopened by this negative search result.
+
+Immediate next bounded target is **cluster B — the two graph sequences following `hanns` at `62r-L06` and `62r-L09`**. The first step is direct target-pixel comparison of those two occurrences. Only if that comparison exposes a specific unresolved feature may a further same-Source comparator search begin.
