@@ -622,3 +622,98 @@ Fresh direct target evidence made the inherited L17 residual newly testable, so 
 **E4 is complete. Next bounded cursor: E5 — residual wood/pfarrer clause at `62r-L19`–`L23`.** E5 begins with new question-specific target readiness for each selected residual token; E4 readiness and its `sonsten` reading do not carry over.
 
 AI provenance: Codex (GPT-6-based assistant, exact service build not fixed), 2026-09-09; direct target-first image inspection. Poppler rendering and Pillow crop/enlargement were non-generative technical aids; no OCR, generative enhancement, Reg. Ii 4, Legacy text, external literature, grammar/formula completion or historical interpretation was used. This is AI-assisted working research, not independent qualified human palaeographic validation.
+
+## Cluster E5 execution — residual wood/pfarrer clause at 62r-L19–L23 (2026-09-09)
+
+### Fresh baseline, exact-source readiness and target segmentation
+
+Fresh GitHub reconstruction confirmed `main` at `21c52e7ed269430a607f85d19a68c46b63c12198` after E4 / PR #136, with Issue #123 still owning the finite A–H programme and E5 as the canonical next cursor. Before pixel work, the governing objective, AI guardrails, S4/evidence/transcription/gate/quality rules, Project state, the current `62r.tsv`, derived witness view, G3 hand-off, this research owner, Source-use/evidence binding, canonical File register and canonical Source crosswalk were read afresh.
+
+The user-supplied PDF in this execution was freshly SHA-256 hashed as **`e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`**, exactly matching canonical File `FILE-REG-II-5-00000129-EXCERPT` / canonical filename `1a03ea95927-120-143.pdf`, Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`. The supplied filename itself was not used as Source/locus evidence.
+
+The canonical crosswalk was rechecked directly: **`62r = export image 133 = PDF p15`**, mapping status `observed` from the visible folio number 62. PDF p15 was freshly rendered with Poppler at **600 dpi**, producing a **4961 × 7016 px** unrotated raster. Whole-page inspection confirmed visible foliation `62` and printed `Bild: 133` / `Seite 15 von 25`. E5 was then inspected in physical order before any lexical completion.
+
+Focused target rectangles below use `(left, top, right, bottom)` pixels from that exact 600-dpi p15 raster:
+
+| target | focused rectangle | pre-comparison purpose |
+|---|---|---|
+| L19 | approximately `(1900,3860,4200,4040)` | word after written `80`; boundary, round/ascender/long-stroke sequence |
+| L20 | `(1850,3970,4400,4240)` | complete post-slash span through following `dem pfarrer`; word segmentation and ordered strokes |
+| L21 | `(1850,4140,4400,4440)` | residual after `vnnd`; determine whether a stable feature exists at all |
+| L23 | `(1850,4480,4400,4760)` | single long token after `an der` and before `geben` |
+
+The E5 targets and the actually used same-page controls described below were visually inspected from this fresh render; display enlargement only enlarged existing pixels and did not generate detail.
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+This readiness applies only to E5 targets and the explicitly inspected p15 controls in this execution. It does **not** transfer to F1 or any later cluster.
+
+### L19 — target observation → feature-specific control → target return
+
+The unresolved span after the secure Arabic `80` is one bounded written word before secure `von`. Before any comparison, the target itself shows an opening w-type double movement, a following small round form, a tall narrow l-type ascender, and two consecutive long crossed f-type strokes terminating the word. No abbreviation mark, deletion, addition or damage intersects the token.
+
+Only after that sequence was localized was the already secure same-page `62r-L12` written form **`wolff`** freshly inspected as a feature-specific control. The control confirms that the ordered round vowel + tall `l` + paired long `ff` morphology is a viable same-Source written-form comparison; it is not used as a semantic or identity claim.
+
+Returning to the L19 target, all five graphemes are independently retained in the target in the same order. The target therefore supports diplomatic **`wolff`**. The Arabic `80` remains only the written numeral; no value, unit, person identity or administrative interpretation is added.
+
+Promotion:
+
+`62r-L19 = Von des pfarrholtz / 80 wolff von gemeinen /`
+
+### L20 — target-first segmentation and bounded internal check
+
+The prior single `⟦unclear⟧` between the slash and `dem pfarrer` is visibly not one opaque token. Target inspection first establishes **two separate written words** with a clear inter-word gap.
+
+The first is a short d-e-m sequence. The second is longer and shows, in order, a looped descending g-type opening; compact e/m/e/i/n-scale baseline articulation; a distinct long-s-type descending/return stroke; then w, a, a tall l, d-type loop and terminal e. No independent abbreviation overline is securely present. This target sequence supports the written form **`gemeinswalde`** rather than requiring a semantic reconstruction of the clause.
+
+After the `gemein-` sequence had been localized on the target, the immediately preceding same-page written `gemeinen` at L19 was rechecked only as a narrow control for the compact `gemein-` morphology. It does not supply `-swalde`; that remainder is carried by the L20 target itself.
+
+Target return supports:
+
+`62r-L20 = dorff / dem gemeinswalde dem pfarrer`
+
+No claim is made here about legal ownership, communal woodland, obligation type, normalization or identification. `gemeinswalde` is a manuscript-level `READING` only.
+
+### L21 — negative target path
+
+After secure `abhauwen lassen vnnd`, further writing is certainly present. Fresh target inspection shows a compressed low/minim run with at least one tall/descending articulation and a final long rising/descending movement. At the available source raster, however, the internal joins and grapheme boundaries are not stable enough to define a responsible next letter sequence. Treating the outer silhouette as an expected verb/noun phrase would be lexical fishing.
+
+Because the target did **not** yield a concrete discriminating graphematic feature beyond generic stroke classes, no broader fol. 55v–66v comparator search was opened for L21. This is a bounded negative result, not a claim that no comparator exists anywhere in the Source.
+
+`62r-L21` therefore remains `abhauwen lassen vnnd ⟦unclear⟧` and `unresolved`.
+
+### L22 — control boundary only
+
+`62r-L22 = soll er dem pfarrer dargegen in` contains no inherited E5 unresolved span. It was retained only to verify physical-line continuity and the L21/L23 boundaries. No reading change or new claim is made.
+
+### L23 — bounded token, no responsible lexical completion
+
+After secure `seinem holtz / an der`, the target contains one long written token ending before secure `geben`. Its boundaries are clear. The token contains several tall and descending strokes and a paired long-stroke complex in its medial portion, but the dense joins do not yield a lossless complete letter sequence at the present evidence level. Similarity of isolated long strokes to secure `ff` elsewhere is not sufficient to manufacture the rest of the word.
+
+No expected wood-, boundary-, terrain- or obligation vocabulary was used to fill the token, and no source-wide comparator search was opened without a more specific discriminator. Reg. Ii 4 and Legacy text were not used as reading authority.
+
+`62r-L23` therefore remains `seinem holtz / an der ⟦unclear⟧ geben` and `unresolved`.
+
+### Search ceiling, external evidence and canonical consequence
+
+The actually used comparator path stayed on the freshly rendered target page: L12 `wolff` for L19 and L19 `gemeinen` for the localized `gemein-` sequence at L20. Both were visually inspected in this E5 execution after their target features had been fixed. No outside-Editionslocus comparator was required. No same-hand or same-scribe claim follows from same-Source comparison.
+
+No external literature claim was triggered by E5. Consequently no external publication was promoted to `F/E` evidence for this cluster; model knowledge, syntax, historical woodland terminology and search snippets supplied no reading.
+
+Canonical diplomatic changes are limited to:
+
+- `62r-L19`: unresolved token → **`wolff`**, row becomes `working`;
+- `62r-L20`: single opaque placeholder → **`dem gemeinswalde`**, row becomes `working`.
+
+L21 and L23 remain explicitly unresolved, and L22 remains unchanged. The human-readable derived witness view was regenerated from the changed canonical `62r.tsv`. No other TSV owner, Source/File/crosswalk record, lexicon, numeral register, apparatus, ontology or generic method file changes.
+
+### G3 consequence and E5 hand-off
+
+Fresh direct target evidence plus the two freshly inspected feature-specific same-page controls made the handed-forward L19/L20 residuals newly testable. **G3 was therefore bounded `reopened` for E5 during evaluation.** After target returns, two promotions and explicit negative dispositions for L21/L23, the new evidence has been fully assessed. Final state is again **G3 `reached at current internal evidence level`** for the evaluated fol. 61v–63r scope. This does not resolve the remaining E5 residuals, alter G4, establish same hand, or imply G5/G6.
+
+**E5 is complete. Next bounded cursor: F1 — `62v-L01`–`L06`.** F1 begins again target-pixel-first for each non-surname unresolved span; the cluster-A surname question remains governed by its completed negative path. E5 p15 readiness, `wolff`, `gemeinswalde`, and E5 comparators do not confer F1 pixel readiness or a clause reading.
+
+AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-09; direct target-first inspection of the exact primary-source PDF with Poppler 600-dpi rendering and non-generative crops/enlargements, followed only by feature-specific same-page controls. No OCR, generative enhancement, Reg. Ii 4, Legacy reading authority, external literature, semantic completion or historical interpretation was used. This is AI-assisted working research, not independent qualified human palaeographic validation; CI can certify only the deterministic repository properties it tests.
