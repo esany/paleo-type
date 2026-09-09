@@ -494,3 +494,67 @@ The newly localized target-supported terminal cluster and initial pair, tested a
 E1 is complete at the available internal-evidence level. The next bounded cursor is **E2 — unresolved forms at `62r-L03`–`L04`**. It begins with its own question-specific target readiness, segmentation and stable-feature localization. E1 control inspection of `jerlich` on L03 does not confer readiness for the E2 unresolved spans, and no E1 readiness carries to E2.
 
 AI provenance: Codex (GPT-6-based assistant; exact service build not fixed), 2026-09-09; direct image inspection, bounded same-Source comparison and conservative partial-reading decisions. Poppler rendering and Pillow cropping/display enlargement were technical aids. No OCR or generative image enhancement was used. The result is AI-assisted working research, not independent qualified human palaeographic validation; CI certifies only its checked deterministic properties.
+
+## Cluster E2 execution — unresolved forms at 62r-L03–L04 (2026-09-09)
+
+### Baseline and question-specific readiness
+
+A fresh `git fetch origin main` confirmed `0681920411b5dc501f6ec9d7ed75c0e83adf0b24` (E1 / PR #133), with a clean local checkout. The current STATUS restart instructions and canonical L03/L04 rows were read before creating `research/123-e2-62r-l03-l04`. The governing/method rules and PDF skill already read in this execution remain applicable; E1's inspection of L03 `jerlich` was not reused as E2 target readiness.
+
+The controlled supplied attachment `1533-Visitationsprotokoll-Ziegenrueck-ThHStAW-EGA-Reg. Ii 5-28r-55r(2).pdf` was freshly hashed again: `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`, matching `FILE-REG-II-5-00000129-EXCERPT` / canonical `1a03ea95927-120-143.pdf`, Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`. It was freshly rendered for E2 with Poppler at 600 dpi, full page **4961 × 7016 pixels**. Whole-page inspection confirmed visible foliation `62` and printed `Bild: 133`, `Seite 15 von 25`, consistent with the canonical observed mapping **62r = image 133 = PDF p15**. L03/L04 were localized by physical order beneath L01/L02, not inferred from legacy IDs.
+
+Each target span was viewed independently before selecting controls. Target and comparator rectangles below are `(left, top, right, bottom)` pixels from the upper-left of the unrotated 600-dpi PDF-page render. Targets were also displayed at 2×; this enlarges existing raster information, not captured source detail.
+
+| object | page / rectangle | inspected purpose |
+|---|---|---|
+| L03–L04 together | p15 `(1900,1260,4050,1610)` | line boundaries, spacing and separators |
+| E2a: L03 after `pfarrer`, before `/` | p15 `(2390,1280,2910,1450)` | looped initial and dense remainder |
+| E2b: L03 after `jerlich`, before `von` | p15 `(3340,1300,3820,1510)` | initial low form, repeated long strokes, following loop and tail |
+| E2c: L04 before `/ zu Knawe` | p15 `(1970,1405,2740,1640)` | two groups separated by whitespace; second group's upper loops |
+| E2d: L04 after `zu Knawe` | p15 `(3280,1430,3860,1640)` | two separate written groups |
+| L07 controls | p15 `(2010,1850,3960,2020)` | `drei virtel` and terminal-loop comparison |
+| L08 controls | p15 `(2000,2000,4070,2180)` | `virtel`, `huff`, `landes` |
+| L12 controls | p15 `(1950,2700,4040,2890)` | `wolff` long-stroke pair; `ob` lower bowl |
+| L13–L15 controls | p15 `(1940,2880,4070,3370)` | `nachkomung` medial form, `huff` initial, `denselbigen` loop sequence |
+| L23 ending control | p15 `(3280,4440,4010,4680)` | test of the already working `geben` ending; non-discriminating for full E2b tail |
+| 61v-L08 `feldes` control | p14 `(2240,2520,2580,2700)` | test second E2c group's ordered upper loops |
+
+For the final comparator a **new p14 render** at 600 dpi was made only after E2c's feature was localized. Whole-page inspection confirmed printed `Bild: 132`, `Seite 14 von 25`; the canonical folio mapping **61v = image 132 = PDF p14** remains `inferred-high`, not directly observed foliation. `feldes` was then locally enlarged and inspected. This does not reuse cluster C/D or E1 readiness. All controls are the same canonical Source/File; no same-hand premise is used.
+
+For the four E2 target spans and each actually inspected control listed above in this execution:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+No readiness follows for E3 or for uninspected areas of those pages. No File-preservation metadata is changed.
+
+### Independent target observations, comparisons and target returns
+
+**E2a — L03 first span.** Whitespace separates the group from `pfarrer`; the slash terminates it. An open upper arch/long stem, small lower loop and rightward shoulder begin the token. Low joined strokes follow, then a narrow oblique ascender and another low/minim/round run ending in a short downward exit. The larger curved mark above the middle belongs to the descending material of L02 and is not adopted as an E2a abbreviation mark. No securely independent abbreviation overline or expansion is established. Before comparison the concrete question was limited to the initial loop/shoulder and the later tall form, not a predicted verb. Fresh `huff` at L08 and L14 supports the initial **h** from the lower loop and right shoulder. The `nachkomung`/`landes` controls do not securely resolve the medial sequence or its joins. On returning to E2a only **`h⟦unclear⟧`** is promoted; the entire remainder stays unresolved. No whole-token candidate is inferred from syntax.
+
+**E2b — L03 second span.** The group begins after the tall terminal of `jerlich` and ends before the large initial of `von`; the broad arc above its right side belongs to that following initial, not an abbreviation over the target. Its own opening has a low angular v-like form, two narrow oblique long strokes linked by a cross-stroke, then a looped stem with a lower return and right shoulder. The remaining material includes a small baseline articulation, another upper curve and a compressed terminal run. These observations define a prefix/long-stroke discrimination question before the controls are used. `wolff` at L12 confirms the paired f morphology; `virtel` at L07/L08 controls the low initial v; `huff` at L08/L14 controls the following h loop and shoulder. The `ob` lower bowl and L23 `geben` were tested for the tail, but neither supplies a sufficiently discriminating complete continuation: the `geben` graph is compressed, and a shared ending silhouette would not prove every target grapheme. Returning to E2b supports only **`vffh⟦unclear⟧`**. A complete `vffheben` reading is not promoted; it would outrun the assessed tail evidence. The unresolved tail is not silently expanded or grammatically completed.
+
+**E2c — L04 first span.** The former single placeholder covers two visibly spaced groups. The first has a large multi-peaked initial and a short low ending; M/W-like initial alternatives and the ending are insufficiently distinguished, so no letter is promoted there. The second starts with a narrow looped long stroke crossing the baseline, then a short low articulation, two conspicuous upper loops of different orientation and a low run with a long final descending exit. The slash after the second group is distinct from that exit. There is no securely independent abbreviation mark. The feature-bound question was whether the second group's initial and ordered upper loops support the same opening as the already working `feldes` on 61v-L08. That exact comparator was freshly rendered and inspected. It supports the initial **f**, but **does not license `feld-`**: the target's two tall medial forms differ in order/orientation from the control's l then d, and they cannot be swapped to fit a word. L08 `landes` and L15 `denselbigen` likewise do not resolve that target sequence. Target return therefore gives **`⟦unclear⟧ f⟦unclear⟧`**, preserving the observed inter-group space and the opaque first group. No place, field term or lexical identity is asserted.
+
+**E2d — L04 final span.** Two distinct groups follow `Knawe`. The first has a backward entrance into a rounded upper loop, followed by short angular r/i-scale articulations; the second has a high angular entrance, a low joined run and a final closed upper loop returning to the baseline. There is no target-supported abbreviation overline; the dot above this region is not treated as proof of an expansion. This ordered pair, not an expected quantity phrase, was the comparison feature. Fresh L07 `drei virtel` matches the first group's d-loop and following articulations, and the second group's initial v, internal sequence and terminal l. L08 supplies a further `virtel` control. Returning to the target supports **`drei virtel`** as written. The different breadth of the target initial v and more compressed medial strokes do not change their order. No numerical normalization or metrological value is supplied.
+
+### Search limits and canonical consequence
+
+The four target paths are assessed independently; resolution of E2d does not resolve E2a–c. The actually used search area is limited to the specified p15 controls and the p14 `feldes` control. No other folio in 55v–66v was searched. The failed tail/upper-loop tests are explicit negative results; they are not a claim that the entire Source has no usable comparator. After these tests the remaining dense joins/initial alternatives provide no sufficiently stable next feature for a further responsible search in this pass. No phrase-level reconstruction, external witness or Legacy material supplies a reading.
+
+Canonical changes are confined to:
+
+- `62r-L03`: `pfarrer h⟦unclear⟧ / jerlich vffh⟦unclear⟧ von`;
+- `62r-L04`: `⟦unclear⟧ f⟦unclear⟧ / zu Knawe drei virtel`.
+
+Both rows remain `unresolved`; the first L04 placeholder is narrowed into two source-spaced groups, not two newly invented lines. Existing word islands, physical anchors and separators are retained. The derived view is regenerated from the four canonical TSV partitions. No other diplomatic row changes.
+
+### G3 assessment and E3 hand-off
+
+New target-supported features and current internal controls made these handed-forward E2 residuals newly testable. G3 was treated as **bounded `reopened` during E2 evaluation**. After the four target returns, partial promotions, the resolved final pair on L04 and explicit negative comparison paths, assessment is complete at the current internal-evidence level. Final G3 is again **`reached at current internal evidence level`** for the evaluated fol. 61v–63r scope; E2a–c retain unresolved text. G4 is unaffected; no G5/G6, same-hand, interpretation or independent expert-validation claim follows.
+
+**E2 is complete. Next bounded cursor: E3 — quantity/measure sequence at `62r-L10`–`L11`, ending in working `maß`.** Begin again with question-specific target readiness and sign-by-sign segmentation under the existing notation protocol. E2 readiness does not carry to E3. Neither `drei virtel` nor prior cluster C sign morphology licenses an E3 sign reading, unit expansion or value.
+
+AI provenance: Codex (GPT-6-based assistant, exact service build not fixed), 2026-09-09; direct target-first image inspection and feature-specific internal comparisons; Poppler 600-dpi renders and Pillow crops/enlargements. No OCR/generative enhancement, literature claim, Reg. Ii 4 or Legacy reading authority was used. These are AI-assisted working readings with explicit uncertainty, not independent qualified human palaeographic validation. Technical checks establish only the tested deterministic invariants.
