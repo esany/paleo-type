@@ -84,10 +84,12 @@ class ProjectContextRegressionTests(unittest.TestCase):
         self.assertIn("current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", status)
         self.assertIn("Legacy diplomatic material — verification/recovery only", status)
         self.assertIn("G4 controlled comparison", status)
-        self.assertIn("#123 is the current owner-selected active scholarly work package", status)
-        self.assertIn("No manuscript reading under #123 has yet begun", status)
+        self.assertIn("#123 remains the current owner-selected active scholarly work package", status)
+        self.assertIn("WP-R1 is complete; no pixel-dependent manuscript reading under #123 has yet begun", status)
         self.assertIn("target-context pixel readiness is **not yet re-established**", status)
-        self.assertIn("G3 remains `reached at current internal evidence level` at #123 activation", status)
+        self.assertIn("G3 remains `reached at current internal evidence level` at #123 activation and after WP-R1", status)
+        self.assertIn("WP-R2 — current-context evidence readiness for target cluster A", status)
+        self.assertIn("research/internal-comparanda-relecture-61v-63r.md", status)
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
         self.assertIn(
             "witness attribution of legacy diplomatic material from project path, page_id or textual similarity",

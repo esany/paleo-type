@@ -1,0 +1,79 @@
+# #123 internal-comparanda relecture — WP-R1 target matrix
+
+Role: **bounded analytical research record for #123**, not a transcription owner, not a palaeography lexicon/concordance, and not a Project-status/gate owner. Current diplomatic readings remain owned exclusively by `../transcription/first-reading/*.tsv`; lifecycle/restart state remains owned by `../STATUS.md`.
+
+## Scope and evidence boundary
+
+This record executes **WP-R1 only** from #123 against the current four folio-local first-reading TSVs and `g3-internal-review-61v-63r.md`.
+
+At this checkpoint:
+
+- no manuscript pixels were inspected;
+- no fol. 55v–66v comparanda were searched;
+- no reading was changed or promoted;
+- no legacy `transcription/132.tsv`–`135.tsv`, `palaeography/*` or `apparatus/*` material was used as current reading authority;
+- G3 therefore remains `reached at current internal evidence level` and is **not** reopened by this matrix alone.
+
+The task of this matrix is only:
+
+```text
+current consequential target locus
+→ confirm whether uncertainty remains in the canonical TSV/G3 hand-off
+→ state the concrete graphical/notational question
+→ state what visible feature would have to be localized to discriminate it
+→ decide whether the case is ready for a targeted comparator search after WP-R2
+```
+
+If the current textual owners do not expose a sufficiently specific graphical question, the result is **target-pixel localization required before any comparator search**. That is a valid WP-R1 disposition and prevents source-wide fishing for possible words.
+
+## Finite target matrix
+
+| ID | Target locus / cluster | Current owner state | Concrete question for #123 | Visible feature that could discriminate | WP-R1 disposition |
+|---|---|---|---|---|---|
+| A | `61v-L03`, `61v-L17`, `62r-L12`, `62v-L06`, `62v-L08`, `62v-L21` recurrent surname-like sequence | all six remain `unresolved`; retained candidates include `grevendorff`, `greuendorff`, `grefendorff` | Can the disputed graphematic sequence be discriminated beyond recurrence, without importing Reg. Ii 4 spelling or historical identity? | The exact stroke order/topology in the **disputed medial part** of the repeated graph: number and shape of minims/loops/ascender-or-descender forms corresponding to the competing `v/u/f`-type alternatives, checked together with the stable beginning/end of the same graph rather than by expected surname. | **Comparator-ready after WP-R2 target localization. First #123 search question.** Seek only same-Source occurrences whose disputed segment is visibly clearer and structurally comparable. |
+| B | `62r-L06`, `62r-L09` token following `hanns` | `hanns` supported; following name-like token unresolved in both | Are the two following graph sequences graphically the same token, and can any grapheme within them be promoted? | Word boundary/length, initial letter form, any ascender/descender pattern, minim sequence and terminal cluster; syntactic position alone is non-discriminating. | **Comparator-ready after WP-R2.** First compare the two target occurrences at pixel level; search outside the Editionslocus only if a specific uncertain feature remains that another same-Source token could discriminate. |
+| C | `61v-L04`–`L09` quantity/accounting region | lines remain unresolved around quantity/sign notation; secure islands include written `1`, `virtel`, `haber`, `maß`, `fuder hauers` | Which visible left-side signs are repetitions of the same sign class, and can any written sign be discriminated graphically without assigning a value? | Stroke topology/count, relative height/baseline position, enclosure/loop form, abbreviation-like overstroke, separator placement and distinction from securely written Arabic/Roman forms; **value or measure meaning is not a discriminant**. | **Comparator-ready after WP-R2 sign localization.** Search only for matching sign morphologies in other accounting/list contexts; no sign→value inference. |
+| D | deletion at `61v-L16`; deletion at `62r-L18` | deletion phenomenon secure; deleted wording unresolved (`Knawe` only possible at 62r-L18) | Do surviving pre-strike traces support any further graphematic recovery of the deleted token? | Surviving baseline strokes, ascenders/descenders, word width/spacing and the relationship of those strokes to the overlying cancellation line; ordinary strike morphology elsewhere is useful only if it helps separate deleted ink from cancellation ink. | **Target-pixel-first.** A comparator search is permitted only if WP-R2 exposes a concrete surviving letterform; otherwise retain `deletion: unclear` without searching for expected words. |
+| E1 | `62r-L01` two unclear spans | unresolved | Can either unclear span be reduced to a graphically bounded initial/terminal sequence that is distinctive enough for internal comparison? | Word boundaries, initial and final letter shapes, any abbreviation mark, ascender/descender or stable minim group. | **Target-pixel localization required before comparator search.** Current text islands alone do not define a responsible lexical search target. |
+| E2 | `62r-L03`–`L04` unresolved forms around `pfarrer`, `jerlich`, `zu Knawe` | unresolved | Can the intervening forms be segmented and given stable graphematic edges before any formulaic comparison? | Spacing/word boundaries, initial/final strokes, abbreviation overlines and attachment to adjacent secure words. | **Target-pixel localization required before comparator search.** Formulaic context may later generate a test but cannot define the reading now. |
+| E3 | `62r-L10`–`L11` quantity/measure sequence ending in `maß` | unresolved; written quantity/measure signs explicitly unexpanded | Can the written sequence before `maß` be divided into repeatable sign classes or letter/sign groups? | Individual sign topology, spacing between signs and lexical material, abbreviation marks, and comparison with secure `ij`, `1`, `80` only at written-sign level. | **Comparator-ready after WP-R2 sign segmentation.** May share a search path with C only where the localized sign morphology actually matches. |
+| E4 | `62r-L17` `⟦unclear: sonsten?⟧` | unresolved; `sonsten?` retained only as candidate | Does the target graph itself support `sonsten` rather than another lexical form? | Initial letter form, medial minim/round-letter sequence and terminal `-en`-type cluster, with word width and joins; syntax is not evidence. | **Comparator-ready after WP-R2.** Search for the specific localized letter sequence, not for semantically equivalent clauses. |
+| E5 | `62r-L19`–`L23` residual wood/pfarrer clause | `80` at L19 secure; several lexical spans at L19–L21/L23 unresolved | For each unresolved token, can a stable graphematic edge or distinctive internal cluster be localized strongly enough to justify comparison with same-Source prose? | Per-token initial/final forms, ascender/descender pattern, abbreviation marks, word width and joins to adjacent secure words; shared `holtz`/`pfarrer` semantics are not sufficient. | **Target-pixel-first, then token-specific search only.** Do not search the Source for a reconstructed clause. |
+| F1 | `62v-L01`–`L06` | multiple unresolved spans; `80`, `pfarrern`, `Knawe`, `wolff` are secure islands; surname component belongs to A | Can each non-surname unclear span be localized as a distinct graph/sign question rather than treated as one reconstructed property clause? | Per-span word boundaries, initials/finals, abbreviation/sign marks and any distinctive ascender/descender or minim cluster. | **Mixed:** surname handled by A; all other spans require WP-R2 target localization before any comparator search. |
+| F2 | `62v-L09`–`L10` | flanking spans in L09 unresolved; L10 wholly unresolved; L11 already promoted and is not a start target | Can a stable graph be localized immediately before/after the secure `zu Knawe / mit einem` island, or on L10, that could be independently compared? | Edge letters at the secure-island boundaries, word spacing, any long ascender/descender or abbreviation mark; L11 wording must not be projected backward. | **Target-pixel localization required.** No source search from the current lexical context alone. |
+| F3 | `62v-L12`–`L19` | L12 and L19 contain secure clause fragments; L13–L18 are wholly `⟦unclear⟧` in the current diplomatic owner | Is there any stable, recoverable graphematic feature on these lines that can define a bounded comparator question at all? | First establish on target pixels a word boundary, initial/final letter, distinctive ascender/descender, abbreviation mark or other repeatable graph. Without one, no comparison feature exists. | **Not comparator-ready from repo text alone. WP-R2 target localization is mandatory; no fol. 55v–66v search before a concrete feature is found.** |
+| F4 | `62v-L20`–`L24` | secure islands `Von dem acker`, surname cluster, `Soll er dem pfarrer ein`, `andern acker`, `vnnd denselbigen`; intervening spans unresolved | Can each unresolved locus-description/property token be bounded graphically and compared independently, rather than reconstructing the whole clause? | Initial/final forms, spacing, abbreviation marks, ascender/descender/minim pattern at each unclear token; surname question remains A. | **Target-pixel-first, then token-specific comparison only.** No clause-level semantic reconstruction. |
+| G | `63r-L04` display heading | heading existence secure; lexical reading unresolved: `Zulage?` / `Sulage` | Does the display graph discriminate the initial letter and remainder strongly enough to prefer `Zulage` or `Sulage`? | Primarily the morphology of the initial display capital (`Z`-type versus `S`-type), then the sequence and joins of the following letters; heading function/expected terminology is non-discriminating. | **Comparator-ready after WP-R2 heading enlargement.** Seek only clearly comparable display-letter forms from the same Source if they bear on the disputed initial or following sequence. |
+| H | `63r-L10` `xlvij` | row status `working`; G3 explicitly leaves exact graphematic security open while forbidding year normalization | Is the written Roman-like sign sequence exactly supportable as `xlvij` at graphematic level? | Count/order of the individual Roman-like strokes/forms, terminal `i/j` distinction where visually meaningful, spacing/separation from `Jhars`, and any abbreviation/overstroke; calendar/year plausibility is irrelevant. | **Comparator-ready after WP-R2 sign-level enlargement.** Compare only sign forms, never inferred date values. |
+
+## Frozen start-set boundary after WP-R1
+
+The finite #123 start set remains A–H above, with E and F split only into **operational subclusters** so that search questions cannot silently expand into clause reconstruction. This is not a new research scope.
+
+Two established findings are explicit negative controls and are **not** reopened by WP-R1:
+
+- `62r-L24 = So ...`, not a second Arabic `80`;
+- `62v-L11 = acker / zu seinem steinbruch gemacht` is the existing justified G3 promotion.
+
+They may be revisited only if new direct target evidence specifically falsifies them.
+
+## First #123 discriminating question
+
+The first source-internal search path, **after WP-R2 readiness is established**, is target cluster **A — recurrent surname-like sequence**.
+
+Question:
+
+> Can a same-Source occurrence within fol. 55v–66v provide a visibly clearer instance of the same surname-like graph such that the disputed medial stroke sequence can discriminate among the retained Reg.-Ii.-5 graphematic candidates, while the target occurrences themselves remain the reading authority?
+
+The search must be driven by the localized stroke pattern, not by the expected historical name, Reg. Ii 4 `Greffendorff`, or a general lexical search.
+
+## WP-R1 result / hand-off to WP-R2
+
+**WP-R1 is complete at the repository-text level.** Every consequential start cluster from the current G3 hand-off has been checked against the canonical first-reading owner state and assigned one of two dispositions:
+
+1. a concrete graphical/notational question is already definable and can proceed to WP-R2 readiness; or
+2. the current text record is too unspecific, so **target-pixel localization in WP-R2 must precede any comparator search**.
+
+No case authorizes fol. 55v–66v browsing without a prior target feature.
+
+Immediate next action: **WP-R2 for cluster A** — verify exact File/SHA/crosswalk in the current execution context, establish `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the six target surname loci and only then inspect any additional folio needed for a graphically defined same-Source comparator search.
