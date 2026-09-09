@@ -558,3 +558,36 @@ New target-supported features and current internal controls made these handed-fo
 **E2 is complete. Next bounded cursor: E3 — quantity/measure sequence at `62r-L10`–`L11`, ending in working `maß`.** Begin again with question-specific target readiness and sign-by-sign segmentation under the existing notation protocol. E2 readiness does not carry to E3. Neither `drei virtel` nor prior cluster C sign morphology licenses an E3 sign reading, unit expansion or value.
 
 AI provenance: Codex (GPT-6-based assistant, exact service build not fixed), 2026-09-09; direct target-first image inspection and feature-specific internal comparisons; Poppler 600-dpi renders and Pillow crops/enlargements. No OCR/generative enhancement, literature claim, Reg. Ii 4 or Legacy reading authority was used. These are AI-assisted working readings with explicit uncertainty, not independent qualified human palaeographic validation. Technical checks establish only the tested deterministic invariants.
+
+## Cluster E3 execution — quantity/measure sequence at 62r-L10–L11 (2026-09-09)
+
+### Fresh readiness and target-first notation protocol
+
+Fresh `git fetch origin main` confirmed E2 merge `326240d938969e6a731aa450fdc0b0dc8964f42c`; the canonical STATUS restart cursor, E3 matrix row and the existing notation protocol were read before creating `research/123-e3-62r-l10-l11`. The controlled supplied PDF was freshly hashed again as `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`, matching canonical File `FILE-REG-II-5-00000129-EXCERPT`. A fresh 600-dpi Poppler render of PDF p15 measured 4961 × 7016 pixels. Whole-page visual inspection confirmed printed `Bild: 133`, `Seite 15 von 25` and foliation `62`, consistent with the canonical observed mapping `62r = export image 133 = PDF p15`.
+
+The page was inspected in physical order; L10 follows L09 and L11 follows L10. E3 target crops were `(1900,2240,4080,2410)` for L10 and `(1900,2410,4080,2590)` for L11, measured from the upper-left of the unrotated fresh p15 raster. The following p15 controls were then freshly viewed only after the target morphology was separated: `ij` at L05 `(1900,1540,2850,1720)`, written `1`/`virtel` at L07 `(1900,1840,3350,2025)`, Arabic `80` at L19 `(1900,3860,3050,4040)`, and secure running-text `Knawe` forms at L01/L07. Target and controls were also displayed at 3× from the same pixels; this is non-generative enlargement, not additional source detail.
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+These states apply only to E3 L10–L11 and the listed p15 controls in this execution. E2 readiness and cluster-C comparator readiness do not carry over.
+
+### Target segmentation and comparison result
+
+**L10.** After the secure `huff landes`, the target contains several connected but non-uniform groups. The first relevant group has a compact baseline start followed by two short elevated acute marks and a looped/tall movement; adjacent tall and descending strokes join into a further compressed group. Their spacing and topology do not support treatment as one ordinary word, one isolated abbreviation sign, or one repeated numeral. The marks are source-visible, but their precise internal boundaries remain unstable at the available raster resolution.
+
+The controls were tested only against that localized graphical question. The target does not match the ordered terminal-stroke morphology of written `ij`; it is not the closed two-character topology of Arabic `80`; and it does not match the isolated Arabic `1` control. The target also has no localized morphology that would responsibly select a prior cluster-C list-sign class for renewed comparison. No value, unit, expansion, administrative function or sign-to-value mapping follows.
+
+**L11.** Before the already working terminal `maß` is one continuous cursive word group with a large initial loop and a compressed baseline sequence. Its word boundary before `maß` is secure. The graph does not separate into a stable numeral/measure sign plus lexical remainder, and no independent abbreviation overline is observable. Same-page `Knawe` forms were inspected only to test the large initial and subsequent round/minim movement. They do not discriminate enough of L11's internal sequence to promote a place or word reading; resemblance at the outer silhouette is insufficient. The secure `maß` remains the only diplomatic lexical island on L11.
+
+### Disposition and G3 consequence
+
+No E3 target-supported grapheme or sign class is promoted. The canonical `62r.tsv` and derived view remain unchanged. The exact target segmentation and the negative same-page controls are the bounded E3 finding: the residual cannot be resolved without collapsing heterogeneous visible movements into an unsupported number, unit, word or abbreviation.
+
+Because fresh target inspection and current controls made the inherited notation residual newly testable, G3 was treated as **bounded `reopened` during E3 evaluation**. After the target returns and negative control path, G3 is again **`reached at current internal evidence level`** for the evaluated fol. 61v–63r scope. This does not resolve L10/L11, does not alter G4, and does not imply same hand, G5/G6, a sign lexicon, a source-wide notation inventory or historical/metrological interpretation.
+
+**E3 is complete. Next bounded cursor: E4 — `62r-L17` candidate `⟦unclear: sonsten?⟧`.** E4 requires its own target-pixel readiness and graph segmentation before any same-Source comparison. The E3 controls, including `ij`, `1`, `80`, `maß` and `Knawe`, carry no readiness or reading to E4.
+
+AI provenance: Codex (GPT-6-based assistant, exact service build not fixed), 2026-09-09; direct source inspection and feature-specific same-page negative controls. Poppler rendering and Pillow crops/enlargements were non-generative technical aids; no OCR, generative enhancement, Reg. Ii 4, Legacy text, external literature, grammatical completion or historical interpretation was used. This is AI-assisted working research, not independent qualified human palaeographic validation.
