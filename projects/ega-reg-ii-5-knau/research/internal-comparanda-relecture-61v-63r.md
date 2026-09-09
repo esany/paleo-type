@@ -1,20 +1,20 @@
-# #123 internal-comparanda relecture — WP-R1 target matrix
+# #123 internal-comparanda relecture — target matrix and cluster audit
 
 Role: **bounded analytical research record for #123**, not a transcription owner, not a palaeography lexicon/concordance, and not a Project-status/gate owner. Current diplomatic readings remain owned exclusively by `../transcription/first-reading/*.tsv`; lifecycle/restart state remains owned by `../STATUS.md`.
 
 ## Scope and evidence boundary
 
-This record executes **WP-R1 only** from #123 against the current four folio-local first-reading TSVs and `g3-internal-review-61v-63r.md`.
+This record began as the **WP-R1 finite target matrix** against the current four folio-local first-reading TSVs and `g3-internal-review-61v-63r.md`. It now also carries the bounded cluster-by-cluster execution audit required by #123. Historical checkpoint statements below remain scoped to the stage at which they were recorded; later cluster sections supersede them only for the affected target.
 
-At this checkpoint:
+At the WP-R1 checkpoint:
 
 - no manuscript pixels were inspected;
 - no fol. 55v–66v comparanda were searched;
 - no reading was changed or promoted;
 - no legacy `transcription/132.tsv`–`135.tsv`, `palaeography/*` or `apparatus/*` material was used as current reading authority;
-- G3 therefore remains `reached at current internal evidence level` and is **not** reopened by this matrix alone.
+- G3 therefore remained `reached at current internal evidence level` and was **not** reopened by the matrix alone.
 
-The task of this matrix is only:
+The matrix task was only:
 
 ```text
 current consequential target locus
@@ -24,7 +24,7 @@ current consequential target locus
 → decide whether the case is ready for a targeted comparator search after WP-R2
 ```
 
-If the current textual owners do not expose a sufficiently specific graphical question, the result is **target-pixel localization required before any comparator search**. That is a valid WP-R1 disposition and prevents source-wide fishing for possible words.
+If the current textual owners do not expose a sufficiently specific graphical question, the result is **target-pixel localization required before any comparator search**. That is a valid disposition and prevents source-wide fishing for possible words.
 
 ## Finite target matrix
 
@@ -76,20 +76,20 @@ The search must be driven by the localized stroke pattern, not by the expected h
 
 No case authorizes fol. 55v–66v browsing without a prior target feature.
 
-Immediate next action: **WP-R2 for cluster A** — verify exact File/SHA/crosswalk in the current execution context, establish `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the six target surname loci and only then inspect any additional folio needed for a graphically defined same-Source comparator search.
+Historical hand-off at that checkpoint: **WP-R2 for cluster A** — verify exact File/SHA/crosswalk in the current execution context, establish `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the six target surname loci and only then inspect any additional folio needed for a graphically defined same-Source comparator search.
 
 ## Cluster A execution — current-context readiness and targeted same-Source search
 
 ### Evidence readiness
 
-Cluster A was reopened for pixel-dependent work only after fresh current-context provenance checks.
+Cluster A was opened for pixel-dependent work only after fresh current-context provenance checks.
 
 - canonical File: `FILE-REG-II-5-00000129-EXCERPT`;
 - canonical Source: `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`;
 - canonical File SHA-256: `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
-- the supplied/staged PDF bytes in this execution context matched that SHA exactly;
+- the supplied/staged PDF bytes in that execution context matched that SHA exactly;
 - canonical crosswalk rechecked: `61v = export image 132 = PDF p14`, `62r = image 133 = p15`, `62v = image 134 = p16`;
-- exact-source pages 14–16 were rendered at 600 dpi and visually inspected in this execution context.
+- exact-source pages 14–16 were rendered at 600 dpi and visually inspected in that execution context.
 
 The six target occurrences were individually localized and inspected:
 
@@ -100,7 +100,7 @@ The six target occurrences were individually localized and inspected:
 - `62v-L08`;
 - `62v-L21`.
 
-For this bounded cluster in this execution context:
+For this bounded cluster in that execution context:
 
 ```text
 STAGED = PASS
@@ -129,6 +129,135 @@ The negative result is itself the bounded #123 finding: an exact-source, current
 
 No Reg. Ii 4 wording, historical identity, Legacy `transcription/132.tsv`–`135.tsv`, `palaeography/*` or `apparatus/*` material was used as reading authority.
 
-Because cluster A produced no new relevant comparator that makes an existing G3 finding newly testable and invalidated no anchor, **G3 remains `reached at current internal evidence level`**; it is not reopened by this negative search result.
+Because cluster A produced no new relevant comparator that makes an existing G3 finding newly testable and invalidated no anchor, **G3 remained `reached at current internal evidence level`**; it was not reopened by this negative search result.
 
-Immediate next bounded target is **cluster B — the two graph sequences following `hanns` at `62r-L06` and `62r-L09`**. The first step is direct target-pixel comparison of those two occurrences. Only if that comparison exposes a specific unresolved feature may a further same-Source comparator search begin.
+## Operational protocol for the remaining #123 clusters
+
+This section operationalizes already-canonical S4/D-004 rules for this bounded Project. It does **not** introduce a second epistemic model or a generic methodology change.
+
+### Canonical epistemic mapping
+
+All claims are routed through the sole canonical textual chain:
+
+`OBSERVATION → READING → NORMALIZATION → IDENTIFICATION → INTERPRETATION`.
+
+For #123:
+
+- visible strokes, spacing, baseline/column position and directly visible layout relation are `OBSERVATION`;
+- a letter/sign class or the diplomatically written sequence is a `READING` claim;
+- expansion or normalized written/number form is `NORMALIZATION` only when separately evidenced;
+- person/place/institution resolution is `IDENTIFICATION`;
+- administrative, metrological, chronological, economic or other historical meaning is `INTERPRETATION`.
+
+A visible list position may be observed as layout; an asserted administrative function of that position is interpretive. No layer automatically licenses the next.
+
+### Operational source profile — bounded to inspected evidence
+
+Current direct-source observations relevant to #123 include:
+
+- connected cursive writing in the running text, with large/display forms at paragraph or heading starts;
+- alphabetic word forms alongside distinct written numeral/sign phenomena;
+- securely observed Arabic forms including `1` and `80`;
+- Roman-like/alphabetic numeral or sign sequences including written `ij` and the still only working `xlvij` sequence;
+- visibly separate accounting/quantity-sign material in the 61v list block;
+- abbreviation marks, separators and cancellation/deletion phenomena;
+- different layout contexts for running prose, list/accounting entries and display headings.
+
+No precise historical script label (`Kanzleikursive`, `Kanzleibastarda`, `frühe Kurrent` or similar), hand identity, scribe identity or regional school is promoted here from model knowledge. Such a characterization may be added only as a bounded hypothesis or after the specific external evidence supporting it has actually been inspected.
+
+### Disciplinary routing and claim ceiling
+
+| Cluster | Initial problem/domain route | Claim ceiling without additional evidence |
+|---|---|---|
+| A | palaeographic graph comparison; philology only for candidate testing | `READING`; no historical identity |
+| B | palaeography + historical philology only where graph-bound | `READING`; no person identification |
+| C | palaeography + historical numeral/accounting notation; metrology/numismatics only after sign/unit stabilization | initially `READING` |
+| D | palaeography + cancellation/deletion as document phenomenon | `READING` of surviving graph; deleted wording may remain unresolved |
+| E1/E2/E4/E5 | palaeography, then historical philology after localization | `READING` |
+| E3 | palaeography + historical numeral/accounting/measure notation | initially `READING` |
+| F1–F4 | palaeography + segmentation/layout first; further domain only after a localized problem appears | initially `READING` |
+| G | display/script palaeography; terminology only secondarily | initially `READING` |
+| H | palaeography + historical numeral/date notation | `READING` of written sign sequence; no calendar/production date |
+
+`same Source` remains a provenance relation only and is not upgraded to `same hand`.
+
+### Notation protocol for C / E3 / H
+
+Before the first notation-specific comparison, use this sequence:
+
+1. **OBSERVATION:** localize the written sign/sequence morphologically: stroke count/topology, loops/minims, overstroke, baseline or column position, separators and relation to neighboring text.
+2. **READING — sign class:** classify only as far as the target graph carries: `Arabic numeral`, `Roman-like sequence`, `alphabetic-or-abbreviation-like`, `accounting-or-measure sign`, or `unresolved sign class`.
+3. Keep visible layout position separate from any inferred administrative/documentary function.
+4. Seek same-Source comparanda only for the same localized graphical/notational question. Secure `1`, `ij`, `80`, `xlvij` and `maß` are not automatically one sign system.
+5. Return every comparator-generated hypothesis to the target graph.
+6. Use external historical notation practice only when a concrete sign/function claim needs it.
+7. Treat value, unit, expansion, conversion and calendar value as separate `NORMALIZATION`/`INTERPRETATION` claims requiring their own evidence.
+8. Promote only the written form actually carried by the target into the diplomatic TSV.
+
+No sign→value repertoire, numeral concordance or source-wide notation inventory is created.
+
+### External reference audit
+
+No external palaeographic/notational publication is used as operative evidence for clusters A or B. Suggested resources remain discovery leads until the relevant underlying passage has actually been inspected under `methodology/evidence-policy.md`.
+
+When an external claim is triggered, record here:
+
+`bibliographic/institutional identity | evidence status | access route | exact page/section/passage | supports | does not support | target cluster | date checked`.
+
+An inaccessible standard work does not block unrelated direct source-internal comparison. The unsupported higher claim stays unresolved or specialist validation remains pending.
+
+## Cluster B execution — `hanns` + following name-like tokens at 62r-L06 / L09
+
+### Evidence readiness
+
+Cluster B was opened only after fresh question-specific current-context checks:
+
+- the staged supplied PDF matched canonical `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical crosswalk rechecked: `62r = export image 133 = PDF p15`;
+- exact PDF page 15 was freshly rendered at 600 dpi and visually inspected;
+- `62r-L06` and `62r-L09` were individually localized and enlarged from that fresh render.
+
+For these two target loci in this execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+No blanket readiness claim follows for cluster C or later targets.
+
+### Target-to-target graphical comparison
+
+The two tokens share one securely discriminable feature: both begin with the same looped tall stem/shoulder form that is also directly visible in the immediately adjacent secure `hanns` and other h-initial words on the same target page. The target pixels therefore support an initial diplomatic `h` in both previously wholly unresolved name-like spans.
+
+Beyond that initial, the two target sequences are **not graphically supported as the same written token**. Their visible extents and internal/terminal stroke topology diverge: the L09 sequence is longer and contains an extended medial/descending articulation not mirrored by the shorter L06 remainder. This is sufficient to reject the shortcut “same syntactic position → same token”, but it does not establish two historical persons or normalized names.
+
+The remaining strokes in each token do not yield a responsibly bounded next grapheme candidate. A broader fol.55v–66v search would therefore lack a concrete discriminating feature and would become lexical/name fishing. **No outside-Editionslocus comparator search was performed for cluster B.**
+
+No Reg. Ii 4 wording, historical name expectation, Legacy transcription/apparatus/palaeography, or external script typology supplied the result.
+
+### Target recheck / promotion
+
+The partial target-supported reading is promoted only in the canonical `62r.tsv` owner:
+
+- `62r-L06`: `einer huff landes vom hanns h⟦unclear⟧ /`;
+- `62r-L09`: `vom hanns h⟦unclear⟧ zu Knawe / von einer`.
+
+Both rows remain `unresolved`. No person identification, full surname reading or same-token claim is made. The derived `61v-63r-first-reading.md` view is regenerated from the changed canonical row readings.
+
+### G3 consequence
+
+Cluster B supplied a new discriminating internal observation for a residual explicitly handed forward by the earlier G3 review. For that affected subproblem, the generic reopen condition is therefore treated as triggered during evaluation. The new evidence has now been fully assessed and the justified partial promotion persisted while the non-discriminating remainder stays explicit. Final Project state may therefore again be assessed as **G3 `reached at current internal evidence level`**; the transient re-evaluation does not imply G5/G6 or resolution of the full name tokens.
+
+### Cluster B result / hand-off
+
+Cluster B is complete at the available internal-evidence level:
+
+- initial `h` promoted at both target loci;
+- the two remainders are not treated as the same written sequence;
+- no further grapheme is responsibly promoted;
+- no source-wide comparator search was justified or performed;
+- both name-like tokens remain explicitly unresolved after the initial `h`;
+- no historical identity claim follows.
+
+Immediate next bounded target is **cluster C — 61v-L04–L09 quantity/accounting notation**. The notation protocol above must govern that work. First action is fresh target-pixel readiness and sign-by-sign morphological localization; no sign value, measure value or economic interpretation may be inferred before the written sign class itself is established.
