@@ -591,3 +591,34 @@ Because fresh target inspection and current controls made the inherited notation
 **E3 is complete. Next bounded cursor: E4 — `62r-L17` candidate `⟦unclear: sonsten?⟧`.** E4 requires its own target-pixel readiness and graph segmentation before any same-Source comparison. The E3 controls, including `ij`, `1`, `80`, `maß` and `Knawe`, carry no readiness or reading to E4.
 
 AI provenance: Codex (GPT-6-based assistant, exact service build not fixed), 2026-09-09; direct source inspection and feature-specific same-page negative controls. Poppler rendering and Pillow crops/enlargements were non-generative technical aids; no OCR, generative enhancement, Reg. Ii 4, Legacy text, external literature, grammatical completion or historical interpretation was used. This is AI-assisted working research, not independent qualified human palaeographic validation.
+
+## Cluster E4 execution — `62r-L17` candidate `⟦unclear: sonsten?⟧` (2026-09-09)
+
+### Fresh readiness and target segmentation
+
+Fresh `git fetch origin main` confirmed E3 merge `a5c91ef90ebafd1d9fe1e77229de3e1090a2d68d`; the canonical STATUS restart cursor, E4 matrix row, current `62r.tsv`, derived view, canonical File register/crosswalk, G3 record and applicable governing/method rules were read before creating `research/123-e4-62r-l17`. The controlled supplied PDF was freshly hashed as `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`, matching canonical File `FILE-REG-II-5-00000129-EXCERPT`. Fresh Poppler rendering of PDF p15 at 600 dpi measured **4961 × 7016 pixels**. Whole-page visual inspection confirmed foliation `62`, printed `Bild: 133` and `Seite 15 von 25`, agreeing with the canonical observed crosswalk **62r = export image 133 = PDF p15**.
+
+The E4 target crop was `(1900,3250,4400,3460)`, measured from the upper-left of the unrotated fresh p15 raster. It retains the complete L17 baseline sequence around the question, including the preceding written `was` and following written `ein`. The candidate is one continuous word group with a visible inter-word gap at each side. Its target pixels show a distinct initial `s` entry, a following round `o` form, a linked medial `n`/`s`/tall-`t` sequence, and an ending `e` plus final `n`-type shoulder. No abbreviation mark, deletion, interlinear addition or damage intersects that group.
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+These states apply only to the E4 L17 target in this execution. E3 readiness and its notation controls were not reused.
+
+### Target return and negative comparator path
+
+The full target sequence, including its width and joins, supports **`sonsten`**. The result follows the target segmentation: it is not supplied by clause sense, the adjacent `was`/`ein`, the retained legacy alternative, Reg. Ii 4, or an expected administrative formula. Enlargements at 3× used the same source pixels and introduced no new detail.
+
+No same-Source comparator was used for the promoted word. Once the initial, round medial form, joined minim/tall-stroke sequence and final `-en`-type cluster were all visible on the target, there was no residual feature-specific ambiguity that could justify a lexical comparator search. A source-wide or semantically driven search would instead have tested a reconstructed clause, so it was not performed. The nearby line material was used only to maintain physical-line localization, not as a reading authority.
+
+### Disposition and G3 consequence
+
+`transcription/first-reading/62r.tsv` now reads `pflegen was sonsten ein ander nachbar` at `62r-L17`; `sonst` is no longer marked unclear. The row remains `unresolved` because the existing `pflegen` / `pflegt` first-verb alternative was outside the E4 target and is preserved in `alternatives`. The derived whole-locus view was regenerated from the changed TSV. No other diplomatic row changed.
+
+Fresh direct target evidence made the inherited L17 residual newly testable, so G3 was treated as **bounded `reopened` during E4 evaluation**. After the target recheck and the explicitly negative comparator path, G3 is again **`reached at current internal evidence level`** for the evaluated fol. 61v–63r scope. This does not alter G4, establish a same-hand claim, resolve the first-verb alternative, authorize a source-wide lexicon/ontology, or imply G5/G6.
+
+**E4 is complete. Next bounded cursor: E5 — residual wood/pfarrer clause at `62r-L19`–`L23`.** E5 begins with new question-specific target readiness for each selected residual token; E4 readiness and its `sonsten` reading do not carry over.
+
+AI provenance: Codex (GPT-6-based assistant, exact service build not fixed), 2026-09-09; direct target-first image inspection. Poppler rendering and Pillow crop/enlargement were non-generative technical aids; no OCR, generative enhancement, Reg. Ii 4, Legacy text, external literature, grammar/formula completion or historical interpretation was used. This is AI-assisted working research, not independent qualified human palaeographic validation.
