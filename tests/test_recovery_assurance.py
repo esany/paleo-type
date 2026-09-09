@@ -138,7 +138,7 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("That bounded work package was completed on 2026-09-08 as an **Editionsbaustein**", li5)
         self.assertIn("current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", li5)
         self.assertIn("#123 remains the current owner-selected active scholarly work package", li5)
-        self.assertIn("Clusters A–D and E1–E4 are complete; E5 is the next bounded target", li5)
+        self.assertIn("Clusters A–D and E1–E5 are complete; F1 is the next bounded target", li5)
         self.assertIn("Cluster A execution established exact File/SHA/crosswalk", li5)
         self.assertIn("Cluster B separately re-established question-specific readiness", li5)
         self.assertIn("Cluster C separately re-established question-specific readiness", li5)
