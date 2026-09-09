@@ -10,7 +10,7 @@ On 2026-09-07 the human owner selected a bounded scholarly target: **source-exac
 
 On 2026-09-08 the human owner then selected **#123 — problembezogene interne Relektüre of the existing Reg. Ii 5 Editionsbaustein fol. 61v–63r** as the next scholarly block. Activation was deliberately blocked until #122 had restored a green technical checkpoint for the already-completed #115 state. #122 is now completed; PR #125 was merged and the post-merge `source-contract` run `34284952980` passed canonical validation, all regressions, fresh-process Project-context compilation and the real-data resolver checks.
 
-`project.yml:active_scope` therefore records #123 as the **owner-selected active scholarly scope**. WP-R1 has been completed from the canonical first-reading TSVs and the existing G3 hand-off in `research/internal-comparanda-relecture-61v-63r.md`. Cluster A completed a current-context target-pixel inspection plus targeted same-Source comparator search with no diplomatic promotion. Cluster B completed a fresh direct comparison of the two `hanns`-following target tokens at `62r-L06` / `62r-L09`: the initial `h` is promoted in both canonical rows, the remaining token sequences stay unresolved and are not treated as the same written token. Cluster C completed a fresh morphology-first relecture of the `61v-L04`–`L09` quantity/accounting block plus a graphically targeted same-Source comparator check: multiple sign morphologies are distinguishable and recur within a heterogeneous notation repertoire, but no exact sign reading or sign→value/unit mapping is justified. Cluster D has now completed a fresh target-pixel-first cancellation relecture: the surviving underlying graph supports deleted `pfarrern` at `61v-L16` and deleted `Knawe` at `62r-L18`; both cancellations remain explicit source phenomena. Cluster E1 completed independent segmentation and same-page feature comparisons for the two unclear spans at `62r-L01`: only terminal `lich` and initial `ob` are promoted, with both residuals still explicit. E2 then completed independent examination of L03–L04: partial `h`, `vffh` and `f` plus written `drei virtel` are promoted; both rows retain unresolved text. The Project-specific D-004 routing and notation protocol remains persisted in the same bounded #123 research owner.
+`project.yml:active_scope` therefore records #123 as the **owner-selected active scholarly scope**. WP-R1 has been completed from the canonical first-reading TSVs and the existing G3 hand-off in `research/internal-comparanda-relecture-61v-63r.md`. Cluster A completed a current-context target-pixel inspection plus targeted same-Source comparator search with no diplomatic promotion. Cluster B completed a fresh direct comparison of the two `hanns`-following target tokens at `62r-L06` / `62r-L09`: the initial `h` is promoted in both canonical rows, the remaining token sequences stay unresolved and are not treated as the same written token. Cluster C completed a fresh morphology-first relecture of the `61v-L04`–`L09` quantity/accounting block plus a graphically targeted same-Source comparator check: multiple sign morphologies are distinguishable and recur within a heterogeneous notation repertoire, but no exact sign reading or sign→value/unit mapping is justified. Cluster D completed a fresh target-pixel-first cancellation relecture: the surviving underlying graph supports deleted `pfarrern` at `61v-L16` and deleted `Knawe` at `62r-L18`; both cancellations remain explicit source phenomena. Cluster E1 completed independent segmentation and same-page feature comparisons for the two unclear spans at `62r-L01`: only terminal `lich` and initial `ob` are promoted, with both residuals still explicit. E2 completed independent examination of L03–L04: partial `h`, `vffh` and `f` plus written `drei virtel` are promoted; both rows retain unresolved text. E3 independently re-tested L10–L11 under the notation protocol and retained them unresolved after non-discriminating controls. E4 promoted target-supported `sonsten` at L17 while preserving the independent `pflegen`/`pflegt` uncertainty. E5 has now completed fresh target-pixel relecture of `62r-L19`–`L23`: target-supported `wolff` at L19 and `dem gemeinswalde` at L20 are promoted, while the L21 and L23 residuals remain explicitly unresolved. The Project-specific D-004 routing and notation protocol remains persisted in the same bounded #123 research owner.
 
 ## #123 scope boundary
 
@@ -157,7 +157,16 @@ STAGED = PASS
 VISION-INSPECTABLE = PASS
 ```
 
-For E5 and later clusters, **target-context pixel readiness is not yet re-established**. Their own target graphs and every comparator actually used must receive a fresh, question-specific readiness check before a pixel-dependent claim is made.
+Cluster E5 independently re-established question-specific readiness on 2026-09-09 from a newly supplied controlled PDF whose SHA-256 again matched the exact canonical File. The canonical observed crosswalk `62r = export image 133 = PDF p15` was rechecked, p15 was freshly rendered at 600 dpi (4961 × 7016 px), and L19–L21/L23 were individually localized before lexical interpretation. The only comparison controls actually used were fresh same-page `62r-L12 wolff` for L19 and L19 `gemeinen` for the already localized `gemein-` sequence at L20. L21/L23 did not yield a sufficiently specific next discriminator for a broader comparator search.
+
+For the E5 target residuals and those two explicitly inspected p15 controls in that execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+For F1 and later clusters, **target-context pixel readiness is not yet re-established**. Their target graphs and every comparator actually used must receive a fresh, question-specific readiness check before a pixel-dependent claim is made. E5 p15 readiness does not carry to 62v.
 
 Historical #115 readiness remains historical only and is not used as a substitute for these current checks. Existing TSV wording, Reg. Ii 4 wording or Legacy material must never substitute for missing pixels.
 
@@ -166,7 +175,7 @@ Historical #115 readiness remains historical only and is not used as a substitut
 Current folio-local first-reading partitions are the sole canonical Reg. Ii 5 diplomatic owners for the Editionslocus:
 
 - `transcription/first-reading/61v.tsv` — initial commit `e26eaf5fec37b2cc927c033c356a1f514a7c0dc2`, now refined by #123 cluster D at `L16` only;
-- `transcription/first-reading/62r.tsv` — initial commit `e79d679553d3039c582dc99eabdea368d31a193b`, refined by #123 cluster B at `L06` / `L09`, cluster D at `L18`, E1 at `L01` and E2 at `L03`–`L04`;
+- `transcription/first-reading/62r.tsv` — initial commit `e79d679553d3039c582dc99eabdea368d31a193b`, refined by #123 cluster B at `L06` / `L09`, cluster D at `L18`, E1 at `L01`, E2 at `L03`–`L04`, E4 at `L17`, and E5 at `L19`–`L20`;
 - `transcription/first-reading/62v.tsv` — initial commit `7c28026426433df90b67c2420bb7f03c990f9a63`, later G3 refinement commit `b5644250c813fa756c5c4995b5cc22d965bc6674`;
 - `transcription/first-reading/63r.tsv` — initial commit `ebb909042813c5886b184522721e6c30e41b73cf`.
 
@@ -183,7 +192,7 @@ The current partitions preserve the consequential visible source phenomena requi
 
 A direct target-graph recheck on 62r rejected one fluent legacy carry-over: the opening of `62r-L24` is represented as `So`, not as a second Arabic `80`. On 63r, `agustini`, `pfingsten` and `xlvij Jhars` remain manuscript-level wording/sign evidence; no calendar date or absolute year is inferred in the diplomatic layer.
 
-Cluster A of #123 did **not** change any diplomatic row. Cluster B changed only the graphically secure initial of the two name-like spans: `62r-L06` now reads `... hanns h⟦unclear⟧ /` and `62r-L09` reads `... hanns h⟦unclear⟧ zu Knawe ...`; both rows remain `unresolved`. Cluster C produced a stronger analytical distinction among the `61v-L04`–`L09` sign morphologies but **no diplomatic sign reading was promoted**. Cluster D promoted the surviving deleted wording while retaining the cancellations explicitly: `61v-L16 = ⟦deletion: pfarrern⟧ einkommen /` and `62r-L18 = zu ⟦deletion: Knawe⟧ jerlich zugeben pflegt /`. E1 promotes only `⟦unclear⟧lich` and `ob⟦unclear⟧` at `62r-L01`; the row remains `unresolved`. E2 supports `h⟦unclear⟧` and `vffh⟦unclear⟧` on L03, separates `⟦unclear⟧ f⟦unclear⟧` before the L04 slash, and promotes final `drei virtel`. Both rows remain unresolved; the `feldes` comparison does not license `feld-`. E3 establishes that L10–L11 remain unresolved after target-first sign segmentation and non-discriminating same-page controls; no TSV or derived-view change was warranted. E4 promotes target-supported `sonsten` at L17; the separate `pflegen` / `pflegt` alternative remains unresolved. The derived view was regenerated after B, D, E1, E2 and E4; no derived regeneration was needed for C or E3.
+Cluster A of #123 did **not** change any diplomatic row. Cluster B changed only the graphically secure initial of the two name-like spans: `62r-L06` now reads `... hanns h⟦unclear⟧ /` and `62r-L09` reads `... hanns h⟦unclear⟧ zu Knawe ...`; both rows remain `unresolved`. Cluster C produced a stronger analytical distinction among the `61v-L04`–`L09` sign morphologies but **no diplomatic sign reading was promoted**. Cluster D promoted the surviving deleted wording while retaining the cancellations explicitly: `61v-L16 = ⟦deletion: pfarrern⟧ einkommen /` and `62r-L18 = zu ⟦deletion: Knawe⟧ jerlich zugeben pflegt /`. E1 promotes only `⟦unclear⟧lich` and `ob⟦unclear⟧` at `62r-L01`; the row remains `unresolved`. E2 supports `h⟦unclear⟧` and `vffh⟦unclear⟧` on L03, separates `⟦unclear⟧ f⟦unclear⟧` before the L04 slash, and promotes final `drei virtel`. Both rows remain unresolved; the `feldes` comparison does not license `feld-`. E3 establishes that L10–L11 remain unresolved after target-first sign segmentation and non-discriminating same-page controls; no TSV or derived-view change was warranted. E4 promotes target-supported `sonsten` at L17; the separate `pflegen` / `pflegt` alternative remains unresolved. E5 promotes target-supported `wolff` at L19 and restores the directly visible two-word span `dem gemeinswalde` at L20; both rows become `working`, while L21 and L23 remain unresolved after bounded negative target paths. The derived view was regenerated after B, D, E1, E2, E4 and E5; no derived regeneration was needed for C or E3.
 
 The current lean TSV representation remains adequate for the findings encountered. No Package-B/D-016 representation change is currently triggered.
 
@@ -249,7 +258,9 @@ E3 supplied fresh target/control evidence for the L10–L11 notation residual an
 
 E4 supplied fresh target evidence for the L17 residual and was bounded `reopened` during assessment. The target supports `sonsten`; no comparator was needed or used, and the distinct first-verb uncertainty remains explicit.
 
-**Final current state: G3 is again `reached at current internal evidence level` for the evaluated fol. 61v–63r scope after E4.** This does not resolve other outstanding prose/sign residuals and does not imply G5/G6.
+E5 supplied fresh target evidence plus feature-specific same-page controls for the L19/L20 residuals and was bounded `reopened` during assessment. Target return supports `wolff` at L19 and `dem gemeinswalde` at L20. L21 and L23 remain unresolved because their target graph did not yield a sufficiently stable complete sequence or next comparator feature; no clause reconstruction was used.
+
+**Final current state: G3 is again `reached at current internal evidence level` for the evaluated fol. 61v–63r scope after E5.** This does not resolve other outstanding prose/sign residuals and does not imply G5/G6.
 
 A later cluster changes G3 to `reopened` for its affected evaluated subproblem only when actual new relevant internal evidence makes an existing consequential G3 finding newly testable, or an anchor is invalidated. After full evaluation, G3 may again be assessed as reached at current internal-evidence level.
 
@@ -329,9 +340,9 @@ The gate-evaluated textual scope remains **Reg. Ii 5 fol. 61v–63r only**, with
 | G1 source/transmission basis | `reached` | Reg. Ii 5 source group / Editionslocus | Principal Reg. Ii 5 Source/File/SHA/crosswalk and separate comparison/context Sources are identified with explicit evidence/provenance limits. |
 | #115 source-exact editorial work package | `complete` | Reg. Ii 5 fol. 61v–63r | Completed Editionsbaustein and independent witness basis; not a G5/G6 claim. |
 | G2 diplomatic representation | `reached` | Reg. Ii 5 fol. 61v–63r | All 81 relevant physical anchors are represented in source order with uncertainty/source phenomena preserved; derived readable view exists. |
-| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | A was non-discriminating; B promoted initial `h` at L06/L09; C strengthened notation sign-class/repertoire evidence without sign→value resolution; D promoted deleted `pfarrern` at 61v-L16 and `Knawe` at 62r-L18 while retaining cancellation phenomena. E1 promotes only terminal `lich` and initial `ob` at L01, retaining both residuals. E2 promotes only h/vffh/f prefixes and written drei virtel, with other text unresolved. E3 independently re-tested L10–L11 but found no target-supported exact sign class, word, expansion, value or unit. E4 promotes only target-supported `sonsten` at L17 and retains the first-verb alternative. Each new-evidence residual was boundedly reopened during assessment and returned to reached after full evaluation. |
+| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | A was non-discriminating; B promoted initial `h` at L06/L09; C strengthened notation sign-class/repertoire evidence without sign→value resolution; D promoted deleted `pfarrern` at 61v-L16 and `Knawe` at 62r-L18 while retaining cancellation phenomena. E1 promotes only terminal `lich` and initial `ob` at L01. E2 promotes only h/vffh/f prefixes and written drei virtel. E3 retained L10–L11 unresolved after notation re-test. E4 promotes `sonsten` at L17 while preserving the first-verb alternative. E5 promotes `wolff` at L19 and `dem gemeinswalde` at L20; L21/L23 remain unresolved. New-evidence residuals were boundedly reopened during assessment and returned to reached after full evaluation. |
 | G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Independent witness states and bounded mapping remain valid; #123 does not automatically reopen this gate. |
-| #123 problem-focused internal relecture | `active` | target fol. 61v–63r; comparator search space fol. 55v–66v | WP-R1 complete; clusters A–D, E1–E4 complete. E5 is next. |
+| #123 problem-focused internal relecture | `active` | target fol. 61v–63r; comparator search space fol. 55v–66v | WP-R1 complete; clusters A–D and E1–E5 complete. F1 is next. |
 | G5 critical consolidation/validation | `not reached` | bounded edition target | #123 is not an automatic G5 task and no critically consolidated/validated text state is claimed. |
 | G6 scholarly edition | `not reached` | bounded edition target | No scholarly edition has been produced. |
 
@@ -339,18 +350,18 @@ Reading resolution remains incomplete in places and is compatible with G2–G4. 
 
 ## NEXT ACTION — canonical restart point
 
-**#123 remains the current owner-selected active scholarly work package. Clusters A–D and E1–E4 are complete; E5 is the next bounded target.**
+**#123 remains the current owner-selected active scholarly work package. Clusters A–D and E1–E5 are complete; F1 is the next bounded target.**
 
-The immediate bounded action is **E5 — residual wood/pfarrer clause at `62r-L19`–`L23`**:
+The immediate bounded action is **F1 — `62v-L01`–`L06`**, excluding the already separately governed surname component at L06:
 
-1. re-establish question-specific current-context readiness for each selected L19–L21/L23 residual target (`62r = export image 133 = PDF p15`);
-2. establish each target token's boundaries, initial/final forms, ascender/descender pattern and abbreviation marks before treating the neighbouring `pfarrholtz`, `80`, `pfarrer`, `holtz` or `geben` as comparison material;
-3. do not reconstruct a wood, obligation or pfarrer clause from syntax, administrative sense, Reg. Ii 4 or Legacy text;
-4. seek a same-Source comparator only for a concrete feature localized on an individual target token and return every hypothesis to that target;
-5. promote only target-supported graphemes; retain each untested or non-discriminating residual explicitly;
-6. E4 readiness and its `sonsten` reading do not carry to E5.
+1. freshly re-establish exact File/SHA/crosswalk/current-context pixel readiness for 62v; canonical crosswalk is `62v = export image 134 = PDF p16` with folio mapping `inferred-high`, not observed;
+2. independently localize each non-surname unresolved span at L01–L06: word/sign boundaries, initials/finals, ascender/descender/minim pattern and abbreviation/sign marks before any lexical or clause hypothesis;
+3. keep the recurrent surname question at L06 under the completed cluster-A path unless new direct target evidence specifically makes that residual newly testable; same Source does not imply same hand;
+4. seek same-Source comparanda only after a concrete target feature is fixed, and establish fresh readiness for every comparator actually used;
+5. do not reconstruct the dense property/obligation clause from secure islands `80`, `pfarrern`, `Knawe`, `wolff`, syntax, Reg. Ii 4 or Legacy material;
+6. E5 readiness and its p15 controls do not carry to F1/p16.
 
-No G5/G6, source-wide transcription, sign lexicon, ontology or generic METHOD change follows from E4 completion.
+No G5/G6, source-wide transcription, sign lexicon, ontology or generic METHOD change follows from E5 completion.
 
 Issues #122 and #124 are completed maintenance history. Issue #123 owns the active work-package checklist/audit trail. This STATUS owns the current scholarly/restart state and formal G1–G6 claims.
 
@@ -378,8 +389,9 @@ A fresh capable context must be able to reconstruct without old chat that:
 - E2 independently examined L03–L04, promoted only h/vffh/f and written `drei virtel`, and preserved explicit negative tail/loop comparisons and unresolved remainders;
 - E3 independently re-tested the L10–L11 quantity/measure residual, but current target and control pixels do not support an exact sign class, word, expansion, value or unit; canonical TSV and derived view stayed unchanged;
 - E4 independently re-tested L17 and promoted only target-supported `sonsten`; the first-verb alternative remains explicit and no comparator supplied the reading;
-- the derived witness view was regenerated after D, E1, E2 and E4 promotions; no regeneration was required for E3;
-- G3 was boundedly re-evaluated for B, C, D, E1, E2, E3 and E4 when actual new relevant internal evidence arose and is again reached at current internal evidence level after each full assessment; G4 remains reached;
+- E5 independently re-established exact-SHA/p15 readiness, promoted target-supported `wolff` at L19 and `dem gemeinswalde` at L20, and retained L21/L23 unresolved after explicit negative target paths; only fresh same-page L12 `wolff` and L19 `gemeinen` were used as feature-specific controls;
+- the derived witness view was regenerated after D, E1, E2, E4 and E5 promotions; no regeneration was required for E3;
+- G3 was boundedly re-evaluated for B, C, D, E1, E2, E3, E4 and E5 when actual new relevant internal evidence arose and is again reached at current internal evidence level after each full assessment; G4 remains reached;
 - hand differentiation remains `not investigated`; same Source never became same-hand proof;
-- readiness is question-specific: E4 readiness does not carry to E5;
-- the immediate cursor is **E5 individual target-pixel segmentation of residual tokens at `62r-L19`–`L23`; no comparator search before a concrete graphical feature is localized**.
+- readiness is question-specific: E5 p15 readiness does not carry to F1 p16;
+- the immediate cursor is **F1 target-pixel segmentation of non-surname residuals at `62v-L01`–`L06`; no comparator search before a concrete graphical/sign feature is localized**.
