@@ -29,7 +29,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 
 ## fol. 62r
 
-- `62r-L01` Vnnd ⟦unclear⟧ fur den armen aus dem ⟦unclear⟧
+- `62r-L01` Vnnd ⟦unclear⟧lich fur den armen aus dem ob⟦unclear⟧
 - `62r-L02` vnnd andern huff zu Knawe soll der
 - `62r-L03` pfarrer ⟦unclear⟧ / jerlich ⟦unclear⟧ von
 - `62r-L04` ⟦unclear⟧ / zu Knawe ⟦unclear⟧

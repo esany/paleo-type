@@ -422,3 +422,75 @@ Cluster D is complete at the available internal-evidence level:
 - G3 has been fully re-evaluated and is again reached at current internal-evidence level.
 
 Immediate next bounded target is **E1 — the two unresolved spans at `62r-L01`**. It remains target-pixel-first: fresh readiness, segmentation and stable graphical edges must precede any same-Source comparator search.
+
+## Cluster E1 execution — two unresolved spans at 62r-L01 (2026-09-09)
+
+### Fresh baseline, evidence readiness and reproducible localization
+
+Current `main` was independently resolved through GitHub and `git ls-remote` to `9660269bf9c58d4bf43ee48aaedc6ce4e4c62a9b` (PR #132), then cloned and checked out on `research/123-e1-62r-l01`. The current Project/status, this record, the earlier G3 review, canonical `62r.tsv`, derived witness view, File register, crosswalk and applicable governing/method rules were read afresh. Earlier cluster findings were historical state, not current pixel readiness.
+
+The controlled attachment `1533-Visitationsprotokoll-Ziegenrueck-ThHStAW-EGA-Reg. Ii 5-28r-55r(2).pdf` was recovered from the referenced conversation's attachment interface into the present local execution context. Its bytes were freshly hashed and matched canonical File `FILE-REG-II-5-00000129-EXCERPT`, canonical filename `1a03ea95927-120-143.pdf`, SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`, Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`. The supplied filename's folio wording is not used as evidence. This staging does not change the File's repository-preservation status.
+
+The canonical crosswalk maps **62r = export image 133 = PDF p15**, with folio mapping `observed`. A fresh Poppler `pdftoppm` PNG render of p15 at 600 dpi measured **4961 × 7016 pixels**. Whole-page visual inspection independently confirmed the visible `62`, printed `Bild: 133` and `Seite 15 von 25`, and localized L01 as the first running-text line. An initial renderer invocation encountered local font-cache configuration errors; the successful invocation used a writable temporary font-cache configuration. Only the successfully rendered image was inspected. Rendering/cropping is non-generative technical processing, not new independent evidence.
+
+Recoverable crop rectangles below use `(left, top, right, bottom)` pixels from the upper-left of that full, unrotated 600-dpi PDF-page render:
+
+| object | rectangle | purpose |
+|---|---|---|
+| whole L01 with flanking text | `(1880, 890, 4100, 1230)` | line and two-span localization |
+| E1a, between `Vnnd` and `fur` | `(2225, 990, 2640, 1200)` | independent first-span inspection |
+| E1b, after `dem` at right margin | `(3740, 1000, 4100, 1230)` | independent second-span inspection |
+| L02–L03 control region | `(1950, 1150, 4030, 1470)` | local l/terminal-cluster controls |
+| L07 control region | `(2000, 1820, 3900, 2020)` | terminal h control in `auch` |
+| L12 control region | `(1930, 2650, 4050, 2910)` | initial `ob` control |
+
+The target crops were also viewed at 3× display enlargement; enlargement exposed the source raster's limits and is not represented as additional captured detail. All comparisons below were actually viewed in this context on the same freshly rendered p15; none inherits D readiness.
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+These PASS statements cover E1a/E1b and the specifically inspected L02/L03/L07/L12 controls only. They do not cover E2 or any other comparator folio.
+
+### E1a — target segmentation before comparison
+
+The first unclear span is one connected written group separated from the ending of `Vnnd` and the tall opening of `fur`. Its opening is a low, densely joined angular/minim-like run; internal letter boundaries there are not securely separable. A conspicuous oblique descending stroke occurs before a narrow, obliquely oval ascender loop. After that loop are two short baseline articulations and a final tall, thin return stroke with a long lower loop. The final loop is attached to the token, not treated as a separate word or cancellation. There is no securely separable abbreviation overline in this span; small hairline marks near the terminal ascender do not justify an expansion or an independently read abbreviation. Exact stroke counts in the dense opening remain uncertain.
+
+**Feature fixed before comparator search:** can the ascender loop + short baseline articulations + terminal upper/lower return be read as a written terminal cluster, independently of the opaque opening? A whole-word lexical search was not justified.
+
+The same-Source, same-page controls were then inspected:
+
+- `62r-L02`, `soll`: its l loops provide a narrow control for the looped ascender, without licensing a whole-word identification;
+- `62r-L03`, the already working `jerlich`: its terminal `lich` carries the same ordered l loop, short i/c-scale baseline articulations and final h return; the exact focused control crop is `(3000, 1280, 3380, 1480)`;
+- `62r-L07`, `auch`: the terminal h independently supplies the tall return with lower looping movement. The preceding `au` is not an E1 reading candidate.
+
+**Target recheck:** the target itself retains all parts of the terminal `lich` sequence in the same order, including the short strokes between l and h; the reading is not based on the silhouette alone. The h loop is larger than in the controls, so exact size is not treated as an identity requirement. The target's descending medial stroke and densely joined opening are not resolved by these controls. No full word or graphemes before `lich` are promoted. Final representation of this span: **`⟦unclear⟧lich`**.
+
+### E1b — independent target segmentation and comparison
+
+The second unclear span is separated by whitespace from `dem` and ends before the page edge. Its initial small rounded/enclosed form joins a second form with an obliquely oval upper loop and lower bowl/stem articulation. The following low strokes are crowded and merge into a rightward exit. A thin descending terminal flourish is visible, but it does not on its own establish an extra letter or separator. No independent abbreviation overline is securely observable. The count and division of the small medial/terminal strokes are not sufficiently stable for a complete ending.
+
+**Feature fixed before comparator search:** test only the initial round form + upper-loop/lower-bowl form, not a word expected after `aus dem`.
+
+The exact same-Source control is **`62r-L12`, `ob` immediately after the paragraph-initial `Vnnd`**, focused crop `(2220, 2730, 2360, 2860)`. Fresh inspection shows the small enclosed o joined to the looped b with a lower bowl. This distinguishes the target's second form from a simple l ascender: its lower articulation matters, not merely the presence of a tall loop.
+
+**Target recheck:** the opening supports written **`ob`**. The target's following low strokes do not inherit any reading from the two-letter control. No terminal `-ern` or other complete suffix is promoted from grammatical fit, and the final flourish is not expanded. Final representation of this span: **`ob⟦unclear⟧`**.
+
+### Search boundary, promotions and residual limit
+
+The search was confined to those feature-specific controls on fol. 62r. No other folio in the permitted 55v–66v range was searched: the controls discriminate the terminal cluster of E1a and initial pair of E1b, while the remaining dense strokes provide no comparably stable next discriminator for a responsible broader search. This is a bounded negative-search disposition for the remainders, not a claim that the entire Source lacks possible comparanda.
+
+Only `62r-L01` changes in the canonical TSV, to:
+
+`Vnnd ⟦unclear⟧lich fur den armen aus dem ob⟦unclear⟧`
+
+The row remains `unresolved`; the two original uncertainty loci are reduced but neither complete word is asserted. No existing secure island or physical anchor is changed. The derived whole-locus view is regenerated deterministically from the four first-reading TSVs. No Reg. Ii 4 wording, Legacy material, administrative sense, expected formula or external literature supplied either promotion. Same Source is not claimed as same hand. No lexicon, ontology, source-wide transcription, generic METHOD change or G5/G6 claim follows.
+
+### G3 consequence and completed E1 hand-off
+
+The newly localized target-supported terminal cluster and initial pair, tested against freshly inspected internal controls, make these two previously unresolved G3 residuals newly testable. **G3 was bounded `reopened` for E1 during evaluation.** After the target rechecks and full assessment, the partial promotions and the non-discriminating remainders are explicitly persisted. Final state is again **G3 `reached at current internal evidence level`** for the evaluated fol. 61v–63r scope; this does not mean the E1 words are completely read. G4 is unaffected.
+
+E1 is complete at the available internal-evidence level. The next bounded cursor is **E2 — unresolved forms at `62r-L03`–`L04`**. It begins with its own question-specific target readiness, segmentation and stable-feature localization. E1 control inspection of `jerlich` on L03 does not confer readiness for the E2 unresolved spans, and no E1 readiness carries to E2.
+
+AI provenance: Codex (GPT-6-based assistant; exact service build not fixed), 2026-09-09; direct image inspection, bounded same-Source comparison and conservative partial-reading decisions. Poppler rendering and Pillow cropping/display enlargement were technical aids. No OCR or generative image enhancement was used. The result is AI-assisted working research, not independent qualified human palaeographic validation; CI certifies only its checked deterministic properties.
