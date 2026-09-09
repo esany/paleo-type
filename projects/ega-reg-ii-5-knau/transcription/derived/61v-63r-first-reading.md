@@ -31,8 +31,8 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 
 - `62r-L01` Vnnd ⟦unclear⟧lich fur den armen aus dem ob⟦unclear⟧
 - `62r-L02` vnnd andern huff zu Knawe soll der
-- `62r-L03` pfarrer ⟦unclear⟧ / jerlich ⟦unclear⟧ von
-- `62r-L04` ⟦unclear⟧ / zu Knawe ⟦unclear⟧
+- `62r-L03` pfarrer h⟦unclear⟧ / jerlich vffh⟦unclear⟧ von
+- `62r-L04` ⟦unclear⟧ f⟦unclear⟧ / zu Knawe drei virtel
 - `62r-L05` kornes / vnnd ij virtel hafers von
 - `62r-L06` einer huff landes vom hanns h⟦unclear⟧ /
 - `62r-L07` zu Knawe / auch drei virtel kornes vnnd
