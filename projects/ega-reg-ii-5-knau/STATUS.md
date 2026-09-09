@@ -10,7 +10,7 @@ On 2026-09-07 the human owner selected a bounded scholarly target: **source-exac
 
 On 2026-09-08 the human owner then selected **#123 — problembezogene interne Relektüre of the existing Reg. Ii 5 Editionsbaustein fol. 61v–63r** as the next scholarly block. Activation was deliberately blocked until #122 had restored a green technical checkpoint for the already-completed #115 state. #122 is now completed; PR #125 was merged and the post-merge `source-contract` run `34284952980` passed canonical validation, all regressions, fresh-process Project-context compilation and the real-data resolver checks.
 
-`project.yml:active_scope` therefore records #123 as the **owner-selected active scholarly scope**. WP-R1 has been completed from the canonical first-reading TSVs and the existing G3 hand-off in `research/internal-comparanda-relecture-61v-63r.md`. Cluster A has now also received current-context target-pixel inspection and a targeted same-Source comparator search; no reading was promoted. At the preceding WP-R1 checkpoint, STATUS correctly read: **“WP-R1 is complete; no pixel-dependent manuscript reading under #123 has yet begun.”** That statement is retained here as the restart history, not as the current cluster-A state.
+`project.yml:active_scope` therefore records #123 as the **owner-selected active scholarly scope**. WP-R1 has been completed from the canonical first-reading TSVs and the existing G3 hand-off in `research/internal-comparanda-relecture-61v-63r.md`. Cluster A completed a current-context target-pixel inspection plus targeted same-Source comparator search with no diplomatic promotion. Cluster B has now completed a fresh direct comparison of the two `hanns`-following target tokens at `62r-L06` / `62r-L09`: the initial `h` is promoted in both canonical rows, the remaining token sequences stay unresolved and are not treated as the same written token. The Project-specific D-004 routing and notation protocol required before C/E3/H is now persisted in the same bounded #123 research owner.
 
 ## #123 scope boundary
 
@@ -72,23 +72,27 @@ An active use/evidence binding means this File is the evidence object for the au
 
 ### Current #123 evidence readiness
 
-For **cluster A only**, current-context evidence readiness has now been re-established:
+Readiness remains **cluster- and execution-context-specific**, not a persistent blanket File property.
 
-- exact `FILE-REG-II-5-00000129-EXCERPT` bytes matched canonical SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
-- the canonical crosswalk was rechecked for `61v = image 132 = PDF p14`, `62r = image 133 = p15`, `62v = image 134 = p16`;
-- exact-source pages 14–16 were freshly rendered at 600 dpi and visually inspected;
-- the six cluster-A target occurrences at `61v-L03`, `61v-L17`, `62r-L12`, `62v-L06`, `62v-L08`, `62v-L21` were individually localized and inspected.
+Cluster A execution established exact File/SHA/crosswalk plus 600-dpi target inspectability for `61v-L03`, `61v-L17`, `62r-L12`, `62v-L06`, `62v-L08`, `62v-L21`, then used only graphically targeted same-Source comparator inspection. That historical #123 execution result remains auditable in `research/internal-comparanda-relecture-61v-63r.md` but does not constitute current readiness for later clusters.
 
-For those six target occurrences in that bounded execution context:
+Cluster B separately re-established question-specific readiness:
+
+- the staged supplied PDF matched exact `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical crosswalk was rechecked for `62r = export image 133 = PDF p15`;
+- exact PDF page 15 was freshly rendered at 600 dpi and visually inspected;
+- both target tokens at `62r-L06` and `62r-L09` were individually localized and enlarged.
+
+For those two target occurrences in that execution context:
 
 ```text
 STAGED = PASS
 VISION-INSPECTABLE = PASS
 ```
 
-The rest of the same-Source range was then inspected only as the already-authorized, graphically targeted comparator search for cluster A. This does not create a persistent global readiness state for all folia or all future questions.
+No outside-Editionslocus comparator was used for B because target-to-target comparison left no responsibly bounded comparator question beyond the promoted initial `h` and the still-unresolved remainders.
 
-For clusters not yet opened, **target-context pixel readiness is not yet re-established**. Their own target graphs and every comparator actually used must receive a fresh, question-specific readiness check before a pixel-dependent claim is made.
+For cluster C and later clusters, **target-context pixel readiness is not yet re-established**. Their own target graphs and every comparator actually used must receive a fresh, question-specific readiness check before a pixel-dependent claim is made.
 
 Historical #115 readiness remains historical only and is not used as a substitute for these current checks. Existing TSV wording, Reg. Ii 4 wording or Legacy material must never substitute for missing pixels.
 
@@ -97,7 +101,7 @@ Historical #115 readiness remains historical only and is not used as a substitut
 Current folio-local first-reading partitions are the sole canonical Reg. Ii 5 diplomatic owners for the Editionslocus:
 
 - `transcription/first-reading/61v.tsv` — initial commit `e26eaf5fec37b2cc927c033c356a1f514a7c0dc2`;
-- `transcription/first-reading/62r.tsv` — initial commit `e79d679553d3039c582dc99eabdea368d31a193b`;
+- `transcription/first-reading/62r.tsv` — initial commit `e79d679553d3039c582dc99eabdea368d31a193b`, now refined by #123 cluster B at `L06` / `L09` only;
 - `transcription/first-reading/62v.tsv` — initial commit `7c28026426433df90b67c2420bb7f03c990f9a63`, later G3 refinement commit `b5644250c813fa756c5c4995b5cc22d965bc6674`;
 - `transcription/first-reading/63r.tsv` — initial commit `ebb909042813c5886b184522721e6c30e41b73cf`.
 
@@ -114,7 +118,7 @@ The current partitions preserve the consequential visible source phenomena requi
 
 A direct target-graph recheck on 62r rejected one fluent legacy carry-over: the opening of `62r-L24` is represented as `So`, not as a second Arabic `80`. On 63r, `agustini`, `pfingsten` and `xlvij Jhars` remain manuscript-level wording/sign evidence; no calendar date or absolute year is inferred in the diplomatic layer.
 
-Cluster A of #123 did **not** change any diplomatic row. All six recurrent surname-like loci remain unresolved in the four canonical TSVs, so no derived-text regeneration was required.
+Cluster A of #123 did **not** change any diplomatic row. Cluster B changed only the graphically secure initial of the two name-like spans: `62r-L06` now reads `... hanns h⟦unclear⟧ /` and `62r-L09` reads `... hanns h⟦unclear⟧ zu Knawe ...`; both rows remain `unresolved`. The derived view was regenerated accordingly.
 
 The current lean TSV representation remains adequate for the findings encountered. No Package-B/D-016 representation change is currently triggered.
 
@@ -150,7 +154,7 @@ These artifacts retain scientific authority **only at the level they actually cl
 
 ## G3 internal palaeographic/notational review
 
-`research/g3-internal-review-61v-63r.md` owns the completed bounded G3 analytical record; it is not a second transcription owner.
+`research/g3-internal-review-61v-63r.md` owns the completed bounded #115 G3 analytical record; it is not a second transcription owner. #123 cluster-level re-evaluation is audited separately in `research/internal-comparanda-relecture-61v-63r.md`.
 
 Key #115 G3 results remain:
 
@@ -164,11 +168,13 @@ Key #115 G3 results remain:
 - no same-hand comparator group was established;
 - no material semantic-loss/System trigger arose.
 
-**G3 remains `reached at current internal evidence level` at #123 activation and after WP-R1.** Starting a new search or defining its matrix does not itself reopen a gate.
+Cluster A tested an additional same-Source path but found no suitable discriminating same-surname comparator, so G3 remained reached without reopen for that subproblem.
 
-Cluster A has now tested one additional, previously unexhausted evidential path: current-context target localization followed by a targeted search across the remainder of the same Source. No suitable further occurrence of the same surname-like graph was found outside the Editionslocus, and no existing target anchor was invalidated. The negative search therefore does not make the old G3 conclusion newly decidable and does not itself trigger `reopened`; **G3 remains reached at the current internal-evidence level after cluster A**.
+Cluster B produced a new discriminating internal observation for the previously handed-forward `hanns`-associated name-token residual: both target tokens carry a secure initial `h`, while their remaining visible sequences are not supported as the same written token. Under the generic G3 reopen rule the affected subproblem was therefore re-evaluated as reopened during the cluster-B assessment. That new evidence has now been fully assessed, the partial reading promotion is persisted in `62r.tsv`, and the non-discriminating remainder remains explicit.
 
-G3 is changed to `reopened` for the affected evaluated scope only if #123 actually produces **new relevant internal evidence** that makes a consequential existing G3 finding newly testable, or invalidates an existing anchor. After that evidence is fully evaluated, G3 may again be assessed as `reached at current internal evidence level`. If #123 finds no such new relevant evidence, the existing G3 state remains unchanged.
+**Final current state: G3 is again `reached at current internal evidence level` for the evaluated fol. 61v–63r scope after cluster B.** This does not mean the full name tokens are resolved and does not imply G5/G6.
+
+A later cluster changes G3 to `reopened` for its affected evaluated subproblem only when actual new relevant internal evidence makes an existing consequential G3 finding newly testable, or an anchor is invalidated. After full evaluation, G3 may again be assessed as reached at current internal-evidence level.
 
 ## G4 controlled Reg. Ii 4 comparison
 
@@ -196,6 +202,8 @@ Keep these distinctions throughout #123:
 - semantic plausibility may generate a test but may not manufacture graphemes;
 - comparanda supply discriminating tests, not substitute readings;
 - negative comparator searches are valid results.
+
+The canonical D-004 chain and the Project-specific disciplinary routing/notational protocol for A–H are now operationally documented in `research/internal-comparanda-relecture-61v-63r.md`. That record also keeps any actually inspected external specialist source tied to the exact claim it supports; model/script-type memory is not an evidence source.
 
 A #123 reading change is persisted **only** in the applicable folio-local `transcription/first-reading/*.tsv` owner. `research/internal-comparanda-relecture-61v-63r.md` documents the bounded question/search/comparison audit and is not a second text owner or a lexicon/concordance.
 
@@ -244,9 +252,9 @@ The gate-evaluated textual scope remains **Reg. Ii 5 fol. 61v–63r only**, with
 | G1 source/transmission basis | `reached` | Reg. Ii 5 source group / Editionslocus | Principal Reg. Ii 5 Source/File/SHA/crosswalk and separate comparison/context Sources are identified with explicit evidence/provenance limits. |
 | #115 source-exact editorial work package | `complete` | Reg. Ii 5 fol. 61v–63r | Completed Editionsbaustein and independent witness basis; not a G5/G6 claim. |
 | G2 diplomatic representation | `reached` | Reg. Ii 5 fol. 61v–63r | All 81 relevant physical anchors are represented in source order with uncertainty/source phenomena preserved; derived readable view exists. |
-| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | Existing G3 remains reached after cluster A because its new search path was non-discriminating and no anchor was invalidated. |
+| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | Cluster A was non-discriminating; cluster B triggered bounded re-evaluation, promoted initial `h` at L06/L09, and returned the affected residual to reached with the remaining sequences unresolved. |
 | G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Independent witness states and bounded mapping remain valid; #123 does not automatically reopen this gate. |
-| #123 problem-focused internal relecture | `active` | target fol. 61v–63r; comparator search space fol. 55v–66v | WP-R1 complete; cluster A WP-R2 + targeted same-Source search complete with no reading change. Cluster B is next. |
+| #123 problem-focused internal relecture | `active` | target fol. 61v–63r; comparator search space fol. 55v–66v | WP-R1 complete; clusters A and B complete. Project-specific notation protocol is persisted; cluster C is next. |
 | G5 critical consolidation/validation | `not reached` | bounded edition target | #123 is not an automatic G5 task and no critically consolidated/validated text state is claimed. |
 | G6 scholarly edition | `not reached` | bounded edition target | No scholarly edition has been produced. |
 
@@ -254,22 +262,20 @@ Reading resolution remains incomplete in places and is compatible with G2–G4. 
 
 ## NEXT ACTION — canonical restart point
 
-**#123 remains the current owner-selected active scholarly work package. Cluster A is complete with no diplomatic change; cluster B is the next bounded target.**
+**#123 remains the current owner-selected active scholarly work package. Clusters A and B are complete; cluster C is the next bounded target.**
 
-### Completed: WP-R2 — current-context evidence readiness for target cluster A
+The immediate bounded action is **cluster C — the quantity/accounting region at `61v-L04`–`61v-L09`**:
 
-For cluster A the exact File/SHA/crosswalk and target pixels were re-established in the current execution context, the disputed medial sequence was localized, and a targeted same-Source search outside the Editionslocus found no suitable discriminating same-surname comparator. All six target rows remain unresolved. Full audit is in `research/internal-comparanda-relecture-61v-63r.md`.
+1. re-establish question-specific current-context readiness for fol.61v (`61v = export image 132 = PDF p14`) before any new pixel claim;
+2. localize each left-side unresolved sign/sequence morphologically before assigning a sign class: stroke topology/count, loop/enclosure, overstroke, baseline/column position, separators and relation to neighboring lexical text;
+3. route claims through the persisted D-004/notation protocol in `research/internal-comparanda-relecture-61v-63r.md`;
+4. first compare only written sign morphology, including secure `1`, `ij`, `80` or other forms **only where the localized graph actually makes them relevant**; do not assume one numeral/accounting system;
+5. only after a concrete unresolved sign feature is defined may fol.55v–66v be searched for a graphically matching same-Source comparator;
+6. value, measure/unit meaning, accounting function, expansion and historical/economic interpretation remain separate higher-layer claims and are not inferred from plausibility;
+7. external specialist literature is claim-triggered: inspect and audit an exact passage only if a concrete sign-class/function/value claim depends on it; inaccessible literature does not block unrelated source-internal morphology work;
+8. promote a diplomatic sign/sequence only if the `61v-L04`–`L09` target graph itself carries it; otherwise retain the unresolved sign with the tested path.
 
-The immediate bounded action is **cluster B — direct target-pixel comparison of the two name-like graph sequences following `hanns` at `62r-L06` and `62r-L09`**:
-
-1. use the already canonical `62r = export image 133 = PDF p15` address, but establish/confirm question-specific current-context target readiness before making a cluster-B claim;
-2. localize both tokens after `hanns` and compare word boundary/length, initial form, ascender/descender pattern, minim sequence and terminal cluster;
-3. first decide whether the two target graphs themselves are materially the same sequence and whether any grapheme can be promoted;
-4. only if a specific residual graphical feature remains may another folio within 55v–66v be inspected for a matching same-Source comparator;
-5. syntactic position, expected personal name, Reg. Ii 4 wording and Legacy material are non-discriminating and must not supply the reading;
-6. if the two target graphs or any later comparator do not discriminate sufficiently, retain both tokens unresolved and record the negative path.
-
-Do not infer automatic progression to G5/G6, source-wide transcription, historical interpretation, ontology work or software work from cluster A completion or cluster B readiness.
+Do not infer automatic progression to G5/G6, source-wide transcription, historical interpretation, ontology work or software work from cluster B completion or cluster C readiness.
 
 Issues #122 and #124 are completed maintenance history. Issue #123 owns the active work-package checklist/audit trail. This STATUS owns the current scholarly/restart state and formal G1–G6 claims.
 
@@ -286,13 +292,13 @@ A fresh capable context must be able to reconstruct without old chat that:
 - current diplomatic observations remain owned only by `transcription/first-reading/61v.tsv`, `62r.tsv`, `62v.tsv`, `63r.tsv`; together they represent all 81 established physical anchors;
 - `transcription/derived/61v-63r-first-reading.md` is derived/rebuildable only;
 - legacy `transcription/132.tsv`–`135.tsv`, apparatus and witness-dependent legacy palaeography remain verification/recovery evidence;
-- `research/internal-comparanda-relecture-61v-63r.md` holds the bounded WP-R1 matrix and the subsequent cluster-level audit; it is not a text owner;
-- WP-R1 confirmed the finite A–H start set and identified several dense loci where target-pixel localization must occur before any comparator search;
-- cluster A received fresh File/SHA/crosswalk verification and current target-pixel inspection at all six surname loci;
-- the targeted search of fol.55v–61r and 63v–66v found no suitable further same-surname comparator; fol.63v `Schondorff` was non-discriminating for the disputed medial sequence;
-- no cluster-A reading changed; all six surname rows remain unresolved;
-- G3 remains reached at current internal evidence level because cluster A supplied no new relevant discriminator and invalidated no anchor;
-- G4 remains reached for the bounded witness pair; #123 is not automatic G5/G6 progression;
+- `research/internal-comparanda-relecture-61v-63r.md` holds the finite A–H matrix, cluster-level audit, D-004 routing and notation protocol; it is not a text owner;
+- no precise historical script classification is operationally assumed from chat/model memory; external specialist claims become usable only after the relevant source passage is actually inspected and audited;
+- cluster A received fresh File/SHA/crosswalk verification and a targeted same-Source surname search; no suitable discriminator was found and no reading changed;
+- cluster B separately received fresh File/SHA/crosswalk/pixel readiness for `62r-L06` / `L09`;
+- cluster B supports only the initial `h` in both name-like tokens; their remaining sequences are visibly non-identical at the written-graph level and remain unresolved;
+- no outside-Editionslocus comparator search was justified for B because no responsibly bounded residual comparator feature remained;
+- G3 was re-evaluated for the cluster-B residual and is again reached at current internal evidence level after the partial promotion; G4 remains reached;
 - hand differentiation remains `not investigated`; same Source never became same-hand proof;
-- readiness is question-specific: cluster-A readiness does not automatically carry to other #123 clusters;
-- the immediate cursor is **cluster B target-pixel comparison at `62r-L06` / `62r-L09`, then only a graphically defined same-Source comparator search if needed**.
+- readiness is question-specific: prior cluster readiness does not automatically carry to C;
+- the immediate cursor is **cluster C target-pixel sign localization at `61v-L04`–`L09` under the persisted notation protocol, then only a graphically defined same-Source comparator search if needed**.
