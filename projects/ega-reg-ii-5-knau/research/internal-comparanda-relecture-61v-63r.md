@@ -717,3 +717,147 @@ Fresh direct target evidence plus the two freshly inspected feature-specific sam
 **E5 is complete. Next bounded cursor: F1 — `62v-L01`–`L06`.** F1 begins again target-pixel-first for each non-surname unresolved span; the cluster-A surname question remains governed by its completed negative path. E5 p15 readiness, `wolff`, `gemeinswalde`, and E5 comparators do not confer F1 pixel readiness or a clause reading.
 
 AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-09; direct target-first inspection of the exact primary-source PDF with Poppler 600-dpi rendering and non-generative crops/enlargements, followed only by feature-specific same-page controls. No OCR, generative enhancement, Reg. Ii 4, Legacy reading authority, external literature, semantic completion or historical interpretation was used. This is AI-assisted working research, not independent qualified human palaeographic validation; CI can certify only the deterministic repository properties it tests.
+
+## Cluster F1 execution — prospective real test at 62v-L01–L06 (2026-09-10)
+
+### Scope, source anchors and protocol status
+
+F1 was executed under #123 after the Phase-2 routing comparison in #150. The cluster covers `62v-L01`–`L06`, excluding the separately governed surname component at L06 from the F1 cluster decision.
+
+Starting repository state was `main` at `d8ba1d68f9f722e5b1a435c190794c2ce8b9562e`. Before the current F1 Reading Owner was exposed, the execution re-established:
+
+- Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`;
+- File `FILE-REG-II-5-00000129-EXCERPT`;
+- exact File SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical crosswalk `62v = export image 134 = PDF p16`, folio mapping `inferred-high`;
+- a freshly rendered p16 checkpoint raster of **1654 × 2339 px**, SHA-256 `00191662d00d38e58bd02ef3b6ae0ff0353030d7e19169380e84dcc3b08e6487`.
+
+That raster is a page-identity/readability baseline and must **not** be described as a 600-dpi render. The later F2 recovery section below establishes a distinct 600-dpi p16 raster.
+
+For F1 in that execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+### Blindness caveat and source-only observation
+
+Strict anti-hindsight purity was already compromised for `62v-L01`: a prior technical-anchor reconstruction exposed the fact that a visible `80` occurs there. That fact was not counted as an independent blinded rediscovery or promotion signal.
+
+For `62v-L02`–`L06`, the current `62v.tsv` Reading Owner remained unopened until after source-only observation, generator disposition and Target Return were frozen. F1 therefore preserves the intended ordering for those lines, while the run as a whole is documented with the L01 contamination caveat.
+
+The source-only F1 observation distinguished two problem classes rather than one clause:
+
+- L01 contains a compact digit/sign-like two-graph sequence;
+- L02–L06 contain bounded longer cursive grapheme/word spans with visible word islands but unresolved interiors;
+- the surname-like component in L06 remains outside the F1 cluster decision.
+
+Under the predeclared #150 selector, the bounded longer-span class maps to **Generator B as conditional primary**.
+
+### Primary-generator activation and failure character
+
+Generator B was selected at fragment level only. Activation was attempted in the fresh execution context, but the required local runtime/model were not present:
+
+- Kraken runtime: not present;
+- `small.safetensors`: not present;
+- raw output: none.
+
+This is a **technical availability failure**, not an empirical conclusion that Generator B could not have produced a useful discriminator on F1. No second generator was activated: #150 does not license A as a generic fallback for the longer-span class, and no demonstrated marginal-strength condition justified overriding the predeclared routing merely to force an output.
+
+### Target Return and Reading Owner adjudication
+
+Before opening the current Reading Owner, the target was re-inspected and the pre-owner disposition frozen: all six lines were locatable; L02–L06 retained visible stable islands plus difficult interiors; no new graphically sufficient discriminator supported a diplomatic promotion; the unavailable generator contributed no reading evidence.
+
+Only then was the current owner opened:
+
+`transcription/first-reading/62v.tsv`, blob `2bc20868de2fff6887014b6a051ea346a6f26b2a`.
+
+The F1 owner state was:
+
+- `62v-L01`: `⟦unclear⟧ 80 der`;
+- `62v-L02`: `pfarrern aus der ⟦unclear⟧ / zu Knawe`;
+- `62v-L03`: `⟦unclear⟧ soll der pfarrer`;
+- `62v-L04`: `die ⟦unclear⟧`;
+- `62v-L05`: `vnnd ⟦unclear⟧ / wolff`;
+- `62v-L06`: `von ⟦unclear: grevendorff?⟧ ⟦unclear⟧`, with the surname component separately governed.
+
+Adjudication retained every F1 uncertainty. L01's existing `80` is target-compatible but receives no blind-confirmation credit from this run. L02–L05 retain the existing secure islands and unresolved spans. L06 receives no surname adjudication inside F1, and its other uncertainty gains no new discriminator.
+
+**F1 = RETAIN / UNRESOLVED. No diplomatic-reading promotion. No `62v.tsv` or derived-view change.**
+
+The scientific value of the negative run is procedural and evidential: the routing contract did not manufacture a fallback candidate when the selected generator was unavailable, and the lack of a new target discriminator prevented semantic completion from being promoted as reading.
+
+## Cluster F2 execution — 62v-L09–L10 (2026-09-10)
+
+### Recovery correction, current readiness and owner exposure
+
+F2 began by correcting the extra-chat hand-off rather than carrying its render claims forward untested. The exact canonical Source/File/SHA and crosswalk were re-established; p16 was freshly rendered at **600 dpi**, producing **4961 × 7016 px**, SHA-256 `aca1fb0c580bd72a9a5d2ab3663542507b2e4bf716caca0744b7b849e737f49b`. That raster is byte-identical to the retained local 600-dpi p16 recheck and is distinct from the smaller F1 baseline raster above.
+
+For the F2 target region:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+F2 is **not treated as cognitively blind** because F1 had already opened the current `62v.tsv`. No line receives special anti-hindsight credit merely because a prior display may have been truncated.
+
+The current owner remained:
+
+- `62v-L09`: `⟦unclear⟧ zu Knawe / mit einem ⟦unclear⟧`;
+- `62v-L10`: `⟦unclear⟧`.
+
+Thus F2 had three unresolved target spans: L09-left, L09-right and the L10 line span. L11 remained a protected control/boundary only and its secure wording was not projected backward.
+
+### F2 L10 — first recovered anchor, negative comparator path
+
+A single compact L10 target feature was frozen first: a conspicuous looped/tall ascender immediately followed by a short low/minim-rich word body. No expected lexical reading was attached.
+
+Generator A / same-Source raw-grayscale template retrieval was run only for that bounded morphology across the authorized same-Source pool, with target self-match excluded. The strongest non-self technical similarities were weak (`~0.55` at rank 1, then `~0.53`). Fresh 600-dpi inspection of the top five returned regions found **no sufficiently close scholarly comparator** for the specified loop+adjacent-low-body morphology.
+
+Disposition: **NO SUITABLE COMPARATOR / no reading consequence**. The failed anchor was not widened into a lexical or clause search.
+
+### F2 L09-right — terminal-morphology comparator
+
+A second independent target-only feature was frozen from the right-hand L09 unresolved word body: a low/minim-rich terminal run ending in a conspicuous long descending/right-curving final movement.
+
+Target 600-dpi box: `(3650,2310,3950,2445)`; target-crop SHA-256 `254db0ba98981edfec9740a461aa1c43f1a0f3dad8f060698fcc7f924682b23d`.
+
+Generator A was run as raw-grayscale `TM_CCOEFF_NORMED` same-Source retrieval at 180 dpi across PDF pp.2–24, target self-match excluded. Machine search time: `4.29 s`; human inspection time unmeasured. Technical top five were p22 `0.723`, p19 `0.717`, p24 `0.713`, p12 `0.712`, p18 `0.708`; these scores are ranking metadata only.
+
+Fresh 600-dpi inspection admitted PDF p12 / export image 130 / crosswalk fol. `60v` (`inferred-high`) as the best narrow morphological comparator for the specified terminal movement. Comparator box: `(2480,4207,2780,4344)`; crop SHA-256 `45bb2f16e4cd3ffde9403a294a492ed8909123c2ed99b929416ba2a3f213baf8`.
+
+The comparator repeats a low joined body terminating in a long curved descending exit, but its curvature/entry is not identical and the occurrence has no independently secured lexical reading in this comparison. It is therefore admitted only as a **morphological comparator**, non-discriminating for grapheme identity or lexical reading. Target Return leaves the right L09 span unresolved.
+
+### F2 L09-left — strong shape recurrence, lexical ceiling retained
+
+A third independent target-only feature was frozen from the first L09 unclear word body: one looped deep descender joined directly into a compact low/minim sequence; adjacent secure `zu` was excluded from the query.
+
+Target 600-dpi box: `(2240,2290,2440,2445)`; target-crop SHA-256 `b692d25f9f93ae0dc0139b7ad429fa587036a32b4138b9de54a86be51eff74e6`.
+
+The same Generator-A method searched the same authorized pool. Machine search time: `3.50 s`; human inspection time unmeasured. Top technical hits began p22 `0.797`, p6 `0.775`, p23 `0.731`, p3 `0.727`, p10 `0.727`, p15 `0.724`.
+
+Fresh 600-dpi inspection admits rank 1 as a strong shape comparator: PDF p22 / export image 140 / crosswalk fol. `65v` (`inferred-high`). Comparator box: `(2030,4510,2230,4667)`; crop SHA-256 `02281a5639a30e82382c5b77912244b00cf595cce0563a8b236bc805b9cebbb8`.
+
+The occurrence closely repeats the target anchor's relative sequence of looped/deep descender plus following low joined strokes and therefore establishes a genuine same-Source graphical recurrence rather than a generic minim-only match. But the comparator is not independently read here. Similarity does **not** prove lexical identity and cannot map the target to a complete grapheme sequence. In particular, it does not promote `pfarrlehen` or another whole-word candidate.
+
+No HTR/B escalation was opened because Generator A already returned a useful comparator and #150 permits no automatic second generator. Target Return therefore leaves the first L09 unclear span unresolved.
+
+### F2 result, G3 consequence and F3 hand-off
+
+All three F2 unresolved spans received one bounded target-defined path:
+
+1. L09-left: strong same-Source feature recurrence at p22, but no independently labelled reading → retain unresolved.
+2. L09-right: narrow terminal-morphology comparator at p12, non-discriminating for letters → retain unresolved.
+3. L10: target-defined loop/low-body anchor → no suitable comparator → retain unresolved.
+
+The secure L09 island `zu Knawe / mit einem` remains unchanged. L11 remains only the protected physical-line boundary/control and is not used to reconstruct F2.
+
+Because F2 produced new relevant same-Source comparator evidence, G3 was treated as bounded `reopened` during F2 evaluation. After the three Target Returns and explicit ceilings, G3 is again **`reached at current internal evidence level`** for the evaluated fol. 61v–63r scope. G4 is unaffected; no G5/G6, same-hand, lexical-identity or property-clause interpretation follows.
+
+**F2 = complete at the current internal-evidence level; RETAIN / UNRESOLVED; no diplomatic TSV or derived-view change.**
+
+**Next bounded cursor: F3 — `62v-L12`–`L19`.** F2 p16 readiness and comparators do not carry forward automatically. F3 begins again with target-local readiness and must recover a concrete graphical feature before any same-Source search; the protected `62v-L11` reading must not be projected forward.
+
+AI provenance for the consolidated F1/F2 record: ChatGPT (GPT-5.6 Sol), 2026-09-10; exact primary-source PDF, deterministic rendering/cropping and bounded same-Source visual retrieval where explicitly stated. No Reg. Ii 4/G4, Legacy reading authority, semantic clause completion or independent qualified palaeographic validation is claimed by these F1/F2 executions.
