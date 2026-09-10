@@ -86,12 +86,14 @@ class RegII5PacketBenchmarkTests(unittest.TestCase):
         self.assertEqual("ERROR", result["status"])
         self.assertIn("requires --blind-observation", result["error"])
 
-    def test_benchmark_does_not_modify_or_wrap_project_context_contract(self) -> None:
+    def test_benchmark_uses_existing_context_and_packet_contracts_without_candidate_dependency(self) -> None:
         source = SCRIPT.read_text(encoding="utf-8")
         self.assertIn("project_context.compile_project_context", source)
-        self.assertNotIn("canonical_status", source.split("def compile_benchmark", 1)[0])
-        self.assertNotIn("ega-reg-ii-4", source)
-        self.assertNotIn("G4-", source)
+        self.assertIn("regii5_evidence_packet.compile_packet", source)
+        self.assertNotIn("G4_OWNER", source)
+        self.assertNotIn("REGII4_READING_DIR", source)
+        self.assertNotIn("find_g4_mapping", source)
+        self.assertNotIn("load_regii4_mapped_rows", source)
 
 
 if __name__ == "__main__":
