@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
-"""Compile a small, read-only Reg. Ii 5 evidence packet for #139.
+"""Compile a small, read-only Reg. Ii 5 evidence packet.
 
 This is a project-bounded prototype, not a canonical research owner and not a
-replacement for ``project_context.py``.  Its main safety property is phase
-separation:
+replacement for ``project_context.py``.  PR #144 established the phase split;
+#145 narrows the default packet back to the active Reg. Ii 5 internal-relecture
+scope before any candidate-method policy is designed.
 
 * ``blind`` exposes only target addressing/provenance needed to inspect pixels;
   it deliberately omits the current diplomatic reading and all candidate
   sources.
 * ``explore`` requires a caller-supplied source-only observation, freezes it by
-  digest, and only then exposes the compact current reading plus the existing
-  G4 parallel-witness mapping as candidate-generation context.
-* ``adjudicate`` exposes the same bounded material while stating the mandatory
+  digest, and only then exposes the compact current Reg. Ii 5 reading.  No
+  candidate source is activated by default.
+* ``adjudicate`` preserves the same bounded material while stating the mandatory
   return-to-target boundary.  It never decides or persists a reading.
 
-The output is disposable/rebuildable derived state.  Candidate material has
-zero diplomatic evidence weight until a separate source adjudication is made.
+The output is disposable/rebuildable derived state.  Phase #145 intentionally
+contains no automatic parallel-witness, HTR, lexicon, retrieval or other
+candidate policy; those belong to a later, separately reviewed method step.
 """
 from __future__ import annotations
 
@@ -30,56 +32,19 @@ import source_contract
 
 PROJECT_ID = "ega-reg-ii-5-knau"
 PRINCIPAL_USE_ID = "USE-REGII5-00000129-PRINCIPAL"
-G4_OWNER = Path(
-    "projects/ega-reg-ii-4-bd-ii/research/knau-fol306v-309r-controlled-collation.md"
-)
-REGII4_READING_DIR = Path("projects/ega-reg-ii-4-bd-ii/transcription/first-reading")
 REGII5_READING_DIR = Path("projects/ega-reg-ii-5-knau/transcription/first-reading")
-
-# Reg. Ii 5 canonical anchors use ``62r-L19`` while the independently owned
-# Reg. Ii 4 first-reading rows use ``308r-19``.  Treat both as line locators for
-# ordering/range selection without rewriting either witness's canonical form.
-LOCUS_REF_RE = re.compile(r"^(\d+)([rv])-(L)?(\d+)$")
-INLINE_LOCUS_REF_RE = re.compile(r"(\d+)([rv])-(L)?(\d+)")
+LINE_REF_RE = re.compile(r"^(\d+)([rv])-L(\d+)$")
 
 
 class PacketError(RuntimeError):
     """A bounded packet cannot be compiled from the current canonical state."""
 
 
-def line_key(line_ref: str) -> tuple[int, int, int]:
-    match = LOCUS_REF_RE.fullmatch(line_ref)
-    if not match:
-        raise PacketError(f"invalid line locator {line_ref!r}; expected e.g. 62r-L19 or 308r-19")
-    folio_no = int(match.group(1))
-    side = 0 if match.group(2) == "r" else 1
-    line_no = int(match.group(4))
-    return folio_no, side, line_no
-
-
 def folio_from_line_ref(line_ref: str) -> str:
-    match = LOCUS_REF_RE.fullmatch(line_ref)
-    if not match or match.group(3) != "L":
+    match = LINE_REF_RE.fullmatch(line_ref)
+    if not match:
         raise PacketError(f"invalid Reg. Ii 5 line_ref {line_ref!r}; expected e.g. 62r-L19")
     return f"{match.group(1)}{match.group(2)}"
-
-
-def refs_in_text(text: str) -> list[str]:
-    refs: list[str] = []
-    for folio, side, marker, line in INLINE_LOCUS_REF_RE.findall(text):
-        prefix = "L" if marker else ""
-        refs.append(f"{folio}{side}-{prefix}{int(line):02d}")
-    return refs
-
-
-def range_contains(cell: str, target_ref: str) -> bool:
-    refs = refs_in_text(cell)
-    if not refs:
-        return False
-    target = line_key(target_ref)
-    start = line_key(refs[0])
-    end = line_key(refs[-1])
-    return start <= target <= end
 
 
 def compact_reading_row(row: dict[str, str]) -> dict[str, str]:
@@ -109,58 +74,6 @@ def find_target_reading(root: Path, line_ref: str) -> tuple[str, dict[str, str]]
     return rel_path.as_posix(), matches[0]
 
 
-def find_g4_mapping(root: Path, target_ref: str) -> dict[str, str] | None:
-    path = root / G4_OWNER
-    if not path.is_file():
-        return None
-    in_current_mapping = False
-    for raw in path.read_text(encoding="utf-8").splitlines():
-        line = raw.strip()
-        if line == "### Current unit mapping":
-            in_current_mapping = True
-            continue
-        if in_current_mapping and line.startswith("### "):
-            break
-        if not in_current_mapping or not line.startswith("| G4-"):
-            continue
-        cells = [cell.strip() for cell in line.strip("|").split("|")]
-        if len(cells) < 5:
-            continue
-        mapping = {
-            "map_id": cells[0],
-            "regii4_units": cells[1],
-            "regii5_units": cells[2],
-            "mapping_class": cells[3],
-            "finding": cells[4],
-        }
-        if range_contains(mapping["regii5_units"], target_ref):
-            return mapping
-    return None
-
-
-def load_regii4_mapped_rows(root: Path, units: str) -> tuple[list[str], list[dict[str, str]]]:
-    refs = refs_in_text(units)
-    if not refs:
-        return [], []
-    start = line_key(refs[0])
-    end = line_key(refs[-1])
-    owners: set[str] = set()
-    selected: list[dict[str, str]] = []
-    for path in sorted((root / REGII4_READING_DIR).glob("*.tsv")):
-        _, rows = source_contract.read_tsv(path)
-        for row in rows:
-            ref = row.get("line_ref", "")
-            try:
-                key = line_key(ref)
-            except PacketError:
-                continue
-            if start <= key <= end:
-                owners.add(path.relative_to(root).as_posix())
-                selected.append(compact_reading_row(row))
-    selected.sort(key=lambda row: line_key(row["line_ref"]))
-    return sorted(owners), selected
-
-
 def resolve_source_target(root: Path, line_ref: str) -> tuple[dict, list[str]]:
     errors, warnings, cache = source_contract.validate(root, source_contract.load_contract(root))
     if errors:
@@ -173,6 +86,10 @@ def resolve_source_target(root: Path, line_ref: str) -> tuple[dict, list[str]]:
     use = cache["source_uses"].get(PRINCIPAL_USE_ID)
     if not use or cache["use_project"].get(PRINCIPAL_USE_ID) != PROJECT_ID:
         raise PacketError(f"principal use {PRINCIPAL_USE_ID} is unavailable for {PROJECT_ID}")
+    if use.get("research_function") != "principal" or use.get("status") != "active":
+        raise PacketError(
+            f"principal use {PRINCIPAL_USE_ID} is not the active principal Reg. Ii 5 use"
+        )
 
     evidence_rows = [
         row for row in cache["evidence_by_use"].get(PRINCIPAL_USE_ID, [])
@@ -191,6 +108,10 @@ def resolve_source_target(root: Path, line_ref: str) -> tuple[dict, list[str]]:
     source_row = cache["sources"].get(source_id)
     if not source_row:
         raise PacketError(f"principal Source {source_id} is unavailable")
+    if file_row.get("source_id") != source_id:
+        raise PacketError(
+            f"active File {file_row.get('file_id', '')} does not belong to principal Source {source_id}"
+        )
 
     folio = folio_from_line_ref(line_ref)
     crosswalk_matches = [
@@ -270,66 +191,35 @@ def compile_packet(root: Path, line_ref: str, phase: str, observation: str | Non
             "status": "REQUIRED_BEFORE_EXPLORATION",
             "text": None,
             "note": (
-                "Inspect the target pixels and record only source-visible boundaries/features/uncertainties. "
-                "Request an explore/adjudicate packet only after that observation exists."
+                "Inspect the Reg. Ii 5 target pixels and record only source-visible "
+                "boundaries/features/uncertainties. Request an explore/adjudicate packet only "
+                "after that observation exists."
             ),
         }
         packet["phase_boundary"] = {
             "current_reading_included": False,
             "candidate_sources_included": False,
-            "note": "Current reading and candidate context are deliberately withheld during the blind pass.",
+            "candidate_policy": "NONE_ACTIVATED",
+            "note": "Current reading and all candidate context are deliberately withheld during the blind pass.",
         }
         return packet
 
     if not observation or not observation.strip():
-        raise PacketError(f"phase {phase!r} requires --blind-observation before candidate-bearing context is exposed")
+        raise PacketError(
+            f"phase {phase!r} requires --blind-observation before post-blind context is exposed"
+        )
 
     packet["blind_observation"] = frozen_observation(observation)
     packet["current_reading"] = compact_reading_row(reading_row)
-
-    mapping = find_g4_mapping(root, line_ref)
-    candidate_sources: list[dict] = []
-    if mapping:
-        mapping = dict(mapping)
-        mapping["owner_path"] = G4_OWNER.as_posix()
-        mapping["diplomatic_evidence_weight"] = 0
-        mapping["role"] = "candidate_generation_only"
-        owners["parallel_mapping"] = G4_OWNER.as_posix()
-
-        mapping_is_secure = not mapping["mapping_class"].lower().startswith("no secure correspondence")
-        mapping["candidate_text_exposed"] = mapping_is_secure
-        if mapping_is_secure:
-            parallel_owners, parallel_rows = load_regii4_mapped_rows(root, mapping["regii4_units"])
-            candidate_sources.append(
-                {
-                    "type": "parallel_witness",
-                    "role": "candidate_generation_only",
-                    "diplomatic_evidence_weight": 0,
-                    "mapping": mapping,
-                    "reading_owners": parallel_owners,
-                    "rows": parallel_rows,
-                }
-            )
-        else:
-            candidate_sources.append(
-                {
-                    "type": "parallel_witness_mapping",
-                    "role": "non_secure_mapping_notice_only",
-                    "diplomatic_evidence_weight": 0,
-                    "mapping": mapping,
-                    "reading_owners": [],
-                    "rows": [],
-                }
-            )
-
-    packet["candidate_sources"] = candidate_sources
+    packet["candidate_sources"] = []
     packet["phase_boundary"] = {
         "current_reading_included": True,
-        "candidate_sources_included": True,
-        "candidate_authority": "ZERO_DIPLOMATIC_EVIDENCE_WEIGHT",
+        "candidate_sources_included": False,
+        "candidate_policy": "NONE_ACTIVATED",
+        "candidate_authority": "NO_CANDIDATE_SOURCE_ACTIVE",
         "note": (
-            "Candidate material may suggest hypotheses only. It cannot change the Reg. Ii 5 reading "
-            "without a separate return to and adjudication of the target graph."
+            "#145 safe baseline: no parallel witness, HTR, lexicon, retrieval or other candidate "
+            "source is activated automatically. Candidate policy is deferred to the next method step."
         ),
     }
 
@@ -337,8 +227,8 @@ def compile_packet(root: Path, line_ref: str, phase: str, observation: str | Non
         packet["adjudication"] = {
             "status": "PENDING_SOURCE_REINSPECTION",
             "required_action": (
-                "Reinspect the target pixels and test each consequential candidate against the frozen "
-                "blind observation and the target graph."
+                "Reinspect the Reg. Ii 5 target pixels and test any externally supplied future "
+                "candidate against the frozen blind observation and the target graph."
             ),
             "allowed_outcomes": ["promote", "retain current", "downgrade/reopen", "unresolved"],
             "compiler_can_decide": False,
@@ -349,14 +239,14 @@ def compile_packet(root: Path, line_ref: str, phase: str, observation: str | Non
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Compile a bounded read-only #139 evidence packet for one Reg. Ii 5 line."
+        description="Compile a bounded read-only Reg. Ii 5 evidence packet for one canonical line."
     )
     parser.add_argument("--line-ref", required=True, help="Canonical Reg. Ii 5 line, e.g. 62r-L19")
     parser.add_argument(
         "--phase",
         choices=("blind", "explore", "adjudicate"),
         default="blind",
-        help="blind withholds candidate-bearing context; later phases require --blind-observation",
+        help="blind withholds reading/candidate context; later phases require --blind-observation",
     )
     parser.add_argument(
         "--blind-observation",
