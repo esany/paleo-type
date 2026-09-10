@@ -27,6 +27,15 @@ class RegII5EvidencePacketTests(unittest.TestCase):
         raw = proc.stdout if expect_rc == 0 else proc.stderr
         return json.loads(raw)
 
+    def assert_no_parallel_witness_payload(self, result: dict) -> None:
+        serialized = json.dumps(result, ensure_ascii=False)
+        self.assertNotIn("ega-reg-ii-4", serialized)
+        self.assertNotIn("G4-", serialized)
+        self.assertNotIn("308r-", serialized)
+        self.assertNotIn("308v-", serialized)
+        self.assertNotIn("parallel_mapping", serialized)
+        self.assertNotIn("parallel_witness", serialized)
+
     def test_blind_packet_withholds_current_reading_and_candidate_context(self) -> None:
         result = self.run_packet("62r-L17")
         self.assertEqual("DERIVED_REGII5_EVIDENCE_PACKET", result["view"])
@@ -42,16 +51,19 @@ class RegII5EvidencePacketTests(unittest.TestCase):
         self.assertNotIn("candidate_sources", result)
         self.assertFalse(result["phase_boundary"]["current_reading_included"])
         self.assertFalse(result["phase_boundary"]["candidate_sources_included"])
+        self.assertEqual("NONE_ACTIVATED", result["phase_boundary"]["candidate_policy"])
         serialized = json.dumps(result, ensure_ascii=False)
         self.assertNotIn("sonst", serialized.lower())
         self.assertNotIn("canonical_status", serialized)
+        self.assertNotIn("project_context", serialized)
+        self.assert_no_parallel_witness_payload(result)
 
-    def test_candidate_bearing_phase_requires_prior_blind_observation(self) -> None:
+    def test_post_blind_phase_requires_prior_blind_observation(self) -> None:
         result = self.run_packet("62r-L17", phase="explore", expect_rc=2)
         self.assertEqual("ERROR", result["status"])
         self.assertIn("requires --blind-observation", result["error"])
 
-    def test_explore_freezes_observation_and_exposes_compact_reading_afterward(self) -> None:
+    def test_explore_freezes_observation_and_exposes_compact_regii5_reading_only(self) -> None:
         observation = "bounded word; initial round/tall form; medial joins; terminal -en-like cluster uncertain"
         result = self.run_packet("62r-L17", phase="explore", observation=observation)
         frozen = result["blind_observation"]
@@ -63,34 +75,24 @@ class RegII5EvidencePacketTests(unittest.TestCase):
         self.assertEqual("62r-L17", current["line_ref"])
         self.assertIn("sonsten", current["diplomatic_reading"])
         self.assertNotIn("evidence_note", current)
-        self.assertEqual("ZERO_DIPLOMATIC_EVIDENCE_WEIGHT", result["phase_boundary"]["candidate_authority"])
+        self.assertEqual([], result["candidate_sources"])
+        self.assertFalse(result["phase_boundary"]["candidate_sources_included"])
+        self.assertEqual("NONE_ACTIVATED", result["phase_boundary"]["candidate_policy"])
+        self.assertEqual("NO_CANDIDATE_SOURCE_ACTIVE", result["phase_boundary"]["candidate_authority"])
+        self.assert_no_parallel_witness_payload(result)
 
-        candidates = result["candidate_sources"]
-        self.assertEqual(1, len(candidates))
-        parallel = candidates[0]
-        self.assertEqual("parallel_witness", parallel["type"])
-        self.assertEqual(0, parallel["diplomatic_evidence_weight"])
-        self.assertEqual("G4-007", parallel["mapping"]["map_id"])
-        self.assertEqual("candidate_generation_only", parallel["role"])
-        self.assertEqual(
-            [f"308r-{line:02d}" for line in range(11, 19)],
-            [row["line_ref"] for row in parallel["rows"]],
-        )
-        self.assertTrue(all("evidence_note" not in row for row in parallel["rows"]))
-
-    def test_adversarial_80_so_control_is_anchor_neutral_until_exploration(self) -> None:
+    def test_adversarial_80_so_control_remains_anchor_neutral_without_parallel_injection(self) -> None:
         blind = self.run_packet("62r-L19", phase="blind")
         self.assertNotIn("current_reading", blind)
         self.assertNotIn("candidate_sources", blind)
+        self.assert_no_parallel_witness_payload(blind)
 
         observation = "first graph is S-/8-like; followed by a small round graph; lexical value not assigned"
         explore = self.run_packet("62r-L19", phase="explore", observation=observation)
         self.assertIn("80", explore["current_reading"]["diplomatic_reading"])
-        parallel = explore["candidate_sources"][0]
-        self.assertEqual("G4-008", parallel["mapping"]["map_id"])
-        regii4_l19 = next(row for row in parallel["rows"] if row["line_ref"] == "308r-19")
-        self.assertIn("so wolff", regii4_l19["diplomatic_reading"].lower())
-        self.assertEqual(0, parallel["diplomatic_evidence_weight"])
+        self.assertEqual([], explore["candidate_sources"])
+        self.assertEqual("NONE_ACTIVATED", explore["phase_boundary"]["candidate_policy"])
+        self.assert_no_parallel_witness_payload(explore)
 
     def test_adjudicate_packet_cannot_decide_or_persist(self) -> None:
         result = self.run_packet(
@@ -106,6 +108,8 @@ class RegII5EvidencePacketTests(unittest.TestCase):
             ["promote", "retain current", "downgrade/reopen", "unresolved"],
             adjudication["allowed_outcomes"],
         )
+        self.assertEqual([], result["candidate_sources"])
+        self.assert_no_parallel_witness_payload(result)
 
     def test_known_control_rows_resolve_without_status_or_evidence_note_payload(self) -> None:
         controls = {
@@ -126,19 +130,31 @@ class RegII5EvidencePacketTests(unittest.TestCase):
                 self.assertIn(token, result["current_reading"]["diplomatic_reading"])
                 self.assertNotIn("evidence_note", result["current_reading"])
                 self.assertNotIn("canonical_status", result)
+                self.assertEqual([], result["candidate_sources"])
+                self.assert_no_parallel_witness_payload(result)
 
-    def test_nonsecure_g4_mapping_does_not_expose_parallel_text(self) -> None:
+    def test_default_explore_does_not_expose_historical_g4_even_for_mapped_locus(self) -> None:
         result = self.run_packet(
             "63r-L05",
             phase="explore",
             observation="display/prose target inspected without candidate text",
         )
-        self.assertEqual(1, len(result["candidate_sources"]))
-        parallel = result["candidate_sources"][0]
-        self.assertEqual("parallel_witness_mapping", parallel["type"])
-        self.assertEqual("G4-012", parallel["mapping"]["map_id"])
-        self.assertFalse(parallel["mapping"]["candidate_text_exposed"])
-        self.assertEqual([], parallel["rows"])
+        self.assertEqual([], result["candidate_sources"])
+        self.assertNotIn("parallel_mapping", result["canonical_references"])
+        self.assert_no_parallel_witness_payload(result)
+
+    def test_tool_has_no_automatic_regii4_candidate_dependency(self) -> None:
+        source = SCRIPT.read_text(encoding="utf-8")
+        self.assertNotIn("G4_OWNER", source)
+        self.assertNotIn("REGII4_READING_DIR", source)
+        self.assertNotIn("find_g4_mapping", source)
+        self.assertNotIn("load_regii4_mapped_rows", source)
+        self.assertNotIn("projects/ega-reg-ii-4", source)
+
+    def test_only_canonical_regii5_line_ref_shape_is_accepted(self) -> None:
+        result = self.run_packet("308r-19", phase="blind", expect_rc=2)
+        self.assertEqual("ERROR", result["status"])
+        self.assertIn("invalid Reg. Ii 5 line_ref", result["error"])
 
 
 if __name__ == "__main__":
