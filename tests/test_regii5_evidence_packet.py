@@ -73,7 +73,7 @@ class RegII5EvidencePacketTests(unittest.TestCase):
         self.assertEqual("G4-007", parallel["mapping"]["map_id"])
         self.assertEqual("candidate_generation_only", parallel["role"])
         self.assertEqual(
-            [f"308r-L{line:02d}" for line in range(11, 19)],
+            [f"308r-{line:02d}" for line in range(11, 19)],
             [row["line_ref"] for row in parallel["rows"]],
         )
         self.assertTrue(all("evidence_note" not in row for row in parallel["rows"]))
@@ -88,7 +88,7 @@ class RegII5EvidencePacketTests(unittest.TestCase):
         self.assertIn("80", explore["current_reading"]["diplomatic_reading"])
         parallel = explore["candidate_sources"][0]
         self.assertEqual("G4-008", parallel["mapping"]["map_id"])
-        regii4_l19 = next(row for row in parallel["rows"] if row["line_ref"] == "308r-L19")
+        regii4_l19 = next(row for row in parallel["rows"] if row["line_ref"] == "308r-19")
         self.assertIn("so wolff", regii4_l19["diplomatic_reading"].lower())
         self.assertEqual(0, parallel["diplomatic_evidence_weight"])
 
