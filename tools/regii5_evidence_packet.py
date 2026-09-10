@@ -36,8 +36,11 @@ G4_OWNER = Path(
 REGII4_READING_DIR = Path("projects/ega-reg-ii-4-bd-ii/transcription/first-reading")
 REGII5_READING_DIR = Path("projects/ega-reg-ii-5-knau/transcription/first-reading")
 
-LINE_REF_RE = re.compile(r"^(\d+)([rv])-L(\d+)$")
-INLINE_LINE_REF_RE = re.compile(r"(\d+)([rv])-L(\d+)")
+# Reg. Ii 5 canonical anchors use ``62r-L19`` while the independently owned
+# Reg. Ii 4 first-reading rows use ``308r-19``.  Treat both as line locators for
+# ordering/range selection without rewriting either witness's canonical form.
+LOCUS_REF_RE = re.compile(r"^(\d+)([rv])-(L)?(\d+)$")
+INLINE_LOCUS_REF_RE = re.compile(r"(\d+)([rv])-(L)?(\d+)")
 
 
 class PacketError(RuntimeError):
@@ -45,24 +48,28 @@ class PacketError(RuntimeError):
 
 
 def line_key(line_ref: str) -> tuple[int, int, int]:
-    match = LINE_REF_RE.fullmatch(line_ref)
+    match = LOCUS_REF_RE.fullmatch(line_ref)
     if not match:
-        raise PacketError(f"invalid line_ref {line_ref!r}; expected e.g. 62r-L19")
+        raise PacketError(f"invalid line locator {line_ref!r}; expected e.g. 62r-L19 or 308r-19")
     folio_no = int(match.group(1))
     side = 0 if match.group(2) == "r" else 1
-    line_no = int(match.group(3))
+    line_no = int(match.group(4))
     return folio_no, side, line_no
 
 
 def folio_from_line_ref(line_ref: str) -> str:
-    match = LINE_REF_RE.fullmatch(line_ref)
-    if not match:
-        raise PacketError(f"invalid line_ref {line_ref!r}; expected e.g. 62r-L19")
+    match = LOCUS_REF_RE.fullmatch(line_ref)
+    if not match or match.group(3) != "L":
+        raise PacketError(f"invalid Reg. Ii 5 line_ref {line_ref!r}; expected e.g. 62r-L19")
     return f"{match.group(1)}{match.group(2)}"
 
 
 def refs_in_text(text: str) -> list[str]:
-    return [f"{a}{b}-L{int(c):02d}" for a, b, c in INLINE_LINE_REF_RE.findall(text)]
+    refs: list[str] = []
+    for folio, side, marker, line in INLINE_LOCUS_REF_RE.findall(text):
+        prefix = "L" if marker else ""
+        refs.append(f"{folio}{side}-{prefix}{int(line):02d}")
+    return refs
 
 
 def range_contains(cell: str, target_ref: str) -> bool:
