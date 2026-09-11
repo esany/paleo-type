@@ -68,14 +68,14 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `62v-L09` ⟦unclear⟧ zu Knawe / mit einem ⟦unclear⟧
 - `62v-L10` ⟦unclear⟧
 - `62v-L11` acker / zu seinem steinbruch gemacht
-- `62v-L12` ⟦unclear⟧ soll der pfarrer wider /
-- `62v-L13` ⟦unclear⟧
-- `62v-L14` ⟦unclear⟧
-- `62v-L15` ⟦unclear⟧
-- `62v-L16` ⟦unclear⟧
-- `62v-L17` ⟦unclear⟧
-- `62v-L18` ⟦unclear⟧
-- `62v-L19` ⟦unclear⟧ soll /
+- `62v-L12` Hat dargegen soll der pfarrer wider /
+- `62v-L13` umb macht hab / Wenn es Ihm ⟦unclear⟧
+- `62v-L14` was In des edelmanns brauhaus
+- `62v-L15` fur sein haus frey / vnnd aus zins
+- `62v-L16` zubrauen vnnd ob er etwas an
+- `62v-L17` Bier / vberig haben wurde / Solchs
+- `62v-L18` auß In die schencke / frey zuuerkauffen /
+- `62v-L19` frey macht haben soll /
 - `62v-L20` Von dem acker / ⟦unclear⟧
 - `62v-L21` wolff von ⟦unclear: grevendorff?⟧ / auch ein
 - `62v-L22` ⟦unclear⟧ / Soll er dem pfarrer ein
