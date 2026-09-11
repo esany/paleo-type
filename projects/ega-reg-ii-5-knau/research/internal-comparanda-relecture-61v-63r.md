@@ -917,3 +917,76 @@ Because the direct F3 target evidence made the handed-forward L12–L19 residual
 **Next bounded cursor: F4 — `62v-L20`–`L24`.** F4 must freshly establish its own target-local readiness and recoverable graph questions. F3 wording/readiness must not be projected forward into F4, and the recurrent surname component at `62v-L21` remains governed by the completed cluster-A path.
 
 AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-11; direct target-first inspection of the exact primary-source PDF with deterministic 600-dpi rendering/cropping. No durable Generator-B output is claimed as F3 evidence; no Reg. Ii 4/G4 or Legacy text supplied the promoted readings. This is AI-assisted working research, not independent qualified human palaeographic validation; CI certifies only the deterministic repository properties it tests.
+
+## Cluster F4 reconciliation — residual closeout after PR #156 (2026-09-11)
+
+This section reconciles the scientific F4 closeout previously persisted in #123 comment `5633575099` into the existing bounded Project research owner. It does not add a new F4 reading or reopen the already merged PR #156 promotions.
+
+The residual closeout freshly rebound the exact Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129` and File `FILE-REG-II-5-00000129-EXCERPT`; the controlled PDF matched SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`. Canonical addressing remained `62v = export image 134 = PDF p16` with folio mapping `inferred-high`. A fresh 600-dpi p16 render measured **4961 × 7016 px**, PNG SHA-256 `aca1fb0c580bd72a9a5d2ab3663542507b2e4bf716caca0744b7b849e737f49b`; the remaining L20/L22/L23/L24 interiors were individually localized and inspected.
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+L20's remaining first/third post-slash word bodies, the longer body following secure initial `g` at L22, both post-`an der` bodies at L23, and the two opening word bodies at L24 remained visibly bounded but did not expose a stable recoverable subfeature sufficient for a responsible same-Source comparator search. L21 remained entirely governed by the completed cluster-A surname path.
+
+Under the persisted #150 selector these residuals would route to conditional Generator B if technically available. Fresh availability checking found neither an importable Kraken runtime nor `/mnt/data/small.safetensors`; raw output was absent. The disposition is therefore **technical unavailable**, not an empirical `NO_USEFUL_DISCRIMINATOR`, and Generator A was not substituted merely to force output.
+
+Target Return left the PR #156 canonical F4 state unchanged. No further TSV or derived-view mutation was warranted. G3 was boundedly `reopened` for the affected F4 residual evaluation and, after the direct target returns and explicit negative ceilings, returned to **`reached at current internal evidence level`**. F4 is complete at that level; this does not mean every L20–L24 word is read and does not affect G4 or imply G5/G6.
+
+## Cluster G execution — `63r-L04` display heading (2026-09-12)
+
+### Fresh exact-source readiness and source-only freeze
+
+Fresh repository resolution confirmed canonical `main` at `251cfc9dc790f1bf288588113eb6b78230adaf4b`, with #123 still active and G the bounded manuscript cursor. The controlled Reg. Ii 5 PDF was freshly hashed and matched canonical File SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`. The canonical crosswalk was rechecked as **`63r = export image 135 = PDF p17`**, mapping status `observed` from visible foliation `63`.
+
+PDF p17 was freshly rendered with Poppler at 600 dpi to **4961 × 7016 px**, RGB, PNG SHA-256 **`1c84541242f6f70a564ad9bed5859add65367a31d7fab87ee76a458479a1466b`**. Whole-page inspection confirmed visible `63`, printed `Bild: 135` / `Seite 17 von 25`, and the L04 display heading. The complete heading and its initial were then enlarged from the same raster; enlargement added no generated detail.
+
+For the G target in this execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+Strict cognitive blindness cannot be claimed for G because the current Reading Owner (`Zulage?` / `Sulage`) had already been read during the fresh repository reconstruction. That prior candidate exposure receives **no independent confirmation credit**. Crucially, no external palaeographic, lexical, genre or administrative resource was activated before the following source-only feature freeze.
+
+The target is one isolated display word. After the disputed initial, the written sequence itself supports an ordered small u-like form, a tall looped l-type ascender, rounded a-type form, a descending g-type form and terminal e-type form: the remainder is graphically compatible with **`ulage`**. The unresolved discriminator is therefore primarily the initial display capital. Its target morphology contains a compact rounded/looped upper return followed by a strong descending oblique/curved movement into a large deep lower sweep/oval with a right-side return. The frozen question remained: does that topology behave as a `Z`-type rather than an `S`-type display initial? Heading function and expected terminology were excluded as discriminators.
+
+### Bounded expertise activation after feature freeze
+
+A single bounded external palaeographic route was tested after the target question had been frozen. The underlying resources were actually opened rather than cited from snippets/model memory:
+
+| resource | inspected role | diagnostic result for G |
+|---|---|---|
+| Universität Zürich, **Ad fontes**, “Deutsche Kurrentschrift”, `https://adfontes.uzh.ch/tutorium/schriften-lesen/schriftgeschichte/deutsche-kurrentschrift` | institution-hosted script-history/training page; supports substantial early-modern functional and individual variation in German cursive writing and warns against treating a generic alphabet as source-specific proof | useful boundary condition, but no target-specific `Z`/`S` discriminator |
+| Geheimes Staatsarchiv Preußischer Kulturbesitz, **Schriftbeispiele** and linked “Schrifttafel”, `https://gsta.preussischer-kulturbesitz.de/nutzung/arbeitshilfen/schriftbeispiele.html` and `https://gsta.preussischer-kulturbesitz.de/fileadmin/user_upload_gsta/02_Content/Texte/02_Nutzung/Arbeitshilfen_Schrifttafel.pdf` | actual institutional chart inspected; the `Kanzleikursive 15.–17. Jh.` material gives broad form context | no clean, source-comparable 1533 display-capital `Z` versus `S` test; generic chart path stopped |
+| Wolfgang Fugger, **Ein nutzlich vnd wolgegrundt Formular ...** (Nuremberg 1553), MK&G object page `https://www.mkg-hamburg.de/sammlung/objekt/wolfgang-fugger-nutzlich-und-wolgegrundt-formular-manncherley-schoner-schriefften`, with stable Library of Congress copy `https://www.loc.gov/item/48038493/` | near-contemporary writing-master evidence with multiple alphabets/initial forms | historically relevant but stylized and too broad/variable to decide this source-specific initial |
+
+This expertise-activation path therefore yielded **no positive diagnostic discriminator** and supplied no diplomatic reading. Its useful result was negative: generic alphabet/script-typology hunting was eliminated as low-value for this narrow target, and the next test was narrowed to secure **source-native display `S` controls**. No lexical/genre resource was activated merely to add plausibility.
+
+### Source-native controls and Target Return
+
+First, the already observed same-page `63r-L01 = Soll ...` initial was freshly inspected as a secure `S` control. Its large initial is a broad open oval/loop with a narrow upper recurved movement and long crossing/rightward return. That topology is materially different from the G target's compact upper return plus pronounced descending central movement into a separate deep lower sweep.
+
+Second, after the target feature was fixed, the same-Source display heading recorded by the canonical crosswalk at **export image 136 = PDF p18** (`63v` only `inferred-high`; content anchor `Schondorff heading`) was freshly rendered and inspected. The 600-dpi p18 raster measured **4961 × 7016 px**, RGB, PNG SHA-256 **`670f0ab21d3292c96c6ec68e550064d694949da0ae4125334a70a80b4f668c95`**. The display `S` in `Schondorff` has one very broad tall loop/oval body with a strong oblique inner/downward stroke. It again lacks the target initial's compact upper return followed by a distinct large lower sweep/oval topology.
+
+These controls do not establish same hand or a universal alphabet. They answer the bounded source-internal question: the target initial is materially unlike both secure source-native `S` examples, while its own ordered topology remains compatible with a `Z`-type initial. Returning to the G target, the remainder still independently carries `ulage`; the complete target therefore supports diplomatic **`Zulage`**.
+
+The rejected `Sulage` candidate is not retained as a graphically viable alternative after this target return. No administrative meaning, normalization, section identity or historical interpretation is inferred from the written word.
+
+### Canonical consequence, G3 and hand-off
+
+Canonical `transcription/first-reading/63r.tsv` changes only at `63r-L04`:
+
+- `⟦unclear heading: Zulage?⟧` / alternative `Sulage` / `unresolved`
+- → **`Zulage`**, `heading|large_script`, status `working`, no retained alternative.
+
+The derived `61v-63r-first-reading.md` view is regenerated from the changed canonical TSV. External generic palaeographic resources retain **zero diplomatic Reading Authority**; their only scientific contribution here was to bound/eliminate a low-value search route before the source-native controls were used.
+
+Fresh target and source-native comparator evidence made the handed-forward G residual newly testable, so G3 was treated as bounded **`reopened` during G evaluation**. After Target Return and the persisted promotion, the affected subproblem is fully assessed and G3 is again **`reached at current internal evidence level`**. G4 is unchanged; no G5/G6, same-hand, normalization or interpretation claim follows.
+
+**G is complete. Next bounded cursor: H — `63r-L10` written Roman-like sign sequence `xlvij`, at graphematic/sign level only.** G readiness does not carry to H. H must freshly establish its own target readiness and may compare only written sign morphology; no calendar date, absolute year or production date may be inferred from the sign sequence.
+
+AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-12; direct inspection of the exact primary-source PDF with deterministic Poppler 600-dpi rendering/cropping, followed by a bounded post-freeze external expertise check and source-native comparators. No OCR, generative enhancement, Reg. Ii 4/G4 wording, Legacy reading authority, lexical/administrative completion or external/cloud HTR supplied the G reading. This is AI-assisted working research, not independent qualified human palaeographic validation.
