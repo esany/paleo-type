@@ -861,3 +861,59 @@ Because F2 produced new relevant same-Source comparator evidence, G3 was treated
 **Next bounded cursor: F3 — `62v-L12`–`L19`.** F2 p16 readiness and comparators do not carry forward automatically. F3 begins again with target-local readiness and must recover a concrete graphical feature before any same-Source search; the protected `62v-L11` reading must not be projected forward.
 
 AI provenance for the consolidated F1/F2 record: ChatGPT (GPT-5.6 Sol), 2026-09-10; exact primary-source PDF, deterministic rendering/cropping and bounded same-Source visual retrieval where explicitly stated. No Reg. Ii 4/G4, Legacy reading authority, semantic clause completion or independent qualified palaeographic validation is claimed by these F1/F2 executions.
+
+## Cluster F3 execution — target-return relecture at 62v-L12–L19 (2026-09-11)
+
+### Source, readiness and evidentiary boundary
+
+F3 was executed from canonical `main` at `8dae069031f99cf4368e2bb8c324a4bf0d1e9c21` before PR #154. The exact Source/File chain was freshly re-established:
+
+- Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`;
+- File `FILE-REG-II-5-00000129-EXCERPT`;
+- exact File SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- canonical crosswalk `62v = export image 134 = PDF p16`, folio mapping `inferred-high`;
+- current 600-dpi p16 raster `4961 × 7016 px`, SHA-256 `aca1fb0c580bd72a9a5d2ab3663542507b2e4bf716caca0744b7b849e737f49b`.
+
+F3 did not treat F2 readiness as a logical carry-over: L12–L19 were freshly localized on the verified p16 raster before their target returns.
+
+For the F3 target region in that execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+The immediately preceding chat-level assertion that Generator B had run is **not** promoted into this audit as executed evidence. In the later recoverable F3 context no importable Kraken runtime was present, while `/mnt/data/small.safetensors` was present, and no durable raw B output/provenance could be recovered. Generator B therefore receives **zero evidentiary credit** for the F3 readings below. This limitation concerns support-workflow provenance, not the direct target pixels.
+
+### Target-first adjudication
+
+Fresh direct 600-dpi inspection resolves the previously diffuse F3 block into stable physical word bodies. No Reg. Ii 4/G4 wording, Legacy `134.tsv`, whole-clause semantic completion, historical brewing interpretation, or generator output is used as reading authority.
+
+The target supports:
+
+- `62v-L12`: `Hat dargegen soll der pfarrer wider /`;
+- `62v-L13`: `umb macht hab / Wenn es Ihm weg`;
+- `62v-L14`: `was In des edelmanns brauhaus`;
+- `62v-L15`: `fur sein haus frey / vnnd aus zins`;
+- `62v-L16`: `zubrauen vnnd ob er etwas an`;
+- `62v-L17`: `Bier / vberig haben wurde / Solchs`;
+- `62v-L18`: `auß In die schencke / frey zuuerkauffen /`;
+- `62v-L19`: `frey macht haben soll /`.
+
+At L12, `dargegen` was checked only after target localization against the already secure same-Source written form at `62r-L22`. That control confirms compatibility but does not supply the F3 reading. At L13, the final `weg` is carried by the target itself: a w-like opening, a small medial loop and a terminal descending g-form remain visible in order. The remaining F3 lines likewise became readable from their target-local word boundaries and ordered graph.
+
+No unresolved residual survived within L12–L19 that required a wider same-Source comparator search. A comparator generator was therefore **not** activated merely to satisfy a tooling quota: #123 allows target-supported promotion when the target graph itself is sufficiently discriminating, and comparanda remain tests rather than prerequisites or substitute readings.
+
+### Canonical consequence and G3 assessment
+
+PR #154 (`RESEARCH #123: promote target-supported F3 62v-L12–L19`) promoted all eight F3 rows in canonical `transcription/first-reading/62v.tsv` to `working` with the readings above and regenerated `transcription/derived/61v-63r-first-reading.md`. Merge commit: `9b567adb9a445f14c2310fab2885cbe36513e681`. PR source-contract run #302 and post-merge run #303 both completed successfully.
+
+No other folio TSV, Source/File/crosswalk metadata, G4 owner, lexicon, apparatus, ontology or generic METHOD file changed in F3.
+
+Because the direct F3 target evidence made the handed-forward L12–L19 residuals newly testable, G3 was treated as bounded `reopened` during F3 adjudication. After the eight target returns and persisted promotions, that affected subproblem is fully assessed and G3 is again **`reached at current internal evidence level`**. This does not imply G5/G6, same hand, normalized meaning or historical interpretation.
+
+**F3 = complete at the current internal-evidence level; L12–L19 are promoted to working from direct target evidence.**
+
+**Next bounded cursor: F4 — `62v-L20`–`L24`.** F4 must freshly establish its own target-local readiness and recoverable graph questions. F3 wording/readiness must not be projected forward into F4, and the recurrent surname component at `62v-L21` remains governed by the completed cluster-A path.
+
+AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-11; direct target-first inspection of the exact primary-source PDF with deterministic 600-dpi rendering/cropping. No durable Generator-B output is claimed as F3 evidence; no Reg. Ii 4/G4 or Legacy text supplied the promoted readings. This is AI-assisted working research, not independent qualified human palaeographic validation; CI certifies only the deterministic repository properties it tests.
