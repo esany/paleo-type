@@ -88,7 +88,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `63r-L01` Soll auch ein jeder hausgenos zu Knawe /
 - `63r-L02` dem pfarrer jerlich acht pfennig zu
 - `63r-L03` pfarrrecht geben /
-- `63r-L04` ⟦unclear heading: Zulage?⟧
+- `63r-L04` Zulage
 - `63r-L05` Dem pfarrer zu Knawe haben auff Beuelh
 - `63r-L06` durch die Visitatores / aus dem closter
 - `63r-L07` Burgel Jerlich zehen gulden Jerlich
