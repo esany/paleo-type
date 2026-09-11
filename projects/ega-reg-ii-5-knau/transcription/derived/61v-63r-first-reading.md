@@ -69,7 +69,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `62v-L10` ⟦unclear⟧
 - `62v-L11` acker / zu seinem steinbruch gemacht
 - `62v-L12` Hat dargegen soll der pfarrer wider /
-- `62v-L13` umb macht hab / Wenn es Ihm ⟦unclear⟧
+- `62v-L13` umb macht hab / Wenn es Ihm weg
 - `62v-L14` was In des edelmanns brauhaus
 - `62v-L15` fur sein haus frey / vnnd aus zins
 - `62v-L16` zubrauen vnnd ob er etwas an
