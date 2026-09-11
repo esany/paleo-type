@@ -12,7 +12,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `61v-L04` ⟦illegible-sign⟧ ⟦illegible⟧ geltzinß
 - `61v-L05` ⟦illegible-sign⟧ ⟦illegible⟧
 - `61v-L06` ⟦illegible-sign⟧ ⟦illegible⟧ maß
-- `61v-L07` ⟦illegible-sign⟧ ⟦illegible⟧ 1 virtel haber ⟦illegible⟧ maß /
+- `61v-L07` ⟦illegible-sign⟧ 1 virtel haber ⟦illegible⟧ maß /
 - `61v-L08` ⟦illegible-sign⟧ feldes ⟦unclear: besament?⟧ gut
 - `61v-L09` ⟦illegible-sign⟧ fuder hauers ⟦illegible⟧
 - `61v-L10` Holtzmarck zu notturfft zu brennen
@@ -76,11 +76,11 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `62v-L17` Bier / vberig haben wurde / Solchs
 - `62v-L18` auß In die schencke / frey zuuerkauffen /
 - `62v-L19` frey macht haben soll /
-- `62v-L20` Von dem acker / ⟦unclear⟧
+- `62v-L20` Von dem acker / ⟦unclear⟧ dem ⟦unclear⟧ / dem
 - `62v-L21` wolff von ⟦unclear: grevendorff?⟧ / auch ein
-- `62v-L22` ⟦unclear⟧ / Soll er dem pfarrer ein
-- `62v-L23` andern acker / ⟦unclear⟧
-- `62v-L24` ⟦unclear⟧ / vnnd denselbigen
+- `62v-L22` g⟦unclear⟧ / Soll er dem pfarrer ein
+- `62v-L23` andern acker / an der ⟦unclear⟧ ⟦unclear⟧
+- `62v-L24` ⟦unclear⟧ ⟦unclear⟧ / vnnd denselbigen
 - `62v-L25` gebrauchen lassen
 
 ## fol. 63r
