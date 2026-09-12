@@ -78,7 +78,7 @@ Cluster A execution established exact File/SHA/crosswalk plus 600-dpi target ins
 
 Cluster B separately re-established question-specific readiness:
 
-- the staged supplied PDF matched exact `FILE-REGII5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- the staged supplied PDF matched exact `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - canonical crosswalk was rechecked for `62r = export image 133 = PDF p15`;
 - exact PDF page 15 was freshly rendered at 600 dpi and visually inspected;
 - both target tokens at `62r-L06` and `62r-L09` were individually localized and enlarged.
@@ -94,7 +94,7 @@ No outside-Editionslocus comparator was used for B because target-to-target comp
 
 Cluster C separately re-established question-specific readiness:
 
-- the staged supplied PDF again matched exact `FILE-REGII5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- the staged supplied PDF again matched exact `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - canonical target crosswalk was rechecked for `61v = export image 132 = PDF p14`;
 - exact PDF page 14 was freshly rendered at 600 dpi and the six left-side target forms at `61v-L04`–`L09` were individually localized/enlarged;
 - the actually used same-Source comparator is exactly `export image 130 = PDF p12`; its crosswalk folio label `60v` is `inferred-high`, not `observed`, so only the digital image/page address is treated as exact.
@@ -148,7 +148,7 @@ STAGED = PASS
 VISION-INSPECTABLE = PASS
 ```
 
-Cluster E4 independently re-established question-specific readiness on 2026-09-09: exact attachment SHA and the `62r = export image 133 = PDF p15` crosswalk were checked again, and L17 was freshly rendered at 600 dpi and segmented with its immediately adjacent word boundaries. The target itself supported `sonsten`; no comparator was used because no remaining localized graphical ambiguity justified a feature-specific comparator search. The full target-first audit and explicit negative search path are in the E4 audit.
+Cluster E4 independently re-established question-specific readiness on 2026-09-09: exact attachment SHA and the `62r = export image 133 = PDF p15` crosswalk were checked again, and L17 was freshly rendered at 600 dpi and segmented with its immediately adjacent word boundaries. The target itself supported `sonsten`; no comparator was used because no remaining localized graphical ambiguity justified a feature-specific comparator search. The full target-first audit and explicit negative search path are in the existing research owner.
 
 For the E4 L17 target in that execution context:
 
@@ -314,7 +314,7 @@ E5 supplied fresh target evidence plus feature-specific same-page controls for t
 
 F1 re-tested the first dense 62v block under the #150 support-routing contract. Its selected HTR Generator B was technically unavailable in that execution context; this is a **technical availability result, not an empirical finding that B could not have produced a useful discriminator**. No second generator was substituted. Target Return produced no new promotion-capable discriminator, and after the current Reading Owner was opened the F1 lines were retained unresolved with no TSV change. The pre-owner blind order is credited only within its documented caveats, including the prior exposure of the L01 `80` fact.
 
-F2 supplied new relevant same-Source comparator evidence for `62v-L09` while leaving `62v-L10` without a suitable comparator. G3 was therefore bounded `reopened` during F2 evaluation. The L09-left anchor has a strong shape recurrence at PDF p22 / export image 140 / crosswalk fol. `65v` (`inferred-high`) but no independently secured comparator reading; the L09-right anchor has a narrower p12/image130/60v (`inferred-high`) terminal-morphology comparator that is non-discriminating for grapheme identity. L10's target-defined anchor returned no suitable comparator. Target returns preserve all three F2 spans as unresolved and do not promote `pfarrlehen` or any whole-clause reconstruction.
+F2 supplied new relevant same-Source comparator evidence for `62v-L09` while leaving `62v-L10` without a suitable comparator. G3 was therefore bounded `reopened` during F2 evaluation. The L09-left anchor has a strong shape recurrence at PDF p22 / export image 140 / crosswalk fol. `65v` (`inferred-high`) but no independently secured comparator reading; the L09-right anchor has a narrower terminal-morphology comparator at PDF p12 / export image 130 / fol. `60v` (`inferred-high`) that is non-discriminating for grapheme identity. L10's target-defined anchor returned no suitable comparator. Target returns preserve all three F2 spans as unresolved and do not promote `pfarrlehen` or any whole-clause reconstruction.
 
 F3 supplied new direct target evidence for `62v-L12`–`L19`. All eight physical lines were freshly localized on the exact-SHA 600-dpi p16 raster, and target return supports complete `working` readings for each line. L12 `dargegen` received only a post-localization same-Source written-form check against `62r-L22`; no wider comparator was needed. No durable Generator-B output is credited. G3 was bounded `reopened` for the affected F3 residuals during evaluation and returned to reached after the eight promotions were persisted.
 
