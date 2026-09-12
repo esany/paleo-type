@@ -3,8 +3,10 @@
 
 This is a project-bounded prototype, not a canonical research owner and not a
 replacement for ``project_context.py``.  PR #144 established the phase split;
-#145 narrows the default packet back to the active Reg. Ii 5 internal-relecture
-scope before any candidate-method policy is designed.
+#145 narrows the default packet back to the bounded Reg. Ii 5 Editionslocus
+before any candidate-method policy is designed. A completed principal use may
+remain addressable as historical evidence; packet compilation never selects a
+current research priority.
 
 * ``blind`` exposes only target addressing/provenance needed to inspect pixels;
   it deliberately omits the current diplomatic reading and all candidate
@@ -34,6 +36,7 @@ PROJECT_ID = "ega-reg-ii-5-knau"
 PRINCIPAL_USE_ID = "USE-REGII5-00000129-PRINCIPAL"
 REGII5_READING_DIR = Path("projects/ega-reg-ii-5-knau/transcription/first-reading")
 LINE_REF_RE = re.compile(r"^(\d+)([rv])-L(\d+)$")
+PACKET_USE_STATUSES = {"active", "historical"}
 
 
 class PacketError(RuntimeError):
@@ -86,18 +89,18 @@ def resolve_source_target(root: Path, line_ref: str) -> tuple[dict, list[str]]:
     use = cache["source_uses"].get(PRINCIPAL_USE_ID)
     if not use or cache["use_project"].get(PRINCIPAL_USE_ID) != PROJECT_ID:
         raise PacketError(f"principal use {PRINCIPAL_USE_ID} is unavailable for {PROJECT_ID}")
-    if use.get("research_function") != "principal" or use.get("status") != "active":
+    if use.get("research_function") != "principal" or use.get("status") not in PACKET_USE_STATUSES:
         raise PacketError(
-            f"principal use {PRINCIPAL_USE_ID} is not the active principal Reg. Ii 5 use"
+            f"principal use {PRINCIPAL_USE_ID} is not an addressable active/historical principal Reg. Ii 5 use"
         )
 
     evidence_rows = [
         row for row in cache["evidence_by_use"].get(PRINCIPAL_USE_ID, [])
-        if row.get("status") == "active"
+        if row.get("status") == use.get("status") and row.get("status") in PACKET_USE_STATUSES
     ]
     if len(evidence_rows) != 1:
         raise PacketError(
-            f"expected exactly one active evidence binding for {PRINCIPAL_USE_ID}, found {len(evidence_rows)}"
+            f"expected exactly one status-matched evidence binding for {PRINCIPAL_USE_ID}, found {len(evidence_rows)}"
         )
     evidence = evidence_rows[0]
     file_row = cache["files"].get(evidence.get("file_id", ""))
@@ -110,7 +113,7 @@ def resolve_source_target(root: Path, line_ref: str) -> tuple[dict, list[str]]:
         raise PacketError(f"principal Source {source_id} is unavailable")
     if file_row.get("source_id") != source_id:
         raise PacketError(
-            f"active File {file_row.get('file_id', '')} does not belong to principal Source {source_id}"
+            f"File {file_row.get('file_id', '')} does not belong to principal Source {source_id}"
         )
 
     folio = folio_from_line_ref(line_ref)
@@ -128,11 +131,13 @@ def resolve_source_target(root: Path, line_ref: str) -> tuple[dict, list[str]]:
         "project_id": PROJECT_ID,
         "line_ref": line_ref,
         "use_id": use.get("use_id", ""),
+        "use_status": use.get("status", ""),
         "research_function": use.get("research_function", ""),
         "relevant_locus": use.get("relevant_locus", ""),
         "source_id": source_id,
         "source_title": source_row.get("title", ""),
         "evidence_id": evidence.get("evidence_id", ""),
+        "evidence_status": evidence.get("status", ""),
         "file_id": file_row.get("file_id", ""),
         "file_sha256": file_row.get("sha256", ""),
         "filename": file_row.get("filename", ""),
