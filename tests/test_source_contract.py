@@ -45,17 +45,19 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertEqual("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", principal["source_id"])
         self.assertEqual("principal", principal["research_function"])
         self.assertEqual("fol. 61v–63r", principal["relevant_locus"])
-        self.assertEqual("historical", principal["status"])
+        self.assertEqual("active", principal["status"])
         self.assertIn("loss-checked migration 2026-09-02", principal["evidence_basis"])
         self.assertIn("#123 completed 2026-09-12", principal["evidence_basis"])
-        self.assertIn("fol. 55v–66v", principal["notes"])
-        self.assertIn("did not authorize source-wide transcription", principal["notes"])
+        self.assertIn("Human Owner selected bounded cross-folio research #166", principal["evidence_basis"])
+        self.assertIn("62r-L19–62v-L07", principal["notes"])
+        self.assertIn("does not authorize source-wide transcription", principal["notes"])
 
         evidence = cache["use_evidence"]["EVID-REGII5-00000129-PRINCIPAL"]
         self.assertEqual("USE-REGII5-00000129-PRINCIPAL", evidence["use_id"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", evidence["file_id"])
-        self.assertEqual("historical", evidence["status"])
+        self.assertEqual("active", evidence["status"])
         self.assertIn("#123 completed 2026-09-12", evidence["evidence_basis"])
+        self.assertIn("reactivated for Human-Owner-selected #166", evidence["evidence_basis"])
         self.assertIn("does not establish fresh STAGED or VISION-INSPECTABLE readiness", evidence["notes"])
 
         li4_principal = cache["source_uses"]["USE-REGII4PROJ-REGII4-00000089-PRINCIPAL"]
@@ -101,9 +103,9 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertIsNone(resolved["legacy_primary_file"])
         self.assertEqual(1, len(resolved["project_source_uses"]))
         target = resolved["project_source_uses"][0]
-        self.assertEqual("historical", target["use"]["status"])
+        self.assertEqual("active", target["use"]["status"])
         self.assertEqual("fol. 61v–63r", target["use"]["relevant_locus"])
-        self.assertEqual("historical", target["evidence"][0]["evidence"]["status"])
+        self.assertEqual("active", target["evidence"][0]["evidence"]["status"])
         self.assertEqual(
             "FILE-REG-II-5-00000129-EXCERPT",
             target["evidence"][0]["file"]["file_id"],
