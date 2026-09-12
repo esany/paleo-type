@@ -10,7 +10,9 @@ On 2026-09-07 the human owner selected a bounded scholarly target: **source-exac
 
 On 2026-09-08 the human owner then selected **#123 — problembezogene interne Relektüre of the existing Reg. Ii 5 Editionsbaustein fol. 61v–63r** as the next scholarly block. Activation was deliberately blocked until #122 had restored a green technical checkpoint for the already-completed #115 state. #122 is completed; PR #125 was merged and the post-merge `source-contract` run `34284952980` passed canonical validation, all regressions, fresh-process Project-context compilation and the real-data resolver checks.
 
-#123 is now **complete at the bounded work-package level**. The finite A–H start set has received the required target-first assessment in `research/internal-comparanda-relecture-61v-63r.md`. Clusters A–D, E1–E5 and F1–F4 retain their documented promotions or negative/ceiling results; G promoted `63r-L04` to working `Zulage`; H re-tested `63r-L10` at graphematic/sign level and corrected the written sequence from inherited `xlvij` to working **`xxxij`**. H does not supply a numerical value, absolute year, calendar normalization or production date. `project.yml:active_scope` therefore records **no owner-selected active scholarly scope after completion of #123**. G3 is again reached at the current internal-evidence level, G4 remains unchanged, and no G5/G6 or source-wide continuation is selected.
+#123 is now **complete at the bounded work-package level**. The finite A–H start set has received the required target-first assessment in `research/internal-comparanda-relecture-61v-63r.md`. Clusters A–D, E1–E5 and F1–F4 retain their documented promotions or negative/ceiling results; G promoted `63r-L04` to working `Zulage`; H re-tested `63r-L10` at graphematic/sign level and corrected the written sequence from inherited `xlvij` to working **`xxxij`**. H does not supply a numerical value, absolute year, calendar normalization or production date. At #123 closeout `project.yml:active_scope` recorded no owner-selected active scholarly scope; G3 was again reached at the current internal-evidence level, G4 remained unchanged, and no G5/G6 or source-wide continuation was selected.
+
+On 2026-09-12, after the whole-locus Source-Understanding synthesis (#161) and the bounded unit-boundary correction (#165 / PR #167), the Human Owner selected **#166 — adjudicate the cross-folio Reg. Ii 5 unit `62r-L19–62v-L07` before further micro-analysis** as the current scholarly scope. The first executable step is fresh Reg. Ii 5 evidence readiness for that unit. Reg. Ii 4 remains historical at activation and may be opened only conditionally at #166 R4 after source-only structure and blocker extraction. G3 remains reached at the current internal-evidence level and G4 remains reached/unchanged at activation; no G5/G6, source-wide continuation or `62v-L08–L25` follow-up is authorized.
 
 ## #123 scope boundary
 
@@ -35,7 +37,7 @@ unresolved target graph in 61v–63r
 
 `same Source` ≠ `same hand` ≠ `same scribe`. Hand differentiation remains `not investigated` unless independent graphical evidence makes it a separate consequential question.
 
-No source-wide transcription, palaeography lexicon/concordance, numeral register, general apparatus owner, same-hand group, historical person identification, metrological value normalization, calendar normalization, G5/G6 progression, ontology or platform is authorized by #123 completion.
+No source-wide transcription, palaeography lexicon/concordance, numeral register, general apparatus owner, same-hand group, historical person identification, metrological value normalization, calendar normalization, G5/G6 progression, ontology or platform is authorized by #123 completion or #166 activation.
 
 ## Canonical Source structure
 
@@ -48,37 +50,35 @@ Keep archival container, concrete Source record and research use distinct.
 
 The Reg. Ii 4 and Reg. Ii 5 Ziegenrück records are separate material witnesses/transmissions. Close textual correspondence does not collapse their identities, dates, hands, production stages or diplomatic readings.
 
-## Completed #123 Source use and exact evidence
+## #123 closeout and active #166 Source use / exact evidence
 
-The Reg. Ii 5 principal use was reactivated for #123 and is now preserved as completed historical use:
+At #123 completion the Reg. Ii 5 principal use and exact File evidence were returned to `historical`. For the Human-Owner-selected #166 scope they are now reactivated, without changing the Editionslocus:
 
 - use `USE-REGII5-00000129-PRINCIPAL`;
 - Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`;
 - research function `principal`;
-- relevant locus remains **fol. 61v–63r**;
-- status `historical` after #123 completion.
+- relevant locus remains **fol. 61v–63r**; #166 is specifically bounded to `62r-L19–62v-L07`;
+- use status `active` for #166.
 
-The exact File binding is likewise preserved as historical:
+The exact File binding is likewise active for #166:
 
 - evidence `EVID-REGII5-00000129-PRINCIPAL`;
 - File `FILE-REG-II-5-00000129-EXCERPT`;
-- evidence locator `export images 132–135` remains the Editionslocus locator and was not expanded merely because other folia were inspected as comparanda;
+- evidence locator remains `export images 132–135`; the active question uses images 133–134 / PDF p15–p16;
 - SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f` remains canonical in `corpus/files.tsv`;
-- status `historical` after #123 completion.
+- evidence status `active` for #166.
 
-The separate Reg. Ii 4 textual-comparison use and both Reg. Ii 3 control/context uses also remain `historical`. **All four Project uses and all four Project use-evidence rows are historical; none selects a current scholarly priority.**
-
-Historical use/evidence status records completed research use. It does **not** mean that the bytes/pixels are currently staged or vision-inspectable in a fresh execution context.
+The separate Reg. Ii 4 textual-comparison use and both Reg. Ii 3 control/context uses remain `historical` at #166 activation. Reg. Ii 4 may be reactivated only if #166 R4 is actually reached after source-only R1–R3. Active use/evidence status records current research use; it does **not** establish that the bytes/pixels are currently staged or vision-inspectable.
 
 ### Completed #123 evidence readiness
 
-Readiness was **cluster- and execution-context-specific**, not a persistent blanket File property. The completed readiness statements below are historical evidence for the corresponding #123 executions only. Any future pixel-dependent work must freshly establish its own `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for every target and actually used comparator.
+Readiness was **cluster- and execution-context-specific**, not a persistent blanket File property. The completed readiness statements below are historical evidence for the corresponding #123 executions only. #166 must freshly establish its own `STAGED = PASS` and `VISION-INSPECTABLE = PASS` for the active target pages before any pixel-dependent claim.
 
 Cluster A execution established exact File/SHA/crosswalk plus 600-dpi target inspectability for `61v-L03`, `61v-L17`, `62r-L12`, `62v-L06`, `62v-L08`, `62v-L21`, then used only graphically targeted same-Source comparator inspection.
 
 Cluster B separately re-established question-specific readiness:
 
-- the staged supplied PDF matched exact `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- the staged supplied PDF matched exact `FILE-REGII5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - canonical crosswalk was rechecked for `62r = export image 133 = PDF p15`;
 - exact PDF page 15 was freshly rendered at 600 dpi and visually inspected;
 - both target tokens at `62r-L06` and `62r-L09` were individually localized and enlarged.
@@ -94,7 +94,7 @@ No outside-Editionslocus comparator was used for B because target-to-target comp
 
 Cluster C separately re-established question-specific readiness:
 
-- the staged supplied PDF again matched exact `FILE-REG-II-5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
+- the staged supplied PDF again matched exact `FILE-REGII5-00000129-EXCERPT` SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - canonical target crosswalk was rechecked for `61v = export image 132 = PDF p14`;
 - exact PDF page 14 was freshly rendered at 600 dpi and the six left-side target forms at `61v-L04`–`L09` were individually localized/enlarged;
 - the actually used same-Source comparator is exactly `export image 130 = PDF p12`; its crosswalk folio label `60v` is `inferred-high`, not `observed`, so only the digital image/page address is treated as exact.
@@ -148,7 +148,7 @@ STAGED = PASS
 VISION-INSPECTABLE = PASS
 ```
 
-Cluster E4 independently re-established question-specific readiness on 2026-09-09: exact attachment SHA and the `62r = export image 133 = PDF p15` crosswalk were checked again, and L17 was freshly rendered at 600 dpi and segmented with its immediately adjacent word boundaries. The target itself supported `sonsten`; no comparator was used because no remaining localized graphical ambiguity justified a feature-specific comparator search. The full target-first audit and explicit negative search path are in the existing research owner.
+Cluster E4 independently re-established question-specific readiness on 2026-09-09: exact attachment SHA and the `62r = export image 133 = PDF p15` crosswalk were checked again, and L17 was freshly rendered at 600 dpi and segmented with its immediately adjacent word boundaries. The target itself supported `sonsten`; no comparator was used because no remaining localized graphical ambiguity justified a feature-specific comparator search. The full target-first audit and explicit negative search path are in the E4 audit.
 
 For the E4 L17 target in that execution context:
 
@@ -220,7 +220,7 @@ STAGED = PASS
 VISION-INSPECTABLE = PASS
 ```
 
-For any future work, **target-context pixel readiness is NOT ESTABLISHED**. Historical #115/#123 readiness cannot substitute for a fresh question-specific staging and vision check. Existing TSV wording, Reg. Ii 4 wording or Legacy material must never substitute for missing pixels.
+For active #166 at activation, **target-context pixel readiness is NOT YET ESTABLISHED**. Historical #115/#123 readiness and the completed Source-Understanding pass cannot substitute for a fresh question-specific staging and vision check. Existing TSV wording, Reg. Ii 4 wording or Legacy material must never substitute for missing pixels.
 
 ## Current diplomatic owners and completed #115/#123 basis
 
@@ -314,7 +314,7 @@ E5 supplied fresh target evidence plus feature-specific same-page controls for t
 
 F1 re-tested the first dense 62v block under the #150 support-routing contract. Its selected HTR Generator B was technically unavailable in that execution context; this is a **technical availability result, not an empirical finding that B could not have produced a useful discriminator**. No second generator was substituted. Target Return produced no new promotion-capable discriminator, and after the current Reading Owner was opened the F1 lines were retained unresolved with no TSV change. The pre-owner blind order is credited only within its documented caveats, including the prior exposure of the L01 `80` fact.
 
-F2 supplied new relevant same-Source comparator evidence for `62v-L09` while leaving `62v-L10` without a suitable comparator. G3 was therefore bounded `reopened` during F2 evaluation. The L09-left anchor has a strong shape recurrence at PDF p22 / export image 140 / crosswalk fol. `65v` (`inferred-high`) but no independently secured comparator reading; the L09-right anchor has a narrower terminal-morphology comparator at PDF p12 / export image 130 / fol. `60v` (`inferred-high`) that is non-discriminating for grapheme identity. L10's target-defined anchor returned no suitable comparator. Target returns preserve all three F2 spans as unresolved and do not promote `pfarrlehen` or any whole-clause reconstruction.
+F2 supplied new relevant same-Source comparator evidence for `62v-L09` while leaving `62v-L10` without a suitable comparator. G3 was therefore bounded `reopened` during F2 evaluation. The L09-left anchor has a strong shape recurrence at PDF p22 / export image 140 / crosswalk fol. `65v` (`inferred-high`) but no independently secured comparator reading; the L09-right anchor has a narrower p12/image130/60v (`inferred-high`) terminal-morphology comparator that is non-discriminating for grapheme identity. L10's target-defined anchor returned no suitable comparator. Target returns preserve all three F2 spans as unresolved and do not promote `pfarrlehen` or any whole-clause reconstruction.
 
 F3 supplied new direct target evidence for `62v-L12`–`L19`. All eight physical lines were freshly localized on the exact-SHA 600-dpi p16 raster, and target return supports complete `working` readings for each line. L12 `dargegen` received only a post-localization same-Source written-form check against `62r-L22`; no wider comparator was needed. No durable Generator-B output is credited. G3 was bounded `reopened` for the affected F3 residuals during evaluation and returned to reached after the eight promotions were persisted.
 
@@ -340,11 +340,11 @@ The 2026-09-08 revalidation also corrected the historical #99 lower-boundary des
 
 Externally tempting completions remain excluded from the Reg. Ii 5 diplomatic owner unless direct Reg. Ii 5 target-graph reinspection carries the change.
 
-**G4 remains reached for the bounded pair Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r.** #123 completion does not automatically reopen G4.
+**G4 remains reached for the bounded pair Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r.** #166 activation does not itself reopen G4 or reactivate the Reg. Ii 4 use.
 
 ## Project-local editorial execution discipline
 
-Keep these distinctions for any future reactivation:
+Keep these distinctions for #166 and any future reactivation:
 
 - source observation / diplomatic reading ≠ identification;
 - identification ≠ contextual role;
@@ -373,7 +373,7 @@ source inspection
 → return immediately to the source
 ```
 
-No universal agent/role/date/hand/locus/grapheme ontology is authorized by #123.
+No universal agent/role/date/hand/locus/grapheme ontology is authorized by #123 or #166.
 
 ## Historical work-state audit
 
@@ -397,43 +397,47 @@ For the separate Reg. Ii 4 Bd. II Ziegenrück Source, its own File, crosswalk, p
 
 ## Current research state / edition lifecycle
 
-The gate-evaluated textual scope remains **Reg. Ii 5 fol. 61v–63r only**, with G4 comparison against the bounded Reg. Ii 4 Knau locus. The broader fol. 55v–66v Comparator search space used under #123 did not itself enlarge any gate-evaluated scope.
+The gate-evaluated textual scope remains **Reg. Ii 5 fol. 61v–63r only**, with G4 comparison against the bounded Reg. Ii 4 Knau locus. #166 is an active bounded research question inside that existing Editionslocus and does not enlarge the gate-evaluated scope. The broader fol. 55v–66v Comparator search space used under #123 did not itself enlarge any gate-evaluated scope.
 
 | Gate / activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Reg. Ii 5 source group / Editionslocus | Principal Reg. Ii 5 Source/File/SHA/crosswalk and separate comparison/context Sources are identified with explicit evidence/provenance limits. |
 | #115 source-exact editorial work package | `complete` | Reg. Ii 5 fol. 61v–63r | Completed Editionsbaustein and independent witness basis; not a G5/G6 claim. |
 | G2 diplomatic representation | `reached` | Reg. Ii 5 fol. 61v–63r | All 81 relevant physical anchors are represented in source order with uncertainty/source phenomena preserved; derived readable view exists. |
-| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | A was non-discriminating; B promoted initial `h` at L06/L09; C strengthened notation sign-class/repertoire evidence without sign→value resolution; D promoted deleted `pfarrern` at 61v-L16 and `Knawe` at 62r-L18 while retaining cancellation phenomena. E1 promotes only terminal `lich` and initial `ob` at L01. E2 promotes only h/vffh/f prefixes and written drei virtel. E3 retained L10–L11 unresolved after notation re-test. E4 promotes `sonsten` at L17 while preserving the first-verb alternative. E5 promotes `wolff` at L19 and `dem gemeinswalde` at L20; L21/L23 remain unresolved. F1 retained L01–L06 unresolved with no TSV change after a technically unavailable primary HTR generator and Target Return. F2 admitted two narrow L09 graphical comparanda but neither carried lexical identity; L10 yielded no suitable comparator; all F2 spans remain unresolved. F3 promotes complete target-supported `working` readings for L12–L19 from direct 600-dpi target return, with no durable HTR output credited and no wider comparator needed. F4 promotes only bounded target islands on L20/L22/L23/L24 and retains the remaining interiors unresolved after fresh target closeout; conditional Generator B was technically unavailable, not scientifically non-discriminating. G promotes working `Zulage` at 63r-L04 after direct target return and source-native `S` controls; external generic palaeography supplied no reading. H corrects the written Roman-like sequence at 63r-L10 from inherited `xlvij` to working `xxxij` from target repetition and source-native morphology; no numerical/calendar normalization follows. New-evidence residuals were boundedly reopened during assessment and returned to reached after full evaluation. |
-| G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Independent witness states and bounded mapping remain valid; #123 does not automatically reopen this gate. |
-| #123 problem-focused internal relecture | `complete` | target fol. 61v–63r; comparator search space fol. 55v–66v | Finite start set A–H received the required bounded target-first assessment; residual unresolved readings remain explicit. Completion does not select a next scope. |
-| G5 critical consolidation/validation | `not reached` | bounded edition target | #123 is not an automatic G5 task and no critically consolidated/validated text state is claimed. |
+| G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | A was non-discriminating; B promoted initial `h` at L06/L09; C strengthened notation sign-class/repertoire evidence without sign→value resolution; D promoted deleted `pfarrern` at 61v-L16 and `Knawe` at 62r-L18 while retaining cancellation phenomena. E1 promotes only terminal `lich` and initial `ob` at L01. E2 promotes only h/vffh/f prefixes and written drei virtel. E3 retained L10–L11 unresolved after notation re-test. E4 promotes `sonsten` at L17 while preserving the first-verb alternative. E5 promotes `wolff` at L19 and `dem gemeinswalde` at L20; L21/L23 remain unresolved. F1 retained L01–L06 unresolved with no TSV change after a technically unavailable primary HTR generator and Target Return. F2 admitted two narrow L09 graphical comparanda but neither carried lexical identity; L10 yielded no suitable comparator; all F2 spans remain unresolved. F3 promotes complete target-supported `working` readings for L12–L19 from direct 600-dpi target return, with no durable HTR output credited and no wider comparator needed. F4 promotes only bounded target islands on L20/L22/L23/L24 and retains the remaining interiors unresolved after fresh target closeout; conditional Generator B was technically unavailable, not scientifically non-discriminating. G promotes working `Zulage` at 63r-L04 after direct target return and source-native `S` controls; external generic palaeography supplied no reading. H corrects the written Roman-like sequence at 63r-L10 from inherited `xlvij` to working `xxxij` from target repetition and source-native morphology; no numerical/calendar normalization follows. New-evidence residuals were boundedly reopened during assessment and returned to reached after full evaluation. #166 activation alone does not reopen G3; a bounded reopen occurs only if its execution produces actual new relevant internal evidence for an affected prior finding. |
+| G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Independent witness states and bounded mapping remain valid; #166 activation does not itself reopen G4 or reactivate Reg. Ii 4. |
+| #123 problem-focused internal relecture | `complete` | target fol. 61v–63r; comparator search space fol. 55v–66v | Finite start set A–H received the required bounded target-first assessment; residual unresolved readings remain explicit. |
+| #166 cross-folio unit adjudication | `active — R0 readiness pending` | Reg. Ii 5 `62r-L19–62v-L07` | Human-Owner-selected scope after #165. First establish fresh Reg. Ii 5 File/SHA/crosswalk/pixel readiness, then source-only unit freeze. Reg. Ii 4 remains closed until conditional R4. |
+| G5 critical consolidation/validation | `not reached` | bounded edition target | #166 is not an automatic G5 task and no critically consolidated/validated text state is claimed. |
 | G6 scholarly edition | `not reached` | bounded edition target | No scholarly edition has been produced. |
 
-Reading resolution remains incomplete in places and is compatible with G2–G4. The finite #123 start set was the G3 hand-off set: recurrent surname-like sequence; two `hanns`-associated following tokens; 61v accounting/quantity notation; the two cancellations; residual 62r prose uncertainties; dense 62v property clauses and adjacent residuals; the 63r display heading; and the Roman-like sequence at `63r-L10` at graphematic/sign level only. `research/internal-comparanda-relecture-61v-63r.md` operationally splits heterogeneous E/F clusters only to prevent clause-level fishing; it does not enlarge the scope.
+Reading resolution remains incomplete in places and is compatible with G2–G4. #166 is not a return to the full #123 residual list: it is bounded to the corrected cross-folio unit identified by `research/source-understanding-synthesis-61v-63r.md`. The separate `62v-L08–L25` property-relation question remains unscheduled.
 
 ## NEXT ACTION — canonical restart point
 
-**No owner-selected next scholarly action is currently authorized after completion of #123.**
+**#166 is the owner-selected active scholarly action.**
 
-The completed #123 block leaves G3 reached at the current internal-evidence level and G4 unchanged. H is complete: `63r-L10` is diplomatically represented as written **`xxxij`**, with no numerical value, absolute year, calendar normalization or production-date claim. Residual unresolved readings elsewhere remain valid outcomes of their documented target/comparator ceilings.
+R0 must first rehydrate the exact Reg. Ii 5 Source/File/SHA/crosswalk and establish fresh `STAGED = PASS` plus `VISION-INSPECTABLE = PASS` for the active target pages `62r = image 133 = PDF p15` and `62v = image 134 = PDF p16`. Until that succeeds, no new pixel-dependent R1/R2 claim may be made and Reg. Ii 4 must remain closed.
 
-A new manuscript/source-research target, G5/G6 action, source-wide continuation, numeral/form register, lexicon, ontology or other scholarly scope requires **fresh Human-Owner selection**. Historical uses/evidence, issue labels, unresolved rows or the existence of available technical tools must not be used to infer a next priority.
+After readiness, execute #166 in order: R1 source-only cross-folio unit freeze → R2 secure-island/relation model → R3 consequential blocker extraction / early stop. Open Reg. Ii 4 only if R3 demonstrates a real need for conditional R4; every externally prompted reading then requires Reg. Ii 5 Target Return. No `62v-L08–L25`, G5/G6, numeral-register, HTR/OCR or other follow-up is auto-authorized.
 
-Issues #122 and #124 are completed maintenance history. Issue #123 is the completed work-package checklist/audit trail. This STATUS owns the current scholarly/restart state and formal G1–G6 claims.
+Issues #122, #124, #123 and #165 are completed history. Issue #166 is the current work-package/audit trail. This STATUS owns the current scholarly/restart state and formal G1–G6 claims.
 
 ## Restartability
 
 A fresh capable context must be able to reconstruct without old chat that:
 
-- Reg. Ii 5 remains an archival-act Project anchor; **#123 is complete and no owner-selected active scholarly scope is currently recorded**;
+- Reg. Ii 5 remains an archival-act Project anchor; #123 is complete and **#166 is the Human-Owner-selected active scholarly scope**, bounded to `62r-L19–62v-L07`;
+- #161 persisted the whole-locus Source-Understanding synthesis; #165 / PR #167 corrected its premature split so `62r-L19–62v-L07` remains one cross-folio unit with open internal segmentation before #166 execution;
 - #115 completed the Reg. Ii 5 fol. 61v–63r Editionsbaustein and established the independent G2/G3 basis used for G4;
 - #122 repaired stale tests/CI against that completed #115 state before #123 activation; the clean checkpoint was `256a4ef9ab19df1e595bfa7d593063e1d921a97b` with green run `34284952980`;
 - #124 is completed; Legacy directory semantics are clarified without deleting or re-promoting recovery evidence;
 - #123 targeted only the existing **fol. 61v–63r Editionslocus**; fol. 55v–66v was a **Comparator search space only**, not a source-wide transcription scope;
-- principal `relevant_locus` remains fol. 61v–63r; the Reg. Ii 5 principal use/exact File evidence and the Reg. Ii 4 / Reg. Ii 3 uses are now all **historical** after #123 completion;
+- principal `relevant_locus` remains fol. 61v–63r; the Reg. Ii 5 principal use/exact File evidence are **active for #166**, while the Reg. Ii 4 textual-comparison use and both Reg. Ii 3 uses remain `historical` at R0;
+- #166 activation does **not** establish current target pixel readiness: fresh `STAGED` + `VISION-INSPECTABLE` for p15/p16 are the canonical NEXT ACTION;
 - current diplomatic observations remain owned only by `transcription/first-reading/61v.tsv`, `62r.tsv`, `62v.tsv`, `63r.tsv`; together they represent all 81 established physical anchors;
 - `transcription/derived/61v-63r-first-reading.md` is derived/rebuildable only;
+- `research/source-understanding-synthesis-61v-63r.md` owns the Project-specific whole-locus synthesis and consequentiality triage; after #165 its A1 question is the cross-folio `62r-L19–62v-L07` unit;
 - legacy `transcription/132.tsv`–`135.tsv`, apparatus and witness-dependent legacy palaeography remain verification/recovery evidence;
 - `research/internal-comparanda-relecture-61v-63r.md` holds the finite A–H matrix, cluster-level audit **through H**, D-004 routing and notation protocol; it is not a text owner; the former F4 comment-only closeout is reconciled there;
 - no precise historical script classification is operationally assumed from chat/model memory; external specialist knowledge can generate or bound tests but does not replace source evidence;
@@ -462,5 +466,5 @@ A fresh capable context must be able to reconstruct without old chat that:
 - the derived witness view was regenerated after D, E1, E2, E4, E5, F3, the PR #156 F4 promotions, G **and H**; no regeneration was required for E3, F1, F2 or the later F4 residual closeout;
 - G3 was boundedly re-evaluated for B, C, D, E1, E2, E3, E4, E5, F2, F3, F4, G and H when actual new relevant internal evidence arose and is again reached at current internal evidence level after full assessment; F1 produced no new internal comparator evidence and did not itself require a new G3 promotion; G4 remains reached;
 - hand differentiation remains `not investigated`; same Source never became same-hand proof;
-- historical #123 readiness does not carry into any future task; fresh work begins with fresh evidence readiness;
-- **there is no authorized manuscript/source-research cursor after #123 completion; fresh Human-Owner selection is required.**
+- historical #123/readiness and the completed Source-Understanding-pass readiness do not carry into #166;
+- **the authorized manuscript/source-research cursor is #166 R0: establish fresh Reg. Ii 5 p15/p16 readiness for `62r-L19–62v-L07`; Reg. Ii 4 remains closed until a later R4 trigger.**
