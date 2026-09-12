@@ -990,3 +990,57 @@ Fresh target and source-native comparator evidence made the handed-forward G res
 **G is complete. Next bounded cursor: H — `63r-L10` written Roman-like sign sequence `xlvij`, at graphematic/sign level only.** G readiness does not carry to H. H must freshly establish its own target readiness and may compare only written sign morphology; no calendar date, absolute year or production date may be inferred from the sign sequence.
 
 AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-12; direct inspection of the exact primary-source PDF with deterministic Poppler 600-dpi rendering/cropping, followed by a bounded post-freeze external expertise check and source-native comparators. No OCR, generative enhancement, Reg. Ii 4/G4 wording, Legacy reading authority, lexical/administrative completion or external/cloud HTR supplied the G reading. This is AI-assisted working research, not independent qualified human palaeographic validation.
+
+## Cluster H execution — `63r-L10` Roman-like sign sequence (2026-09-12)
+
+### Fresh exact-source readiness and claim boundary
+
+H was opened from canonical `main` at `34a8f55b2c61517cbd5b5080ee7afdfecceca7f1`, after the completed G merge. The exact Source/File chain was freshly rebound: Source `THHSTAW-EGA-REG-II-5-STAT-VIS-00000129`, File `FILE-REG-II-5-00000129-EXCERPT`, SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`. The canonical observed crosswalk remains **`63r = export image 135 = PDF p17`**. A fresh Poppler 600-dpi p17 render measured **4961 × 7016 px**, PNG SHA-256 `1c84541242f6f70a564ad9bed5859add65367a31d7fab87ee76a458479a1466b`; whole-page inspection confirmed visible foliation `63`, `Bild: 135` and `Seite 17 von 25`, and L10 was localized in physical order.
+
+For the H target and the source-native controls actually used below in this execution context:
+
+```text
+STAGED = PASS
+VISION-INSPECTABLE = PASS
+```
+
+The H claim ceiling is the **written Roman-like sign sequence only**. Numerical value, absolute year, calendar normalization and production dating remain separate claims and are not inferred here. General historical knowledge that terminal `j` can occur in Roman numeral notation and that both `xxxij`- and `xlvij`-type notations are historically possible has no discriminatory authority between the two target readings.
+
+### Target morphology before comparison
+
+The sequence between written `des` and `Jhars` is one bounded five-sign group. On the target itself:
+
+- signs 1–3 repeat the same low looped/crossed morphology, with comparable height, rounded upper return and lower/baseline movement;
+- sign 4 is a short `i`-type stroke;
+- sign 5 has the same initial scale as sign 4 but continues into the conspicuous descending terminal movement expected of the source's written final `j` form;
+- no independent abbreviation overstroke or separator divides the five-sign group.
+
+That repetition directly challenges the inherited `xlvij` segmentation: signs 2 and 3 do not visually introduce two new sign classes after the first sign.
+
+### Source-native controls and Target Return
+
+The comparison remained deliberately small and problem-bound; no numeral register or source-wide hand inventory was created.
+
+First, secure same-Source terminal `ij` forms were freshly inspected at `61v-L02` on the 600-dpi p14 render and at `62r-L05` / `62r-L08` on the 600-dpi p15 render. The p14 and p15 rasters measured **4961 × 7016 px**; their SHA-256 values were respectively `25863f83c48a5c2bc8cc7bf5f06aee3cab055347f5c21920efdc4dcb8afbaa55` and `51a12634368c6f17924127d324ae7b64acbeac1662652a040e66b30da29e9793`. These controls support the H terminal pair: a short `i` followed by a longer descending `j`-type terminal form.
+
+Second, ordinary source-native `l` and `v` forms were checked in nearby secure running text on p17, including the tall looped `l` morphology in `Jerlich`/`gulden`/`halb` and the low angular `v` morphology in `vnnd`/`vff`. The H second sign lacks the tall ascender topology of those secure `l` controls; the H third sign lacks the low angular entry/body of the secure `v` controls. Instead, both reproduce the same low looped/crossed form as H sign 1.
+
+A same-Source notation block on export image 136 / PDF p18 was also inspected only as a morphology control after the H target had been segmented. It contains repeated low looped Roman-like signs in a notation context, but because those occurrences are not independently diplomatically read here they are not used to label the H signs or to establish same hand. They merely show that such repeated low-loop morphology recurs in the Source.
+
+Returning to `63r-L10`, the earlier `xlvij` candidate therefore fails the target-plus-control test: the second and third signs do not behave as source-native `l` and `v`, while signs 1–3 behave as one repeated `x`-type class and the terminal pair is supported as `ij`. The written sequence is promoted to **`xxxij`**. The earlier `xlvij` is retained only as a rejected historical working candidate in this audit, not as a graphically viable TSV alternative.
+
+### Canonical consequence, G3 and #123 completion
+
+Canonical `transcription/first-reading/63r.tsv` changes only at `63r-L10`:
+
+- `agustini / des xlvij Jhars damit`
+- → **`agustini / des xxxij Jhars damit`**, status remains `working`;
+- the abbreviation/normalization layer records the written Roman sequence only and explicitly supplies **no numerical or calendar normalization**.
+
+The derived `transcription/derived/61v-63r-first-reading.md` view is regenerated from that canonical change.
+
+Fresh target morphology and source-native controls made H newly testable, so G3 was treated as bounded **`reopened` during H evaluation**. After Target Return and the persisted correction, the affected subproblem is fully assessed and G3 is again **`reached at current internal evidence level`**. G4 remains unchanged; no G5/G6, same-hand, exact script-label, numerical value, absolute date or production-date claim follows.
+
+**H is complete. The finite #123 start set A–H has now received the required bounded target-first assessment.** Residual unresolved readings elsewhere remain valid outcomes of their documented negative/ceiling paths. Completion of #123 does not authorize another manuscript cursor, source-wide transcription, a numeral/form register, G5/G6 progression or a new research priority; any next scholarly scope requires fresh Human-Owner selection.
+
+AI provenance: ChatGPT (GPT-5.6 Sol), 2026-09-12; direct target-first inspection of the exact primary-source PDF with deterministic 600-dpi rendering/cropping and only problem-specific source-native morphology controls. No OCR, generative enhancement, Reg. Ii 4/G4 wording, Legacy reading authority, inferred numerical value, calendar plausibility or external numeral table supplied the H reading. General historical notation knowledge served only as a possibility boundary and had zero authority to choose `xxxij` over `xlvij`. This is AI-assisted working research, not independent qualified human palaeographic validation.
