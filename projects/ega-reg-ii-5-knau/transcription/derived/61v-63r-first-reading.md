@@ -12,7 +12,7 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `61v-L04` ⟦illegible-sign⟧ ⟦illegible⟧ geltzinß
 - `61v-L05` ⟦illegible-sign⟧ ⟦illegible⟧
 - `61v-L06` ⟦illegible-sign⟧ ⟦illegible⟧ maß
-- `61v-L07` ⟦illegible-sign⟧ 1 virtel haber ⟦illegible⟧ maß /
+- `61v-L07` ⟦illegible-sign⟧ ⟦illegible⟧ 1 virtel haber ⟦illegible⟧ maß /
 - `61v-L08` ⟦illegible-sign⟧ feldes ⟦unclear: besament?⟧ gut
 - `61v-L09` ⟦illegible-sign⟧ fuder hauers ⟦illegible⟧
 - `61v-L10` Holtzmarck zu notturfft zu brennen
@@ -94,5 +94,5 @@ This view exists only so a human reviewer can traverse the current bounded Reg. 
 - `63r-L07` Burgel Jerlich zehen gulden Jerlich
 - `63r-L08` halb auff agustini / vnnd die andern
 - `63r-L09` helfft vff pfingsten fellig / vnnd auff
-- `63r-L10` agustini / des xlvij Jhars damit
+- `63r-L10` agustini / des xxxij Jhars damit
 - `63r-L11` anzufahren verordent

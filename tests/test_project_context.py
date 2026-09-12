@@ -60,7 +60,7 @@ class ProjectContextRegressionTests(unittest.TestCase):
         )
         self.assertIn("No owner-selected next manuscript/source-research target is currently recorded", result["canonical_status"]["text"])
 
-    def test_reg_ii_5_context_exposes_active_relecture_without_legacy_promotion(self) -> None:
+    def test_reg_ii_5_context_exposes_completed_relecture_without_legacy_promotion(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         self.assertEqual("ACT-THHSTAW-EGA-REG-II-5", result["documentary_anchor"]["source_id"])
         self.assertNotIn("legacy_project_source_uses", result)
@@ -69,30 +69,27 @@ class ProjectContextRegressionTests(unittest.TestCase):
             row for row in result["project_source_uses"]
             if row["use"]["use_id"] == "USE-REGII5-00000129-PRINCIPAL"
         )
-        self.assertEqual("active", principal["use"]["status"])
+        self.assertEqual("historical", principal["use"]["status"])
         self.assertEqual("principal", principal["use"]["research_function"])
         self.assertEqual("fol. 61v–63r", principal["use"]["relevant_locus"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", principal["evidence"][0]["file"]["file_id"])
-        self.assertEqual("active", principal["evidence"][0]["evidence"]["status"])
+        self.assertEqual("historical", principal["evidence"][0]["evidence"]["status"])
         active_scope = result["project_definition"]["active_scope"]
-        self.assertIn("#123 problembezogene interne Relektüre", active_scope)
-        self.assertIn("Editionslocus remains fol. 61v–63r", active_scope)
+        self.assertIn("No owner-selected active scholarly scope after completion of #123", active_scope)
+        self.assertIn("fol. 61v–63r", active_scope)
         self.assertIn("fol. 55v–66v", active_scope)
-        self.assertIn("does not authorize source-wide transcription", active_scope)
+        self.assertIn("G3 is reached at the current internal-evidence level", active_scope)
+        self.assertIn("G4 remains unchanged", active_scope)
+        self.assertIn("fresh Human-Owner selection", active_scope)
         status = result["canonical_status"]["text"]
         self.assertIn("#115 source-exact editorial work package | `complete`", status)
+        self.assertIn("#123 problem-focused internal relecture | `complete`", status)
         self.assertIn("current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", status)
         self.assertIn("Legacy diplomatic material — verification/recovery only", status)
         self.assertIn("G4 controlled comparison", status)
-        self.assertIn("#123 remains the current owner-selected active scholarly work package", status)
-        self.assertIn("Clusters A–D, E1–E5, F1–F4 and G are complete; H is the next bounded target", status)
-        self.assertIn("Cluster D independently re-established question-specific readiness", status)
-        self.assertIn("STAGED = PASS", status)
-        self.assertIn("VISION-INSPECTABLE = PASS", status)
-        self.assertIn("For H and later clusters, **target-context pixel readiness is not yet re-established**", status)
-        self.assertIn("Final current state: G3 is again `reached at current internal evidence level`", status)
-        self.assertIn("H — `63r-L10`", status)
-        self.assertIn("notation protocol", status)
+        self.assertIn("H is complete", status)
+        self.assertIn("xxxij", status)
+        self.assertIn("No owner-selected next scholarly action is currently authorized after completion of #123", status)
         self.assertIn("research/internal-comparanda-relecture-61v-63r.md", status)
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
         self.assertIn(
@@ -132,18 +129,16 @@ class ProjectContextRegressionTests(unittest.TestCase):
         )
         self.assertTrue({row["file_id"] for row in canonical_evidence}.issubset(set(refs["file_ids"])))
 
-    def test_current_scope_reactivates_only_principal_use_without_legacy_or_comparison_promotion(self) -> None:
+    def test_completed_scope_retires_all_uses_without_legacy_or_comparison_promotion(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         project = result["project_definition"]
-        self.assertIn("#123 problembezogene interne Relektüre", project["active_scope"])
-        self.assertIn("Editionslocus remains fol. 61v–63r", project["active_scope"])
+        self.assertIn("No owner-selected active scholarly scope after completion of #123", project["active_scope"])
+        self.assertIn("fol. 61v–63r", project["active_scope"])
         self.assertIn("fol. 55v–66v", project["active_scope"])
         by_id = {item["use"]["use_id"]: item["use"] for item in result["project_source_uses"]}
-        self.assertEqual("active", by_id["USE-REGII5-00000129-PRINCIPAL"]["status"])
+        self.assertEqual("historical", by_id["USE-REGII5-00000129-PRINCIPAL"]["status"])
         self.assertEqual("fol. 61v–63r", by_id["USE-REGII5-00000129-PRINCIPAL"]["relevant_locus"])
-        self.assertEqual("historical", by_id["USE-REGII4-00000089-TEXTUAL-COMPARISON"]["status"])
-        self.assertEqual("historical", by_id["USE-REGII3-00000235-NOTATION-CONTROL"]["status"])
-        self.assertEqual("historical", by_id["USE-REGII3-NEUSTADT-HISTORICAL-CONTEXT"]["status"])
+        self.assertTrue(all(use["status"] == "historical" for use in by_id.values()))
         self.assertIn("current scholarly NEXT ACTION from historical work, active evidence or legacy labels", result["execution_boundary"]["do_not_infer"])
 
 
