@@ -177,3 +177,43 @@ Observed risk: even after the scientific authority of old material was narrowed,
 Corrective practice: retain historical/recovery artifacts, but make their current epistemic role visible at the directory entry point and qualify superseded recommendations in place rather than rewriting the historical record. Path, filename or historical usefulness does not confer current-owner authority. New comparison work starts from a localized unresolved target and exact evidence question; auxiliary structures are created only on demonstrated semantic-loss or recurring-use need.
 
 Generalizable: yes as a restartability/maintenance failure pattern; the present repair remains Project-local because generic canonical-ownership and restartability rules already exist.
+
+## L021 — a correspondence range is not automatically an analysis unit
+
+Observed failure: the first #165 correction correctly rejected a premature functional split between `62r-L19–25` and `62v-L01–07`, but then promoted the larger G4-008 cross-witness correspondence range into one Reg. Ii 5 `cross-folio unit`. Direct Reg. Ii 5 G2 observation instead records two adjacent paragraph blocks, while G4 explicitly records resegmentation across the witnesses.
+
+Corrective practice: keep **source address / directly observed layout block / cross-witness correspondence range / analysis unit / functional rule** distinct. A comparison mapping may challenge a functional interpretation and generate a new source-side test; it does not itself establish the target witness's text-unit structure.
+
+For the current A1 region the defensible question is how the two observed paragraph blocks relate, not how one pre-established unit is internally segmented.
+
+Generalizable: likely. The generic method already contains the needed S2/S3/S4 distinctions, so the present repair is Project-state/activation correction rather than a new METHOD family.
+
+## L022 — the analysis unit itself must remain falsifiable
+
+Observed failure: after #161 demonstrated the value of a higher-level pass, the corrective process risked turning that success into an implicit `larger unit = better analysis` heuristic. #165 is the counterexample: higher-level synthesis can over-group just as microanalysis can over-atomize.
+
+Corrective practice: fix the **research address** when needed, but treat the **analysis unit** as a hypothesis until source evidence establishes it. Choose the smallest source-evidenced observation frame capable of answering the research question; enlarge or split only when evidence, not routing convenience, supports that move.
+
+A good source-understanding question may therefore have multiple legitimate terminal models (`one overarching rule`, `two coupled rules`, `unresolved relation`) rather than requiring one preferred segmentation.
+
+Generalizable: yes as a research-selection/activation lesson; no new schema or gate is implied.
+
+## L023 — independent review can inherit the same derived premise
+
+Observed failure: the #171 independent review freshly rehydrated several relevant owners and correctly warned against `larger unit = better analysis`, yet still repeated the phrase that #165 had `restored the cross-folio unit`. Its explicit review basis did not descend to the direct Reg. Ii 5 G2 structural owner that made the two observed paragraph blocks visible.
+
+Corrective practice: independence of **context** is not independence of **evidence basis**. When a consequential dispute concerns source structure, witness identity, segmentation or another lower-level claim, review must trace the contested premise back to the strongest direct owner/evidence layer rather than only compare later syntheses/issues that may share the same inherited assumption.
+
+This does not require every review to reperform all source work. It requires enough premise tracing to know which lower-level claim the review is actually accepting rather than testing.
+
+Generalizable: yes; consistent with D-004/D-019 and existing evidence-first review principles.
+
+## L024 — execution-economy fixes do not validate the scholarly scope they protect
+
+Observed failure/risk: #169 correctly identified support-dominance during #166 execution and added useful first-scholarly-action / support-delta controls. The later whole-repository review shows that the #166 scope itself still contained an over-strong analysis-unit premise.
+
+Corrective practice: keep **scope correctness** and **execution economy** as separate review questions. A workflow can efficiently protect or preflight a scope that is still scientifically biased. Conversely, a good research question can still be buried under support work.
+
+Current consequence: retain #169's execution-economy lesson, but do not use its passed #166 backtest as evidence that the old `one cross-folio unit` framing was scientifically correct.
+
+Generalizable: yes; this sharpens the meaning of technical/process backtests without requiring another METHOD change.
