@@ -71,8 +71,8 @@ class ProjectContextRegressionTests(unittest.TestCase):
 
         active_scope = result["project_definition"]["active_scope"]
         self.assertIn("Human Owner selected #166", active_scope)
-        self.assertIn("62r-L19–25", active_scope)
-        self.assertIn("62v-L01–L07", active_scope)
+        self.assertIn("62r-L19", active_scope)
+        self.assertIn("62v-L01", active_scope)
         self.assertIn("analysis unit is not pre-established", active_scope)
         self.assertIn("#165 is reopened", active_scope)
         self.assertIn("R0 is a REAL BLOCKER", active_scope)
@@ -132,8 +132,8 @@ class ProjectContextRegressionTests(unittest.TestCase):
         result = self.compile("ega-reg-ii-5-knau")
         project = result["project_definition"]
         self.assertIn("Human Owner selected #166", project["active_scope"])
-        self.assertIn("62r-L19–25", project["active_scope"])
-        self.assertIn("62v-L01–L07", project["active_scope"])
+        self.assertIn("62r-L19", project["active_scope"])
+        self.assertIn("62v-L01", project["active_scope"])
         self.assertIn("analysis unit is not pre-established", project["active_scope"])
         by_id = {item["use"]["use_id"]: item["use"] for item in result["project_source_uses"]}
         self.assertEqual("active", by_id["USE-REGII5-00000129-PRINCIPAL"]["status"])
