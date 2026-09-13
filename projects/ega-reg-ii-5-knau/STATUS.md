@@ -8,17 +8,17 @@ The human owner confirmed on 2026-09-02 that **Reg. Ii 5 continues as an act-ori
 
 The bounded Reg. Ii 5 fol. 61v–63r Editionsbaustein (#115) is complete. The finite problem-focused internal relecture #123 is complete; its A–H evidence paths are owned by `research/internal-comparanda-relecture-61v-63r.md` and the folio-local first-reading TSVs. At #123 closeout G3 was again reached at the current internal-evidence level, G4 remained reached/unchanged, and no G5/G6 or source-wide continuation was selected.
 
-On 2026-09-12 the Human Owner selected #166 as the next bounded scholarly problem after the whole-locus Source-Understanding synthesis (#161). The first #165 correction then over-promoted the G4 correspondence range `62r-L19–62v-L07` into one Reg. Ii 5 cross-folio unit. Fresh whole-repository review on 2026-09-13 partially falsified that framing and reopened #165.
+On 2026-09-12 the Human Owner selected #166 as the next bounded scholarly problem after the whole-locus Source-Understanding synthesis (#161). The first #165 correction then over-promoted the G4 correspondence range `62r-L19–62v-L07` into one Reg. Ii 5 cross-folio unit. Fresh whole-repository review on 2026-09-13 partially falsified that framing. Reopened #165 reconciled the Project state via PR #173 / merge `84ab5617221b08309aa3e781f4b79667e109390e`; post-merge source-contract run #337 passed.
 
 **Current authoritative framing:** Reg. Ii 5 directly supports two adjacent paragraph blocks, `62r-L19–25` and `62v-L01–07`. Their higher-level structural/functional relationship is the research question; it is not pre-established as one unit and is not pre-established as two independent rules.
 
-#166 remains the Human-Owner-selected scholarly problem, but its execution is **paused** until reopened #165 reconciliation is merged and current target evidence becomes executable.
+#166 is the Human-Owner-selected scholarly cursor, but it is **not currently executable** because R0 has a real target-evidence blocker.
 
 ## Current scholarly question
 
 > How do the adjacent Reg. Ii 5 paragraph blocks `62r-L19–25` and `62v-L01–07` relate structurally and functionally, and what concrete wood/use/return rule or rules do they express?
 
-The live structural outcomes include one overarching rule across two paragraphs, two coupled rules, or another supported witness-specific resegmentation. The analysis unit is an output to establish from source evidence.
+The live structural outcomes include one overarching rule across two paragraphs, two coupled rules, another supported witness-specific resegmentation, or an unresolved higher-level relation if direct evidence does not discriminate. The analysis unit is an output to establish from source evidence.
 
 No `62v-L08–L25` follow-up, G5/G6 progression, source-wide continuation, generic `80` programme, HTR/OCR run or Reg. Ii 4 recollation is authorized.
 
@@ -69,7 +69,7 @@ terminal classification = REAL BLOCKER
 
 This result is not based merely on the reserved parent-PDF repository path returning 404. The established research-ready private-attachment route itself was actually tested and failed to deliver the target payload.
 
-Restart only when the access condition materially changes by staging either:
+Resume only when the access condition materially changes by staging either:
 
 - the exact canonical parent PDF matching the SHA above; or
 - a provenance-authoritative p15/p16 representation tied to that canonical evidence chain.
@@ -97,7 +97,7 @@ Together they represent all 81 established physical anchors in source order. `tr
 
 Its current corrected A1 position is:
 
-- direct Reg. Ii 5 observation: two adjacent paragraph blocks `62r-L19–25` and `62v-L01–07`;
+- direct Reg. Ii 5 observation: two adjacent paragraph blocks `62r-L19–25` and `62v-L01–L07`;
 - G4-008: a larger cross-witness correspondence range with resegmentation;
 - open research question: the higher-level relationship and wood/use/return function of the two Reg. Ii 5 blocks.
 
@@ -126,7 +126,7 @@ Later `research/g2-*` artifacts have direct authority only at the level supporte
 
 None validates legacy `transcription/132.tsv`–`135.tsv` row-by-row or promotes legacy diplomatic readings.
 
-For the current analysis-unit dispute, `g2-checkpoint-a-physical-inventory.md` is the strongest direct Reg. Ii 5 structure owner and records the two relevant paragraph blocks separately.
+For the current analysis-unit question, `g2-checkpoint-a-physical-inventory.md` is the strongest direct Reg. Ii 5 structure owner and records the two relevant paragraph blocks separately.
 
 ## G4 controlled Reg. Ii 4 comparison
 
@@ -150,27 +150,27 @@ Reg. Ii 4 stays historical/closed for #166 until a fresh Reg. Ii 5 source-side b
 | G3 internal analysis | `reached at current internal evidence level` | consequential uncertainties in fol. 61v–63r | #123 A–H fully assessed at its bounded evidence level; unresolved residuals remain explicit. |
 | G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Controlled mapping remains valid; current #166 does not reopen G4 by itself. |
 | #123 problem-focused internal relecture | `complete` | target fol. 61v–63r; comparator search space fol. 55v–66v | Finite A–H work package complete. |
-| #161 whole-locus source-understanding synthesis | `retained / corrected` | Reg. Ii 5 fol. 61v–63r | Higher-level pass materially improved understanding; analysis-unit overclaim is being reconciled under reopened #165. |
-| #165 analysis-unit reconciliation | `reopened — current executable support action` | Project state for `62r-L19–25` + `62v-L01–07` | Remove `one cross-folio unit` premise and synchronize neutral scope/restart state. No reading change. |
-| #166 relation/function adjudication | `owner-selected / paused — R0 REAL BLOCKER` | Reg. Ii 5 `62r-L19–25` + `62v-L01–07` | Resume only after #165 merge and fresh authoritative p15/p16 staging. |
+| #161 whole-locus source-understanding synthesis | `retained / corrected` | Reg. Ii 5 fol. 61v–63r | Higher-level pass materially improved understanding; its analysis-unit overclaim has been reconciled. |
+| #165 analysis-unit reconciliation | `complete` | Project state for `62r-L19–25` + `62v-L01–07` | PR #173 restored observation-block / correspondence-range / research-question separation without a reading change. |
+| #166 relation/function adjudication | `owner-selected / R0 REAL BLOCKER` | Reg. Ii 5 `62r-L19–25` + `62v-L01–07` | Current scholarly cursor; resume only after fresh authoritative p15/p16 staging. |
 | G5 critical consolidation/validation | `not reached` | bounded edition target | No critically consolidated/validated text state claimed. |
 | G6 scholarly edition | `not reached` | bounded edition target | No scholarly edition produced. |
 
 ## NEXT ACTION — canonical restart point
 
-**Current executable work is reopened #165 Project-state reconciliation, not manuscript analysis.**
+**STOP. No executable scholarly or support work is currently authorized inside #166 until the target-evidence condition materially changes.**
 
-Finish the bounded reconciliation already defined in #165:
+#165 reconciliation is complete. #166 remains the current scholarly cursor, but the first scholarly action cannot execute while R0 is `STAGED = FAIL` / `VISION-INSPECTABLE = NOT TESTABLE`.
 
-1. keep the two directly observed Reg. Ii 5 paragraph blocks explicit;
-2. keep G4 correspondence/resegmentation as a separate comparison relation;
-3. keep #166 as a neutral relation/function question rather than a pre-established unit;
-4. preserve current R0 `REAL BLOCKER` until target pixels are actually staged;
-5. update only stable regression expectations affected by the corrected canonical wording;
-6. run deterministic checks / result review / merge;
-7. close #165 again.
+The next legitimate event is actual staging of authoritative p15/p16 evidence. Do not substitute:
 
-After #165 closes, **STOP**. #166 remains owner-selected but not executable until the target-evidence condition changes.
+- further connector/access architecture debugging;
+- Reg. Ii 4 wording;
+- HTR/OCR or candidate generators;
+- generic accounting/resource work;
+- `62v-L08–L25`;
+- coordination/process pilots;
+- another METHOD/REQ/schema change.
 
 When authoritative p15/p16 pixels are eventually staged and fresh `STAGED = PASS` / `VISION-INSPECTABLE = PASS` is established, execute #166 in this order:
 
@@ -190,7 +190,7 @@ No downstream scope is auto-authorized.
 
 ## Coordination / process roadmap boundary
 
-#169 is complete and its support-dominance correction remains valid as an execution-economy rule. It does **not** certify the old #166 analysis-unit framing.
+#169 is complete and its support-dominance correction remains valid as an execution-economy rule. It does **not** certify the former #166 analysis-unit framing.
 
 #171 is closed at an evidenced Slack/feedback-activation ceiling. #162 is paused/deferred. Neither is on the current scholarly critical path and no bot/router/wake/Slack→GitHub programme is authorized.
 
@@ -211,9 +211,9 @@ A fresh capable context must be able to reconstruct without old chat that:
 - Reg. Ii 5 is the owner-defined act-level Project and `Knau` is only a legacy path/focus;
 - #115 and #123 are complete; G3 is reached at current internal evidence and G4 remains reached;
 - #161's higher-level source-understanding gain is retained;
-- the first #165 correction over-grouped `62r-L19–25` + `62v-L01–07`; #165 is reopened to correct that Project-state premise;
-- #166 remains the Human-Owner-selected scholarly problem but is paused;
-- the current target region is two directly observed paragraph blocks whose higher-level relation is open;
+- the first #165 correction over-grouped `62r-L19–25` + `62v-L01–07`; reopened #165 corrected that premise and is complete via PR #173;
+- #166 is the current Human-Owner-selected scholarly cursor;
+- the target region is two directly observed paragraph blocks whose higher-level relation is open;
 - the Reg. Ii 5 principal Source-use/exact File evidence remain active; Reg. Ii 4 and Reg. Ii 3 uses remain historical;
 - current #166 p15/p16 target readiness is **not** established: R0 is `STAGED = FAIL`, `VISION-INSPECTABLE = NOT TESTABLE`, `REAL BLOCKER` after correct #84-route testing;
 - current diplomatic truth is owned only by the four folio-local `transcription/first-reading/*.tsv` files;
@@ -221,4 +221,4 @@ A fresh capable context must be able to reconstruct without old chat that:
 - legacy diplomatic material remains verification/recovery evidence only;
 - Reg. Ii 4 comparison is controlled hypothesis/test evidence, not Reg. Ii 5 structure/wording authority;
 - #169 is complete; #162 is paused; #171 is closed; no coordination/process strand displaces source research;
-- **the canonical current action is #165 reconciliation; after it closes, stop until target evidence for #166 becomes executable.**
+- **the canonical current action is STOP until authoritative target evidence for #166 becomes executable.**
