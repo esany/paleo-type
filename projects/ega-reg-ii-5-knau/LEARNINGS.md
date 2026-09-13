@@ -217,3 +217,15 @@ Corrective practice: keep **scope correctness** and **execution economy** as sep
 Current consequence: retain #169's execution-economy lesson, but do not use its passed #166 backtest as evidence that the old `one cross-folio unit` framing was scientifically correct.
 
 Generalizable: yes; this sharpens the meaning of technical/process backtests without requiring another METHOD change.
+
+## L025 — resource state was laundered into task and roadmap authority
+
+Observed failure: during #166, absence of the Reg. Ii 5 parent PDF / p15-p16 pixels in the current execution context was first recorded as an access/readiness fact, then promoted to `REAL BLOCKER`, then to `#166 not executable`, and finally to canonical `STOP until evidence changes`. No independent canonical task owner had established that this resource state should carry those task-wide and roadmap consequences.
+
+This created a particularly dangerous failure chain because later maintenance, tests and restart-state synchronization made the inferred dependency internally consistent and durable.
+
+Corrective practice: keep **resource/capability state**, **explicit action dependency**, **task-level blocker state**, and **Project/roadmap authority** separate. When a PDF, scan, attachment, credential or tool capability is unavailable, report the missing resource and the specific action affected immediately. Before deriving `BLOCKED`, `STOP`, `NEXT ACTION`, roadmap dependency or substitute work, identify the canonical/explicit authority that establishes that dependency and consequence. If that authority is absent, preserve only the action-local limitation and surface any planning ambiguity to the Human Owner.
+
+Evidence discipline remains strict: an action that really requires missing pixels cannot be simulated from metadata, prior transcription or a parallel witness. The correction limits the *scope of the consequence*; it does not weaken evidence requirements.
+
+Generalizable: yes. **Resource availability is descriptive execution state, not task or roadmap authority.**
