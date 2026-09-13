@@ -50,17 +50,11 @@ class ProjectContextRegressionTests(unittest.TestCase):
         by_function = {item["use"]["research_function"]: item for item in result["project_source_uses"]}
         self.assertEqual({"principal", "textual-comparison"}, set(by_function))
         self.assertTrue(all(item["use"]["status"] == "historical" for item in result["project_source_uses"]))
-        self.assertEqual(
-            "FILE-REG-II-4-II-00000089-EXPORT",
-            by_function["principal"]["evidence"][0]["file"]["file_id"],
-        )
-        self.assertEqual(
-            "FILE-REG-II-5-00000129-EXCERPT",
-            by_function["textual-comparison"]["evidence"][0]["file"]["file_id"],
-        )
+        self.assertEqual("FILE-REG-II-4-II-00000089-EXPORT", by_function["principal"]["evidence"][0]["file"]["file_id"])
+        self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", by_function["textual-comparison"]["evidence"][0]["file"]["file_id"])
         self.assertIn("No owner-selected next manuscript/source-research target is currently recorded", result["canonical_status"]["text"])
 
-    def test_reg_ii_5_context_exposes_active_cross_folio_scope_without_legacy_promotion(self) -> None:
+    def test_reg_ii_5_context_exposes_neutral_relation_scope_without_legacy_promotion(self) -> None:
         result = self.compile("ega-reg-ii-5-knau")
         self.assertEqual("ACT-THHSTAW-EGA-REG-II-5", result["documentary_anchor"]["source_id"])
         self.assertNotIn("legacy_project_source_uses", result)
@@ -74,22 +68,28 @@ class ProjectContextRegressionTests(unittest.TestCase):
         self.assertEqual("fol. 61v–63r", principal["use"]["relevant_locus"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", principal["evidence"][0]["file"]["file_id"])
         self.assertEqual("active", principal["evidence"][0]["evidence"]["status"])
+
         active_scope = result["project_definition"]["active_scope"]
         self.assertIn("Human Owner selected #166", active_scope)
-        self.assertIn("62r-L19–62v-L07", active_scope)
+        self.assertIn("62r-L19", active_scope)
+        self.assertIn("62v-L01", active_scope)
+        self.assertIn("analysis unit is not pre-established", active_scope)
+        self.assertIn("#165 is reopened", active_scope)
+        self.assertIn("R0 is a REAL BLOCKER", active_scope)
         self.assertIn("G3 remains reached at the current internal-evidence level", active_scope)
-        self.assertIn("G4 unchanged at activation", active_scope)
+        self.assertIn("G4 unchanged", active_scope)
         self.assertIn("no G5/G6", active_scope)
+
         status = result["canonical_status"]["text"]
         self.assertIn("#115 source-exact editorial work package | `complete`", status)
         self.assertIn("#123 problem-focused internal relecture | `complete`", status)
-        self.assertIn("#166 cross-folio unit adjudication | `active — R0 readiness pending`", status)
-        self.assertIn("current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", status)
+        self.assertIn("#165 analysis-unit reconciliation | `reopened — current executable support action`", status)
+        self.assertIn("#166 relation/function adjudication | `owner-selected / paused — R0 REAL BLOCKER`", status)
+        self.assertIn("Current Reg. Ii 5 diplomatic truth is owned by `transcription/first-reading/*.tsv`", status)
         self.assertIn("Legacy diplomatic material — verification/recovery only", status)
-        self.assertIn("G4 controlled comparison", status)
-        self.assertIn("H re-tested", status)
+        self.assertIn("G4 controlled Reg. Ii 4 comparison", status)
         self.assertIn("xxxij", status)
-        self.assertIn("#166 is the owner-selected active scholarly action", status)
+        self.assertIn("Current executable work is reopened #165 Project-state reconciliation", status)
         self.assertIn("research/internal-comparanda-relecture-61v-63r.md", status)
         self.assertIn("research/source-understanding-synthesis-61v-63r.md", status)
         self.assertIn("research_function from structural containment", result["execution_boundary"]["do_not_infer"])
@@ -109,9 +109,7 @@ class ProjectContextRegressionTests(unittest.TestCase):
         canonical_uses = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "source-uses.tsv")
         canonical_evidence = read_tsv(REPO / "projects" / "ega-reg-ii-5-knau" / "research" / "use-evidence.tsv")
 
-        compiled_use_ids = {
-            item["use"]["use_id"] for item in result["project_source_uses"]
-        }
+        compiled_use_ids = {item["use"]["use_id"] for item in result["project_source_uses"]}
         compiled_evidence_ids = {
             evidence["evidence"]["evidence_id"]
             for item in result["project_source_uses"]
@@ -134,7 +132,9 @@ class ProjectContextRegressionTests(unittest.TestCase):
         result = self.compile("ega-reg-ii-5-knau")
         project = result["project_definition"]
         self.assertIn("Human Owner selected #166", project["active_scope"])
-        self.assertIn("62r-L19–62v-L07", project["active_scope"])
+        self.assertIn("62r-L19", project["active_scope"])
+        self.assertIn("62v-L01", project["active_scope"])
+        self.assertIn("analysis unit is not pre-established", project["active_scope"])
         by_id = {item["use"]["use_id"]: item["use"] for item in result["project_source_uses"]}
         self.assertEqual("active", by_id["USE-REGII5-00000129-PRINCIPAL"]["status"])
         self.assertEqual("fol. 61v–63r", by_id["USE-REGII5-00000129-PRINCIPAL"]["relevant_locus"])
