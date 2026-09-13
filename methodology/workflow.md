@@ -87,6 +87,7 @@ Project research_function principal ≠ historical principal actor/role
 canonical Source node     ≠ any generic citation/information source
 textual witness           ≠ historical/legal witness
 same wording              ≠ same identity / date / hand / production stage
+resource unavailable      ≠ task blocked / NEXT ACTION changed / STOP
 ```
 
 This check does not create a universal glossary, translation registry or ontology. `AGENTS.md` owns the universal guardrail; D-019 records the durable cross-project decision. The owning scholarly/technical contract remains authoritative for each local meaning.
@@ -103,6 +104,35 @@ The underlying Project/priority semantics are owned by `project-lifecycle.md`. T
 
 A support task may be necessary and complete without becoming the scholarly objective it supports.
 
+## Resource state and dependency provenance
+
+Resource/capability state is **descriptive execution evidence**, not authority over the task or roadmap.
+
+When a PDF, scan, attachment, credential, tool capability, repository write path or other resource needed for an action is unavailable, report it immediately in action-local form:
+
+```text
+RESOURCE UNAVAILABLE: <resource/capability>
+AFFECTED ACTION: <specific action that cannot currently execute>
+OBSERVED BASIS: <what was actually tested/seen>
+```
+
+Before promoting that fact to `BLOCKED`, `STOP`, a changed `NEXT ACTION`, a task-wide prerequisite, a roadmap dependency or substitute work, identify the **dependency authority** that establishes that consequence:
+
+```text
+DEPENDENCY AUTHORITY: <canonical task/Project owner or explicit Human-Owner decision>
+DEPENDENCY: <resource X is prerequisite for action/task Y>
+AUTHORIZED CONSEQUENCE: <only what that authority actually says>
+```
+
+If the authority is absent or ambiguous:
+
+- preserve the resource fact and affected-action limitation;
+- do not infer a broader blocker or planning consequence;
+- do not select another Source, witness, tool, support task or scholarly target as a substitute;
+- surface the planning ambiguity to the Human Owner when it materially affects continuation.
+
+Resource absence does not relax evidence standards. An action that requires unavailable evidence still cannot be simulated, completed from metadata/prior transcription, or silently replaced by a parallel witness.
+
 ## Sticky prerequisites
 
 A prerequisite deterministically established as `PASS` remains `PASS` for the current execution context until an explicit invalidation event occurs.
@@ -117,6 +147,8 @@ Valid invalidation events include, as applicable:
 New model uncertainty is not an invalidation event.
 
 Re-entering an already-passed prerequisite without invalidation is an execution fault, not progress.
+
+An invalidated prerequisite changes only the dependency whose authority is already established. It does not itself select a new task, priority or roadmap consequence.
 
 ## Evidence staging for visual work
 
@@ -152,16 +184,16 @@ If the check fails:
 
 ```text
 VISION-INSPECTABLE = FAIL
-→ EVIDENCE NOT READY
-→ return to the evidence-availability/staging owner
+→ EVIDENCE NOT READY FOR THAT VISUAL ACTION
+→ report resource state + affected action
 → do not simulate scholarship from metadata/transcription alone
 ```
 
-After this failure the scholarly role does **not** perform upstream evidence search, retrieval diagnosis or access repair. It returns the blocker to the evidence-availability/staging owner and resumes only from a newly valid executable state.
+After this failure the scholarly role does **not** perform upstream evidence search, retrieval diagnosis or access repair unless that support action is separately authorized. It does not infer task-wide blocker/STOP/NEXT-ACTION semantics from the readiness failure. Apply the resource/dependency-authority rule above.
 
 Do not use `EVIDENCE STAGED = PASS` as an ambiguous composite token.
 
-If the decisive staging capability lies outside repository/tool control, record the platform boundary instead of building repo machinery that cannot cross it.
+If the decisive staging capability lies outside repository/tool control, record the platform/resource boundary and affected action instead of building repo machinery that cannot cross it or manufacturing a roadmap consequence.
 
 ## Repository-first persistence in execution contexts
 
@@ -183,7 +215,7 @@ For persistable research state:
 2. use the intended repository working branch as the working persistence surface;
 3. once a bounded result is ready to persist, create/update it directly through the authorized repository write path rather than first writing a local TSV/Markdown/JSON/YAML research file for later promotion;
 4. keep exploratory reasoning transient until it becomes a persistable result; not every hypothesis or scratch thought requires a commit;
-5. if a repository write fails or becomes unavailable, preserve the already-canonical state and report that technical blocker; do not create a local research-state fallback whose later recovery would depend on the originating execution context;
+5. if a repository write path is unavailable or fails, preserve the already-canonical state and report the unavailable capability plus the affected persistence action; do not create a local research-state fallback or infer broader task/priority consequences without dependency authority;
 6. where a temporary image/derivative materially supports a consequential result, preserve the required provenance under the applicable Source/File/evidence rules before relying on that result in a future context.
 
 This is an execution rule, not a requirement to store source binaries in Git or to commit every intermediate thought. Rights/access rules still govern source-byte persistence, and `maintenance.md` still governs canonical ownership and propagation.
@@ -281,7 +313,7 @@ result persisted in canonical owner
 → stale prior prose is not treated as authority
 ```
 
-Freshness is not authority. A synchronized repository can still reproduce an unauthorized priority, so target authority must be checked separately.
+Freshness is not authority. A synchronized repository can still reproduce an unauthorized priority or blocker, so target authority and dependency authority must be checked separately.
 
 ## Review points in the flow
 
@@ -326,7 +358,7 @@ Do not make a future context recover durable research state from chat.
 
 `research-gates.md` owns G1–G6 maturity semantics. Project `STATUS.md` owns actual Project gate/restart state.
 
-A gate requirement or support task may justify work only when it is also compatible with the authorized current target. Gate readiness, technical readiness or Milestone scheduling does not independently select research priority.
+A gate requirement or support task may justify work only when it is also compatible with the authorized current target. Gate readiness, technical readiness, resource readiness or Milestone scheduling does not independently select research priority or task-wide blocker state.
 
 ## Deferred technology
 
@@ -340,13 +372,14 @@ A fresh capable context passes the workflow/restart test when it can answer with
 - what bounded action is authorized;
 - which prerequisites are PASS/FAIL/unknown and what invalidates PASS;
 - which exact evidence is required and whether it is actually ready in this context;
+- for any claimed blocker/STOP/dependency, which authoritative owner establishes that consequence;
 - where the execution cursor/completion boundary lies;
 - what is explicitly out of scope;
 - what changed since the prior state;
 - who receives the result and under what return condition;
 - for any consequential cross-domain/technical/human wording, what semantic owner defines it and whether the translation preserved scope, status and uncertainty.
 
-If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, inferring priority from structural/support state, or relying on an unstated semantic conversion between domains, the execution surface is not restartable.
+If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, inferring priority or blocker state from structural/support/resource state, or relying on an unstated semantic conversion between domains, the execution surface is not restartable.
 
 ## Research execution: protect the first scholarly action
 
@@ -359,10 +392,13 @@ FIRST SCHOLARLY ACTION
 → exact evidence/capability required
 → canonical evidence/access owner or path
 → cheap feasibility/access test where available
-→ only the support work required to make that action executable
+→ report unavailable resource + affected action immediately
+→ only the separately authorized support work required to make that action executable
 ```
 
-This preflight does not waive authority, provenance, Evidence Readiness, Target Return, sticky prerequisites or required canonical synchronization. It changes ordering: verify the real research execution path before support work recursively expands. If the first scholarly action is genuinely blocked, record the real blocker early and stop unrelated support work.
+This preflight does not waive authority, provenance, Evidence Readiness, Target Return, sticky prerequisites or required canonical synchronization. It changes ordering: verify the real research execution path before support work recursively expands.
+
+If the first scholarly action cannot execute because a resource/capability is unavailable, record that action-local resource fact early. Do **not** promote it to task-wide blocker/STOP/NEXT-ACTION/roadmap semantics unless an authoritative dependency explicitly establishes that consequence.
 
 ### Scholarly delta and support delta
 
@@ -391,7 +427,9 @@ Before the first scholarly action occurs, if one support action exposes another 
 
 > Does the next support action directly make the first scholarly action executable, or protect a required invariant for that immediate execution?
 
-If **yes**, perform the smallest necessary support action. If **no**, defer it when nonblocking, record a real blocker and stop, or route the separate system defect to its owner without continuing that defect inside the research work block.
+If **yes**, perform it only when that support action is already authorized by the task/owner state. If **no**, defer it or route a demonstrated separate system defect to its owner without continuing that defect inside the research work block.
+
+An unavailable resource is not itself authorization to create a support task. If acquiring/repairing the resource is not already authorized, report the resource gap and affected action rather than turning the gap into a self-generated work chain.
 
 Do not allow an open-ended support chain merely because each step creates a local technical/canonical delta.
 
@@ -401,8 +439,10 @@ A substantive research work block should terminate in one of these research-rele
 
 1. **SCHOLARLY DELTA** — the scholarly state materially advanced;
 2. **SCHOLARLY EVIDENCE CEILING** — the bounded question was tested and the current evidence cannot responsibly discriminate further;
-3. **REAL BLOCKER** — an evidenced condition actually prevents the first/next scholarly action.
+3. **AUTHORIZED BLOCKER / ESCALATION** — an evidenced condition prevents continuation **and** the applicable canonical/explicit authority establishes the dependency and its task-level consequence.
+
+A resource unavailable only in the current context is not automatically a terminal research outcome. Record the resource fact and affected action; do not call it an evidence ceiling or task blocker without the required authority.
 
 `CI green`, `state synchronized`, `PR merged`, `restartability improved` or another support-only result may be necessary milestones, but do not by themselves satisfy the terminal research outcome.
 
-Use the #166 support-dominance incident as the regression example for this rule, not as source-specific generic METHOD: a missing parent file at one storage path must not be treated as proof that research-ready visual access is absent before the canonical access route required by the first scholarly action has actually been tested.
+Project-specific incidents belong in their Issues/audit evidence as regression fixtures; generic METHOD states only the reusable authority/resource rule.
