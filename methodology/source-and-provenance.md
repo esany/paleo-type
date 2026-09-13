@@ -121,6 +121,8 @@ Keep these properties distinct:
 
 File ID/SHA, persistent identifiers, crosswalks and render recipes do not self-certify target-context availability. For visual work, use the operational staging/inspectability gate in `workflow.md`.
 
+These are Source/File/access properties, not Project/task authority. A current-context access failure may show that a concrete evidence-dependent action cannot be executed there; it does not by itself establish task-wide blocker status, `NEXT ACTION`, `STOP`, a roadmap dependency, substitute work or scholarly priority. Any such consequence requires its own authoritative dependency basis under `workflow.md` / Project authority.
+
 ## Reusable Source data
 
 Mappings that remain true independent of Project use belong once under:

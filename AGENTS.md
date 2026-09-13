@@ -142,6 +142,18 @@ When direct visual/source inspection is required, follow the execution gate in `
 
 Never simulate source inspection from metadata/transcription alone when the task requires the source image/file.
 
+### Resource state is descriptive, not task authority
+
+If a PDF, scan, attachment, credential, tool capability or other needed resource is unavailable, **surface that fact immediately** and name the concrete action affected.
+
+Do not infer from resource availability/unavailability alone that the whole task or Project is blocked, that `NEXT ACTION` changes, that work must `STOP`, that a roadmap dependency exists, or that substitute work is authorized.
+
+Before using blocker/STOP semantics, identify the canonical or explicit authority that makes the missing resource a prerequisite with that consequence. If such authority is absent or ambiguous, record only the resource state and action-local inability and surface the planning ambiguity to the Human Owner.
+
+Resource absence never relaxes evidence standards: an action that actually requires unavailable evidence still cannot be simulated or completed from metadata, prior transcription or a parallel witness.
+
+Follow the dependency-provenance and action-local resource rule in `methodology/workflow.md`.
+
 ## Work-context and loop protection
 
 Follow `methodology/workflow.md` for operational execution mechanics, including:

@@ -2,25 +2,28 @@
 
 Last checkpoint: 2026-09-13
 
-## Project authority and identity
+## Project authority and current scope
 
-The human owner confirmed on 2026-09-02 that **Reg. Ii 5 continues as an act-oriented Project**, anchored at `ACT-THHSTAW-EGA-REG-II-5`. The directory/id `ega-reg-ii-5-knau` is a legacy path from an earlier AI-organized Knau benchmark; `Knau` is not the Project boundary.
+The Human Owner confirmed on 2026-09-02 that **Reg. Ii 5 continues as an act-oriented Project**, anchored at `ACT-THHSTAW-EGA-REG-II-5`. The directory/id `ega-reg-ii-5-knau` is a legacy path from an earlier AI-organized Knau benchmark; `Knau` is not the Project boundary.
 
-The bounded Reg. Ii 5 fol. 61v–63r Editionsbaustein (#115) is complete. The finite problem-focused internal relecture #123 is complete; its A–H evidence paths are owned by `research/internal-comparanda-relecture-61v-63r.md` and the folio-local first-reading TSVs. At #123 closeout G3 was again reached at the current internal-evidence level, G4 remained reached/unchanged, and no G5/G6 or source-wide continuation was selected.
+Completed bounded work remains:
 
-On 2026-09-12 the Human Owner selected #166 as the next bounded scholarly problem after the whole-locus Source-Understanding synthesis (#161). The first #165 correction then over-promoted the G4 correspondence range `62r-L19–62v-L07` into one Reg. Ii 5 cross-folio unit. Fresh whole-repository review on 2026-09-13 partially falsified that framing. Reopened #165 reconciled the Project state via PR #173 / merge `84ab5617221b08309aa3e781f4b79667e109390e`; post-merge source-contract run #337 passed.
+- #115 — source-exact editorial work package for fol. 61v–63r: `complete`;
+- #123 — finite problem-focused internal relecture: `complete`;
+- #161 — whole-locus Source-Understanding synthesis: `retained / corrected`;
+- #165 — analysis-unit reconciliation: `complete` via PR #173.
 
-**Current authoritative framing:** Reg. Ii 5 directly supports two adjacent paragraph blocks, `62r-L19–25` and `62v-L01–07`. Their higher-level structural/functional relationship is the research question; it is not pre-established as one unit and is not pre-established as two independent rules.
+#169 owns the bounded RSE corrections for support-dominance and the resource-state/authority boundary. Its Issue lifecycle is process/audit metadata and does not control scholarly priority.
 
-#166 is the Human-Owner-selected scholarly cursor, but it is **not currently executable** because R0 has a real target-evidence blocker.
+#166 remains the **Human-Owner-selected scholarly scope**.
 
-## Current scholarly question
+Current question:
 
 > How do the adjacent Reg. Ii 5 paragraph blocks `62r-L19–25` and `62v-L01–07` relate structurally and functionally, and what concrete wood/use/return rule or rules do they express?
 
-The live structural outcomes include one overarching rule across two paragraphs, two coupled rules, another supported witness-specific resegmentation, or an unresolved higher-level relation if direct evidence does not discriminate. The analysis unit is an output to establish from source evidence.
+Direct Reg. Ii 5 structure evidence supports two adjacent paragraph blocks. Their higher-level relation is open: one overarching rule, two coupled rules, another supported witness-specific resegmentation, or unresolved relation remain admissible outcomes. The analysis unit is an output to establish, not an input premise.
 
-No `62v-L08–L25` follow-up, G5/G6 progression, source-wide continuation, generic `80` programme, HTR/OCR run or Reg. Ii 4 recollation is authorized.
+No `62v-L08–L25` follow-up, G5/G6 progression, source-wide continuation, generic `80` programme, HTR/OCR run or Reg. Ii 4 recollation is authorized by this scope.
 
 ## Canonical Source / File / use state
 
@@ -46,35 +49,43 @@ Exact evidence binding:
 - filename `1a03ea95927-120-143.pdf`;
 - SHA-256 `e989fe614c715e417e3586e29628d67d274964f195b3f1e66a8682bfcde54f6f`;
 - evidence locator `export images 132–135`;
-- target pages for #166: `62r = image 133 = PDF p15`, `62v = image 134 = PDF p16`;
+- target pages for the fresh visual inspection contemplated in #166: `62r = image 133 = PDF p15`, `62v = image 134 = PDF p16`;
 - evidence status `active`.
 
-The separate Reg. Ii 4 textual-comparison use and both Reg. Ii 3 control/context uses remain `historical`. Reg. Ii 4 may be reactivated only if fresh Reg. Ii 5 source-side work demonstrates a consequential comparison need.
+The separate Reg. Ii 4 textual-comparison use and both Reg. Ii 3 control/context uses remain `historical`. Resource availability in Reg. Ii 5 does not itself reactivate any of them.
 
-Active use/evidence status does **not** establish current pixel readiness.
+## Current resource / access state
 
-## Current evidence-access state
+Keep Source/File identity, Project evidence binding and current-context resource availability separate.
 
-Historical #115/#123 and Source-Understanding readiness do not transfer into a new execution context.
+Known canonical identity is stable, but in the current execution context the canonical parent PDF / authoritative p15/p16 target pixels are **not available for fresh visual inspection**.
 
-After #169, #166 R0 correctly re-tested the established #84 private-attachment access route for both p15 and p16 using full current signed URLs. No target image bytes/resource entered that execution context.
+The established #84 private-attachment route was previously re-tested with full signed URLs and did not deliver target image bytes into that execution context.
 
-Current execution-specific result:
+Current descriptive execution state for the **visual-inspection action only**:
 
 ```text
 STAGED = FAIL
 VISION-INSPECTABLE = NOT TESTABLE
-terminal classification = REAL BLOCKER
+RESOURCE UNAVAILABLE: canonical Reg. Ii 5 parent PDF / authoritative p15-p16 pixels
+AFFECTED ACTION: fresh visual inspection of the two #166 target blocks
 ```
 
-This result is not based merely on the reserved parent-PDF repository path returning 404. The established research-ready private-attachment route itself was actually tested and failed to deliver the target payload.
+This means only that the specific visual-inspection action cannot currently be performed in a context that lacks those pixels.
 
-Resume only when the access condition materially changes by staging either:
+It does **not** by itself establish:
 
-- the exact canonical parent PDF matching the SHA above; or
-- a provenance-authoritative p15/p16 representation tied to that canonical evidence chain.
+- task-wide `BLOCKED` / `REAL BLOCKER` state;
+- `STOP` semantics;
+- a changed `NEXT ACTION`;
+- a Project/roadmap dependency;
+- a substitute research/support task;
+- Reg. Ii 4 reactivation;
+- a scholarly evidence ceiling.
 
-Then verify identity/crosswalk and establish fresh `STAGED = PASS` / `VISION-INSPECTABLE = PASS`. No further connector/access architecture debugging belongs inside #166.
+Any such consequence requires an explicit canonical task/Project authority or Human-Owner decision. The absence of pixels also does not permit simulated visual/source claims from metadata, prior transcription or another witness.
+
+If a future execution obtains the exact parent PDF or a provenance-authoritative p15/p16 representation, verify identity/crosswalk and establish fresh `STAGED` / `VISION-INSPECTABLE` state before making new visual claims.
 
 ## Current diplomatic owners
 
@@ -89,7 +100,7 @@ The four folio-local partitions are:
 
 Together they represent all 81 established physical anchors in source order. `transcription/derived/61v-63r-first-reading.md` is derived/rebuildable and is not a second text owner.
 
-#123's consequential current reading outcomes include, among others, target-supported `wolff` / `dem gemeinswalde`, the F3 `62v-L12–L19` working readings, F4 bounded islands, working `63r-L04 Zulage`, and the H correction of the written Roman-like sequence at `63r-L10` from inherited `xlvij` to working **`xxxij`**. H re-tested the target at graphematic/sign level and does not supply `32`, an absolute year, calendar normalization or production date.
+#123's consequential current reading outcomes remain owned by their existing research/TSV records, including target-supported `wolff` / `dem gemeinswalde`, the F3/F4 bounded readings/islands, working `63r-L04 Zulage`, and the H correction of the written Roman-like sequence at `63r-L10` to working **`xxxij`** without numerical/calendar normalization.
 
 ## Source-understanding / analysis-unit owner
 
@@ -97,17 +108,17 @@ Together they represent all 81 established physical anchors in source order. `tr
 
 Its current corrected A1 position is:
 
-- direct Reg. Ii 5 observation: two adjacent paragraph blocks `62r-L19–25` and `62v-L01–L07`;
+- direct Reg. Ii 5 observation: two adjacent paragraph blocks `62r-L19–25` and `62v-L01–07`;
 - G4-008: a larger cross-witness correspondence range with resegmentation;
 - open research question: the higher-level relationship and wood/use/return function of the two Reg. Ii 5 blocks.
 
 A cross-witness correspondence range is not itself Reg. Ii 5 structure authority.
 
-Project `LEARNINGS.md` records the resulting analysis-unit, evidence-hierarchy and review-premise lessons (L021–L024).
+Project `LEARNINGS.md` records the analysis-unit/evidence-hierarchy/review-premise lessons (L021–L024) and the resource-state/authority failure (L025).
 
 ## Legacy diplomatic material — verification/recovery only
 
-The historical diplomatic and witness-dependent Knau material under this legacy Project path — especially `transcription/132.tsv` through `135.tsv`, `apparatus/decisions.tsv`, `palaeography/lexicon.tsv`, `palaeography/numerals.tsv` and claims depending on their old page/path attribution — remains **legacy verification/recovery evidence; witness attribution unresolved or potentially mixed**.
+Historical diplomatic and witness-dependent Knau material under this legacy Project path — especially `transcription/132.tsv` through `135.tsv`, `apparatus/decisions.tsv`, `palaeography/lexicon.tsv`, `palaeography/numerals.tsv` and claims depending on old page/path attribution — remains **legacy verification/recovery evidence; witness attribution unresolved or potentially mixed**.
 
 It is **not canonical current Reg. Ii 5 diplomatic transcription state**.
 
@@ -138,7 +149,7 @@ G4 remains reached for the bounded Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 3
 
 G4-008 maps Reg. Ii 4 `308r-L19–308v-L06` ↔ Reg. Ii 5 `62r-L19–62v-L07` and records agreement/variant/resegmentation/numeral difference. This is controlled comparison evidence, not authority that Reg. Ii 5 itself contains one unit, and not evidence of same hand, same date, direct copying or priority.
 
-Reg. Ii 4 stays historical/closed for #166 until a fresh Reg. Ii 5 source-side blocker demonstrates need for conditional comparison. Every externally prompted candidate must return to the Reg. Ii 5 target before any diplomatic change.
+Reg. Ii 4 remains historical for current #166 unless an authorized comparison need is established. Current Reg. Ii 5 resource unavailability is not itself such authorization.
 
 ## Current research state / edition lifecycle
 
@@ -151,48 +162,33 @@ Reg. Ii 4 stays historical/closed for #166 until a fresh Reg. Ii 5 source-side b
 | G4 controlled comparison | `reached` | Reg. Ii 5 fol. 61v–63r ↔ Reg. Ii 4 fol. 306v–309r | Controlled mapping remains valid; current #166 does not reopen G4 by itself. |
 | #123 problem-focused internal relecture | `complete` | target fol. 61v–63r; comparator search space fol. 55v–66v | Finite A–H work package complete. |
 | #161 whole-locus source-understanding synthesis | `retained / corrected` | Reg. Ii 5 fol. 61v–63r | Higher-level pass materially improved understanding; its analysis-unit overclaim has been reconciled. |
-| #165 analysis-unit reconciliation | `complete` | Project state for `62r-L19–25` + `62v-L01–07` | PR #173 restored observation-block / correspondence-range / research-question separation without a reading change. |
-| #166 relation/function adjudication | `owner-selected / R0 REAL BLOCKER` | Reg. Ii 5 `62r-L19–25` + `62v-L01–07` | Current scholarly cursor; resume only after fresh authoritative p15/p16 staging. |
+| #165 analysis-unit reconciliation | `complete` | `62r-L19–25` + `62v-L01–07` framing | Observation blocks / correspondence range / research question separated without reading change. |
+| #166 relation/function adjudication | `owner-selected / current scholarly scope` | Reg. Ii 5 `62r-L19–25` + `62v-L01–07` | Fresh visual inspection currently lacks required p15/p16 resource in this context; no broader blocker/STOP consequence is inferred. |
+| #169 resource-state / authority correction | `bounded RSE owner` | generic execution semantics + affected #166 state | Resource availability must not manufacture blocker/NEXT ACTION/STOP/roadmap authority; Issue lifecycle does not control Project priority. |
 | G5 critical consolidation/validation | `not reached` | bounded edition target | No critically consolidated/validated text state claimed. |
 | G6 scholarly edition | `not reached` | bounded edition target | No scholarly edition produced. |
 
-## NEXT ACTION — canonical restart point
+## NEXT ACTION / continuation authority
 
-**STOP. No executable scholarly or support work is currently authorized inside #166 until the target-evidence condition materially changes.**
+#166 remains the current scholarly scope. **Resource unavailability does not select a replacement `NEXT ACTION` and does not create `STOP`.**
 
-#165 reconciliation is complete. #166 remains the current scholarly cursor, but the first scholarly action cannot execute while R0 is `STAGED = FAIL` / `VISION-INSPECTABLE = NOT TESTABLE`.
+For any proposed action:
 
-The next legitimate event is actual staging of authoritative p15/p16 evidence. Do not substitute:
+1. resolve whether it is already authorized by #166 / canonical Project state;
+2. resolve its actual prerequisites;
+3. if a required resource is unavailable, report `RESOURCE UNAVAILABLE` + the affected action;
+4. do not infer broader blocker, replacement work or roadmap consequence from that resource fact;
+5. if continuation requires a non-derivable planning choice, surface that choice to the Human Owner.
 
-- further connector/access architecture debugging;
-- Reg. Ii 4 wording;
-- HTR/OCR or candidate generators;
-- generic accounting/resource work;
-- `62v-L08–L25`;
-- coordination/process pilots;
-- another METHOD/REQ/schema change.
+For the fresh visual-inspection action specifically, p15/p16 pixels are currently unavailable in this execution context; therefore that action cannot be performed here unless the resource becomes available.
 
-When authoritative p15/p16 pixels are eventually staged and fresh `STAGED = PASS` / `VISION-INSPECTABLE = PASS` is established, execute #166 in this order:
-
-```text
-direct Reg. Ii 5 observation of both paragraph blocks
-→ adjudicate their relationship without presupposing one unit
-→ build secure-island relation model
-→ stop if function is already sufficient
-→ admit only consequential microanalysis
-→ conditional Reg. Ii 4 comparison only if a material relation blocker remains
-→ mandatory Reg. Ii 5 Target Return
-→ scholarly delta / evidence ceiling / bounded blocker
-→ Human-Owner decision
-```
-
-No downstream scope is auto-authorized.
+No downstream scholarly scope is auto-authorized.
 
 ## Coordination / process roadmap boundary
 
-#169 is complete and its support-dominance correction remains valid as an execution-economy rule. It does **not** certify the former #166 analysis-unit framing.
+#171 is closed at its bounded pilot ceiling. #162 is paused/deferred. Neither is on the scholarly critical path and no bot/router/wake/Slack→GitHub programme is authorized.
 
-#171 is closed at an evidenced Slack/feedback-activation ceiling. #162 is paused/deferred. Neither is on the current scholarly critical path and no bot/router/wake/Slack→GitHub programme is authorized.
+#169 is the bounded RSE owner for the resource-state/authority correction. Its open/closed Issue state is audit/process metadata and does not become scholarly priority or Project continuation authority.
 
 ## Historical work-state audit pointers
 
@@ -202,7 +198,7 @@ Historical Project/work-state remains recoverable without making old states curr
 - early Knau working-reading checkpoint: `08c08bd6f90635210fbeff3f2d19cd0a485cc0b9`;
 - former source-unit state snapshot: `699fa6eada61db483dfca950193412715d9603a5`.
 
-That bounded work package was completed on 2026-09-08 as an **Editionsbaustein**. Detailed cluster readiness, comparator paths, negative results and promotion evidence remain in the bounded research owners and Git/Issue history rather than being recopied here.
+That bounded work package was completed on 2026-09-08 as an **Editionsbaustein**. Detailed cluster readiness, comparator paths, negative results and promotion evidence remain in their bounded research owners and Git/Issue history rather than being recopied here.
 
 ## Restartability
 
@@ -210,15 +206,14 @@ A fresh capable context must be able to reconstruct without old chat that:
 
 - Reg. Ii 5 is the owner-defined act-level Project and `Knau` is only a legacy path/focus;
 - #115 and #123 are complete; G3 is reached at current internal evidence and G4 remains reached;
-- #161's higher-level source-understanding gain is retained;
-- the first #165 correction over-grouped `62r-L19–25` + `62v-L01–07`; reopened #165 corrected that premise and is complete via PR #173;
-- #166 is the current Human-Owner-selected scholarly cursor;
+- #161's higher-level source-understanding gain is retained and #165's analysis-unit correction is complete;
+- #166 is the current Human-Owner-selected scholarly scope;
 - the target region is two directly observed paragraph blocks whose higher-level relation is open;
 - the Reg. Ii 5 principal Source-use/exact File evidence remain active; Reg. Ii 4 and Reg. Ii 3 uses remain historical;
-- current #166 p15/p16 target readiness is **not** established: R0 is `STAGED = FAIL`, `VISION-INSPECTABLE = NOT TESTABLE`, `REAL BLOCKER` after correct #84-route testing;
-- current diplomatic truth is owned only by the four folio-local `transcription/first-reading/*.tsv` files;
-- `research/source-understanding-synthesis-61v-63r.md` owns whole-locus source-understanding; `research/internal-comparanda-relecture-61v-63r.md` owns the #123 A–H evidence path;
-- legacy diplomatic material remains verification/recovery evidence only;
+- the canonical parent PDF / authoritative p15/p16 pixels are not available in the current execution context for fresh visual inspection;
+- that resource fact constrains that visual action only and **does not itself create task-wide blocker, STOP, NEXT ACTION or roadmap authority**;
+- current diplomatic truth is owned only by the folio-local `transcription/first-reading/*.tsv` files;
 - Reg. Ii 4 comparison is controlled hypothesis/test evidence, not Reg. Ii 5 structure/wording authority;
-- #169 is complete; #162 is paused; #171 is closed; no coordination/process strand displaces source research;
-- **the canonical current action is STOP until authoritative target evidence for #166 becomes executable.**
+- #169 owns the generic resource-state/authority correction without controlling scholarly priority;
+- #162 remains paused and #171 closed;
+- missing resources must be surfaced immediately with the affected action rather than converted into inferred planning state.
