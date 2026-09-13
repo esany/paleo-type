@@ -347,3 +347,62 @@ A fresh capable context passes the workflow/restart test when it can answer with
 - for any consequential cross-domain/technical/human wording, what semantic owner defines it and whether the translation preserved scope, status and uncertainty.
 
 If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, inferring priority from structural/support state, or relying on an unstated semantic conversion between domains, the execution surface is not restartable.
+
+## Research execution: protect the first scholarly action
+
+For an authorized research work block, identify the **first scholarly action** before substantial support work expands. This is the first bounded action that either inspects new scholarly evidence, discriminates a scholarly hypothesis, changes a relevant scholarly uncertainty/decision state, or establishes a bounded scholarly evidence ceiling.
+
+Before broader activation, state synchronization, tooling or assurance work, perform the cheapest legitimate feasibility preflight for that action:
+
+```text
+FIRST SCHOLARLY ACTION
+→ exact evidence/capability required
+→ canonical evidence/access owner or path
+→ cheap feasibility/access test where available
+→ only the support work required to make that action executable
+```
+
+This preflight does not waive authority, provenance, Evidence Readiness, Target Return, sticky prerequisites or required canonical synchronization. It changes ordering: verify the real research execution path before support work recursively expands. If the first scholarly action is genuinely blocked, record the real blocker early and stop unrelated support work.
+
+### Scholarly delta and support delta
+
+Keep two kinds of legitimate progress distinct:
+
+**Scholarly delta** includes, as applicable:
+
+- new primary/specialist evidence actually inspected;
+- a scholarly hypothesis discriminated;
+- relevant scholarly uncertainty or decision state changed;
+- a bounded scholarly evidence ceiling established.
+
+**Support delta** includes, as applicable:
+
+- canonical/current state synchronized;
+- tests or CI repaired;
+- evidence-access/restart machinery changed;
+- branch/PR/merge completed;
+- support metadata or technical readiness advanced.
+
+A support delta may be necessary and valuable, but must not be represented as scholarly progress merely because canonical or technical state changed.
+
+### Support-to-support escalation stop
+
+Before the first scholarly action occurs, if one support action exposes another support action, immediately re-run Goal Alignment from `quality-and-learning.md`:
+
+> Does the next support action directly make the first scholarly action executable, or protect a required invariant for that immediate execution?
+
+If **yes**, perform the smallest necessary support action. If **no**, defer it when nonblocking, record a real blocker and stop, or route the separate system defect to its owner without continuing that defect inside the research work block.
+
+Do not allow an open-ended support chain merely because each step creates a local technical/canonical delta.
+
+### Research-workblock terminal semantics
+
+A substantive research work block should terminate in one of these research-relevant outcomes:
+
+1. **SCHOLARLY DELTA** — the scholarly state materially advanced;
+2. **SCHOLARLY EVIDENCE CEILING** — the bounded question was tested and the current evidence cannot responsibly discriminate further;
+3. **REAL BLOCKER** — an evidenced condition actually prevents the first/next scholarly action.
+
+`CI green`, `state synchronized`, `PR merged`, `restartability improved` or another support-only result may be necessary milestones, but do not by themselves satisfy the terminal research outcome.
+
+Use the #166 support-dominance incident as the regression example for this rule, not as source-specific generic METHOD: a missing parent file at one storage path must not be treated as proof that research-ready visual access is absent before the canonical access route required by the first scholarly action has actually been tested.
