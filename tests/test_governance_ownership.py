@@ -53,6 +53,19 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertIn("## D-019 — Meaning is context-owned", decisions)
         self.assertIn("REQ-GWP-011\tresearch-data-stewardship\t", requirements)
 
+    def test_resource_state_does_not_acquire_task_authority(self) -> None:
+        """Protect the demonstrated #166/#169 authority-laundering failure boundary."""
+        agents = (REPO / "AGENTS.md").read_text(encoding="utf-8")
+        workflow = (REPO / "methodology" / "workflow.md").read_text(encoding="utf-8")
+        provenance = (REPO / "methodology" / "source-and-provenance.md").read_text(encoding="utf-8")
+
+        self.assertIn("### Resource state is descriptive, not task authority", agents)
+        self.assertIn("## Resource state and dependency provenance", workflow)
+        self.assertIn("DEPENDENCY AUTHORITY", workflow)
+        self.assertIn("A resource unavailable only in the current context is not automatically a terminal research outcome", workflow)
+        self.assertIn("These are Source/File/access properties, not Project/task authority", provenance)
+        self.assertIn("does not by itself establish task-wide blocker status", provenance)
+
     def test_project_contract_v8_closes_purpose_owner_and_legacy_gaps(self) -> None:
         contract = json.loads((REPO / "corpus" / "source-contract.json").read_text(encoding="utf-8"))
         projects = contract["tables"]["projects"]
