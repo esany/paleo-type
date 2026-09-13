@@ -11,8 +11,9 @@ Completed bounded work remains:
 - #115 — source-exact editorial work package for fol. 61v–63r: `complete`;
 - #123 — finite problem-focused internal relecture: `complete`;
 - #161 — whole-locus Source-Understanding synthesis: `retained / corrected`;
-- #165 — analysis-unit reconciliation: `complete` via PR #173;
-- #169 — support-dominance correction was completed once and is reopened only to correct the resource-state/authority boundary exposed by #166.
+- #165 — analysis-unit reconciliation: `complete` via PR #173.
+
+#169 owns the bounded RSE corrections for support-dominance and the resource-state/authority boundary. Its Issue lifecycle is process/audit metadata and does not control scholarly priority.
 
 #166 remains the **Human-Owner-selected scholarly scope**.
 
@@ -107,13 +108,13 @@ Together they represent all 81 established physical anchors in source order. `tr
 
 Its current corrected A1 position is:
 
-- direct Reg. Ii 5 observation: two adjacent paragraph blocks `62r-L19–25` and `62v-L01–L07`;
+- direct Reg. Ii 5 observation: two adjacent paragraph blocks `62r-L19–25` and `62v-L01–07`;
 - G4-008: a larger cross-witness correspondence range with resegmentation;
 - open research question: the higher-level relationship and wood/use/return function of the two Reg. Ii 5 blocks.
 
 A cross-witness correspondence range is not itself Reg. Ii 5 structure authority.
 
-Project `LEARNINGS.md` records the analysis-unit/evidence-hierarchy/review-premise lessons (L021–L024). The resource-state/authority failure is owned as the reopened #169 generic correction and must not be converted into another Project-specific methodology layer.
+Project `LEARNINGS.md` records the analysis-unit/evidence-hierarchy/review-premise lessons (L021–L024) and the resource-state/authority failure (L025).
 
 ## Legacy diplomatic material — verification/recovery only
 
@@ -163,7 +164,7 @@ Reg. Ii 4 remains historical for current #166 unless an authorized comparison ne
 | #161 whole-locus source-understanding synthesis | `retained / corrected` | Reg. Ii 5 fol. 61v–63r | Higher-level pass materially improved understanding; its analysis-unit overclaim has been reconciled. |
 | #165 analysis-unit reconciliation | `complete` | `62r-L19–25` + `62v-L01–07` framing | Observation blocks / correspondence range / research question separated without reading change. |
 | #166 relation/function adjudication | `owner-selected / current scholarly scope` | Reg. Ii 5 `62r-L19–25` + `62v-L01–07` | Fresh visual inspection currently lacks required p15/p16 resource in this context; no broader blocker/STOP consequence is inferred. |
-| #169 resource-state / authority correction | `reopened / bounded RSE correction` | generic execution semantics + affected #166 state | Prevent resource availability from manufacturing blocker/NEXT ACTION/STOP/roadmap authority. |
+| #169 resource-state / authority correction | `bounded RSE owner` | generic execution semantics + affected #166 state | Resource availability must not manufacture blocker/NEXT ACTION/STOP/roadmap authority; Issue lifecycle does not control Project priority. |
 | G5 critical consolidation/validation | `not reached` | bounded edition target | No critically consolidated/validated text state claimed. |
 | G6 scholarly edition | `not reached` | bounded edition target | No scholarly edition produced. |
 
@@ -187,7 +188,7 @@ No downstream scholarly scope is auto-authorized.
 
 #171 is closed at its bounded pilot ceiling. #162 is paused/deferred. Neither is on the scholarly critical path and no bot/router/wake/Slack→GitHub programme is authorized.
 
-Reopened #169 is limited to correcting the generic resource-state/authority error and the affected #166 state; it does not become scholarly priority.
+#169 is the bounded RSE owner for the resource-state/authority correction. Its open/closed Issue state is audit/process metadata and does not become scholarly priority or Project continuation authority.
 
 ## Historical work-state audit pointers
 
@@ -213,5 +214,6 @@ A fresh capable context must be able to reconstruct without old chat that:
 - that resource fact constrains that visual action only and **does not itself create task-wide blocker, STOP, NEXT ACTION or roadmap authority**;
 - current diplomatic truth is owned only by the folio-local `transcription/first-reading/*.tsv` files;
 - Reg. Ii 4 comparison is controlled hypothesis/test evidence, not Reg. Ii 5 structure/wording authority;
-- #169 is reopened only for this generic authority-boundary correction; #162 remains paused and #171 closed;
+- #169 owns the generic resource-state/authority correction without controlling scholarly priority;
+- #162 remains paused and #171 closed;
 - missing resources must be surfaced immediately with the affected action rather than converted into inferred planning state.
