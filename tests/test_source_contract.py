@@ -45,20 +45,23 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertEqual("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", principal["source_id"])
         self.assertEqual("principal", principal["research_function"])
         self.assertEqual("fol. 61v–63r", principal["relevant_locus"])
-        self.assertEqual("active", principal["status"])
+        self.assertEqual("historical", principal["status"])
         self.assertIn("loss-checked migration 2026-09-02", principal["evidence_basis"])
         self.assertIn("#123 completed 2026-09-12", principal["evidence_basis"])
-        self.assertIn("Human Owner selected bounded cross-folio research #166", principal["evidence_basis"])
-        self.assertIn("62r-L19–62v-L07", principal["notes"])
-        self.assertIn("does not authorize source-wide transcription", principal["notes"])
+        self.assertIn("Human Owner selected bounded relation/function research #166", principal["evidence_basis"])
+        self.assertIn("#166 completed 2026-09-13", principal["evidence_basis"])
+        self.assertIn("two distinct adjacent rules", principal["notes"])
+        self.assertIn("No owner-selected active scholarly scope is currently recorded", principal["notes"])
 
         evidence = cache["use_evidence"]["EVID-REGII5-00000129-PRINCIPAL"]
         self.assertEqual("USE-REGII5-00000129-PRINCIPAL", evidence["use_id"])
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", evidence["file_id"])
-        self.assertEqual("active", evidence["status"])
+        self.assertEqual("historical", evidence["status"])
         self.assertIn("#123 completed 2026-09-12", evidence["evidence_basis"])
         self.assertIn("reactivated for Human-Owner-selected #166", evidence["evidence_basis"])
-        self.assertIn("does not establish fresh STAGED or VISION-INSPECTABLE readiness", evidence["notes"])
+        self.assertIn("#166 completed 2026-09-13", evidence["evidence_basis"])
+        self.assertIn("matched canonical SHA-256", evidence["notes"])
+        self.assertIn("No diplomatic TSV row changed", evidence["notes"])
 
         li4_principal = cache["source_uses"]["USE-REGII4PROJ-REGII4-00000089-PRINCIPAL"]
         self.assertEqual("THHSTAW-EGA-REG-II-4-BD-II-STAT-VIS-00000089", li4_principal["source_id"])
@@ -103,9 +106,9 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertIsNone(resolved["legacy_primary_file"])
         self.assertEqual(1, len(resolved["project_source_uses"]))
         target = resolved["project_source_uses"][0]
-        self.assertEqual("active", target["use"]["status"])
+        self.assertEqual("historical", target["use"]["status"])
         self.assertEqual("fol. 61v–63r", target["use"]["relevant_locus"])
-        self.assertEqual("active", target["evidence"][0]["evidence"]["status"])
+        self.assertEqual("historical", target["evidence"][0]["evidence"]["status"])
         self.assertEqual(
             "FILE-REG-II-5-00000129-EXCERPT",
             target["evidence"][0]["file"]["file_id"],

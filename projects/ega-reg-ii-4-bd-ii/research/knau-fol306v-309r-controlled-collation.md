@@ -1,6 +1,6 @@
 # Reg. Ii 4 Bd. II Knau fol. 306v–309r — controlled collation record
 
-Status: **#99 COMPLETE (historical 2026-09-06); 2026-09-08 CURRENT G4 REVALIDATION COMPLETE after independent Reg. Ii 5 G2/G3 basis.**
+Status: **#99 COMPLETE (historical 2026-09-06); 2026-09-08 CURRENT G4 REVALIDATION COMPLETE after independent Reg. Ii 5 G2/G3 basis; G4-008 paragraph-boundary refinement 2026-09-13 via #166.**
 
 ## Role and ownership
 
@@ -37,7 +37,7 @@ In the 2026-09-06 execution context the exact Reg. Ii 5 PDF was byte-checked and
 
 ## Historical #99 comparison entries
 
-The entries below preserve the 2026-09-06 controlled-collation audit. They are historical comparison evidence, not a second Reg. Ii 5 transcription owner. Where the later independent Reg. Ii 5 representation corrects or narrows an old anchor description, the 2026-09-08 revalidation section below is authoritative for the current comparison claim.
+The entries below preserve the 2026-09-06 controlled-collation audit. They are historical comparison evidence, not a second Reg. Ii 5 transcription owner. Where the later independent Reg. Ii 5 representation corrects or narrows an old anchor description, the 2026-09-08 revalidation and 2026-09-13 #166 refinement sections below are authoritative for the current comparison claim.
 
 | ID | Reg. Ii 4 target | Reg. Ii 5 exact locus | directly inspected Reg. Ii 5 anchor / phenomenon | class | Reg. Ii 4 reinspected? | Reg. Ii 4 changed? | finding |
 |---|---|---|---|---|---|---|---|
@@ -48,7 +48,7 @@ The entries below preserve the 2026-09-06 controlled-collation audit. They are h
 | C99-005 | `307v-10`–`307v-19` | fol. 61v between first prose paragraph and following `Das wolff ...` paragraph | no separate inspected counterparts for the Reg. Ii 4 Laßa/kirchner decree units | omission + structural difference | yes | no | Two Reg. Ii 4 decree units are absent as separate units from the Reg. Ii 5 sequence. |
 | C99-006 | `307v-20`–`308r-10` | fol. 61v–62r | long `Das wolff ... dem pfarrer ...` decree continuing across the folio turn | agreement + variant + order/structural difference + numeral/measure difference | yes | no | Strong long-form correspondence across different physical segmentation. |
 | C99-007 | `308r-11`–`308r-18` | fol. 62r middle paragraph | `Vnnd ob wolff ... oder seine nachkomung ...` unit | agreement + variant | yes | no | Direct structural correspondence; no same-hand inference. |
-| C99-008 | `308r-19`–`308v-06` | fol. 62r–62v | `Von des pfarrholtz ...` unit continuing across the folio turn | agreement + variant + order/structural difference | yes | no | Shared unit is redistributed across the Reg. Ii 5 folio turn. |
+| C99-008 | `308r-19`–`308v-06` | fol. 62r–62v | historical #99 grouped the adjacent `Von des pfarrholtz ...` / following paragraph range as one unit across the folio turn | agreement + variant + order/structural difference | yes | no | **Unit-boundary description superseded by the 2026-09-13 #166 refinement below.** |
 | C99-009 | `308v-07`–`308v-17` | fol. 62v middle paragraph | `Das wolff ... dem pfarrer ...` unit | agreement + variant | yes | no | Clear decree-level correspondence; old directly inspected lexical islands are not a current Reg. Ii 5 text owner. |
 | C99-010 | `308v-18`–`308v-22` | fol. 62v lower paragraph | `Von dem ...` unit ending in `gebrauchen lassen`-type wording | agreement + variant | yes | no | Clear decree-level correspondence. |
 | C99-011 | `308v-23`–`309r-05` | fol. 63r | historical #99 treated the top closing decree and following heading as the end of Knau before a new place | agreement + variant + structural difference | yes | no | **Boundary description superseded by 2026-09-08 revalidation below.** |
@@ -76,12 +76,27 @@ The current revalidation therefore compares **independently owned canonical witn
 | G4-004 | `307v-06`–`307v-09` | `61v-L12`–`61v-L16` | agreement + variant | Shared `Das dem pfarrer ...` decree unit. The cancellation at Reg. Ii 5 `61v-L16` remains a Reg. Ii 5 source phenomenon and is not normalized away by comparison. |
 | G4-005 | `307v-10`–`307v-19` | no separate corresponding unit between `61v-L16` and `61v-L17` | omission + structural difference | Reg. Ii 4 Laßa/kirchner decree units have no separate Reg. Ii 5 counterparts at this position. |
 | G4-006 | `307v-20`–`308r-10` | `61v-L17`–`62r-L11` | agreement + variant + resegmentation + numeral/measure difference | Long shared Wolff/pfarrer/Knau obligation unit spans a different folio boundary and physical lineation. Reg. Ii 5 residual quantities/names remain unresolved where its own graph does not decide them. |
-| G4-007 | `308r-11`–`308r-18` | `62r-L12`–`62r-L18` | agreement + variant | Shared `Vnnd ob wolff ... nachkomung ...` unit. Reg. Ii 5 surname spelling and the deleted word at `62r-L18` remain unresolved despite Reg. Ii 4 `Greffendorff` and clearer surrounding wording. |
-| G4-008 | `308r-19`–`308v-06` | `62r-L19`–`62v-L07` | agreement + variant + resegmentation + numeral difference | Shared `Von des pfarrholtz ...` obligation crosses the Reg. Ii 5 folio turn. Reg. Ii 5 Arabic `80` at `62r-L19`/`62v-L01` remains a written-sign fact; comparison does not create a value/unit interpretation. |
+| G4-007 | `308r-11`–`308r-L18` | `62r-L12`–`62r-L18` | agreement + variant | Shared `Vnnd ob wolff ... nachkomung ...` unit. Reg. Ii 5 surname spelling and the deleted word at `62r-L18` remain unresolved despite Reg. Ii 4 `Greffendorff` and clearer surrounding wording. |
+| G4-008 | `308r-L19`–`308r-L25` **and** `308v-L01`–`308v-L06` | `62r-L19`–`62r-L25` **and** `62v-L01`–`62v-L07` | agreement + variant + numeral difference | The two witnesses align as **two separately initialled adjacent decrees on both sides of the folio turn**. The earlier `resegmentation` label at this boundary was too coarse. Reg. Ii 5 preserves written Arabic `80` at `62r-L19` and `62v-L01`; comparison does not create a value/unit interpretation or merge the two decrees into one unit. |
 | G4-009 | `308v-07`–`308v-17` | `62v-L08`–`62v-L19` | agreement + variant | Shared Wolff/pfarrer decree. Current Reg. Ii 5 preserves large unresolved spans; old #99 lexical descriptions not present in the current Reg. Ii 5 diplomatic owner are not promoted merely because they fit the parallel witness. |
 | G4-010 | `308v-18`–`308v-22` | `62v-L20`–`62v-L25` | agreement + variant | Shared lower decree ending with the independently legible Reg. Ii 5 `gebrauchen lassen`. Parallel wording suggests tests but supplies no automatic completion of the remaining Reg. Ii 5 spans. |
 | G4-011 | `308v-23`–`308v-25` | `63r-L01`–`63r-L03` | agreement + variant | The short closing householder/pfarrrecht decree corresponds at unit level. Reg. Ii 4 remains less resolved; Reg. Ii 5 written `acht pfennig` is not copied back into Reg. Ii 4. |
 | G4-012 | `309r-01`–`309r-05` | `63r-L04`–`63r-L11` | no secure correspondence established + structural divergence | Reg. Ii 4 has a heavily obscured/overwritten closing block with surviving `Greffendorff`, `wolff`, `hat`, `mit ...`, and `Anno`-like material. Reg. Ii 5 instead has a separate display heading `⟦unclear heading: Zulage?⟧` followed by a Knawe/pfarrer provision naming `Visitatores`, `Burgel`, `zehen gulden`, `agustini`, `pfingsten` and an `xlvij` sign sequence. No line/unit equivalence is forced between these materially different endings. |
+
+### 2026-09-13 #166 G4-008 paragraph-boundary refinement
+
+Fresh #166 execution byte-checked a Human-supplied Reg. Ii 5 PDF against the canonical SHA and directly inspected p15/image 133 and p16/image 134 before reopening the controlled Reg. Ii 4 comparison.
+
+The source-side finding is decisive at the paragraph/decree level:
+
+- Reg. Ii 5 `62r-L19–L25` is a separately initialled paragraph ending at the foot of 62r;
+- Reg. Ii 5 `62v-L01–L07` begins with a new large initial and is a separate paragraph;
+- Reg. Ii 4 `308r-L19–L25` is `decree_h`, separately initialled;
+- Reg. Ii 4 `308v-L01–L06` is `decree_i`, also separately initialled.
+
+Therefore the current comparison no longer treats the folio-spanning address range as one resegmented decree. It is a convenient **correspondence range containing two aligned decree pairs**. The surviving cross-witness difference is wording/numeral detail, not a demonstrated paragraph-boundary resegmentation at this point.
+
+This refinement does not import Reg. Ii 4 wording into Reg. Ii 5, change either witness's diplomatic TSV, or establish copying direction, date, hand or priority.
 
 ### Correction of the historical #99 boundary description
 
@@ -102,24 +117,25 @@ The current Reg. Ii 4 witness suggests several tempting Reg. Ii 5 completions, e
 Result:
 
 - Reg. Ii 5 surname-like spelling remains unresolved; Reg. Ii 4 `Greffendorff` is not imported;
-- the dense Reg. Ii 5 62v clause remains unresolved except for the internally justified G3 promotion `62v-L11 = acker / zu seinem steinbruch gemacht`;
+- the dense Reg. Ii 5 62v clause remains unresolved except for internally justified target-supported islands; #166 uses its secure functional frame without promoting unresolved lexical bodies;
 - no Reg. Ii 4 wording resolves Reg. Ii 5 cancellations, accounting signs or remaining 62r prose spans without adequate Reg. Ii 5 graphical support;
 - Reg. Ii 5 `agustini`, `pfingsten`, `xlvij` and the `Zulage?` heading are not converted into normalized dates/year/section identity by the comparison;
-- no current Reg. Ii 5 diplomatic row requires a comparison-driven change beyond the already logged internal G3 promotion.
+- no current Reg. Ii 5 diplomatic row requires a comparison-driven change.
 
 ## Current controlled-collation consequences
 
-1. The witnesses show **selective/condensed textual correspondence with a substantial shared decree sequence**, demonstrated omissions and different physical segmentation.
+1. The witnesses show **selective/condensed textual correspondence with a substantial shared decree sequence**, demonstrated omissions and different physical segmentation elsewhere in the locus.
 2. Reg. Ii 5 omits as separate units substantial Reg. Ii 4 church-account/inventory and decree material near the beginning/middle of the locus.
-3. The current independent Reg. Ii 5 representation also reveals a lower-boundary divergence that historical #99 did not adequately describe: the Reg. Ii 5 `Zulage?`/Knawe provision has no secure current counterpart in the obscured Reg. Ii 4 309r closing block.
-4. Similarity does not establish verbatim copying, same hand, same date, direction of dependence or chronological priority.
-5. Physical line equivalence is unsafe; paragraph/decree/unit-level mapping is the appropriate collation level where the transmissions resegment material.
-6. No witness's unresolved diplomatic text is filled from the other witness without target-graph evidence.
+3. At G4-008, the two witnesses now support **two aligned adjacent decree pairs**, not one resegmented cross-folio unit; the earlier boundary-level `resegmentation` classification is superseded.
+4. The current independent Reg. Ii 5 representation also reveals a lower-boundary divergence that historical #99 did not adequately describe: the Reg. Ii 5 `Zulage?`/Knawe provision has no secure current counterpart in the obscured Reg. Ii 4 309r closing block.
+5. Similarity does not establish verbatim copying, same hand, same date, direction of dependence or chronological priority.
+6. Physical line equivalence is unsafe; paragraph/decree-level mapping is appropriate where the transmissions support it, and `resegmentation` remains warranted only where the witnesses actually differ structurally (for example G4-006).
+7. No witness's unresolved diplomatic text is filled from the other witness without target-graph evidence.
 
 ## G4 assessment
 
 **G4 controlled comparison is reached for the bounded pair Reg. Ii 4 fol. 306v–309r ↔ Reg. Ii 5 fol. 61v–63r.**
 
-Both witnesses are independently identified, independently represented and internally reviewed to the required level; corresponding units are explicitly mapped; agreements, variants, omissions, resegmentation, numeral/source-phenomenon differences and the divergent lower ending are recorded; externally suggestive corrections were not silently imported; and the transmission claim remains bounded to what the comparison demonstrates.
+Both witnesses are independently identified, independently represented and internally reviewed to the required level; corresponding units are explicitly mapped; agreements, variants, omissions, actual resegmentation elsewhere in the locus, numeral/source-phenomenon differences and the divergent lower ending are recorded; externally suggestive corrections were not silently imported; and the transmission claim remains bounded to what the comparison demonstrates.
 
 This G4 result is not a G5 critically consolidated text and not a G6 edition. Residual diplomatic uncertainties in either witness remain valid and discoverable.
