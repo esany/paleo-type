@@ -389,3 +389,260 @@ A complementary engineering criterion is:
 Retain this as a **concept candidate** following the current audits.
 
 Next work, if explicitly authorized, should be requirements/design analysis across competencies and fixtures rather than immediate implementation. Any material implementation must re-enter the canonical `methodology/maintenance.md` admission path at owner review / explicit implementation admission.
+
+---
+
+## 18. Pre-synthesis evidence programme — concept refinement 2026-09-14
+
+Refinement baseline: `main@3fa00c5dd52d0746c4c4584af3e1bed03dfcd737`.
+
+The second-level landscape audit strengthens one conclusion before synthesis: **`requirement exists` and `requirement is operationally effective` are different states**. A large label such as `activation gap` is still too coarse to design against.
+
+Before a solution synthesis, each consequential gap should therefore be reconstructed through the actual mechanism by which an already-known principle did or did not become effective.
+
+### 18.1 Activation mechanics as a third analytical level
+
+For each candidate gap, establish:
+
+```text
+what should have happened?
+when should it have happened?
+which information should have triggered it?
+which competence should have recognized the trigger?
+what output should that competence have produced?
+which competence/system/owner should have consumed that output?
+what authority should the output have carried?
+what actually happened instead?
+which part was observable mechanically?
+which part could have been enforced mechanically?
+which part required AI synthesis?
+which part required specialist or Human judgement?
+```
+
+Distinguish at least:
+
+```text
+trigger not recognized
+required information not visible
+relevant competence unavailable
+competence available but wrongly sequenced
+correct output produced but not handed off
+handoff changed meaning or authority
+rule existed but had no operational mechanism
+mechanism existed but no review/enforcement caught the breach
+```
+
+This refinement should prevent `activation` from becoming another catch-all root-cause label.
+
+### 18.2 Guardrail versus productive capability
+
+For each construction site, analyse both sides separately:
+
+1. **negative protection** — which invalid inference/action must be prevented?
+2. **positive capability** — what scientifically useful result must the system be able to produce?
+
+Examples:
+
+- A2: prevent addressability from creating priority **and** make relative scientific leverage among serious questions inspectable;
+- B4: prevent context from manufacturing graphemes **and** reactivate context later for hypothesis/question generation;
+- B5: prevent the Human Owner from being a substitute specialist **and** present an owner with genuinely specialist-prepared alternatives;
+- D2: prevent fresh-session pseudo-independence **and** enable review to descend to the evidence depth needed for the disputed premise.
+
+A future solution should not be judged adequate merely because it adds stronger prohibitions.
+
+### 18.3 Earliest preventable point
+
+For every demonstrated failure, identify the earliest stage where an already-valid requirement could realistically have prevented the error without relying on later clean-up.
+
+This should distinguish whether prevention belongs primarily to:
+
+- framing;
+- source/object formation;
+- competency activation;
+- semantic handoff;
+- owner decision;
+- execution;
+- review;
+- persistence/propagation;
+- technical promotion.
+
+The aim is to avoid solving early semantic failures with unnecessarily heavy downstream machinery.
+
+## 19. Independent competency analyses required before synthesis
+
+The next evidence gain should come from independent competence-specific analyses on shared fixtures, not from further internal taxonomy alone.
+
+| Competency family | Pre-synthesis research question | Required output |
+|---|---|---|
+| Research methodology / philosophy of inquiry | How do historians move from rich current understanding to serious, falsifiable and consequential new questions? How should unresolved, interesting, consequential, tractable and merely addressable uncertainties be distinguished? | solution-neutral functions/criteria of good candidate questions; no automatic score |
+| Source criticism / historical method | What makes a question evidentially distinguishable? When are hypotheses not separable at the available evidence ceiling? How deep must consequential review descend? | evidence-depth, dependence, falsification and conclusion-boundary model |
+| Diplomatics / archival science / codicology | How should Source, documentary object, physical structure, source-native unit, correspondence range, research locus and analysis unit be distinguished in practice? | disciplinary object/boundary analysis and counterexamples; not yet a software schema |
+| Palaeography | Which claims can visual writing evidence establish, which inputs are legitimate, and how must uncertainty be handed to semantic disciplines? | `visual evidence → sign/graph claim → uncertainty → allowed downstream use` boundary profile |
+| Editorial scholarship | Which distinctions are source observation, reading, representation, normalization and editorial decision? What can be formalized without flattening scholarly meaning? | representation/authority boundaries plus formalization limits |
+| Historical philology / lexicography | How may lexical/contextual resources generate candidates without acquiring reading authority? | `reading → lexical candidate → semantic interpretation` handoff with provenance/uncertainty |
+| Domain / institutional / social history | When and how should post-observation context become productive again? Which kinds of context generate useful hypotheses or comparator classes? | stage-dependent context-use analysis and question-generation functions |
+| Metrology / accounting / notation history where applicable | How are written sign, numerical value, unit, calculation function and institutional meaning kept separate while collaborating? | concrete multi-competence handoff fixture |
+| Decision science / value-of-information analysis | Which notions of consequence, discriminating power, expected information gain, tractability, cost and Project fit help compare historical questions without pseudoprecision? | qualitative comparison model; identify non-compensatory criteria and limits of scoring |
+| HCI / HITL / cognitive ergonomics | What information does the Human Owner actually need to make a priority decision, and which presentation effects create bias or rubber-stamping? | owner-decision-surface requirements and burden/failure criteria |
+| Requirements Engineering | For each candidate requirement: owner, trigger, inputs, output, authority, consumer, failure mode and assurance mechanism. | Requirement → trigger → mechanism → assurance matrix |
+| Information / data architecture | Which current facts are canonical, copied or derived; where do freshness and duplicated-state failures arise; what historical provenance must remain? | information-flow/ownership analysis and candidates for structured owner vs prose vs generated view |
+| Software architecture / RSE | Which stable distinctions can already be resolved, typed, generated or guarded deterministically, and which Markdown state exists only because tooling is absent? | automation/formalizability map; no implementation yet |
+| Verification engineering | Which historical errors can become regressions/properties, and which have no deterministic oracle? | executable-invariant candidates plus adversarial fixtures and explicit assurance limits |
+| AI systems / context engineering | How do context composition, ordering, stale derived surfaces and premise stacks alter AI framing/review? When does a fresh context reproduce the same unsupported premise? | empirical AI/context failure taxonomy and requirements for deterministic context assembly |
+| Security / Git promotion governance | Which admitted promotion invariants need actual GitHub enforcement? | bounded independent promotion-control plan; keep separate from scientific root-cause analysis |
+
+These analyses should report existing canonical coverage as well as missing capability. Their purpose is not to manufacture a new role architecture.
+
+## 20. Common interface-analysis questions
+
+Each scholarly and technical competence should answer the same small interface set so that synthesis can compare actual handoff needs without first imposing a universal ontology:
+
+1. Which claim/question types can this competence establish or lead?
+2. Which claim/question types can it explicitly not establish?
+3. Which inputs are required, with what evidence/status constraints?
+4. Which outputs does it produce?
+5. Which uncertainty must survive the handoff?
+6. What may legitimately follow from its output?
+7. What must explicitly not follow?
+8. At what stage/trigger should this competence become active?
+9. When should it relinquish lead authority?
+10. Which competence/system/owner normally consumes the output next?
+11. What evidence or counterexample would falsify/change the output?
+12. Which boundary facts are technically observable?
+13. Which boundary conditions can be checked deterministically?
+14. Where is AI synthesis useful but non-authoritative?
+15. Where must qualified specialist or Human judgement remain explicit?
+
+The resulting interface evidence may later justify typed contracts or tooling, but this analysis does not itself authorize a new template/schema family.
+
+## 21. Shared success/failure fixtures
+
+Use the same historical cases across competency analyses so differences can be compared rather than hidden by different examples.
+
+### 21.1 Success fixture: G2 Domain Review
+
+Analyse what made the sequence work:
+
+```text
+source-bound observation
+→ scholarly information established?
+→ applicable disciplinary requirements
+→ existing canonical owner?
+→ actual remaining gap
+→ consequence class
+→ smallest justified action / no action
+```
+
+Do not assume this also solves research-question generation; determine exactly which function G2 did and did not provide.
+
+### 21.2 Failure fixture: #165 / #171
+
+Reconstruct how:
+
+```text
+valid comparison/correspondence information
+→ over-promoted analysis unit
+→ derived premise persisted
+→ fresh review inherited the premise
+```
+
+For each competence, identify the earliest preventable point and missing activation/translation/review condition.
+
+### 21.3 Correction fixture: #169
+
+Use the resource-state correction to distinguish:
+
+- valid evidence/readiness requirement;
+- invalid promotion to blocker/roadmap authority;
+- successful later semantic/authority repair.
+
+This is an important test that a good requirement can be harmed by a bad cross-boundary consequence without the requirement itself being wrong.
+
+### 21.4 Open-framing fixture: post-#166 Project state
+
+Use the current state with rich source understanding and deliberately **no owner-selected next scholarly action** to test constructive framing without inheriting an already-selected microtask.
+
+This fixture is especially useful for A1/A5/B1/B2/B4/B5 because the system must generate and compare possible research continuations without turning them automatically into authority.
+
+## 22. Cross-source genericity test
+
+Reg. Ii 5 alone is insufficient for generic synthesis.
+
+Before generic promotion, include materially different source structures, for example:
+
+- an individual letter / narrative or person-centred source where argument, intention and correspondence context dominate;
+- a serial accounting/administrative source where numerical, tabular or repetitive structure dominates;
+- optionally a third source type with materially different transmission or material organization.
+
+For each, test:
+
+- which competencies are actually implicated;
+- whether question generation follows the same functional pattern;
+- whether claim-relative leadership remains useful;
+- whether context activation follows the same timing;
+- which proposed claim/object classes disappear or change;
+- which functions are truly generic rather than inherited from visitation/Knau.
+
+A concept that only fits the current rich fixture must remain Project/source-type specific.
+
+## 23. Analysis protocol before concept challenge
+
+To reduce confirmation bias, do not begin competence work by asking specialists to validate this concept.
+
+Prefer two passes:
+
+### Pass A — independent needs/evidence analysis
+
+Provide the relevant canonical state, direct evidence owners and shared success/failure fixtures. Ask each competence to analyse needs, boundaries, failure mechanisms and positive capabilities without treating this concept candidate as a target architecture.
+
+A fresh context is not sufficient evidence independence; consequential disputed premises must be traced to the appropriate direct evidence/owner depth.
+
+### Pass B — concept challenge
+
+Only after Pass A, compare the independent findings with this concept candidate:
+
+- supported;
+- missing;
+- overformalized;
+- redundant with an existing mature mechanism;
+- Knau/source-type specific;
+- unsafe authority transfer;
+- unnecessary documentation/process;
+- suitable for deterministic enforcement;
+- necessarily judgement-based.
+
+This should make the later synthesis evidence-driven rather than concept-confirming.
+
+## 24. Synthesis-readiness criteria
+
+Do not begin a material solution synthesis merely because the landscape is detailed. A synthesis is better justified when all of the following are available:
+
+1. independent specialist/competency evidence for the low-maturity cluster A1/A5/B1/B2/B4/B5;
+2. at least two materially different source fixtures beyond the current Reg. Ii 5 case;
+3. activation-mechanics reconstruction for the major demonstrated failures/successes;
+4. Requirements/RSE analysis separating normative gap, activation gap, mechanism gap and technical enforcement gap;
+5. an explicit allocation for relevant functions across `deterministic | AI-assisted | specialist judgement | Human-Owner decision`;
+6. HCI/decision evidence for what the Human Owner actually needs to choose between scholarly alternatives without specialist substitution or pseudoprecision;
+7. evidence that proposed generic mechanisms do not duplicate already-mature protections such as resource-authority separation or Domain↔Dev meaning preservation.
+
+At that point, the synthesis question becomes:
+
+> Which smallest common mechanisms address several independently evidenced gap types while preserving mature existing controls and leaving irreducible scholarly judgement explicit?
+
+Until then, further value should come primarily from competency research, cross-source fixtures, activation-mechanics reconstruction and formalizability analysis rather than from adding another internal taxonomy layer.
+
+## 25. Refined current disposition
+
+Retain the existing executable-transdisciplinary-system direction as a **challengeable concept candidate**, and retain this pre-synthesis programme as a design-evidence hypothesis for how to test it.
+
+This refinement still does **not**:
+
+- create a new METHOD rule;
+- create a new Requirement family;
+- authorize implementation;
+- create a role/agent registry;
+- authorize a new Project scope or `NEXT ACTION`;
+- require a new Markdown/template family;
+- assert that every listed competence must participate in every research task.
+
+Its function is narrower: define the evidence that should exist before a holistic system synthesis is trusted.
