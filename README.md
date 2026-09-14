@@ -61,11 +61,15 @@ Current orientation set:
 
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md` — reconstructs the transdisciplinary competency/authority architecture, role absorption and the research-framing gap;
 - `requirements/research-system-problem-landscape-2026-09-14.md` — maps the currently identified construction sites, maturity asymmetries, interactions and known correction side-effects **without reducing them to one root cause or solution**;
-- `requirements/pre-synthesis-research-program-2026-09-14.md` — current **non-normative Research-planning/evidence owner** for empirically testing the low-maturity findings, Requirement efficacy, transdisciplinary dependency patterns and cross-source generality before any Requirement/Capability/Solution synthesis; planning Issues are #183–#186;
-- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves a **non-normative concept candidate** for later challenge against the Research findings; it is not the primary evidence-collection protocol and not implementation admission;
+- `requirements/pre-synthesis-research-program-2026-09-14.md` — non-normative planning/history owner for the now **closed pre-synthesis Research phase**; it records the original #183–#186 programme and the later bounded #191 closure extension without authorizing downstream synthesis;
+- `requirements/shared-fixture-research-findings-2026-09-14.md` — frozen #184 internal/shared-fixture evidence on Requirement efficacy, failure mechanisms, dependency provenance and positive counterfixtures;
+- `requirements/cross-source-research-findings-2026-09-14.md` — frozen #185 heterogeneous-source comparison across Reg. Ii 5, Darwin correspondence and Washington historical accounts;
+- `requirements/pre-synthesis-research-integration-2026-09-14.md` — #186 decision-ready integration and hypothesis-by-hypothesis challenge of the pre-existing Concept Candidate;
+- `requirements/final-multi-question-generation-research-2026-09-14.md` — #191 final bounded experiment positively demonstrating plural serious question formation while retaining source-/purpose-sensitive limits; this closes the pre-synthesis Research phase;
+- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves the earlier **non-normative concept candidate** as design history/hypothesis; its specific framing-layer/schema/leadership/AI/control-plane forms are not established merely by the Research evidence and it remains non-authoritative;
 - `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md` — Project-specific fixture/review from which part of the cross-project evidence was derived.
 
-For another Project/repository, use these as **inspection maps, Research hypotheses or concept hypotheses**, not as inherited diagnoses or implementation authority: establish analogous local evidence before deriving requirements, priorities or system changes.
+For another Project/repository, use these as **inspection maps, Research findings or concept hypotheses according to each file's stated evidence status**, not as inherited diagnoses or implementation authority: establish analogous local evidence before deriving requirements, priorities or system changes.
 
 ## Where truth lives
 
