@@ -626,3 +626,61 @@ It does **not** authorize:
 - modification of historical fixture Issues such as #162 or #90 without separate authority.
 
 The immediate intended gain is **better evidence about what a later solution must address**, not further elaboration of the solution itself.
+
+## 26. Historical closure after the bounded #191 extension
+
+The original programme above was executed through #183–#186 and reached its stated decision-ready boundary. After that closure, the Human Owner admitted exactly one additional bounded Research step because #186 identified one remaining evidence gap capable of materially changing the imminent Capability/Requirement decision: **no fixture had yet positively demonstrated and compared several serious next research questions from the same rich state**.
+
+That extension was executed as:
+
+- #191 — `RESEARCH: Final bounded multi-question-generation and disciplinary challenge`;
+- persistent evidence owner: `requirements/final-multi-question-generation-research-2026-09-14.md`;
+- PR #192;
+- merge commit `3df61570a74b258570127b0a5650df89e7f6c596`;
+- PR `source-contract` #367 — PASS;
+- post-merge `source-contract` #368 — PASS.
+
+#191 used only the three already-established heterogeneous fixtures:
+
+1. post-#166 Reg. Ii 5;
+2. Darwin Correspondence Project Letter 5098;
+3. George Washington `Cash Accounts, December 1767`.
+
+It did not reopen broad Research. In particular it did not admit Human-Owner/HCI testing, AI/context experiments, property-by-property formalizability analysis, Capability/Requirement promotion, solution-space comparison, architecture or implementation.
+
+The bounded result closes the previous `absence-of-demonstration` gap in a qualified way:
+
+- plural serious next-question formation is positively demonstrated across all three fixtures;
+- substantive question formation remains strongly source-/purpose-sensitive;
+- recurring operations are thin and adaptive rather than evidence for one generic framing algorithm;
+- source-critical challenge can reformulate, weaken or reject apparently plausible questions;
+- unresolved details do not automatically qualify as serious next research questions;
+- generated questions remain proposals and acquire no Project/task authority from generation alone.
+
+The strongest recurring Research observations are consequence-sensitive relation finding, question-dependent adjustment of analytical scale/context, identification of discriminating or advancing evidence, source-critical reformulation, explicit evidence ceilings and preservation of several legitimate directions until purpose/priority authority acts.
+
+These are **Research findings**, not promoted generic Capabilities or Requirements.
+
+With #191 merged and validated, the **pre-synthesis Research phase is closed**.
+
+The durable historical dependency is therefore:
+
+```text
+initial audits / problem landscape
+        ↓
+#184 shared-fixture evidence ────────┐
+                                     ├→ #186 integration / Concept Challenge
+#185 cross-source evidence ─────────┘
+                                     ↓
+                         bounded evidence gap identified
+                                     ↓
+                    #191 multi-question-generation test
+                                     ↓
+                       PRE-SYNTHESIS RESEARCH CLOSED
+                                     ↓
+                    separate Human-Owner admission only
+                                     ↓
+                 Capability / Requirement synthesis
+```
+
+No later Synthesis/Requirements/Design phase is authorized by this closure record itself.
