@@ -53,6 +53,18 @@ Project existence/priority is not inferred from Source/File structure. Detailed 
 
 Old chat must never be required to reconstruct durable research state.
 
+## Cross-project analytical audit evidence
+
+`requirements/` also contains **non-normative audit/review evidence** that can make recurring research-system risks visible across Projects and, with fresh local evidence, in other repositories. These files are not METHOD, Requirement owners or automatic task authority.
+
+Current orientation set:
+
+- `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md` — reconstructs the transdisciplinary competency/authority architecture, role absorption and the research-framing gap;
+- `requirements/research-system-problem-landscape-2026-09-14.md` — maps the currently identified construction sites, maturity asymmetries, interactions and known correction side-effects **without reducing them to one root cause or solution**;
+- `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md` — Project-specific fixture/review from which part of the cross-project evidence was derived.
+
+For another Project/repository, use these as **inspection maps**, not as inherited diagnoses: establish analogous local evidence before deriving requirements, priorities or implementation changes.
+
 ## Where truth lives
 
 | Question | Canonical owner |
