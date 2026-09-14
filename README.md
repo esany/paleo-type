@@ -61,10 +61,11 @@ Current orientation set:
 
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md` — reconstructs the transdisciplinary competency/authority architecture, role absorption and the research-framing gap;
 - `requirements/research-system-problem-landscape-2026-09-14.md` — maps the currently identified construction sites, maturity asymmetries, interactions and known correction side-effects **without reducing them to one root cause or solution**;
-- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves a **non-normative concept candidate** for combining claim-relative scholarly competence, interface literacy, Human-Owner decision authority, AI synthesis and a deterministic software control plane; it is not implementation admission;
+- `requirements/pre-synthesis-research-program-2026-09-14.md` — current **non-normative Research-planning/evidence owner** for empirically testing the low-maturity findings, Requirement efficacy, transdisciplinary dependency patterns and cross-source generality before any Requirement/Capability/Solution synthesis; planning Issues are #183–#186;
+- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves a **non-normative concept candidate** for later challenge against the Research findings; it is not the primary evidence-collection protocol and not implementation admission;
 - `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md` — Project-specific fixture/review from which part of the cross-project evidence was derived.
 
-For another Project/repository, use these as **inspection maps or concept hypotheses**, not as inherited diagnoses or implementation authority: establish analogous local evidence before deriving requirements, priorities or system changes.
+For another Project/repository, use these as **inspection maps, Research hypotheses or concept hypotheses**, not as inherited diagnoses or implementation authority: establish analogous local evidence before deriving requirements, priorities or system changes.
 
 ## Where truth lives
 
