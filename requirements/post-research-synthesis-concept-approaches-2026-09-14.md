@@ -235,8 +235,10 @@ No assumption is made that exactly one change must emerge. Several independent p
 
 The repository already has general safeguards in `AGENTS.md`, `methodology/quality-and-learning.md`, `methodology/workflow.md` and `methodology/maintenance.md`. The following questions are **local acceptance criteria for this transition only**, not a new gate system.
 
+Their successful use in this pass is **not** evidence that they should become a generic gate, checklist family or Synthesis framework. Any later generalization would itself require separate evidence, Generic-Fit and the normal admission path.
+
 1. **Evidence-first** — Can every disposition be traced to a concrete frozen finding from #184/#185/#186/#191, or is its form really inherited from the old Concept Candidate?
-2. **Existing-owner-first** — Which current METHOD/Requirement owner already governs the need? Is semantics missing, or only efficacy in one mechanism?
+2. **Existing-owner-first** — Which current METHOD/Requirement owner already governs the need? Is semantics missing, or only efficacy in one mechanism? If no current owner adequately covers the need, is that absence itself evidenced rather than assumed?
 3. **No master-cause compression** — Have translation, timing, mechanism, freshness/propagation, enforcement and true normative gaps remained distinct, or were they recompressed into `Activation`/`Framing`?
 4. **No capability laundering** — Is `Capability` merely a provisional name for an evidenced recurring need, or has it silently become a component, role, stage, schema or API?
 5. **Negative outcome allowed** — Could the analysis honestly end with `no change`, `existing Requirement sufficient`, `specialist judgement`, `Human Owner judgement`, `Project/source-specific` or `insufficient evidence`?
@@ -250,15 +252,19 @@ The repository already has general safeguards in `AGENTS.md`, `methodology/quali
 
 ## 12. Three hard stop rules
 
-### Stop 1 — no evidence + owner + gap, no normative promotion
+### Stop 1 — no evidence + relevant owner-or-owner-gap + specific gap, no normative promotion
 
 If a proposed normative consequence cannot name:
 
 1. the concrete Research finding/evidence;
-2. the applicable canonical owner;
+2. either:
+   - the applicable or adjacent canonical METHOD/Requirement owner whose coverage or efficacy is being tested; **or**
+   - explicit evidence that no existing canonical owner adequately covers the demonstrated need and that this absence is itself part of the claimed normative gap;
 3. the specific unresolved gap;
 
 then do **not** promote it into a Requirement or Capability conclusion.
+
+Do not invent an owner merely to satisfy this rule. A genuine new Requirement need remains reachable only by demonstrating the relevant owner/normative absence rather than assuming it.
 
 ### Stop 2 — if a solution object is needed to explain the need, return to the need
 
