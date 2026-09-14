@@ -66,6 +66,7 @@ Current orientation set:
 - `requirements/cross-source-research-findings-2026-09-14.md` — frozen #185 heterogeneous-source comparison across Reg. Ii 5, Darwin correspondence and Washington historical accounts;
 - `requirements/pre-synthesis-research-integration-2026-09-14.md` — #186 decision-ready integration and hypothesis-by-hypothesis challenge of the pre-existing Concept Candidate;
 - `requirements/final-multi-question-generation-research-2026-09-14.md` — #191 final bounded experiment positively demonstrating plural serious question formation while retaining source-/purpose-sensitive limits; this closes the pre-synthesis Research phase;
+- `requirements/post-research-synthesis-concept-approaches-2026-09-14.md` — current **non-normative concept approaches** for a bounded post-Research Capability/Requirement synthesis, including mechanism-specific disposition, #186+#191 handling, authority separation, anti-regression questions and hard stop rules; it does not itself admit synthesis, architecture or implementation;
 - `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves the earlier **non-normative concept candidate** as design history/hypothesis; its specific framing-layer/schema/leadership/AI/control-plane forms are not established merely by the Research evidence and it remains non-authoritative;
 - `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md` — Project-specific fixture/review from which part of the cross-project evidence was derived.
 
