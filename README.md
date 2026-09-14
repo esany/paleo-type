@@ -61,6 +61,7 @@ Current orientation set:
 
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md` — reconstructs the transdisciplinary competency/authority architecture, role absorption and the research-framing gap;
 - `requirements/research-system-problem-landscape-2026-09-14.md` — maps the currently identified construction sites, maturity asymmetries, interactions and known correction side-effects **without reducing them to one root cause or solution**;
+- `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md` — derived post-Research orientation that reconciles the full construction-site/Level-2 map against #184–#191, #198 and the current #200/#201/#202 boundary; it explicitly prevents reading #202 as a proxy for every original construction site and creates no new priority or authority;
 - `requirements/pre-synthesis-research-program-2026-09-14.md` — non-normative planning/history owner for the now **closed pre-synthesis Research phase**; it records the original #183–#186 programme and the later bounded #191 closure extension without authorizing downstream synthesis;
 - `requirements/shared-fixture-research-findings-2026-09-14.md` — frozen #184 internal/shared-fixture evidence on Requirement efficacy, failure mechanisms, dependency provenance and positive counterfixtures;
 - `requirements/cross-source-research-findings-2026-09-14.md` — frozen #185 heterogeneous-source comparison across Reg. Ii 5, Darwin correspondence and Washington historical accounts;
