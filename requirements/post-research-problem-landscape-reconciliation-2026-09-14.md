@@ -2,7 +2,9 @@
 
 Status: **bounded analytical reconciliation / orientation only. Not normative METHOD, not a Requirement owner, not Project priority, not Project `NEXT ACTION`, not Concept admission, not implementation authority.**
 
-Reconciliation baseline: `main@da8800eb48a6f443819713852157964d33a82568`.
+Original reconciliation baseline: `main@da8800eb48a6f443819713852157964d33a82568`.
+
+Follow-up disposition: on 2026-09-15 the Human Owner selected Arc B in #201; #203 resolved the residual Requirements question as `existing-owner refinement warranted`; #204 REFINE→ACCEPTed the narrow METHOD wording; `methodology/historical-source-workflow.md` now owns the accepted rule and D-020 records the cross-project rationale. #202 remains deferred because a separate Concept is **not warranted at the current evidence state**.
 
 Primary owners/evidence consulted:
 
@@ -13,7 +15,10 @@ Primary owners/evidence consulted:
 - `requirements/pre-synthesis-research-integration-2026-09-14.md` (#186);
 - `requirements/final-multi-question-generation-research-2026-09-14.md` (#191);
 - `requirements/post-research-capability-requirement-synthesis-2026-09-14.md` (#198 / PR #199);
-- GitHub Issues #200, #201 and #202 for the current post-synthesis planning boundary.
+- #201 — completed post-synthesis Human-Owner work-arc decision;
+- #203 — completed residual Requirements resolution;
+- #204 — accepted/refined METHOD owner review;
+- `methodology/historical-source-workflow.md` + D-020 — current normative result.
 
 This file does not replace or restate those owners. It records one bounded reconciliation question that became salient after #198:
 
@@ -31,21 +36,29 @@ construction-site map
 → empirical Research (#183–#191)
 → Research integration / Concept Challenge (#186)
 → bounded Capability / Requirement synthesis (#198)
-→ post-synthesis planning boundary (#201)
+→ Human-Owner work-arc decision (#201)
+→ bounded Requirements resolution (#203)
+→ refined/accepted existing METHOD owner (#204)
+→ observe real use / efficacy
 ```
 
 The important qualification is that the later Research programme was never a requirement to empirically re-run every construction site as an independent workstream. It concentrated on the decision-relevant and under-evidenced parts of the landscape, while other sites were classified as already strongly covered, operational-efficacy problems, separate technical/governance gaps, hypotheses with insufficient evidence, or trigger-based later validation needs.
 
-Therefore this inference would be too strong:
+Therefore this inference is too strong:
 
 ```text
 #202 is the only remaining construction site
 ```
 
-A more accurate statement is:
+The current, more accurate statement is:
 
 ```text
-#202 is the one residual reusable need from #198 that currently survived strongly enough to deserve a deferred Concept comparison.
+#198 left one residual reusable Requirement/refinement candidate around plural
+pre-priority research-direction formation/challenge.
+
+#203 resolved that candidate as an existing-owner refinement.
+#204 accepted the refined METHOD wording.
+#202 is now only a trigger-based future Concept option, not a current residual solution step.
 
 This does not mean every other construction site is solved or irrelevant.
 ```
@@ -62,6 +75,8 @@ The Level-2 audit established more than a simple `Requirement present / absent` 
 
 This classification was not superseded by #198. The synthesis refined several sites through exactly this `Requirement existence != Requirement efficacy` lens while rejecting a single catch-all activation/root-cause model.
 
+The #203/#204 result is a concrete Type-III disposition: a thin generic property was sufficiently evidenced, but its best normative home was an existing METHOD owner rather than a new Requirement family or Capability.
+
 ## 3. What the empirical Research actually changed
 
 The pre-synthesis Research programme explicitly arose from the asymmetry identified by the landscape and Level 2: mature execution/assurance/restartability versus weaker empirical understanding of question formation, transdisciplinary interaction and Requirement efficacy.
@@ -73,6 +88,8 @@ The Research then materially changed the evidence position:
 - #186 rejected a single demonstrated master failure mechanism and challenged the earlier richer Concept Candidate as over-specified in several respects.
 - #191 closed one concrete absence-of-demonstration: a rich research state can yield several serious evidence-grounded research directions without requiring a universal Candidate schema, score, fixed competence topology, preferred AI allocation or control plane.
 - #198 then concluded that most high-value boundaries are already normatively present and that several failures are mechanism/efficacy failures rather than missing Requirements.
+- #203 established that the surviving plural pre-priority property is normatively under-explicit but belongs in the existing Research-question-control owner.
+- #204 refined the scope wording so an established Project boundary/purpose cannot be mistaken for an already selected next scholarly direction, then accepted the narrow METHOD change.
 
 The Research therefore narrowed and differentiated the original map; it did not collapse it into one new framing layer.
 
@@ -98,13 +115,27 @@ Examples include:
 
 These are not discharged merely because the rule exists. They remain mechanism-level review questions where later evidence or a concrete Concept/change makes them consequential.
 
-### Residual generic Concept-worthy need
+### Residual generic Requirements question — resolved through existing-owner refinement
 
-A1/A5 with parts of B1/B2/B5 yielded the one #198 residual reusable property now persisted as **#202 DEFERRED**:
+A1/A5 with parts of B1/B2/B5 yielded the one #198 residual reusable property:
 
 > when research-direction selection is actually needed, support formation and scholarly challenge of multiple serious evidence-grounded directions without converting them into task authority, while leaving material priority/scope selection with the Human Owner.
 
-#202 is not active unless explicitly selected through #201 or an equivalent Human-Owner decision.
+#203 determined that this property did not require a new REQ family or Capability. #204 refined and accepted the corresponding addition to `methodology/historical-source-workflow.md`:
+
+- trigger only when a material next-direction decision is actually needed;
+- trigger only when no Human-Owner-selected **next scholarly scope or research question is in force**;
+- where evidence supports plurality, form and source-critically challenge multiple serious evidence-grounded candidates;
+- preserve scholarly consequence, discriminating/advancing evidence and evidence ceilings, question-dependent scale/context and materially relevant disciplinary perspective;
+- candidates remain proposals and create no Project scope, priority or `NEXT ACTION`;
+- `no new scope selected` remains valid;
+- no fixed count, scoring, Candidate-Question schema, competence topology, preferred AI role or Research-Framing layer follows.
+
+### Deferred future Concept option
+
+#202 remains open only as a **trigger-based** future Concept option. It is not warranted merely because the residual property exists or because the METHOD rule has been accepted.
+
+Reconsider #202 only if real use of the settled METHOD rule later demonstrates a concrete recurring reusable mechanism/efficacy failure that ordinary application, freshness, review or specialist judgement does not explain.
 
 ### Separate technical enforcement class
 
@@ -123,7 +154,7 @@ These remain evidence-limited and should not be promoted into architecture or st
 
 ### Trigger-specific later validation, not a new broad Research programme
 
-#198 explicitly leaves later validation conditional on concrete downstream claims, for example:
+The synthesis leaves later validation conditional on concrete downstream claims, for example:
 
 - Human-Owner decision surface / comparison format → empirical Owner/HCI validation;
 - preferred AI role/context allocation → bounded AI/context comparison;
@@ -132,26 +163,37 @@ These remain evidence-limited and should not be promoted into architecture or st
 - persistent representation/schema → semantic-loss + Generic-Fit test;
 - automation/router/agent proposal → demonstrated workload/failure plus D-016 admission.
 
-This means `Research closed` did not mean `all empirical questions answered`. It meant no further **broad pre-synthesis Research programme** was required before a concrete downstream Concept could reveal which targeted validation is actually necessary.
+`Research closed` therefore did not mean `all empirical questions answered`. It meant no further **broad pre-synthesis Research programme** was required. Targeted validation remains claim-triggered.
 
-## 5. Current planning boundary
+## 5. Current planning / authority boundary after #204
 
-Current GitHub state must remain authoritative for work selection:
+Current GitHub/repository state is:
 
 - #198 / PR #199: bounded synthesis **COMPLETE**;
-- #201: **CURRENT repository-planning / Human-Owner work-arc decision surface**;
-- #202: residual Concept candidate **DEFERRED**;
-- #200: governance/planning lifecycle-hook finding **DEFERRED unless explicitly selected**;
+- #201: Arc-B Human-Owner planning decision **COMPLETE / CLOSED**;
+- #203: bounded Requirements resolution **COMPLETE** with `existing-owner refinement warranted`;
+- #204: Human-Owner REFINE→ACCEPT decision for the narrow METHOD wording;
+- `methodology/historical-source-workflow.md`: accepted rule is canonical;
+- `DECISIONS.md` D-020: accepted cross-project methodological rationale;
+- #202: **DEFERRED / NOT WARRANTED YET**, trigger-based on later demonstrated recurring mechanism failure;
+- #200: governance/planning lifecycle-hook finding **DEFERRED unless separately selected**;
+- #90: separate technical-enforcement issue, not activated by Arc B;
 - #162: coordination strand **PAUSED / DEFERRED**;
-- Reg. Ii 5 Project `STATUS.md`: no owner-selected scholarly `NEXT ACTION` at this transition.
+- Reg. Ii 5 Project `STATUS.md`: Arc B created no scholarly `NEXT ACTION`.
 
-This reconciliation does **not** choose an arc under #201, activate #202/#200/#162, create scholarly scope, or alter any Project `NEXT ACTION`.
+The current authorized posture for this research-system strand is therefore:
+
+```text
+accepted METHOD rule
+→ observe real use / efficacy
+→ STOP
+```
+
+No Concept, software or further system design is authorized merely by this reconciliation.
 
 ## 6. Reconciliation feedback
 
-The scientific/evidential chain is stronger than the current high-level planning view makes immediately visible.
-
-The repository now has good durable owners for:
+The scientific/evidential chain and its operative projection are now aligned more closely:
 
 ```text
 problem landscape
@@ -159,38 +201,36 @@ problem landscape
 → primary Research
 → integration
 → synthesis
-→ current work-arc decision
+→ Human-Owner arc selection
+→ Requirements resolution
+→ accepted existing-owner METHOD refinement
+→ real-use observation
 ```
 
-What is comparatively weak is one **post-Research whole-map orientation surface** answering, for each original construction site:
+The key lesson is not that the original construction-site map reduced to one system feature. Rather, different sites reached different dispositions: preserve, efficacy review, existing-owner refinement, separate enforcement, evidence-limited hypothesis or claim-triggered future validation.
 
-```text
-original finding
-→ Level-2 state type
-→ empirical Research effect
-→ #198 disposition
-→ current owner / status
-```
+The smallest durable conclusion is now:
 
-That visibility weakness should not be mistaken for proof that a new registry, roadmap engine, lifecycle schema or permanent reconciliation framework is needed.
+> **Do not treat #202 as a proxy for the original construction-site landscape or as the automatic next step after #203. The one surviving plural pre-priority property was absorbed as a narrow existing-owner METHOD refinement. #202 becomes relevant only if later real use demonstrates a concrete recurring mechanism failure.**
 
-The smallest current conclusion is simply:
+This remains a derived orientation. The operative norm lives in `methodology/historical-source-workflow.md`; rationale lives in D-020; work-state/trigger metadata lives in the relevant Issues.
 
-> **Do not treat #202 as a proxy for the entire original construction-site landscape. Read #202 as the single residual Concept-worthy need from #198, while the rest of the landscape remains distributed across preserved norms, efficacy questions, separate technical/governance owners, evidence-limited hypotheses and trigger-based validation dependencies.**
+## 7. Durable consequence and deliberate boundaries
 
-If later work actually requires a complete per-site reconciliation matrix, it should be produced as a bounded derived orientation from the existing owners and should remain non-authoritative. Its creation must not itself select a work arc or promote dormant findings into active scope.
+The original 2026-09-14 reconciliation itself created no norm or priority. Subsequent explicitly authorized work changed the downstream state as follows:
 
-## 7. Durable consequence of this note
+- Arc B was selected through #201;
+- #203 completed the Requirements disposition;
+- #204 REFINE→ACCEPTed the narrow METHOD refinement;
+- `methodology/historical-source-workflow.md` and D-020 were updated accordingly;
+- affected orientation/planning surfaces were refreshed for restartability.
 
-This note records the reconciliation feedback only.
+Deliberate non-changes remain:
 
-Deliberate non-changes:
-
-- no METHOD or Requirement change;
-- no `DECISIONS.md` entry;
+- no new `requirements/domain-requirements.tsv` row merely to duplicate the METHOD owner;
 - no Milestone creation;
-- no Project `STATUS.md` change;
-- no #201 Human-Owner work-arc selection;
-- no activation of #200, #202 or #162;
-- no new Research programme;
-- no solution architecture or implementation admission.
+- no Project `STATUS.md` or scholarly `NEXT ACTION` change from Arc B;
+- no activation of #200, #90 or #162;
+- no new broad Research programme;
+- no #202 activation;
+- no Candidate-Question schema, scoring/ranking, fixed competence topology, preferred AI allocation, Research-Framing layer, solution architecture or software implementation.
