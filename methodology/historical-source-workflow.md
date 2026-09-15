@@ -98,6 +98,10 @@ Use this chain:
 
 `research goal → research question → evidence needed → disciplinary method → claim type → permitted conclusion`
 
+**Pre-priority research-direction formation.** When a material decision about the next research direction is actually needed and no Human-Owner-selected **next scholarly scope or research question is in force**, do not infer priority from unresolved, available or easily addressable work. Where the current evidence supports more than one serious direction, form and scholarly challenge multiple evidence-grounded candidate directions before priority selection. For each materially serious candidate, make explicit enough of its scholarly consequence, discriminating or advancing evidence and evidence ceiling, question-dependent analytical scale/context, and materially relevant disciplinary perspective to permit source-critical comparison; source criticism may refine, weaken or reject the candidate itself. Candidate directions are proposals only: they do not create Project scope, priority or `NEXT ACTION`, and `no new scope selected` remains a valid Human-Owner outcome. This requirement does not prescribe a fixed number of candidates, scoring/ranking, a persistent Candidate-Question object, a fixed competence topology, a preferred AI role or a separate Research-Framing layer.
+
+The trigger is deliberately narrow: do not generate candidate research directions automatically at every terminal state.
+
 Before expanding a project, ask:
 - what question or gate requirement is being served;
 - what evidence can actually answer it;
