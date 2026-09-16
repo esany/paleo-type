@@ -28,7 +28,7 @@ Canonical historical/documentary Source identity, exact digital File identity, r
 
 `projects/<id>/`
 
-Durable scholarly state for a purpose-established investigation: Project purpose/scope, documentary Source anchor, Project→Source research use, evidence bindings, transcription/analysis/decisions and restart state.
+Durable scholarly state for a purpose-established investigation: Project purpose/scope, documentary Source anchor, Project→Source research use, evidence bindings, transcription/analysis/decisions and research state.
 
 Project existence/priority is not inferred from Source/File structure. Detailed semantics live in `methodology/project-lifecycle.md`.
 
@@ -61,7 +61,7 @@ The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-rea
 
 **Route A is COMPLETE and RESOLVED at the current evidence state.** Its P2 Requirements resolution (#200), bounded P3B Concept (#211), explicitly admitted two-file METHOD implementation and Result Review (#212) are complete. `methodology/maintenance.md` now owns the narrow programme/phase/result-transition reconciliation semantics and `methodology/workflow.md` contains only the referential execution hook. The terminal review is persisted in `requirements/research-system-programme-continuity-result-review-2026-09-16.md`.
 
-The current programme cursor is again **#206**, now for separate Route-B / #90 disposition and subsequent programme-completion review. No further Route-A work is current. Route B remains independent and is not active until explicitly selected; if selected, its first stage is only the fresh technical audit defined by #206/#90, not immediate configuration.
+**Route B / #90 has now been explicitly selected and its fresh technical audit is COMPLETE.** The audit confirmed that PR-only promotion and required CI are not enforced, classic branch protection is disabled, and the current private-repository Ruleset capability is unavailable under the observed GitHub plan response. The current programme cursor is again **#206** for Human-Owner disposition of the platform-capability prerequisite and any bounded downstream D-016 Concept/admission before configuration. No Route-B protection configuration has yet been admitted or performed.
 
 A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The programme-continuity evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
 
