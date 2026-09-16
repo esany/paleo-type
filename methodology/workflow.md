@@ -313,6 +313,8 @@ result persisted in canonical owner
 → stale prior prose is not treated as authority
 ```
 
+When a consequential stage/result transition falls inside an already-established broader programme or planning context and can materially affect programme completion/maturity, selectable/current work, or materially affected restart/navigation state, apply the **programme/phase/result-transition reconciliation owned by `maintenance.md`** and return its disposition to the existing programme/planning owner before treating the handoff as complete. This execution hook does not redefine that rule and does not create a programme owner, priority or `NEXT ACTION`.
+
 Freshness is not authority. A synchronized repository can still reproduce an unauthorized priority or blocker, so target authority and dependency authority must be checked separately.
 
 ## Review points in the flow
