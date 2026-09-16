@@ -55,9 +55,15 @@ Old chat must never be required to reconstruct durable research state.
 
 ### Research-system programme navigation
 
-For cross-project research-system programme work, use GitHub Issue **#206** as the current programme/process navigation owner. It owns the programme-stage/cursor map and points to the currently authorized substantive work owner; do not reconstruct programme priority from the newest closed Issue, a local D-016 `PASS`, or old chat.
+For cross-project research-system programme work, use GitHub Issue **#206** as the current programme/process navigation owner. It owns the programme-stage/cursor map; do not reconstruct programme priority from the newest closed Issue, a local D-016 `PASS`, or old chat.
 
-A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The current programme-level continuity/coverage evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`; any generic lifecycle consequence remains subject to its own evidence/Requirements/Concept authority boundary.
+The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-ready result is persisted in:
+
+`requirements/research-system-programme-synthesis-2026-09-15.md`
+
+The current programme cursor is therefore a **Human-Owner decision point**, not active downstream execution. #207 returned two independent selectable routes — a bounded #200-family P2 Requirements-resolution question for programme/phase continuity and a separate #90 deterministic promotion-enforcement arc — but **neither route is activated merely by the synthesis**. Selecting neither at this time remains valid.
+
+A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The programme-continuity evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
 
 ## Cross-project analytical audit evidence
 
@@ -66,17 +72,18 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 Current orientation set:
 
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md` — reconstructs the transdisciplinary competency/authority architecture, role absorption and the research-framing gap;
-- `requirements/research-system-problem-landscape-2026-09-14.md` — maps the currently identified construction sites, maturity asymmetries, interactions and known correction side-effects **without reducing them to one root cause or solution**;
-- `requirements/research-system-programme-continuity-audit-2026-09-16.md` — later audit showing how locally correct Research/Requirements/change arcs could still lose whole-programme coverage/cursor salience; distinguishes local arc completion, programme completion, bounded restartability and programme-cursor restartability without promoting a new lifecycle framework;
-- `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md` — derived post-Research orientation reconciling the full construction-site/Level-2 map against #184–#191, #198 and the completed Arc-B result; refreshed to route current whole-programme continuation through #206/#207 rather than treating Arc-B `observe → STOP` as programme completion;
-- `requirements/pre-synthesis-research-program-2026-09-14.md` — non-normative planning/history owner for the now **closed pre-synthesis Research phase**; it records the original #183–#186 programme and the later bounded #191 closure extension without authorizing downstream synthesis;
+- `requirements/research-system-problem-landscape-2026-09-14.md` — maps construction sites, maturity asymmetries, interactions and known correction side-effects without reducing them to one root cause or solution;
+- `requirements/research-system-programme-continuity-audit-2026-09-16.md` — shows how locally correct Research/Requirements/change arcs could still lose whole-programme coverage/cursor salience; distinguishes local arc completion, programme completion, bounded restartability and programme-cursor restartability;
+- `requirements/research-system-programme-synthesis-2026-09-15.md` — completed #207 P3A whole-map capability/evidence synthesis: derives the bounded programme capability map, composition findings, completion criteria and decision-ready downstream routing without activating those routes;
+- `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md` — derived orientation reconciling the construction-site/Level-2 map against #184–#191, #198, Arc B, #208 and the completed #207 synthesis;
+- `requirements/pre-synthesis-research-program-2026-09-14.md` — non-normative planning/history owner for the closed pre-synthesis Research phase;
 - `requirements/shared-fixture-research-findings-2026-09-14.md` — frozen #184 internal/shared-fixture evidence on Requirement efficacy, failure mechanisms, dependency provenance and positive counterfixtures;
 - `requirements/cross-source-research-findings-2026-09-14.md` — frozen #185 heterogeneous-source comparison across Reg. Ii 5, Darwin correspondence and Washington historical accounts;
 - `requirements/pre-synthesis-research-integration-2026-09-14.md` — #186 decision-ready integration and hypothesis-by-hypothesis challenge of the pre-existing Concept Candidate;
-- `requirements/final-multi-question-generation-research-2026-09-14.md` — #191 final bounded experiment positively demonstrating plural serious question formation while retaining source-/purpose-sensitive limits; this closes the pre-synthesis Research phase;
-- `requirements/post-research-synthesis-concept-approaches-2026-09-14.md` — non-normative concept approaches used to bound the admitted post-Research synthesis, including mechanism-specific disposition, #186+#191 handling, authority separation, anti-regression questions and hard stop rules;
-- `requirements/post-research-capability-requirement-synthesis-2026-09-14.md` — completed #198 bounded Capability/Requirement disposition: most findings are already normatively covered or mechanism-specific efficacy issues; one residual Requirement/refinement candidate survived around plural evidence-grounded pre-priority research-direction formation/challenge. #203 resolved it as an existing-owner refinement and #204 REFINE→ACCEPTed the narrow METHOD addition; #205 later completed the missing D-016 Concept/loss/result-review functions with PASS. That local result does not establish whole-programme completion;
-- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves the earlier **non-normative concept candidate** as design history/hypothesis; its specific framing-layer/schema/leadership/AI/control-plane forms are not established merely by the Research evidence and it remains non-authoritative;
+- `requirements/final-multi-question-generation-research-2026-09-14.md` — #191 final bounded experiment positively demonstrating plural serious question formation while retaining source-/purpose-sensitive limits;
+- `requirements/post-research-synthesis-concept-approaches-2026-09-14.md` — non-normative approaches used to bound the admitted post-Research synthesis;
+- `requirements/post-research-capability-requirement-synthesis-2026-09-14.md` — completed #198 bounded Capability/Requirement disposition; #203–#205 subsequently resolved and validated the narrow Arc-B METHOD refinement;
+- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — earlier non-normative concept candidate retained only as challenged design history/hypothesis;
 - `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md` — Project-specific fixture/review from which part of the cross-project evidence was derived.
 
 For another Project/repository, use these as **inspection maps, Research findings or concept hypotheses according to each file's stated evidence status**, not as inherited diagnoses or implementation authority: establish analogous local evidence before deriving requirements, priorities or system changes.
