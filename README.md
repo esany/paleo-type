@@ -61,7 +61,7 @@ The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-rea
 
 **Route A is COMPLETE and RESOLVED at the current evidence state.** Its P2 Requirements resolution (#200), bounded P3B Concept (#211), explicitly admitted two-file METHOD implementation and Result Review (#212) are complete. `methodology/maintenance.md` now owns the narrow programme/phase/result-transition reconciliation semantics and `methodology/workflow.md` contains only the referential execution hook. The terminal review is persisted in `requirements/research-system-programme-continuity-result-review-2026-09-16.md`.
 
-**Route B / #90 has now been explicitly selected and its fresh technical audit is COMPLETE.** The audit confirmed that PR-only promotion and required CI are not enforced, classic branch protection is disabled, and the current private-repository Ruleset capability is unavailable under the observed GitHub plan response. The current programme cursor is again **#206** for Human-Owner disposition of the platform-capability prerequisite and any bounded downstream D-016 Concept/admission before configuration. No Route-B protection configuration has yet been admitted or performed.
+**Route B / #90 has completed Analysis, Requirements and Concept.** The fresh audit confirmed the deterministic promotion-enforcement gap. #214 resolved the fixed properties, and #215 selected one classic `main` Branch Protection rule as the smallest coherent Concept, conditional on eligible private-repository protection capability and an authorized GitHub Administration surface. The current programme cursor is **#206** for Human-Owner `B-ADMIT | B-REFINE | B-REJECT | B-DEFER`. No Route-B protection configuration has yet been admitted or performed.
 
 A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The programme-continuity evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
 
@@ -75,6 +75,8 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 - `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md`;
 - `requirements/research-system-programme-continuity-concept-2026-09-16.md`;
 - `requirements/research-system-programme-continuity-result-review-2026-09-16.md`;
+- `requirements/default-branch-promotion-enforcement-requirements-resolution-2026-09-16.md`;
+- `requirements/default-branch-promotion-enforcement-concept-2026-09-16.md`;
 - `requirements/research-system-programme-synthesis-2026-09-15.md`;
 - `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md`;
 - `requirements/pre-synthesis-research-program-2026-09-14.md`;
