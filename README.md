@@ -59,9 +59,9 @@ For cross-project research-system programme work, use GitHub Issue **#206** as t
 
 The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-ready result is persisted in `requirements/research-system-programme-synthesis-2026-09-15.md`.
 
-**Route A / #200 bounded P2 Requirements resolution is now COMPLETE** with terminal disposition `existing-owner refinement warranted`. The persistent result is `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md`. No Concept or METHOD change was activated by that result.
+**Route A has now completed both its bounded P2 Requirements stage (#200) and its separately selected bounded P3B Concept stage (#211).** P2 concluded `existing-owner refinement warranted`; the Concept selected a coordinated thin existing-owner refinement in which `methodology/maintenance.md` would own the generic semantic obligation and `methodology/workflow.md` would receive only a narrow referential execution hook. Persistent results are `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md` and `requirements/research-system-programme-continuity-concept-2026-09-16.md`.
 
-The current programme cursor has returned to **#206 for programme-completion / downstream-disposition review**. Route A's bounded P3B Concept is eligible but not activated; Route B / #90 remains a separate decision-ready deterministic promotion-enforcement residual and is likewise not active until explicitly selected. Repository semantics infer no ordering between them.
+The current programme cursor is again **#206**, now for Human-Owner review / explicit implementation admission and downstream disposition. No Route-A METHOD write has occurred. Route B / #90 remains a separate decision-ready deterministic promotion-enforcement residual and is not active until explicitly selected.
 
 A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The programme-continuity evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
 
@@ -73,6 +73,7 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 - `requirements/research-system-problem-landscape-2026-09-14.md`;
 - `requirements/research-system-programme-continuity-audit-2026-09-16.md`;
 - `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md`;
+- `requirements/research-system-programme-continuity-concept-2026-09-16.md`;
 - `requirements/research-system-programme-synthesis-2026-09-15.md`;
 - `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md`;
 - `requirements/pre-synthesis-research-program-2026-09-14.md`;
