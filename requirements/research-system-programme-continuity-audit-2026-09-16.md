@@ -2,7 +2,7 @@
 
 Status: **cross-project analytical/reconciliation evidence only; not normative METHOD, not a formal Requirement owner, not Project priority, not Project `NEXT ACTION`, not Concept admission and not implementation authority.**
 
-Execution/audit Issue: #208. Current programme/process navigation: #206. Current substantive P3A synthesis owner: #207.
+Execution/audit Issue: #208 (complete). Current programme/process navigation: #206. P3A whole-map synthesis: #207 (complete). Current programme state is the Human-Owner decision point returned by #207; no downstream route is active merely because the synthesis identified it.
 
 ## 1. Audit question
 
@@ -31,9 +31,9 @@ Primary evidence and owners:
 - #201, #203, #204 and #205 for the selected Arc-B path and its local D-016 result;
 - `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md`;
 - #200 for the separate lifecycle/planning-activation finding;
-- #206 for the current programme/process map;
-- #207 for the current authorized P3A whole-map synthesis;
-- `methodology/workflow.md`, `methodology/maintenance.md` and `methodology/quality-and-learning.md` for current execution, change-lifecycle, learning and restartability semantics.
+- #206 for the programme/process map;
+- #207 / `requirements/research-system-programme-synthesis-2026-09-15.md` for the completed P3A whole-map synthesis;
+- `methodology/workflow.md`, `methodology/maintenance.md` and `methodology/quality-and-learning.md` for execution, change-lifecycle, learning and restartability semantics.
 
 ## 3. The original problem analysis was not the main failure
 
@@ -107,23 +107,12 @@ What still prevents programme-level completion?
 
 Consequences observed in the repository history:
 
-1. **Local arc completion could be mistaken for programme completion.**  
-   The #203–#205 Arc-B result legitimately ended with local `observe real use / STOP`, but that did not dispose the rest of the original construction-site map.
-
-2. **Task restartability did not guarantee programme-cursor restartability.**  
-   `workflow.md` strongly reconstructs bounded task owner/stage/cursor/completion state, while a corresponding whole-programme cursor had to be reconstructed later in #206.
-
-3. **Result Review feedback was not guaranteed to return to a live programme map.**  
-   D-016 closes a material change arc. It does not by itself prove that the wider research-system programme is complete or update a programme capability map unless such an owner exists.
-
-4. **Existing normativity could be read too readily as operative adequacy.**  
-   Several original sites were explicitly `Requirement present / efficacy or activation uncertain`. A rule's existence therefore could not by itself discharge the capability question.
-
-5. **Positive scholarly abilities remained less operationally visible than guardrails.**  
-   Negative protections were strong, while actual transdisciplinary synthesis, productive context reactivation, premise-depth review and specialist-prepared owner decision support remained less demonstrated or less visibly activated.
-
-6. **Lean-down assurance was stronger for data/state loss than for cognitive/review-function loss.**  
-   The problem landscape already warned that correct semantic simplification can remove a useful scholarly/review function with the discarded structure.
+1. **Local arc completion could be mistaken for programme completion.** The #203–#205 Arc-B result legitimately ended with local `observe real use / STOP`, but that did not dispose the rest of the original construction-site map.
+2. **Task restartability did not guarantee programme-cursor restartability.** `workflow.md` strongly reconstructs bounded task owner/stage/cursor/completion state, while a corresponding whole-programme cursor had to be reconstructed later in #206.
+3. **Result Review feedback was not guaranteed to return to a live programme map.** D-016 closes a material change arc. It does not by itself prove that the wider programme is complete.
+4. **Existing normativity could be read too readily as operative adequacy.** Several original sites were explicitly `Requirement present / efficacy or activation uncertain`.
+5. **Positive scholarly abilities remained less operationally visible than guardrails.** Negative protections were strong, while actual transdisciplinary synthesis, productive context reactivation, premise-depth review and specialist-prepared owner decision support remained less demonstrated or less visibly activated.
+6. **Lean-down assurance was stronger for data/state loss than for cognitive/review-function loss.** Correct simplification can still remove a useful scholarly/review function.
 
 This is a **programme continuity/composition finding**, not evidence for one universal root cause.
 
@@ -140,23 +129,11 @@ The post-#198 trajectory demonstrates the failure mode:
 → local Arc-B boundary = observe real use / STOP
 ```
 
-That local result was valid for Arc B.
+That local result was valid for Arc B. It did **not** establish whole-programme maturity.
 
-It did **not** establish:
+#206 was subsequently required to reconstruct explicitly that local `STOP` closes only the current arc. #207 then performed the missing whole-map P3A synthesis.
 
-```text
-all original P0 material problem families adequately resolved
-or
-whole research-system programme sufficiently mature
-```
-
-#206 was subsequently required to reconstruct explicitly that:
-
-> local `STOP` closes only the current arc; it does not establish programme completion.
-
-#207 was then admitted to perform the missing whole-map P3A synthesis.
-
-Therefore the durable analytical distinctions are:
+The durable analytical distinctions are:
 
 ```text
 local arc completion != programme completion
@@ -165,130 +142,80 @@ Requirement present != demonstrated operative capability
 local Result Review PASS != whole-programme adequacy
 ```
 
-## 7. What is already repaired for the current programme
+## 7. What #207 established
 
-The current repository has already made two important repairs:
+The completed P3A synthesis is persisted at:
 
-### #206 — programme/process navigation
+`requirements/research-system-programme-synthesis-2026-09-15.md`
 
-#206 now owns the current research-system programme/process map and explicitly separates:
+It did not validate a master architecture. It derived a bounded programme capability/evidence map and returned a mixed decision-ready result:
 
-- P0 problem analysis;
-- P1 empirical Research;
-- P2 Requirements / efficacy disposition;
-- P3A programme synthesis;
-- P3B bounded Concept;
-- P4 owner admission;
-- P5 development;
-- P6 tests/loss checks;
-- P7 Result Review and programme feedback.
+- most capabilities/families are `ADEQUATE / PRESERVE`, `ADEQUATE NORM / EFFICACY OBSERVATION`, specialist/Human judgement, or trigger-/evidence-limited;
+- programme/phase continuity and lifecycle activation is sufficiently evidenced to warrant a selectable bounded **P2 Requirements-resolution** route under the #200 family, while `no generic change` remains valid;
+- #90 remains a separate selectable **deterministic enforcement** route;
+- #202 remains not warranted and #162 remains paused/trigger-bound;
+- no Project scholarly scope or `NEXT ACTION` was created.
 
-It explicitly states that local `STOP` does not establish programme completion.
+This closes the current P3A synthesis function. It does not activate either returned route.
 
-### #207 — current P3A whole-map synthesis
+## 8. Original/problem-derived families that remain bounded by evidence
 
-#207 is authorized to:
+The P3A result preserves these distinctions:
 
-- reconstruct a smallest evidence-derived capability space;
-- build a capability/evidence/disposition matrix;
-- test composition rather than only local correctness;
-- define programme-level completion criteria;
-- produce one immediate next-stage route for each non-adequate gap;
-- preserve evidence ceilings and anti-bias boundaries;
-- stop before downstream activation.
-
-This is the correct current repair. It does not yet prove that a new generic METHOD/lifecycle rule is required.
-
-## 8. Original/problem-derived families that #207 must not silently discharge
-
-At minimum the current P3A synthesis must explicitly disposition the following families rather than infer adequacy from the existence of a rule or the closure of Arc B:
-
-| Family | Minimum question for #207 |
+| Family | Programme disposition after #207 |
 |---|---|
-| B1 transdisciplinary synthesis / activation | Is operative synthesis demonstrated where consequential, or only governing normativity/expertise availability? |
-| B4 productive context/domain reactivation | Is stage-/claim-appropriate reactivation demonstrably available, or only contamination protection? |
-| D2 review depth / premise testing | Can consequential review actually descend to the contested premise/evidence depth, or is only independent-session/review intent present? |
-| A3 object / analysis-unit distinction | Is the distinction reliably activated at real framing/execution transitions, not merely known conceptually? |
-| A8 support dominance | Can local support/process delta mask lack of scholarly delta, and is that sufficiently controlled? |
-| C2 lean-down function loss | Are cognitive/review functions checked when structures are simplified, or mainly data/work-state loss? |
-| C5 / #200 planning and phase continuity | Does current lifecycle practice reliably expose a programme cursor and selectable downstream state at phase transitions? |
-| F1 / #90 deterministic promotion enforcement | Is the known technical property actually enforced? Keep this orthogonal to scientific framing. |
-| A1/A5/B5 after D-020 | Does the accepted norm work in real decision situations, and what owner-facing scholarly synthesis is still unsupported? |
-
-For each family, preserve at least:
-
-```text
-normativity present
-operative efficacy evidenced
-operative efficacy untested
-mechanism failure evidenced
-evidence insufficient
-```
-
-Do not turn these analytical states into a new controlled state machine.
+| B1 transdisciplinary synthesis / activation | adequate norm / efficacy observation; no fixed topology |
+| B4 productive context/domain reactivation | adaptive claim-dependent practice; observe / trigger |
+| D2 review depth / premise testing | adequate norm / efficacy observation; targeted review on real failure |
+| A3 object / analysis-unit distinction | covered within adaptive inquiry; no universal object model |
+| A8 support dominance | bounded execution controls preserved; no new system layer |
+| C2 lean-down cognitive/review-function preservation | trigger-based / defer until material simplification or repeated lost-function evidence |
+| C5 / #200 planning and phase continuity | decision-ready P2 Requirements question if Human Owner selects it |
+| F1 / #90 deterministic promotion enforcement | independent decision-ready enforcement route if selected |
+| A1/A5/B5 after D-020 | norm accepted; real-use efficacy observation; #202 only on its explicit trigger |
 
 ## 9. Programme-level completion consequence
 
-A future programme-level `STOP` is justified only when the current P3A synthesis can account for the material original problem families and state why each remaining gap is one of:
+The programme is **not yet judged sufficiently mature / no further current system work**, because #207 returned two material decision-ready residuals that still require Human-Owner disposition: the #200-family P2 question and the independent #90 enforcement route.
 
-- adequately covered and evidenced at current consequence level;
-- an accepted real-use observation/trigger residual;
-- evidence-limited but compatible with the Governing Objective;
-- separately owned and appropriately routed;
-- a targeted Research/Requirements/Concept/enforcement need.
+This does not mean both must be implemented. Programme completion can still follow from a bounded Requirements conclusion of `no generic change` for #200 and/or an explicit re-disposition of #90 where justified. What is prohibited is silently treating those material gaps as already complete.
 
-Programme completion must **not** be inferred from:
-
-- closure of the most recent Issue;
-- one successful local D-016 Result Review;
-- existence of a relevant METHOD or Requirement;
-- lack of an immediately admitted Concept;
-- absence of a Project scholarly `NEXT ACTION`;
-- clean repository consistency alone.
+Programme completion must not be inferred from closure of the latest Issue, one local Result Review PASS, existence of a METHOD/Requirement, lack of an immediately admitted Concept, absence of a Project scholarly `NEXT ACTION`, or clean repository consistency alone.
 
 ## 10. Relationship to #200
 
 #200 already records a narrower but related finding: existing planning/decision surfaces can have adequate semantics yet weak positive lifecycle activation at phase transitions.
 
-The present audit strengthens the evidence by showing a programme-level consequence:
+This audit strengthens that evidence with a programme-level consequence. #207 has now dispositioned it as sufficiently mature for a **selectable P2 Requirements-resolution route**, not as an already accepted METHOD change or Concept.
 
-```text
-weak phase/programme continuity
-→ local work graph remains understandable
-→ whole original problem coverage becomes less operationally salient
-→ a local residual arc can become the practical proxy for programme completion
-```
-
-This supports #200's existing-normativity / operational-efficacy interpretation.
-
-It does **not** automatically activate #200 or prove that a new generic lifecycle rule is necessary. #207 must first disposition whether programme/phase continuity is now adequate for the current programme, remains an efficacy observation, or warrants a later P2/P3B pass.
+No programme state machine, roadmap registry, mandatory Milestone, dashboard, new Requirement family or standing Programme Review follows automatically.
 
 ## 11. Evidence ceiling and non-goals
 
-Evidence is strong enough to require explicit handling inside the already-authorized #207 synthesis because the failure and repair occurred in this programme.
-
-Evidence is **not yet sufficient** to require any of the following generically:
+No generic architecture is established by this audit or by #207. In particular there is no authority here for:
 
 - programme state machine;
 - roadmap registry;
 - mandatory Milestone;
-- dashboard or generated execution-state store;
+- dashboard or separate execution-state store;
 - new Requirement family;
 - new METHOD rule;
-- standing `Programme Review` bureaucracy;
+- standing Programme Review bureaucracy;
 - universal agent/role topology;
 - automatic activation of #200/#202/#90/#162.
 
-`no new generic change` remains a valid #207 downstream disposition if current evidence supports it.
+`no new generic change` remains a valid outcome of a future selected #200-family P2 pass.
 
 ## 12. Current routing
 
 ```text
 #206 CURRENT programme/process navigation
-→ #207 CURRENT / READY P3A whole-map synthesis
-   consumes this audit as programme evidence
-→ explicit capability/evidence/completion/routing result
-→ Human Owner selects any justified downstream bounded route
+→ #207 P3A whole-map synthesis COMPLETE
+→ Human-Owner decision point
+   ├─ select #200-family P2 Requirements resolution
+   ├─ select independent #90 enforcement arc
+   ├─ select both as independent bounded routes
+   └─ select neither at this time
 ```
 
-No Project scholarly scope or `NEXT ACTION` is created by this audit.
+No Project scholarly scope or `NEXT ACTION` is created by this audit or by the P3A synthesis.
