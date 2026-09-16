@@ -4,7 +4,7 @@ Status: **bounded analytical reconciliation / orientation only. Not normative ME
 
 Original reconciliation baseline: `main@da8800eb48a6f443819713852157964d33a82568`.
 
-Current programme reconciliation refreshed on 2026-09-16 after #206/#207 and the programme-continuity audit #208 / `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
+Current programme reconciliation refreshed on 2026-09-16 after #206/#207 and #208.
 
 ## Current routing note
 
@@ -18,23 +18,28 @@ The Arc-B chain is complete locally:
 → Arc-B local boundary: observe real use / efficacy → STOP
 ```
 
-That local `STOP` is **not** the current posture of the whole research-system programme.
+That local `STOP` is **not** the posture of the whole research-system programme.
 
-Current programme navigation/execution is:
+The later programme path is now:
 
 ```text
 #206 CURRENT programme/process map
-→ #207 CURRENT / READY bounded P3A whole-map programme synthesis
-→ capability/evidence/completion/routing result
-→ Human-Owner selection of any justified downstream bounded route
+→ #207 bounded P3A whole-map programme synthesis COMPLETE
+→ decision-ready mixed result
+→ Human-Owner selection among bounded downstream routes, or neither
 ```
 
-#208 records the later programme-continuity audit explaining why this distinction had to be reconstructed explicitly. #202 remains deferred/not warranted; #200, #90 and #162 remain separate and are not activated by this reconciliation.
+The #207 synthesis is persisted in `requirements/research-system-programme-synthesis-2026-09-15.md`. It returned two independent material routes without activating either:
+
+- programme/phase continuity and lifecycle activation → selectable bounded P2 Requirements-resolution route under the #200 family, with `no generic change` still valid;
+- #90 default-branch promotion enforcement → selectable independent deterministic enforcement arc.
+
+#202 remains deferred/not warranted; #162 remains paused/trigger-bound. Reg. Ii 5 still has no scholarly `NEXT ACTION` created by this programme work.
 
 ## Primary owners/evidence consulted
 
 - `requirements/research-system-problem-landscape-2026-09-14.md` — original construction-site map plus Level-2 needs/requirements audit;
-- `requirements/pre-synthesis-research-program-2026-09-14.md` — empirical Research programme derived from the landscape/Level-2 gaps;
+- `requirements/pre-synthesis-research-program-2026-09-14.md` — empirical Research programme;
 - `requirements/shared-fixture-research-findings-2026-09-14.md` (#184);
 - `requirements/cross-source-research-findings-2026-09-14.md` (#185);
 - `requirements/pre-synthesis-research-integration-2026-09-14.md` (#186);
@@ -46,10 +51,10 @@ Current programme navigation/execution is:
 - #205 — completed post-write D-016 process reconciliation, scholarly loss/regression checks and Result Review;
 - `methodology/historical-source-workflow.md` + D-020 — current normative Arc-B result;
 - #206 — current research-system programme/process navigation owner;
-- #207 — current authorized P3A whole-map programme-synthesis owner;
-- #208 / `requirements/research-system-programme-continuity-audit-2026-09-16.md` — programme continuity / local-stop audit.
+- #208 / `requirements/research-system-programme-continuity-audit-2026-09-16.md` — programme continuity / local-stop audit;
+- #207 / `requirements/research-system-programme-synthesis-2026-09-15.md` — completed programme-level capability/evidence synthesis and routing.
 
-This file does not replace or restate those owners. It answers the bounded orientation question:
+This file does not replace those owners. It answers the bounded orientation question:
 
 > **What happened to the full construction-site map after Research and local downstream disposition, and what is the current programme-level continuation state?**
 
@@ -70,11 +75,11 @@ construction-site map
 → refined/accepted existing METHOD owner (#204)
 → METHOD write
 → post-write D-016 Concept/loss/result-review reconciliation (#205) — PASS
+→ programme-continuity audit (#208)
+→ P3A whole-map synthesis (#207) — COMPLETE
 ```
 
-This chain closed **one local Type-III residual**. It did not itself provide a positive whole-programme capability/maturity judgement.
-
-The later #206/#207 work exists because the programme still needed a distinct P3A synthesis answering what the whole evidence/Requirements map means for research-system maturity and completion.
+The #203–#205 chain closed one local Type-III residual. #207 then supplied the distinct whole-programme capability/maturity judgement that was previously missing.
 
 Therefore these inferences are too strong:
 
@@ -89,15 +94,16 @@ Arc-B Result Review PASS
 → whole research-system programme complete
 ```
 
-The accurate statement is:
+The accurate statement after #207 is:
 
 ```text
 #203/#204/#205 resolved and validated one residual reusable Type-III need.
-#202 is only a trigger-based future mechanism Concept option.
-Other original problem families reached different states: preserve, efficacy observation,
-separate enforcement, evidence-limited hypothesis, Project/source-specific finding,
-or later claim-triggered validation.
-#207 must now account for those states at programme level.
+#202 remains only a trigger-based future mechanism Concept option.
+#207 accounted for the wider map and found most families adequate/preserve,
+efficacy-observation, evidence-limited or trigger-based.
+Two independent material residuals remain decision-ready:
+#200-family programme/phase continuity at P2, and #90 deterministic enforcement.
+Neither is activated automatically.
 ```
 
 ## 2. Level-2 state model still matters
@@ -110,11 +116,9 @@ The Level-2 audit established more than a binary `Requirement present / absent` 
 - **Type IV — Requirement clear, technical enforcement absent:** treat as bounded enforcement rather than a scientific-framing problem.
 - **Type V — risk/hypothesis observed, evidence insufficient for promotion:** keep as a review/research risk until a real fixture warrants stronger action.
 
-This classification was not superseded by #198 or by Arc B.
+This classification was not superseded by #198, Arc B or #207.
 
-#203/#204/#205 are one concrete Type-III disposition: a thin generic property was sufficiently evidenced, its best normative home was an existing METHOD owner, and the final wording passed a later D-016 preservation/result review.
-
-The #208 audit adds a programme-level warning: **local resolution of one type/class does not discharge the other original classes unless a programme synthesis explicitly accounts for them.**
+#203/#204/#205 are one concrete Type-III disposition. #207 now identifies #200-family programme continuity as a decision-ready Requirements question and #90 as a separate Type-IV-style enforcement route, while retaining other families as adequate, efficacy-observation or trigger-based according to their evidence ceiling.
 
 ## 3. What the empirical Research changed
 
@@ -124,98 +128,44 @@ Research materially changed the evidence position:
 
 - #184 showed that superficially similar failures had different mechanisms: semantic/evidence translation (#165), authority promotion (#169), stale derived orientation (#162) and technical enforcement (#90) must not be compressed into one cause.
 - #185 showed across heterogeneous source structures that analytical scale and context timing are question-/claim-/evidence-dependent; transdisciplinary interaction can be constitutive; epistemic independence is not organizational isolation.
-- #186 rejected a single demonstrated master failure mechanism and challenged the earlier rich Concept Candidate as over-specified in several respects.
-- #191 closed one concrete absence-of-demonstration: a rich research state can yield several serious evidence-grounded research directions without requiring a Candidate schema, score, fixed competence topology, preferred AI allocation or control plane.
+- #186 rejected a single demonstrated master failure mechanism and challenged the earlier rich Concept Candidate as over-specified.
+- #191 demonstrated plural serious question formation while rejecting a required Candidate schema, score, fixed competence topology, preferred AI allocation or control plane.
 - #198 concluded that most high-value boundaries were already normatively present and that several failures were mechanism/efficacy failures rather than missing Requirements.
-- #203 established that the surviving plural pre-priority property was normatively under-explicit but belonged in the existing Research-question-control owner.
-- #204 refined the scope wording and accepted the narrow METHOD change.
-- #205 reconstructed the missing bounded D-016 Concept function and completed scholarly loss/regression + Result Review with PASS.
+- #203–#205 resolved the surviving plural pre-priority property through the existing Research-question-control owner and validated the change.
+- #208 demonstrated the programme-level continuity/coverage consequence of locally correct but globally incomplete closure.
+- #207 integrated the complete map into a programme-level capability/evidence disposition.
 
-Research therefore **narrowed and differentiated** the original map. It did not collapse it into one new framing layer and did not establish programme completion.
+Research therefore **narrowed and differentiated** the original map. It did not collapse it into one new framing layer.
 
-## 4. Post-#198 disposition of the broader landscape
+## 4. Post-#207 disposition of the broader landscape
 
-The following remains a routing/orientation summary, not a replacement owner table.
+The current programme synthesis groups the evidence into seven non-canonical capability families: evidence/semantic integrity; adaptive transdisciplinary inquiry; research-direction formation/owner preparation; premise-depth review/specialist validation; bounded execution/support subsidiarity; canonical/restartable continuity; deterministic enforcement.
 
-### Strongly preserved / no new normativity indicated
+The important disposition classes are:
 
-Examples include resource-state versus task authority (A9), much of Domain↔Dev subsidiarity (B6), large parts of bounded restartability (D1), Generic-Fit (C4), evidence/uncertainty separation and `candidate direction != authorized scope`.
+### Adequate / preserve
 
-Default consequence: preserve and test actual use; do not create duplicate Requirements merely for reassurance or visibility.
+Evidence/semantic-authority integrity, bounded execution/support subsidiarity and task-level canonical/restartable state have strong current owners and no demonstrated generic missing mechanism that warrants new work.
 
-### Existing normativity, but operational efficacy remains a live programme question
+### Adequate norm / efficacy observation
 
-Examples include:
+Adaptive transdisciplinary inquiry/context/scale, D-020 pre-priority direction formation and premise-depth/specialist-review semantics are sufficiently governed that no current generic change is justified. Their real-use efficacy remains observable and concrete future failures may trigger targeted work.
 
-- A3 analysis-unit/object distinctions at actual framing/execution transitions;
-- B1 transdisciplinary synthesis visibility/activation;
-- B4 productive context/domain reactivation after contamination-sensitive observation;
-- D2 evidence-depth / premise testing in review;
-- A8 support dominance / scholarly-delta visibility;
-- C2 lean-down cognitive/review-function preservation;
-- C5 derived-surface freshness / propagation / phase continuity.
+### Trigger-based / evidence-limited
 
-These are **not discharged merely because the rule exists**. #207 must distinguish `normativity present` from demonstrated operative efficacy, untested efficacy, concrete mechanism failure and insufficient evidence.
+Broader lean-down cognitive/review-function loss, #162 coordination, HCI decision-surface design, preferred AI allocation and formalizability questions remain below the threshold for active generic work unless their explicit trigger becomes consequential.
 
-### Residual generic Requirements question — locally resolved through existing-owner refinement
+### Decision-ready Requirements question
 
-A1/A5 with parts of B1/B2/B5 yielded the #198 residual reusable property:
+Programme/phase continuity and positive lifecycle activation now have repeated evidence and a demonstrated programme-level consequence. #207 therefore routes the #200 family to a bounded P2 Requirements-resolution question if the Human Owner selects it. The result may still be `current semantics sufficient / no generic change`.
 
-> when research-direction selection is actually needed, support formation and scholarly challenge of multiple serious evidence-grounded directions without converting them into task authority, while leaving material priority/scope selection with the Human Owner.
+### Decision-ready deterministic enforcement
 
-#203 determined that this property did not require a new REQ family or Capability. #204 refined and accepted the addition to `methodology/historical-source-workflow.md`; #205 loss-checked and retained it.
+#90 remains an independent promotion-enforcement gap. The desired semantic boundary is sufficiently clear, while current inspected `main` still lacks classic branch protection/required checks. Any implementation requires its own current technical audit and appropriate D-016 discipline.
 
-This is now a normative result. Its **real-use efficacy** remains a separate observation question.
+## 5. Programme-continuity learning
 
-### Deferred future Concept option
-
-#202 remains open only as a trigger-based future reusable-mechanism Concept option. It is not the D-016 Concept stage of the already-written METHOD refinement and is not warranted merely because the rule exists.
-
-Reconsider #202 only if real use later demonstrates the concrete recurring reusable mechanism/efficacy failure defined there.
-
-### Separate technical enforcement class
-
-F1/#90 remains a clear case where the desired semantic boundary is sufficiently known and technical promotion enforcement is missing. This is orthogonal to scientific framing and programme continuity.
-
-### Partially evidenced / still hypothesis-level
-
-Examples include:
-
-- cognitive/review-function loss during lean-down beyond the directly evidenced cases;
-- C6 need for broader audit-supersession/premise-stack machinery;
-- any universal claim that context is systematically under-reactivated across Projects;
-- any universal fixed collaboration/leadership topology.
-
-These remain evidence-limited and must not be promoted into architecture or standing process without an adequate fixture/trigger.
-
-### Trigger-specific later validation
-
-Later validation remains conditional on concrete downstream claims, for example:
-
-- Human-Owner decision surface / comparison format → empirical Owner/HCI validation;
-- preferred AI role/context allocation → bounded AI/context comparison;
-- deterministic formalization → property-specific formalizability/regression analysis;
-- contested disciplinary norm → qualified specialist review;
-- persistent representation/schema → semantic-loss + Generic-Fit test;
-- automation/router/agent proposal → demonstrated workload/failure plus D-016 admission.
-
-`Research closed` never meant `all empirical questions answered`.
-
-## 5. Programme-continuity learning after #205
-
-The later #208 audit identified the missing/under-operationalized middle explicitly:
-
-```text
-strong high-level purpose/problem evidence
-+
-strong local task/change owners
-
-but no continuously active whole-programme coverage/cursor owner
-```
-
-This allowed a locally correct chain to become a practical proxy for the whole programme.
-
-The analytical distinctions now preserved are:
+The durable analytical distinctions are:
 
 ```text
 local arc completion != programme completion
@@ -224,7 +174,7 @@ Requirement present != demonstrated operative capability
 local Result Review PASS != whole-programme adequacy
 ```
 
-This does **not** establish that the repository needs a permanent programme state machine or new METHOD layer. It establishes that the already-authorized #207 synthesis must explicitly disposition programme continuity/coverage and the remaining original efficacy families before any programme-level completion claim.
+#206/#207 repaired this programme by creating an explicit P3A coverage/completion view. #207 did **not** decide that a permanent programme state machine or new METHOD layer is required. That narrower generic question is precisely what the selectable #200-family P2 route would resolve.
 
 ## 6. Current planning / authority boundary
 
@@ -234,27 +184,29 @@ Current state:
 - #201: Arc-B Human-Owner planning decision **COMPLETE / CLOSED**;
 - #203: bounded Requirements resolution **COMPLETE**;
 - #204: Human-Owner REFINE→ACCEPT for the narrow METHOD wording **COMPLETE**;
-- #205: local D-016 process reconciliation + scholarly loss/regression + Result Review **COMPLETE / PASS**;
+- #205: local D-016 reconciliation + scholarly loss/regression + Result Review **COMPLETE / PASS**;
 - `methodology/historical-source-workflow.md` / D-020: accepted Arc-B normative result;
+- #208: programme-continuity audit **COMPLETE**;
+- #207: P3A whole-map programme synthesis **COMPLETE**;
 - #202: **DEFERRED / NOT WARRANTED YET**;
-- #200: governance/planning lifecycle-hook finding **DEFERRED unless separately selected**;
-- #90: separate technical enforcement issue;
-- #162: coordination strand **PAUSED / DEFERRED**;
-- #206: **CURRENT programme/process navigation owner**;
-- #207: **CURRENT / READY P3A whole-map programme synthesis**;
-- #208: bounded programme-continuity audit/reconciliation evidence;
-- Reg. Ii 5 Project state: Arc B created no scholarly `NEXT ACTION`.
+- #200: **decision-ready selectable P2 problem family, not active until Human-Owner selection**;
+- #90: **decision-ready selectable independent enforcement route, not active merely because #207 identified it**;
+- #162: **PAUSED / DEFERRED**;
+- #206: **CURRENT programme/process navigation and Human-Owner decision surface**;
+- Reg. Ii 5 Project state: no scholarly `NEXT ACTION` created by this system work.
 
-Therefore the current research-system posture is:
+Therefore the current programme posture is:
 
 ```text
-Arc B local change arc = COMPLETE / observe real use
-
-whole research-system programme = NOT YET given a completion judgement
-→ #207 must perform P3A whole-map synthesis
+#207 P3A COMPLETE
+→ Human-Owner decision point
+   ├─ select #200-family P2 Requirements resolution
+   ├─ select #90 independent enforcement arc
+   ├─ select both as independent bounded routes
+   └─ select neither at this time
 ```
 
-No #202 Concept, software, METHOD/REQ change, #90 implementation, #200 activation, #162 reactivation or Project scholarly scope follows automatically.
+No downstream route is active until selected under current authority.
 
 ## 7. Reconciliation feedback
 
@@ -279,7 +231,7 @@ The required discipline is narrower:
 
 > **A local terminal result must return its demonstrated consequence to a current programme-level coverage view before anyone infers programme completion.**
 
-For the current programme, #206/#207 provide that view. Whether this deserves a later generic lifecycle/maintenance refinement remains an open efficacy/Requirements question, not an accepted rule.
+For the current programme, #207 has now performed that synthesis. The remaining question is which, if any, returned bounded route the Human Owner selects.
 
 ## 8. Durable boundaries
 
@@ -288,11 +240,9 @@ This reconciliation creates no norm or scholarly priority.
 Deliberate non-changes:
 
 - no new `requirements/domain-requirements.tsv` row;
-- no METHOD or D-xxx change from this audit;
+- no METHOD or D-xxx change from #207 itself;
 - no Milestone requirement;
 - no Project `STATUS.md` or scholarly `NEXT ACTION` change;
-- no activation of #200, #90, #162 or #202;
+- no automatic activation of #200, #90, #162 or #202;
 - no new broad Research programme;
 - no Candidate-Question schema, scoring/ranking, fixed competence topology, preferred AI allocation, Research-Framing layer, programme registry/state machine, solution architecture or software implementation.
-
-The next substantive programme work remains #207.
