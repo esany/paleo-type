@@ -53,6 +53,12 @@ Project existence/priority is not inferred from Source/File structure. Detailed 
 
 Old chat must never be required to reconstruct durable research state.
 
+### Research-system programme navigation
+
+For cross-project research-system programme work, use GitHub Issue **#206** as the current programme/process navigation owner. It owns the programme-stage/cursor map and points to the currently authorized substantive work owner; do not reconstruct programme priority from the newest closed Issue, a local D-016 `PASS`, or old chat.
+
+A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The current programme-level continuity/coverage evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`; any generic lifecycle consequence remains subject to its own evidence/Requirements/Concept authority boundary.
+
 ## Cross-project analytical audit evidence
 
 `requirements/` also contains **non-normative audit/review evidence** that can make recurring research-system risks visible across Projects and, with fresh local evidence, in other repositories. These files are not METHOD, Requirement owners or automatic task authority.
@@ -61,14 +67,15 @@ Current orientation set:
 
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md` — reconstructs the transdisciplinary competency/authority architecture, role absorption and the research-framing gap;
 - `requirements/research-system-problem-landscape-2026-09-14.md` — maps the currently identified construction sites, maturity asymmetries, interactions and known correction side-effects **without reducing them to one root cause or solution**;
-- `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md` — derived post-Research orientation reconciling the full construction-site/Level-2 map against #184–#191 and #198; its later follow-up records the #203/#204 Requirements→METHOD disposition and preserves #202 as trigger-based rather than treating it as a proxy for every original construction site;
+- `requirements/research-system-programme-continuity-audit-2026-09-16.md` — later audit showing how locally correct Research/Requirements/change arcs could still lose whole-programme coverage/cursor salience; distinguishes local arc completion, programme completion, bounded restartability and programme-cursor restartability without promoting a new lifecycle framework;
+- `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md` — derived post-Research orientation reconciling the full construction-site/Level-2 map against #184–#191, #198 and the completed Arc-B result; refreshed to route current whole-programme continuation through #206/#207 rather than treating Arc-B `observe → STOP` as programme completion;
 - `requirements/pre-synthesis-research-program-2026-09-14.md` — non-normative planning/history owner for the now **closed pre-synthesis Research phase**; it records the original #183–#186 programme and the later bounded #191 closure extension without authorizing downstream synthesis;
 - `requirements/shared-fixture-research-findings-2026-09-14.md` — frozen #184 internal/shared-fixture evidence on Requirement efficacy, failure mechanisms, dependency provenance and positive counterfixtures;
 - `requirements/cross-source-research-findings-2026-09-14.md` — frozen #185 heterogeneous-source comparison across Reg. Ii 5, Darwin correspondence and Washington historical accounts;
 - `requirements/pre-synthesis-research-integration-2026-09-14.md` — #186 decision-ready integration and hypothesis-by-hypothesis challenge of the pre-existing Concept Candidate;
 - `requirements/final-multi-question-generation-research-2026-09-14.md` — #191 final bounded experiment positively demonstrating plural serious question formation while retaining source-/purpose-sensitive limits; this closes the pre-synthesis Research phase;
 - `requirements/post-research-synthesis-concept-approaches-2026-09-14.md` — non-normative concept approaches used to bound the admitted post-Research synthesis, including mechanism-specific disposition, #186+#191 handling, authority separation, anti-regression questions and hard stop rules;
-- `requirements/post-research-capability-requirement-synthesis-2026-09-14.md` — completed #198 bounded Capability/Requirement disposition: most findings are already normatively covered or mechanism-specific efficacy issues; one residual Requirement/refinement candidate survived around plural evidence-grounded pre-priority research-direction formation/challenge. #203 resolved it as an existing-owner refinement and #204 REFINE→ACCEPTed the narrow METHOD addition; no Concept is currently warranted;
+- `requirements/post-research-capability-requirement-synthesis-2026-09-14.md` — completed #198 bounded Capability/Requirement disposition: most findings are already normatively covered or mechanism-specific efficacy issues; one residual Requirement/refinement candidate survived around plural evidence-grounded pre-priority research-direction formation/challenge. #203 resolved it as an existing-owner refinement and #204 REFINE→ACCEPTed the narrow METHOD addition; #205 later completed the missing D-016 Concept/loss/result-review functions with PASS. That local result does not establish whole-programme completion;
 - `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md` — preserves the earlier **non-normative concept candidate** as design history/hypothesis; its specific framing-layer/schema/leadership/AI/control-plane forms are not established merely by the Research evidence and it remains non-authoritative;
 - `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md` — Project-specific fixture/review from which part of the cross-project evidence was derived.
 
@@ -165,6 +172,7 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether required evidence is merely identifiable/reproducible or actually ready for the target task;
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
-- which GitHub items are only planning/review metadata.
+- which GitHub items are only planning/review metadata;
+- for active research-system programme work, which programme/process owner carries the current cursor and why a local arc terminal state does or does not affect programme completion.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
