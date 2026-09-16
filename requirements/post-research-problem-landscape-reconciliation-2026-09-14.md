@@ -4,9 +4,34 @@ Status: **bounded analytical reconciliation / orientation only. Not normative ME
 
 Original reconciliation baseline: `main@da8800eb48a6f443819713852157964d33a82568`.
 
-Follow-up disposition: on 2026-09-15 the Human Owner selected Arc B in #201; #203 resolved the residual Requirements question as `existing-owner refinement warranted`; #204 REFINE→ACCEPTed the narrow METHOD wording and the change was written; #205 subsequently reconciled the missing D-016 Concept/loss/result-review functions post hoc and completed with `PASS — accepted METHOD retained`. `methodology/historical-source-workflow.md` owns the accepted rule and D-020 records the cross-project rationale. #202 remains deferred because a separate reusable-mechanism Concept is **not warranted at the current evidence state**.
+Current programme reconciliation refreshed on 2026-09-16 after #206/#207 and the programme-continuity audit #208 / `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
 
-Primary owners/evidence consulted:
+## Current routing note
+
+The Arc-B chain is complete locally:
+
+```text
+#201 Arc B selected
+→ #203 Requirements COMPLETE
+→ #204 REFINE→ACCEPT / METHOD write
+→ #205 post-write D-016 Concept/loss/result-review reconciliation PASS
+→ Arc-B local boundary: observe real use / efficacy → STOP
+```
+
+That local `STOP` is **not** the current posture of the whole research-system programme.
+
+Current programme navigation/execution is:
+
+```text
+#206 CURRENT programme/process map
+→ #207 CURRENT / READY bounded P3A whole-map programme synthesis
+→ capability/evidence/completion/routing result
+→ Human-Owner selection of any justified downstream bounded route
+```
+
+#208 records the later programme-continuity audit explaining why this distinction had to be reconstructed explicitly. #202 remains deferred/not warranted; #200, #90 and #162 remain separate and are not activated by this reconciliation.
+
+## Primary owners/evidence consulted
 
 - `requirements/research-system-problem-landscape-2026-09-14.md` — original construction-site map plus Level-2 needs/requirements audit;
 - `requirements/pre-synthesis-research-program-2026-09-14.md` — empirical Research programme derived from the landscape/Level-2 gaps;
@@ -19,17 +44,20 @@ Primary owners/evidence consulted:
 - #203 — completed residual Requirements resolution;
 - #204 — accepted/refined METHOD owner review and narrow change admission;
 - #205 — completed post-write D-016 process reconciliation, scholarly loss/regression checks and Result Review;
-- `methodology/historical-source-workflow.md` + D-020 — current normative result.
+- `methodology/historical-source-workflow.md` + D-020 — current normative Arc-B result;
+- #206 — current research-system programme/process navigation owner;
+- #207 — current authorized P3A whole-map programme-synthesis owner;
+- #208 / `requirements/research-system-programme-continuity-audit-2026-09-16.md` — programme continuity / local-stop audit.
 
-This file does not replace or restate those owners. It records one bounded reconciliation question that became salient after #198:
+This file does not replace or restate those owners. It answers the bounded orientation question:
 
-> **What happened to the full construction-site map, including Level 2 and the empirical Research programme, after the synthesis — and which parts are actually closed, preserved, deferred, separately owned, or still evidence-limited?**
+> **What happened to the full construction-site map after Research and local downstream disposition, and what is the current programme-level continuation state?**
 
 ## 1. Main finding
 
-The research trajectory did **not** abandon the original construction-site map.
+The research trajectory did **not** invalidate or reduce the original construction-site map to one feature.
 
-The durable sequence is coherent, with one process-reconciliation caveat preserved explicitly:
+The durable evidence chain is:
 
 ```text
 construction-site map
@@ -42,36 +70,39 @@ construction-site map
 → refined/accepted existing METHOD owner (#204)
 → METHOD write
 → post-write D-016 Concept/loss/result-review reconciliation (#205) — PASS
-→ observe real use / efficacy
 ```
 
-The important qualification is that #205 does **not** rewrite history as if the ideal D-016 ordering occurred before the METHOD write. It records that the Concept function, scholarly loss/regression checks and Result Review were completed after the write and that the accepted METHOD nevertheless passed those checks.
+This chain closed **one local Type-III residual**. It did not itself provide a positive whole-programme capability/maturity judgement.
 
-The later Research programme was never a requirement to empirically re-run every construction site as an independent workstream. It concentrated on the decision-relevant and under-evidenced parts of the landscape, while other sites were classified as already strongly covered, operational-efficacy problems, separate technical/governance gaps, hypotheses with insufficient evidence, or trigger-based later validation needs.
+The later #206/#207 work exists because the programme still needed a distinct P3A synthesis answering what the whole evidence/Requirements map means for research-system maturity and completion.
 
-Therefore this inference is too strong:
+Therefore these inferences are too strong:
 
 ```text
 #202 is the only remaining construction site
 ```
 
-The current, more accurate statement is:
+and:
 
 ```text
-#198 left one residual reusable Requirement/refinement candidate around plural
-pre-priority research-direction formation/challenge.
+Arc-B Result Review PASS
+→ whole research-system programme complete
+```
 
-#203 resolved that candidate as an existing-owner refinement.
-#204 accepted the refined METHOD wording and the change was written.
-#205 completed the missing D-016 Concept/loss/result-review functions post hoc and PASSed the result.
-#202 is now only a trigger-based future Concept option, not a current residual solution step.
+The accurate statement is:
 
-This does not mean every other construction site is solved or irrelevant.
+```text
+#203/#204/#205 resolved and validated one residual reusable Type-III need.
+#202 is only a trigger-based future mechanism Concept option.
+Other original problem families reached different states: preserve, efficacy observation,
+separate enforcement, evidence-limited hypothesis, Project/source-specific finding,
+or later claim-triggered validation.
+#207 must now account for those states at programme level.
 ```
 
 ## 2. Level-2 state model still matters
 
-The Level-2 audit established more than a simple `Requirement present / absent` distinction. Its state types remain useful when reading the Research and synthesis results:
+The Level-2 audit established more than a binary `Requirement present / absent` distinction:
 
 - **Type I — Requirement and mechanism strong:** avoid duplication; preserve/regression-test the working boundary.
 - **Type II — Requirement present, decisive activation weak:** investigate why the existing safeguard was not operative at the relevant transition.
@@ -79,91 +110,87 @@ The Level-2 audit established more than a simple `Requirement present / absent` 
 - **Type IV — Requirement clear, technical enforcement absent:** treat as bounded enforcement rather than a scientific-framing problem.
 - **Type V — risk/hypothesis observed, evidence insufficient for promotion:** keep as a review/research risk until a real fixture warrants stronger action.
 
-This classification was not superseded by #198. The synthesis refined several sites through exactly this `Requirement existence != Requirement efficacy` lens while rejecting a single catch-all activation/root-cause model.
+This classification was not superseded by #198 or by Arc B.
 
-The #203/#204/#205 result is a concrete Type-III disposition: a thin generic property was sufficiently evidenced, its best normative home was an existing METHOD owner rather than a new Requirement family or Capability, and the final wording passed the later D-016 scholarly preservation/result review.
+#203/#204/#205 are one concrete Type-III disposition: a thin generic property was sufficiently evidenced, its best normative home was an existing METHOD owner, and the final wording passed a later D-016 preservation/result review.
 
-## 3. What the empirical Research actually changed
+The #208 audit adds a programme-level warning: **local resolution of one type/class does not discharge the other original classes unless a programme synthesis explicitly accounts for them.**
 
-The pre-synthesis Research programme explicitly arose from the asymmetry identified by the landscape and Level 2: mature execution/assurance/restartability versus weaker empirical understanding of question formation, transdisciplinary interaction and Requirement efficacy.
+## 3. What the empirical Research changed
 
-The Research then materially changed the evidence position:
+The pre-synthesis Research programme arose from the asymmetry identified by the original landscape: mature execution/assurance/restartability versus weaker empirical understanding of question formation, transdisciplinary interaction and Requirement efficacy.
+
+Research materially changed the evidence position:
 
 - #184 showed that superficially similar failures had different mechanisms: semantic/evidence translation (#165), authority promotion (#169), stale derived orientation (#162) and technical enforcement (#90) must not be compressed into one cause.
-- #185 showed across materially different source structures that analytical scale and context timing are question-/claim-/evidence-dependent; transdisciplinary interaction can be constitutive; epistemic independence is not organizational isolation.
-- #186 rejected a single demonstrated master failure mechanism and challenged the earlier richer Concept Candidate as over-specified in several respects.
-- #191 closed one concrete absence-of-demonstration: a rich research state can yield several serious evidence-grounded research directions without requiring a universal Candidate schema, score, fixed competence topology, preferred AI allocation or control plane.
-- #198 then concluded that most high-value boundaries are already normatively present and that several failures are mechanism/efficacy failures rather than missing Requirements.
-- #203 established that the surviving plural pre-priority property is normatively under-explicit but belongs in the existing Research-question-control owner.
-- #204 refined the scope wording so an established Project boundary/purpose cannot be mistaken for an already selected next scholarly direction, then accepted the narrow METHOD change.
-- #205 subsequently reconstructed the missing bounded D-016 Concept function and checked the written rule against Reg. Ii 5, Darwin and Washington plus authority/specialist/non-goal boundaries; the scholarly loss/regression and Result Review outcome was **PASS**.
+- #185 showed across heterogeneous source structures that analytical scale and context timing are question-/claim-/evidence-dependent; transdisciplinary interaction can be constitutive; epistemic independence is not organizational isolation.
+- #186 rejected a single demonstrated master failure mechanism and challenged the earlier rich Concept Candidate as over-specified in several respects.
+- #191 closed one concrete absence-of-demonstration: a rich research state can yield several serious evidence-grounded research directions without requiring a Candidate schema, score, fixed competence topology, preferred AI allocation or control plane.
+- #198 concluded that most high-value boundaries were already normatively present and that several failures were mechanism/efficacy failures rather than missing Requirements.
+- #203 established that the surviving plural pre-priority property was normatively under-explicit but belonged in the existing Research-question-control owner.
+- #204 refined the scope wording and accepted the narrow METHOD change.
+- #205 reconstructed the missing bounded D-016 Concept function and completed scholarly loss/regression + Result Review with PASS.
 
-The Research therefore narrowed and differentiated the original map; it did not collapse it into one new framing layer.
+Research therefore **narrowed and differentiated** the original map. It did not collapse it into one new framing layer and did not establish programme completion.
 
 ## 4. Post-#198 disposition of the broader landscape
 
-The following is a **routing/orientation summary**, not a replacement owner table.
+The following remains a routing/orientation summary, not a replacement owner table.
 
 ### Strongly preserved / no new normativity indicated
 
-Examples include resource-state versus task authority (A9), much of Domain↔Dev subsidiarity (B6), restartability (large parts of D1), Generic-Fit (C4 as a governing principle), evidence/uncertainty separation and the authority distinction `candidate direction != authorized scope`.
+Examples include resource-state versus task authority (A9), much of Domain↔Dev subsidiarity (B6), large parts of bounded restartability (D1), Generic-Fit (C4), evidence/uncertainty separation and `candidate direction != authorized scope`.
 
 Default consequence: preserve and test actual use; do not create duplicate Requirements merely for reassurance or visibility.
 
-### Existing normativity, but operational efficacy remains the relevant question
+### Existing normativity, but operational efficacy remains a live programme question
 
 Examples include:
 
-- A3 analysis-unit/object distinctions;
-- B4 productive context reactivation after contamination-sensitive observation;
-- D2 evidence-depth / premise testing in supposedly independent review;
-- C5 derived-surface freshness / propagation;
-- parts of B1 transdisciplinary synthesis visibility/activation.
+- A3 analysis-unit/object distinctions at actual framing/execution transitions;
+- B1 transdisciplinary synthesis visibility/activation;
+- B4 productive context/domain reactivation after contamination-sensitive observation;
+- D2 evidence-depth / premise testing in review;
+- A8 support dominance / scholarly-delta visibility;
+- C2 lean-down cognitive/review-function preservation;
+- C5 derived-surface freshness / propagation / phase continuity.
 
-These are not discharged merely because the rule exists. They remain mechanism-level review questions where later evidence or a concrete Concept/change makes them consequential.
+These are **not discharged merely because the rule exists**. #207 must distinguish `normativity present` from demonstrated operative efficacy, untested efficacy, concrete mechanism failure and insufficient evidence.
 
-### Residual generic Requirements question — resolved through existing-owner refinement
+### Residual generic Requirements question — locally resolved through existing-owner refinement
 
-A1/A5 with parts of B1/B2/B5 yielded the one #198 residual reusable property:
+A1/A5 with parts of B1/B2/B5 yielded the #198 residual reusable property:
 
 > when research-direction selection is actually needed, support formation and scholarly challenge of multiple serious evidence-grounded directions without converting them into task authority, while leaving material priority/scope selection with the Human Owner.
 
-#203 determined that this property did not require a new REQ family or Capability. #204 refined and accepted the corresponding addition to `methodology/historical-source-workflow.md`:
+#203 determined that this property did not require a new REQ family or Capability. #204 refined and accepted the addition to `methodology/historical-source-workflow.md`; #205 loss-checked and retained it.
 
-- trigger only when a material next-direction decision is actually needed;
-- trigger only when no Human-Owner-selected **next scholarly scope or research question is in force**;
-- where evidence supports plurality, form and source-critically challenge multiple serious evidence-grounded candidates;
-- preserve scholarly consequence, discriminating/advancing evidence and evidence ceilings, question-dependent scale/context and materially relevant disciplinary perspective;
-- candidates remain proposals and create no Project scope, priority or `NEXT ACTION`;
-- `no new scope selected` remains valid;
-- no fixed count, scoring, Candidate-Question schema, competence topology, preferred AI role or Research-Framing layer follows.
-
-#205 then tested that final wording against the existing heterogeneous fixtures and adjacent authority semantics. No unsupported normative side effect was found at the reviewed evidence ceiling, so the accepted METHOD was retained.
+This is now a normative result. Its **real-use efficacy** remains a separate observation question.
 
 ### Deferred future Concept option
 
-#202 remains open only as a **trigger-based** future reusable-mechanism Concept option. It is not the missing D-016 Concept function from the already-completed METHOD change, and it is not warranted merely because the residual property exists or because the METHOD rule has been accepted.
+#202 remains open only as a trigger-based future reusable-mechanism Concept option. It is not the D-016 Concept stage of the already-written METHOD refinement and is not warranted merely because the rule exists.
 
-Reconsider #202 only if real use of the settled METHOD rule later demonstrates a concrete recurring reusable mechanism/efficacy failure that ordinary application, freshness, review or specialist judgement does not explain.
+Reconsider #202 only if real use later demonstrates the concrete recurring reusable mechanism/efficacy failure defined there.
 
 ### Separate technical enforcement class
 
-F1/#90 remains a clear example where the desired semantic boundary is sufficiently known and technical promotion enforcement is missing. This is orthogonal to the scientific framing problem and must not be used as a causal explanation for A1/B1. The absence of required status checks on the direct METHOD commits was recorded in #205 as technical state, not scholarly assurance; it does not merge #90 into Arc B.
+F1/#90 remains a clear case where the desired semantic boundary is sufficiently known and technical promotion enforcement is missing. This is orthogonal to scientific framing and programme continuity.
 
 ### Partially evidenced / still hypothesis-level
 
 Examples include:
 
-- C2 loss of cognitive/review functions during lean-down beyond the directly evidenced work-state losses;
-- C6 need for a broader audit-supersession/premise-stack mechanism;
-- any claim that context is systematically under-reactivated across Projects;
+- cognitive/review-function loss during lean-down beyond the directly evidenced cases;
+- C6 need for broader audit-supersession/premise-stack machinery;
+- any universal claim that context is systematically under-reactivated across Projects;
 - any universal fixed collaboration/leadership topology.
 
-These remain evidence-limited and should not be promoted into architecture or standing process without a real trigger/fixture.
+These remain evidence-limited and must not be promoted into architecture or standing process without an adequate fixture/trigger.
 
-### Trigger-specific later validation, not a new broad Research programme
+### Trigger-specific later validation
 
-The synthesis leaves later validation conditional on concrete downstream claims, for example:
+Later validation remains conditional on concrete downstream claims, for example:
 
 - Human-Owner decision surface / comparison format → empirical Owner/HCI validation;
 - preferred AI role/context allocation → bounded AI/context comparison;
@@ -172,76 +199,100 @@ The synthesis leaves later validation conditional on concrete downstream claims,
 - persistent representation/schema → semantic-loss + Generic-Fit test;
 - automation/router/agent proposal → demonstrated workload/failure plus D-016 admission.
 
-`Research closed` therefore did not mean `all empirical questions answered`. It meant no further **broad pre-synthesis Research programme** was required. Targeted validation remains claim-triggered.
+`Research closed` never meant `all empirical questions answered`.
 
-## 5. Current planning / authority boundary after #205
+## 5. Programme-continuity learning after #205
 
-Current GitHub/repository state is:
-
-- #198 / PR #199: bounded synthesis **COMPLETE**;
-- #201: Arc-B Human-Owner planning decision **COMPLETE / CLOSED**;
-- #203: bounded Requirements resolution **COMPLETE** with `existing-owner refinement warranted`;
-- #204: Human-Owner REFINE→ACCEPT decision for the narrow METHOD wording, **COMPLETE**;
-- #205: post-write D-016 process reconciliation + scholarly loss/regression + Result Review **COMPLETE / PASS**;
-- `methodology/historical-source-workflow.md`: accepted rule is canonical;
-- `DECISIONS.md` D-020: accepted cross-project methodological rationale remains substantively confirmed by #205;
-- #202: **DEFERRED / NOT WARRANTED YET**, trigger-based on later demonstrated recurring mechanism failure;
-- #200: governance/planning lifecycle-hook finding **DEFERRED unless separately selected**;
-- #90: separate technical-enforcement issue, not activated by Arc B;
-- #162: coordination strand **PAUSED / DEFERRED**;
-- Reg. Ii 5 Project `STATUS.md`: Arc B created no scholarly `NEXT ACTION`.
-
-The current authorized posture for this research-system strand is therefore now legitimately:
+The later #208 audit identified the missing/under-operationalized middle explicitly:
 
 ```text
-D-016 reconciliation/result review PASS
-→ observe real use / efficacy
-→ STOP
+strong high-level purpose/problem evidence
++
+strong local task/change owners
+
+but no continuously active whole-programme coverage/cursor owner
 ```
 
-No #202 Concept, software or further system design is authorized merely by this reconciliation.
+This allowed a locally correct chain to become a practical proxy for the whole programme.
 
-## 6. Reconciliation feedback
+The analytical distinctions now preserved are:
 
-The scientific/evidential chain and its operative projection are now aligned more closely:
+```text
+local arc completion != programme completion
+local restartability != programme-cursor restartability
+Requirement present != demonstrated operative capability
+local Result Review PASS != whole-programme adequacy
+```
+
+This does **not** establish that the repository needs a permanent programme state machine or new METHOD layer. It establishes that the already-authorized #207 synthesis must explicitly disposition programme continuity/coverage and the remaining original efficacy families before any programme-level completion claim.
+
+## 6. Current planning / authority boundary
+
+Current state:
+
+- #198 / PR #199: bounded post-Research synthesis **COMPLETE**;
+- #201: Arc-B Human-Owner planning decision **COMPLETE / CLOSED**;
+- #203: bounded Requirements resolution **COMPLETE**;
+- #204: Human-Owner REFINE→ACCEPT for the narrow METHOD wording **COMPLETE**;
+- #205: local D-016 process reconciliation + scholarly loss/regression + Result Review **COMPLETE / PASS**;
+- `methodology/historical-source-workflow.md` / D-020: accepted Arc-B normative result;
+- #202: **DEFERRED / NOT WARRANTED YET**;
+- #200: governance/planning lifecycle-hook finding **DEFERRED unless separately selected**;
+- #90: separate technical enforcement issue;
+- #162: coordination strand **PAUSED / DEFERRED**;
+- #206: **CURRENT programme/process navigation owner**;
+- #207: **CURRENT / READY P3A whole-map programme synthesis**;
+- #208: bounded programme-continuity audit/reconciliation evidence;
+- Reg. Ii 5 Project state: Arc B created no scholarly `NEXT ACTION`.
+
+Therefore the current research-system posture is:
+
+```text
+Arc B local change arc = COMPLETE / observe real use
+
+whole research-system programme = NOT YET given a completion judgement
+→ #207 must perform P3A whole-map synthesis
+```
+
+No #202 Concept, software, METHOD/REQ change, #90 implementation, #200 activation, #162 reactivation or Project scholarly scope follows automatically.
+
+## 7. Reconciliation feedback
+
+The corrected programme projection is:
 
 ```text
 problem landscape
 → Level-2 gap typing
 → primary Research
 → integration
-→ synthesis
-→ Human-Owner arc selection
-→ Requirements resolution
-→ accepted existing-owner METHOD refinement
-→ D-016 scholarly loss/regression + Result Review reconciliation
-→ real-use observation
+→ bounded Requirements/Capability synthesis
+→ local Human-Owner arc selection
+→ local Requirements / Concept / change / Result Review as justified
+→ return demonstrated local consequence to programme-level synthesis
+→ account for all material original capability/problem families
+→ programme completion judgement or bounded downstream routing
 ```
 
-The key lesson is not that the original construction-site map reduced to one system feature. Rather, different sites reached different dispositions: preserve, efficacy review, existing-owner refinement, separate enforcement, evidence-limited hypothesis or claim-triggered future validation.
+The key learning is not that every local Result Review must reopen all prior Research. Revalidation remains proportional.
 
-The smallest durable conclusion is now:
+The required discipline is narrower:
 
-> **Do not treat #202 as a proxy for the original construction-site landscape, as the D-016 Concept stage of the already-written METHOD refinement, or as the automatic next step after #203. The one surviving plural pre-priority property was absorbed as a narrow existing-owner METHOD refinement and passed a bounded D-016 scholarly/result reconciliation in #205. #202 becomes relevant only if later real use demonstrates a concrete recurring mechanism failure.**
+> **A local terminal result must return its demonstrated consequence to a current programme-level coverage view before anyone infers programme completion.**
 
-This remains a derived orientation. The operative norm lives in `methodology/historical-source-workflow.md`; rationale lives in D-020; work-state/assurance/trigger metadata lives in the relevant Issues.
+For the current programme, #206/#207 provide that view. Whether this deserves a later generic lifecycle/maintenance refinement remains an open efficacy/Requirements question, not an accepted rule.
 
-## 7. Durable consequence and deliberate boundaries
+## 8. Durable boundaries
 
-The original 2026-09-14 reconciliation itself created no norm or priority. Subsequent explicitly authorized work changed the downstream state as follows:
+This reconciliation creates no norm or scholarly priority.
 
-- Arc B was selected through #201;
-- #203 completed the Requirements disposition;
-- #204 REFINE→ACCEPTed the narrow METHOD refinement and the change was written;
-- #205 reconciled the missing D-016 Concept/loss/result-review functions post hoc and completed with PASS;
-- affected orientation/planning surfaces were refreshed for restartability.
+Deliberate non-changes:
 
-Deliberate non-changes remain:
-
-- no new `requirements/domain-requirements.tsv` row merely to duplicate the METHOD owner;
-- no Milestone creation;
-- no Project `STATUS.md` or scholarly `NEXT ACTION` change from Arc B;
-- no activation of #200, #90 or #162;
+- no new `requirements/domain-requirements.tsv` row;
+- no METHOD or D-xxx change from this audit;
+- no Milestone requirement;
+- no Project `STATUS.md` or scholarly `NEXT ACTION` change;
+- no activation of #200, #90, #162 or #202;
 - no new broad Research programme;
-- no #202 activation;
-- no Candidate-Question schema, scoring/ranking, fixed competence topology, preferred AI allocation, Research-Framing layer, solution architecture or software implementation.
+- no Candidate-Question schema, scoring/ranking, fixed competence topology, preferred AI allocation, Research-Framing layer, programme registry/state machine, solution architecture or software implementation.
+
+The next substantive programme work remains #207.
