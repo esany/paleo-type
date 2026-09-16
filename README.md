@@ -59,7 +59,9 @@ For cross-project research-system programme work, use GitHub Issue **#206** as t
 
 The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-ready result is persisted in `requirements/research-system-programme-synthesis-2026-09-15.md`.
 
-The current programme cursor is a **Human-Owner decision point**, not active downstream execution. #207 returned two independent selectable routes — a bounded #200-family P2 Requirements-resolution question for programme/phase continuity and a separate #90 deterministic promotion-enforcement arc — but neither route is activated merely by the synthesis. Selecting neither at this time remains valid.
+**Route A / #200 bounded P2 Requirements resolution is now COMPLETE** with terminal disposition `existing-owner refinement warranted`. The persistent result is `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md`. No Concept or METHOD change was activated by that result.
+
+The current programme cursor has returned to **#206 for programme-completion / downstream-disposition review**. Route A's bounded P3B Concept is eligible but not activated; Route B / #90 remains a separate decision-ready deterministic promotion-enforcement residual and is likewise not active until explicitly selected. Repository semantics infer no ordering between them.
 
 A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The programme-continuity evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
 
@@ -70,6 +72,7 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md`;
 - `requirements/research-system-problem-landscape-2026-09-14.md`;
 - `requirements/research-system-programme-continuity-audit-2026-09-16.md`;
+- `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md`;
 - `requirements/research-system-programme-synthesis-2026-09-15.md`;
 - `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md`;
 - `requirements/pre-synthesis-research-program-2026-09-14.md`;
