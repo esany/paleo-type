@@ -133,6 +133,21 @@ Run maintenance when an event changes truth or exposes stale dependent state, fo
 
 The specialist owner determines the exact semantics of the change. Maintenance determines propagation and consistency obligations.
 
+### Programme/phase/result-transition reconciliation
+
+When an **already-established broader programme or planning context** exists, a material programme/phase/result transition is also a maintenance trigger if its result can affect whole-programme completion or maturity, selectable/current work, or materially affected restart/navigation state — even when canonical research truth itself is unchanged.
+
+For such a transition:
+
+1. resolve the **existing** programme/planning cursor or decision owner; do not create one merely because this rule applies;
+2. explicitly disposition the material consequence for that owner and materially affected restart/navigation surfaces as **changed**, **unchanged** or **needs decision** (or semantically equivalent existing vocabulary), with enough rationale to reconstruct the consequence without old chat;
+3. keep the local result local: a local `PASS`, `STOP`, closeout or `no further local change` does not establish whole-programme completion unless the programme owner explicitly reaches that conclusion;
+4. preserve Human-Owner authority: reconciliation may expose a decision surface but must not manufacture research priority, Project scholarly `NEXT ACTION`, Concept/implementation admission or activation of deferred work;
+5. keep planning/navigation metadata distinct from Research, Requirements, METHOD, Project truth and durable accepted decisions;
+6. permit **unchanged** as a valid disposition, but do not treat silence as evidence that the programme consequence was considered.
+
+This obligation is consequence-triggered, not a universal review ceremony for ordinary task closeouts. If no broader programme/planning owner has already been established by authority, maintenance records no invented programme, roadmap, priority or `NEXT ACTION`.
+
 ## Bounded consistency pass
 
 After a material canonical change, check only affected boundaries plus high-risk stale surfaces. At minimum, as applicable:
