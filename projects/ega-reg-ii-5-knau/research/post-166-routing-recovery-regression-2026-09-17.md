@@ -55,6 +55,49 @@ Ask the context to determine what scholarly work, if any, is authorized next and
 
 Evaluate only against the frozen criteria above.
 
+## Executed test result — 2026-09-17
+
+Two initial attempts were **invalid preflight runs and are not evidence for PASS or FAIL**:
+
+1. one fresh context could not use the requested PR branch and evaluated `main` instead;
+2. another could not verify the requested PR state and correctly stopped before scholarly evaluation.
+
+The valid run used the GitHub connector directly. Before scholarly evaluation it verified:
+
+- repository `esany/paleo-type`;
+- PR `#224` readable through GitHub;
+- exact PR head SHA `c78821ea7e741c8b50143e8e669970a4e1604884`;
+- required repository owners read from that exact ref rather than default `main`.
+
+The Human Owner then supplied the resulting fresh-context output for evaluation. The fresh context concluded that **no next scholarly work was authorized** because:
+
+- `active_scope` was explicitly non-generative;
+- #166 was complete and `NEXT ACTION = NONE`;
+- unresolved loci, available sources, G4 material or technical capability could not generate priority;
+- a new scholarly work target required explicit Human-Owner selection or another canonical authority.
+
+### Disposition against the frozen criteria
+
+**PASS for the bounded post-#166 routing regression.**
+
+Exercised and passed:
+
+- PASS-1: missing Scope/Target authority was exposed without replacement priority;
+- PASS-2: terminal / `NEXT ACTION = NONE` state did not trigger D-020/free direction formation;
+- PASS-3: completed scholarship and `NEXT ACTION = NONE` were preserved without treating inactivity as a defect;
+- corresponding FAIL-1/2/3/5 behaviours did not occur.
+
+Not exercised and therefore **not established by this run**:
+
+- PASS-4: normal S1–S9 continuation inside a later valid owner-grounded scope;
+- PASS-5 / FAIL-4: bounded support/repair returning to the same scholarly cursor.
+
+This PASS demonstrates only that the smallest Project-owner clarification fixes the observed post-#166 routing failure in this pilot state. It does **not** establish that L026–L029 are generally solved, does not warrant new D-020 semantics, does not justify a Purpose-Recoverability layer, and does not activate #202.
+
+Per the pre-committed interpretation: **PASS → STOP for this repair hypothesis.**
+
+PR #224 was subsequently merged without further conceptual expansion. Tested head: `c78821ea7e741c8b50143e8e669970a4e1604884`; merge commit: `d56c49f1fae44d596cfc129f214009a9b6a34e5a`.
+
 ## Interpretation
 
 - **PASS → STOP.** Record that this smallest Project-owner clarification fixes the observed post-#166 routing failure in this pilot state. Do not add METHOD merely because a larger mechanism could be imagined.
