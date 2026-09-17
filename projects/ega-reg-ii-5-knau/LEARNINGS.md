@@ -229,3 +229,49 @@ Corrective practice: keep **resource/capability state**, **explicit action depen
 Evidence discipline remains strict: an action that really requires missing pixels cannot be simulated from metadata, prior transcription or a parallel witness. The correction limits the *scope of the consequence*; it does not weaken evidence requirements.
 
 Generalizable: yes. **Resource availability is descriptive execution state, not task or roadmap authority.**
+
+## L026 — direction formation exposed a Project-purpose recoverability gap
+
+Observed failure: the first real post-D-020 direction-formation pass produced a serious but strongly local candidate surface whose main directions substantially reproduced the already rich Reg. Ii 5 / Knau–Ziegenrück fixture explored in #191. The individual candidate questions were not thereby invalid, but the pass could not demonstrate that the candidate set represented the scientifically relevant space of the owner-established Reg. Ii 5 Project rather than the most richly addressable current research state.
+
+The current Project authority is real: Reg. Ii 5 is an owner-established act-level Project and `Knau` is not its boundary. However, `project.yml` currently represents the substantive `research_object` only as `Source-based scholarly research within Reg. Ii 5`, while `active_scope` is explicitly unset. That is sufficient to recover Project identity/boundary and the absence of a current task, but not sufficiently discriminating for the additional operation of grounding broad next-direction formation against a substantive Project purpose.
+
+Corrective practice: when pre-priority direction formation needs a substantive Project-purpose discriminator, first verify that the needed purpose meaning is recoverable from its canonical owner. If it is not, return the purpose/authority gap to the Human Owner rather than allowing the richest available evidence, Source group, unresolved locus, gate or prior fixture to substitute for the missing discriminator. Keep stable Project purpose, iterative scholarly maturity, current scope and `NEXT ACTION` separate.
+
+Current consequence: the recent R1–R5/A–D candidate sets remain potentially useful research material but are **not yet validated as a Project-wide decision surface**. `NEXT ACTION = NONE` remains correct. This single real-use case is evidence to observe; it does not by itself satisfy #202's recurring-mechanism reactivation trigger.
+
+Generalizable: not yet established. Preserve this as Project/pilot evidence first; apply Generic-Fit before any METHOD or #202 consequence.
+
+## L027 — pilot material must not become the purpose of the generic system
+
+Observed failure/risk: because Reg. Ii 5 / Ziegenrück / Knau is the richest worked fixture, successive attempts to repair research framing repeatedly risked letting this material define the generic problem, candidate space or implied system purpose. This repeats the older L008 pattern at a higher level: a useful pilot can become a hidden model of what the whole system is for.
+
+Corrective practice: keep **repository mission**, **Project purpose**, **pilot/fixture evidence**, **current scholarly scope** and **source-local research findings** distinct. Real pilot scholarship should remain scientifically serious, but neither its Source structure nor its currently visible questions may silently define generic `paleo-type` purpose, universal research direction or workflow architecture.
+
+Current consequence: Reg. Ii 5 remains the present pilot/application context, not the definition of the generic system. No Governing Objective amendment follows from this learning; any mission-level change remains a separate explicit Human-Owner governance decision.
+
+Generalizable: likely as a pilot-design risk and already partly covered by existing generic/pilot separation; no new generic rule is admitted here.
+
+## L028 — support dominance is a secondary symptom when AI/recovery fails
+
+Observed failure pattern: support work became prominent after the AI/work context encountered real evidence, access, capability, premise or execution problems. The immediate support need was often legitimate. The damaging loop arose when repairing the local failure expanded into further support, assurance, status or governance work and the valid scholarly cursor did not regain primacy.
+
+This means `support dominance` is not necessarily the root cause of the stalled scholarship. In the present pilot it can be a **secondary symptom of insufficient robustness/recovery of AI-assisted research**: the system detects or encounters a problem, but does not reliably repair the bounded failure and resume source work.
+
+Corrective practice: treat direct scholarship as the normal path and support as bounded exception handling. On failure, identify the exact affected action, preserve evidence/authority limits, perform only the smallest authorized repair, then return to the last valid scholarly cursor. Additional assurance/support must justify itself by a concrete unresolved consequence; support success must not become a substitute research objective.
+
+Current consequence: retain the useful A8/#169 support-dominance safeguards, but diagnose upstream AI/evidence/capability/recovery failures separately. Do not infer from this one pilot that a new generic recovery architecture is required.
+
+Generalizable: plausible but not yet demonstrated broadly; keep Project-specific pending Generic-Fit.
+
+## L029 — pilot quality must preserve scientific capability as well as reliability
+
+Observed concern: the repository has substantially strengthened evidence discipline, authority separation, persistence, reviewability and restartability, while the Human Owner reports that the initial pre-repository chat may have achieved more direct scholarly/source-understanding progress than the current highly controlled pilot. The old chat is not evidence authority and this performance comparison has not yet been independently benchmarked, but the present work history does demonstrate long stretches of meta/support/system work with limited new source scholarship.
+
+Risk: a pilot can improve epistemic safety and auditability while unintentionally reducing the AI-assisted system's ability to make timely, substantive scholarly progress. Such a system would be safer but not yet a successful research assistant.
+
+Corrective practice: evaluate the pilot on separate dimensions rather than treating process maturity as overall success: **scientific/source-understanding capability**, **epistemic reliability**, **human auditability/restartability**, and **research overhead/recovery cost**. The desirable target is not to reproduce the informal chat's errors; it is to retain or improve its useful scholarly capabilities while preventing the demonstrated failures and making consequential results recoverable.
+
+A historical chat may therefore serve as a non-authoritative **performance/functional benchmark** for capabilities it exhibited, never as canonical research truth. Any formal benchmark or generic acceptance criterion requires its own evidence and Generic-Fit rather than being created by this learning alone.
+
+Generalizable: not yet established; this is a pilot-evaluation hypothesis grounded in the observed Reg. Ii 5 work history and Human-Owner experience.
