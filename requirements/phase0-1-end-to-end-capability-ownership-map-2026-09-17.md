@@ -222,3 +222,89 @@ Phase 0/1 may be called complete only when:
 **Phase 1: ACTIVE.** C-01–C-06 are candidate consolidation requirements with falsification boundaries. They are not yet promoted as new canonical requirements because duplicate/coverage traceability against `domain-requirements.tsv`, prior synthesis/concept artifacts and executable tooling is still outstanding.
 
 Consequence for #225: **LOCAL PROGRESS ONLY.** The audit hypothesis is strengthened: the primary deficiency is composition/derivation across existing mature owners, not absence of mission, scholarly method, authority rules or structural control. No architecture, D-016 admission or whole-system acceptance follows from this pass.
+
+
+## Next major work block — execution prompt
+
+Use this prompt as the next **single coherent Phase-1 work block** under #227. Execute it repository-first and persist the completed result into this artifact before treating the block as complete.
+
+> **Mission.** Rehydrate the current repository as authority and complete the Phase-1 traceability / deduplication / executable-reuse / non-pilot falsification block for C-01…C-06 under #227. Preserve #225 as the parent system outcome. Do not choose architecture, admit implementation, create Project scholarly scope/priority, or treat any local PASS as whole-system success.
+>
+> **Required fresh inputs.** Read `GOVERNING_OBJECTIVE.md`, `AGENTS.md`, #225 including its anti-fragmentation guard, #227, this artifact, `methodology/maintenance.md`, `methodology/workflow.md`, `methodology/historical-source-workflow.md`, `methodology/research-gates.md`, `methodology/project-lifecycle.md`, `methodology/quality-and-learning.md`, `methodology/ai-governance.md`, the relevant rows of `requirements/domain-requirements.tsv`, the system-operationalization audit/problem-frame, prior whole-system synthesis/concept artifacts, and the executable tools/contracts needed to test reuse claims. Read only additional files that become materially necessary.
+>
+> **Part A — Requirement traceability and deduplication.** For each C-01…C-06:
+> 1. identify every existing canonical requirement/method/decision that already owns any part of its semantics;
+> 2. distinguish exactly among:
+>    - `ALREADY OWNED / NO NEW SEMANTIC`,
+>    - `DISTRIBUTED BUT COMPOSITION MISSING`,
+>    - `SEMANTIC EXISTS BUT EXECUTABLE/DISCOVERABILITY GAP`,
+>    - `GENUINELY MISSING GENERIC REQUIREMENT`,
+>    - `CONTEXTUAL / NOT SAFE TO GENERALIZE`;
+> 3. cite the exact owner(s) and do not copy their semantics into a second truth store;
+> 4. state the smallest residual requirement, if any, after deduplication;
+> 5. state what would falsify that residual requirement.
+>
+> **Part B — Executable reuse audit.** Inspect the current executable control plane, especially `tools/project_context.py`, `tools/source_contract.py`, `corpus/source-contract.json`, intake/resolver/validation helpers and relevant regression tests. For each C-01…C-06 determine:
+> - which required inputs are already machine-readable or derivable;
+> - which outputs are already derivable/validated;
+> - which semantics remain only prose/model-mediated;
+> - which repeated inference appears stable enough for deterministic derivation/validation without scholarly loss;
+> - which inference must remain AI-assisted, specialist, or Human-Owner controlled.
+>
+> Do **not** infer that something needs new software merely because it is not currently executable. First determine whether better derivation/discoverability from existing owners is sufficient.
+>
+> **Part C — Non-pilot falsification.** Select at least one materially different repository case outside Reg. Ii 5 using repository evidence, not convenience. Test the candidate residuals and dependency graph against it. The counter-case should differ in source/problem structure, maturity, or system-development context enough that Reg.-Ii.-5-specific assumptions would fail. For each candidate record:
+> - what survives unchanged;
+> - what is pilot-specific and must be removed/reframed;
+> - what additional generic semantic is actually demonstrated, if any.
+>
+> Do not patch the counter-fixture into a growing universal model. A failure is evidence against the candidate abstraction.
+>
+> **Part D — Dependency challenge.** Challenge the current graph
+>
+> ```text
+> C-01 → C-02 → C-03 → C-04 → existing execution → C-05 → C-06
+> ```
+>
+> For every edge classify it as `hard dependency | conditional dependency | useful ordering only | unsupported coupling`. Remove any dependency that exists only because of the current pilot/history or because the previous analysis presented it that way. Record parallelizable or independently resolvable functions where demonstrated.
+>
+> **Part E — #226 admission check.** After A–D, determine whether #226's stated prerequisite is met. Do not perform #226 itself inside this block. Return only:
+> - `PREREQUISITE MET` with the specific Phase-0/1 evidence now available; or
+> - `PREREQUISITE NOT MET` with the exact missing evidence.
+>
+> **Required output in this artifact.** Produce:
+> 1. a C-01…C-06 traceability/deduplication matrix;
+> 2. an executable-reuse matrix;
+> 3. a non-pilot falsification result;
+> 4. a challenged dependency graph;
+> 5. the smallest residual generic-requirement set, if any;
+> 6. explicit deterministic / AI / specialist / Human-Owner boundaries for those residuals;
+> 7. #226 prerequisite disposition;
+> 8. a Phase-1 exit assessment against every #227/this-artifact exit criterion.
+>
+> **Acceptance rules.**
+> - No candidate survives merely because it sounds desirable.
+> - No new requirement is accepted when an existing owner already expresses the needed semantics adequately.
+> - No new executable component is proposed in this block.
+> - Stable semantics that could be derived mechanically must be identified as such; open scholarly judgement must not be forced into determinism.
+> - The non-specialist Human Owner must not be made responsible for derivable method/engineering sequencing.
+> - Reg. Ii 5 is evidence only.
+> - Local completion is `LOCAL PHASE RESULT`, never #225 completion.
+>
+> **Stop condition.** Stop this block only when the residual gap set is small, deduplicated, cross-fixture challenged, and precise enough that a fresh context could move to #226 (if admitted) and then prepare Phase-2 competing concepts **without rediscovering the problem or relying on this chat**. If that condition is not met, persist the exact unresolved evidence/traceability deficit and keep #227 active; do not compensate by inventing architecture.
+
+### Cursor after this prompt
+
+Current executable cursor for #227:
+
+```text
+C-01…C-06 traceability/deduplication
+→ executable reuse audit
+→ non-pilot falsification
+→ dependency challenge
+→ #226 prerequisite disposition
+→ Phase-1 exit assessment
+→ reconcile completed LOCAL PHASE RESULT to #225
+```
+
+No new child Issue is required for this block.
