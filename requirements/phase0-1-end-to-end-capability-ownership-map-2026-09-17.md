@@ -308,3 +308,262 @@ C-01…C-06 traceability/deduplication
 ```
 
 No new child Issue is required for this block.
+
+
+## Executed Phase-1 block — traceability, executable reuse and falsification result
+
+Status: **COMPLETE LOCAL PHASE RESULT under #227.** This section executes the persisted Phase-1 block. It is requirements/analysis evidence for #225, not architecture selection, D-016 implementation admission, Project scholarly priority or whole-system acceptance.
+
+### A. C-01…C-06 traceability / deduplication
+
+| Candidate | Existing semantic owners / evidence | Deduplicated disposition | Smallest residual after deduplication | Falsification boundary |
+|---|---|---|---|---|
+| **C-01 Durable outcome reference** | Governing Objective human auditability + restartability; project-lifecycle.md and Project project.yml own Project purpose/current scope; Project STATUS.md owns current gate/restart/authorized next action; REQ-GWP-008; REQ-UX-007; workflow.md work-context/cursor semantics | **DISTRIBUTED BUT COMPOSITION MISSING** | When a Human-Owner-authorized desired scholarly outcome exists, a fresh context must be able to bind/reference that outcome to its canonical purpose/scope authority without allowing the outcome reference itself to manufacture scope/priority. Absence of an authorized outcome remains a valid explicit state. | If existing Project purpose/scope/STATUS plus derived context already recover the governing desired outcome reliably across materially different authorized-outcome fixtures, no additional integration semantic is needed. |
+| **C-02 Outcome → unmet requirements** | S1–S9 in historical-source-workflow.md; G1–G6 in research-gates.md; domain-requirements.tsv; Project STATUS/gate/gap state; GO precedence | **GENUINELY MISSING GENERIC COMPOSITION REQUIREMENT** — not missing scholarly rules | Given authorized outcome + applicable scope + current canonical evidence/maturity, expose the applicable unmet requirements and their basis, reusing existing owners. Stable portions should be derivable; open scholarly applicability/judgement must remain explicit. | If current canonical owners can already yield materially equivalent unmet-requirement sets in fresh contexts without free-form model reconstruction, only discoverability/derived-view work remains. |
+| **C-03 Capability / responsibility resolution** | GO transdisciplinary invariant and Human/specialist/AI boundaries; historical-source-workflow.md expertise routing; domain-requirements.tsv already carries domain, validation_mode, specialist_trigger; REQ-DOM-001; REQ-GWP-005; REQ-AI-010; REQ-UX-011; ai-governance.md | **SEMANTIC EXISTS BUT EXECUTABLE / COMPOSITION GAP** | For an applicable unmet requirement, expose the governing competence and responsibility mode from existing semantics: deterministic where controlled, AI-assisted where genuinely non-deterministic, specialist where qualified judgement is required, Human Owner only for non-derivable authority/purpose/use decisions. No new permanent role topology is justified. | If the existing requirement metadata + METHOD already provide a sufficiently reliable derived routing surface, no new semantic requirement survives. |
+| **C-04 Outcome-constrained vertical work slice** | GO technical subsidiarity/lean structure; quality-and-learning.md Goal Alignment; workflow.md current-target authority, first-scholarly-action protection and support-to-support escalation stop; historical-source-workflow.md research-question control; AGENTS research-outcome-before-infrastructure | **DISTRIBUTED BUT COMPOSITION MISSING** | A newly selected bounded work slice must be traceable to one or more applicable unmet outcome requirements and state its bounded completion/return condition; the smallest local defect is not sufficient justification. Already-authorized routine work need not be replanned. | If current target/first-scholarly-action/Goal-Alignment semantics already prevent horizontal local optimization across real fixtures, no additional composition semantic is needed. |
+| **C-05 Outcome continuity across decomposition / repair** | **Programme/phase/result subset already requirements-resolved, concepted, implemented and Result-Review PASS** in the 2026-09-16 continuity arc; current semantic owner is maintenance.md with a narrow execution hook in workflow.md. Task-local workflow also owns execution cursor, return/review condition, support containment, no-progress redirect, first scholarly action and support-chain stop. #225 adds a programme-local anti-fragmentation guard. | **ALREADY OWNED for material programme/phase/result transitions; PARTIAL / REVIEW-REQUIRED for broader phase-independent decomposition** | No new requirement is accepted here. #226 now has sufficient evidence to test whether the already-owned programme/task-local pieces fully cover arbitrary outcome-preserving decomposition/repair, require a bounded existing-owner refinement, or remain contextual. | If #226 finds existing maintenance/workflow semantics sufficient across task, repair, review and programme contexts, C-05 creates no additional generic requirement/mechanism. |
+| **C-06 Composed outcome acceptance / legitimate ceiling** | Gate completion/residual-uncertainty semantics in research-gates.md; assurance-status separation in quality-and-learning.md; dependency/resource authority in workflow.md; specialist boundary in ai-governance.md; Project STATUS restart/gate owner; #225 T10/T11 | **DISTRIBUTED BUT COMPOSITION MISSING** | For an authorized outcome, compose applicable requirement satisfaction, maturity and assurance/authority/evidence limits into a restartable outcome-level disposition. Required meanings include usable outcome reached, valid outcome with work remaining, evidence ceiling, specialist dependency, Human-Owner decision required, and action-local technical inability. This does not imply one universal status enum. | If existing owners can already derive these distinctions reliably as a view without new semantics, no new canonical status model is justified. |
+
+### Deduplication conclusion
+
+The six initial candidates do **not** justify six new Requirements or six components.
+
+The smallest residual requirement surface after deduplication is:
+
+**R-1 — Authorized outcome binding / explicit absence**
+
+An authorized desired scholarly outcome must remain restartably bound or derivably linked to the canonical authority/scope that legitimates it; when no such outcome/scope is authorized, the system must return that absence rather than generate work.
+
+**R-2 — Outcome/state → applicable unmet requirements**
+
+Given R-1 plus current canonical evidence/maturity, the system must expose the applicable unmet requirements by reusing S1–S9, G1–G6 and existing domain requirements, with stable derivation separated from scholarly applicability/judgement.
+
+**R-3 — Requirement → capability/responsibility + bounded vertical execution route**
+
+For each applicable unmet requirement, the system must expose the appropriate competence/responsibility boundary and, where execution is authorized, the smallest coherent outcome-linked work slice. It must reuse existing domain/validation/specialist semantics and must not make the non-specialist Human Owner choose derivable method/engineering steps.
+
+**R-4 — Composed outcome disposition / legitimate ceiling**
+
+Whole-outcome continuation, completion or pause must be derived/explained from applicable requirement satisfaction plus scholarly/technical assurance and evidence/authority/specialist limits. Local task/CI/Issue completion is insufficient.
+
+**C-05 is deliberately not duplicated into R-1…R-4.** Its programme/phase subset is already METHOD; #226 owns the remaining Generic-Fit question for broader decomposition/repair continuity.
+
+No new formal requirement family, domain-requirements.tsv domain, workflow engine, role registry, outcome schema or state machine follows from this consolidation. Exact canonical ownership/serialization of R-1…R-4 is a Phase-2 design question, not a Phase-1 assumption.
+
+---
+
+### B. Executable-reuse audit
+
+| Existing executable surface | Already machine-readable / derivable | What it does **not** establish | Reuse consequence for #225 |
+|---|---|---|---|
+| corpus/source-contract.json + tools/source_contract.py | Source/File/Project/use/crosswalk referential structure; Project root; structural status; Project-source uses; use evidence; controlled File/crosswalk values | desired scholarly outcome, scholarly applicability, gate achievement, research priority, reading/interpretation | Keep as structural/provenance substrate; do not rebuild under integration abstraction |
+| tools/project_context.py | Project definition, documentary anchor, internal Sources, uses/evidence, File readiness facts, crosswalk references, canonical STATUS text, explicit do-not-infer boundary | Project purpose not already represented; scholarly NEXT ACTION; evidence access/readiness beyond observed fields; witness attribution; readings/interpretation; unmet requirements | Strong input/context assembler for R-1/R-2/R-4, but currently stops before the integration derivation |
+| tools/source_intake.py | SHA-first File identity path; Source/structural Project context; evidence-readiness distinctions; explicit routing alternatives; unresolved-file stop | Source identity when unresolved; Project materialization/use/priority; research function; target-context scholarly readiness | Positive precedent: stable distributed semantics can become a small derived adapter without becoming authority |
+| requirements/domain-requirements.tsv | Requirement IDs, domain, requirement text, information needed, current support, failure/risk, validation mode, specialist trigger, source issue, architecture handoff | dynamic applicability to a concrete outcome/scope/claim; proof that requirement is currently unmet; scholarly truth | Important reusable structured input for R-2/R-3; do not create a parallel competence registry by default |
+| Project project.yml / STATUS.md | purpose/root/scope text, current gate/restart/gaps/NEXT ACTION when recorded | ordinary-language need→purpose binding if not already owner-authorized; automatic outcome target; automatic task generation | Reuse as canonical Project authority/restart owners; integration must derive/reference rather than copy |
+| Existing regression tests | structural ownership, context restart, Corpus-only validity, Source/File routing boundaries, local recovery classes | end-to-end Human-need→outcome composition | Reuse as negative/structural fixtures; #225 still needs later vertical composition acceptance |
+
+#### Deterministic / AI / specialist / Human boundary after reuse audit
+
+**Stable enough to derive/validate mechanically where inputs are established:**
+- canonical Source/File/Project/use/crosswalk facts;
+- Project/corpus structural relationships and known evidence bindings;
+- existing controlled gate/requirement dependencies where semantic applicability is fixed;
+- requirement metadata such as owning domain, validation mode and specialist trigger;
+- whether an existing owner records no authorized scope/NEXT ACTION;
+- whether a local result is being promoted beyond its stated authority;
+- generated restart/context views and referential consistency.
+
+**AI-assisted / scholarly synthesis remains appropriate for:**
+- translating an ordinary-language scholarly need into candidate scholarly result semantics before/while Human authority is made explicit;
+- deciding applicability of open-ended disciplinary requirements when this depends on source/question meaning;
+- forming/assessing scholarly hypotheses and source-critical interpretations;
+- explaining and composing non-deterministic alternatives without converting plausibility into evidence.
+
+**Qualified specialist remains required for:**
+- consequential palaeographic, philological, editorial, archival, historical or other domain judgement where METHOD/requirements trigger independent review;
+- claims that cannot be validated from controlled evidence plus ordinary scholarly process alone.
+
+**Human Owner remains required only for genuinely non-derivable authority decisions:**
+- Project/purpose/material priority/scope decisions where not already established;
+- unresolved rights/authority facts;
+- consequential use/publication;
+- D-016 material system implementation admission;
+- material Governing Objective amendment.
+
+The integration problem is therefore not solved by “more AI”. Stable portions of R-1…R-4 should stop depending on model memory once Phase 2 identifies a lossless minimal representation/derivation path.
+
+---
+
+### C. Non-pilot falsification
+
+The Phase-1 candidates were challenged against three non-Reg.-Ii.-5 contexts.
+
+#### Fixture F1 — Reg. Ii 3: rich canonical evidence, no authorized current scholarly outcome
+
+Current Reg. Ii 3 state contains:
+- a Human-Owner-established Project and documentary root;
+- exact File provenance and substantial canonical crosswalks;
+- recovered historical work state;
+- **no owner-selected active scholarly scope**;
+- **no current G1–G6 progression for an edition target**;
+- **no owner-selected manuscript/source-research NEXT ACTION**.
+
+tests/test_regii3_crosswalk_restart.py additionally protects that a complete crosswalk is exposed **without creating research priority**.
+
+**Falsification consequence:**
+- R-1 must support an explicit “no authorized current outcome/scope” result.
+- R-2/R-3/R-4 must not activate merely because evidence, crosswalks, gate semantics or unresolved possibilities exist.
+- Any architecture that treats “available evidence + generic method” as sufficient to generate work is falsified.
+
+This fixture removes the pilot-specific assumption that an unresolved manuscript locus always implies a desired continuation.
+
+#### Fixture F2 — Corpus-only routing: valid Source/File structure with no Project
+
+tests/test_corpus_only_routing.py demonstrates that:
+- Source/File/part_of structure can validate with **zero Projects**;
+- structural containment does not materialize a Project.
+
+**Falsification consequence:**
+- R-1 must be authority-gated above structural evidence.
+- R-2 cannot treat Corpus completeness/availability as a research outcome.
+- R-3 cannot assign a Project-level execution route without Project authority.
+- “No Project / Corpus-only” is a legitimate terminal routing result.
+
+This fixture falsifies any generic model that presumes every Source has an active Project/outcome hierarchy.
+
+#### Fixture F3 — #69 intake/routing: same integration class outside manuscript-reading progression
+
+#69 documented a generic research-intake need where the correct semantics already existed across Source/File/Project/maintenance/contract owners, yet a fresh researcher/AI still had to synthesize the execution order from distributed prose.
+
+The bounded admitted solution:
+- retained existing semantic owners;
+- made the sequence explicit in existing METHOD;
+- reused the Source Contract;
+- added the small read-only tools/source_intake.py adapter;
+- preserved explicit Human decisions only where non-derivable;
+- added regressions;
+- rejected a new intake platform/schema/workflow engine.
+
+Its later correction also established:
+
+~~~text
+correct File identity
+!= correct Project→Source research function
+!= correct current work target / NEXT ACTION
+~~~
+
+**Generic consequence:**
+- the #225 composition problem is not Reg.-Ii.-5-specific;
+- “semantics exist but are distributed/model-mediated” is a demonstrated system failure class;
+- a successful future solution should prefer a thin derived composition surface over duplicating canonical owners;
+- deterministic operationalization is justified only for the stable subset;
+- support/execution correctness must not select scholarly priority.
+
+No additional generic semantic beyond R-1…R-4 is introduced by F3.
+
+---
+
+### D. Dependency challenge
+
+The initial linear chain
+
+~~~text
+C-01 → C-02 → C-03 → C-04 → execution → C-05 → C-06
+~~~
+
+is **too linear** and contains unsupported coupling.
+
+| Edge | Disposition | Reason |
+|---|---|---|
+| C-01 → C-02 | **hard dependency inside an outcome-driven path; conditional globally** | Unmet requirements require a legitimate target/outcome. Reg. Ii 3 and Corpus-only prove that absence of authorized outcome is a valid stop. |
+| C-02 → C-03 | **conditional dependency** | In the #225 path, unmet requirements normally drive capability/responsibility. But an already-authorized bounded claim/task can activate a domain directly without globally recomputing all unmet requirements. |
+| C-03 → C-04 | **useful ordering / partial co-dependency, not hard** | Capability knowledge can constrain a slice, but slice formation can also expose which competencies are needed. Do not impose a permanent router-before-planner pipeline. |
+| C-04 → existing execution | **hard only for newly formed work; not for already-authorized routine tasks** | Existing workflow.md can execute a valid bounded task directly. |
+| execution → C-05 | **unsupported as serial edge** | Outcome continuity is a cross-cutting invariant around decomposition/repair/return, not a phase after execution. |
+| C-05 → C-06 | **not hard** | Outcome acceptance can be assessed when no repair occurred; repair continuity must not be a prerequisite ceremony for every result. |
+| C-02 → C-06 | **hard/conditional for outcome-level disposition** | Completion/ceiling must be tested against applicable requirements; where no authorized outcome exists, the valid disposition is absence rather than acceptance. |
+| C-01 → C-06 | **hard for any whole-outcome completion claim** | Whole-outcome acceptance has no meaning without a legitimate outcome/authority basis. |
+
+#### Challenged dependency shape
+
+~~~text
+                 ┌────────────────────────────────────┐
+                 │  R-1 authorized outcome / absence  │
+                 └────────────────┬───────────────────┘
+                                  ↓
+                 ┌────────────────────────────────────┐
+                 │ R-2 applicable / unmet requirements│
+                 └──────────┬───────────────┬─────────┘
+                            │               │
+                            ↓               ↓
+                  R-3 capability +      R-4 outcome
+                  bounded vertical       disposition /
+                  execution route        legitimate ceiling
+                            │
+                            ↓
+                  existing execution
+                  METHOD / workflow
+
+C-05 / #226 question:
+cross-cuts decomposition, local PASS/FAIL, support/repair and return;
+it is not a downstream phase.
+
+Persistence / restartability:
+cross-cuts the entire graph and remains owned by existing canonical/restart owners.
+~~~
+
+This is a dependency model only, not a proposed state machine.
+
+---
+
+### E. #226 prerequisite disposition
+
+**PREREQUISITE MET.**
+
+Repository-backed basis now exists without this chat:
+
+1. all 15 end-to-end links have owner/support/maturity classifications;
+2. C-05 has been traced against the already-completed 2026-09-16 programme-continuity Requirements → Concept → admitted METHOD refinement → Result Review chain;
+3. current maintenance.md / workflow.md programme/phase semantics are known to be implemented, not merely conceptual;
+4. task-local cursor/return/support semantics in workflow.md have been separately identified;
+5. Reg. Ii 3 and Corpus-only provide negative fixtures where continuity/routing must **not** manufacture work;
+6. #69 provides a materially different system-development/intake fixture for distributed-semantics→thin-operationalization;
+7. #225's anti-fragmentation tests define the broader composition failure that #226 is to challenge.
+
+#226 may therefore execute its own Generic-Fit review. This Phase-1 result does **not** pre-judge its disposition.
+
+---
+
+## Phase-1 exit assessment
+
+| #227 / artifact exit criterion | Result |
+|---|---|
+| every minimum chain link has owner/support/maturity classification | **PASS** — Phase-0 table covers all 15 |
+| existing semantics/executable support distinguished from actual gaps | **PASS** — dedup + executable-reuse matrices above |
+| partial/missing links reduced to smallest candidate generic requirements with falsification | **PASS** — R-1…R-4; C-05 routed to #226 rather than duplicated |
+| dependencies among residuals explicit | **PASS** — challenged non-linear graph above |
+| #226 prerequisite judgeable without chat | **PASS — PREREQUISITE MET** |
+| fresh context can prepare competing concepts without rediscovering the problem | **PASS at Requirements level** — residuals, reuse substrate, authority boundaries, counter-fixtures and non-goals are persisted |
+| result reconciled to #225 as local phase result | **PENDING ISSUE RECONCILIATION at time of this artifact write; required before #227 close** |
+
+### Phase-1 conclusion
+
+Phase 0/1 does **not** support a new holistic workflow engine or six new system objects. It narrows #225 to a small integration problem over mature existing owners:
+
+~~~text
+authorized desired outcome / explicit absence
+        ↓
+applicable + unmet requirements
+        ↓
+capability / responsibility + smallest outcome-linked work
+        ↓
+existing scholarly/execution machinery
+        ↓
+composed outcome disposition / legitimate ceiling
+~~~
+
+with outcome continuity under decomposition handled as a separate cross-cutting Generic-Fit check in #226 because a substantial subset is already generic METHOD.
+
+**Consequence for #225: LOCAL PHASE RESULT.** Phase 0/1 is complete once this result is returned to #225/#227 issue state. It does not establish architecture, D-016 admission, implementation readiness or whole-system success.
