@@ -55,15 +55,17 @@ Old chat must never be required to reconstruct durable research state.
 
 ### Research-system programme navigation
 
-For cross-project research-system programme work, use GitHub Issue **#206** as the current programme/process navigation owner. It owns the programme-stage/cursor map; do not reconstruct programme priority from the newest closed Issue, a local D-016 `PASS`, or old chat.
+For cross-project research-system programme history and terminal disposition, use GitHub Issue **#206** and `requirements/research-system-programme-completion-review-2026-09-17.md`. Do not reconstruct programme priority from the newest Issue, a local D-016 `PASS`, or old chat.
 
 The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-ready result is persisted in `requirements/research-system-programme-synthesis-2026-09-15.md`.
 
 **Route A is COMPLETE and RESOLVED at the current evidence state.** Its P2 Requirements resolution (#200), bounded P3B Concept (#211), explicitly admitted two-file METHOD implementation and Result Review (#212) are complete. `methodology/maintenance.md` now owns the narrow programme/phase/result-transition reconciliation semantics and `methodology/workflow.md` contains only the referential execution hook. The terminal review is persisted in `requirements/research-system-programme-continuity-result-review-2026-09-16.md`.
 
-**Route B / #90 has completed Analysis, Requirements, Concept and explicit Human-Owner B-ADMIT.** The admitted scope is persisted in `requirements/default-branch-promotion-enforcement-owner-admission-2026-09-17.md`: one classic `main` Branch Protection rule with PR-before-merge, existing live `validate` required, zero mandatory approvals, strict/up-to-date off, admin bypass off, force-push off and deletion off. Configuration has **not** yet executed because the observed private-repository protection capability remains unavailable and the current ChatGPT GitHub connector has no repository Administration write surface. The current programme cursor is **#206** at this concrete execution-prerequisite boundary; Route B is not yet resolved and no new admission is needed if the admitted prerequisites later become available without changing scope.
+**Route B / #90 is explicitly DEFERRED at the GitHub Free/private-repository platform boundary by Human-Owner decision.** Analysis, Requirements, Concept and B-ADMIT remain valid history, but the native protection was not implemented. The known risk remains explicit: PR-only promotion, required `validate`, admin/direct-promotion prevention and force-push/delete protection are not technically enforced. `requirements/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md` records the defer/risk disposition. This satisfies the P3A PC7 completion path by explicit Human-Owner re-disposition rather than by claiming enforcement.
 
-A local `STOP` closes only the bounded arc whose owner establishes that boundary. It does not by itself establish completion of the overall research-system programme. The programme-continuity evidence is persisted in `requirements/research-system-programme-continuity-audit-2026-09-16.md`.
+**The research-system programme is at STOP at the current evidence and Human-Owner disposition state.** The final review is persisted in `requirements/research-system-programme-completion-review-2026-09-17.md`. #202 remains trigger-based/not warranted, #162 remains paused/deferred, and neither is activated by programme completion. No successor governance programme or Project scholarly `NEXT ACTION` is created. Reg. Ii 5 continues to have no owner-selected active scholarly scope.
+
+A local `STOP` closes only the bounded arc whose owner establishes that boundary. The programme-level STOP above is instead the explicit final reconciliation of the established programme owner after both material routes were resolved or re-dispositioned.
 
 ## Cross-project analytical audit evidence
 
@@ -78,7 +80,9 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 - `requirements/default-branch-promotion-enforcement-requirements-resolution-2026-09-16.md`;
 - `requirements/default-branch-promotion-enforcement-concept-2026-09-16.md`;
 - `requirements/default-branch-promotion-enforcement-owner-admission-2026-09-17.md`;
+- `requirements/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md`;
 - `requirements/research-system-programme-synthesis-2026-09-15.md`;
+- `requirements/research-system-programme-completion-review-2026-09-17.md`;
 - `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md`;
 - `requirements/pre-synthesis-research-program-2026-09-14.md`;
 - `requirements/shared-fixture-research-findings-2026-09-14.md`;
@@ -169,6 +173,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for research-system programme work, which programme/process owner carries the current cursor and why a local arc terminal state does or does not affect programme completion.
+- for research-system programme work, whether the programme is active or terminal and which explicit owner disposition established that state.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
