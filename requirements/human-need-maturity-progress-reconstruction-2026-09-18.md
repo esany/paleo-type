@@ -1,7 +1,9 @@
 # Human-need reconstruction — Project maturity/progress transparency — 2026-09-18
 
-Status: **REQUIREMENTS-ANALYSIS EVIDENCE ONLY.**  
+Status: **CURRENT REQUIREMENTS-ANALYSIS REFERENCE FOR THIS BRANCH — PRESERVED / NON-BLOCKING.**  
 This file is not METHOD, not a Project/gate/status owner, not implementation admission, not a new maturity mechanism and not authority to select scholarly work.
+
+**Programme effect:** this file is the current reconstruction of the Human maturity/progress-transparency need. It preserves that need for restartability but does not create a prerequisite, blocker or next action for #225 or any manuscript Project.
 
 Parent system owner: #225.  
 Analysis procedure: `requirements/human-need-maturity-progress-analysis-prompt-2026-09-18.md`.
