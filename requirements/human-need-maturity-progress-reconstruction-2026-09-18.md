@@ -1013,3 +1013,55 @@ The desired result is therefore best understood as:
 > **a transparent Project-level research map that preserves the full multidimensional scientific state, explains how that state came to be, and makes the consequences of further work intelligible without replacing the underlying scope-bound scholarly truths or pushing internal system complexity back onto the Human Owner.**
 
 That is the need that must be validated before operationalization resumes.
+
+
+## 18. Programme / dependency disposition after fresh repository review
+
+Fresh review of #225, current workflow/maintenance rules and all three current Project STATUS owners establishes:
+
+### This analysis is preserved but is **not a prerequisite authority** for resuming the main #225 workstream
+
+The maturity/progress transparency need is real and now sufficiently preserved as requirements-analysis evidence.
+
+However, no canonical owner currently defines completion of this maturity/progress surface as a prerequisite for:
+
+- ordinary Project scholarship;
+- selecting a new owner-authorized scholarly scope;
+- executing an already-authorized scholarly work block;
+- the next #225 vertical fixture.
+
+Accordingly, this requirements branch must **not** manufacture a programme blocker.
+
+### Current #225 cursor remains unchanged
+
+After the admitted C1R local PASS, #225 still requires a **genuine owner-authorized scholarly outcome** to exercise the remaining end-to-end chain through:
+
+- applicability of requirements;
+- responsibility/work composition;
+- real scholarly execution;
+- outcome disposition;
+- fresh-context restart.
+
+The repository currently records no active scholarly scope in Reg. Ii 3, Reg. Ii 4 or Reg. Ii 5.
+
+Therefore the next live scholarly step still requires Human-Owner selection of a bounded outcome/scope or another explicit canonical authority.
+
+### Relationship of the maturity/progress need to that decision
+
+The maturity/progress surface is best classified as:
+
+> **decision-support / human-orientation capability that may help the Human Owner choose or understand future work, but is not itself authority to choose work and is not currently a mandatory dependency for doing so.**
+
+If the Human Owner feels unable to make a meaningful next-scope decision without that orientation, the maturity/progress work may be resumed as a Human-usability/decision-support requirement under #225.
+
+If the Human Owner can select a bounded scholarly outcome directly, the main #225 vertical fixture may resume immediately without first designing or implementing the maturity/progress surface.
+
+### Stop condition for this branch
+
+For now:
+
+- preserve the reconstructed Human need;
+- do not extend it into schema/UI/tooling;
+- do not alter METHOD/gates/Project state;
+- do not treat “NOT READY FOR DESIGN / IMPLEMENTATION” in §16 as a blocker on unrelated #225 or Project work;
+- return to the higher-level #225 cursor unless/until this Human-usability need is explicitly selected as the next system-development target.
