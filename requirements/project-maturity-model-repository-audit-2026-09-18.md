@@ -1,6 +1,8 @@
 # Project maturity model — repository truth/completeness audit — 2026-09-18
 
-Status: **ANALYTICAL / AUDIT EVIDENCE ONLY.** This file is not normative METHOD, not a new gate owner, not a new Project priority, not a schema admission and not authority to change Project state.
+Status: **VALID ANALYTICAL / AUDIT EVIDENCE ONLY — NOT AN ACTIVE PROGRAMME CURSOR.** This file is not normative METHOD, not a new gate owner, not a new Project priority, not a schema admission and not authority to change Project state.
+
+**Current programme disposition:** the audit's multidimensional findings remain valid foundations for any future maturity/progress view. Its statement that further work under #225 is supported does **not** make that branch a prerequisite or current next action. See `requirements/human-need-maturity-progress-reconstruction-2026-09-18.md` §18 for the non-blocking disposition.
 
 Repository baseline reviewed: `main@5fe70f641d359e65dd5a85314e01ed810b1c97d6`.
 
