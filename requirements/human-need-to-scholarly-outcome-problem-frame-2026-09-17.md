@@ -137,7 +137,7 @@ This clarification refines the Human need underlying #225. It is **requirements-
 
 ### What the Human Owner is trying to understand
 
-For an established Project with an already defined scholarly purpose and an already defined transdisciplinary research method/pipeline, the Human Owner needs a **holistic, multidimensional, evidence-grounded time-slice of the Project's actual research maturity**.
+For an established Project with an already defined scholarly purpose and an already defined transdisciplinary research method/pipeline, the Human Owner needs a **holistic, multidimensional, evidence-grounded Project-level time-slice of actual research progress and scope-bound scholarly maturity**. The Project-level surface is a map over heterogeneous parts/scopes; it is not itself a new whole-Project maturity claim.
 
 The purpose is not to invent a new research question, redesign the scholarly method, select a new process model or reduce the Project to one maturity number.
 
@@ -226,8 +226,9 @@ CROSS-CUTTING QUALITY
 RESEARCH-INFRASTRUCTURE ASSURANCE
   provenance / reproducibility / restartability / semantic integrity / AI-HITL / human usability
         ↓
-WHOLE-PROJECT MATURITY VIEW
-  heterogeneous profile, never one scalar score
+PROJECT-LEVEL MATURITY / PROGRESS MAP
+  an aggregate navigation and decision view over heterogeneous scope-bound states;
+  never a new whole-Project maturity claim and never one scalar score
         ↓
 POSSIBLE NEXT WORK
   located in the profile by expected maturity/coverage/quality effect,
@@ -306,7 +307,7 @@ Internal implementation labels may exist beneath this surface, but they must not
 
 This Human need does **not** request:
 
-- a new research question when Project purpose/research object is already established;
+- manufacturing a new bounded research question merely in order to produce the Project-level maturity/progress map; the existing METHOD requirement that new material research serve an explicit question or required source-representation task remains unchanged;
 - a replacement for the existing scholarly METHOD;
 - a new linear phase model;
 - a scalar maturity score;
@@ -326,4 +327,4 @@ This clarification **strengthens rather than replaces** the main result of `requ
 - cross-cutting scholarly, specialist, technical, AI/HITL and usability quality must remain visible;
 - possible next work must be contextualized against the profile without becoming automatic priority.
 
-Future requirements/design work under #225 should treat this Human need as the acceptance target for any Project-maturity/decision surface.
+Future requirements/design work under #225 should treat this Human need as the acceptance target for any Project-level maturity/progress decision surface. Scope-bound gate/maturity truth remains owned by the existing Project/gate owners.
