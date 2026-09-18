@@ -263,3 +263,84 @@ map executable owner substrate
 ```
 
 Current state: **STARTED — prompt persisted; concept comparison active.**
+
+
+## 4. First substantive comparison pass
+
+This pass uses the current executable/owner substrate and the system-operationalization audit to eliminate false architecture space before deeper concept design.
+
+### 4.1 Existing substrate mapped to R-1…R-4
+
+| Existing owner / executable surface | R-1 | R-2 | R-3 | R-4 | Current limit |
+|---|---|---|---|---|---|
+| Project project.yml / STATUS.md | strong authority/scope/restart input where already recorded | exposes some gate/gap state | may expose current authorized NEXT ACTION | records gate/restart/ceiling state | does not itself bind ordinary-language desired outcome or derive generic unmet requirements |
+| tools/project_context.py | rebuildable read-only Project context; explicit no-inference boundary | provides canonical context inputs | exposes uses/evidence but not competence/work derivation | provides STATUS/evidence context | intentionally refuses to infer purpose/NEXT ACTION/readings/unmet requirements |
+| source-contract + resolver | prevents structural/authority confusion | structural prerequisite facts | Project/Source/use relationships | provenance/integrity validation | no scholarly outcome/applicability logic |
+| source_intake.py | explicit no-Project/no-auto-routing precedent | stable intake prerequisites only | explicit human-vs-deterministic routing precedent | valid unresolved/corpus-only stop paths | intake-specific pattern, not a generic outcome resolver |
+| research-gates.md | target/scope and authority preconditions | strong generic gate requirements + reopen/uncertainty semantics | gate requirements imply needed scholarly activity but not a generic planner | strong scope-bound completion/ceiling semantics | concrete applicability still needs composition |
+| historical-source-workflow.md | research-question control and S1–S9 activity semantics | generic scholarly requirements by activity | dynamic domain activation is normatively explicit | completion evidence per activity + S/G separation | not executable; S1–S9 are explicitly not a rigid waterfall |
+| domain-requirements.tsv | supporting Human/AI/specialist/validation metadata | structured requirement inventory | strongest structured basis for capability/responsibility routing | validation/specialist triggers support acceptance | applicability to current outcome remains model-mediated |
+| workflow + maintenance | preserves authority, cursor, return and continuity | does not choose applicable scholarly requirements | executes bounded authorized work and handoffs | local-vs-global completion and restart semantics | execution mechanics, not outcome→requirements composition |
+
+### 4.2 C0 — existing-owner + AI composition baseline
+
+**First-pass result: retained as comparison baseline; currently insufficient as the Phase-2 solution.**
+
+The system-operationalization audit explicitly finds that today much of Human need → evidence/maturity → unmet requirements → competence/work allocation is reconstructed by AI from prose and Project state. project_context deliberately stops before those integrations.
+
+C0 therefore leaves the demonstrated fresh-context/model-dependence failure materially unchanged. It would become viable only if later fresh-context evidence falsifies that audit finding.
+
+### 4.3 C1 — read-only derived control surface
+
+**First-pass result: viable partial concept, but not yet sufficient alone.**
+
+It strongly fits current architecture because project_context/source_intake already demonstrate rebuildable, non-authoritative derived views. C1 could improve R-1 visibility/restartability and expose gate/evidence/requirement metadata without duplicating truth.
+
+However, a pure aggregator leaves R-2/R-3 to AI. Its survival question is whether stable resolver semantics can live inside the derived surface without turning C1 into C2 under another name.
+
+### 4.4 C2 — deterministic requirement/gate resolver + bounded plan derivation
+
+**First-pass result: serious surviving concept; semantic-overreach risk must be falsified.**
+
+Support:
+- G1–G6 have stable scope-bound requirements and completion/reopen semantics;
+- domain-requirements.tsv has structured domain/validation/specialist-trigger metadata;
+- Source/Project/evidence structure is already deterministic;
+- the audit identifies outcome+state→unmet requirements and unmet requirements→bounded work as major gaps.
+
+Risk:
+- S1–S9 and G1–G6 are explicitly complementary, not a rigid workflow;
+- applicability and consequence remain partly scholarly;
+- C2 must be able to return “requires scholarly/AI applicability judgement” rather than force a deterministic answer.
+
+### 4.5 C3 — hybrid thin integration core
+
+**First-pass result: serious surviving concept; broadest coverage but highest vagueness/bloat risk.**
+
+Potentially it can combine deterministic owner/state/requirement resolution with an explicit AI boundary for unresolved semantic applicability, while preserving specialist/Human triggers.
+
+It is not selected because “hybrid” is not yet an architecture. C3 survives only if the deterministic core can be stated as a small exact contract and its AI boundary is materially narrower/more testable than C0.
+
+### 4.6 First-pass comparative state
+
+| Concept | R-1 | R-2 | R-3 | R-4 | AI-independence gain | Current state |
+|---|---|---|---|---|---|---|
+| C0 AI composition baseline | possible | model-mediated | model-mediated | model-mediated | low | **baseline / currently insufficient** |
+| C1 derived control surface | strong potential | partial unless derivation added | partial | moderate | medium | **survives as partial/minimal option** |
+| C2 deterministic resolver/planner | moderate-high | strong potential | strong stable subset | strong stable subset | high | **survives; semantic-overreach risk** |
+| C3 hybrid thin integration core | strong potential | strong potential | strong potential | strong potential | high if bounded | **survives; vagueness/bloat risk** |
+
+No concept is selected by this table.
+
+### 4.7 Next comparison step
+
+The next block must make C1/C2/C3 concrete enough to falsify them:
+
+1. define exact input/output contract for each;
+2. classify outputs as deterministic | AI-assisted | specialist | Human;
+3. test Reg. Ii 3 no-outcome, Corpus-only, #69 and a non-Reg.-Ii.-5 scholarly execution fixture;
+4. determine whether C1 can absorb stable resolver functions without becoming a distinct architecture;
+5. determine whether C2 preserves non-linear scholarly applicability without a workflow engine;
+6. determine whether C3 reduces to a minimal composition of existing tools plus one bounded resolver or remains unjustifiably broad.
+
+Current Phase-2 state: **ACTIVE — first architecture-space reduction complete; no D-016 decision yet.**
