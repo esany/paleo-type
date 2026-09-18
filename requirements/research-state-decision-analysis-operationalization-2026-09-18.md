@@ -3,8 +3,10 @@
 
 > **Scope correction — 2026-09-18:** Subsequent Human-Owner clarification established that this analysis over-emphasized formation/reframing of research questions and “new direction” selection. Established Projects already have a defined scholarly purpose/research object and a defined METHOD/pipeline. The governing Human need is broader: a holistic, multidimensional, evidence-grounded **Project maturity / progress decision surface** showing what was worked on, where, with what result, quality, disciplinary adequacy, coverage, infrastructure assurance and consequences of possible next work. See `requirements/human-need-to-scholarly-outcome-problem-frame-2026-09-17.md` (“Human-Owner clarification — project maturity transparency as a whole-project decision basis”). This file remains historical analysis evidence and MUST NOT be used as the current requirements owner for the maturity/decision-surface need.
 
-Status: **ANALYTICAL / OWNER-DECISION SURFACE ONLY.**  
+Status: **SUPERSEDED AS CURRENT PATH / HISTORICAL ANALYSIS EVIDENCE ONLY.**  
 This file is not normative METHOD, not a new Project state owner, not a new maturity model, not a new workflow engine, and not implementation admission.
+
+**Current disposition:** the proposed iteration-boundary METHOD/workflow propagation and its ADMIT/REFINE/DEFER/REJECT implementation surface are **withdrawn as the current programme path**. They were based on an over-narrow framing of the Human need around new research-direction formation. Do not implement this file's proposed METHOD/workflow changes unless a future, independently established need re-derives them through the normal admission path. The current Human-need reconstruction is `requirements/human-need-maturity-progress-reconstruction-2026-09-18.md`, and that branch is explicitly non-blocking for the main #225 cursor.
 
 Repository baseline reviewed: current `main` after #228 / #225 Phase-4 local implementation result.
 
