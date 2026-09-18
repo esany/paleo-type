@@ -129,3 +129,201 @@ Before any normative METHOD or architectural consequence:
 No new generic METHOD, workflow engine, candidate-object schema, orchestration layer or automatic priority mechanism is authorized by this file.
 
 The practical reason to preserve the frame now is restartability: future capable contexts and future projects should be able to discover that reliable support is judged not only by absence of epistemic/process errors, but by whether the system can convert an owner-authorized scholarly need into a high-quality usable result without hidden dependence on one chat/model or on the Human Owner acting as substitute expert.
+
+
+## Human-Owner clarification — project maturity transparency as a whole-project decision basis (2026-09-18)
+
+This clarification refines the Human need underlying #225. It is **requirements-analysis evidence**, not a new METHOD, gate, Project state, workflow or implementation admission.
+
+### What the Human Owner is trying to understand
+
+For an established Project with an already defined scholarly purpose and an already defined transdisciplinary research method/pipeline, the Human Owner needs a **holistic, multidimensional, evidence-grounded time-slice of the Project's actual research maturity**.
+
+The purpose is not to invent a new research question, redesign the scholarly method, select a new process model or reduce the Project to one maturity number.
+
+The decision surface must answer, at Project level and without losing scope-specific truth:
+
+1. **What has actually been worked on?**
+   - which source groups/loci/parts of the Project;
+   - which scholarly activities of the existing METHOD were actually performed;
+   - which work is historical, current, reopened or not yet activated.
+
+2. **What resulted from that work?**
+   - concrete scholarly results;
+   - unresolved findings;
+   - evidence ceilings;
+   - corrections/revisions;
+   - what is explicitly *not* established.
+
+3. **How mature is that work, and on what evidence?**
+   - scope-bound scholarly maturity;
+   - quality of evidence;
+   - completeness for the evaluated scope;
+   - uncertainty handling;
+   - independence of corroboration;
+   - validation/specialist state;
+   - claim-to-evidence traceability.
+
+4. **How broad is the coverage across the Project?**
+   - maturity depth and Project coverage must remain separate;
+   - strong infrastructure or deep work in one locus must never be presented as maturity of the whole Project;
+   - a Project-level view must preserve heterogeneous states across different loci/source groups.
+
+5. **Which disciplinary dimensions were relevant and how adequately were they addressed?**
+   - transdisciplinary coverage must be dynamic and problem-relative;
+   - “not activated” may be correct when a discipline was not relevant;
+   - a real gap exists only when an applicable disciplinary requirement was not adequately addressed.
+
+6. **How well is the research state technically and operationally supported?**
+   - provenance;
+   - exact evidence access;
+   - reproducibility;
+   - restartability;
+   - semantic integrity;
+   - deterministic assurance where appropriate;
+   - AI/Human/specialist boundaries;
+   - human auditability and usability.
+
+   These are independent support/assurance dimensions. They may enable scholarship but must never numerically or rhetorically compensate for missing scholarly work.
+
+7. **How should possible next work be understood in relation to the whole?**
+   - which existing maturity/quality/coverage dimensions a proposed next work block would advance;
+   - which prerequisites it depends on;
+   - what scholarly result it could produce;
+   - what it would leave unchanged;
+   - what later work it would enable or make unnecessary;
+   - what evidence ceiling or specialist dependency could terminate it.
+
+   This is contextualization of possible work, **not automatic priority selection**.
+
+### Required information architecture
+
+Human readability and transparency are **not simplification requirements**.
+
+For this system:
+
+> readability = structure, hierarchy, comparison, traceability and cognitive accessibility of the full relevant complexity.
+
+The Human-facing representation must therefore preserve complexity while organizing it into inspectable independent dimensions.
+
+A useful conceptual structure is:
+
+```text
+PROJECT PURPOSE / ESTABLISHED RESEARCH OBJECT
+        ↓
+PROJECT COVERAGE MAP
+  source groups / loci / historical-current-reopened work
+        ↓
+SCHOLARLY ACTIVITY COVERAGE
+  existing METHOD activities, per evaluated scope
+        ↓
+SCOPE-BOUND SCHOLARLY MATURITY
+  existing gate/acceptance semantics
+        +
+CROSS-CUTTING QUALITY
+  evidence / epistemic / disciplinary / specialist / source-critical
+        +
+RESEARCH-INFRASTRUCTURE ASSURANCE
+  provenance / reproducibility / restartability / semantic integrity / AI-HITL / human usability
+        ↓
+WHOLE-PROJECT MATURITY VIEW
+  heterogeneous profile, never one scalar score
+        ↓
+POSSIBLE NEXT WORK
+  located in the profile by expected maturity/coverage/quality effect,
+  prerequisites, consequences and resulting options
+```
+
+### Independent dimensions that must not collapse
+
+At minimum, the decision surface must keep distinct:
+
+- **Project coverage** — how much / which parts of the Project are represented by the assessment;
+- **scholarly activity coverage** — what parts of the established METHOD were actually performed;
+- **scholarly maturity** — which evidence-based acceptance states are reached for which scope;
+- **epistemic quality** — evidence adequacy, uncertainty, claim-layer separation and independent challenge;
+- **disciplinary adequacy** — whether all applicable transdisciplinary requirements were activated and adequately addressed;
+- **specialist-validation state** — independent qualified validation where consequence warrants it;
+- **research-infrastructure assurance** — provenance, exact evidence access, reproducibility, restartability, semantic/data integrity, deterministic checks;
+- **human usability/auditability** — whether a capable human can understand and challenge the state and its basis;
+- **outcome usefulness / evidence ceiling** — what usable scholarly result exists and what cannot currently be concluded.
+
+These dimensions may interact, but none is a substitute for another.
+
+### Iteration semantics
+
+An iteration is not a new pipeline phase and not automatic gate progression.
+
+For this Human-facing maturity view, an iteration means:
+
+> a bounded scholarly work block operating inside the existing METHOD that changes one or more parts of the Project maturity profile, followed by re-assessment of the whole relevant profile.
+
+The view must therefore support **before → scholarly delta → after**:
+
+- what scope was worked on;
+- which maturity/quality dimensions changed;
+- which did not;
+- what new uncertainty/evidence ceiling appeared;
+- what new work became possible or unnecessary;
+- whether an earlier maturity claim needs reopening.
+
+This makes research progress visible without pretending that the Project follows a one-way ladder.
+
+### Reg. Ii 3 as falsification fixture
+
+A valid whole-Project view of Reg. Ii 3 must be able to show simultaneously:
+
+- established Project and substantial Source/File/crosswalk preparation;
+- broad technical/provenance readiness for known source groups;
+- no current owner-selected active scholarly scope;
+- little current deep scholarly processing across the Project;
+- no justified whole-Project G1–G6 maturity label;
+- substantial difference between **breadth of preparation** and **depth of scholarly analysis**.
+
+If the view makes Reg. Ii 3 look “advanced” merely because infrastructure/provenance is strong, it fails.
+
+If it reduces Reg. Ii 3 to “not evaluated” and hides the substantial work already performed, it also fails.
+
+### Human-facing acceptance criteria
+
+A fresh capable context should be able to produce a view from repository state that allows the Human Owner to understand, without replaying old chat:
+
+- what was done;
+- where it was done;
+- by which scholarly method;
+- what result was obtained;
+- how strong that result is;
+- how much of the Project it covers;
+- which relevant disciplines were or were not adequately engaged;
+- which uncertainties/ceilings remain and whether they matter;
+- how reliable/restartable/auditable the supporting research infrastructure is;
+- how a proposed next work block would change the whole maturity profile;
+- what consequences and later options follow from that change.
+
+Internal implementation labels may exist beneath this surface, but they must not be required to understand the scholarly state.
+
+### Explicit non-needs
+
+This Human need does **not** request:
+
+- a new research question when Project purpose/research object is already established;
+- a replacement for the existing scholarly METHOD;
+- a new linear phase model;
+- a scalar maturity score;
+- automatic scientific ranking;
+- automatic next-task generation;
+- a fixed discipline sequence;
+- a new candidate-question registry;
+- a duplicate Project/gate/status truth store.
+
+### Relation to the 2026-09-18 maturity audit
+
+This clarification **strengthens rather than replaces** the main result of `requirements/project-maturity-model-repository-audit-2026-09-18.md`:
+
+- process/activity, scholarly maturity and technical/system quality must remain distinct;
+- maturity is scope-bound;
+- a Project-level view may aggregate but must not flatten heterogeneous scopes;
+- cross-cutting scholarly, specialist, technical, AI/HITL and usability quality must remain visible;
+- possible next work must be contextualized against the profile without becoming automatic priority.
+
+Future requirements/design work under #225 should treat this Human need as the acceptance target for any Project-maturity/decision surface.
