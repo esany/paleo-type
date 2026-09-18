@@ -1,7 +1,9 @@
 # Analysis prompt — reconstruct the Human need behind Project maturity/progress transparency
 
-Status: **ANALYSIS PROCEDURE / WORKING PROMPT ONLY.**  
+Status: **COMPLETED ANALYSIS PROCEDURE / HISTORICAL WORKING PROMPT ONLY.**  
 This file is not METHOD, not a Requirement owner, not Project state, not implementation admission and not authority to change any scholarly or technical system rule.
+
+**Execution status:** this prompt has been executed. Its current result is `requirements/human-need-maturity-progress-reconstruction-2026-09-18.md`. Do not treat the prompt itself as an open task or programme cursor.
 
 Parent system owner: #225.
 
