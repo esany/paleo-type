@@ -327,4 +327,4 @@ This clarification **strengthens rather than replaces** the main result of `requ
 - cross-cutting scholarly, specialist, technical, AI/HITL and usability quality must remain visible;
 - possible next work must be contextualized against the profile without becoming automatic priority.
 
-Future requirements/design work under #225 should treat this Human need as the acceptance target for any Project-level maturity/progress decision surface. Scope-bound gate/maturity truth remains owned by the existing Project/gate owners.
+If the maturity/progress decision-support branch is explicitly resumed in future, its requirements/design work should use this Human need together with `requirements/human-need-maturity-progress-reconstruction-2026-09-18.md` as acceptance input. This branch is **not currently a prerequisite or blocker** for the main #225 workstream or ordinary Project scholarship. Scope-bound gate/maturity truth remains owned by the existing Project/gate owners.
