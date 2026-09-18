@@ -1,7 +1,9 @@
 # Self-review — Project maturity/transparency work — 2026-09-18
 
-Status: **ANALYTICAL / CORRECTIVE REVIEW EVIDENCE ONLY.**  
+Status: **HISTORICAL CORRECTIVE REVIEW EVIDENCE ONLY — SUPERSEDED FOR NEXT-WORK ROUTING.**  
 This file is not METHOD, not a gate/status owner, not Project priority, not implementation admission and not authority to create a new maturity mechanism.
+
+**Current routing correction:** this review remains valid as diagnosis of prior drift, but any statement here implying that maturity/progress requirements or design validation is the next mandatory programme step is superseded by `requirements/human-need-maturity-progress-reconstruction-2026-09-18.md` §18. The maturity/transparency branch is preserved but non-blocking; the main #225 cursor remains the genuine owner-authorized scholarly vertical fixture.
 
 Parent system owner: #225.
 
