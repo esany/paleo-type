@@ -503,3 +503,265 @@ Phase 2 is complete only when:
 - a fresh context can understand the D-016 proposal without this chat.
 
 Current execution status: **ACTIVE — execute A→F now.**
+
+## 6. Holistic execution result — contracts, falsification and concept selection
+
+### 6.1 Concept contracts
+
+#### C1 — derived control surface
+
+Inputs: Project identifier when a Project exists; current project.yml and STATUS.md; derived project_context output; current Source/File/use/provenance structure; requirements/domain-requirements.tsv; current METHOD/gate owners; optional ordinary-language Human-Owner requested outcome.
+
+Derived outputs: current Project authority/purpose/scope references; explicit presence/absence of current authorized scholarly scope or NEXT ACTION; current evidence/provenance/maturity references; requirement inventory and responsibility/validation metadata; unresolved fields explicitly marked.
+
+Mutation: NONE. Rebuildable/read-only only.
+
+Must never infer: Project creation/purpose from Source/File structure; new active_scope/NEXT ACTION; gate progression from evidence availability alone; scholarly readings/interpretations; requirement applicability that is not already explicit.
+
+Assessment: safe and lean, but insufficient alone for R-2/R-3 because applicability and bounded-work composition remain model-mediated.
+
+#### C2 — deterministic requirement/gate resolver + planner
+
+Useful stable subset: explicit gate/requirement metadata, requirement domain, validation mode, specialist trigger, deterministic Project/Source/evidence facts.
+
+Fatal boundary: it may not infer next gate/next task from gate ordering, may not treat S1–S9/G1–G6 as a rigid workflow, and may not create Project priority.
+
+Decisive falsifier: Reg. Ii 4 currently records G1–G4 reached for the bounded Knau witness pair while project.yml and STATUS.md explicitly record no owner-selected active scholarly scope and no new current target. Therefore a deterministic rule 'G4 reached and G5 not reached => do G5 next' would be wrong.
+
+Disposition: REJECT C2 as an independent architecture. Retain only bounded deterministic derivations inside the selected concept.
+
+#### C3 — hybrid thin integration core
+
+Valid contribution: deterministic resolution for stable owner/state/requirement metadata plus explicit AI/specialist/Human boundaries for open semantics.
+
+Problem: as a separate architecture it is too broad and vague. Once bounded to read-only derived integration plus explicit reasoning boundaries it collapses into C1 with a narrow resolver layer.
+
+### 6.2 Architectural collapse
+
+Selected concept:
+
+**C1R — Derived Outcome Control Context with bounded resolution**
+
+C1R is a single rebuildable/read-only integration surface over existing owners. It does not own research truth, Project state, gate state or workflow state.
+
+Semantic shape:
+
+~~~text
+Human requested outcome
+  -> authority binding against existing Project purpose/scope/current state
+  -> canonical + derived Project/Source/evidence context
+  -> stable requirement/routing metadata derived mechanically
+     + open applicability resolved explicitly by AI/specialist where necessary
+  -> derived unmet-requirement + responsibility view
+  -> bounded work proposal only when already authorized
+  -> derived continuation / completion / legitimate-ceiling view
+~~~
+
+Existing workflow/maintenance semantics execute and preserve continuity. C1R does not become the workflow.
+
+### 6.3 Field-level responsibility allocation
+
+| Output meaning | Allocation | Owner/boundary |
+|---|---|---|
+| Human-requested desired outcome | AI-assisted interpretation | request is not canonical truth by itself |
+| Project existence/root/Source/File/use structure | deterministic / derived | Source Contract + Project owner |
+| Project purpose/research_object/active_scope | derived from owner | project.yml |
+| recorded NEXT ACTION or explicit absence | derived from owner | STATUS.md; no inference when absent |
+| bind requested outcome to already-authorized scope | AI-assisted + deterministic authority guards | may not widen scope |
+| changed purpose/priority/active_scope | Human Owner | Project authority |
+| explicitly recorded gate/maturity state | derived from owner | STATUS.md + gate semantics |
+| new gate advancement | AI-assisted scholarly judgement; specialist if triggered | never from task completion alone |
+| formal requirement metadata | deterministic / derived | domain-requirements.tsv |
+| requirement applicability | deterministic only where formally fixed; otherwise AI-assisted | source/question/outcome-relative |
+| applicability rationale | AI-assisted with exact references | auditable, uncertainty preserved |
+| domain/capability for applicable requirement | derived where explicit; otherwise AI-assisted | requirement/METHOD owner |
+| validation mode / specialist trigger | derived | domain-requirements.tsv / METHOD |
+| specialist conclusion | specialist | independent validation boundary |
+| bounded work objective | AI-assisted composition constrained by authority + unmet requirements | cannot invent priority |
+| choice among materially different owner priorities | Human Owner | non-derivable priority |
+| repository prerequisite/evidence facts | deterministic where structured | validators/context |
+| scholarly evidence sufficiency/meaning | AI-assisted / specialist | evidence-before-plausibility |
+| return/review condition | workflow-derived + AI-assisted framing where needed | workflow owns semantics |
+| local technical/support PASS | deterministic/local only | cannot become scholarly completion |
+| outcome satisfied | AI-assisted scholarly composition + existing acceptance owners | never from Issue/CI count |
+| evidence ceiling | AI-assisted or specialist | exact evidence basis required |
+| missing Human authority | derived where explicit | return exact decision needed |
+| technical inability | deterministic where observed | action-local unless owner establishes broader blocker |
+| unresolved semantic question | AI-assisted marker; specialist/Human route as applicable | uncertainty is valid |
+
+### 6.4 Conceptual I/O contract
+
+Inputs when a Project path is requested: Project ID; rebuildable project_context; project.yml; STATUS.md; relevant Source/File/use/provenance context; domain-requirements.tsv; references to current S1–S9/G1–G6/METHOD owners; optional Human-requested desired outcome.
+
+Inputs may legitimately be absent: Project itself; authorized active_scope; NEXT ACTION; specialist review; complete evidence.
+
+Derived output meanings:
+
+~~~text
+AUTHORITY
+- Project exists? yes/no
+- current authorized outcome/scope? exact owner reference / absent / owner decision required
+
+CURRENT STATE
+- canonical Project/Source/evidence references
+- explicitly recorded maturity/gate state
+- unresolved state not silently filled
+
+REQUIREMENTS
+- candidate/applicable unmet requirements
+- requirement owner/reference
+- applicability status + rationale + uncertainty
+- validation mode + specialist trigger
+
+RESPONSIBILITY / WORK
+- deterministic | AI-assisted | specialist | Human-Owner boundary
+- bounded work proposal only if compatible with authorized outcome
+- prerequisites/evidence needs
+- completion + return/review condition
+
+OUTCOME DISPOSITION
+- continue authorized work
+- outcome satisfied at required level
+- evidence ceiling
+- specialist validation required
+- Human authority decision required
+- action-local technical inability
+- no authorized outcome / no Project
+~~~
+
+These are derived output meanings, not a new universal canonical status vocabulary.
+
+Mutation contract: NONE by default. C1R may not write Project purpose/scope/NEXT ACTION, mark gates reached, accept scholarly claims, create specialist validation, create a Project from Corpus state, or promote its own derived package to canonical truth.
+
+### 6.5 Cross-fixture falsification
+
+**Reg. Ii 3:** Project and rich evidence exist, but no authorized current scholarly outcome. Required result: no work proposal. PASS for C1R.
+
+**Corpus-only:** valid Source/File structure with no Project. Required result: legitimate no-Project state; no Project or work generated. PASS for C1R.
+
+**#69 intake/routing:** demonstrates the successful architecture pattern: distributed semantics + thin read-only deterministic adapter + explicit unresolved Human/scholarly decisions + no platform/schema/workflow engine. Strong positive precedent for C1R.
+
+**Reg. Ii 4 #96–#99:** demonstrates bounded scholarly progression and the key falsifier. After G1–G4 completion, no current active scope exists; therefore gate ordering cannot select G5 or a NEXT ACTION. PASS for C1R; FATAL for unconstrained C2.
+
+**Reg. Ii 5:** retained only as later high-information stress fixture. Current completed historical evidence must not auto-reactivate work.
+
+### 6.6 Continuity / no-parallel-truth loss check
+
+C1R consumes existing owners only: programme/phase reconciliation from maintenance.md; task cursor/handoff/repair/return from workflow.md; Project purpose/scope/current target from Project owners; gate semantics from research-gates.md; domain responsibility/validation from domain-requirements.tsv + METHOD.
+
+The derived package is rebuildable and non-canonical. Concept-level loss check: PASS.
+
+Future implementation fails the Concept if derived fields become manually edited truth; C1R becomes owner of NEXT ACTION; a second gate state is stored; a capability registry duplicates requirements metadata; or a work proposal is treated as authorization.
+
+### 6.7 Rejected / merged alternatives
+
+- C0 AI-only composition: baseline only; rejected as solution because it preserves the demonstrated AI-as-integration-layer failure.
+- C1 pure aggregator: merged into C1R because visibility alone does not operationalize R-2/R-3.
+- C2 deterministic resolver/planner: rejected as independent architecture; safe stable derivations retained.
+- C3 broad hybrid core: collapsed into C1R; retain explicit responsibility boundaries, not a broad platform.
+
+## 7. Selected Phase-2 concept — C1R
+
+Core: one read-only/rebuildable Outcome Control Context over existing owners, with bounded deterministic resolution and explicit non-deterministic reasoning boundaries.
+
+What is new: one integrated derived contract for R-1…R-4; bounded stable resolution over existing structured owners; output-level provenance/responsibility classification; explicit distinction between derivable-now and AI/specialist/Human judgement.
+
+What is not new: Project purpose/scope; gates; S1–S9; requirement definitions; Source/File/Project identity; continuity; workflow cursor/repair; specialist validation; Human authority.
+
+### 7.1 Likely implementation shape if admitted
+
+1. New read-only sibling tool, tentatively tools/outcome_context.py, consuming/reusing tools/project_context.py.
+2. Focused regressions in tests/test_outcome_context.py.
+3. Minimal existing CI/test integration only.
+4. No canonical schema/data migration by default.
+5. AI reasoning remains outside the deterministic tool; the tool exposes exact context, stable metadata, authority boundaries and unresolved slots.
+
+Likely affected files if admitted: tools/outcome_context.py; tests/test_outcome_context.py; possibly one existing CI workflow file to run the new checks. Existing project_context/source_contract/domain-requirements/METHOD are reused, not re-owned.
+
+Expected migration: none for existing Project/Corpus research truth. No project.yml or STATUS migration; no outcome registry; no capability registry; no gate-state store.
+
+### 7.2 Vertical implementation fixture
+
+Human ordinary-language requested outcome -> bind against already-authorized Project scope -> compile canonical Project/evidence context -> expose candidate/applicable unmet requirements -> expose responsibility + validation/specialist metadata -> AI composes smallest authorized scholarly work slice -> existing workflow executes/returns -> derived outcome disposition -> fresh-context reconstruction.
+
+The first slice must include at least one explicit negative state where no work is generated.
+
+## 8. Phase-3 D-016 decision surface
+
+### Demonstrated need
+
+Current tools reliably assemble and validate Source/File/Project context, but authorized scholarly outcome -> unmet requirements -> responsibility/work -> outcome disposition remains substantially model-mediated. Pure aggregation is insufficient; automatic gate planning is unsafe; thin read-only derived adapters over canonical owners are a demonstrated successful pattern.
+
+### Proposed concept
+
+**C1R — Derived Outcome Control Context with bounded resolution.**
+
+### Proposed bounded implementation scope
+
+If admitted:
+1. add a read-only outcome-control context capability as sibling/reuser of project_context;
+2. expose only stable derived owner/context/requirement/responsibility data mechanically;
+3. expose unresolved semantic/applicability fields rather than guessing them;
+4. add deterministic negative/authority regressions;
+5. use the result in one real vertical scholarly fixture with AI handling only explicitly non-deterministic remainder;
+6. preserve all Project/METHOD/Requirement owners unchanged unless implementation exposes a separately material semantic gap, which must return to D-016.
+
+### Deterministic acceptance tests
+
+1. Reg. Ii 3 returns no authorized current outcome and no generated work.
+2. Corpus-only does not materialize a Project.
+3. Reg. Ii 4 G1–G4 completion does not generate G5/NEXT ACTION.
+4. Derived fields retain canonical owner references.
+5. Requirement domain/validation/specialist metadata comes from canonical requirements owner.
+6. Local technical/task PASS cannot serialize as whole-outcome completion.
+7. Rebuild with same canonical state yields materially equivalent deterministic fields.
+
+### Scholarly / semantic loss checks
+
+- open requirement applicability remains unresolved/AI-assisted where not losslessly formalizable;
+- gate semantics remain scope-bound and non-waterfall;
+- unresolved evidence remains valid;
+- specialist validation remains distinct from method/AI compliance;
+- bounded work is never treated as owner-authorized if current scope/priority does not support it.
+
+### Human-usability acceptance
+
+The Human Owner should not need to decide which gate comes next, which requirement row applies where stable derivation suffices, which validator/context tool to run, or which specialist/validation metadata is already encoded.
+
+The Human Owner may still need to decide new/changed purpose or priority, materially changed active scope, unresolved rights/authority, consequential use, and D-016 admission.
+
+### Fresh-context acceptance
+
+Same canonical repository state + same owner-requested outcome must reconstruct materially equivalent authority binding, deterministic context, deterministic requirement/responsibility metadata, unresolved semantic questions, and no-work/decision/ceiling boundaries.
+
+### Rollback / compatibility
+
+Because the proposed first slice is read-only and derived, rollback is deletion/reversion of the tool/tests; no canonical research-state migration should be needed.
+
+### Explicit non-goals
+
+No workflow engine; autonomous planner; universal status state machine; capability/agent registry; Project/outcome database; automatic gate advancement; automatic active_scope/NEXT ACTION write; deterministic scholarly interpretation; specialist replacement; Reg.-Ii.-5-specific architecture.
+
+### Human-Owner choice
+
+- ADMIT — authorize the bounded C1R read-only vertical implementation slice and tests above.
+- REFINE — keep the need/concept but adjust implementation boundary.
+- DEFER — retain C1R as selected concept but do not implement now.
+- REJECT — reject C1R; #225 remains unresolved unless another concept is selected.
+
+No material development occurs before an explicit choice.
+
+## 9. Phase-2 completion assessment
+
+- architecture space genuinely reduced: PASS
+- R-1…R-4 jointly covered at concept level: PASS
+- no duplicate canonical truth: PASS by design
+- stable vs non-stable boundaries explicit: PASS
+- no-outcome/no-Project fixtures preserved: PASS
+- non-Reg.-Ii.-5 scholarly falsification: PASS — Reg. Ii 4
+- continuity treated as existing cross-cutting property: PASS
+- smallest coherent concept selected: PASS — C1R
+- D-016 decision surface prepared: PASS
+- implementation admission: PENDING HUMAN OWNER
+
+**Phase-2 result: LOCAL PHASE RESULT READY FOR #225 RECONCILIATION.**
