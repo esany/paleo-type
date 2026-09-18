@@ -344,3 +344,162 @@ The next block must make C1/C2/C3 concrete enough to falsify them:
 6. determine whether C3 reduces to a minimal composition of existing tools plus one bounded resolver or remains unjustifiably broad.
 
 Current Phase-2 state: **ACTIVE — first architecture-space reduction complete; no D-016 decision yet.**
+
+
+## 5. Holistic Phase-2 execution prompt
+
+Execute the remaining Phase-2 work as **one coherent end-to-end concept block**. Do not split the work into topical sub-Issues. Persist all material findings here and reconcile the final local phase result to #225.
+
+### Governing objective of this block
+
+Reduce C1/C2/C3 to the **smallest architecture that can operationalize R-1…R-4 together** while:
+
+- reusing canonical Project/Source/Requirement/METHOD owners;
+- keeping all new state derived/rebuildable unless a new canonical fact is strictly unavoidable;
+- moving stable repeated system inference out of model memory;
+- leaving open scholarly applicability/interpretation with AI or qualified specialists;
+- leaving non-derivable purpose/priority/authority with the Human Owner;
+- preserving #226 outcome-continuity as a cross-cutting acceptance property;
+- preserving “no authorized outcome / no Project / no generated work” as valid states;
+- avoiding a workflow engine, role registry, universal status ontology or pilot-specific control model.
+
+### A. Define exact concept contracts
+
+For C1, C2 and C3 state concrete conceptual contracts:
+
+\`\`\`text
+INPUTS
+- exact canonical owners consumed
+- which input facts must already be authorized
+- which inputs may be absent
+
+DERIVED OUTPUTS
+- exact meanings exposed/derived
+- provenance/owner references
+- uncertainty / unresolved markers
+
+MUTATION
+- whether anything canonical is written
+- default should be NONE in Phase-2 concepts
+
+AUTHORITY BOUNDARY
+- what the mechanism must never infer
+
+FAIL/CLEAR-STOP STATES
+- no authorized outcome
+- no Project
+- unresolved applicability
+- evidence ceiling
+- specialist dependency
+- Human decision required
+- technical inability
+\`\`\`
+
+Do not use implementation-language detail unless needed to prove feasibility.
+
+### B. Field-level allocation
+
+For every output needed by R-1…R-4 classify:
+
+\`DETERMINISTIC | AI-ASSISTED | SPECIALIST | HUMAN OWNER | DERIVED FROM OWNER\`
+
+At minimum cover:
+
+- authorized outcome / explicit absence;
+- Project purpose and active scope;
+- current gate/maturity/evidence position;
+- applicable unmet requirement IDs;
+- applicability rationale;
+- relevant domain/capability;
+- validation mode;
+- specialist trigger;
+- bounded work objective;
+- prerequisite/evidence needs;
+- return/review condition;
+- outcome continuation/completion/ceiling disposition;
+- unresolved semantic questions.
+
+If one output can safely be derived from an existing owner, do not create a new canonical field for it.
+
+### C. Cross-fixture falsification
+
+Test C1/C2/C3 against:
+
+1. **Reg. Ii 3** — valid Project and evidence, but no authorized current scholarly outcome.
+2. **Corpus-only routing** — valid Source/File structure with no Project.
+3. **#69 intake/routing** — non-pilot system case where thin deterministic operationalization over distributed semantics succeeded.
+4. **Reg. Ii 4 scholarly work sequence** — a materially different scholarly execution context with bounded work-package/gate progression outside Reg. Ii 5.
+5. **Reg. Ii 5 only as high-information stress fixture**, never as the generic architecture basis.
+
+For each concept and fixture record:
+- required behavior;
+- observed fit;
+- failure;
+- whether failure is concept-fatal, bounded refinement or evidence that the semantic must remain non-deterministic.
+
+### D. Collapse redundant concepts
+
+After concrete contracts and fixtures:
+
+- if C1 with bounded derivation becomes functionally equivalent to C3, merge/relabel rather than retain fake alternatives;
+- if C2 necessarily becomes a workflow engine or over-formalizes scholarship, reject it;
+- if C3 cannot be reduced to a small deterministic/derived core with explicit non-deterministic boundary, reject it;
+- retain C0 only as the no-change baseline.
+
+Prefer architectural collapse over multiplying components.
+
+### E. Select smallest coherent concept
+
+A selected concept must state:
+
+1. **core semantic shape**;
+2. what is new versus already existing;
+3. exact canonical owners reused;
+4. derived/executable surface required;
+5. deterministic boundary;
+6. AI boundary;
+7. specialist boundary;
+8. Human-Owner boundary;
+9. no-outcome/no-Project behavior;
+10. outcome-continuity behavior;
+11. likely file/tool/contracts affected if admitted;
+12. migrations explicitly **not** required;
+13. vertical acceptance fixture;
+14. cross-fixture falsification fixture;
+15. expected reduction in AI/chat/Human burden.
+
+### F. D-016 Phase-3 decision surface
+
+End with a Human-Owner admission surface containing:
+
+- demonstrated problem;
+- selected concept;
+- rejected/merged alternatives and why;
+- exact bounded implementation scope;
+- expected new/changed files;
+- explicit non-goals;
+- deterministic tests;
+- scholarly/semantic loss checks;
+- Human usability acceptance;
+- restartability/fresh-context acceptance;
+- cross-fixture acceptance;
+- rollback/compatibility consequence;
+- one clear choice set:
+  - \`ADMIT\`
+  - \`REFINE\`
+  - \`DEFER\`
+  - \`REJECT\`
+
+Do **not** implement before explicit Human-Owner admission.
+
+### Completion condition
+
+Phase 2 is complete only when:
+- the architecture space has been genuinely reduced;
+- one smallest concept is selected or no-change is demonstrated sufficient;
+- R-1…R-4 are covered without duplicate truth;
+- every stable/non-stable semantic boundary is explicit;
+- fixtures show no automatic work generation from structural state;
+- a fresh context can understand the D-016 proposal without this chat.
+
+Current execution status: **ACTIVE — execute A→F now.**
