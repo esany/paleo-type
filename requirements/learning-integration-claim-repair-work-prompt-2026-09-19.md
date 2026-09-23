@@ -1,6 +1,6 @@
 # Work prompt — repair the gap between documented learning and claimed operational learning
 
-Status: **WORKING ANALYSIS / REPAIR PROMPT ONLY.**  
+Status: **EXECUTED REPAIR SPECIFICATION / HISTORICAL PROMPT.**  
 This prompt does not itself change METHOD, Project state, requirements, implementation authority, #225 priority or any `Wissensarbeit` execution cursor.
 
 Parent system context: `paleo-type` #225.  
@@ -425,3 +425,21 @@ The purpose of the owner linkage is only to ensure that a fresh context can disc
 4. that the higher-level #225 cursor remains unchanged unless separately changed by valid authority.
 
 This section repairs **discoverability and restartability only**. It does not itself perform the repair tasks defined above.
+
+
+## 18. Execution completion — 2026-09-23
+
+This repair specification has now been executed.
+
+Execution prompt:
+`requirements/learning-integration-claim-repair-execution-prompt-2026-09-23.md`
+
+Completed result:
+`requirements/learning-integration-claim-repair-result-2026-09-23.md`
+
+Cross-project Generic-Fit evidence:
+`esany/Wissensarbeit/project/audits/WA-AUDIT-2026-09-23-LEARNING-ASSURANCE-OVERCLAIM-DELTA.md`
+
+The execution found no missing generic METHOD rule requiring D-016 implementation. The demonstrated defect was primarily false assurance/application fidelity: existing owners already prohibit claims stronger than their evidence/assurance state. No executable natural-language behavioral regression was added, and no guarantee of future model compliance is established.
+
+This prompt is no longer an open work router. The #225 main cursor remains governed by #225 itself.
