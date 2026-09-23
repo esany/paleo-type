@@ -1,6 +1,6 @@
 # Execution prompt — close the documented-learning vs operational-learning overclaim
 
-Status: **AUTHORIZED REPAIR ANALYSIS EXECUTION — 2026-09-23**
+Status: **EXECUTED / COMPLETED REPAIR ANALYSIS — 2026-09-23**
 
 Human instruction: create the execution prompt and execute it now.
 
@@ -88,3 +88,17 @@ The repair is complete only if a fresh context can determine from repository sta
 - what wording is justified now.
 
 End with a precise claim-calibrated statement. Do not claim that the AI can no longer repeat the semantic error unless evidence actually establishes that.
+
+
+## Execution result
+
+Completed result:
+`requirements/learning-integration-claim-repair-result-2026-09-23.md`
+
+Result disposition:
+- historical Failure B explicitly corrected and reconciled;
+- no new METHOD/Requirement rule required;
+- no deterministic behavioral regression added because the demonstrated natural-language assurance failure is not safely reducible without semantic loss;
+- cross-project Generic-Fit persisted in `esany/Wissensarbeit/project/audits/WA-AUDIT-2026-09-23-LEARNING-ASSURANCE-OVERCLAIM-DELTA.md`;
+- #225 main cursor unchanged;
+- future perfect AI compliance is not claimed.
