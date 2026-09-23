@@ -395,3 +395,33 @@ failure
 ```
 
 The broader weakness in user research / design / project-development methodology remains separately documented and must not be silently absorbed into this repair.
+
+
+## 17. Restart / owner linkage after chat-knowledge-monopoly audit — 2026-09-23
+
+A fresh audit of the current chat against repository state found:
+
+- the material distinction between **Failure A** (pre-existing rule not applied) and **Failure B** (persisted learning overstated as operationally integrated future behavior) is already contained in this prompt;
+- the broader Human-feedback and design-methodology learnings are also persisted in their dedicated evidence files;
+- therefore the substantive learning is **not chat-only**;
+- however, this prompt was not yet linked back from the current parent owner #225, creating a discoverability/restartability gap for a fresh context that starts from the owner rather than from recent commits/files.
+
+### Current disposition
+
+This prompt is now explicitly classified as:
+
+- **owned repair-analysis evidence under #225**;
+- **not executed yet**;
+- **not an implementation admission**;
+- **not a new #225 NEXT ACTION or priority**;
+- **not authority to change any manuscript Project scope**;
+- **not evidence that the corrective behavior is already operationally guaranteed**.
+
+The purpose of the owner linkage is only to ensure that a fresh context can discover:
+
+1. why the repair prompt exists;
+2. which historical overclaim it is meant to analyze/repair;
+3. that the work is still pending analysis/execution rather than complete;
+4. that the higher-level #225 cursor remains unchanged unless separately changed by valid authority.
+
+This section repairs **discoverability and restartability only**. It does not itself perform the repair tasks defined above.
