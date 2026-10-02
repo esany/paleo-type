@@ -55,7 +55,15 @@ Old chat must never be required to reconstruct durable research state.
 
 ### Research-system programme navigation
 
-For cross-project research-system programme history and terminal disposition, use GitHub Issue **#206** and `requirements/research-system-programme-completion-review-2026-09-17.md`. Do not reconstruct programme priority from the newest Issue, a local D-016 `PASS`, or old chat.
+The former research-system programme owned by **#206** is historical and terminal at its explicit 2026-09-17 `STOP`; its final disposition remains in `requirements/research-system-programme-completion-review-2026-09-17.md`. That terminal state did not itself create a successor programme.
+
+A later, separately Human-Owner-selected system programme **#225** is currently open. It owns the bounded end-to-end operationalization problem `Human need / desired scholarly outcome → authorized scope/state → applicable unmet requirements → responsibility/work composition → real scholarly execution → usable result or legitimate ceiling → persist/restart`. It does **not** create manuscript Project scope or scholarly `NEXT ACTION`.
+
+Under #225, Phase 0/1 and Phase 2 completed; **C1R — Derived Outcome Control Context with bounded resolution** was explicitly admitted under D-016 and implemented as the read-only/rebuildable `tools/outcome_context.py`. The C1R implementation/result review is a **LOCAL PASS ONLY**. #225 whole-system acceptance remains open because the required positive real scholarly vertical fixture has not yet been demonstrated. All current manuscript Projects presently have no owner-selected active scholarly scope, so this README does not manufacture such a fixture.
+
+Issue **#230** is a separate Human-Owner-requested, intentionally closable system audit of adequacy-first architecture, repository knowledge/work lifecycle, current-vs-historical separation, decision promotion and work-owner closability. Its persisted holistic audit is `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`; any material lifecycle/repository architecture implementation remains subject to the separate D-016 decision surface `requirements/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md` and explicit Human-Owner admission.
+
+Historical programme detail must remain distinguishable from current programme state. Do not infer current priority from the newest Issue, a local D-016/CI `PASS`, or old chat; resolve the explicit programme/Project owner and its current disposition.
 
 The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-ready result is persisted in `requirements/research-system-programme-synthesis-2026-09-15.md`.
 
@@ -63,14 +71,16 @@ The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-rea
 
 **Route B / #90 is explicitly DEFERRED at the GitHub Free/private-repository platform boundary by Human-Owner decision.** Analysis, Requirements, Concept and B-ADMIT remain valid history, but the native protection was not implemented. The known risk remains explicit: PR-only promotion, required `validate`, admin/direct-promotion prevention and force-push/delete protection are not technically enforced. `requirements/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md` records the defer/risk disposition. This satisfies the P3A PC7 completion path by explicit Human-Owner re-disposition rather than by claiming enforcement.
 
-**The research-system programme is at STOP at the current evidence and Human-Owner disposition state.** The final review is persisted in `requirements/research-system-programme-completion-review-2026-09-17.md`. #202 remains trigger-based/not warranted, #162 remains paused/deferred, and neither is activated by programme completion. No successor governance programme or Project scholarly `NEXT ACTION` is created. Reg. Ii 5 continues to have no owner-selected active scholarly scope.
+The older #206 programme-level `STOP` above remains correct for that historical owner. It must not be generalized into a claim that no later separately authorized research-system programme can exist.
 
-A local `STOP` closes only the bounded arc whose owner establishes that boundary. The programme-level STOP above is instead the explicit final reconciliation of the established programme owner after both material routes were resolved or re-dispositioned.
+A local `STOP` closes only the bounded arc whose owner establishes that boundary. Programme completion/closure belongs to the applicable programme owner and does not generate a successor priority by itself.
 
 ## Cross-project analytical audit evidence
 
 `requirements/` also contains non-normative audit/review evidence. Current orientation includes:
 
+- `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`;
+- `requirements/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md`;
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md`;
 - `requirements/research-system-problem-landscape-2026-09-14.md`;
 - `requirements/research-system-programme-continuity-audit-2026-09-16.md`;
@@ -173,6 +183,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for research-system programme work, whether the programme is active or terminal and which explicit owner disposition established that state.
+- for research-system programme work, whether the applicable programme is active or terminal and which explicit owner disposition established that state.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
