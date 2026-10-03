@@ -63,9 +63,11 @@ Under #225, Phase 0/1 and Phase 2 completed; **C1R — Derived Outcome Control C
 
 Issue **#230** is now **CLOSED / COMPLETED** as the bounded Human-Owner-requested audit owner for adequacy-first architecture, repository knowledge/work lifecycle, current-vs-historical separation, decision promotion and work-owner closability. Its causal audit is persisted in `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`, and the follow-on target-state / implementation-readiness analysis is persisted in `requirements/repository-target-state-implementation-readiness-2026-10-03.md`.
 
-Closing #230 did **not** admit implementation. The 2026-10-03 Human-decision/process re-baseline correctly reset the lifecycle work to **NOT READY FOR D-016 DECISION** after showing that analysis, Requirements, concept and partial design had become too interleaved and that the Human decision surface was not sufficiently understandable. The subsequent bounded design pass `requirements/system-development-information-architecture-dev-ready-design-2026-10-03.md` has now completed that missing problem/root-cause → Requirements → targeted Research → competing-concept → detailed-design work. The current system-development state is therefore **DEV-READY / D-016 DECISION READY / NOT ADMITTED**. Its selected design is a bounded system-development revision architecture separating revision Requirements, Design, Programme Plan and terminal Result from Evidence/History, with proportional development-method coverage before implementation shaping. Explicit Human-Owner D-016 admission is still required before material implementation. No manuscript scope or scholarly `NEXT ACTION` follows from this system work.
+Closing #230 did **not** admit implementation. The 2026-10-03 Human-decision/process re-baseline correctly reset the lifecycle work to **NOT READY FOR D-016 DECISION** after showing that analysis, Requirements, concept and partial design had become too interleaved and that the Human decision surface was not sufficiently understandable. The subsequent 2026-10-03 bounded DEV-READY design `requirements/system-development-information-architecture-dev-ready-design-2026-10-03.md` remains useful prior design evidence, but the 2026-10-04 holistic re-audit falsified it as a **sufficient whole-system architecture**: it had under-scoped practical engineering Information/Configuration Management, the heterogeneous `requirements/` information architecture, material-finding promotion/trace, engineering bootstrap/context compilation, developer experience and corresponding CI fitness controls.
 
-The earlier D-016 surface, target-state analysis, Human-proxy/context audit, D-016 refinement and Human-decision re-baseline remain historical analytical/design evidence. Class B, IC-01/02/03/06, `decision-needed`, B0/B1, bounded-context and result/return constructs remain useful prior hypotheses where they map to the selected requirements; they are not independent current implementation authority. The product/co-development deep check remains relevant: scholarly product primacy, current research as real/falsification fixtures rather than system limits, Genericity ≠ Distribution, Wirknetz as a property/trace lens rather than a selected component, and an internal-coupling threshold for any future package/`src` move.
+The current system-development candidate is therefore `requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md`, with status **HOLISTIC DEV-READY / D-016 DECISION READY / NOT ADMITTED**. Its selected target is a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. The earlier bounded revision-package idea survives as one component of that larger target rather than as the whole architecture. Explicit Human-Owner D-016 admission is still required before material implementation. No target `engineering/` structure, migration, METHOD change, manuscript scope or scholarly `NEXT ACTION` follows merely from this design.
+
+The earlier D-016 surface, target-state analysis, Human-proxy/context audit, D-016 refinement, Human-decision re-baseline and 2026-10-03 DEV-READY design remain historical analytical/design evidence. Class B, IC-01/02/03/06, `decision-needed`, B0/B1, bounded-context and result/return constructs remain useful prior hypotheses where they trace to current Requirements; they are not independent current implementation authority. The product/co-development deep check remains relevant: scholarly product primacy, current research as real/falsification fixtures rather than system limits, Genericity ≠ Distribution, Wirknetz as a property/trace lens rather than a selected runtime component, and a trigger-based rather than distribution-driven threshold for any future package/`src` move.
 
 Historical programme detail must remain distinguishable from current programme state. Do not infer current priority from the newest Issue, a local D-016/CI `PASS`, Issue closure by itself, or old chat; resolve the explicit programme/Project owner and its current disposition.
 
@@ -81,8 +83,9 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 
 ## Cross-project analytical audit evidence
 
-`requirements/` also contains non-normative audit/review evidence. Current orientation includes:
+`requirements/` currently contains heterogeneous non-normative audit/research/design evidence as well as the structured domain Requirement baseline. The holistic target explicitly treats that mixed namespace as a brownfield information-architecture problem rather than as the desired end state. Current orientation includes:
 
+- `requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md`;
 - `requirements/system-development-information-architecture-dev-ready-design-2026-10-03.md`;
 - `requirements/human-decision-readiness-design-process-rebaseline-audit-2026-10-03.md`;
 - `requirements/repository-knowledge-lifecycle-d016-refinement-2026-10-03.md`;
@@ -135,6 +138,7 @@ Use each according to its stated evidence/authority status. None creates Project
 | How are ownership, D-016 admission and propagation handled? | `methodology/maintenance.md` |
 | How are GitHub Milestones interpreted? | `MILESTONES.md` |
 | What stable machine-checkable Source/File/Project-use constraints apply? | `corpus/source-contract.json` + `tools/source_contract.py` |
+| What is the current structured cross-disciplinary Requirement inventory used by outcome-context resolution? | `requirements/domain-requirements.tsv` |
 | What is a Source/File/relationship/crosswalk fact? | `corpus/` |
 | Why/what is one Project and what is its current scope? | Project `project.yml` |
 | How does the Project currently use Sources? | Project `source-uses.tsv` |
@@ -171,6 +175,7 @@ DECISIONS.md
 MILESTONES.md
 README.md
 methodology/
+requirements/
 templates/
 corpus/
 entities/
@@ -179,7 +184,7 @@ tools/
 tests/
 ```
 
-Optional Project work directories exist only when real work requires them.
+Optional Project work directories exist only when real work requires them. The proposed `engineering/` target exists only in the current non-normative holistic design and is **not implemented** on `main` until a separate D-016 admission and development pass.
 
 ## Restartability acceptance
 
