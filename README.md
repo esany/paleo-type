@@ -61,7 +61,9 @@ A later, separately Human-Owner-selected system programme **#225** is currently 
 
 Under #225, Phase 0/1 and Phase 2 completed; **C1R — Derived Outcome Control Context with bounded resolution** was explicitly admitted under D-016 and implemented as the read-only/rebuildable `tools/outcome_context.py`. The C1R implementation/result review is a **LOCAL PASS ONLY**. #225 whole-system acceptance remains open because the required positive real scholarly vertical fixture has not yet been demonstrated. All current manuscript Projects presently have no owner-selected active scholarly scope, so this README does not manufacture such a fixture.
 
-Issue **#230** is a separate Human-Owner-requested, intentionally closable system audit of adequacy-first architecture, repository knowledge/work lifecycle, current-vs-historical separation, decision promotion and work-owner closability. Its persisted holistic audit is `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`; any material lifecycle/repository architecture implementation remains subject to the separate D-016 decision surface `requirements/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md` and explicit Human-Owner admission.
+Issue **#230** is now **CLOSED / COMPLETED** as the bounded Human-Owner-requested audit owner for adequacy-first architecture, repository knowledge/work lifecycle, current-vs-historical separation, decision promotion and work-owner closability. Its causal audit is persisted in `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`, and the follow-on target-state / implementation-readiness analysis is persisted in `requirements/repository-target-state-implementation-readiness-2026-10-03.md`.
+
+Closing #230 did **not** admit implementation. Material lifecycle/repository architecture work remains subject to the separate D-016 decision surface `requirements/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md` plus explicit Human-Owner admission. If such a revision is admitted, it should use a new closable revision/programme owner rather than reopening #230 as a permanent planning store.
 
 Historical programme detail must remain distinguishable from current programme state. Do not infer current priority from the newest Issue, a local D-016/CI `PASS`, or old chat; resolve the explicit programme/Project owner and its current disposition.
 
@@ -79,6 +81,7 @@ A local `STOP` closes only the bounded arc whose owner establishes that boundary
 
 `requirements/` also contains non-normative audit/review evidence. Current orientation includes:
 
+- `requirements/repository-target-state-implementation-readiness-2026-10-03.md`;
 - `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`;
 - `requirements/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md`;
 - `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md`;
