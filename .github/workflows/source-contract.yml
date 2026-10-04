@@ -18,6 +18,8 @@ jobs:
           python-version: '3.12'
       - name: Validate canonical Source/File/Project-use contract
         run: python tools/source_contract.py validate
+      - name: Validate admitted WP1 engineering contracts
+        run: python tools/engineering.py validate
       - name: Run deterministic and governance regressions
         run: python -m unittest discover -s tests -p 'test_*.py' -v
       - name: Compile fresh-process Project contexts

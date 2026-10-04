@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "architecture_baselines": [
+    "artifact:ENG-A-0004"
+  ],
+  "requirements_baselines": [
+    "artifact:ENG-A-0008"
+  ],
+  "active_changes": [
+    "change:SD-KA-01"
+  ],
+  "current_focus": null,
+  "decision_owner": "decision:D-016",
+  "transition_provenance": {
+    "admission_ref": "artifact:ENG-A-0010",
+    "decision_ref": "decision:D-016",
+    "programme_owner": "github-issue:esany/paleo-type#244",
+    "implementation_owner": "github-issue:esany/paleo-type#256",
+    "admission_head": "e18906c4d3f09645aca84d4c2fe17c37387c1109"
+  },
+  "notes": "The accepted baseline remains the existing repository decision/governance layer. SD-KA-01 is admitted and active, but its proposed architecture is not yet an accepted current baseline."
+}

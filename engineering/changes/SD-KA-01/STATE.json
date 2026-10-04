@@ -1,0 +1,33 @@
+{
+  "change_id": "SD-KA-01",
+  "lifecycle": "implementing",
+  "admission": "admitted",
+  "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
+  "admission_ref": "artifact:ENG-A-0010",
+  "work_owner": "github-issue:esany/paleo-type#256",
+  "programme_owner": "github-issue:esany/paleo-type#244",
+  "non_goals": [
+    "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
+    "workflow engine, autonomous planner, graph database, Wirknetz runtime, Bridge or developer portal",
+    "package/src/distribution work without a new demonstrated trigger",
+    "bulk requirements migration in WP1",
+    "#90 branch-protection reactivation",
+    "#225 scholarly whole-system acceptance"
+  ],
+  "coverage": {
+    "problem": {"state": "required-satisfied", "basis": "artifact:ENG-A-0011"},
+    "root_cause": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0009"},
+    "research": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0013;artifact:ENG-A-0014;artifact:ENG-A-0015;artifact:ENG-A-0016"},
+    "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0009"},
+    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
+  },
+  "blocking_uncertainties": [],
+  "applicable_rules": ["decision:D-016", "decision:D-019", "artifact:ENG-A-0005", "artifact:ENG-A-0006", "artifact:ENG-A-0007"],
+  "plan_ref": "artifact:ENG-A-0031",
+  "current_baseline_changes": "none until implementation, verification and Result Review establish an accepted consequence",
+  "whole_system_return": "Return actual state, finding dispositions, Requirement/ADR consequences and downstream readiness to #244 after WP1."
+}
