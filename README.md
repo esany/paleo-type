@@ -53,80 +53,55 @@ Project existence/priority is not inferred from Source/File structure. Detailed 
 
 Old chat must never be required to reconstruct durable research state.
 
-### Research-system programme navigation
+## Current system-development navigation
 
-The former research-system programme owned by **#206** is historical and terminal at its explicit 2026-09-17 `STOP`; its final disposition remains in `requirements/research-system-programme-completion-review-2026-09-17.md`. That terminal state did not itself create a successor programme.
+The Human-visible current system-development work view is GitHub **#244** with bounded work #245–#253. The compact whole-system map is `requirements/system-development-bugwave-master-map-2026-10-04.md`.
 
-The later, separately Human-Owner-selected system programme **#225** is now **CLOSED as GitHub work metadata** (2026-10-02). It owned the bounded end-to-end operationalization problem `Human need / desired scholarly outcome → authorized scope/state → applicable unmet requirements → responsibility/work composition → real scholarly execution → usable result or legitimate ceiling → persist/restart`. It did **not** create manuscript Project scope or scholarly `NEXT ACTION`.
+The bugwave has now completed its pre-implementation finding-coverage and detailed-design closure. The current material decision surface is:
 
-Under #225, Phase 0/1 and Phase 2 completed; **C1R — Derived Outcome Control Context with bounded resolution** was explicitly admitted under D-016 and implemented as the read-only/rebuildable `tools/outcome_context.py`. The C1R implementation/result review is a **LOCAL PASS ONLY**. The current #225 issue body still carries its earlier `ACTIVE` wording and its T11 contract says programme closure requires full vertical-result/ceiling, restart, bounded-repair and materially-different-fixture evidence. The inspected current issue/comment evidence contains no terminal T11 record establishing those conditions as satisfied or re-dispositioned, so this README does **not** infer whole-system scholarly acceptance or failure from the GitHub closure alone. `requirements/product-co-development-boundary-deep-check-2026-10-03.md` records that evidence boundary and the navigation drift.
+`requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`
 
-Issue **#230** is now **CLOSED / COMPLETED** as the bounded Human-Owner-requested audit owner for adequacy-first architecture, repository knowledge/work lifecycle, current-vs-historical separation, decision promotion and work-owner closability. Its causal audit is persisted in `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`, and the follow-on target-state / implementation-readiness analysis is persisted in `requirements/repository-target-state-implementation-readiness-2026-10-03.md`.
+Current process state:
 
-Closing #230 did **not** admit implementation. The 2026-10-03 Human-decision/process re-baseline correctly reset the lifecycle work to **NOT READY FOR D-016 DECISION** after showing that analysis, Requirements, concept and partial design had become too interleaved and that the Human decision surface was not sufficiently understandable. The subsequent 2026-10-03 bounded DEV-READY design `requirements/system-development-information-architecture-dev-ready-design-2026-10-03.md` remains useful prior design evidence, but the 2026-10-04 holistic re-audit falsified it as a **sufficient whole-system architecture**: it had under-scoped practical engineering Information/Configuration Management, the heterogeneous `requirements/` information architecture, material-finding promotion/trace, engineering bootstrap/context compilation, developer experience and corresponding CI fitness controls.
+> **READY FOR HUMAN D-016 IMPLEMENTATION DECISION / NOT ADMITTED / IMPLEMENTATION NOT STARTED.**
 
-`requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md` remains the current architecture-class candidate: a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. The pre-implementation anti-regression pass `requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md` then replayed the accumulated findings against that design and exposed bounded contract gaps.
+The proposed target is still a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. Detailed design now covers material-finding promotion, engineering configuration/reference transitions, context/Developer Experience, Architecture Decision Records (ADRs), activity-relative readiness/Human decision surfaces, engineering assurance, brownfield migration, `.prompt` capability and the Review Premise Inheritance safeguard.
 
-The current **system-development work view** is now `requirements/system-development-bugwave-master-map-2026-10-04.md` plus Human-visible parent Issue **#244** and bounded Issues **#245–#253**. This makes readiness activity-relative: the bugwave is **ready for bounded finding-coverage and architecture/design work**, while **SD-KA implementation is not ready, D-016 implementation admission is not yet ready, and nothing is admitted**. `requirements/system-development-bugwave-adr-inventory-2026-10-04.md` inventories existing accepted decision authority separately from proposed architecture decisions; `requirements/prompt-skill-transfer-candidate-2026-10-04.md` records the requested `.prompt` transfer as a non-authoritative candidate rather than silently activating a new repository rule.
+No target `engineering/` structure, physical migration, METHOD change, schema/runtime, Context Compiler, engineering CI implementation, manuscript scope or scholarly `NEXT ACTION` follows merely from design readiness. Material implementation still requires explicit Human-Owner admission under D-016.
 
-The implementation freeze therefore remains in force. No target `engineering/` structure, physical migration, METHOD change, schema/runtime, Context Compiler, manuscript scope or scholarly `NEXT ACTION` is admitted by the current design work. The bounded Issues identify what analysis/design can proceed now and what remains a material implementation decision.
+### Historical programme boundaries
 
-The earlier D-016 surface, target-state analysis, Human-proxy/context audit, D-016 refinement, Human-decision re-baseline and 2026-10-03 DEV-READY design remain historical analytical/design evidence. The 2026-10-04 holistic design remains the selected architecture-class evidence; the bugwave master map now owns the current **non-normative work/readiness interpretation**. Class B, IC-01/02/03/06, `decision-needed`, B0/B1, bounded-context and result/return constructs remain useful prior hypotheses where they trace to current Requirements; they are not independent current implementation authority. The product/co-development deep check remains relevant: scholarly product primacy, current research as real/falsification fixtures rather than system limits, Genericity ≠ Distribution, Wirknetz as a property/trace lens rather than a selected runtime component, and a trigger-based rather than distribution-driven threshold for any future package/`src` move.
+- **#225** is CLOSED as GitHub work metadata. C1R (`tools/outcome_context.py`) is a bounded local PASS; repository evidence does **not** establish whole-system scholarly T11 acceptance merely from Issue closure. F17 preserves this residual explicitly.
+- **#230** is CLOSED / COMPLETED as the bounded audit owner that led into the current knowledge/configuration work. Closing it did not admit implementation.
+- The former **#206** programme remains historical/terminal at its explicit 2026-09-17 `STOP`; later separately authorized system-development work does not rewrite that history.
+- **Route A** programme-continuity work is complete/resolved under its existing owners.
+- **Route B / #90** remains explicitly DEFERRED under its Human-Owner disposition. The current bugwave does not reactivate branch-protection implementation.
 
-Historical programme detail must remain distinguishable from current programme state. Do not infer current priority from the newest Issue, a local D-016/CI `PASS`, Issue closure by itself, or old chat; resolve the explicit programme/Project owner and its current disposition.
+Historical programme detail is evidence on demand, not the default current-work surface. Do not infer priority from the newest Issue, local CI `PASS`, Issue closure, filename date or old chat; resolve the applicable owner and current disposition.
 
-The bounded P3A whole-map synthesis under **#207 is COMPLETE**. Its decision-ready result is persisted in `requirements/research-system-programme-synthesis-2026-09-15.md`.
+## System-development evidence / deeper provenance
 
-**Route A is COMPLETE and RESOLVED at the current evidence state.** Its P2 Requirements resolution (#200), bounded P3B Concept (#211), explicitly admitted two-file METHOD implementation and Result Review (#212) are complete. `methodology/maintenance.md` now owns the narrow programme/phase/result-transition reconciliation semantics and `methodology/workflow.md` contains only the referential execution hook. The terminal review is persisted in `requirements/research-system-programme-continuity-result-review-2026-09-16.md`.
+`requirements/` is currently a brownfield mixed-purpose namespace. That is a documented information-architecture defect and not the intended target state. Until a separately admitted migration occurs, use these current navigation artifacts rather than replaying files chronologically:
 
-**Route B / #90 is explicitly DEFERRED at the GitHub Free/private-repository platform boundary by Human-Owner decision.** Analysis, Requirements, Concept and B-ADMIT remain valid history, but the native protection was not implemented. The known risk remains explicit: PR-only promotion, required `validate`, admin/direct-promotion prevention and force-push/delete protection are not technically enforced. `requirements/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md` records the defer/risk disposition. This satisfies the P3A PC7 completion path by explicit Human-Owner re-disposition rather than by claiming enforcement.
+- current Human decision surface: `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`;
+- whole bugwave/work map: `requirements/system-development-bugwave-master-map-2026-10-04.md`;
+- source-audit finding coverage: `requirements/system-development-bugwave-finding-coverage-2026-10-04.md`;
+- finding promotion design: `requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md`;
+- architecture-decision inventory: `requirements/system-development-bugwave-adr-inventory-2026-10-04.md`;
+- ADR surface design: `requirements/system-development-bugwave-adr-surface-design-2026-10-04.md`;
+- configuration/reference design: `requirements/system-development-bugwave-configuration-reference-design-2026-10-04.md`;
+- context/developer design: `requirements/system-development-bugwave-context-developer-design-2026-10-04.md`;
+- readiness/Human decision contract: `requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md`;
+- engineering assurance design: `requirements/system-development-bugwave-assurance-closure-design-2026-10-04.md`;
+- brownfield migration design: `requirements/system-development-bugwave-brownfield-migration-design-2026-10-04.md`;
+- `.prompt` transfer candidate/result: `requirements/prompt-skill-transfer-candidate-2026-10-04.md` and `requirements/prompt-skill-transfer-test-result-2026-10-04.md`;
+- Review Premise Inheritance disposition: `requirements/review-premise-inheritance-generic-fit-2026-10-04.md`;
+- underlying holistic architecture: `requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md`;
+- anti-regression baseline: `requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md`.
 
-The older #206 programme-level `STOP` above remains correct for that historical owner. It must not be generalized into a claim that no later separately authorized research-system programme can exist.
+The finding-coverage artifact links/dispositions the deeper September–October audit/research/learning chain. Load those source artifacts when reviewing the finding or its provenance, not as mandatory default context.
 
-A local `STOP` closes only the bounded arc whose owner establishes that boundary. Programme completion/closure belongs to the applicable programme owner and does not generate a successor priority by itself.
-
-## Cross-project analytical audit evidence
-
-`requirements/` currently contains heterogeneous non-normative audit/research/design evidence as well as the structured domain Requirement baseline. The current system-development work treats that mixed namespace as a brownfield information-architecture problem rather than as the desired end state. Current orientation includes:
-
-- `requirements/system-development-bugwave-master-map-2026-10-04.md`;
-- `requirements/system-development-bugwave-adr-inventory-2026-10-04.md`;
-- `requirements/prompt-skill-transfer-candidate-2026-10-04.md`;
-- `requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md`;
-- `requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md`;
-- `requirements/system-development-information-architecture-dev-ready-design-2026-10-03.md`;
-- `requirements/human-decision-readiness-design-process-rebaseline-audit-2026-10-03.md`;
-- `requirements/repository-knowledge-lifecycle-d016-refinement-2026-10-03.md`;
-- `requirements/human-proxy-work-lifecycle-context-efficiency-audit-2026-10-03.md`;
-- `requirements/product-co-development-boundary-deep-check-2026-10-03.md`;
-- `requirements/product-co-development-boundary-analysis-delta-2026-10-03.md`;
-- `requirements/repository-target-state-implementation-readiness-2026-10-03.md`;
-- `requirements/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md`;
-- `requirements/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md`;
-- `requirements/research-framing-transdisciplinary-competency-audit-2026-09-14.md`;
-- `requirements/research-system-problem-landscape-2026-09-14.md`;
-- `requirements/research-system-programme-continuity-audit-2026-09-16.md`;
-- `requirements/research-system-programme-continuity-requirements-resolution-2026-09-16.md`;
-- `requirements/research-system-programme-continuity-concept-2026-09-16.md`;
-- `requirements/research-system-programme-continuity-result-review-2026-09-16.md`;
-- `requirements/default-branch-promotion-enforcement-requirements-resolution-2026-09-16.md`;
-- `requirements/default-branch-promotion-enforcement-concept-2026-09-16.md`;
-- `requirements/default-branch-promotion-enforcement-owner-admission-2026-09-17.md`;
-- `requirements/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md`;
-- `requirements/research-system-programme-synthesis-2026-09-15.md`;
-- `requirements/research-system-programme-completion-review-2026-09-17.md`;
-- `requirements/post-research-problem-landscape-reconciliation-2026-09-14.md`;
-- `requirements/pre-synthesis-research-program-2026-09-14.md`;
-- `requirements/shared-fixture-research-findings-2026-09-14.md`;
-- `requirements/cross-source-research-findings-2026-09-14.md`;
-- `requirements/pre-synthesis-research-integration-2026-09-14.md`;
-- `requirements/final-multi-question-generation-research-2026-09-14.md`;
-- `requirements/post-research-synthesis-concept-approaches-2026-09-14.md`;
-- `requirements/post-research-capability-requirement-synthesis-2026-09-14.md`;
-- `requirements/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md`;
-- `projects/ega-reg-ii-5-knau/research/post-166-research-framing-review-2026-09-14.md`.
-
-Use each according to its stated evidence/authority status. None creates Project priority or implementation authority by itself.
+Use every artifact according to its stated evidence/authority status. None creates Project priority or implementation authority merely by existing.
 
 ## Where truth lives
 
@@ -134,7 +109,7 @@ Use each according to its stated evidence/authority status. None creates Project
 |---|---|
 | Why does the repository exist / what has precedence? | `GOVERNING_OBJECTIVE.md` |
 | What stable AI/research guardrails always apply? | `AGENTS.md` |
-| What cross-project rationale/decision history matters? | `DECISIONS.md` |
+| What cross-project accepted rationale/decision history matters? | `DECISIONS.md` |
 | What is the authoritative scholarly end-to-end method? | `methodology/historical-source-workflow.md` |
 | What are the generic G1–G6 maturity requirements? | `methodology/research-gates.md` |
 | How are Projects established/anchored/related to Sources and priority? | `methodology/project-lifecycle.md` |
@@ -154,7 +129,7 @@ Use each according to its stated evidence/authority status. None creates Project
 | What is the current Project restart/gate/evidence state? | Project `STATUS.md` |
 | What did the Project actually read/decide/observe? | owning Project research files |
 
-Generated views such as `tools/project_context.py` are rebuildable navigation/restart aids, never canonical truth.
+The proposed engineering configuration/ADR/catalog owners above are **not canonical yet**; they become operative only after explicit D-016 admission, implementation and accepted Result Review. Generated views such as `tools/project_context.py` are rebuildable navigation/restart aids, never canonical truth.
 
 ## Current Project directories
 
@@ -192,7 +167,7 @@ tools/
 tests/
 ```
 
-Optional Project work directories exist only when real work requires them. The proposed `engineering/` target remains non-normative and **is not implemented**; current bugwave work explicitly keeps that implementation frozen pending design closure and separate D-016 admission.
+Optional Project work directories exist only when real work requires them. The proposed `engineering/` target is designed but **not implemented or current** until a separate D-016 admission, implementation and Result Review establish it.
 
 ## Restartability acceptance
 
@@ -207,6 +182,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for research-system programme work, whether the applicable programme is active or terminal and which explicit owner disposition established that state.
+- for current system-development work, which material decision is actually pending and which repository artifact owns that decision surface.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
