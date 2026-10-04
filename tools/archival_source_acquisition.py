@@ -78,12 +78,27 @@ def package_name(source: SourceMetadata) -> str:
 
 
 class SaechsischesStaatsarchivProvider:
-    """Provider adapter for the tested SStA download/fullsize routes."""
+    """Provider boundary for the SStA page/viewer and image routes.
+
+    The current MVP consumes metadata supplied by intake and constructs the
+    explicitly tested routes. It does not claim to discover or parse live HTML.
+    Viewer-specific selectors remain owned here rather than by the generic core.
+    """
+
+    VIEWER_STRUCTURE = {
+        "thumbnail_strip_wrapper": "digitalisat-viewer-thumbnailstrip-wrapper",
+        "image_container": "viewer_digitalisate",
+    }
 
     DOWNLOAD_ENDPOINT = "https://www.archiv.sachsen.de/archiv/download.jsp"
     FULLSIZE_ENDPOINT = "https://www.archiv.sachsen.de/digitalisate"
 
-    @classmethod\n    def viewer_structure(cls) -> dict[str, str]:\n        """Return the SStA viewer markers without exposing them to the core."""\n        return dict(cls.VIEWER_STRUCTURE)\n\n    def image_url(self, guid: str, filename: str, route: str) -> str:
+    @classmethod
+    def viewer_structure(cls) -> dict[str, str]:
+        """Return the SStA viewer markers without exposing them to the core."""
+        return dict(cls.VIEWER_STRUCTURE)
+
+    def image_url(self, guid: str, filename: str, route: str) -> str:
         if route == "download":
             return f"{self.DOWNLOAD_ENDPOINT}?{urlencode({'guid': guid, 'filename': filename})}"
         if route == "fullsize":
