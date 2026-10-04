@@ -65,15 +65,19 @@ The D-016 admission is durably recorded in:
 
 `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`
 
+The WP1 result and whole-system return is durably recorded in:
+
+`engineering/changes/SD-KA-01/RESULT.md`
+
 Current process state:
 
-> **D-016 ADMITTED / SD-KA-01 IMPLEMENTATION IN PROGRESS / WP1 ACTIVE.**
+> **D-016 ADMITTED / WP1 VERIFIED / WP2 READY-NEXT / SD-KA-01 ACTIVE.**
 
 The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from the later D-016 brief. **The D-016 brief and #244 own the current non-normative readiness/navigation interpretation.**
 
 The proposed target is still a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. Detailed design now covers material-finding promotion, engineering configuration/reference transitions, context/Developer Experience, Architecture Decision Records (ADRs), activity-relative readiness/Human decision surfaces, engineering assurance, brownfield migration, `.prompt` capability and the Review Premise Inheritance safeguard.
 
-The admitted first implementation is #256: establish semantic contracts and an in-place managed brownfield baseline. Physical migration is deliberately later (#260), after semantics/currentness/trace/fitness are working.
+The admitted first implementation was #256: its WP1 result is verified and returned. #257/WP2 is now the next eligible implementation cursor within the admitted scope; physical migration remains deliberately later (#260), after semantics/currentness/trace/fitness are working.
 
 The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; the target `engineering/` structure, physical migration, METHOD change, schema/runtime and Context Compiler remain bounded implementation work, not already-accepted current configuration.
 
