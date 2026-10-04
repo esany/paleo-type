@@ -68,7 +68,16 @@ class AcquisitionTests(unittest.TestCase):
         self.assertIn("0001.jpg", first.images[0].url)
         self.assertIn("download.jsp", first.images[0].url)
 
-    def test_ssta_viewer_structure_is_owned_by_provider_boundary(self):\n        self.assertEqual(\n            {\n                "thumbnail_strip_wrapper": "digitalisat-viewer-thumbnailstrip-wrapper",\n                "image_container": "viewer_digitalisate",\n            },\n            acquisition.SaechsischesStaatsarchivProvider.viewer_structure(),\n        )\n\n    def test_fullsize_route_is_explicit_and_distinct(self):
+    def test_ssta_viewer_structure_is_owned_by_provider_boundary(self):
+        self.assertEqual(
+            {
+                "thumbnail_strip_wrapper": "digitalisat-viewer-thumbnailstrip-wrapper",
+                "image_container": "viewer_digitalisate",
+            },
+            acquisition.SaechsischesStaatsarchivProvider.viewer_structure(),
+        )
+
+    def test_fullsize_route_is_explicit_and_distinct(self):
         plan = acquisition.SaechsischesStaatsarchivProvider().plan(
             source(), route="fullsize", count=2
         )
