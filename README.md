@@ -55,23 +55,27 @@ Old chat must never be required to reconstruct durable research state.
 
 ## Current system-development navigation
 
-The Human-visible current system-development work/decision view is GitHub **#244**. Pre-implementation analysis/design Issues **#245–#253 are complete**. Candidate SD-KA-01 implementation is already decomposed as **#256–#261**, but every one of those Issues is explicitly blocked on D-016 admission and its stated prerequisites.
+The Human-visible current system-development work/decision view is GitHub **#244**. Pre-implementation analysis/design Issues **#245–#253 are complete**. SD-KA-01 implementation is decomposed as **#256–#261**; after the recorded D-016 admission, #256/WP1 is the active bounded implementation cursor and later Issues remain ordered by the admitted dependencies.
 
 The current material decision surface is:
 
 `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`
 
+The D-016 admission is durably recorded in:
+
+`requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`
+
 Current process state:
 
-> **READY FOR HUMAN D-016 IMPLEMENTATION DECISION / NOT ADMITTED / IMPLEMENTATION NOT STARTED.**
+> **D-016 ADMITTED / SD-KA-01 IMPLEMENTATION IN PROGRESS / WP1 ACTIVE.**
 
 The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from the later D-016 brief. **The D-016 brief and #244 own the current non-normative readiness/navigation interpretation.**
 
 The proposed target is still a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. Detailed design now covers material-finding promotion, engineering configuration/reference transitions, context/Developer Experience, Architecture Decision Records (ADRs), activity-relative readiness/Human decision surfaces, engineering assurance, brownfield migration, `.prompt` capability and the Review Premise Inheritance safeguard.
 
-If later admitted, the first implementation is #256: establish semantic contracts and an in-place managed brownfield baseline. Physical migration is deliberately later (#260), after semantics/currentness/trace/fitness are working.
+The admitted first implementation is #256: establish semantic contracts and an in-place managed brownfield baseline. Physical migration is deliberately later (#260), after semantics/currentness/trace/fitness are working.
 
-No target `engineering/` structure, physical migration, METHOD change, schema/runtime, Context Compiler, engineering CI implementation, manuscript scope or scholarly `NEXT ACTION` follows merely from design readiness. Material implementation still requires explicit Human-Owner admission under D-016.
+The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; the target `engineering/` structure, physical migration, METHOD change, schema/runtime and Context Compiler remain bounded implementation work, not already-accepted current configuration.
 
 ### Historical programme boundaries
 

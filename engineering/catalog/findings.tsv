@@ -1,0 +1,46 @@
+finding_id	source_ref	summary	materiality	disposition	target_ref	rationale
+F01	artifact:ENG-A-0019	AI semantic integration debt	material	promoted	github-issue:esany/paleo-type#247	Stable owners and bounded contexts reduce repeated semantic reconstruction.
+F02	artifact:ENG-A-0019	Current, historical and supersession drift	material	promoted	github-issue:esany/paleo-type#246	Currentness and supersession need explicit transitions.
+F03	artifact:ENG-A-0019	Programme and owner discoverability gap	material	promoted	change:SD-KA-01	A bounded change owner must be directly discoverable.
+F04	artifact:ENG-A-0019	Issue chronology becomes restart context	material	promoted	github-issue:esany/paleo-type#247	Work history must not be required to recover current state.
+F05	artifact:ENG-A-0019	Bounded work and programme closability gap	material	promoted	github-issue:esany/paleo-type#250	Results must return consequences to the whole system.
+F06	artifact:ENG-A-0019	Durable decision promotion is incomplete	material	integrated	decision:D-006	Durable state already has a repository-first owner; WP1 traces it.
+F07	artifact:ENG-A-0019	Requirements namespace contains heterogeneous roles	material	promoted	github-issue:esany/paleo-type#251	Classification precedes physical migration.
+F08	artifact:ENG-A-0019	Active and persisted knowledge are insufficiently separated	material	promoted	github-issue:esany/paleo-type#247	Persistence must not imply default current context.
+F09	artifact:ENG-A-0019	Derived-state reification	material	promoted	github-issue:esany/paleo-type#246	Views must derive from canonical owners.
+F10	artifact:ENG-A-0019	Review premise inheritance	material	unresolved	github-issue:esany/paleo-type#253	Trace helps but does not establish independent epistemic evidence.
+F11	artifact:ENG-A-0019	Local correctness can be globally misframed	material	promoted	github-issue:esany/paleo-type#250	Local PASS must return to the parent/system boundary.
+F12	artifact:ENG-A-0019	Minimality and adequacy bias	material	promoted	github-issue:esany/paleo-type#249	Sufficiency precedes simplification.
+F13	artifact:ENG-A-0019	Parent, child and return semantics are easy to lose	material	integrated	decision:D-016	WP1 uses the admitted bounded-change and whole-return contract.
+F14	artifact:ENG-A-0019	Derived operational views are useful but risky	material	promoted	github-issue:esany/paleo-type#247	Read models follow currentness owners.
+F15	artifact:ENG-A-0019	Exact-head and post-mutation assurance matters	material	promoted	github-issue:esany/paleo-type#250	Qualification must identify the exact tested tree.
+F16	artifact:ENG-A-0019	Authority laundering from descriptive state	material	controlled	decision:D-019	Resource, metadata and technical state do not create authority.
+F17	artifact:ENG-A-0019	#225 positive scholarly end-to-end fixture remains unproven	material	unresolved	github-issue:esany/paleo-type#225	EKCP must preserve this separate scholarly residual.
+F18	artifact:ENG-A-0019	Orientation surfaces can become stale	material	promoted	github-issue:esany/paleo-type#251	README remains navigation and points to canonical owners.
+F19	artifact:ENG-A-0019	Repository-first is stronger than persisted somewhere	material	integrated	decision:D-006	Durable state is persisted in its intended repository owner.
+F20	artifact:ENG-A-0019	Human can be used as relay or router	material	promoted	github-issue:esany/paleo-type#247	Routine continuation must not become a Human transport burden.
+F21	artifact:ENG-A-0019	Authorization is not informed decision readiness	material	promoted	github-issue:esany/paleo-type#249	A decision surface must expose stage and consequence.
+F22	artifact:ENG-A-0019	Development stages become solution-shaped too early	material	promoted	github-issue:esany/paleo-type#249	Requirements, design and implementation remain distinct.
+F23	artifact:ENG-A-0019	Context economy can become context starvation	material	promoted	github-issue:esany/paleo-type#247	Progressive disclosure must preserve authority and uncertainty.
+F24	artifact:ENG-A-0019	Relations are useful but graph runtime is unproven	material	deferred	artifact:ENG-A-0017	Use minimal correct relations; retain graph runtime as a trigger-based option.
+F25	artifact:ENG-A-0019	Genericity is not distribution	material	deferred	artifact:ENG-A-0017	No package or portal is justified by current evidence.
+F26	artifact:ENG-A-0019	Generic-Fit remains incomplete across structures	material	promoted	github-issue:esany/paleo-type#250	Qualification needs materially different fixtures.
+F27	artifact:ENG-A-0019	System-development developer bootstrap is weak	material	promoted	github-issue:esany/paleo-type#247	One current entry path and local check are required.
+F28	artifact:ENG-A-0019	Engineering CI does not validate its own IA	material	promoted	github-issue:esany/paleo-type#250	Fitness follows stable contracts.
+F29	artifact:ENG-A-0019	Rich-audit insight can disappear while source persists	material	promoted	github-issue:esany/paleo-type#245	Coverage completeness must precede finding disposition claims.
+F30	artifact:ENG-A-0019	Proposed trace references are underspecified	material	promoted	github-issue:esany/paleo-type#246	Stable reference classes and anchors are required.
+F31	artifact:ENG-A-0019	Context-profile applicability is underspecified	material	promoted	github-issue:esany/paleo-type#247	Applicability provenance must remain explicit.
+F32	artifact:ENG-A-0019	Configuration shape lacks transition semantics	material	promoted	github-issue:esany/paleo-type#246	Currentness cannot be latest-wins.
+F33	artifact:ENG-A-0019	Central TSV representation was selected before dry-run	material	promoted	github-issue:esany/paleo-type#251	WP1 proves the hybrid over real brownfield inputs before movement.
+F34	artifact:ENG-A-0019	Decision brief can be complete yet incomprehensible	material	promoted	github-issue:esany/paleo-type#249	Decision readiness requires comprehension validation.
+F35	artifact:ENG-A-0011	Audit coverage completeness must itself be proved	material	promoted	github-issue:esany/paleo-type#245	Registered findings alone cannot prove source-level completeness.
+F36	artifact:ENG-A-0011	Architecture-decision visibility is underpowered	material	promoted	github-issue:esany/paleo-type#248	ADR rationale is distinct from accepted DECISIONS.md authority.
+F37	artifact:ENG-A-0011	Readiness is activity-relative	material	promoted	github-issue:esany/paleo-type#249	Ready-for-design and ready-for-implementation are different claims.
+F38	artifact:ENG-A-0011	Decision-readiness jargon can hide meaning	material	promoted	github-issue:esany/paleo-type#249	Human-facing wording must preserve operative scope.
+F39	artifact:ENG-A-0011	Anti-regression can become a meta-loop	material	promoted	github-issue:esany/paleo-type#244	Safeguards must permit bounded work that is ready for its declared activity.
+F40	artifact:ENG-A-0011	Prompt and work-instruction is a real information class	material	promoted	github-issue:esany/paleo-type#252	Prompt capability remains thin and bounded.
+F41	artifact:ENG-A-0011	Human overview and Agent context are different products	material	promoted	github-issue:esany/paleo-type#247	Both views derive from the same owners with different disclosure.
+F42	artifact:ENG-A-0011	The bugwave lacked a visible bounded work surface	material	promoted	github-issue:esany/paleo-type#244	The programme and child issues expose current work metadata.
+F43	artifact:ENG-A-0012	Human feedback is need or failure evidence, not automatic authority	material	controlled	artifact:ENG-A-0002	Existing authority boundaries control the general rule; real-use validation remains.
+F44	artifact:ENG-A-0012	Persisted or reconciled learning is not automatically operationally enforced	material	partly-controlled	github-issue:esany/paleo-type#250	Assurance language must match the actually tested enforcement level.
+F45	artifact:ENG-A-0012	Simplification or migration can delete useful cognitive or review functions	material	promoted	github-issue:esany/paleo-type#251	Migration must test discoverability and reviewer function, not only bytes.
