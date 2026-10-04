@@ -30,3 +30,4 @@ ENG-A-0028	catalog	engineering/catalog/legacy-paths.tsv	SD-KA-01	admitted-change
 ENG-A-0029	change-state	engineering/changes/SD-KA-01/STATE.json	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded change state
 ENG-A-0030	decision	engineering/decisions/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering ADR index and lifecycle
 ENG-A-0031	decision	engineering/decisions/ADR-0001-sd-ka-01-target-package.md	SD-KA-01	admitted-change	active	SD-KA-01	Admitted target package ADR record
+ENG-A-0032	result	engineering/changes/SD-KA-01/RESULT.md	SD-KA-01	admitted-change	active	SD-KA-01	WP1 result and whole-system return

@@ -28,6 +28,17 @@
   "blocking_uncertainties": [],
   "applicable_rules": ["decision:D-016", "decision:D-019", "artifact:ENG-A-0005", "artifact:ENG-A-0006", "artifact:ENG-A-0007"],
   "plan_ref": "artifact:ENG-A-0031",
+  "result_ref": "artifact:ENG-A-0032",
+  "result_status": "verified-technical-return",
+  "verification_head": "git:c66ef075acdde1f592886086403439507d6cc618",
+  "work_package_status": {
+    "WP1": "verified",
+    "WP2": "ready-next",
+    "WP3": "not-started",
+    "WP4": "not-started",
+    "WP5": "not-started",
+    "WP6": "not-started"
+  },
   "current_baseline_changes": "none until implementation, verification and Result Review establish an accepted consequence",
-  "whole_system_return": "Return actual state, finding dispositions, Requirement/ADR consequences and downstream readiness to #244 after WP1."
+  "whole_system_return": "changed: WP1 semantic owners, F01-F45 coverage, admission trace and exact-head assurance are now restartable; #244 remains the whole-system owner; #257/WP2 is ready-next but not started; no Project/manuscript state or scholarly NEXT ACTION changed."
 }
