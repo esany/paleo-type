@@ -76,3 +76,10 @@ The CLI deliberately does not handle restricted browser or sandbox policies.
 A failed DNS lookup in a restricted execution environment is not evidence that
 the archive server is unavailable. Diagnose the environment before reporting
 a source-access failure.
+
+
+## Human-facing entry point (requirement; not implemented by this PR)
+
+A person should be able to provide an archival page URL and ask in ordinary language, for example, “Please save the digitized images from this source.” No provider name, internal atom, CLI command, or memorized trigger phrase should be required. The workflow should resolve the GUID, source metadata, image list, and route internally; explain what it found; and ask only for genuinely missing, consequential inputs such as an unset external destination.
+
+**Current boundary:** this PR supplies the Python/CLI acquisition core. It does not yet provide a natural-language skill/interface, so do not present the above as an already available capability.
