@@ -1,50 +1,36 @@
-# Archival Source Acquisition MVP
+# Archival source acquisition: SStA pilot
 
-This bounded MVP adds one existing-tool implementation for the Sächsisches
-Staatsarchiv. It deliberately does not introduce a repository-wide skills
-directory or create Corpus/Project state.
+This bounded implementation acquires individual JPEGs from the Sächsisches
+Staatsarchiv. It uses the archive's actual `files.json` list. It does not
+create Corpus or Project records, search for sources, or infer research roles.
 
-## Scope
+## Observed SStA path
 
-- provider adapter: Sächsisches Staatsarchiv download and tested fullsize routes;
-- generic core: deterministic naming, external package storage, JPEG checks,
-  SHA-256 manifest and repeatable/no-overwrite behavior;
-- offline fixtures for 20578 Nr. 632 (135 images) and Nr. 754 (61 images);
-- no Project creation, Source-use creation, research-function assignment,
-  automatic source search or Corpus mutation.
+1. Read the GUID from the archive record URL or supplied metadata.
+2. Fetch `https://www.archiv.sachsen.de/digitalisate/<GUID>/files.json`.
+3. Validate every `name`, `typ` and `istEinzelbild` entry; sort by `name`.
+4. Form one `download.jsp` or `fullsize/<name>.jpg` URL per listed image.
+5. Acquire the images into the configured external root and record checksums.
 
-## Provider boundary: SStA page structure and viewer
+The JSON list, not a supplied image count or a Viewer canvas, determines the
+image names. A supplied `image_count` is an optional consistency check. The
+adapter fails on unsupported or duplicate entries; it does not silently skip
+them. Tile/DZI variants are not implemented by this single-image adapter.
 
-The SStA adapter owns the known viewer boundary markers
-`digitalisat-viewer-thumbnailstrip-wrapper` and `viewer_digitalisate`, as well
-as the provider-specific download/fullsize routes. The generic core receives
-only normalized metadata and image specifications.
-
-This MVP is URL-driven after metadata intake. It does not yet parse live HTML
-or discover the image count from the DOM. A future live-verification change
-must add a captured, redacted HTML fixture and parser tests before the viewer
-structure can be treated as reproducibly verified.
+The generic acquisition core sees only a normalized list of image
+specifications. SStA fields and routes stay in the provider adapter.
 
 ## Metadata input
 
-The CLI expects a JSON file with at least:
-
-- archive
-- fonds
-- signature
-- title
-- date_label
-- guid
-- page_url
-- image_count
-
-Optional fields include archive_code, name_key, classification_path and
-rights_status. Date and name tokens must be supplied by the intake process;
-the tool does not infer historical dating or archival identity from filenames.
+Supply a JSON file with `archive`, `fonds`, `signature`, `title`,
+`date_label`, `guid` and `page_url`. Optional fields include
+`archive_code`, `name_key`, `classification_path`, `rights_status`
+and `image_count`. Title, date and archival identity come from intake;
+they are not inferred from image names.
 
 ## Commands
 
-Dry-run planning:
+Preview the plan using the live SStA list:
 
     python tools/archival_source_acquisition.py \
       --metadata <metadata.json> \
@@ -52,38 +38,41 @@ Dry-run planning:
       --route download \
       --dry-run
 
-Acquisition:
+Use a previously captured `files.json` response for offline planning:
 
     python tools/archival_source_acquisition.py \
       --metadata <metadata.json> \
+      --file-list <files.json> \
       --output-root <external-literature-root> \
-      --route download
+      --dry-run
 
-The output root is intentionally external to the repository. The tool writes a
-package directory containing 0001.jpg...NNNN.jpg, QUELLENINFO.json,
-QUELLENINFO.txt and SHA256SUMS.txt.
+Omit `--dry-run` to acquire the listed images. `--route fullsize` selects
+the direct viewer image route. The default `download` route uses the
+archive's individual download endpoint. `--file-list` affects planning only;
+actual image retrieval still needs network access.
 
-## Evidence and authority boundary
+The tool writes the images without recompression or renaming, plus
+`QUELLENINFO.json`, `QUELLENINFO.txt` and `SHA256SUMS.txt` in one package
+directory under the external root. The manifest includes the `files.json`
+URL and SHA-256, acquisition time, image URLs, dimensions and image checksums.
+Existing images are downloaded again for hash comparison and never silently
+overwritten; this is a repeatable check, not a network-free no-op.
 
-The tool records technical acquisition facts. It does not establish:
+## Evidence and authority
 
-- Project existence or priority;
-- Project-relative Source use;
-- principal/comparison/context research functions;
-- rights or access beyond the supplied status;
-- historical provenance, reading or interpretation.
+Technical acquisition does not establish Project existence, Source use,
+research function, historical provenance, archival master status, or rights.
+Corpus registration remains a separate intake decision. The manifest is an
+external technical acquisition record, not a canonical Source/File row.
 
-The generated manifest is an acquisition record, not a replacement for the
-canonical Source/File contract. Corpus registration remains a separate,
-explicit intake decision.
+The offline fixtures in `tests/fixtures/ssta-files-*.json` were captured
+from the public SStA endpoints for Nr. 632 (135 entries), Nr. 754 (61), and
+the Oppurg pilot GUID (139) on 2026-10-05. They test real unsorted entry
+shapes and fail-closed parsing. They do not prove that every image byte was
+downloaded. A separate live check fully read and verified only image 0001
+of the 139-entry Oppurg list (4,311 × 3,891 pixels).
 
-## Test contract
-
-Offline tests cover both fixture counts, deterministic package separation,
-download/fullsize route distinction, JPEG dimension checks, repeatable rerun
-with hash comparison, and refusal to overwrite an existing different file.
-They do not establish live DOM discovery or live image retrieval.
-
-Live extraction of the two archivalien is intentionally a separate execution
-step against the configured external root. It must not be simulated by the
-offline tests.
+The CLI deliberately does not handle restricted browser or sandbox policies.
+A failed DNS lookup in a restricted execution environment is not evidence that
+the archive server is unavailable. Diagnose the environment before reporting
+a source-access failure.
