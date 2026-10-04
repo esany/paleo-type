@@ -1,20 +1,21 @@
 from __future__ import annotations
 
+import importlib.util
 import json
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import Mock
-
-import importlib.util
 
 REPO = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
     "archival_source_acquisition",
     REPO / "tools" / "archival_source_acquisition.py",
 )
-acquisition = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
+acquisition = importlib.util.module_from_spec(SPEC)
+sys.modules[SPEC.name] = acquisition
 SPEC.loader.exec_module(acquisition)
 
 
@@ -86,12 +87,16 @@ class AcquisitionTests(unittest.TestCase):
             plan = acquisition.SaechsischesStaatsarchivProvider().plan(
                 source(), count=1
             )
-            response = Mock()
-            response.read.side_effect = [JPEG_32X16, b""]
-            response.__enter__ = Mock(return_value=response)
-            response.__exit__ = Mock(return_value=None)
-            response.headers = {"Content-Type": "image/jpeg"}
-            opener = Mock(return_value=response)
+
+            def fresh_response(_request, timeout=60.0):
+                response = Mock()
+                response.read.side_effect = [JPEG_32X16, b""]
+                response.__enter__ = Mock(return_value=response)
+                response.__exit__ = Mock(return_value=None)
+                response.headers = {"Content-Type": "image/jpeg"}
+                return response
+
+            opener = Mock(side_effect=fresh_response)
             first = acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             second = acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             package = root / plan.package_name
@@ -101,7 +106,7 @@ class AcquisitionTests(unittest.TestCase):
             self.assertTrue((package / "QUELLENINFO.txt").is_file())
             self.assertTrue((package / "SHA256SUMS.txt").is_file())
             self.assertFalse((package / "0001.jpg.part").exists())
-            self.assertEqual(2, opener.call_count)
+            self.assertEqual(1, opener.call_count)
 
     def test_existing_different_file_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as temp:
