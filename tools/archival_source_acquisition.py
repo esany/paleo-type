@@ -83,7 +83,7 @@ class SaechsischesStaatsarchivProvider:
     DOWNLOAD_ENDPOINT = "https://www.archiv.sachsen.de/archiv/download.jsp"
     FULLSIZE_ENDPOINT = "https://www.archiv.sachsen.de/digitalisate"
 
-    def image_url(self, guid: str, filename: str, route: str) -> str:
+    @classmethod\n    def viewer_structure(cls) -> dict[str, str]:\n        """Return the SStA viewer markers without exposing them to the core."""\n        return dict(cls.VIEWER_STRUCTURE)\n\n    def image_url(self, guid: str, filename: str, route: str) -> str:
         if route == "download":
             return f"{self.DOWNLOAD_ENDPOINT}?{urlencode({'guid': guid, 'filename': filename})}"
         if route == "fullsize":
