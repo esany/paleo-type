@@ -11,14 +11,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import mimetypes
 import re
-import sys
 import time
 import unicodedata
 from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Callable, Iterable
+from typing import Callable
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -55,6 +54,8 @@ class AcquisitionPlan:
     source: SourceMetadata
     package_name: str
     route: str
+    file_list_url: str
+    file_list_sha256: str
     images: tuple[ImageSpec, ...]
 
 
@@ -78,27 +79,46 @@ def package_name(source: SourceMetadata) -> str:
 
 
 class SaechsischesStaatsarchivProvider:
-    """Provider boundary for the SStA page/viewer and image routes.
+    """Resolve SStA's real file list and construct its image URLs.
 
-    The current MVP consumes metadata supplied by intake and constructs the
-    explicitly tested routes. It does not claim to discover or parse live HTML.
-    Viewer-specific selectors remain owned here rather than by the generic core.
+    The viewer DOM is not needed for the documented single-image mode.
+    Unsupported tile/manifest entries fail closed rather than being omitted.
     """
 
-    VIEWER_STRUCTURE = {
-        "thumbnail_strip_wrapper": "digitalisat-viewer-thumbnailstrip-wrapper",
-        "image_container": "viewer_digitalisate",
-    }
-
+    FILE_LIST_ENDPOINT = "https://www.archiv.sachsen.de/digitalisate"
     DOWNLOAD_ENDPOINT = "https://www.archiv.sachsen.de/archiv/download.jsp"
-    FULLSIZE_ENDPOINT = "https://www.archiv.sachsen.de/digitalisate"
+    FULLSIZE_ENDPOINT = FILE_LIST_ENDPOINT
+    GUID_PATTERN = re.compile(
+        r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-"
+        r"[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\Z"
+    )
+    NAME_PATTERN = re.compile(r"[A-Za-z0-9_-]+\Z")
 
-    @classmethod
-    def viewer_structure(cls) -> dict[str, str]:
-        """Return the SStA viewer markers without exposing them to the core."""
-        return dict(cls.VIEWER_STRUCTURE)
+    def file_list_url(self, guid: str) -> str:
+        if not self.GUID_PATTERN.fullmatch(guid):
+            raise AcquisitionError("invalid SStA digitalisat GUID")
+        return f"{self.FILE_LIST_ENDPOINT}/{guid}/files.json"
+
+    def fetch_file_list(
+        self,
+        source: SourceMetadata,
+        *,
+        opener: Callable[..., object] = urlopen,
+        timeout: float = 60.0,
+    ) -> bytes:
+        url = self.file_list_url(source.guid)
+        request = Request(
+            url,
+            headers={"User-Agent": "paleo-type archival-source-acquisition/0.1"},
+        )
+        try:
+            with opener(request, timeout=timeout) as response:
+                return response.read()
+        except Exception as error:
+            raise AcquisitionError(f"SStA file list unavailable: {url}: {error}") from error
 
     def image_url(self, guid: str, filename: str, route: str) -> str:
+        self.file_list_url(guid)
         if route == "download":
             return f"{self.DOWNLOAD_ENDPOINT}?{urlencode({'guid': guid, 'filename': filename})}"
         if route == "fullsize":
@@ -108,25 +128,57 @@ class SaechsischesStaatsarchivProvider:
     def plan(
         self,
         source: SourceMetadata,
+        file_list_bytes: bytes,
         *,
         route: str = "download",
-        count: int | None = None,
     ) -> AcquisitionPlan:
-        image_count = count if count is not None else source.image_count
-        if image_count < 1:
-            raise ValueError("image count must be positive")
+        file_list_url = self.file_list_url(source.guid)
+        try:
+            entries = json.loads(file_list_bytes)
+        except (UnicodeDecodeError, json.JSONDecodeError) as error:
+            raise AcquisitionError("invalid SStA files.json") from error
+        if not isinstance(entries, list) or not entries:
+            raise AcquisitionError("SStA files.json has no image entries")
+
+        names: set[str] = set()
+        filenames: list[str] = []
+        for index, entry in enumerate(entries, start=1):
+            if not isinstance(entry, dict):
+                raise AcquisitionError(f"SStA entry {index} is not an object")
+            name = entry.get("name")
+            typ = entry.get("typ")
+            if not isinstance(name, str) or not self.NAME_PATTERN.fullmatch(name):
+                raise AcquisitionError(f"SStA entry {index} has an unsafe or missing name")
+            if typ != "jpg" or entry.get("istEinzelbild") is not True:
+                raise AcquisitionError(
+                    f"SStA entry {index} is not a supported single-image JPEG"
+                )
+            filename = f"{name}.{typ}"
+            if filename in names:
+                raise AcquisitionError(f"duplicate SStA image: {filename}")
+            names.add(filename)
+            filenames.append(filename)
+
+        filenames.sort()
+        if source.image_count and len(filenames) != source.image_count:
+            raise AcquisitionError(
+                f"SStA file count {len(filenames)} differs from "
+                f"supplied count {source.image_count}"
+            )
         images = tuple(
             ImageSpec(
                 sequence=index,
-                filename=f"{index:04d}.jpg",
-                url=self.image_url(source.guid, f"{index:04d}.jpg", route),
+                filename=filename,
+                url=self.image_url(source.guid, filename, route),
             )
-            for index in range(1, image_count + 1)
+            for index, filename in enumerate(filenames, start=1)
         )
         return AcquisitionPlan(
             source=source,
             package_name=package_name(source),
             route=route,
+            file_list_url=file_list_url,
+            file_list_sha256=hashlib.sha256(file_list_bytes).hexdigest(),
             images=images,
         )
 
@@ -267,6 +319,9 @@ def acquire(
     manifest = {
         "schema": "paleo-type.archival-source-acquisition.v1",
         "status": "complete",
+        "acquired_at_utc": datetime.now(timezone.utc).isoformat(),
+        "file_list_url": plan.file_list_url,
+        "file_list_sha256": plan.file_list_sha256,
         "package_name": plan.package_name,
         "route": plan.route,
         "source": asdict(plan.source),
@@ -292,6 +347,8 @@ def acquire(
         f"Datierung: {plan.source.date_label}",
         f"Digitalisat-GUID: {plan.source.guid}",
         f"Digitalisat: {plan.source.page_url}",
+        f"Dateiliste: {plan.file_list_url}",
+        f"Dateiliste SHA-256: {plan.file_list_sha256}",
         f"Bildroute: {plan.route}",
         f"Umfang: {len(results)} Fullsize-JPEGs",
         "Dateien: " + f"{expected_names[0]}–{expected_names[-1]}",
@@ -324,7 +381,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--metadata", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--route", choices=("download", "fullsize"), default="download")
-    parser.add_argument("--count", type=int)
+    parser.add_argument("--file-list", type=Path, help="offline files.json fixture")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--rate-limit", type=float, default=0.1)
     return parser
@@ -333,9 +390,13 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     source = load_source(args.metadata)
-    plan = SaechsischesStaatsarchivProvider().plan(
-        source, route=args.route, count=args.count
+    provider = SaechsischesStaatsarchivProvider()
+    file_list_bytes = (
+        args.file_list.read_bytes()
+        if args.file_list is not None
+        else provider.fetch_file_list(source)
     )
+    plan = provider.plan(source, file_list_bytes, route=args.route)
     if args.dry_run:
         print(json.dumps(asdict(plan), ensure_ascii=False, indent=2))
         return 0
