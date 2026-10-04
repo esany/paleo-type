@@ -55,9 +55,9 @@ Old chat must never be required to reconstruct durable research state.
 
 ## Current system-development navigation
 
-The Human-visible current system-development work view is GitHub **#244** with bounded work #245–#253. The compact whole-system map is `requirements/system-development-bugwave-master-map-2026-10-04.md`.
+The Human-visible current system-development work/decision view is GitHub **#244**. Pre-implementation analysis/design Issues **#245–#253 are complete**. Candidate SD-KA-01 implementation is already decomposed as **#256–#261**, but every one of those Issues is explicitly blocked on D-016 admission and its stated prerequisites.
 
-The bugwave has now completed its pre-implementation finding-coverage and detailed-design closure. The current material decision surface is:
+The current material decision surface is:
 
 `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`
 
@@ -65,7 +65,11 @@ Current process state:
 
 > **READY FOR HUMAN D-016 IMPLEMENTATION DECISION / NOT ADMITTED / IMPLEMENTATION NOT STARTED.**
 
+The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from the later D-016 brief. **The D-016 brief and #244 own the current non-normative readiness/navigation interpretation.**
+
 The proposed target is still a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. Detailed design now covers material-finding promotion, engineering configuration/reference transitions, context/Developer Experience, Architecture Decision Records (ADRs), activity-relative readiness/Human decision surfaces, engineering assurance, brownfield migration, `.prompt` capability and the Review Premise Inheritance safeguard.
+
+If later admitted, the first implementation is #256: establish semantic contracts and an in-place managed brownfield baseline. Physical migration is deliberately later (#260), after semantics/currentness/trace/fitness are working.
 
 No target `engineering/` structure, physical migration, METHOD change, schema/runtime, Context Compiler, engineering CI implementation, manuscript scope or scholarly `NEXT ACTION` follows merely from design readiness. Material implementation still requires explicit Human-Owner admission under D-016.
 
@@ -84,7 +88,7 @@ Historical programme detail is evidence on demand, not the default current-work 
 `requirements/` is currently a brownfield mixed-purpose namespace. That is a documented information-architecture defect and not the intended target state. Until a separately admitted migration occurs, use these current navigation artifacts rather than replaying files chronologically:
 
 - current Human decision surface: `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`;
-- whole bugwave/work map: `requirements/system-development-bugwave-master-map-2026-10-04.md`;
+- whole bugwave/failure-family map: `requirements/system-development-bugwave-master-map-2026-10-04.md`;
 - source-audit finding coverage: `requirements/system-development-bugwave-finding-coverage-2026-10-04.md`;
 - finding promotion design: `requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md`;
 - architecture-decision inventory: `requirements/system-development-bugwave-adr-inventory-2026-10-04.md`;
@@ -182,6 +186,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for current system-development work, which material decision is actually pending and which repository artifact owns that decision surface.
+- for current system-development work, which material decision is actually pending and which repository artifact/Issue owns that decision surface.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
