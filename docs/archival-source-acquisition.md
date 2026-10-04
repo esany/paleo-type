@@ -83,3 +83,7 @@ a source-access failure.
 A person should be able to provide an archival page URL and ask in ordinary language, for example, “Please save the digitized images from this source.” No provider name, internal atom, CLI command, or memorized trigger phrase should be required. The workflow should resolve the GUID, source metadata, image list, and route internally; explain what it found; and ask only for genuinely missing, consequential inputs such as an unset external destination.
 
 **Current boundary:** this PR supplies the Python/CLI acquisition core. It does not yet provide a natural-language skill/interface, so do not present the above as an already available capability.
+
+## Preferred short invocation (requirement; not implemented by this PR)
+
+The preferred human-facing shortcut is **`savesax`**. It should start the SStA acquisition flow and reuse an archival page/source already present in context. Ask only for the source link if none is available. A natural-language request remains an alternative, but the user should not need to write a full sentence or select internal provider/atom names. This shortcut is a UX requirement, not a capability supplied by this Python/CLI PR.
