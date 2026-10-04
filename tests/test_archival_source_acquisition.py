@@ -68,7 +68,7 @@ class AcquisitionTests(unittest.TestCase):
         self.assertIn("0001.jpg", first.images[0].url)
         self.assertIn("download.jsp", first.images[0].url)
 
-    def test_fullsize_route_is_explicit_and_distinct(self):
+    def test_ssta_viewer_structure_is_owned_by_provider_boundary(self):\n        self.assertEqual(\n            {\n                "thumbnail_strip_wrapper": "digitalisat-viewer-thumbnailstrip-wrapper",\n                "image_container": "viewer_digitalisate",\n            },\n            acquisition.SaechsischesStaatsarchivProvider.viewer_structure(),\n        )\n\n    def test_fullsize_route_is_explicit_and_distinct(self):
         plan = acquisition.SaechsischesStaatsarchivProvider().plan(
             source(), route="fullsize", count=2
         )
@@ -81,7 +81,7 @@ class AcquisitionTests(unittest.TestCase):
         with self.assertRaises(acquisition.AcquisitionError):
             acquisition.jpeg_dimensions(b"not-a-jpeg")
 
-    def test_acquire_writes_manifest_checksums_and_is_idempotent(self):
+    def test_acquire_writes_manifest_checksums_and_is_repeatable(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             plan = acquisition.SaechsischesStaatsarchivProvider().plan(
