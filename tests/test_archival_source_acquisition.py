@@ -106,7 +106,7 @@ class AcquisitionTests(unittest.TestCase):
             self.assertTrue((package / "QUELLENINFO.txt").is_file())
             self.assertTrue((package / "SHA256SUMS.txt").is_file())
             self.assertFalse((package / "0001.jpg.part").exists())
-            self.assertEqual(1, opener.call_count)
+            self.assertEqual(2, opener.call_count)
 
     def test_existing_different_file_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as temp:
