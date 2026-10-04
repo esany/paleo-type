@@ -8,10 +8,22 @@ directory or create Corpus/Project state.
 
 - provider adapter: Sächsisches Staatsarchiv download and tested fullsize routes;
 - generic core: deterministic naming, external package storage, JPEG checks,
-  SHA-256 manifest and idempotent/no-overwrite behavior;
+  SHA-256 manifest and repeatable/no-overwrite behavior;
 - offline fixtures for 20578 Nr. 632 (135 images) and Nr. 754 (61 images);
 - no Project creation, Source-use creation, research-function assignment,
   automatic source search or Corpus mutation.
+
+## Provider boundary: SStA page structure and viewer
+
+The SStA adapter owns the known viewer boundary markers
+`digitalisat-viewer-thumbnailstrip-wrapper` and `viewer_digitalisate`, as well
+as the provider-specific download/fullsize routes. The generic core receives
+only normalized metadata and image specifications.
+
+This MVP is URL-driven after metadata intake. It does not yet parse live HTML
+or discover the image count from the DOM. A future live-verification change
+must add a captured, redacted HTML fixture and parser tests before the viewer
+structure can be treated as reproducibly verified.
 
 ## Metadata input
 
@@ -68,8 +80,9 @@ explicit intake decision.
 ## Test contract
 
 Offline tests cover both fixture counts, deterministic package separation,
-download/fullsize route distinction, JPEG dimension checks, idempotent rerun,
-and refusal to overwrite an existing different file.
+download/fullsize route distinction, JPEG dimension checks, repeatable rerun
+with hash comparison, and refusal to overwrite an existing different file.
+They do not establish live DOM discovery or live image retrieval.
 
 Live extraction of the two archivalien is intentionally a separate execution
 step against the configured external root. It must not be simulated by the
