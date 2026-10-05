@@ -54,10 +54,27 @@ def source(**overrides):
     return acquisition.SourceMetadata(**values)
 
 
+def images(*names: str) -> bytes:
+    return json.dumps(
+        [
+            {"name": name, "typ": "jpg", "istEinzelbild": True}
+            for name in names
+        ]
+    ).encode("utf-8")
+
+
 def one_image(name="0001", typ="jpg", single=True):
     return json.dumps(
         [{"name": name, "typ": typ, "istEinzelbild": single}]
     ).encode("utf-8")
+
+
+def response_for(data: bytes = JPEG_32X16):
+    response = Mock()
+    response.read.side_effect = [data, b""]
+    response.__enter__ = Mock(return_value=response)
+    response.__exit__ = Mock(return_value=None)
+    return response
 
 
 class AcquisitionTests(unittest.TestCase):
@@ -169,34 +186,144 @@ class AcquisitionTests(unittest.TestCase):
         with self.assertRaises(acquisition.AcquisitionError):
             acquisition.jpeg_dimensions(b"not-a-jpeg")
 
-    def test_acquire_writes_provenance_checksums_and_revalidates_existing_file(self):
+    def test_complete_repeat_run_is_network_free_and_revalidates_persisted_bytes(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             plan = acquisition.SaechsischesStaatsarchivProvider().plan(
                 source(image_count=1), one_image()
             )
-
-            def fresh_response(_request, timeout=60.0):
-                response = Mock()
-                response.read.side_effect = [JPEG_32X16, b""]
-                response.__enter__ = Mock(return_value=response)
-                response.__exit__ = Mock(return_value=None)
-                return response
-
-            opener = Mock(side_effect=fresh_response)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
             first = acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             second = acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             package = root / plan.package_name
             self.assertEqual("complete", first["status"])
-            self.assertEqual("already-present", second["images"][0]["status"])
+            self.assertEqual("verified-existing", second["images"][0]["status"])
             self.assertEqual(plan.file_list_url, second["file_list_url"])
             self.assertEqual(plan.file_list_sha256, second["file_list_sha256"])
-            self.assertIn("acquired_at_utc", second)
             self.assertTrue((package / "QUELLENINFO.json").is_file())
             self.assertTrue((package / "QUELLENINFO.txt").is_file())
             self.assertTrue((package / "SHA256SUMS.txt").is_file())
+            self.assertTrue((package / acquisition.PROGRESS_FILENAME).is_file())
             self.assertFalse((package / "0001.jpg.part").exists())
-            self.assertEqual(2, opener.call_count)
+            self.assertEqual(1, opener.call_count)
+
+    def test_interruption_persists_verified_progress_and_resume_skips_completed_image(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+                source(image_count=3), images("0001", "0002", "0003")
+            )
+            first_urls: list[str] = []
+
+            def first_opener(request, timeout=60.0):
+                first_urls.append(request.full_url)
+                if request.full_url.endswith("filename=0002.jpg"):
+                    raise OSError("simulated network interruption")
+                return response_for()
+
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "0002.jpg"):
+                acquisition.acquire(
+                    plan,
+                    root,
+                    opener=first_opener,
+                    retries=1,
+                    rate_limit_seconds=0,
+                )
+            package = root / plan.package_name
+            state = json.loads(
+                (package / acquisition.PROGRESS_FILENAME).read_text(encoding="utf-8")
+            )
+            self.assertEqual("partial-restartable", state["status"])
+            self.assertEqual(["0001.jpg"], [item["filename"] for item in state["images"]])
+            self.assertEqual("0002.jpg", state["last_failure"]["filename"])
+            self.assertTrue((package / "0001.jpg").is_file())
+            self.assertFalse((package / "0002.jpg").exists())
+
+            resumed_urls: list[str] = []
+
+            def resumed_opener(request, timeout=60.0):
+                resumed_urls.append(request.full_url)
+                return response_for()
+
+            result = acquisition.acquire(
+                plan,
+                root,
+                opener=resumed_opener,
+                retries=1,
+                rate_limit_seconds=0,
+            )
+            self.assertEqual("complete", result["status"])
+            self.assertEqual("verified-existing", result["images"][0]["status"])
+            self.assertEqual(2, len(resumed_urls))
+            self.assertTrue(all("0001.jpg" not in url for url in resumed_urls))
+            final_state = json.loads(
+                (package / acquisition.PROGRESS_FILENAME).read_text(encoding="utf-8")
+            )
+            self.assertEqual("complete", final_state["status"])
+            self.assertEqual(3, len(final_state["images"]))
+
+    def test_corruption_of_recorded_progress_fails_closed_without_network(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+                source(image_count=1), one_image()
+            )
+            acquisition.acquire(
+                plan,
+                root,
+                opener=lambda *_args, **_kwargs: response_for(),
+                rate_limit_seconds=0,
+            )
+            package = root / plan.package_name
+            (package / "0001.jpg").write_bytes(b"corrupt")
+            opener = Mock(side_effect=AssertionError("network must not be used"))
+            with self.assertRaises(acquisition.AcquisitionError):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+
+    def test_status_is_read_only_and_does_not_start_or_resume_acquisition(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            metadata = source(image_count=1)
+            before = acquisition.status_for_source(metadata, root)
+            self.assertEqual("not-started", before["status"])
+            self.assertTrue(before["read_only"])
+            self.assertFalse((root / acquisition.package_name(metadata)).exists())
+
+            plan = acquisition.SaechsischesStaatsarchivProvider().plan(metadata, one_image())
+            acquisition.acquire(
+                plan,
+                root,
+                opener=lambda *_args, **_kwargs: response_for(),
+                rate_limit_seconds=0,
+            )
+            state_path = root / plan.package_name / acquisition.PROGRESS_FILENAME
+            state_before = state_path.read_bytes()
+            status = acquisition.status_for_source(metadata, root)
+            state_after = state_path.read_bytes()
+            self.assertEqual("complete", status["status"])
+            self.assertTrue(status["read_only"])
+            self.assertEqual(state_before, state_after)
+
+    def test_operator_cancellation_leaves_restartable_state(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+                source(image_count=1), one_image()
+            )
+            with self.assertRaises(KeyboardInterrupt):
+                acquisition.acquire(
+                    plan,
+                    root,
+                    opener=Mock(side_effect=KeyboardInterrupt()),
+                    rate_limit_seconds=0,
+                )
+            package = root / plan.package_name
+            state = json.loads(
+                (package / acquisition.PROGRESS_FILENAME).read_text(encoding="utf-8")
+            )
+            self.assertEqual("cancelled-restartable", state["status"])
+            self.assertEqual("0001.jpg", state["last_failure"]["filename"])
 
     def test_existing_different_file_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -204,17 +331,26 @@ class AcquisitionTests(unittest.TestCase):
             plan = acquisition.SaechsischesStaatsarchivProvider().plan(
                 source(image_count=1), one_image()
             )
-            response = Mock()
-            response.read.side_effect = [JPEG_32X16, b""]
-            response.__enter__ = Mock(return_value=response)
-            response.__exit__ = Mock(return_value=None)
-            opener = Mock(return_value=response)
+            opener = Mock(return_value=response_for())
             package = root / plan.package_name
             package.mkdir(parents=True)
             (package / "0001.jpg").write_bytes(b"different")
             with self.assertRaises(acquisition.AcquisitionError):
                 acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             self.assertEqual(b"different", (package / "0001.jpg").read_bytes())
+
+    def test_repository_worktree_is_rejected_as_output_root(self):
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image()
+        )
+        with self.assertRaisesRegex(acquisition.AcquisitionError, "repository/worktree"):
+            acquisition.acquire(
+                plan,
+                REPO / "never-create-this",
+                opener=Mock(side_effect=AssertionError("no network")),
+                rate_limit_seconds=0,
+            )
+        self.assertFalse((REPO / "never-create-this").exists())
 
 
 if __name__ == "__main__":
