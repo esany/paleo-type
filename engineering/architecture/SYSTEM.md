@@ -10,15 +10,15 @@ The repository's accepted engineering baseline remains the existing governing ob
 
 `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`
 
-WP1 established and verified the in-place engineering semantic/catalog foundation. WP2 is the bounded current implementation focus: accepted-baseline/current-change semantics, rebuildable current/query views and applicability provenance. Existing `requirements/` content remains in place; physical migration is still the later WP5 activity.
+WP1 established and verified the in-place engineering semantic/catalog foundation. WP2 has now implemented and exactly post-merge verified accepted-baseline/current-change semantics, rebuildable current/query views and applicability-provenance primitives. Existing `requirements/` content remains in place; physical migration is still the later WP5 activity.
 
-The executable current-state surface is derived from `engineering/configuration.json`, `engineering/changes/SD-KA-01/STATE.json` and the managed catalogs. It does not choose accepted architecture by newest file, newest Git commit, Issue/PR state or CI success.
+The executable current-state surface is derived from `engineering/configuration.json`, `engineering/changes/SD-KA-01/STATE.json` and the managed catalogs. It does not choose accepted architecture by newest file, newest Git commit, Issue/PR state or CI success. The canonical configuration currently records no active implementation focus; `STATE.json` records #258/WP3 as ready-next without treating it as started.
 
 ## Boundaries
 
 - scholarly Project/Corpus truth remains with its existing owners;
 - Issues and PRs are work/review metadata, not accepted configuration authority;
-- proposed/admitted engineering decisions are not accepted current configuration until the specified result transition occurs;
+- implemented engineering capability does not by itself promote the full admitted SD-KA-01 target into accepted architecture baseline;
 - current/query views are derived and rebuildable and do not become a parallel state store;
-- explicit absence of active change/focus is valid and must not manufacture replacement work;
+- explicit absence of active focus is valid and must not manufacture replacement work;
 - technical validation is scoped assurance, not scholarly, specialist or Human acceptance.
