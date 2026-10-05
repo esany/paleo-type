@@ -12,6 +12,7 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 import time
 import unicodedata
 from dataclasses import asdict, dataclass
@@ -366,7 +367,8 @@ def acquire(
 
 
 def load_source(path: Path) -> SourceMetadata:
-    data = json.loads(path.read_text(encoding="utf-8"))
+    metadata_json = sys.stdin.read() if str(path) == "-" else path.read_text(encoding="utf-8")
+    data = json.loads(metadata_json)
     required = ("archive", "fonds", "signature", "title", "date_label", "guid", "page_url")
     missing = [field for field in required if not data.get(field)]
     if missing:
