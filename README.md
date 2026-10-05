@@ -71,21 +71,21 @@ Cumulative work-package results and whole-system returns are durably recorded in
 
 Current process state:
 
-> **D-016 ADMITTED / WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 IMPLEMENTING / SD-KA-01 ACTIVE.**
+> **D-016 ADMITTED / WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 VERIFIED + RETURNED / WP4 READY-NEXT / SD-KA-01 ACTIVE.**
 
-Current WP3 work, in plain language: **implement the Human/developer/Agent context views so active work, next action, authority boundary and deeper provenance are visible without Issue/audit replay; add Senior Developer bootstrap, one shared local/CI full-check command, bounded `.prompt` create/review/test behavior and review-evidence-basis safeguards.** The owning work metadata is #258; scope/authority remain the already admitted SD-KA-01/WP3 slice.
+No work package is currently executing. The next eligible bounded system-development action is: **implement engineering fitness, CI assurance and whole-system return checks under #259/WP4, using the WP1–WP3 semantic/configuration/context/prompt surfaces as prerequisites and without turning CI into scholarly or Human authority.** This is readiness inside the already admitted SD-KA-01 scope; it does not start WP4 or create a new D-016 decision.
 
 For a derived Human-readable rendering of the same repository state use:
 
 `python tools/engineering_context.py --profile human-system-overview --format text`
 
-A generic invocation may resolve context-relative current work, but the visible result must remain a meaningful action with scope and provenance. If current work is ambiguous, the derived view exposes the ambiguity rather than silently selecting one repository-global cursor.
+A generic invocation may resolve context-relative current/next work, but the visible result must remain a meaningful action with scope and provenance. If work is ambiguous, the derived view exposes the ambiguity rather than silently selecting one repository-global cursor.
 
 The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from later admitted/result state. **The canonical engineering configuration/change/result owners and #244 own the current non-scholarly implementation/navigation interpretation.**
 
-The repository-native Engineering Knowledge & Configuration Plane is now partially implemented: WP1 established the semantic/catalog foundation; WP2 established explicit engineering currentness, applicability provenance and rebuildable current/query views; WP3 is implementing derived Human/Developer/Agent context products, bootstrap, bounded prompt behavior and shared assurance entry. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
+The repository-native Engineering Knowledge & Configuration Plane is now partially implemented: WP1 established the semantic/catalog foundation; WP2 established explicit engineering currentness, applicability provenance and rebuildable current/query views; WP3 established derived Human/Developer/Agent context products, Senior Developer bootstrap, bounded prompt behavior, review-evidence-basis safeguards and the shared local/CI full-check entrypoint. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
 
-#256/WP1 and #257/WP2 are verified for their bounded slices. #258/WP3 is the current bounded implementation cursor within the already admitted scope. #259/WP4 remains later because its full engineering-fitness surface follows the WP3 context/`.prompt` primitives as applicable. Physical migration remains deliberately later (#260).
+#256/WP1, #257/WP2 and #258/WP3 are verified for their bounded slices. #259/WP4 is the next eligible implementation package within the already admitted scope but is not started by this return. Physical migration remains later (#260) because its design requires the earlier semantic/configuration/context/fitness prerequisites. WP6 remains terminal qualification/Result Review.
 
 The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; physical migration, METHOD change and later fitness/qualification capabilities remain bounded implementation work, not automatically accepted scholarly or architecture state.
 
@@ -197,7 +197,7 @@ tools/
 tests/
 ```
 
-Optional Project work directories exist only when real work requires them. `engineering/` carries the admitted SD-KA-01 configuration/catalog/change foundation, WP2 current/query capability and the current WP3 derived-context/prompt/bootstrap implementation; later WP4–WP6 surfaces remain bounded, not implicitly complete.
+Optional Project work directories exist only when real work requires them. `engineering/` carries the admitted SD-KA-01 configuration/catalog/change foundation, WP2 current/query capability and the verified WP3 derived-context/prompt/bootstrap/check capabilities; WP4 is ready-next and WP5–WP6 remain bounded later work.
 
 ## Restartability acceptance
 
