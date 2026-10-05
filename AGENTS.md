@@ -154,6 +154,39 @@ Resource absence never relaxes evidence standards: an action that actually requi
 
 Follow the dependency-provenance and action-local resource rule in `methodology/workflow.md`.
 
+### Consequential read, retry, resume and mutation boundary
+
+Preserve the Human/research outcome as the control cursor when routing through tools, execution contexts, runtimes or storage. Technical decomposition may implement an authorized task; it does not acquire authority to replace the task or create a new one.
+
+Before a consequential external or repository mutation, preserve the distinction among:
+
+```text
+READ / STATUS
+    inspect or report existing state; no new top-level mutation
+
+ACTIVE-OPERATION RETRY
+    bounded retry already authorized inside the same still-active operation
+
+RESUME
+    continue previously authorized persisted operation state under its valid operation contract
+
+NEW TOP-LEVEL MUTATION / RUN
+    start a new consequential action after no active operation or after terminal state
+```
+
+Rules:
+
+- A plain status/read request such as `Fertig?`, `Status?`, `läuft es noch?` or `was ist passiert?` is non-mutating by default. It does not authorize a rerun, resume, new download, push, workflow trigger, consequential message send, merge or canonical write.
+- A terminal failure/cancellation ends the prior top-level operation unless its already-authorized contract explicitly defines a valid persisted resume. Do not infer a new run from the failure, from tool availability or from a later status read.
+- Internal capability/runtime routing stays internal where the needed choice is derivable. Do not make the Human choose Chat/Work/CLI/provider/connector/runtime vocabulary merely because the implementation has those boundaries.
+- One tool/path failure remains action-local. It cannot manufacture task-wide `STOP`, substitute work, new priority or source unavailability without authoritative dependency semantics.
+- Before starting a long-running consequential external side effect, check the task-relative execution fitness that materially affects control and restartability: intended durable destination/progress where required, restart/resume/failure containment, observability, meaningful stop/containment capability and unnecessary transfer/runtime hops. `Can run code` is not evidence that a runtime is fit for the task.
+- If a material stop/cancel/containment limitation cannot be removed, expose it before start when it would affect Human control. Do not promise universal cancellation, but do not discover a known material control gap only after the Human says `Stop`.
+- Keep operation/result levels distinct. Running, partial/restartable, failed/cancelled, technically complete, preserved/secured and accepted are not interchangeable states; one layer's `PASS` must not launder another.
+- After bounded repair/resume, return to the same valid higher-order outcome unless evidence/authority actually invalidated it.
+
+`methodology/workflow.md` owns the detailed execution mechanics. Stable owner-local behavior should be enforced by the interface/tool plus regression fixture where possible; do not build a central workflow engine or duplicate this guardrail into every skill.
+
 ## Work-context and loop protection
 
 Follow `methodology/workflow.md` for operational execution mechanics, including:
