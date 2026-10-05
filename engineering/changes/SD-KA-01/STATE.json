@@ -1,6 +1,6 @@
 {
   "change_id": "SD-KA-01",
-  "lifecycle": "reviewing",
+  "lifecycle": "complete",
   "admission": "admitted",
   "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
   "admission_ref": "artifact:ENG-A-0010",
@@ -17,15 +17,42 @@
     "external runtime, cancellation or preservation claims that repository CI does not actually exercise"
   ],
   "coverage": {
-    "problem": {"state": "required-satisfied", "basis": "artifact:ENG-A-0038"},
-    "root_cause": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0035"},
-    "research": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041;artifact:ENG-A-0052"},
-    "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
-    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037;artifact:ENG-A-0049;artifact:ENG-A-0052"},
-    "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
+    "problem": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0038"
+    },
+    "root_cause": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0018"
+    },
+    "requirements": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0035"
+    },
+    "research": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0018"
+    },
+    "concepts": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0018"
+    },
+    "design": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041;artifact:ENG-A-0052"
+    },
+    "implementation_plan": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0037"
+    },
+    "verification_plan": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0037;artifact:ENG-A-0049;artifact:ENG-A-0052"
+    },
+    "migration_plan": {
+      "state": "required-satisfied",
+      "basis": "artifact:ENG-A-0016"
+    }
   },
   "blocking_uncertainties": [],
   "applicable_rules": [
@@ -45,17 +72,17 @@
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp6-qualification-in-progress",
-  "verification_head": "git:ffc4d3736148987cd30aa805519634287d1b4b6b",
+  "result_status": "terminal-accepted-engineering-baseline",
+  "verification_head": "git:b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
     "WP3": "verified",
     "WP4": "verified",
     "WP5": "verified",
-    "WP6": "implementing"
+    "WP6": "verified"
   },
-  "current_execution": "WP6 is executing adversarial qualification and terminal Result Review under #261. The accepted architecture/Requirement baselines remain unchanged until qualification evidence and exact-head assurance support a terminal transition.",
-  "current_baseline_changes": "none during active WP6 qualification; accepted architecture and Requirement baselines remain unchanged while P-001..P-012, F10/F17 residual boundaries, context journeys, migration loss checks and local-to-whole closure are re-tested",
-  "whole_system_return": "pending WP6 terminal Result Review. WP5 remains exactly verified. #244 remains the programme owner; no scholarly Project/manuscript state or NEXT ACTION changes are authorized by WP6."
+  "current_execution": "SD-KA-01 WP1-WP6 is complete. WP6 adversarial qualification and terminal Result Review passed the exact PR-head and exact post-merge engineering assurance on the implementation result; no SD-KA work package or successor programme is currently executing.",
+  "current_baseline_changes": "accepted architecture baseline changed by terminal Result Review to include artifact:ENG-A-0031 (ADR-0001, qualified P-001..P-012 target package); accepted Requirement baseline artifact:ENG-A-0008 remains unchanged. This engineering baseline acceptance does not establish scholarly/specialist truth, evidential independence or #225 acceptance.",
+  "whole_system_return": "terminal changed/accepted engineering consequence: P-001..P-012 are implemented and qualified across WP1-WP6; currentness, managed finding trace, role/task context, bounded prompt behavior, engineering fitness and brownfield migration/legacy continuity are repository-testable and restartable. WP6 exact PR head 91a07581a2bfeabf5b7c0fb410c4803d0afa5774 passed source-contract run #588 (37386628173); implementation merge main@b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1 passed exact post-merge run #589 (37386694928). F10 remains unresolved as an independence/evidence-depth residual; F17/#225 remains a separate scholarly residual; #297 remains an external residual/later qualification consequence under its own owners. No manuscript Project state, scholarly NEXT ACTION, external runtime acceptance or successor programme is generated."
 }
