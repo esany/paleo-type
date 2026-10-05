@@ -6,8 +6,9 @@ import json
 import sys
 import tempfile
 import unittest
+from io import StringIO
 from pathlib import Path
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
 REPO = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
@@ -60,6 +61,12 @@ def one_image(name="0001", typ="jpg", single=True):
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_metadata_can_be_passed_on_stdin_without_a_sidecar_file(self):
+        metadata_json = json.dumps(acquisition.asdict(source()), ensure_ascii=False)
+        with patch.object(sys, "stdin", StringIO(metadata_json)):
+            loaded = acquisition.load_source(Path("-"))
+        self.assertEqual(source(), loaded)
+
     def test_real_files_json_fixtures_drive_three_distinct_plans(self):
         provider = acquisition.SaechsischesStaatsarchivProvider()
         cases = (
