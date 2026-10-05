@@ -49,7 +49,7 @@
       "scope": "activated bounded prompt behavior assurance"
     },
     {
-      "ref": "path:requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md",
+      "ref": "artifact:ENG-A-0053",
       "basis_kind": "selected-with-basis",
       "basis_ref": "github-issue:esany/paleo-type#259",
       "scope": "repo-testable execution-control safeguards only; no external runtime/orchestration claims"
