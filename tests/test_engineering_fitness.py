@@ -21,7 +21,7 @@ class EngineeringFitnessTests(unittest.TestCase):
         self.assertEqual("PASS", report["status"])
         self.assertEqual(14, report["fixture_family_count"])
         self.assertEqual({f"ENG-FIT-{i:02d}" for i in range(1, 10)}, set(report["checks"]))
-        self.assertEqual("applicable", report["checks"]["ENG-FIT-08"]["applicability"])
+        self.assertEqual("active", report["checks"]["ENG-FIT-08"]["applicability"])
         self.assertGreater(report["checks"]["ENG-FIT-08"]["row_count"], 0)
 
     def test_orphan_finding_is_detected(self) -> None:
