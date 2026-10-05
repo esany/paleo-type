@@ -20,7 +20,7 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual(45, summary["finding_count"])
         self.assertEqual("admitted", summary["admission"])
         self.assertEqual("reviewing", summary["lifecycle"])
-        self.assertEqual("github-issue:esany/paleo-type#261", summary["current_focus"]["ref"])
+        self.assertEqual("github-issue:esany/paleo-type#261", summary["current_focus"])
 
     def test_implemented_target_is_not_current_architecture_baseline(self) -> None:
         configuration = json.loads((REPO / "engineering" / "configuration.json").read_text(encoding="utf-8"))
