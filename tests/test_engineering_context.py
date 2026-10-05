@@ -19,7 +19,7 @@ class EngineeringContextTests(unittest.TestCase):
         self.assertEqual([], errors)
         work = packet["current_work"]
         self.assertEqual("ready-next", work["state"])
-        self.assertIn("Migrate the brownfield", work["statement"])
+        self.assertIn("WP5 brownfield information-architecture migration", work["statement"])
         self.assertEqual("github-issue:esany/paleo-type#260", work["work_ref"])
         rendered = engineering_context.render_human_cursor(packet)
         self.assertIn("Next eligible work:", rendered)
