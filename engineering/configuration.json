@@ -13,23 +13,78 @@
     "change:SD-KA-01": {
       "transition_state": "implemented",
       "basis_ref": "artifact:ENG-A-0032",
-      "work_owner": "github-issue:esany/paleo-type#257",
+      "work_owner": "github-issue:esany/paleo-type#258",
       "accepted_consequence": "pending"
     }
   },
-  "current_focus": null,
-  "applicability": [],
+  "current_focus": {
+    "ref": "github-issue:esany/paleo-type#258",
+    "basis_kind": "work-contract",
+    "basis_ref": "github-issue:esany/paleo-type#258",
+    "work_ref": "github-issue:esany/paleo-type#258",
+    "scope": "SD-KA-01/WP3"
+  },
+  "applicability": [
+    {
+      "ref": "artifact:ENG-A-0005",
+      "basis_kind": "formal-derived",
+      "basis_ref": "decision:D-016",
+      "scope": "material change admission and programme return"
+    },
+    {
+      "ref": "artifact:ENG-A-0033",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#258",
+      "scope": "WP3 context profiles Human overview and developer bootstrap"
+    },
+    {
+      "ref": "path:requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#258",
+      "scope": "activity-relative readiness and understandable Human decision surfaces"
+    },
+    {
+      "ref": "path:requirements/prompt-skill-transfer-test-result-2026-10-04.md",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#258",
+      "scope": "bounded prompt capability activation and regression requirements"
+    },
+    {
+      "ref": "path:requirements/review-premise-inheritance-generic-fit-2026-10-04.md",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#258",
+      "scope": "review evidence basis and inherited-premise semantics"
+    },
+    {
+      "ref": "artifact:ENG-A-0007",
+      "basis_kind": "owner-declared",
+      "basis_ref": "artifact:ENG-A-0002",
+      "scope": "consequential technical assurance and review boundaries"
+    },
+    {
+      "ref": "artifact:ENG-A-0040",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#258",
+      "scope": "operational derived context profile contract"
+    },
+    {
+      "ref": "artifact:ENG-A-0041",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#258",
+      "scope": "operational bounded prompt interaction contract"
+    }
+  ],
   "decision_owner": "decision:D-016",
   "transition_provenance": {
     "admission_ref": "artifact:ENG-A-0010",
     "decision_ref": "decision:D-016",
     "programme_owner": "github-issue:esany/paleo-type#244",
-    "implementation_owner": "github-issue:esany/paleo-type#257",
+    "implementation_owner": "github-issue:esany/paleo-type#258",
     "admission_head": "e18906c4d3f09645aca84d4c2fe17c37387c1109",
     "implementation_head": "e10a51a56a6db1924d4500698d2dd2be2b222bc4",
-    "execution_baseline_head": "2c683beaefa18bc07810bf91cbbe67a07ef81f6a",
+    "execution_baseline_head": "ddf289fdf69f3827f287665a2a8c8e4d137fcbba",
     "result_ref": "artifact:ENG-A-0032",
-    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37325991648"
+    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37327511163"
   },
-  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP2 implementation is merged and exactly post-merge verified, while the broader SD-KA-01 accepted consequence remains pending later Result Review. No active implementation focus is currently selected; the change state records the next eligible work package separately."
+  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP3 is the bounded current implementation focus within the existing D-016 admission. Context/profile/prompt/check surfaces are admitted-change implementation and do not become scholarly or accepted architecture authority merely by executing or passing CI."
 }
