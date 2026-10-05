@@ -57,13 +57,15 @@ Old chat must never be required to reconstruct durable research state.
 
 The Human-visible current system-development work/decision view is GitHub **#244**. Pre-implementation analysis/design Issues **#245–#253 are complete**. SD-KA-01 implementation is decomposed as **#256–#261** under the recorded D-016 admission.
 
-The current material decision surface is:
+The current material decision surface is the managed SD-KA change evidence:
 
-`requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`
+`engineering/changes/SD-KA-01/D016-DECISION-BRIEF.md`
 
-The D-016 admission is durably recorded in:
+The D-016 Human-Owner admission is durably recorded in:
 
-`requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`
+`engineering/changes/SD-KA-01/D016-OWNER-ADMISSION.md`
+
+Their previous `requirements/` locators remain compatibility mappings in `engineering/catalog/legacy-paths.tsv`; they are not parallel truth stores.
 
 Cumulative work-package results and whole-system returns are durably recorded in:
 
@@ -71,9 +73,9 @@ Cumulative work-package results and whole-system returns are durably recorded in
 
 Current process state:
 
-> **D-016 ADMITTED / WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 VERIFIED + RETURNED / WP4 VERIFIED + RETURNED / WP5 READY-NEXT / SD-KA-01 ACTIVE.**
+> **D-016 ADMITTED / WP1–WP4 VERIFIED + RETURNED / WP5 IMPLEMENTING / WP6 NOT STARTED / SD-KA-01 ACTIVE.**
 
-No work package is currently executing. The next eligible bounded system-development action is: **execute the loss-checked brownfield information-architecture migration under #260/WP5, preserving stable identities/currentness/traceability/rollback and without starting migration merely from readiness.** This is readiness inside the already admitted SD-KA-01 scope; it does not create a new D-016 decision.
+The current bounded system-development action is: **execute the loss-checked brownfield information-architecture migration under #260/WP5, preserving stable identities/currentness/traceability/rollback and refusing filename-only reclassification.** This is execution inside the already admitted SD-KA-01 scope; it creates no new D-016 decision and no scholarly priority.
 
 For a derived Human-readable rendering of the same repository state use:
 
@@ -81,11 +83,11 @@ For a derived Human-readable rendering of the same repository state use:
 
 A generic invocation may resolve context-relative current/next work, but the visible result must remain a meaningful action with scope and provenance. If work is ambiguous, the derived view exposes the ambiguity rather than silently selecting one repository-global cursor.
 
-The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from later admitted/result state. **The canonical engineering configuration/change/result owners and #244 own the current non-scholarly implementation/navigation interpretation.**
+The compact failure-family/bugwave map is now `engineering/evidence/research/system-development-bugwave-master-map-2026-10-04.md`. Its historical readiness wording remains evidence only where it differs from later admitted/result state. **The canonical engineering configuration/change/result owners and #244 own the current non-scholarly implementation/navigation interpretation.**
 
-The repository-native Engineering Knowledge & Configuration Plane is partially implemented: WP1 established the semantic/catalog foundation; WP2 established explicit currentness/applicability/query semantics; WP3 established derived Human/Developer/Agent contexts, Senior Developer bootstrap, bounded prompt behavior and the shared full-check entrypoint; WP4 established the ENG-FIT mapping, seeded falsification suite and explicit local/CI assurance boundary. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
+The repository-native Engineering Knowledge & Configuration Plane is partially implemented: WP1 established the semantic/catalog foundation; WP2 established explicit currentness/applicability/query semantics; WP3 established derived Human/Developer/Agent contexts, Senior Developer bootstrap, bounded prompt behavior and the shared full-check entrypoint; WP4 established the ENG-FIT mapping, seeded falsification suite and explicit local/CI assurance boundary. WP5 is now physically separating already-classified engineering evidence from the Requirement namespace without changing accepted baselines. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
 
-#256/WP1, #257/WP2, #258/WP3 and #259/WP4 are verified for their bounded slices. #260/WP5 is the next eligible implementation package within the already admitted scope but is not started by this return. WP6 remains terminal adversarial qualification/Result Review.
+#256/WP1, #257/WP2, #258/WP3 and #259/WP4 are verified for their bounded slices. #260/WP5 is executing. #261/WP6 remains terminal adversarial qualification/Result Review and is not started by WP5 execution.
 
 The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; physical migration and later terminal qualification remain bounded implementation work, not automatically accepted scholarly or architecture state.
 
@@ -101,31 +103,34 @@ Historical programme detail is evidence on demand, not the default current-work 
 
 ## System-development evidence / deeper provenance
 
-`requirements/` is currently a brownfield mixed-purpose namespace. That is a documented information-architecture defect and is the target of the admitted, not-yet-started WP5 migration. Until a WP5 slice actually moves content, use these current navigation artifacts rather than replaying files chronologically:
+`requirements/` is being narrowed under WP5. The accepted reusable Requirement baseline remains there; already-classified SD-KA design/audit/research/admission material has moved to semantic engineering owners. Remaining historical, cross-project or still-unclassified `requirements/` material is not silently reclassified by filename and remains non-default until its actual owner/status supports a loss-checked destination.
 
-- current Human decision/admission surface: `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md` plus `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`;
+Current navigation artifacts:
+
+- current Human decision/admission surface: `engineering/changes/SD-KA-01/D016-DECISION-BRIEF.md` plus `engineering/changes/SD-KA-01/D016-OWNER-ADMISSION.md`;
 - current engineering configuration/change/result owners: `engineering/configuration.json`, `engineering/changes/SD-KA-01/STATE.json`, `engineering/changes/SD-KA-01/RESULT.md`;
+- WP5 migration/rollback evidence: `engineering/changes/SD-KA-01/MIGRATION.tsv` plus `engineering/catalog/legacy-paths.tsv`;
 - derived context/profile contract and developer path: `engineering/context/README.md`;
 - bounded prompt capability contract: `engineering/prompts/CONTRACT.md`;
 - engineering fitness contract: `engineering/assurance/fitness.json` plus `engineering/assurance/README.md`;
-- whole bugwave/failure-family map: `requirements/system-development-bugwave-master-map-2026-10-04.md`;
-- source-audit finding coverage: `requirements/system-development-bugwave-finding-coverage-2026-10-04.md`;
-- finding promotion design: `requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md`;
-- architecture-decision inventory: `requirements/system-development-bugwave-adr-inventory-2026-10-04.md`;
-- ADR surface design: `requirements/system-development-bugwave-adr-surface-design-2026-10-04.md`;
-- configuration/reference design: `requirements/system-development-bugwave-configuration-reference-design-2026-10-04.md`;
-- context/developer design: `requirements/system-development-bugwave-context-developer-design-2026-10-04.md`;
-- readiness/Human decision contract: `requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md`;
-- engineering assurance design: `requirements/system-development-bugwave-assurance-closure-design-2026-10-04.md`;
-- brownfield migration design: `requirements/system-development-bugwave-brownfield-migration-design-2026-10-04.md`;
-- `.prompt` transfer candidate/result: `requirements/prompt-skill-transfer-candidate-2026-10-04.md` and `requirements/prompt-skill-transfer-test-result-2026-10-04.md`;
-- Review Premise Inheritance disposition: `requirements/review-premise-inheritance-generic-fit-2026-10-04.md`;
-- underlying holistic architecture: `requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md`;
-- anti-regression baseline: `requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md`.
+- whole bugwave/failure-family map: `engineering/evidence/research/system-development-bugwave-master-map-2026-10-04.md`;
+- source-audit finding coverage: `engineering/evidence/audits/system-development-bugwave-finding-coverage-2026-10-04.md`;
+- finding promotion design: `engineering/evidence/research/system-development-bugwave-finding-promotion-design-2026-10-04.md`;
+- architecture-decision inventory: `engineering/evidence/research/system-development-bugwave-adr-inventory-2026-10-04.md`;
+- ADR surface design: `engineering/evidence/research/system-development-bugwave-adr-surface-design-2026-10-04.md`;
+- configuration/reference design: `engineering/evidence/research/system-development-bugwave-configuration-reference-design-2026-10-04.md`;
+- context/developer design: `engineering/evidence/research/system-development-bugwave-context-developer-design-2026-10-04.md`;
+- readiness/Human decision contract: `engineering/evidence/research/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md`;
+- engineering assurance design: `engineering/evidence/research/system-development-bugwave-assurance-closure-design-2026-10-04.md`;
+- brownfield migration design: `engineering/evidence/research/system-development-bugwave-brownfield-migration-design-2026-10-04.md`;
+- bounded prompt transfer test evidence: `engineering/evidence/audits/prompt-skill-transfer-test-result-2026-10-04.md`;
+- Review Premise Inheritance disposition: `engineering/evidence/research/review-premise-inheritance-generic-fit-2026-10-04.md`;
+- underlying holistic architecture design: `engineering/evidence/research/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md`;
+- anti-regression baseline: `engineering/evidence/audits/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md`.
 
 The finding-coverage artifact links/dispositions the deeper September–October audit/research/learning chain. Load those source artifacts when reviewing the finding or its provenance, not as mandatory default context.
 
-Use every artifact according to its stated evidence/authority status. None creates Project priority or implementation authority merely by existing.
+Use every artifact according to its stated evidence/authority status. None creates Project priority or implementation authority merely by existing or moving.
 
 ## Where truth lives
 
@@ -150,6 +155,7 @@ Use every artifact according to its stated evidence/authority status. None creat
 | What is the bounded SD-KA-01 lifecycle/work-package state? | `engineering/changes/SD-KA-01/STATE.json` |
 | What did completed SD-KA-01 work packages actually establish? | `engineering/changes/SD-KA-01/RESULT.md` |
 | What managed engineering artifacts/findings/relations exist? | `engineering/catalog/` |
+| What owns migrated-path compatibility and move evidence? | `engineering/catalog/legacy-paths.tsv` + `engineering/changes/SD-KA-01/MIGRATION.tsv` |
 | What owns derived engineering context/profile behavior? | `engineering/context/README.md` |
 | What owns bounded `.prompt` interaction behavior? | `engineering/prompts/CONTRACT.md` |
 | What owns deterministic engineering-fitness mappings and PASS boundaries? | `engineering/assurance/fitness.json` + `tools/engineering_fitness.py` |
@@ -199,7 +205,7 @@ tools/
 tests/
 ```
 
-Optional Project work directories exist only when real work requires them. `engineering/` carries the admitted SD-KA-01 configuration/catalog/change foundation plus the verified WP2 current/query, WP3 context/prompt/bootstrap and WP4 engineering-fitness/assurance capabilities; WP5 is ready-next and WP6 remains later terminal qualification.
+Optional Project work directories exist only when real work requires them. `engineering/` carries the admitted SD-KA-01 configuration/catalog/change foundation plus the verified WP2 current/query, WP3 context/prompt/bootstrap and WP4 engineering-fitness/assurance capabilities; WP5 is the current bounded migration and WP6 remains later terminal qualification.
 
 ## Restartability acceptance
 
@@ -214,6 +220,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for current system-development work, accepted engineering baselines, active admitted change state, semantically explicit current/scoped work with provenance, applicable context, completed work-package results and the next permitted bounded transition.
+- for current system-development work, accepted engineering baselines, active admitted change state, semantically explicit current/scoped work with provenance, applicable context, completed work-package results, migration compatibility and the next permitted bounded transition.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
