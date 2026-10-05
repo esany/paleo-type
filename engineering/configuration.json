@@ -13,23 +13,59 @@
     "change:SD-KA-01": {
       "transition_state": "implemented",
       "basis_ref": "artifact:ENG-A-0032",
-      "work_owner": "github-issue:esany/paleo-type#258",
+      "work_owner": "github-issue:esany/paleo-type#259",
       "accepted_consequence": "pending"
     }
   },
-  "current_focus": null,
-  "applicability": [],
+  "current_focus": {
+    "ref": "github-issue:esany/paleo-type#259",
+    "basis_kind": "work-contract",
+    "basis_ref": "github-issue:esany/paleo-type#259",
+    "scope": "SD-KA-01/WP4"
+  },
+  "applicability": [
+    {
+      "ref": "artifact:ENG-A-0052",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#259",
+      "scope": "WP4 engineering fitness, CI assurance and local-to-whole return"
+    },
+    {
+      "ref": "artifact:ENG-A-0007",
+      "basis_kind": "owner-declared",
+      "basis_ref": "artifact:ENG-A-0002",
+      "scope": "quality, falsification and assurance claim boundaries"
+    },
+    {
+      "ref": "artifact:ENG-A-0040",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#259",
+      "scope": "context profile integrity and starvation fixtures"
+    },
+    {
+      "ref": "artifact:ENG-A-0041",
+      "basis_kind": "work-contract",
+      "basis_ref": "github-issue:esany/paleo-type#259",
+      "scope": "activated bounded prompt behavior assurance"
+    },
+    {
+      "ref": "path:requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md",
+      "basis_kind": "selected-with-basis",
+      "basis_ref": "github-issue:esany/paleo-type#259",
+      "scope": "repo-testable execution-control safeguards only; no external runtime/orchestration claims"
+    }
+  ],
   "decision_owner": "decision:D-016",
   "transition_provenance": {
     "admission_ref": "artifact:ENG-A-0010",
     "decision_ref": "decision:D-016",
     "programme_owner": "github-issue:esany/paleo-type#244",
-    "implementation_owner": "github-issue:esany/paleo-type#258",
+    "implementation_owner": "github-issue:esany/paleo-type#259",
     "admission_head": "e18906c4d3f09645aca84d4c2fe17c37387c1109",
     "implementation_head": "c6575ff0c30d70fbfe64b2767d8db68351e7a8ee",
-    "execution_baseline_head": "ddf289fdf69f3827f287665a2a8c8e4d137fcbba",
+    "execution_baseline_head": "743f97266260b18b7d179a2b214bff3d86fa4487",
     "result_ref": "artifact:ENG-A-0032",
     "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37332214116"
   },
-  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP3 implementation is merged and exactly post-merge verified, while the broader SD-KA-01 accepted consequence remains pending later Result Review. No implementation package is currently executing; #259/WP4 is recorded separately as the next eligible package and is not started by this return."
+  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP4 is the bounded current implementation focus for repository-testable engineering fitness and assurance. Separately admitted execution-control semantics are included only where WP4 can genuinely falsify repository-owned behavior; no runtime/orchestration or external preservation claim is manufactured."
 }
