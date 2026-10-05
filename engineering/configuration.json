@@ -38,19 +38,19 @@
       "scope": "WP3 context profiles Human overview and developer bootstrap"
     },
     {
-      "ref": "path:requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md",
+      "ref": "artifact:ENG-A-0045",
       "basis_kind": "work-contract",
       "basis_ref": "github-issue:esany/paleo-type#258",
       "scope": "activity-relative readiness and understandable Human decision surfaces"
     },
     {
-      "ref": "path:requirements/prompt-skill-transfer-test-result-2026-10-04.md",
+      "ref": "artifact:ENG-A-0046",
       "basis_kind": "work-contract",
       "basis_ref": "github-issue:esany/paleo-type#258",
       "scope": "bounded prompt capability activation and regression requirements"
     },
     {
-      "ref": "path:requirements/review-premise-inheritance-generic-fit-2026-10-04.md",
+      "ref": "artifact:ENG-A-0047",
       "basis_kind": "work-contract",
       "basis_ref": "github-issue:esany/paleo-type#258",
       "scope": "review evidence basis and inherited-premise semantics"
