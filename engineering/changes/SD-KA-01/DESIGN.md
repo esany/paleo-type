@@ -37,7 +37,7 @@ A transition vocabulary does not itself mutate authority. A baseline changes onl
 - applicability entries with their provenance basis;
 - transition provenance and an explicit derived/non-authoritative assurance boundary.
 
-No `engineering/generated/CURRENT_STATE.json` is required or committed in WP2. `derive` includes the same current view for compatibility, while `query` remains a catalog query surface and gains bounded filters/current-only selection.
+No `engineering/generated/CURRENT_STATE.json` is required or committed in WP2. `derive` includes the same current view for compatibility, while `query` remains a bounded catalog query surface with explicit metadata filters. Semantic currentness is exposed only by `current`, never inferred from catalog order.
 
 ## Currentness safety
 
