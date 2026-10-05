@@ -59,3 +59,9 @@ REL-0057	artifact:ENG-A-0014	constrains	change:SD-KA-01	accepted	artifact:ENG-A-
 REL-0058	artifact:ENG-A-0033	constrains	change:SD-KA-01	accepted	artifact:ENG-A-0033
 REL-0059	artifact:ENG-A-0037	describes	change:SD-KA-01	accepted	artifact:ENG-A-0037
 REL-0060	artifact:ENG-A-0032	transitions-to	github-issue:esany/paleo-type#258	accepted	artifact:ENG-A-0032
+REL-0061	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#258	accepted	artifact:ENG-A-0039
+REL-0062	artifact:ENG-A-0040	implements	change:SD-KA-01	accepted	artifact:ENG-A-0033
+REL-0063	artifact:ENG-A-0041	implements	change:SD-KA-01	accepted	artifact:ENG-A-0039
+REL-0064	artifact:ENG-A-0042	implements	change:SD-KA-01	accepted	artifact:ENG-A-0040
+REL-0065	artifact:ENG-A-0043	implements	change:SD-KA-01	accepted	artifact:ENG-A-0041
+REL-0066	artifact:ENG-A-0044	implements	change:SD-KA-01	accepted	artifact:ENG-A-0039
