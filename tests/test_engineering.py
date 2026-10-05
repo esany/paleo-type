@@ -20,7 +20,7 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual(45, summary["finding_count"])
         self.assertEqual("admitted", summary["admission"])
         self.assertEqual("implementing", summary["lifecycle"])
-        self.assertIsNone(summary["current_focus"])
+        self.assertEqual("github-issue:esany/paleo-type#261", summary["current_focus"]["ref"])
 
     def test_implemented_target_is_not_current_architecture_baseline(self) -> None:
         configuration = json.loads((REPO / "engineering" / "configuration.json").read_text(encoding="utf-8"))
@@ -29,31 +29,31 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertNotIn("artifact:ENG-A-0031", configuration["architecture_baselines"])
         self.assertEqual("implemented", configuration["change_states"]["change:SD-KA-01"]["transition_state"])
         self.assertEqual("pending", configuration["change_states"]["change:SD-KA-01"]["accepted_consequence"])
-        self.assertIsNone(configuration["current_focus"])
-        self.assertEqual([], configuration["applicability"])
+        self.assertEqual("github-issue:esany/paleo-type#261", configuration["current_focus"]["ref"])
+        self.assertGreaterEqual(len(configuration["applicability"]), 4)
 
-    def test_wp5_verified_and_wp6_ready_without_start(self) -> None:
+    def test_wp5_verified_and_wp6_active_qualification(self) -> None:
         state = json.loads((REPO / "engineering" / "changes" / "SD-KA-01" / "STATE.json").read_text(encoding="utf-8"))
         self.assertEqual("verified", state["work_package_status"]["WP1"])
         self.assertEqual("verified", state["work_package_status"]["WP2"])
         self.assertEqual("verified", state["work_package_status"]["WP3"])
         self.assertEqual("verified", state["work_package_status"]["WP4"])
         self.assertEqual("verified", state["work_package_status"]["WP5"])
-        self.assertEqual("ready-next", state["work_package_status"]["WP6"])
-        self.assertEqual("github-issue:esany/paleo-type#260", state["work_owner"])
-        self.assertIn("No work package is currently executing", state["current_execution"])
-        self.assertIn("#261/WP6", state["current_execution"])
+        self.assertEqual("implementing", state["work_package_status"]["WP6"])
+        self.assertEqual("github-issue:esany/paleo-type#261", state["work_owner"])
+        self.assertIn("WP6 is executing", state["current_execution"])
         self.assertIn("moving unclassified or ambiguous artifacts by filename guess", state["non_goals"])
 
-    def test_current_view_exposes_explicit_absence_between_packages(self) -> None:
+    def test_current_view_exposes_active_wp6_qualification(self) -> None:
         errors, current = engineering.compile_current_state(REPO)
         self.assertEqual([], errors)
         self.assertEqual("derived-current-engineering-state", current["view_kind"])
         self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
         self.assertEqual("change:SD-KA-01", current["active_changes"][0]["ref"])
         self.assertEqual("implemented", current["active_changes"][0]["transition_state"])
-        self.assertEqual("absent", current["current_focus"]["state"])
-        self.assertTrue(current["explicit_absence"]["current_focus"])
+        self.assertEqual("active", current["current_focus"]["state"])
+        self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
+        self.assertFalse(current["explicit_absence"]["current_focus"])
         self.assertFalse(current["explicit_absence"]["active_changes"])
         self.assertEqual([], current["applicability"])
         self.assertNotIn("projects", current)
