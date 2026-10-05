@@ -2,7 +2,7 @@
 
 ## Current accepted baseline
 
-The repository's accepted engineering baseline remains the existing governing objective, guardrails, methodology and accepted cross-project decisions. `DECISIONS.md` remains the accepted rationale owner. Git remains the byte/provenance history. The SD-KA-01 target is not silently promoted into this baseline by admission or CI.
+The repository's accepted engineering baseline remains the existing governing objective, guardrails, methodology and accepted cross-project decisions. `DECISIONS.md` remains the accepted rationale owner. Git remains the byte/provenance history. The SD-KA-01 target is not silently promoted into this baseline by admission, implementation activity, recency or CI.
 
 ## Admitted change
 
@@ -10,12 +10,15 @@ The repository's accepted engineering baseline remains the existing governing ob
 
 `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`
 
-The first activity is WP1: semantic contracts and an in-place managed brownfield baseline. Existing `requirements/` content is not bulk-moved in WP1.
+WP1 established and verified the in-place engineering semantic/catalog foundation. WP2 is the bounded current implementation focus: accepted-baseline/current-change semantics, rebuildable current/query views and applicability provenance. Existing `requirements/` content remains in place; physical migration is still the later WP5 activity.
+
+The executable current-state surface is derived from `engineering/configuration.json`, `engineering/changes/SD-KA-01/STATE.json` and the managed catalogs. It does not choose accepted architecture by newest file, newest Git commit, Issue/PR state or CI success.
 
 ## Boundaries
 
 - scholarly Project/Corpus truth remains with its existing owners;
-- Issues and PRs are work/review metadata, not configuration authority;
+- Issues and PRs are work/review metadata, not accepted configuration authority;
 - proposed/admitted engineering decisions are not accepted current configuration until the specified result transition occurs;
-- generated/query views are derived and rebuildable;
+- current/query views are derived and rebuildable and do not become a parallel state store;
+- explicit absence of active change/focus is valid and must not manufacture replacement work;
 - technical validation is scoped assurance, not scholarly, specialist or Human acceptance.
