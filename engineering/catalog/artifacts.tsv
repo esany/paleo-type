@@ -113,3 +113,4 @@ ENG-A-0111	owner-disposition	engineering/evidence/decisions/default-branch-promo
 ENG-A-0112	decision-brief	engineering/evidence/decisions/outcome-preserving-execution-control-d016-decision-brief-2026-10-05.md	cross-project	non-normative-evidence	active		Outcome-preserving execution-control D-016 decision brief
 ENG-A-0113	owner-admission	engineering/evidence/decisions/source-project-owner-admission-2026-09-02.md	cross-project	admitted-change	active		Source Project Human-owner decision and bounded admission
 ENG-A-0114	work-metadata	github://github.com/esany/paleo-type/issues/261	SD-KA-01	work-metadata	active	SD-KA-01	WP6 adversarial qualification and terminal SD-KA-01 Result Review owner
+ENG-A-0115	qualification	engineering/changes/SD-KA-01/QUALIFICATION.md	SD-KA-01	admitted-change	active	SD-KA-01	WP6 adversarial qualification and terminal Result Review evidence
