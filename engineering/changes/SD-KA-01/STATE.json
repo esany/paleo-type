@@ -4,41 +4,50 @@
   "admission": "admitted",
   "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
   "admission_ref": "artifact:ENG-A-0010",
-  "work_owner": "github-issue:esany/paleo-type#256",
+  "work_owner": "github-issue:esany/paleo-type#257",
   "programme_owner": "github-issue:esany/paleo-type#244",
   "non_goals": [
     "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
     "workflow engine, autonomous planner, graph database, Wirknetz runtime, Bridge or developer portal",
     "package/src/distribution work without a new demonstrated trigger",
-    "bulk requirements migration in WP1",
+    "physical requirements migration before WP5",
     "#90 branch-protection reactivation",
     "#225 scholarly whole-system acceptance"
   ],
   "coverage": {
-    "problem": {"state": "required-satisfied", "basis": "artifact:ENG-A-0011"},
+    "problem": {"state": "required-satisfied", "basis": "artifact:ENG-A-0038"},
     "root_cause": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0009"},
+    "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0035"},
     "research": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
     "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0013;artifact:ENG-A-0014;artifact:ENG-A-0015;artifact:ENG-A-0016"},
-    "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0009"},
-    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033"},
+    "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
+    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
     "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
   },
   "blocking_uncertainties": [],
-  "applicable_rules": ["decision:D-016", "decision:D-019", "artifact:ENG-A-0005", "artifact:ENG-A-0006", "artifact:ENG-A-0007"],
-  "plan_ref": "artifact:ENG-A-0031",
+  "applicable_rules": [
+    "decision:D-016",
+    "decision:D-019",
+    "artifact:ENG-A-0005",
+    "artifact:ENG-A-0006",
+    "artifact:ENG-A-0007",
+    "artifact:ENG-A-0014",
+    "artifact:ENG-A-0033"
+  ],
+  "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "verified-technical-return",
-  "verification_head": "git:c66ef075acdde1f592886086403439507d6cc618",
+  "result_status": "wp1-verified-wp2-implementing",
+  "verification_head": "git:2c683beaefa18bc07810bf91cbbe67a07ef81f6a",
   "work_package_status": {
     "WP1": "verified",
-    "WP2": "ready-next",
+    "WP2": "implementing",
     "WP3": "not-started",
     "WP4": "not-started",
     "WP5": "not-started",
     "WP6": "not-started"
   },
+  "current_execution": "WP2 started from main@2c683beaefa18bc07810bf91cbbe67a07ef81f6a under #257 within the existing D-016 admission. Current/query derivation may change; accepted engineering baselines do not change merely because WP2 is executing.",
   "current_baseline_changes": "none until implementation, verification and Result Review establish an accepted consequence",
-  "whole_system_return": "changed: WP1 semantic owners, F01-F45 coverage, admission trace and exact-head assurance are now restartable; #244 remains the whole-system owner; #257/WP2 is ready-next but not started; no Project/manuscript state or scholarly NEXT ACTION changed."
+  "whole_system_return": "WP1 return remains valid: WP1 semantic owners, F01-F45 coverage, admission trace and exact-head assurance are restartable; #244 remains the whole-system owner; no Project/manuscript state or scholarly NEXT ACTION changed. WP2 is now the bounded implementation cursor, not a programme-closure claim."
 }
