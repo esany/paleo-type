@@ -19,7 +19,7 @@ ENG-A-0017	design	requirements/system-development-bugwave-adr-inventory-2026-10-
 ENG-A-0018	design	requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Holistic dev-ready architecture
 ENG-A-0019	audit	requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md	SD-KA-01	non-normative-evidence	historical	SD-KA-01	Pre-implementation anti-regression baseline
 ENG-A-0020	work-metadata	github://github.com/esany/paleo-type/issues/244	SD-KA-01	work-metadata	active	SD-KA-01	Bugwave programme and decision navigation owner
-ENG-A-0021	work-metadata	github://github.com/esany/paleo-type/issues/256	SD-KA-01	work-metadata	active	SD-KA-01	WP1 implementation owner
+ENG-A-0021	work-metadata	github://github.com/esany/paleo-type/issues/256	SD-KA-01	work-metadata	historical	SD-KA-01	WP1 implementation owner
 ENG-A-0022	configuration	engineering/configuration.json	SD-KA-01	canonical	active	SD-KA-01	Accepted baseline and active-change configuration
 ENG-A-0023	architecture	engineering/architecture/SYSTEM.md	SD-KA-01	admitted-change	active	SD-KA-01	Current architecture boundary and admitted change
 ENG-A-0024	catalog	engineering/catalog/artifacts.tsv	SD-KA-01	canonical	active	SD-KA-01	Engineering information asset catalog
@@ -31,3 +31,9 @@ ENG-A-0029	change-state	engineering/changes/SD-KA-01/STATE.json	SD-KA-01	admitte
 ENG-A-0030	decision	engineering/decisions/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering ADR index and lifecycle
 ENG-A-0031	decision	engineering/decisions/ADR-0001-sd-ka-01-target-package.md	SD-KA-01	admitted-change	active	SD-KA-01	Admitted target package ADR record
 ENG-A-0032	result	engineering/changes/SD-KA-01/RESULT.md	SD-KA-01	admitted-change	active	SD-KA-01	WP1 result and whole-system return
+ENG-A-0033	design	requirements/system-development-bugwave-context-developer-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Context selection and developer experience design
+ENG-A-0034	work-metadata	github://github.com/esany/paleo-type/issues/257	SD-KA-01	work-metadata	active	SD-KA-01	WP2 current configuration and query-view implementation owner
+ENG-A-0035	change-requirements	engineering/changes/SD-KA-01/REQUIREMENTS.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation requirements
+ENG-A-0036	change-design	engineering/changes/SD-KA-01/DESIGN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation design
+ENG-A-0037	change-plan	engineering/changes/SD-KA-01/PLAN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 implementation plan and work-package sequence
+ENG-A-0038	problem-analysis	engineering/changes/SD-KA-01/PROBLEM.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation problem

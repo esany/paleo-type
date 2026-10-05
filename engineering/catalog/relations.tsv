@@ -2,7 +2,7 @@ relation_id	subject_ref	predicate	object_ref	relation_status	evidence_ref
 REL-0001	artifact:ENG-A-0010	documents	change:SD-KA-01	accepted	artifact:ENG-A-0010
 REL-0002	change:SD-KA-01	admitted-by	decision:D-016	accepted	artifact:ENG-A-0010
 REL-0003	change:SD-KA-01	programme-owner	github-issue:esany/paleo-type#244	accepted	artifact:ENG-A-0020
-REL-0004	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#256	accepted	artifact:ENG-A-0021
+REL-0004	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#256	historical	artifact:ENG-A-0021
 REL-0005	artifact:ENG-A-0009	describes	change:SD-KA-01	accepted	artifact:ENG-A-0009
 REL-0006	artifact:ENG-A-0012	covers	change:SD-KA-01	accepted	artifact:ENG-A-0012
 REL-0007	artifact:ENG-A-0031	records	change:SD-KA-01	accepted	artifact:ENG-A-0017
@@ -54,3 +54,7 @@ REL-00052	finding:F42	promotes-to	github-issue:esany/paleo-type#244	accepted	art
 REL-00053	finding:F43	controlled-by	artifact:ENG-A-0002	accepted	artifact:ENG-A-0012
 REL-00054	finding:F44	promotes-to	github-issue:esany/paleo-type#250	accepted	artifact:ENG-A-0012
 REL-00055	finding:F45	promotes-to	github-issue:esany/paleo-type#251	accepted	artifact:ENG-A-0012
+REL-0056	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#257	accepted	artifact:ENG-A-0034
+REL-0057	artifact:ENG-A-0014	constrains	change:SD-KA-01	accepted	artifact:ENG-A-0014
+REL-0058	artifact:ENG-A-0033	constrains	change:SD-KA-01	accepted	artifact:ENG-A-0033
+REL-0059	artifact:ENG-A-0037	describes	change:SD-KA-01	accepted	artifact:ENG-A-0037
