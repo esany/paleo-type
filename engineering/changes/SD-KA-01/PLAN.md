@@ -18,23 +18,28 @@ Completed bounded sequence:
 6. merged at `main@e10a51a56a6db1924d4500698d2dd2be2b222bc4` and passed exact post-merge `source-contract` run #527;
 7. persisted the WP2 Result/whole-system return and downstream readiness without promoting the whole SD-KA-01 target to accepted architecture.
 
-## WP3 — current implementation cursor (#258)
+## WP3 — verified and returned (#258)
 
 Execution baseline: `main@ddf289fdf69f3827f287665a2a8c8e4d137fcbba`.
 
-Bounded sequence:
+Completed bounded sequence:
 
-1. advance work ownership/current focus from returned WP2 to #258/WP3 under the existing D-016 admission while keeping accepted architecture/Requirement baselines unchanged;
-2. implement rebuildable Human overview, system-development execution, architecture-review, Human material-decision and maintenance-review profiles over WP2 current/configuration owners;
-3. make visible current/next work a semantically explicit action with scope and authority provenance; expose ambiguity rather than invent a repository-global cursor;
-4. implement Senior Developer bootstrap and one documented `python tools/check.py` deterministic entrypoint shared with CI;
-5. activate the bounded `.prompt` create/review/test capability without turning it into task execution, planning/current-state authority or a universal Skill framework;
-6. operationalize review-evidence-basis/inherited-premise semantics without claiming that fresh context/model identity proves independence;
-7. add context-starvation, history-growth, ambiguity, prompt simplicity/authority and self-review-independence regressions plus representative Human/Developer/Agent journey checks;
-8. run exact-head CI/review, merge only after scoped technical assurance, run exact post-merge main assurance, then persist WP3 Result/whole-system return and actual WP4/WP5 readiness to #244.
+1. advanced work ownership/current focus from returned WP2 to #258/WP3 under the existing D-016 admission while keeping accepted architecture/Requirement baselines unchanged;
+2. implemented rebuildable Human overview, system-development execution, architecture-review, Human material-decision and maintenance-review profiles over WP2 current/configuration owners;
+3. made visible current/next work a semantically explicit action with scope and authority provenance and exposed ambiguity rather than inventing a repository-global cursor;
+4. implemented Senior Developer bootstrap and one documented `python tools/check.py` deterministic entrypoint shared with CI;
+5. activated bounded prompt create/review/test behavior without turning it into task execution, planning/current-state authority or a universal Skill framework;
+6. operationalized review-evidence-basis/inherited-premise semantics without claiming that fresh context/model identity proves independence;
+7. added context-starvation, history-growth, ambiguity, prompt simplicity/authority and self-review-independence regressions plus representative Human/Developer/Agent journey checks;
+8. exact PR head `88884b4ba35d55df0d9b9d84dbe0518fd764eef6` passed `source-contract` run #534; PR #283 merged at `main@c6575ff0c30d70fbfe64b2767d8db68351e7a8ee`; exact post-merge run #535 passed;
+9. persisted the WP3 Result/whole-system return with no current implementation focus, #259/WP4 ready-next, and WP5/WP6 still later.
+
+## WP4 — ready-next, not started (#259)
+
+WP4 is the next eligible bounded package under the existing D-016 admission. Its engineering-fitness/CI closure work is not started merely by the WP3 technical return. Execution must begin from fresh repository authority and the current #259 work contract.
 
 ## Later admitted work
 
-WP4 adds the wider engineering-fitness/CI closure suite after WP3's context/prompt surfaces exist; WP5 performs controlled physical migration; WP6 performs adversarial qualification and terminal SD-KA-01 Result Review.
+WP5 performs controlled physical migration after the required semantic/context/fitness prerequisites; WP6 performs adversarial qualification and terminal SD-KA-01 Result Review.
 
 No later work package is started by WP3 technical PASS alone.

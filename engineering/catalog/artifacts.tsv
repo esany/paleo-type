@@ -37,7 +37,7 @@ ENG-A-0035	change-requirements	engineering/changes/SD-KA-01/REQUIREMENTS.md	SD-K
 ENG-A-0036	change-design	engineering/changes/SD-KA-01/DESIGN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation design
 ENG-A-0037	change-plan	engineering/changes/SD-KA-01/PLAN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 implementation plan and work-package sequence
 ENG-A-0038	problem-analysis	engineering/changes/SD-KA-01/PROBLEM.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation problem
-ENG-A-0039	work-metadata	github://github.com/esany/paleo-type/issues/258	SD-KA-01	work-metadata	active	SD-KA-01	Implement Human/developer/Agent context views developer bootstrap and bounded prompt capability
+ENG-A-0039	work-metadata	github://github.com/esany/paleo-type/issues/258	SD-KA-01	work-metadata	historical	SD-KA-01	WP3 Human developer Agent context bootstrap and bounded prompt implementation owner
 ENG-A-0040	context-contract	engineering/context/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Derived engineering context profile and Human cursor contract
 ENG-A-0041	prompt-contract	engineering/prompts/CONTRACT.md	SD-KA-01	admitted-change	active	SD-KA-01	Bounded prompt interaction contract
 ENG-A-0042	tool	tools/engineering_context.py	SD-KA-01	admitted-change	active	SD-KA-01	Derived engineering context compiler
@@ -46,3 +46,4 @@ ENG-A-0044	tool	tools/check.py	SD-KA-01	admitted-change	active	SD-KA-01	Shared l
 ENG-A-0045	design	requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Activity-relative readiness and Human material-decision contract
 ENG-A-0046	test-result	requirements/prompt-skill-transfer-test-result-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bounded prompt transfer test result and activation constraints
 ENG-A-0047	analysis	requirements/review-premise-inheritance-generic-fit-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Review evidence-basis and inherited-premise safeguard disposition
+ENG-A-0048	work-metadata	github://github.com/esany/paleo-type/issues/259	SD-KA-01	work-metadata	active	SD-KA-01	Implement engineering fitness CI assurance and whole-system return checks

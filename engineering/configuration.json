@@ -17,63 +17,8 @@
       "accepted_consequence": "pending"
     }
   },
-  "current_focus": {
-    "ref": "github-issue:esany/paleo-type#258",
-    "basis_kind": "work-contract",
-    "basis_ref": "github-issue:esany/paleo-type#258",
-    "work_ref": "github-issue:esany/paleo-type#258",
-    "scope": "SD-KA-01/WP3"
-  },
-  "applicability": [
-    {
-      "ref": "artifact:ENG-A-0005",
-      "basis_kind": "formal-derived",
-      "basis_ref": "decision:D-016",
-      "scope": "material change admission and programme return"
-    },
-    {
-      "ref": "artifact:ENG-A-0033",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#258",
-      "scope": "WP3 context profiles Human overview and developer bootstrap"
-    },
-    {
-      "ref": "artifact:ENG-A-0045",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#258",
-      "scope": "activity-relative readiness and understandable Human decision surfaces"
-    },
-    {
-      "ref": "artifact:ENG-A-0046",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#258",
-      "scope": "bounded prompt capability activation and regression requirements"
-    },
-    {
-      "ref": "artifact:ENG-A-0047",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#258",
-      "scope": "review evidence basis and inherited-premise semantics"
-    },
-    {
-      "ref": "artifact:ENG-A-0007",
-      "basis_kind": "owner-declared",
-      "basis_ref": "artifact:ENG-A-0002",
-      "scope": "consequential technical assurance and review boundaries"
-    },
-    {
-      "ref": "artifact:ENG-A-0040",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#258",
-      "scope": "operational derived context profile contract"
-    },
-    {
-      "ref": "artifact:ENG-A-0041",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#258",
-      "scope": "operational bounded prompt interaction contract"
-    }
-  ],
+  "current_focus": null,
+  "applicability": [],
   "decision_owner": "decision:D-016",
   "transition_provenance": {
     "admission_ref": "artifact:ENG-A-0010",
@@ -81,10 +26,10 @@
     "programme_owner": "github-issue:esany/paleo-type#244",
     "implementation_owner": "github-issue:esany/paleo-type#258",
     "admission_head": "e18906c4d3f09645aca84d4c2fe17c37387c1109",
-    "implementation_head": "e10a51a56a6db1924d4500698d2dd2be2b222bc4",
+    "implementation_head": "c6575ff0c30d70fbfe64b2767d8db68351e7a8ee",
     "execution_baseline_head": "ddf289fdf69f3827f287665a2a8c8e4d137fcbba",
     "result_ref": "artifact:ENG-A-0032",
-    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37327511163"
+    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37332214116"
   },
-  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP3 is the bounded current implementation focus within the existing D-016 admission. Context/profile/prompt/check surfaces are admitted-change implementation and do not become scholarly or accepted architecture authority merely by executing or passing CI."
+  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP3 implementation is merged and exactly post-merge verified, while the broader SD-KA-01 accepted consequence remains pending later Result Review. No implementation package is currently executing; #259/WP4 is recorded separately as the next eligible package and is not started by this return."
 }
