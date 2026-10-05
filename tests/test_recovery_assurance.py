@@ -5,6 +5,13 @@ import unittest
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
+SOURCE_PROJECT_OWNER_ADMISSION = (
+    REPO
+    / "engineering"
+    / "evidence"
+    / "decisions"
+    / "source-project-owner-admission-2026-09-02.md"
+)
 
 
 def read_tsv(path: Path) -> list[dict[str, str]]:
@@ -15,7 +22,7 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 class HistoricalRecoveryAssuranceTests(unittest.TestCase):
     def test_current_owner_authority_is_separate_from_retrospective_d017_claim(self) -> None:
         decisions = (REPO / "DECISIONS.md").read_text(encoding="utf-8")
-        admission = (REPO / "requirements" / "source-project-owner-admission-2026-09-02.md").read_text(encoding="utf-8")
+        admission = SOURCE_PROJECT_OWNER_ADMISSION.read_text(encoding="utf-8")
 
         self.assertIn("D-017 — Project materialization and boundary are human-owner decisions", decisions)
         self.assertIn("historical decision record under authority audit", decisions)
@@ -155,7 +162,7 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertIn("STATUS", projects_readme)
 
     def test_recovery_checkpoint_is_compare_boundary_not_rollback_truth(self) -> None:
-        admission = (REPO / "requirements" / "source-project-owner-admission-2026-09-02.md").read_text(encoding="utf-8")
+        admission = SOURCE_PROJECT_OWNER_ADMISSION.read_text(encoding="utf-8")
         self.assertIn("e8a7235bff875bf2c191c96c41638c4095f7ec76", admission)
         self.assertIn("not a baseline-truth or rollback anchor", admission)
 
@@ -172,7 +179,7 @@ class HistoricalRecoveryAssuranceTests(unittest.TestCase):
         self.assertEqual(142, max(export_images))
         self.assertNotIn(143, export_images)
 
-        admission = (REPO / "requirements" / "source-project-owner-admission-2026-09-02.md").read_text(encoding="utf-8")
+        admission = SOURCE_PROJECT_OWNER_ADMISSION.read_text(encoding="utf-8")
         self.assertIn("File covers export images 120–143", admission)
         self.assertIn("canonical Source crosswalk maps 120–142", admission)
         self.assertIn("image 143 / fol. 67r is adjacent File context outside the Source boundary", admission)
