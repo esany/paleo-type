@@ -4,7 +4,7 @@
   "admission": "admitted",
   "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
   "admission_ref": "artifact:ENG-A-0010",
-  "work_owner": "github-issue:esany/paleo-type#258",
+  "work_owner": "github-issue:esany/paleo-type#259",
   "programme_owner": "github-issue:esany/paleo-type#244",
   "non_goals": [
     "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
@@ -12,7 +12,8 @@
     "package/src/distribution work without a new demonstrated trigger",
     "physical requirements migration before WP5",
     "#90 branch-protection reactivation",
-    "#225 scholarly whole-system acceptance"
+    "#225 scholarly whole-system acceptance",
+    "external runtime, cancellation or preservation claims that repository CI does not actually exercise"
   ],
   "coverage": {
     "problem": {"state": "required-satisfied", "basis": "artifact:ENG-A-0038"},
@@ -20,9 +21,9 @@
     "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0035"},
     "research": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
     "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041"},
+    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041;artifact:ENG-A-0052"},
     "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
-    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
+    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037;artifact:ENG-A-0052"},
     "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
   },
   "blocking_uncertainties": [],
@@ -35,21 +36,23 @@
     "artifact:ENG-A-0014",
     "artifact:ENG-A-0033",
     "artifact:ENG-A-0040",
-    "artifact:ENG-A-0041"
+    "artifact:ENG-A-0041",
+    "artifact:ENG-A-0052",
+    "path:requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md"
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp3-verified-technical-return",
-  "verification_head": "git:c6575ff0c30d70fbfe64b2767d8db68351e7a8ee",
+  "result_status": "wp3-verified-wp4-implementing",
+  "verification_head": "git:743f97266260b18b7d179a2b214bff3d86fa4487",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
     "WP3": "verified",
-    "WP4": "ready-next",
+    "WP4": "implementing",
     "WP5": "not-started",
     "WP6": "not-started"
   },
-  "current_execution": "WP3 is merged and exactly post-merge verified. No work package is currently executing. #259/WP4 is the next eligible implementation package within the existing D-016 admission but is not started by this return. #260/WP5 remains not-started because the migration contract requires the earlier engineering-fitness prerequisite as applicable.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP3 context/profile/prompt/check capabilities are implemented inside the still-active admitted SD-KA-01 change",
-  "whole_system_return": "changed: role/task-derived Human/Developer/Agent contexts, semantic Human current-work rendering, Senior Developer bootstrap, bounded prompt create/review/test behavior, review-evidence-basis safeguards and one shared local/CI deterministic full-check entrypoint are now implemented and exactly post-merge verified. #244 remains the programme/whole-system owner. WP3 technical PASS is not SD-KA-01 closure, scholarly acceptance, specialist validation or independent evidence. F10 remains an evidential qualification residual despite the implemented safeguard; F17/#225 is unchanged. #259/WP4 is ready-next but not started; #260/WP5 and WP6 remain later. No Project/manuscript state or scholarly NEXT ACTION changed."
+  "current_execution": "WP4 started from main@743f97266260b18b7d179a2b214bff3d86fa4487 under #259 within the existing SD-KA-01 D-016 admission. The package implements repository-testable engineering fitness, seeded failure fixtures, shared local/CI assurance and local-to-whole return checks. Separately admitted execution-control semantics are included only where repository-owned behavior can genuinely be falsified; WP4 does not become a runtime/orchestration layer.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP4 adds bounded assurance/fitness implementation inside the still-active admitted SD-KA-01 change",
+  "whole_system_return": "WP3 return remains valid: Human/Developer/Agent context, prompt and shared check surfaces are implemented and exactly verified. #244 remains the programme/whole-system owner. WP4 is now the bounded implementation cursor; its technical PASS cannot establish SD-KA-01 closure, scholarly acceptance, independent evidence, external runtime fitness or preservation state. F10 and F17 residual boundaries remain explicit. No Project/manuscript state or scholarly NEXT ACTION changed."
 }
