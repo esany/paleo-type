@@ -20,8 +20,8 @@
   "current_focus": {
     "ref": "github-issue:esany/paleo-type#257",
     "basis_kind": "work-contract",
-    "basis_ref": "artifact:ENG-A-0010",
-    "work_ref": "github-issue:esany/paleo-type#257",
+    "basis_ref": "github-issue:esany/paleo-type#257",
+    "authority_ref": "artifact:ENG-A-0010",
     "scope": "SD-KA-01/WP2"
   },
   "applicability": [
