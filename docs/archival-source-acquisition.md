@@ -25,10 +25,14 @@ specifications. SStA fields and routes stay in the provider adapter.
 Supply JSON with `archive`, `fonds`, `signature`, `title`,
 `date_label`, `guid` and `page_url`. Optional fields include
 `archive_code`, `name_key`, `classification_path`, `rights_status`
-and `image_count`. Title, date and archival identity come from intake;
-they are not inferred from image names.
+and `image_count`.
 
-For chat-driven runs the same JSON may be passed on standard input with \`--metadata -\`; this avoids creating a metadata sidecar file. The source image files are still written only to the configured external root.\n\n## Commands\n
+For chat-driven runs, pass the same JSON on standard input with
+`--metadata -`. This avoids creating a metadata sidecar file. Source image
+files are still written only to the configured external root.
+
+## Commands
+
 Preview the plan using the live SStA list:
 
     python tools/archival_source_acquisition.py \
@@ -76,10 +80,16 @@ A failed DNS lookup in a restricted execution environment is not evidence that
 the archive server is unavailable. Diagnose the environment before reporting
 a source-access failure.
 
-
-
 ## Chat skill
 
-The repository-scoped ChatGPT/Codex skill is `.agents/skills/savesax/`. Its preferred short invocation is the bare word `savesax`; implicit selection is enabled. In ChatGPT's explicit skill selector, use `@savesax`; Codex also supports `$savesax`. The skill reuses one source URL already present in context and asks only for a genuinely missing record link or external destination.
+The repository-scoped ChatGPT/Codex skill is
+`.agents/skills/savesax/`. Its preferred short invocation is the bare word
+`savesax`; implicit selection is enabled. In ChatGPT's explicit skill
+selector, use `@savesax`; Codex also supports `$savesax`. The skill reuses
+one source URL already present in context and asks only for a genuinely
+missing record link or external destination.
 
-The skill and its CLI core are in this Draft PR. They become available only in a ChatGPT/Codex environment that has loaded the repository skill. The live full-image workflow is manual-dispatch only; a push or documentation change must never launch an acquisition run.
+The skill and its CLI core are in this Draft PR. They become available only in
+a ChatGPT/Codex environment that has loaded the repository skill. The live
+full-image workflow is manual-dispatch only; a push or documentation change
+must never launch an acquisition run.
