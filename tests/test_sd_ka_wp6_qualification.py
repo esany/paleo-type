@@ -33,7 +33,7 @@ class SdKaWp6QualificationTests(unittest.TestCase):
         self.assertEqual([], errors)
         self.assertEqual("absent", human["current_work"]["state"])
         self.assertIsNone(human["current_work"].get("work_ref"))
-        self.assertIn("No current or ready-next engineering work", human["current_work"]["statement"])
+        self.assertIn("No active or next eligible engineering work is explicitly resolved.", human["current_work"]["statement"])
 
         errors, developer = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
