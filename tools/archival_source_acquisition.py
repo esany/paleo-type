@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Bounded acquisition of digital archival images.
 
-The generic core handles planning, safe external storage, integrity checks and
-manifest generation. Provider-specific URL construction lives in the provider
-adapter. The tool never creates Projects, Source uses, research functions or
-Corpus rows.
+The generic core handles planning, safe external storage, restartable progress,
+integrity checks and manifest generation. Provider-specific URL construction lives
+in the provider adapter. The tool never creates Projects, Source uses, research
+functions or Corpus rows.
 """
 from __future__ import annotations
 
@@ -60,6 +60,15 @@ class AcquisitionPlan:
     images: tuple[ImageSpec, ...]
 
 
+PROGRESS_SCHEMA = "paleo-type.archival-source-acquisition-progress.v1"
+MANIFEST_SCHEMA = "paleo-type.archival-source-acquisition.v2"
+PROGRESS_FILENAME = "ACQUISITION_STATE.json"
+
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
 def _safe_token(value: str) -> str:
     normalized = unicodedata.normalize("NFKD", value)
     ascii_value = normalized.encode("ascii", "ignore").decode("ascii")
@@ -110,7 +119,7 @@ class SaechsischesStaatsarchivProvider:
         url = self.file_list_url(source.guid)
         request = Request(
             url,
-            headers={"User-Agent": "paleo-type archival-source-acquisition/0.1"},
+            headers={"User-Agent": "paleo-type archival-source-acquisition/0.2"},
         )
         try:
             with opener(request, timeout=timeout) as response:
@@ -226,6 +235,128 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def _inspect_jpeg(path: Path) -> dict:
+    dimensions = jpeg_dimensions(path.read_bytes())
+    return {
+        "sha256": _sha256(path),
+        "pixel_width": dimensions[0],
+        "pixel_height": dimensions[1],
+    }
+
+
+def _write_text_atomic(path: Path, content: str) -> None:
+    temporary = path.with_name(path.name + ".part")
+    temporary.write_text(content, encoding="utf-8")
+    temporary.replace(path)
+
+
+def _is_within(path: Path, parent: Path) -> bool:
+    try:
+        path.resolve().relative_to(parent.resolve())
+        return True
+    except ValueError:
+        return False
+
+
+def _assert_external_output_root(output_root: Path) -> None:
+    repo = Path(__file__).resolve().parents[1]
+    if _is_within(output_root, repo):
+        raise AcquisitionError(
+            "refusing archival image acquisition into the repository/worktree; "
+            "configure an external source destination"
+        )
+
+
+def _plan_identity(plan: AcquisitionPlan) -> dict:
+    return {
+        "package_name": plan.package_name,
+        "guid": plan.source.guid,
+        "route": plan.route,
+        "file_list_url": plan.file_list_url,
+        "file_list_sha256": plan.file_list_sha256,
+        "expected_filenames": [spec.filename for spec in plan.images],
+    }
+
+
+def _new_progress(plan: AcquisitionPlan) -> dict:
+    return {
+        "schema": PROGRESS_SCHEMA,
+        "status": "planned",
+        "updated_at_utc": _utc_now(),
+        "plan": _plan_identity(plan),
+        "images": [],
+        "last_failure": None,
+    }
+
+
+def _progress_path(target: Path) -> Path:
+    return target / PROGRESS_FILENAME
+
+
+def _write_progress(target: Path, progress: dict) -> None:
+    progress["updated_at_utc"] = _utc_now()
+    _write_text_atomic(
+        _progress_path(target),
+        json.dumps(progress, ensure_ascii=False, indent=2) + "\n",
+    )
+
+
+def _load_progress(target: Path, plan: AcquisitionPlan) -> dict:
+    path = _progress_path(target)
+    if not path.exists():
+        return _new_progress(plan)
+    try:
+        progress = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise AcquisitionError(f"invalid acquisition progress state: {path}: {error}") from error
+    if progress.get("schema") != PROGRESS_SCHEMA:
+        raise AcquisitionError("unsupported acquisition progress schema")
+    if progress.get("plan") != _plan_identity(plan):
+        raise AcquisitionError(
+            "existing acquisition progress belongs to a different provider list/route/source plan"
+        )
+    if not isinstance(progress.get("images"), list):
+        raise AcquisitionError("acquisition progress images must be a list")
+    return progress
+
+
+def _recorded_images(progress: dict) -> dict[str, dict]:
+    indexed: dict[str, dict] = {}
+    for item in progress.get("images", []):
+        filename = item.get("filename")
+        if not isinstance(filename, str) or filename in indexed:
+            raise AcquisitionError("acquisition progress contains invalid or duplicate image records")
+        indexed[filename] = item
+    return indexed
+
+
+def _verify_recorded_image(spec: ImageSpec, destination: Path, recorded: dict) -> dict:
+    if recorded.get("sequence") != spec.sequence or recorded.get("url") != spec.url:
+        raise AcquisitionError(f"progress metadata mismatch for {spec.filename}")
+    if not destination.is_file():
+        raise AcquisitionError(
+            f"progress state records {spec.filename} but the external file is missing"
+        )
+    inspected = _inspect_jpeg(destination)
+    if inspected["sha256"] != recorded.get("sha256"):
+        raise AcquisitionError(
+            f"existing file checksum differs from persisted acquisition state: {destination}"
+        )
+    if inspected["pixel_width"] != recorded.get("pixel_width") or inspected[
+        "pixel_height"
+    ] != recorded.get("pixel_height"):
+        raise AcquisitionError(
+            f"existing file dimensions differ from persisted acquisition state: {destination}"
+        )
+    return {
+        "filename": spec.filename,
+        "sequence": spec.sequence,
+        "status": "verified-existing",
+        **inspected,
+        "url": spec.url,
+    }
+
+
 def _download(
     spec: ImageSpec,
     destination: Path,
@@ -234,30 +365,42 @@ def _download(
     retries: int = 3,
     timeout: float = 60.0,
 ) -> dict:
+    """Download one image.
+
+    If an untracked file already exists, a fresh remote copy is downloaded to a
+    temporary path and hashes are compared before the file is adopted into the
+    restartable progress state. Persisted tracked files are verified locally by
+    ``acquire`` and never redownloaded merely to prove idempotence.
+    """
     partial = destination.with_name(destination.name + ".part")
     last_error: Exception | None = None
     for attempt in range(1, retries + 1):
         try:
             request = Request(
                 spec.url,
-                headers={"User-Agent": "paleo-type archival-source-acquisition/0.1"},
+                headers={"User-Agent": "paleo-type archival-source-acquisition/0.2"},
             )
             response = opener(request, timeout=timeout)
             with response, partial.open("wb") as output:
                 for chunk in iter(lambda: response.read(1024 * 1024), b""):
                     output.write(chunk)
-            dimensions = jpeg_dimensions(partial.read_bytes())
-            digest = _sha256(partial)
+            inspected = _inspect_jpeg(partial)
             if destination.exists():
-                if _sha256(destination) == digest:
+                if _sha256(destination) == inspected["sha256"]:
+                    existing_dimensions = jpeg_dimensions(destination.read_bytes())
+                    if existing_dimensions != (
+                        inspected["pixel_width"],
+                        inspected["pixel_height"],
+                    ):
+                        raise AcquisitionError(
+                            f"existing file dimensions differ: {destination}"
+                        )
                     partial.unlink()
                     return {
                         "filename": spec.filename,
                         "sequence": spec.sequence,
-                        "status": "already-present",
-                        "sha256": digest,
-                        "pixel_width": dimensions[0],
-                        "pixel_height": dimensions[1],
+                        "status": "already-present-adopted",
+                        **inspected,
                         "url": spec.url,
                     }
                 raise AcquisitionError(
@@ -268,9 +411,7 @@ def _download(
                 "filename": spec.filename,
                 "sequence": spec.sequence,
                 "status": "downloaded",
-                "sha256": digest,
-                "pixel_width": dimensions[0],
-                "pixel_height": dimensions[1],
+                **inspected,
                 "url": spec.url,
             }
         except Exception as error:
@@ -278,14 +419,39 @@ def _download(
             if partial.exists():
                 partial.unlink()
             if attempt < retries:
-                time.sleep(min(2**(attempt - 1), 4))
+                time.sleep(min(2 ** (attempt - 1), 4))
     raise AcquisitionError(f"failed to acquire {spec.filename}: {last_error}")
 
 
-def _write_text_atomic(path: Path, content: str) -> None:
-    temporary = path.with_name(path.name + ".part")
-    temporary.write_text(content, encoding="utf-8")
-    temporary.replace(path)
+def status_for_source(source: SourceMetadata, output_root: Path) -> dict:
+    """Inspect existing acquisition state without fetching or mutating anything."""
+    _assert_external_output_root(output_root)
+    target = output_root / package_name(source)
+    state_path = _progress_path(target)
+    if not state_path.is_file():
+        return {
+            "status": "not-started",
+            "package_name": package_name(source),
+            "destination": str(target),
+            "state_file": str(state_path),
+            "read_only": True,
+        }
+    try:
+        progress = json.loads(state_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise AcquisitionError(f"invalid acquisition progress state: {state_path}: {error}") from error
+    return {
+        "status": progress.get("status", "unknown"),
+        "package_name": package_name(source),
+        "destination": str(target),
+        "state_file": str(state_path),
+        "completed_images": len(progress.get("images", []))
+        if isinstance(progress.get("images"), list)
+        else None,
+        "updated_at_utc": progress.get("updated_at_utc"),
+        "last_failure": progress.get("last_failure"),
+        "read_only": True,
+    }
 
 
 def acquire(
@@ -296,39 +462,89 @@ def acquire(
     retries: int = 3,
     rate_limit_seconds: float = 0.1,
 ) -> dict:
-    """Acquire one plan into the configured external root only."""
+    """Acquire one plan into the configured external root with durable resume state."""
+    _assert_external_output_root(output_root)
     target = output_root / plan.package_name
     target.mkdir(parents=True, exist_ok=True)
-    results = []
-    for index, spec in enumerate(plan.images):
-        if index:
-            time.sleep(rate_limit_seconds)
-        results.append(
-            _download(
-                spec,
-                target / spec.filename,
-                opener=opener,
-                retries=retries,
-            )
-        )
+    progress = _load_progress(target, plan)
+    recorded = _recorded_images(progress)
+    results: list[dict] = []
+
+    for spec in plan.images:
+        try:
+            if spec.filename in recorded:
+                result = _verify_recorded_image(
+                    spec, target / spec.filename, recorded[spec.filename]
+                )
+            else:
+                if results or recorded:
+                    time.sleep(rate_limit_seconds)
+                result = _download(
+                    spec,
+                    target / spec.filename,
+                    opener=opener,
+                    retries=retries,
+                )
+                persisted = dict(result)
+                persisted["status"] = "verified"
+                progress["images"].append(persisted)
+                recorded[spec.filename] = persisted
+                progress["status"] = "partial-restartable"
+                progress["last_failure"] = None
+                _write_progress(target, progress)
+            results.append(result)
+        except KeyboardInterrupt:
+            progress["status"] = "cancelled-restartable"
+            progress["last_failure"] = {
+                "filename": spec.filename,
+                "sequence": spec.sequence,
+                "error": "cancelled by operator",
+                "at_utc": _utc_now(),
+            }
+            _write_progress(target, progress)
+            raise
+        except Exception as error:
+            progress["status"] = "partial-restartable"
+            progress["last_failure"] = {
+                "filename": spec.filename,
+                "sequence": spec.sequence,
+                "error": str(error),
+                "at_utc": _utc_now(),
+            }
+            _write_progress(target, progress)
+            raise
 
     expected_names = [spec.filename for spec in plan.images]
     actual_names = [item["filename"] for item in results]
     if actual_names != expected_names:
+        progress["status"] = "partial-restartable"
+        progress["last_failure"] = {
+            "error": "image sequence is incomplete or unstable",
+            "at_utc": _utc_now(),
+        }
+        _write_progress(target, progress)
         raise AcquisitionError("image sequence is incomplete or unstable")
 
+    progress["status"] = "complete"
+    progress["last_failure"] = None
+    progress["completed_at_utc"] = _utc_now()
+    _write_progress(target, progress)
+
     manifest = {
-        "schema": "paleo-type.archival-source-acquisition.v1",
+        "schema": MANIFEST_SCHEMA,
         "status": "complete",
-        "acquired_at_utc": datetime.now(timezone.utc).isoformat(),
+        "acquired_at_utc": progress["completed_at_utc"],
         "file_list_url": plan.file_list_url,
         "file_list_sha256": plan.file_list_sha256,
         "package_name": plan.package_name,
         "route": plan.route,
         "source": asdict(plan.source),
         "images": results,
+        "progress_state": PROGRESS_FILENAME,
         "constraints": {
             "external_storage_only": True,
+            "restartable_progress": True,
+            "status_read_is_non_mutating": True,
             "creates_project": False,
             "creates_source_use": False,
             "creates_research_function": False,
@@ -354,6 +570,7 @@ def acquire(
         f"Umfang: {len(results)} Fullsize-JPEGs",
         "Dateien: " + f"{expected_names[0]}–{expected_names[-1]}",
         f"Rights-/Zugriffsstatus: {plan.source.rights_status}",
+        f"Restart-/Fortschrittsstatus: {PROGRESS_FILENAME}",
         "",
         "Die Ablage wurde durch paleo-type archival-source-acquisition erzeugt.",
         "Project-, Source-use- und Forschungsfunktionsentscheidungen sind nicht enthalten.",
@@ -385,6 +602,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--route", choices=("download", "fullsize"), default="download")
     parser.add_argument("--file-list", type=Path, help="offline files.json fixture")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--status",
+        action="store_true",
+        help="read existing package progress only; never fetch images or mutate state",
+    )
     parser.add_argument("--rate-limit", type=float, default=0.1)
     return parser
 
@@ -392,6 +614,16 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     source = load_source(args.metadata)
+    if args.status:
+        print(
+            json.dumps(
+                status_for_source(source, args.output_root),
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return 0
+
     provider = SaechsischesStaatsarchivProvider()
     file_list_bytes = (
         args.file_list.read_bytes()
