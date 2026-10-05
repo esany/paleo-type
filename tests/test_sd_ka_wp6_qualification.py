@@ -16,27 +16,28 @@ class SdKaWp6QualificationTests(unittest.TestCase):
         config = json.loads((REPO / "engineering" / "configuration.json").read_text(encoding="utf-8"))
         state = json.loads((REPO / "engineering" / "changes" / "SD-KA-01" / "STATE.json").read_text(encoding="utf-8"))
 
-        self.assertEqual(["artifact:ENG-A-0004"], config["architecture_baselines"])
+        self.assertEqual(["artifact:ENG-A-0004", "artifact:ENG-A-0031"], config["architecture_baselines"])
         self.assertEqual(["artifact:ENG-A-0008"], config["requirements_baselines"])
         self.assertEqual("github-issue:esany/paleo-type#261", config["change_states"]["change:SD-KA-01"]["work_owner"])
-        self.assertEqual("pending", config["change_states"]["change:SD-KA-01"]["accepted_consequence"])
-        self.assertEqual("github-issue:esany/paleo-type#261", config["current_focus"]["ref"])
-        self.assertEqual("SD-KA-01/WP6", config["current_focus"]["scope"])
+        self.assertEqual("accepted", config["change_states"]["change:SD-KA-01"]["transition_state"])
+        self.assertEqual("baseline-change", config["change_states"]["change:SD-KA-01"]["accepted_consequence"])
+        self.assertEqual([], config["active_changes"])
+        self.assertIsNone(config["current_focus"])
+        self.assertEqual([], config["applicability"])
 
-        self.assertEqual("reviewing", state["lifecycle"])
-        self.assertEqual("implementing", state["work_package_status"]["WP6"])
-        for package in ("WP1", "WP2", "WP3", "WP4", "WP5"):
+        self.assertEqual("complete", state["lifecycle"])
+        for package in ("WP1", "WP2", "WP3", "WP4", "WP5", "WP6"):
             self.assertEqual("verified", state["work_package_status"][package])
 
         errors, human = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
-        self.assertEqual("active", human["current_work"]["state"])
-        self.assertEqual("github-issue:esany/paleo-type#261", human["current_work"]["work_ref"])
-        self.assertIn("WP6 adversarial qualification", human["current_work"]["statement"])
+        self.assertEqual("absent", human["current_work"]["state"])
+        self.assertIsNone(human["current_work"].get("work_ref"))
+        self.assertIn("No active or next eligible engineering work is explicitly resolved.", human["current_work"]["statement"])
 
         errors, developer = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
-        self.assertEqual("implementation", developer["execution_contract"]["requested_activity"])
+        self.assertEqual("absent", developer["execution_contract"]["requested_activity"])
         self.assertEqual("python tools/check.py", developer["execution_contract"]["technical_verification"])
         self.assertEqual("github-issue:esany/paleo-type#244", developer["execution_contract"]["whole_system_return"])
 

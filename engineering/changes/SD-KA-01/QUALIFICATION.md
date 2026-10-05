@@ -1,6 +1,6 @@
 # SD-KA-01 WP6 adversarial qualification and terminal Result Review evidence
 
-**Status:** `QUALIFICATION IN PROGRESS / TERMINAL CONSEQUENCE NOT YET ACCEPTED`  
+**Status:** `QUALIFICATION COMPLETE / TERMINAL ENGINEERING BASELINE CONSEQUENCE ACCEPTED`  
 **Execution baseline:** `main@57f2bc6fdf2c9222d236d265f31433b79f99e866`  
 **Work owner:** GitHub #261  
 **Programme owner:** GitHub #244  
@@ -31,8 +31,8 @@ The review basis inspected for this pass is repository-owned canonical/admitted 
 | tiny routine proportionality | governance regression keeps bounded routine work from acquiring material D-016 ceremony | retained from ENG-FIT-09/governance fixtures |
 | material architecture-change path | D-016 admission → bounded implementation → verification → terminal Result Review remains explicit | exercised by current WP6 lifecycle |
 | `.prompt` behavior | simple prompts stay simple; consequential repo prompts bootstrap fresh authority; self-review never becomes independent proof | retained from prompt regressions and re-tested in terminal fixture |
-| exact head / post-merge | successful workflow on the exact proposed and exact merged heads | pending until PR/merge evidence exists |
-| P-001..P-012 reconciliation | compare terminal result with admitted target and actual WP1–WP5 implementation | pending terminal Result Review section in `RESULT.md` |
+| exact head / post-merge | successful workflow on the exact proposed and exact merged heads | PR head `91a07581a2bfeabf5b7c0fb410c4803d0afa5774`: run #588 / `37386628173` PASS; implementation merge `b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1`: run #589 / `37386694928` PASS |
+| P-001..P-012 reconciliation | compare terminal result with admitted target and actual WP1–WP5 implementation | reconciled as implemented and qualified for the repository-testable engineering target; ADR-0001 accepted into engineering architecture baseline by terminal Result Review |
 
 ## Residuals that must not be laundered
 
@@ -52,3 +52,22 @@ WP6 may return an accepted engineering baseline consequence only if:
 5. exact merged-head assurance succeeds.
 
 If a material qualification fails, only the affected surface re-enters. No successor programme, manuscript priority or scholarly `NEXT ACTION` is generated automatically.
+
+
+## Failure/fix evidence from terminal qualification
+
+The terminal PR deliberately retains its failed qualification iterations rather than presenting only the green end state:
+
+- run #586 / `37386379797` failed four existing engineering tests because they still encoded the between-WP5/WP6 no-focus state and one derived-current-state token was misread as `active` rather than `present`;
+- the fixtures were repaired to preserve their original falsification intent: a concurrent/proposed artifact must not steal the explicitly configured #261 focus;
+- run #587 / `37386570567` then exposed one remaining test bug: `engineering.validate()` returns the current-focus ref as a string, not a structured object;
+- after that assertion was corrected, exact PR-head run #588 / `37386628173` passed all shared checks on `91a07581a2bfeabf5b7c0fb410c4803d0afa5774`;
+- PR #301 merged at `main@b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1`; exact post-merge run #589 / `37386694928` passed.
+
+These failures were stale/incorrect qualification-fixture assumptions, not evidence that the admitted currentness model chose a wrong focus or that migration/fitness semantics regressed.
+
+## Terminal Result Review disposition
+
+The admitted P-001..P-012 package is accepted as the current **engineering architecture baseline** through the explicit Result Review transition, represented by ADR-0001 / `artifact:ENG-A-0031`. The accepted reusable Requirement baseline remains `artifact:ENG-A-0008`. SD-KA-01 leaves active-change/current-focus state after the result return.
+
+This acceptance is intentionally narrower than “system solved”: F10 remains unresolved as an evidential-independence/evidence-depth residual; F17/#225 remains a separate scholarly end-to-end residual; #297 remains an external residual/later qualification consequence; external runtime, cancellation and preservation claims remain with their own owners. No successor programme or scholarly `NEXT ACTION` is generated.

@@ -19,43 +19,45 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual([], errors)
         self.assertEqual(45, summary["finding_count"])
         self.assertEqual("admitted", summary["admission"])
-        self.assertEqual("reviewing", summary["lifecycle"])
-        self.assertEqual("github-issue:esany/paleo-type#261", summary["current_focus"])
+        self.assertEqual("complete", summary["lifecycle"])
+        self.assertIsNone(summary["current_focus"])
 
-    def test_implemented_target_is_not_current_architecture_baseline(self) -> None:
+    def test_terminal_target_is_accepted_architecture_baseline(self) -> None:
         configuration = json.loads((REPO / "engineering" / "configuration.json").read_text(encoding="utf-8"))
         self.assertEqual(2, configuration["schema_version"])
-        self.assertEqual(["artifact:ENG-A-0004"], configuration["architecture_baselines"])
-        self.assertNotIn("artifact:ENG-A-0031", configuration["architecture_baselines"])
-        self.assertEqual("implemented", configuration["change_states"]["change:SD-KA-01"]["transition_state"])
-        self.assertEqual("pending", configuration["change_states"]["change:SD-KA-01"]["accepted_consequence"])
-        self.assertEqual("github-issue:esany/paleo-type#261", configuration["current_focus"]["ref"])
-        self.assertGreaterEqual(len(configuration["applicability"]), 4)
+        self.assertEqual(["artifact:ENG-A-0004", "artifact:ENG-A-0031"], configuration["architecture_baselines"])
+        self.assertEqual("accepted", configuration["change_states"]["change:SD-KA-01"]["transition_state"])
+        self.assertEqual("baseline-change", configuration["change_states"]["change:SD-KA-01"]["accepted_consequence"])
+        self.assertEqual([], configuration["active_changes"])
+        self.assertIsNone(configuration["current_focus"])
+        self.assertEqual([], configuration["applicability"])
 
-    def test_wp5_verified_and_wp6_active_qualification(self) -> None:
+    def test_wp1_through_wp6_are_verified_and_complete(self) -> None:
         state = json.loads((REPO / "engineering" / "changes" / "SD-KA-01" / "STATE.json").read_text(encoding="utf-8"))
         self.assertEqual("verified", state["work_package_status"]["WP1"])
         self.assertEqual("verified", state["work_package_status"]["WP2"])
         self.assertEqual("verified", state["work_package_status"]["WP3"])
         self.assertEqual("verified", state["work_package_status"]["WP4"])
         self.assertEqual("verified", state["work_package_status"]["WP5"])
-        self.assertEqual("implementing", state["work_package_status"]["WP6"])
+        self.assertEqual("verified", state["work_package_status"]["WP6"])
+        self.assertEqual("complete", state["lifecycle"])
         self.assertEqual("github-issue:esany/paleo-type#261", state["work_owner"])
-        self.assertIn("WP6 is executing", state["current_execution"])
+        self.assertIn("no SD-KA work package or successor programme is currently executing", state["current_execution"])
         self.assertIn("moving unclassified or ambiguous artifacts by filename guess", state["non_goals"])
 
-    def test_current_view_exposes_active_wp6_qualification(self) -> None:
+    def test_current_view_exposes_terminal_baseline_and_no_focus(self) -> None:
         errors, current = engineering.compile_current_state(REPO)
         self.assertEqual([], errors)
         self.assertEqual("derived-current-engineering-state", current["view_kind"])
-        self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
-        self.assertEqual("change:SD-KA-01", current["active_changes"][0]["ref"])
-        self.assertEqual("implemented", current["active_changes"][0]["transition_state"])
-        self.assertEqual("present", current["current_focus"]["state"])
-        self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
-        self.assertFalse(current["explicit_absence"]["current_focus"])
-        self.assertFalse(current["explicit_absence"]["active_changes"])
-        self.assertEqual(5, len(current["applicability"]))
+        self.assertEqual(
+            ["artifact:ENG-A-0004", "artifact:ENG-A-0031"],
+            [row["ref"] for row in current["accepted_configuration"]["architecture_baselines"]],
+        )
+        self.assertEqual([], current["active_changes"])
+        self.assertEqual("absent", current["current_focus"]["state"])
+        self.assertTrue(current["explicit_absence"]["current_focus"])
+        self.assertTrue(current["explicit_absence"]["active_changes"])
+        self.assertEqual([], current["applicability"])
         self.assertNotIn("projects", current)
         self.assertFalse((REPO / "engineering" / "generated" / "CURRENT_STATE.json").exists())
 
@@ -92,10 +94,12 @@ class EngineeringContractTests(unittest.TestCase):
             config_path.write_text(json.dumps(config), encoding="utf-8")
             errors, current = engineering.compile_current_state(fixture)
             self.assertEqual([], errors)
-            self.assertEqual(2, len(current["active_changes"]))
-            self.assertEqual("present", current["current_focus"]["state"])
-            self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
-            self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
+            self.assertEqual(1, len(current["active_changes"]))
+            self.assertEqual("absent", current["current_focus"]["state"])
+            self.assertEqual(
+                ["artifact:ENG-A-0004", "artifact:ENG-A-0031"],
+                [row["ref"] for row in current["accepted_configuration"]["architecture_baselines"]],
+            )
 
     def test_newer_proposed_artifact_does_not_win_currentness(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -115,9 +119,11 @@ class EngineeringContractTests(unittest.TestCase):
             self._write_rows(artifact_path, rows)
             errors, current = engineering.compile_current_state(fixture)
             self.assertEqual([], errors)
-            self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
-            self.assertEqual("present", current["current_focus"]["state"])
-            self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
+            self.assertEqual(
+                ["artifact:ENG-A-0004", "artifact:ENG-A-0031"],
+                [row["ref"] for row in current["accepted_configuration"]["architecture_baselines"]],
+            )
+            self.assertEqual("absent", current["current_focus"]["state"])
 
     def test_work_metadata_cannot_become_current_baseline(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -129,12 +135,12 @@ class EngineeringContractTests(unittest.TestCase):
             errors, _ = engineering.validate(fixture)
             self.assertTrue(any("cannot point at non-accepted artifact" in error for error in errors), errors)
 
-    def test_proposed_adr_cannot_become_current_baseline(self) -> None:
+    def test_nonaccepted_design_cannot_become_current_baseline(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
             config_path = fixture / "engineering" / "configuration.json"
             config = json.loads(config_path.read_text(encoding="utf-8"))
-            config["architecture_baselines"] = ["artifact:ENG-A-0031"]
+            config["architecture_baselines"] = ["artifact:ENG-A-0014"]
             config_path.write_text(json.dumps(config), encoding="utf-8")
             errors, _ = engineering.validate(fixture)
             self.assertTrue(any("cannot point at non-accepted artifact" in error for error in errors), errors)
@@ -189,7 +195,7 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertIn("ENG-A-0114", ids)
         active = engineering.query_artifacts(REPO, authority_role="work-metadata", owner_scope="SD-KA-01", lifecycle="active")
         active_ids = {row["artifact_id"] for row in active}
-        self.assertIn("ENG-A-0114", active_ids)
+        self.assertNotIn("ENG-A-0114", active_ids)
         self.assertNotIn("ENG-A-0054", active_ids)
 
     def _copy_contract_fixture(self, target: Path) -> Path:

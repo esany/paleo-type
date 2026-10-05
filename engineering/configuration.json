@@ -1,60 +1,23 @@
 {
   "schema_version": 2,
   "architecture_baselines": [
-    "artifact:ENG-A-0004"
+    "artifact:ENG-A-0004",
+    "artifact:ENG-A-0031"
   ],
   "requirements_baselines": [
     "artifact:ENG-A-0008"
   ],
-  "active_changes": [
-    "change:SD-KA-01"
-  ],
+  "active_changes": [],
   "change_states": {
     "change:SD-KA-01": {
-      "transition_state": "implemented",
+      "transition_state": "accepted",
       "basis_ref": "artifact:ENG-A-0032",
       "work_owner": "github-issue:esany/paleo-type#261",
-      "accepted_consequence": "pending"
+      "accepted_consequence": "baseline-change"
     }
   },
-  "current_focus": {
-    "ref": "github-issue:esany/paleo-type#261",
-    "basis_kind": "work-contract",
-    "basis_ref": "github-issue:esany/paleo-type#261",
-    "scope": "SD-KA-01/WP6"
-  },
-  "applicability": [
-    {
-      "ref": "artifact:ENG-A-0035",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#261",
-      "scope": "admitted WP1-WP6 implementation requirements and terminal reconciliation"
-    },
-    {
-      "ref": "artifact:ENG-A-0036",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#261",
-      "scope": "implemented system design and WP6 qualification boundary"
-    },
-    {
-      "ref": "artifact:ENG-A-0049",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#261",
-      "scope": "repository-testable engineering fitness and seeded adversarial fixtures"
-    },
-    {
-      "ref": "artifact:ENG-A-0040",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#261",
-      "scope": "fresh Human, Senior Developer and Agent context journeys and review-evidence-basis behavior"
-    },
-    {
-      "ref": "artifact:ENG-A-0031",
-      "basis_kind": "selected-with-basis",
-      "basis_ref": "artifact:ENG-A-0010",
-      "scope": "admitted P-001..P-012 target-package reconciliation"
-    }
-  ],
+  "current_focus": null,
+  "applicability": [],
   "decision_owner": "decision:D-016",
   "transition_provenance": {
     "admission_ref": "artifact:ENG-A-0010",
@@ -62,10 +25,10 @@
     "programme_owner": "github-issue:esany/paleo-type#244",
     "implementation_owner": "github-issue:esany/paleo-type#261",
     "admission_head": "e18906c4d3f09645aca84d4c2fe17c37387c1109",
-    "implementation_head": "ffc4d3736148987cd30aa805519634287d1b4b6b",
+    "implementation_head": "b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1",
     "execution_baseline_head": "57f2bc6fdf2c9222d236d265f31433b79f99e866",
     "result_ref": "artifact:ENG-A-0032",
-    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37376852591"
+    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37386694928"
   },
-  "notes": "WP6 is the bounded current focus for adversarial qualification and terminal SD-KA-01 Result Review under the existing D-016 admission. Accepted architecture/Requirement baselines remain unchanged while qualification is in progress. Technical PASS cannot establish scholarly truth, specialist validity, evidential independence or #225 acceptance."
+  "notes": "SD-KA-01 completed terminal WP6 Result Review inside the existing D-016 admission. The accepted architecture baseline now includes ADR-0001 / artifact:ENG-A-0031 as the qualified P-001..P-012 engineering target package; the accepted Requirement baseline remains artifact:ENG-A-0008. No SD-KA work package or successor programme is current. F10 evidential independence and F17/#225 scholarly vertical acceptance remain explicit residuals outside what this engineering acceptance establishes."
 }

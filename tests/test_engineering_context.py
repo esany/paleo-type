@@ -14,26 +14,25 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_active_wp6_work(self) -> None:
+    def test_human_overview_exposes_explicit_absence_after_terminal_return(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("active", work["state"])
-        self.assertIn("WP6 adversarial qualification", work["statement"])
-        self.assertEqual("github-issue:esany/paleo-type#261", work["work_ref"])
+        self.assertEqual("absent", work["state"])
+        self.assertIn("No active or next eligible engineering work is explicitly resolved.", work["statement"])
+        self.assertIsNone(work.get("work_ref"))
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Current work:", rendered)
-        self.assertIn("#261", rendered)
+        self.assertIn("No active or next eligible engineering work is explicitly resolved.", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_active_wp6_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_without_manufacturing_successor(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("implementation", execution["requested_activity"])
+        self.assertEqual("absent", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
-        self.assertIn("github-issue:esany/paleo-type#261", execution["authority_reads"])
+        self.assertNotIn("github-issue:esany/paleo-type#261", execution["authority_reads"])
         self.assertEqual("github-issue:esany/paleo-type#244", execution["whole_system_return"])
 
     def test_context_starvation_is_detected(self) -> None:
@@ -86,27 +85,32 @@ class EngineeringContextTests(unittest.TestCase):
 
             artifact_path = fixture / "engineering" / "catalog" / "artifacts.tsv"
             artifacts = self._read_rows(artifact_path)
-            artifacts.append({
-                "artifact_id": "ENG-A-9999",
-                "kind": "work-metadata",
-                "path": "github://github.com/esany/paleo-type/issues/999",
-                "owner_scope": "SD-KA-01",
-                "authority_role": "work-metadata",
-                "lifecycle_state": "active",
-                "change_id": "SD-KA-01",
-                "title": "Competing ready-next fixture",
-            })
+            for artifact_id, issue, title in (
+                ("ENG-A-9998", "998", "First ready-next fixture"),
+                ("ENG-A-9999", "999", "Second ready-next fixture"),
+            ):
+                artifacts.append({
+                    "artifact_id": artifact_id,
+                    "kind": "work-metadata",
+                    "path": f"github://github.com/esany/paleo-type/issues/{issue}",
+                    "owner_scope": "SD-KA-01",
+                    "authority_role": "work-metadata",
+                    "lifecycle_state": "active",
+                    "change_id": "SD-KA-01",
+                    "title": title,
+                })
             self._write_rows(artifact_path, artifacts)
             relation_path = fixture / "engineering" / "catalog" / "relations.tsv"
             relations = self._read_rows(relation_path)
-            relations.append({
-                "relation_id": "REL-9999",
-                "subject_ref": "artifact:ENG-A-0032",
-                "predicate": "transitions-to",
-                "object_ref": "github-issue:esany/paleo-type#999",
-                "relation_status": "accepted",
-                "evidence_ref": "artifact:ENG-A-0032",
-            })
+            for relation_id, issue in (("REL-9998", "998"), ("REL-9999", "999")):
+                relations.append({
+                    "relation_id": relation_id,
+                    "subject_ref": "artifact:ENG-A-0032",
+                    "predicate": "transitions-to",
+                    "object_ref": f"github-issue:esany/paleo-type#{issue}",
+                    "relation_status": "accepted",
+                    "evidence_ref": "artifact:ENG-A-0032",
+                })
             self._write_rows(relation_path, relations)
             errors, packet = engineering_context.compile_context(fixture, "human-system-overview")
             self.assertEqual([], errors)

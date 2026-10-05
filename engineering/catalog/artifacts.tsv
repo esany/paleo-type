@@ -29,7 +29,7 @@ ENG-A-0027	catalog	engineering/catalog/relations.tsv	SD-KA-01	canonical	active	S
 ENG-A-0028	catalog	engineering/catalog/legacy-paths.tsv	SD-KA-01	admitted-change	active	SD-KA-01	Migration compatibility catalog
 ENG-A-0029	change-state	engineering/changes/SD-KA-01/STATE.json	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded change state
 ENG-A-0030	decision	engineering/decisions/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering ADR index and lifecycle
-ENG-A-0031	decision	engineering/decisions/ADR-0001-sd-ka-01-target-package.md	SD-KA-01	admitted-change	active	SD-KA-01	Admitted target package ADR record
+ENG-A-0031	decision	engineering/decisions/ADR-0001-sd-ka-01-target-package.md	SD-KA-01	accepted-decision	active	SD-KA-01	Admitted target package ADR record
 ENG-A-0032	result	engineering/changes/SD-KA-01/RESULT.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 work-package results and whole-system returns
 ENG-A-0033	design	engineering/evidence/research/system-development-bugwave-context-developer-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Context selection and developer experience design
 ENG-A-0034	work-metadata	github://github.com/esany/paleo-type/issues/257	SD-KA-01	work-metadata	historical	SD-KA-01	WP2 current configuration and query-view implementation owner
@@ -112,5 +112,5 @@ ENG-A-0110	owner-admission	engineering/evidence/decisions/default-branch-promoti
 ENG-A-0111	owner-disposition	engineering/evidence/decisions/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md	cross-project	admitted-change	active		Route B default-branch Human-owner defer disposition
 ENG-A-0112	decision-brief	engineering/evidence/decisions/outcome-preserving-execution-control-d016-decision-brief-2026-10-05.md	cross-project	non-normative-evidence	active		Outcome-preserving execution-control D-016 decision brief
 ENG-A-0113	owner-admission	engineering/evidence/decisions/source-project-owner-admission-2026-09-02.md	cross-project	admitted-change	active		Source Project Human-owner decision and bounded admission
-ENG-A-0114	work-metadata	github://github.com/esany/paleo-type/issues/261	SD-KA-01	work-metadata	active	SD-KA-01	WP6 adversarial qualification and terminal SD-KA-01 Result Review owner
+ENG-A-0114	work-metadata	github://github.com/esany/paleo-type/issues/261	SD-KA-01	work-metadata	historical	SD-KA-01	WP6 adversarial qualification and terminal SD-KA-01 Result Review owner
 ENG-A-0115	qualification	engineering/changes/SD-KA-01/QUALIFICATION.md	SD-KA-01	admitted-change	active	SD-KA-01	WP6 adversarial qualification and terminal Result Review evidence

@@ -272,3 +272,65 @@ The main developer/navigation burden is reduced: `requirements/` now means reusa
 ### Review boundaries
 
 WP5's exact-head and post-merge technical assurance establishes only the migration identity/path/byte/continuity/restartability properties actually exercised. The review was writer-context self-review, not independent evidence. Final SD-KA-01 target acceptance, F10 evidential qualification, F17 scholarly acceptance, specialist validation and Human-reserved consequences remain for WP6/their existing owners.
+
+---
+
+## WP6 — adversarial qualification and terminal SD-KA-01 Result Review
+
+### Exact qualification basis
+
+- Execution baseline: `main@57f2bc6fdf2c9222d236d265f31433b79f99e866`, the exact WP5-result return.
+- Qualification implementation PR: [#301](https://github.com/esany/paleo-type/pull/301).
+- Final exact qualification PR head: `91a07581a2bfeabf5b7c0fb410c4803d0afa5774`.
+- Exact PR-head assurance: source-contract run #588 / `37386628173`, successful on that exact head.
+- Qualification implementation merge: `main@b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1`.
+- Exact post-merge assurance: source-contract run #589 / `37386694928`, successful on that exact merged head.
+- Writer-context technical/restartability self-review was recorded on PR #301 and explicitly did not claim independent evidential or specialist review.
+- Qualification failure/fix history is retained in `QUALIFICATION.md`: #586 and #587 exposed stale/incorrect test assumptions before the exact final head passed.
+
+### P-001..P-012 reconciliation
+
+Terminal Result Review finds the admitted engineering target implemented and qualified within its stated repository-testable envelope:
+
+- **P-001 / P-002:** engineering information/configuration ownership and F01–F45 source/disposition trace are explicit and validator-backed.
+- **P-003 / P-004:** accepted/current transition semantics are authority/evidence controlled, with stable path-independent `ENG-A-*` identities and no recency-as-current rule.
+- **P-005 / P-006:** Human, Senior Developer and Agent views are derived from the same owners, current-first and applicability-bearing; ambiguity/absence remain representable.
+- **P-007 / P-008:** readiness is activity-relative and bounded work returns whole-system consequence rather than treating local PASS as parent closure.
+- **P-009:** ADR-0001 and the ADR surface remain distinct from top-level `DECISIONS.md`, Requirements, Issues and Current Configuration.
+- **P-010 / P-011:** semantic contracts preceded physical migration; ENG-FIT-01..09 and shared `python tools/check.py` assurance operate over the stabilized representation.
+- **P-012:** `.prompt` remains a thin prompt-construction/review/test capability, not planner, execution owner or authority.
+
+The fresh composed WP6 fixture re-exercised Human/developer/Agent context resolution, review-premise boundaries, ENG-FIT composition, prompt independence-overclaim protection and WP5 migration continuity. Existing adversarial fixtures continue to cover stale/latest-wins, concurrent/proposed state, context starvation, false relation, coverage/orphan, generated-view, local-PASS and proportionality pressure.
+
+### Terminal accepted engineering consequence
+
+**Accepted baseline change:** terminal Result Review accepts ADR-0001 / `artifact:ENG-A-0031` as an engineering architecture baseline alongside the existing accepted cross-project decision baseline `artifact:ENG-A-0004`. The accepted reusable Requirement baseline remains `artifact:ENG-A-0008`.
+
+This is the explicit `verified → accepted / baseline-change` consequence required by the configuration-transition contract. It is not inferred from Git recency, Issue closure, path movement or CI PASS.
+
+SD-KA-01 therefore leaves the active-change/current-focus surface after this return. WP1–WP6 are verified, the change lifecycle is complete, and no successor programme is generated automatically.
+
+### Finding / evidence / residual consequence
+
+- **F10 remains unresolved.** WP3/WP6 qualified the review-evidence-basis safeguard and independence-overclaim behavior, but same-writer/fresh-model review still is not independent evidence.
+- **F17 / #225 remains unresolved and outside SD-KA engineering acceptance.** No positive scholarly end-to-end vertical is manufactured by engineering qualification.
+- **F45 remains promoted/implemented as a migration loss safeguard.** The 74 moved artifacts retain stable identity, exact pre-move byte equivalence, current/legacy locators and no compatibility copies; Human/reviewer discoverability is preserved through semantic navigation and managed lookup.
+- **#297 remains an external residual + later qualification consequence** under its own owners, as already dispositioned by #244; it does not invalidate the repository-testable SD-KA guarantees or get silently absorbed into a new architecture.
+- External runtime, cancellation, preservation, specialist and scholarly acceptance remain with their existing owners.
+
+### Reconstruction / Human / developer consequence
+
+A fresh repository context no longer needs to reconstruct the engineering system from dated audit chronology or mixed `requirements/` content in order to find accepted architecture, current work/absence, relevant Requirements, assurance entrypoint or deeper evidence. The default path is now current-first and bounded; historical evidence remains retrievable without becoming default current truth.
+
+The qualification did not prove that all future Human-outcome failures are solved. It proved the admitted engineering information/configuration/context/migration/assurance target against the specified adversarial repository fixtures and preserves the remaining outcome/evidence gaps as explicit residuals.
+
+### Whole-system return
+
+**SD-KA-01 engineering target: ACCEPTED / COMPLETE.**
+
+The bugwave target inside the admitted P-001..P-012 / WP1..WP6 envelope is closed as an engineering architecture and workflow-support change. Its accepted consequence is the qualified ADR-0001 architecture baseline plus the already-implemented repository-native owners, context, prompt, assurance and migration surfaces.
+
+**Explicit non-closure:** this is not #225 scholarly whole-system acceptance, independent evidential review, specialist validation, external runtime acceptance, or a new manuscript Project decision. #244 may close as the SD-KA programme/navigation owner after this durable return is merged because the remaining named residuals are explicitly outside the admitted SD-KA acceptance envelope or owned elsewhere.
+
+No successor programme, repository-global current work or scholarly `NEXT ACTION` is created by this terminal result.
+
