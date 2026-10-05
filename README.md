@@ -54,9 +54,9 @@ Canonical current owners:
 
 Current process state:
 
-> **D-016 ADMITTED / WP1–WP5 VERIFIED + RETURNED / WP6 READY-NEXT + NOT STARTED / SD-KA-01 ACTIVE.**
+> **D-016 ADMITTED / WP1–WP5 VERIFIED + RETURNED / WP6 QUALIFICATION + TERMINAL RESULT REVIEW IN PROGRESS / SD-KA-01 ACTIVE.**
 
-No SD-KA work package is currently executing. The next eligible bounded system-development action is **#261 / WP6: adversarially qualify the engineering system and perform the terminal SD-KA-01 Result Review**. This readiness is already inside the existing D-016 admission; it does not start WP6 or create a new Human material decision.
+**#261 / WP6 is the current bounded system-development focus:** adversarially qualify the engineering system and perform the terminal SD-KA-01 Result Review. It is executing inside the existing D-016 admission. Accepted architecture/Requirement baselines remain unchanged while qualification is in progress; technical PASS does not establish scholarly, specialist, Human or evidential-independence claims.
 
 For a derived Human-readable rendering of the same repository state use:
 

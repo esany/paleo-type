@@ -1,10 +1,10 @@
 {
   "change_id": "SD-KA-01",
-  "lifecycle": "implementing",
+  "lifecycle": "reviewing",
   "admission": "admitted",
   "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
   "admission_ref": "artifact:ENG-A-0010",
-  "work_owner": "github-issue:esany/paleo-type#260",
+  "work_owner": "github-issue:esany/paleo-type#261",
   "programme_owner": "github-issue:esany/paleo-type#244",
   "non_goals": [
     "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
@@ -45,7 +45,7 @@
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp5-verified-technical-return",
+  "result_status": "wp6-qualification-in-progress",
   "verification_head": "git:ffc4d3736148987cd30aa805519634287d1b4b6b",
   "work_package_status": {
     "WP1": "verified",
@@ -53,9 +53,9 @@
     "WP3": "verified",
     "WP4": "verified",
     "WP5": "verified",
-    "WP6": "ready-next"
+    "WP6": "implementing"
   },
-  "current_execution": "WP5 is merged and exactly post-merge verified. No work package is currently executing. #261/WP6 is the next eligible terminal qualification/Result Review package within the existing D-016 admission but is not started by this return.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP5 relocated 74 classified engineering/decision-evidence artifacts into semantic owners with stable IDs, exact-byte continuity and legacy-path lookup while narrowing requirements/ to its README and accepted reusable Requirement baseline",
-  "whole_system_return": "changed: the mixed requirements/ brownfield has been loss-checked into semantic engineering owners across three physical slices; 74 moved artifacts retain stable managed identities, exact pre-move blob identity, legacy-path continuity and rollback evidence. Cross-project Human decision/admission evidence remains cross-project authority after relocation. Recovery consumers exposed by exact-head CI were repaired and the exact final PR head plus implementation merge passed the shared full check. #244 remains the programme/whole-system owner. F10 remains an evidence-basis/qualification residual and F17/#225 remains a scholarly residual. No Project/manuscript state or scholarly NEXT ACTION changed. #261/WP6 is ready-next but not started."
+  "current_execution": "WP6 is executing adversarial qualification and terminal Result Review under #261. The accepted architecture/Requirement baselines remain unchanged until qualification evidence and exact-head assurance support a terminal transition.",
+  "current_baseline_changes": "none during active WP6 qualification; accepted architecture and Requirement baselines remain unchanged while P-001..P-012, F10/F17 residual boundaries, context journeys, migration loss checks and local-to-whole closure are re-tested",
+  "whole_system_return": "pending WP6 terminal Result Review. WP5 remains exactly verified. #244 remains the programme owner; no scholarly Project/manuscript state or NEXT ACTION changes are authorized by WP6."
 }

@@ -14,22 +14,22 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_semantic_ready_next_wp6_work(self) -> None:
+    def test_human_overview_resolves_active_wp6_work(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("ready-next", work["state"])
+        self.assertEqual("active", work["state"])
         self.assertIn("WP6 adversarial qualification", work["statement"])
         self.assertEqual("github-issue:esany/paleo-type#261", work["work_ref"])
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Next eligible work:", rendered)
+        self.assertIn("Current work:", rendered)
         self.assertIn("#261", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_ready_next_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_and_active_wp6_authority(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("ready-next", execution["requested_activity"])
+        self.assertEqual("implementation", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
