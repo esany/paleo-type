@@ -1,9 +1,7 @@
 name: savesax live run
 
 on:
-  push:
-    branches:
-      - feat/archival-source-acquisition-mvp-2026-10-04
+  workflow_dispatch:
 
 permissions:
   contents: read
