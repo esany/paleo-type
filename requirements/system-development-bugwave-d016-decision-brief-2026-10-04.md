@@ -1,6 +1,6 @@
 # System-development bugwave — D-016 implementation decision brief — 2026-10-04
 
-**Status:** NON-NORMATIVE HUMAN DECISION BRIEF / **READY FOR D-016 DECISION / NOT ADMITTED / IMPLEMENTATION NOT STARTED**  
+**Status:** NON-NORMATIVE HUMAN DECISION BRIEF / **ADMITTED FOR IMPLEMENTATION / WP1 VERIFIED / WP2 READY-NEXT**
 **Baseline:** `main@b633ac81f65952775d2d203b7b9986903d48365b`  
 **Human-visible programme owner:** #244  
 **Candidate implementation programme:** **SD-KA-01 — Engineering Knowledge & Configuration Plane + Development Readiness operationalization**  
@@ -38,7 +38,7 @@ Today:
 - `requirements/` remains a mixed brownfield namespace;
 - README still carries more system-development history/current interpretation than a stable orientation file ideally should;
 - SD-KA/EKCP target infrastructure is **not implemented**;
-- no D-016 admission has been given.
+- the Human Owner's D-016 admission is durably recorded in `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`; WP1 is merged and has a repository-first result/whole-system return in `engineering/changes/SD-KA-01/RESULT.md`.
 
 ## 3. Material findings are now accounted for
 
@@ -364,7 +364,7 @@ At the present repository/evidence state:
 > **BROWNFIELD REPRESENTATION/MIGRATION: DESIGNED**  
 > **CONTEXT / DEVEX / ASSURANCE / ADR / PROMPT / REVIEW SAFEGUARDS: DESIGNED**  
 > **HUMAN D-016 DECISION: READY**  
-> **D-016 ADMISSION: NOT GIVEN**  
-> **IMPLEMENTATION: NOT STARTED**
+> **D-016 ADMISSION: GIVEN — see the canonical owner-admission record**
+> **IMPLEMENTATION: WP1 VERIFIED; WP2 READY-NEXT; WP3–WP6 NOT STARTED**
 
 The Human Owner does not need to perform another audit or reconstruct the genealogy. The remaining Human action, if implementation is desired, is the material choice in Section 17.

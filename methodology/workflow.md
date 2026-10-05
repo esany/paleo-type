@@ -133,6 +133,103 @@ If the authority is absent or ambiguous:
 
 Resource absence does not relax evidence standards. An action that requires unavailable evidence still cannot be simulated, completed from metadata/prior transcription, or silently replaced by a parallel witness.
 
+## Consequence class, retry/resume and long-running execution fitness
+
+Execution contexts must preserve the authorized outcome while selecting tools/runtimes. Tool, connector, runner, storage or capability decomposition is implementation detail unless a genuinely non-derivable Human decision is required.
+
+Before a consequential mutation, classify the next action by consequence rather than by tool name:
+
+```text
+READ / STATUS
+    inspect or report existing state only
+
+ACTIVE-OPERATION RETRY
+    retry already authorized inside the same still-active operation contract
+
+RESUME
+    continue the same persisted authorized operation state after interruption
+
+NEW TOP-LEVEL MUTATION / RUN
+    create a new consequential operation after no active operation or terminal state
+```
+
+### Read/status boundary
+
+Ordinary status language such as `Fertig?`, `Status?`, `läuft es noch?` or `was ist passiert?` is read-only by default.
+
+A read/status request may fetch/inspect the relevant state. It does **not** by itself authorize:
+
+- a workflow/job rerun;
+- a new or resumed acquisition;
+- a push/commit/merge;
+- an Issue/comment/update write;
+- a consequential external message;
+- a canonical research-state write;
+- substitute work selected because the inspected operation failed.
+
+If the inspected operation is terminal failed/cancelled, report that state and the valid continuation boundary. A new top-level run requires authority from the already-valid operation contract or a new request that actually has that consequential meaning.
+
+### Retry versus resume versus new run
+
+A bounded automatic retry may be part of one authorized active operation when its contract already defines the retry policy and failure boundary. This does not authorize indefinite repetition.
+
+A **resume** is valid only when restart-relevant operation state survived and its identity/authority remains valid. Resume must verify the persisted progress needed for correctness; it is not a euphemism for silently starting again from scratch.
+
+After terminal state, a **new run** is a new consequential operation unless the governing contract explicitly establishes a different valid transition. Terminal failure is evidence about the prior operation, not self-generated authority to mutate again.
+
+### Runtime fitness before long-running consequential side effects
+
+`Can execute code` or `tool is available` does not establish that an execution context is fit for a long-running consequential external action.
+
+Before start, check only the task-relative properties whose failure would materially affect correctness, Human control or restartability. As applicable:
+
+```text
+INTENDED DURABLE DESTINATION / PROGRESS
+    where successful task-relevant outputs survive during the operation
+
+RESTART / RESUME
+    what valid progress survives ordinary interruption and how it is re-verified
+
+FAILURE CONTAINMENT
+    what truthful partial/failed state remains and what must not be called complete
+
+OBSERVABILITY
+    whether progress/terminal state can be inspected with sufficient fidelity
+
+STOP / CONTAINMENT
+    whether an active long-running action can be cancelled or otherwise contained;
+    any material limitation that must be known before start
+
+LEAST-HOP EXECUTION
+    whether extra runner/artifact/storage hops have a demonstrated requirement
+```
+
+Do not require perfect universal cancellation. If a material control limitation is inherent and still compatible with the authorized task, surface that limitation before starting when it affects the Human's ability to contain consequences.
+
+For durable acquisition/preservation tasks, disposable runtime storage or a temporary CI artifact is not equivalent to the intended controlled destination merely because bytes can later be copied. Normal partial progress that the task needs to survive expected transient failures must not exist only in a disposable context.
+
+### Outcome return and state truthfulness
+
+A local tool/runtime failure may trigger only the authorized repair/retry/resume semantics. Infrastructure work must not replace the higher-order outcome cursor.
+
+Keep these meanings separate where applicable:
+
+```text
+planned
+running
+partial / restartable
+failed / cancelled
+technically complete
+preserved / secured
+accepted / reviewed
+```
+
+The exact tokens are owner-local; the semantic separation is mandatory. One layer's `PASS` must not be used to claim the next.
+
+After bounded repair/resume, return to the same valid higher-order outcome unless authority/evidence actually invalidated it.
+
+This section does not introduce a central job manager, permission broker, workflow engine or universal state-machine representation. Stable owner-local mechanics belong in the relevant interface/tool; repository CI may test only properties it genuinely executes.
+
 ## Sticky prerequisites
 
 A prerequisite deterministically established as `PASS` remains `PASS` for the current execution context until an explicit invalidation event occurs.
@@ -372,16 +469,18 @@ A fresh capable context passes the workflow/restart test when it can answer with
 
 - what role/stage may execute now;
 - what bounded action is authorized;
+- what consequence class the next action has (`read/status`, active-operation retry, resume or new top-level mutation) when that distinction is material;
 - which prerequisites are PASS/FAIL/unknown and what invalidates PASS;
 - which exact evidence is required and whether it is actually ready in this context;
 - for any claimed blocker/STOP/dependency, which authoritative owner establishes that consequence;
+- for long-running consequential external work, where required durable progress lives, what resume/failure-containment semantics apply, and what material control limit is known;
 - where the execution cursor/completion boundary lies;
 - what is explicitly out of scope;
 - what changed since the prior state;
 - who receives the result and under what return condition;
 - for any consequential cross-domain/technical/human wording, what semantic owner defines it and whether the translation preserved scope, status and uncertainty.
 
-If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, inferring priority or blocker state from structural/support/resource state, or relying on an unstated semantic conversion between domains, the execution surface is not restartable.
+If the answer requires replaying a prior chat, re-running an already-valid prerequisite without cause, inferring a new mutation from a status read, inferring priority or blocker state from structural/support/resource state, selecting a runtime merely because it is available, or relying on an unstated semantic conversion between domains, the execution surface is not restartable.
 
 ## Research execution: protect the first scholarly action
 

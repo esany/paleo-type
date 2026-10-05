@@ -1,0 +1,49 @@
+artifact_id	kind	path	owner_scope	authority_role	lifecycle_state	change_id	title
+ENG-A-0001	governance	GOVERNING_OBJECTIVE.md	repository	canonical	active		Governing objective
+ENG-A-0002	governance	AGENTS.md	repository	canonical	active		AI and research guardrails
+ENG-A-0003	governance	README.md	repository	canonical	active		Repository orientation and current navigation
+ENG-A-0004	decision	DECISIONS.md	cross-project	accepted-decision	active		Accepted cross-project decisions
+ENG-A-0005	method	methodology/maintenance.md	cross-project	canonical	active		Maintenance and D-016 admission owner
+ENG-A-0006	method	methodology/workflow.md	cross-project	canonical	active		Operational execution mechanics
+ENG-A-0007	method	methodology/quality-and-learning.md	cross-project	canonical	active		Quality and assurance boundaries
+ENG-A-0008	requirement-set	requirements/domain-requirements.tsv	cross-project	canonical	active		Structured requirement inventory
+ENG-A-0009	design	requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	D-016 decision brief
+ENG-A-0010	owner-admission	requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md	SD-KA-01	admitted-change	active	SD-KA-01	Human-owner D-016 admission
+ENG-A-0011	problem-analysis	requirements/system-development-bugwave-master-map-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bugwave master map
+ENG-A-0012	audit	requirements/system-development-bugwave-finding-coverage-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Material finding coverage
+ENG-A-0013	design	requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Finding promotion design
+ENG-A-0014	design	requirements/system-development-bugwave-configuration-reference-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Configuration and reference design
+ENG-A-0015	design	requirements/system-development-bugwave-adr-surface-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	ADR surface design
+ENG-A-0016	design	requirements/system-development-bugwave-brownfield-migration-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Brownfield migration design
+ENG-A-0017	design	requirements/system-development-bugwave-adr-inventory-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Architecture decision inventory
+ENG-A-0018	design	requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Holistic dev-ready architecture
+ENG-A-0019	audit	requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md	SD-KA-01	non-normative-evidence	historical	SD-KA-01	Pre-implementation anti-regression baseline
+ENG-A-0020	work-metadata	github://github.com/esany/paleo-type/issues/244	SD-KA-01	work-metadata	active	SD-KA-01	Bugwave programme and decision navigation owner
+ENG-A-0021	work-metadata	github://github.com/esany/paleo-type/issues/256	SD-KA-01	work-metadata	historical	SD-KA-01	WP1 implementation owner
+ENG-A-0022	configuration	engineering/configuration.json	SD-KA-01	canonical	active	SD-KA-01	Accepted baseline and active-change configuration
+ENG-A-0023	architecture	engineering/architecture/SYSTEM.md	SD-KA-01	admitted-change	active	SD-KA-01	Current architecture boundary and admitted change
+ENG-A-0024	catalog	engineering/catalog/artifacts.tsv	SD-KA-01	canonical	active	SD-KA-01	Engineering information asset catalog
+ENG-A-0025	catalog	engineering/catalog/findings.tsv	SD-KA-01	canonical	active	SD-KA-01	Material finding disposition catalog
+ENG-A-0026	catalog	engineering/catalog/coverage.tsv	SD-KA-01	canonical	active	SD-KA-01	Source coverage account catalog
+ENG-A-0027	catalog	engineering/catalog/relations.tsv	SD-KA-01	canonical	active	SD-KA-01	Material relation catalog
+ENG-A-0028	catalog	engineering/catalog/legacy-paths.tsv	SD-KA-01	admitted-change	active	SD-KA-01	Migration compatibility catalog
+ENG-A-0029	change-state	engineering/changes/SD-KA-01/STATE.json	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded change state
+ENG-A-0030	decision	engineering/decisions/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering ADR index and lifecycle
+ENG-A-0031	decision	engineering/decisions/ADR-0001-sd-ka-01-target-package.md	SD-KA-01	admitted-change	active	SD-KA-01	Admitted target package ADR record
+ENG-A-0032	result	engineering/changes/SD-KA-01/RESULT.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 work-package results and whole-system returns
+ENG-A-0033	design	requirements/system-development-bugwave-context-developer-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Context selection and developer experience design
+ENG-A-0034	work-metadata	github://github.com/esany/paleo-type/issues/257	SD-KA-01	work-metadata	historical	SD-KA-01	WP2 current configuration and query-view implementation owner
+ENG-A-0035	change-requirements	engineering/changes/SD-KA-01/REQUIREMENTS.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation requirements
+ENG-A-0036	change-design	engineering/changes/SD-KA-01/DESIGN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation design
+ENG-A-0037	change-plan	engineering/changes/SD-KA-01/PLAN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 implementation plan and work-package sequence
+ENG-A-0038	problem-analysis	engineering/changes/SD-KA-01/PROBLEM.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation problem
+ENG-A-0039	work-metadata	github://github.com/esany/paleo-type/issues/258	SD-KA-01	work-metadata	historical	SD-KA-01	WP3 Human developer Agent context bootstrap and bounded prompt implementation owner
+ENG-A-0040	context-contract	engineering/context/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Derived engineering context profile and Human cursor contract
+ENG-A-0041	prompt-contract	engineering/prompts/CONTRACT.md	SD-KA-01	admitted-change	active	SD-KA-01	Bounded prompt interaction contract
+ENG-A-0042	tool	tools/engineering_context.py	SD-KA-01	admitted-change	active	SD-KA-01	Derived engineering context compiler
+ENG-A-0043	tool	tools/prompt.py	SD-KA-01	admitted-change	active	SD-KA-01	Bounded prompt create review and test implementation
+ENG-A-0044	tool	tools/check.py	SD-KA-01	admitted-change	active	SD-KA-01	Shared local and CI deterministic full-check entrypoint
+ENG-A-0045	design	requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Activity-relative readiness and Human material-decision contract
+ENG-A-0046	test-result	requirements/prompt-skill-transfer-test-result-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bounded prompt transfer test result and activation constraints
+ENG-A-0047	analysis	requirements/review-premise-inheritance-generic-fit-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Review evidence-basis and inherited-premise safeguard disposition
+ENG-A-0048	work-metadata	github://github.com/esany/paleo-type/issues/259	SD-KA-01	work-metadata	active	SD-KA-01	Implement engineering fitness CI assurance and whole-system return checks

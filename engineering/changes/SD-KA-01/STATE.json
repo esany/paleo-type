@@ -1,0 +1,55 @@
+{
+  "change_id": "SD-KA-01",
+  "lifecycle": "implementing",
+  "admission": "admitted",
+  "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
+  "admission_ref": "artifact:ENG-A-0010",
+  "work_owner": "github-issue:esany/paleo-type#258",
+  "programme_owner": "github-issue:esany/paleo-type#244",
+  "non_goals": [
+    "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
+    "workflow engine, autonomous planner, graph database, Wirknetz runtime, Bridge or developer portal",
+    "package/src/distribution work without a new demonstrated trigger",
+    "physical requirements migration before WP5",
+    "#90 branch-protection reactivation",
+    "#225 scholarly whole-system acceptance"
+  ],
+  "coverage": {
+    "problem": {"state": "required-satisfied", "basis": "artifact:ENG-A-0038"},
+    "root_cause": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0035"},
+    "research": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
+    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041"},
+    "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
+    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
+    "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
+  },
+  "blocking_uncertainties": [],
+  "applicable_rules": [
+    "decision:D-016",
+    "decision:D-019",
+    "artifact:ENG-A-0005",
+    "artifact:ENG-A-0006",
+    "artifact:ENG-A-0007",
+    "artifact:ENG-A-0014",
+    "artifact:ENG-A-0033",
+    "artifact:ENG-A-0040",
+    "artifact:ENG-A-0041"
+  ],
+  "plan_ref": "artifact:ENG-A-0037",
+  "result_ref": "artifact:ENG-A-0032",
+  "result_status": "wp3-verified-technical-return",
+  "verification_head": "git:c6575ff0c30d70fbfe64b2767d8db68351e7a8ee",
+  "work_package_status": {
+    "WP1": "verified",
+    "WP2": "verified",
+    "WP3": "verified",
+    "WP4": "ready-next",
+    "WP5": "not-started",
+    "WP6": "not-started"
+  },
+  "current_execution": "WP3 is merged and exactly post-merge verified. No work package is currently executing. #259/WP4 is the next eligible implementation package within the existing D-016 admission but is not started by this return. #260/WP5 remains not-started because the migration contract requires the earlier engineering-fitness prerequisite as applicable.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP3 context/profile/prompt/check capabilities are implemented inside the still-active admitted SD-KA-01 change",
+  "whole_system_return": "changed: role/task-derived Human/Developer/Agent contexts, semantic Human current-work rendering, Senior Developer bootstrap, bounded prompt create/review/test behavior, review-evidence-basis safeguards and one shared local/CI deterministic full-check entrypoint are now implemented and exactly post-merge verified. #244 remains the programme/whole-system owner. WP3 technical PASS is not SD-KA-01 closure, scholarly acceptance, specialist validation or independent evidence. F10 remains an evidential qualification residual despite the implemented safeguard; F17/#225 is unchanged. #259/WP4 is ready-next but not started; #260/WP5 and WP6 remain later. No Project/manuscript state or scholarly NEXT ACTION changed."
+}
