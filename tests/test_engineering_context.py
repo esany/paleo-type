@@ -14,29 +14,30 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_semantic_current_work(self) -> None:
+    def test_human_overview_resolves_semantic_next_work(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("active", work["state"])
-        self.assertIn("Implement Human/developer/Agent", work["statement"])
+        self.assertEqual("ready-next", work["state"])
+        self.assertIn("Implement engineering fitness", work["statement"])
         self.assertNotEqual(work["statement"], work["work_ref"])
-        self.assertEqual("SD-KA-01/WP3", work["scope"])
-        self.assertEqual("github-issue:esany/paleo-type#258", work["work_ref"])
-        self.assertEqual("github-issue:esany/paleo-type#258", work["basis_ref"])
+        self.assertEqual("SD-KA-01/next-eligible", work["scope"])
+        self.assertEqual("github-issue:esany/paleo-type#259", work["work_ref"])
+        self.assertEqual("artifact:ENG-A-0032", work["basis_ref"])
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Current work:", rendered)
-        self.assertIn("Scope: SD-KA-01/WP3", rendered)
+        self.assertIn("Next eligible work:", rendered)
+        self.assertIn("Scope: SD-KA-01/next-eligible", rendered)
         self.assertIn("Resolution basis:", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_and_ready_next_authority(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
+        self.assertEqual("ready-next", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
-        self.assertIn("github-issue:esany/paleo-type#258", execution["authority_reads"])
+        self.assertIn("github-issue:esany/paleo-type#259", execution["authority_reads"])
         self.assertEqual("github-issue:esany/paleo-type#244", execution["whole_system_return"])
 
     def test_context_starvation_is_detected(self) -> None:
@@ -86,23 +87,18 @@ class EngineeringContextTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
 
-            config_path = fixture / "engineering" / "configuration.json"
-            config = json.loads(config_path.read_text(encoding="utf-8"))
-            config["current_focus"] = None
-            config_path.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
-
             artifact_path = fixture / "engineering" / "catalog" / "artifacts.tsv"
             artifacts = self._read_rows(artifact_path)
             artifacts.append(
                 {
                     "artifact_id": "ENG-A-9999",
                     "kind": "work-metadata",
-                    "path": "github://github.com/esany/paleo-type/issues/259",
+                    "path": "github://github.com/esany/paleo-type/issues/260",
                     "owner_scope": "SD-KA-01",
                     "authority_role": "work-metadata",
                     "lifecycle_state": "active",
                     "change_id": "SD-KA-01",
-                    "title": "Implement engineering fitness, CI assurance and whole-system return checks",
+                    "title": "Migrate the brownfield repository information architecture with loss checks",
                 }
             )
             self._write_rows(artifact_path, artifacts)
@@ -114,7 +110,7 @@ class EngineeringContextTests(unittest.TestCase):
                     "relation_id": "REL-9999",
                     "subject_ref": "artifact:ENG-A-0032",
                     "predicate": "transitions-to",
-                    "object_ref": "github-issue:esany/paleo-type#259",
+                    "object_ref": "github-issue:esany/paleo-type#260",
                     "relation_status": "accepted",
                     "evidence_ref": "artifact:ENG-A-0032",
                 }
