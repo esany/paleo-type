@@ -51,7 +51,7 @@ ENG-A-0049	assurance-contract	engineering/assurance/fitness.json	SD-KA-01	admitt
 ENG-A-0050	assurance-doc	engineering/assurance/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering fitness assurance boundary and developer guidance
 ENG-A-0051	tool	tools/engineering_fitness.py	SD-KA-01	admitted-change	active	SD-KA-01	Executable engineering fitness checker
 ENG-A-0052	design	engineering/evidence/research/system-development-bugwave-assurance-closure-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Engineering assurance and closure design
-ENG-A-0053	owner-admission	requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md	cross-project	admitted-change	active		Shared outcome-preserving execution-control D-016 admission
+ENG-A-0053	owner-admission	engineering/evidence/decisions/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md	cross-project	admitted-change	active		Shared outcome-preserving execution-control D-016 admission
 ENG-A-0054	work-metadata	github://github.com/esany/paleo-type/issues/260	SD-KA-01	work-metadata	active	SD-KA-01	WP5 brownfield information-architecture migration owner and next eligible cursor
 ENG-A-0055	migration-evidence	engineering/changes/SD-KA-01/MIGRATION.tsv	SD-KA-01	admitted-change	active	SD-KA-01	WP5 classified physical migration execution and rollback evidence
 ENG-A-0056	navigation	requirements/README.md	cross-project	canonical	active		Requirements namespace orientation and brownfield boundary
@@ -108,7 +108,7 @@ ENG-A-0106	analysis	engineering/evidence/research/source-context-model-synthesis
 ENG-A-0107	evidence-ledger	engineering/evidence/research/source-context-standards-evidence-2026-09-07.tsv	cross-project	non-normative-evidence	historical		source context standards evidence 2026 09 07
 ENG-A-0108	analysis	engineering/evidence/research/system-development-information-architecture-dev-ready-design-2026-10-03.md	cross-project	non-normative-evidence	historical		system development information architecture dev ready design 2026 10 03
 ENG-A-0109	audit	engineering/evidence/audits/system-operationalization-audit-2026-09-17.md	cross-project	non-normative-evidence	historical		system operationalization audit 2026 09 17
-ENG-A-0110	owner-admission	requirements/default-branch-promotion-enforcement-owner-admission-2026-09-17.md	cross-project	admitted-change	historical		Route B default-branch Human-owner admission evidence
-ENG-A-0111	owner-disposition	requirements/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md	cross-project	admitted-change	active		Route B default-branch Human-owner defer disposition
-ENG-A-0112	decision-brief	requirements/outcome-preserving-execution-control-d016-decision-brief-2026-10-05.md	cross-project	non-normative-evidence	active		Outcome-preserving execution-control D-016 decision brief
-ENG-A-0113	owner-admission	requirements/source-project-owner-admission-2026-09-02.md	cross-project	admitted-change	active		Source Project Human-owner decision and bounded admission
+ENG-A-0110	owner-admission	engineering/evidence/decisions/default-branch-promotion-enforcement-owner-admission-2026-09-17.md	cross-project	admitted-change	historical		Route B default-branch Human-owner admission evidence
+ENG-A-0111	owner-disposition	engineering/evidence/decisions/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md	cross-project	admitted-change	active		Route B default-branch Human-owner defer disposition
+ENG-A-0112	decision-brief	engineering/evidence/decisions/outcome-preserving-execution-control-d016-decision-brief-2026-10-05.md	cross-project	non-normative-evidence	active		Outcome-preserving execution-control D-016 decision brief
+ENG-A-0113	owner-admission	engineering/evidence/decisions/source-project-owner-admission-2026-09-02.md	cross-project	admitted-change	active		Source Project Human-owner decision and bounded admission

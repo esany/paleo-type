@@ -102,7 +102,7 @@ class EngineeringFitnessTests(unittest.TestCase):
         artifacts = {row["artifact_id"]: row for row in self._read_rows(REPO / "engineering" / "catalog" / "artifacts.tsv")}
         legacy = {row["artifact_id"]: row for row in self._read_rows(REPO / "engineering" / "catalog" / "legacy-paths.tsv")}
         migration = self._read_rows(REPO / "engineering" / "changes" / "SD-KA-01" / "MIGRATION.tsv")
-        self.assertEqual(69, len(migration))
+        self.assertEqual(74, len(migration))
         for row in migration:
             artifact_id = row["artifact_id"]
             self.assertIn(artifact_id, artifacts)
@@ -119,21 +119,22 @@ class EngineeringFitnessTests(unittest.TestCase):
             self.assertEqual(row["baseline_blob_sha"], git_blob, artifact_id)
 
     def test_wp5_requirements_namespace_is_narrow_and_fully_classified(self) -> None:
-        expected = {
-            "README.md",
-            "domain-requirements.tsv",
-            "default-branch-promotion-enforcement-owner-admission-2026-09-17.md",
-            "default-branch-promotion-enforcement-owner-disposition-2026-09-17.md",
-            "outcome-preserving-execution-control-d016-decision-brief-2026-10-05.md",
-            "outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md",
-            "source-project-owner-admission-2026-09-02.md",
-        }
+        expected = {"README.md", "domain-requirements.tsv"}
         actual = {path.name for path in (REPO / "requirements").iterdir() if path.is_file()}
         self.assertEqual(expected, actual)
         artifacts = self._read_rows(REPO / "engineering" / "catalog" / "artifacts.tsv")
         managed_paths = {row["path"] for row in artifacts}
         for name in expected:
             self.assertIn(f"requirements/{name}", managed_paths)
+        decisions = {
+            row["artifact_id"]: row
+            for row in artifacts
+            if row["artifact_id"] in {"ENG-A-0053", "ENG-A-0110", "ENG-A-0111", "ENG-A-0112", "ENG-A-0113"}
+        }
+        self.assertEqual(5, len(decisions))
+        for row in decisions.values():
+            self.assertEqual("cross-project", row["owner_scope"])
+            self.assertTrue(row["path"].startswith("engineering/evidence/decisions/"), row)
 
     def test_wp5_requirements_baseline_stays_put_and_old_paths_are_not_parallel_truth(self) -> None:
         self.assertTrue((REPO / "requirements" / "domain-requirements.tsv").is_file())
