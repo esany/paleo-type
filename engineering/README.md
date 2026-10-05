@@ -42,7 +42,7 @@ For a concise Human-readable current/next work rendering:
 python tools/engineering_context.py --profile human-system-overview --format text
 ```
 
-The visible result must be a meaningful action with scope and authority basis, not only an Issue/work-package token. Context-relative currentness is allowed; unresolved ambiguity is exposed rather than hidden behind one repository-global cursor. Between packages, `configuration.json` may carry explicit no-current-focus while `STATE.json`/relations expose one ready-next transition.
+The visible result must be a meaningful action with scope and authority basis, not only an Issue/work-package token. Context-relative currentness is allowed; unresolved ambiguity is exposed rather than hidden behind one repository-global cursor. Between packages, `configuration.json` may carry explicit no-current-focus while `STATE.json`/relations expose one ready-next transition. **Ready-next is navigation/readiness, not an active focus or automatic work start.**
 
 ## Local commands
 
