@@ -1,8 +1,8 @@
 # Engineering knowledge and configuration
 
-This repository-native surface is the admitted SD-KA-01 Engineering Knowledge & Configuration Plane implementation. WP1 established the semantic/catalog owners; WP2 added explicit currentness/applicability semantics and rebuildable current/query views; WP3 added role/task context products, Senior Developer bootstrap, a shared deterministic full check and bounded prompt interaction; WP4 added the ENG-FIT mapping, seeded falsification fixtures and explicit local/CI assurance boundaries. **WP5 is currently executing under #260** as the bounded loss-checked brownfield information-architecture migration. WP6 remains terminal adversarial qualification/Result Review.
+This repository-native surface is the admitted SD-KA-01 Engineering Knowledge & Configuration Plane implementation. WP1 established semantic/catalog owners; WP2 added explicit currentness/applicability semantics and rebuildable current/query views; WP3 added role/task context products, Senior Developer bootstrap, a shared deterministic full check and bounded prompt interaction; WP4 added the ENG-FIT mapping, seeded falsification fixtures and explicit local/CI assurance boundaries; **WP5 completed and exactly verified the bounded loss-checked brownfield information-architecture migration**. WP6 is ready-next as terminal adversarial qualification/Result Review and is not started by the WP5 return.
 
-WP5 moves only already-classified material or material whose actual owner/status supports a destination. Path movement never creates semantic currentness or acceptance. Stable IDs remain in `catalog/artifacts.tsv`; old managed paths resolve through `catalog/legacy-paths.tsv`; the concrete migration/rollback evidence is in `changes/SD-KA-01/MIGRATION.tsv`. The accepted reusable Requirement baseline remains `requirements/domain-requirements.tsv`.
+WP5 moved only classified material whose actual owner/status supported a destination. Path movement created no semantic currentness or acceptance. Stable IDs remain in `catalog/artifacts.tsv`; old managed paths resolve through `catalog/legacy-paths.tsv`; concrete classification/rollback evidence is in `changes/SD-KA-01/MIGRATION.tsv`. `requirements/` is now narrowed to its namespace README and accepted reusable `domain-requirements.tsv` baseline.
 
 ## Owners
 
@@ -13,9 +13,10 @@ WP5 moves only already-classified material or material whose actual owner/status
 - `catalog/relations.tsv` owns only explicit material cross-artifact relations.
 - `catalog/legacy-paths.tsv` owns migration compatibility lookup for moved managed artifacts; legacy paths are locators, never parallel truth.
 - `changes/<change-id>/STATE.json` owns local change lifecycle, work-package cursor and admission state.
-- `changes/SD-KA-01/MIGRATION.tsv` records the classified WP5 physical-migration slice, pre-move blob identity and rollback boundary.
-- `decisions/` records engineering rationale without replacing `DECISIONS.md` or owning current configuration.
-- `evidence/audits/` and `evidence/research/` contain migrated non-default engineering evidence; their presence does not make them accepted/current baselines.
+- `changes/SD-KA-01/MIGRATION.tsv` records WP5 classification, pre-move blob identity, physical slice and rollback boundary.
+- `decisions/` records engineering ADR rationale without replacing `DECISIONS.md` or owning current configuration.
+- `evidence/decisions/` preserves separately owned Human decision/admission evidence after physical relocation; directory location does not transfer decision authority or owner scope.
+- `evidence/audits/`, `evidence/research/`, `evidence/learning/`, `evidence/work-instructions/` and `evidence/coordination/` contain non-default engineering evidence/history; presence does not make them accepted/current baselines.
 - `context/README.md` owns the derived context/profile and Human-visible cursor contract; generated context output remains derived.
 - `prompts/CONTRACT.md` owns bounded `.prompt` create/review/test behavior; it creates no work authority or task execution.
 - `tools/engineering.py` validates the contracts and derives/query current engineering state on demand.
