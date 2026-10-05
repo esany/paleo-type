@@ -54,7 +54,8 @@ REL-00052	finding:F42	promotes-to	github-issue:esany/paleo-type#244	accepted	art
 REL-00053	finding:F43	controlled-by	artifact:ENG-A-0002	accepted	artifact:ENG-A-0012
 REL-00054	finding:F44	promotes-to	github-issue:esany/paleo-type#250	accepted	artifact:ENG-A-0012
 REL-00055	finding:F45	promotes-to	github-issue:esany/paleo-type#251	accepted	artifact:ENG-A-0012
-REL-0056	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#257	accepted	artifact:ENG-A-0034
+REL-0056	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#257	historical	artifact:ENG-A-0034
 REL-0057	artifact:ENG-A-0014	constrains	change:SD-KA-01	accepted	artifact:ENG-A-0014
 REL-0058	artifact:ENG-A-0033	constrains	change:SD-KA-01	accepted	artifact:ENG-A-0033
 REL-0059	artifact:ENG-A-0037	describes	change:SD-KA-01	accepted	artifact:ENG-A-0037
+REL-0060	artifact:ENG-A-0032	transitions-to	github-issue:esany/paleo-type#258	accepted	artifact:ENG-A-0032
