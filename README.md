@@ -162,6 +162,7 @@ DECISIONS.md
 MILESTONES.md
 README.md
 methodology/
+.agents/skills/  # repo-scoped assistant workflows
 requirements/
 templates/
 corpus/
