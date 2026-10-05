@@ -71,15 +71,23 @@ Cumulative work-package results and whole-system returns are durably recorded in
 
 Current process state:
 
-> **D-016 ADMITTED / WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 READY-NEXT / SD-KA-01 ACTIVE.**
+> **D-016 ADMITTED / WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 IMPLEMENTING / SD-KA-01 ACTIVE.**
+
+Current WP3 work, in plain language: **implement the Human/developer/Agent context views so active work, next action, authority boundary and deeper provenance are visible without Issue/audit replay; add Senior Developer bootstrap, one shared local/CI full-check command, bounded `.prompt` create/review/test behavior and review-evidence-basis safeguards.** The owning work metadata is #258; scope/authority remain the already admitted SD-KA-01/WP3 slice.
+
+For a derived Human-readable rendering of the same repository state use:
+
+`python tools/engineering_context.py --profile human-system-overview --format text`
+
+A generic invocation may resolve context-relative current work, but the visible result must remain a meaningful action with scope and provenance. If current work is ambiguous, the derived view exposes the ambiguity rather than silently selecting one repository-global cursor.
 
 The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from later admitted/result state. **The canonical engineering configuration/change/result owners and #244 own the current non-scholarly implementation/navigation interpretation.**
 
-The repository-native Engineering Knowledge & Configuration Plane is now partially implemented: WP1 established the semantic/catalog foundation and WP2 established explicit engineering currentness, applicability provenance and rebuildable current/query views. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
+The repository-native Engineering Knowledge & Configuration Plane is now partially implemented: WP1 established the semantic/catalog foundation; WP2 established explicit engineering currentness, applicability provenance and rebuildable current/query views; WP3 is implementing derived Human/Developer/Agent context products, bootstrap, bounded prompt behavior and shared assurance entry. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
 
-#256/WP1 and #257/WP2 are verified for their bounded slices. #258/WP3 is now the next eligible implementation cursor within the already admitted scope but is not started by this return. #259/WP4 remains later because its full context/`.prompt`-dependent fitness surface depends on WP3 as applicable. Physical migration remains deliberately later (#260).
+#256/WP1 and #257/WP2 are verified for their bounded slices. #258/WP3 is the current bounded implementation cursor within the already admitted scope. #259/WP4 remains later because its full engineering-fitness surface follows the WP3 context/`.prompt` primitives as applicable. Physical migration remains deliberately later (#260).
 
-The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; physical migration, METHOD change and later context/fitness capabilities remain bounded implementation work, not automatically accepted scholarly or architecture state.
+The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; physical migration, METHOD change and later fitness/qualification capabilities remain bounded implementation work, not automatically accepted scholarly or architecture state.
 
 ### Historical programme boundaries
 
@@ -97,6 +105,8 @@ Historical programme detail is evidence on demand, not the default current-work 
 
 - current Human decision/admission surface: `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md` plus `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`;
 - current engineering configuration/change/result owners: `engineering/configuration.json`, `engineering/changes/SD-KA-01/STATE.json`, `engineering/changes/SD-KA-01/RESULT.md`;
+- derived context/profile contract and developer path: `engineering/context/README.md`;
+- bounded prompt capability contract: `engineering/prompts/CONTRACT.md`;
 - whole bugwave/failure-family map: `requirements/system-development-bugwave-master-map-2026-10-04.md`;
 - source-audit finding coverage: `requirements/system-development-bugwave-finding-coverage-2026-10-04.md`;
 - finding promotion design: `requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md`;
@@ -139,6 +149,8 @@ Use every artifact according to its stated evidence/authority status. None creat
 | What is the bounded SD-KA-01 lifecycle/work-package state? | `engineering/changes/SD-KA-01/STATE.json` |
 | What did completed SD-KA-01 work packages actually establish? | `engineering/changes/SD-KA-01/RESULT.md` |
 | What managed engineering artifacts/findings/relations exist? | `engineering/catalog/` |
+| What owns derived engineering context/profile behavior? | `engineering/context/README.md` |
+| What owns bounded `.prompt` interaction behavior? | `engineering/prompts/CONTRACT.md` |
 | What is a Source/File/relationship/crosswalk fact? | `corpus/` |
 | Why/what is one Project and what is its current scope? | Project `project.yml` |
 | How does the Project currently use Sources? | Project `source-uses.tsv` |
@@ -146,7 +158,7 @@ Use every artifact according to its stated evidence/authority status. None creat
 | What is the current Project restart/gate/evidence state? | Project `STATUS.md` |
 | What did the Project actually read/decide/observe? | owning Project research files |
 
-The engineering configuration/catalog/change owners are now implemented for the admitted SD-KA-01 scope. Their accepted-baseline/currentness semantics are canonical where explicitly owned; `tools/engineering.py current` and other generated/query views remain rebuildable navigation/restart aids, never parallel truth stores. ADR-0001/P-001–P-012 remain the admitted target package and are not thereby promoted to accepted architecture baseline.
+The engineering configuration/catalog/change owners are implemented for the admitted SD-KA-01 scope. Their accepted-baseline/currentness semantics are canonical where explicitly owned; `tools/engineering.py current`, `tools/engineering_context.py` and other generated/query views remain rebuildable navigation/restart aids, never parallel truth stores. ADR-0001/P-001–P-012 remain the admitted target package and are not thereby promoted to accepted architecture baseline.
 
 ## Current Project directories
 
@@ -185,7 +197,7 @@ tools/
 tests/
 ```
 
-Optional Project work directories exist only when real work requires them. `engineering/` now carries the admitted SD-KA-01 configuration/catalog/change foundation and WP2 current/query capability; later WP3–WP6 surfaces remain bounded, not implicitly complete.
+Optional Project work directories exist only when real work requires them. `engineering/` carries the admitted SD-KA-01 configuration/catalog/change foundation, WP2 current/query capability and the current WP3 derived-context/prompt/bootstrap implementation; later WP4–WP6 surfaces remain bounded, not implicitly complete.
 
 ## Restartability acceptance
 
@@ -200,6 +212,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for current system-development work, accepted engineering baselines, active admitted change state, explicit focus/absence, completed work-package results and the next eligible bounded implementation cursor.
+- for current system-development work, accepted engineering baselines, active admitted change state, semantically explicit current/scoped work with provenance, applicable context, completed work-package results and the next permitted bounded transition.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.

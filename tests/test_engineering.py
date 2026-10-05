@@ -20,7 +20,7 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual(45, summary["finding_count"])
         self.assertEqual("admitted", summary["admission"])
         self.assertEqual("implementing", summary["lifecycle"])
-        self.assertIsNone(summary["current_focus"])
+        self.assertEqual("github-issue:esany/paleo-type#258", summary["current_focus"])
 
     def test_implemented_target_is_not_current_architecture_baseline(self) -> None:
         configuration = json.loads((REPO / "engineering" / "configuration.json").read_text(encoding="utf-8"))
@@ -29,17 +29,18 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertNotIn("artifact:ENG-A-0031", configuration["architecture_baselines"])
         self.assertEqual("implemented", configuration["change_states"]["change:SD-KA-01"]["transition_state"])
         self.assertEqual("pending", configuration["change_states"]["change:SD-KA-01"]["accepted_consequence"])
-        self.assertIsNone(configuration["current_focus"])
-        self.assertEqual([], configuration["applicability"])
+        self.assertEqual("github-issue:esany/paleo-type#258", configuration["current_focus"]["ref"])
+        self.assertEqual("SD-KA-01/WP3", configuration["current_focus"]["scope"])
+        self.assertTrue(configuration["applicability"])
 
-    def test_wp2_return_preserves_physical_migration_boundary(self) -> None:
+    def test_wp3_execution_preserves_physical_migration_boundary(self) -> None:
         state = json.loads((REPO / "engineering" / "changes" / "SD-KA-01" / "STATE.json").read_text(encoding="utf-8"))
         self.assertIn("physical requirements migration before WP5", state["non_goals"])
         self.assertEqual("verified", state["work_package_status"]["WP1"])
         self.assertEqual("verified", state["work_package_status"]["WP2"])
-        self.assertEqual("ready-next", state["work_package_status"]["WP3"])
+        self.assertEqual("implementing", state["work_package_status"]["WP3"])
         self.assertEqual("not-started", state["work_package_status"]["WP4"])
-        self.assertEqual("github-issue:esany/paleo-type#257", state["work_owner"])
+        self.assertEqual("github-issue:esany/paleo-type#258", state["work_owner"])
 
     def test_current_view_is_derived_current_first_and_has_no_project_state(self) -> None:
         errors, current = engineering.compile_current_state(REPO)
@@ -48,10 +49,11 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
         self.assertEqual("change:SD-KA-01", current["active_changes"][0]["ref"])
         self.assertEqual("implemented", current["active_changes"][0]["transition_state"])
-        self.assertEqual("absent", current["current_focus"]["state"])
-        self.assertTrue(current["explicit_absence"]["current_focus"])
+        self.assertEqual("present", current["current_focus"]["state"])
+        self.assertEqual("github-issue:esany/paleo-type#258", current["current_focus"]["ref"])
+        self.assertFalse(current["explicit_absence"]["current_focus"])
         self.assertFalse(current["explicit_absence"]["active_changes"])
-        self.assertEqual([], current["applicability"])
+        self.assertTrue(current["applicability"])
         self.assertNotIn("projects", current)
         self.assertFalse((REPO / "engineering" / "generated" / "CURRENT_STATE.json").exists())
 
@@ -72,7 +74,7 @@ class EngineeringContractTests(unittest.TestCase):
             self.assertTrue(current["explicit_absence"]["active_changes"])
             self.assertTrue(current["explicit_absence"]["current_focus"])
 
-    def test_concurrent_change_does_not_invent_or_steal_focus(self) -> None:
+    def test_concurrent_change_does_not_steal_explicit_focus(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
             (fixture / "engineering" / "changes" / "OTHER").mkdir()
@@ -89,7 +91,8 @@ class EngineeringContractTests(unittest.TestCase):
             errors, current = engineering.compile_current_state(fixture)
             self.assertEqual([], errors)
             self.assertEqual(2, len(current["active_changes"]))
-            self.assertEqual("absent", current["current_focus"]["state"])
+            self.assertEqual("present", current["current_focus"]["state"])
+            self.assertEqual("github-issue:esany/paleo-type#258", current["current_focus"]["ref"])
             self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
 
     def test_newer_proposed_artifact_does_not_win_currentness(self) -> None:
@@ -113,6 +116,7 @@ class EngineeringContractTests(unittest.TestCase):
             errors, current = engineering.compile_current_state(fixture)
             self.assertEqual([], errors)
             self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
+            self.assertEqual("github-issue:esany/paleo-type#258", current["current_focus"]["ref"])
 
     def test_work_metadata_cannot_become_current_baseline(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
