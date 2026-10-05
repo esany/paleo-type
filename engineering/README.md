@@ -1,26 +1,30 @@
 # Engineering knowledge and configuration
 
-This repository-native surface is the admitted SD-KA-01 Engineering Knowledge & Configuration Plane implementation. WP1 established the in-place semantic owners; WP2 added explicit currentness/applicability semantics and rebuildable current/query views; WP3 added and exactly post-merge verified rebuildable role/task context products, Senior Developer bootstrap, a shared deterministic full check and the bounded prompt interaction capability without creating a second truth clock or planner. No work package is currently executing; #259/WP4 is the next eligible bounded package and is not started by the WP3 return.
+This repository-native surface is the admitted SD-KA-01 Engineering Knowledge & Configuration Plane implementation. WP1 established the semantic/catalog owners; WP2 added explicit currentness/applicability semantics and rebuildable current/query views; WP3 added role/task context products, Senior Developer bootstrap, a shared deterministic full check and bounded prompt interaction; WP4 added the ENG-FIT mapping, seeded falsification fixtures and explicit local/CI assurance boundaries. **WP5 is currently executing under #260** as the bounded loss-checked brownfield information-architecture migration. WP6 remains terminal adversarial qualification/Result Review.
 
-Existing `requirements/` files remain where they are until the separately ordered WP5 physical migration after the required earlier fitness prerequisite. The catalog records semantic identity and lifecycle without making a path, filename date, Git recency, Issue/PR state or CI result a currentness rule.
+WP5 moves only already-classified material or material whose actual owner/status supports a destination. Path movement never creates semantic currentness or acceptance. Stable IDs remain in `catalog/artifacts.tsv`; old managed paths resolve through `catalog/legacy-paths.tsv`; the concrete migration/rollback evidence is in `changes/SD-KA-01/MIGRATION.tsv`. The accepted reusable Requirement baseline remains `requirements/domain-requirements.tsv`.
 
 ## Owners
 
 - `configuration.json` owns accepted engineering baselines, admitted active changes, explicit current focus/absence and configuration-level applicability provenance.
-- `catalog/artifacts.tsv` owns managed engineering-asset metadata.
+- `catalog/artifacts.tsv` owns managed engineering-asset identity and current paths.
 - `catalog/coverage.tsv` owns source-level finding-coverage accounts.
 - `catalog/findings.tsv` owns promoted material-finding dispositions.
 - `catalog/relations.tsv` owns only explicit material cross-artifact relations.
+- `catalog/legacy-paths.tsv` owns migration compatibility lookup for moved managed artifacts; legacy paths are locators, never parallel truth.
 - `changes/<change-id>/STATE.json` owns local change lifecycle, work-package cursor and admission state.
+- `changes/SD-KA-01/MIGRATION.tsv` records the classified WP5 physical-migration slice, pre-move blob identity and rollback boundary.
 - `decisions/` records engineering rationale without replacing `DECISIONS.md` or owning current configuration.
-- `context/README.md` owns the WP3 derived context/profile and Human-visible cursor contract; generated context output remains derived.
-- `prompts/CONTRACT.md` owns the bounded WP3 `.prompt` create/review/test behavior; it creates no work authority or task execution.
+- `evidence/audits/` and `evidence/research/` contain migrated non-default engineering evidence; their presence does not make them accepted/current baselines.
+- `context/README.md` owns the derived context/profile and Human-visible cursor contract; generated context output remains derived.
+- `prompts/CONTRACT.md` owns bounded `.prompt` create/review/test behavior; it creates no work authority or task execution.
 - `tools/engineering.py` validates the contracts and derives/query current engineering state on demand.
 - `tools/engineering_context.py` compiles role/task-specific derived context profiles on demand.
 - `tools/prompt.py` is the executable reference/regression surface for the bounded prompt capability.
+- `tools/engineering_fitness.py` checks the repository-testable ENG-FIT surface, including legacy-path continuity when applicable.
 - `tools/check.py` is the shared local/CI deterministic full-check entrypoint.
 
-The accepted current configuration must never be inferred from dates, filenames, Issue order, Git recency or CI status. Proposed/admitted/implemented/verified/accepted/no-change remain distinct semantics.
+The accepted current configuration must never be inferred from dates, filenames, paths, Issue order, Git recency or CI status. Proposed/admitted/implemented/verified/accepted/no-change remain distinct semantics.
 
 ## Senior Developer start path
 
@@ -60,11 +64,12 @@ python tools/prompt.py create --repo esany/paleo-type "<task>"
 python tools/prompt.py review --repo esany/paleo-type "<prompt>"
 python tools/prompt.py test --self-review "<prompt>"
 
+python tools/engineering_fitness.py
 python tools/check.py
 ```
 
 `current` is a rebuildable current-first view over canonical configuration/change/catalog owners. It exposes accepted baselines, active changes, focus or explicit absence, and applicability provenance. Context profiles select from those owners for a role/task and keep deeper provenance expandable; no generated current-state/context file is required.
 
-`tools/check.py` runs Source Contract validation, Engineering validation, the full regression suite, fresh-process Project context compilation and the managed real-data resolver fixtures. CI calls the same entrypoint.
+`tools/check.py` runs Source Contract validation, Engineering validation, the engineering-fitness contract, the full regression suite, fresh-process Project context compilation and managed real-data resolver fixtures. CI calls the same entrypoint.
 
-All these commands establish only their stated formal/deterministic properties. They do not establish manuscript truth, specialist validation, Human acceptance, Project priority, a scholarly `NEXT ACTION`, evidential independence or release authority.
+All these commands establish only their stated formal/deterministic properties. They do not establish manuscript truth, specialist validation, Human acceptance, Project priority, a scholarly `NEXT ACTION`, evidential independence, external runtime fitness or whole-system closure.
