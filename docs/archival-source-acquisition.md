@@ -22,7 +22,7 @@ specifications. SStA fields and routes stay in the provider adapter.
 
 ## Metadata input
 
-Supply a JSON file with `archive`, `fonds`, `signature`, `title`,
+Supply JSON with `archive`, `fonds`, `signature`, `title`,
 `date_label`, `guid` and `page_url`. Optional fields include
 `archive_code`, `name_key`, `classification_path`, `rights_status`
 and `image_count`. Title, date and archival identity come from intake;
@@ -77,12 +77,9 @@ the archive server is unavailable. Diagnose the environment before reporting
 a source-access failure.
 
 
-## Human-facing entry point (requirement; not implemented by this PR)
 
-A person should be able to provide an archival page URL and ask in ordinary language, for example, “Please save the digitized images from this source.” No provider name, internal atom, CLI command, or memorized trigger phrase should be required. The workflow should resolve the GUID, source metadata, image list, and route internally; explain what it found; and ask only for genuinely missing, consequential inputs such as an unset external destination.
+## Chat skill
 
-**Current boundary:** this PR supplies the Python/CLI acquisition core. It does not yet provide a natural-language skill/interface, so do not present the above as an already available capability.
+The repository-scoped ChatGPT/Codex skill is `.agents/skills/savesax/`. Its preferred short invocation is the bare word `savesax`; implicit selection is enabled. In ChatGPT's explicit skill selector, use `@savesax`; Codex also supports `$savesax`. The skill reuses one source URL already present in context and asks only for a genuinely missing record link or external destination.
 
-## Preferred short invocation (requirement; not implemented by this PR)
-
-The preferred human-facing shortcut is **`savesax`**. It should start the SStA acquisition flow and reuse an archival page/source already present in context. Ask only for the source link if none is available. A natural-language request remains an alternative, but the user should not need to write a full sentence or select internal provider/atom names. This shortcut is a UX requirement, not a capability supplied by this Python/CLI PR.
+The skill and its CLI core are in this Draft PR. They become available only in a ChatGPT/Codex environment that has loaded the repository skill. The live full-image workflow is manual-dispatch only; a push or documentation change must never launch an acquisition run.
