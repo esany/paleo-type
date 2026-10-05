@@ -7,17 +7,17 @@ ENG-A-0005	method	methodology/maintenance.md	cross-project	canonical	active		Mai
 ENG-A-0006	method	methodology/workflow.md	cross-project	canonical	active		Operational execution mechanics
 ENG-A-0007	method	methodology/quality-and-learning.md	cross-project	canonical	active		Quality and assurance boundaries
 ENG-A-0008	requirement-set	requirements/domain-requirements.tsv	cross-project	canonical	active		Structured requirement inventory
-ENG-A-0009	design	requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	D-016 decision brief
-ENG-A-0010	owner-admission	requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md	SD-KA-01	admitted-change	active	SD-KA-01	Human-owner D-016 admission
-ENG-A-0011	problem-analysis	requirements/system-development-bugwave-master-map-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bugwave master map
-ENG-A-0012	audit	requirements/system-development-bugwave-finding-coverage-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Material finding coverage
-ENG-A-0013	design	requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Finding promotion design
-ENG-A-0014	design	requirements/system-development-bugwave-configuration-reference-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Configuration and reference design
-ENG-A-0015	design	requirements/system-development-bugwave-adr-surface-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	ADR surface design
-ENG-A-0016	design	requirements/system-development-bugwave-brownfield-migration-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Brownfield migration design
-ENG-A-0017	design	requirements/system-development-bugwave-adr-inventory-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Architecture decision inventory
-ENG-A-0018	design	requirements/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Holistic dev-ready architecture
-ENG-A-0019	audit	requirements/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md	SD-KA-01	non-normative-evidence	historical	SD-KA-01	Pre-implementation anti-regression baseline
+ENG-A-0009	design	engineering/changes/SD-KA-01/D016-DECISION-BRIEF.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	D-016 decision brief
+ENG-A-0010	owner-admission	engineering/changes/SD-KA-01/D016-OWNER-ADMISSION.md	SD-KA-01	admitted-change	active	SD-KA-01	Human-owner D-016 admission
+ENG-A-0011	problem-analysis	engineering/evidence/research/system-development-bugwave-master-map-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bugwave master map
+ENG-A-0012	audit	engineering/evidence/audits/system-development-bugwave-finding-coverage-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Material finding coverage
+ENG-A-0013	design	engineering/evidence/research/system-development-bugwave-finding-promotion-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Finding promotion design
+ENG-A-0014	design	engineering/evidence/research/system-development-bugwave-configuration-reference-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Configuration and reference design
+ENG-A-0015	design	engineering/evidence/research/system-development-bugwave-adr-surface-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	ADR surface design
+ENG-A-0016	design	engineering/evidence/research/system-development-bugwave-brownfield-migration-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Brownfield migration design
+ENG-A-0017	design	engineering/evidence/research/system-development-bugwave-adr-inventory-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Architecture decision inventory
+ENG-A-0018	design	engineering/evidence/research/system-development-holistic-knowledge-architecture-dev-ready-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Holistic dev-ready architecture
+ENG-A-0019	audit	engineering/evidence/audits/system-development-pre-implementation-anti-regression-baseline-2026-10-04.md	SD-KA-01	non-normative-evidence	historical	SD-KA-01	Pre-implementation anti-regression baseline
 ENG-A-0020	work-metadata	github://github.com/esany/paleo-type/issues/244	SD-KA-01	work-metadata	active	SD-KA-01	Bugwave programme and decision navigation owner
 ENG-A-0021	work-metadata	github://github.com/esany/paleo-type/issues/256	SD-KA-01	work-metadata	historical	SD-KA-01	WP1 implementation owner
 ENG-A-0022	configuration	engineering/configuration.json	SD-KA-01	canonical	active	SD-KA-01	Accepted baseline and active-change configuration
@@ -31,7 +31,7 @@ ENG-A-0029	change-state	engineering/changes/SD-KA-01/STATE.json	SD-KA-01	admitte
 ENG-A-0030	decision	engineering/decisions/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering ADR index and lifecycle
 ENG-A-0031	decision	engineering/decisions/ADR-0001-sd-ka-01-target-package.md	SD-KA-01	admitted-change	active	SD-KA-01	Admitted target package ADR record
 ENG-A-0032	result	engineering/changes/SD-KA-01/RESULT.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 work-package results and whole-system returns
-ENG-A-0033	design	requirements/system-development-bugwave-context-developer-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Context selection and developer experience design
+ENG-A-0033	design	engineering/evidence/research/system-development-bugwave-context-developer-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Context selection and developer experience design
 ENG-A-0034	work-metadata	github://github.com/esany/paleo-type/issues/257	SD-KA-01	work-metadata	historical	SD-KA-01	WP2 current configuration and query-view implementation owner
 ENG-A-0035	change-requirements	engineering/changes/SD-KA-01/REQUIREMENTS.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation requirements
 ENG-A-0036	change-design	engineering/changes/SD-KA-01/DESIGN.md	SD-KA-01	admitted-change	active	SD-KA-01	SD-KA-01 bounded implementation design
@@ -43,13 +43,72 @@ ENG-A-0041	prompt-contract	engineering/prompts/CONTRACT.md	SD-KA-01	admitted-cha
 ENG-A-0042	tool	tools/engineering_context.py	SD-KA-01	admitted-change	active	SD-KA-01	Derived engineering context compiler
 ENG-A-0043	tool	tools/prompt.py	SD-KA-01	admitted-change	active	SD-KA-01	Bounded prompt create review and test implementation
 ENG-A-0044	tool	tools/check.py	SD-KA-01	admitted-change	active	SD-KA-01	Shared local and CI deterministic full-check entrypoint
-ENG-A-0045	design	requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Activity-relative readiness and Human material-decision contract
-ENG-A-0046	test-result	requirements/prompt-skill-transfer-test-result-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bounded prompt transfer test result and activation constraints
-ENG-A-0047	analysis	requirements/review-premise-inheritance-generic-fit-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Review evidence-basis and inherited-premise safeguard disposition
+ENG-A-0045	design	engineering/evidence/research/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Activity-relative readiness and Human material-decision contract
+ENG-A-0046	test-result	engineering/evidence/audits/prompt-skill-transfer-test-result-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bounded prompt transfer test result and activation constraints
+ENG-A-0047	analysis	engineering/evidence/research/review-premise-inheritance-generic-fit-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Review evidence-basis and inherited-premise safeguard disposition
 ENG-A-0048	work-metadata	github://github.com/esany/paleo-type/issues/259	SD-KA-01	work-metadata	historical	SD-KA-01	WP4 engineering fitness CI assurance and whole-system return implementation owner
 ENG-A-0049	assurance-contract	engineering/assurance/fitness.json	SD-KA-01	admitted-change	active	SD-KA-01	Machine-readable ENG-FIT mapping and seeded-fixture contract
 ENG-A-0050	assurance-doc	engineering/assurance/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering fitness assurance boundary and developer guidance
 ENG-A-0051	tool	tools/engineering_fitness.py	SD-KA-01	admitted-change	active	SD-KA-01	Executable engineering fitness checker
-ENG-A-0052	design	requirements/system-development-bugwave-assurance-closure-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Engineering assurance and closure design
-ENG-A-0053	owner-admission	requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md	cross-project	admitted-change	active		Shared outcome-preserving execution-control D-016 admission
+ENG-A-0052	design	engineering/evidence/research/system-development-bugwave-assurance-closure-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Engineering assurance and closure design
+ENG-A-0053	owner-admission	engineering/evidence/decisions/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md	cross-project	admitted-change	active		Shared outcome-preserving execution-control D-016 admission
 ENG-A-0054	work-metadata	github://github.com/esany/paleo-type/issues/260	SD-KA-01	work-metadata	active	SD-KA-01	WP5 brownfield information-architecture migration owner and next eligible cursor
+ENG-A-0055	migration-evidence	engineering/changes/SD-KA-01/MIGRATION.tsv	SD-KA-01	admitted-change	active	SD-KA-01	WP5 classified physical migration execution and rollback evidence
+ENG-A-0056	navigation	requirements/README.md	cross-project	canonical	active		Requirements namespace orientation and brownfield boundary
+ENG-A-0057	analysis	engineering/evidence/research/ai-role-handoff-engineering-analysis.md	cross-project	non-normative-evidence	historical		ai role handoff engineering analysis
+ENG-A-0058	audit	engineering/evidence/audits/ai-role-handoff-engineering-control-audit.md	cross-project	non-normative-evidence	historical		ai role handoff engineering control audit
+ENG-A-0059	audit	engineering/evidence/audits/c1r-outcome-context-result-review-2026-09-18.md	cross-project	non-normative-evidence	historical		c1r outcome context result review 2026 09 18
+ENG-A-0060	coordination-evidence	engineering/evidence/coordination/chatgpt-global-coordination-bootstrap-2026-09-14.md	cross-project	non-normative-evidence	historical		chatgpt global coordination bootstrap 2026 09 14
+ENG-A-0061	coordination-evidence	engineering/evidence/coordination/chatgpt-project-coordination-bootstrap-proposal-2026-09-14.md	cross-project	non-normative-evidence	historical		chatgpt project coordination bootstrap proposal 2026 09 14
+ENG-A-0062	analysis	engineering/evidence/research/cross-source-research-findings-2026-09-14.md	cross-project	non-normative-evidence	historical		cross source research findings 2026 09 14
+ENG-A-0063	concept	engineering/evidence/research/default-branch-promotion-enforcement-concept-2026-09-16.md	cross-project	non-normative-evidence	historical		default branch promotion enforcement concept 2026 09 16
+ENG-A-0064	requirements-resolution	engineering/evidence/research/default-branch-promotion-enforcement-requirements-resolution-2026-09-16.md	cross-project	non-normative-evidence	historical		default branch promotion enforcement requirements resolution 2026 09 16
+ENG-A-0065	learning	engineering/evidence/learning/design-product-development-methodology-learning-2026-09-19.md	cross-project	non-normative-evidence	historical		design product development methodology learning 2026 09 19
+ENG-A-0066	concept	engineering/evidence/research/executable-transdisciplinary-research-system-concept-idea-2026-09-14.md	cross-project	non-normative-evidence	historical		executable transdisciplinary research system concept idea 2026 09 14
+ENG-A-0067	analysis	engineering/evidence/research/final-multi-question-generation-research-2026-09-14.md	cross-project	non-normative-evidence	historical		final multi question generation research 2026 09 14
+ENG-A-0068	audit	engineering/evidence/audits/human-decision-readiness-design-process-rebaseline-audit-2026-10-03.md	cross-project	non-normative-evidence	historical		human decision readiness design process rebaseline audit 2026 10 03
+ENG-A-0069	learning	engineering/evidence/learning/human-feedback-intent-classification-learning-2026-09-18.md	cross-project	non-normative-evidence	historical		human feedback intent classification learning 2026 09 18
+ENG-A-0070	work-instruction	engineering/evidence/work-instructions/human-need-maturity-progress-analysis-prompt-2026-09-18.md	cross-project	non-normative-evidence	historical		human need maturity progress analysis prompt 2026 09 18
+ENG-A-0071	analysis	engineering/evidence/research/human-need-maturity-progress-reconstruction-2026-09-18.md	cross-project	non-normative-evidence	historical		human need maturity progress reconstruction 2026 09 18
+ENG-A-0072	analysis	engineering/evidence/research/human-need-to-scholarly-outcome-problem-frame-2026-09-17.md	cross-project	non-normative-evidence	historical		human need to scholarly outcome problem frame 2026 09 17
+ENG-A-0073	audit	engineering/evidence/audits/human-proxy-work-lifecycle-context-efficiency-audit-2026-10-03.md	cross-project	non-normative-evidence	historical		human proxy work lifecycle context efficiency audit 2026 10 03
+ENG-A-0074	work-instruction	engineering/evidence/work-instructions/learning-integration-claim-repair-execution-prompt-2026-09-23.md	cross-project	non-normative-evidence	historical		learning integration claim repair execution prompt 2026 09 23
+ENG-A-0075	learning	engineering/evidence/learning/learning-integration-claim-repair-result-2026-09-23.md	cross-project	non-normative-evidence	historical		learning integration claim repair result 2026 09 23
+ENG-A-0076	work-instruction	engineering/evidence/work-instructions/learning-integration-claim-repair-work-prompt-2026-09-19.md	cross-project	non-normative-evidence	historical		learning integration claim repair work prompt 2026 09 19
+ENG-A-0077	audit	engineering/evidence/audits/maturity-transparency-self-review-2026-09-18.md	cross-project	non-normative-evidence	historical		maturity transparency self review 2026 09 18
+ENG-A-0078	analysis	engineering/evidence/research/outcome-continuity-under-decomposition-generic-fit-2026-09-18.md	cross-project	non-normative-evidence	historical		outcome continuity under decomposition generic fit 2026 09 18
+ENG-A-0079	coordination-evidence	engineering/evidence/coordination/parallel-chat-coordination-audit-2026-09-12.md	cross-project	non-normative-evidence	historical		parallel chat coordination audit 2026 09 12
+ENG-A-0080	coordination-evidence	engineering/evidence/coordination/parallel-chat-human-control-findings-2026-09-13.md	cross-project	non-normative-evidence	historical		parallel chat human control findings 2026 09 13
+ENG-A-0081	analysis	engineering/evidence/research/phase0-1-end-to-end-capability-ownership-map-2026-09-17.md	cross-project	non-normative-evidence	historical		phase0 1 end to end capability ownership map 2026 09 17
+ENG-A-0082	concept	engineering/evidence/research/phase2-integrated-concept-comparison-2026-09-18.md	cross-project	non-normative-evidence	historical		phase2 integrated concept comparison 2026 09 18
+ENG-A-0083	analysis	engineering/evidence/research/post-research-capability-requirement-synthesis-2026-09-14.md	cross-project	non-normative-evidence	historical		post research capability requirement synthesis 2026 09 14
+ENG-A-0084	analysis	engineering/evidence/research/post-research-problem-landscape-reconciliation-2026-09-14.md	cross-project	non-normative-evidence	historical		post research problem landscape reconciliation 2026 09 14
+ENG-A-0085	concept	engineering/evidence/research/post-research-synthesis-concept-approaches-2026-09-14.md	cross-project	non-normative-evidence	historical		post research synthesis concept approaches 2026 09 14
+ENG-A-0086	analysis	engineering/evidence/research/pre-synthesis-research-integration-2026-09-14.md	cross-project	non-normative-evidence	historical		pre synthesis research integration 2026 09 14
+ENG-A-0087	analysis	engineering/evidence/research/pre-synthesis-research-program-2026-09-14.md	cross-project	non-normative-evidence	historical		pre synthesis research program 2026 09 14
+ENG-A-0088	analysis	engineering/evidence/research/product-co-development-boundary-analysis-delta-2026-10-03.md	cross-project	non-normative-evidence	historical		product co development boundary analysis delta 2026 10 03
+ENG-A-0089	audit	engineering/evidence/audits/product-co-development-boundary-deep-check-2026-10-03.md	cross-project	non-normative-evidence	historical		product co development boundary deep check 2026 10 03
+ENG-A-0090	audit	engineering/evidence/audits/project-maturity-model-repository-audit-2026-09-18.md	cross-project	non-normative-evidence	historical		project maturity model repository audit 2026 09 18
+ENG-A-0091	analysis	engineering/evidence/research/prompt-skill-transfer-candidate-2026-10-04.md	cross-project	non-normative-evidence	historical		prompt skill transfer candidate 2026 10 04
+ENG-A-0092	audit	engineering/evidence/audits/repository-knowledge-lifecycle-adequacy-audit-2026-10-02.md	cross-project	non-normative-evidence	historical		repository knowledge lifecycle adequacy audit 2026 10 02
+ENG-A-0093	analysis	engineering/evidence/research/repository-knowledge-lifecycle-d016-decision-surface-2026-10-02.md	cross-project	non-normative-evidence	historical		repository knowledge lifecycle d016 decision surface 2026 10 02
+ENG-A-0094	analysis	engineering/evidence/research/repository-knowledge-lifecycle-d016-refinement-2026-10-03.md	cross-project	non-normative-evidence	historical		repository knowledge lifecycle d016 refinement 2026 10 03
+ENG-A-0095	analysis	engineering/evidence/research/repository-target-state-implementation-readiness-2026-10-03.md	cross-project	non-normative-evidence	historical		repository target state implementation readiness 2026 10 03
+ENG-A-0096	audit	engineering/evidence/audits/research-framing-transdisciplinary-competency-audit-2026-09-14.md	cross-project	non-normative-evidence	historical		research framing transdisciplinary competency audit 2026 09 14
+ENG-A-0097	analysis	engineering/evidence/research/research-state-decision-analysis-operationalization-2026-09-18.md	cross-project	non-normative-evidence	historical		research state decision analysis operationalization 2026 09 18
+ENG-A-0098	analysis	engineering/evidence/research/research-system-problem-landscape-2026-09-14.md	cross-project	non-normative-evidence	historical		research system problem landscape 2026 09 14
+ENG-A-0099	audit	engineering/evidence/audits/research-system-programme-completion-review-2026-09-17.md	cross-project	non-normative-evidence	historical		research system programme completion review 2026 09 17
+ENG-A-0100	audit	engineering/evidence/audits/research-system-programme-continuity-audit-2026-09-16.md	cross-project	non-normative-evidence	historical		research system programme continuity audit 2026 09 16
+ENG-A-0101	concept	engineering/evidence/research/research-system-programme-continuity-concept-2026-09-16.md	cross-project	non-normative-evidence	historical		research system programme continuity concept 2026 09 16
+ENG-A-0102	requirements-resolution	engineering/evidence/research/research-system-programme-continuity-requirements-resolution-2026-09-16.md	cross-project	non-normative-evidence	historical		research system programme continuity requirements resolution 2026 09 16
+ENG-A-0103	audit	engineering/evidence/audits/research-system-programme-continuity-result-review-2026-09-16.md	cross-project	non-normative-evidence	historical		research system programme continuity result review 2026 09 16
+ENG-A-0104	analysis	engineering/evidence/research/research-system-programme-synthesis-2026-09-15.md	cross-project	non-normative-evidence	historical		research system programme synthesis 2026 09 15
+ENG-A-0105	analysis	engineering/evidence/research/shared-fixture-research-findings-2026-09-14.md	cross-project	non-normative-evidence	historical		shared fixture research findings 2026 09 14
+ENG-A-0106	analysis	engineering/evidence/research/source-context-model-synthesis-2026-09-07.md	cross-project	non-normative-evidence	historical		source context model synthesis 2026 09 07
+ENG-A-0107	evidence-ledger	engineering/evidence/research/source-context-standards-evidence-2026-09-07.tsv	cross-project	non-normative-evidence	historical		source context standards evidence 2026 09 07
+ENG-A-0108	analysis	engineering/evidence/research/system-development-information-architecture-dev-ready-design-2026-10-03.md	cross-project	non-normative-evidence	historical		system development information architecture dev ready design 2026 10 03
+ENG-A-0109	audit	engineering/evidence/audits/system-operationalization-audit-2026-09-17.md	cross-project	non-normative-evidence	historical		system operationalization audit 2026 09 17
+ENG-A-0110	owner-admission	engineering/evidence/decisions/default-branch-promotion-enforcement-owner-admission-2026-09-17.md	cross-project	admitted-change	historical		Route B default-branch Human-owner admission evidence
+ENG-A-0111	owner-disposition	engineering/evidence/decisions/default-branch-promotion-enforcement-owner-disposition-2026-09-17.md	cross-project	admitted-change	active		Route B default-branch Human-owner defer disposition
+ENG-A-0112	decision-brief	engineering/evidence/decisions/outcome-preserving-execution-control-d016-decision-brief-2026-10-05.md	cross-project	non-normative-evidence	active		Outcome-preserving execution-control D-016 decision brief
+ENG-A-0113	owner-admission	engineering/evidence/decisions/source-project-owner-admission-2026-09-02.md	cross-project	admitted-change	active		Source Project Human-owner decision and bounded admission

@@ -4,13 +4,14 @@
   "admission": "admitted",
   "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
   "admission_ref": "artifact:ENG-A-0010",
-  "work_owner": "github-issue:esany/paleo-type#259",
+  "work_owner": "github-issue:esany/paleo-type#260",
   "programme_owner": "github-issue:esany/paleo-type#244",
   "non_goals": [
     "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
     "workflow engine, autonomous planner, graph database, Wirknetz runtime, Bridge or developer portal",
     "package/src/distribution work without a new demonstrated trigger",
-    "physical requirements migration before WP5",
+    "moving unclassified or ambiguous artifacts by filename guess",
+    "promoting historical evidence into accepted/current authority merely because a path changes",
     "#90 branch-protection reactivation",
     "#225 scholarly whole-system acceptance",
     "external runtime, cancellation or preservation claims that repository CI does not actually exercise"
@@ -23,7 +24,7 @@
     "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
     "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041;artifact:ENG-A-0052"},
     "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
-    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037;artifact:ENG-A-0052"},
+    "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037;artifact:ENG-A-0049;artifact:ENG-A-0052"},
     "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
   },
   "blocking_uncertainties": [],
@@ -34,25 +35,27 @@
     "artifact:ENG-A-0006",
     "artifact:ENG-A-0007",
     "artifact:ENG-A-0014",
+    "artifact:ENG-A-0016",
+    "artifact:ENG-A-0024",
+    "artifact:ENG-A-0028",
     "artifact:ENG-A-0033",
     "artifact:ENG-A-0040",
-    "artifact:ENG-A-0041",
-    "artifact:ENG-A-0052",
-    "artifact:ENG-A-0053"
+    "artifact:ENG-A-0049",
+    "artifact:ENG-A-0052"
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp4-verified-technical-return",
-  "verification_head": "git:ddecf04d0b64912498e367a4517fcaf57d71bc9d",
+  "result_status": "wp4-verified-wp5-implementing",
+  "verification_head": "git:b01bfa1b0f523919c1d8dbd45a9b30fd5a66aba0",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
     "WP3": "verified",
     "WP4": "verified",
-    "WP5": "ready-next",
+    "WP5": "implementing",
     "WP6": "not-started"
   },
-  "current_execution": "WP4 is merged and exactly post-merge verified. No work package is currently executing. #260/WP5 is the next eligible implementation package within the existing D-016 admission but is not started by this return.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP4 engineering-fitness/CI assurance capability is implemented inside the still-active admitted SD-KA-01 change",
-  "whole_system_return": "changed: ENG-FIT-01..ENG-FIT-09 now map deterministic checks to stable owners/fixtures; stale-current/latest-wins/orphan/coverage/reference/context/local-PASS/generated-view and related repository-testable failures are mechanically guarded through the shared local/CI entrypoint. #244 remains the programme/whole-system owner. F10 remains a qualification/evidence-basis residual and F17/#225 remains a scholarly residual. External runtime, cancellation, preservation, specialist validity, independent evidence and Human acceptance are not established by WP4 PASS. #260/WP5 is ready-next but not started; WP6 remains later. No Project/manuscript state or scholarly NEXT ACTION changed."
+  "current_execution": "WP5 started from main@b01bfa1b0f523919c1d8dbd45a9b30fd5a66aba0 under #260 within the existing SD-KA-01 D-016 admission. The package performs bounded, loss-checked information-architecture migration only after classification, with stable identity/currentness, legacy-path continuity, link/reference repair and rollback evidence preserved.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP5 changes physical engineering-information locators only where classification and continuity are explicit",
+  "whole_system_return": "WP4 return remains valid: ENG-FIT-01..ENG-FIT-09 and the shared assurance boundary are verified. #244 remains the programme/whole-system owner. WP5 is now the bounded implementation cursor; no WP5 result or terminal SD-KA-01 acceptance is claimed yet. F10 and F17 remain residual boundaries. No Project/manuscript state or scholarly NEXT ACTION changed."
 }

@@ -14,22 +14,23 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_semantic_ready_next_work(self) -> None:
+    def test_human_overview_resolves_semantic_active_wp5_work(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("ready-next", work["state"])
+        self.assertEqual("active", work["state"])
         self.assertIn("WP5 brownfield information-architecture migration", work["statement"])
         self.assertEqual("github-issue:esany/paleo-type#260", work["work_ref"])
+        self.assertEqual("SD-KA-01/WP5", work["scope"])
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Next eligible work:", rendered)
+        self.assertIn("Current work:", rendered)
         self.assertIn("#260", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_ready_next_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_and_active_authority(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("ready-next", execution["requested_activity"])
+        self.assertEqual("implementation", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
@@ -78,6 +79,12 @@ class EngineeringContextTests(unittest.TestCase):
     def test_ambiguous_next_work_is_exposed_not_silently_selected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
+            config_path = fixture / "engineering" / "configuration.json"
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            config["current_focus"] = None
+            config["applicability"] = []
+            config_path.write_text(json.dumps(config), encoding="utf-8")
+
             artifact_path = fixture / "engineering" / "catalog" / "artifacts.tsv"
             artifacts = self._read_rows(artifact_path)
             artifacts.append({

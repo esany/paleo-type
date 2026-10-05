@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import shutil
 import tempfile
@@ -20,6 +21,8 @@ class EngineeringFitnessTests(unittest.TestCase):
         self.assertEqual("PASS", report["status"])
         self.assertEqual(14, report["fixture_family_count"])
         self.assertEqual({f"ENG-FIT-{i:02d}" for i in range(1, 10)}, set(report["checks"]))
+        self.assertEqual("active", report["checks"]["ENG-FIT-08"]["applicability"])
+        self.assertGreater(report["checks"]["ENG-FIT-08"]["row_count"], 0)
 
     def test_orphan_finding_is_detected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -95,6 +98,52 @@ class EngineeringFitnessTests(unittest.TestCase):
             errors, _ = engineering_fitness.run_fitness(fixture)
             self.assertTrue(any("does not match catalog path" in error for error in errors), errors)
 
+    def test_wp5_migration_preserves_ids_paths_and_exact_pre_move_bytes(self) -> None:
+        artifacts = {row["artifact_id"]: row for row in self._read_rows(REPO / "engineering" / "catalog" / "artifacts.tsv")}
+        legacy = {row["artifact_id"]: row for row in self._read_rows(REPO / "engineering" / "catalog" / "legacy-paths.tsv")}
+        migration = self._read_rows(REPO / "engineering" / "changes" / "SD-KA-01" / "MIGRATION.tsv")
+        self.assertEqual(74, len(migration))
+        for row in migration:
+            artifact_id = row["artifact_id"]
+            self.assertIn(artifact_id, artifacts)
+            self.assertIn(artifact_id, legacy)
+            self.assertEqual(row["current_path"], artifacts[artifact_id]["path"])
+            self.assertEqual(row["legacy_path"], legacy[artifact_id]["legacy_path"])
+            self.assertEqual(row["current_path"], legacy[artifact_id]["current_path"])
+            self.assertRegex(legacy[artifact_id]["migration_commit"], r"^[0-9a-f]{40}$")
+            self.assertFalse((REPO / row["legacy_path"]).exists(), row["legacy_path"])
+            current = REPO / row["current_path"]
+            self.assertTrue(current.is_file(), row["current_path"])
+            data = current.read_bytes()
+            git_blob = hashlib.sha1(f"blob {len(data)}\0".encode("ascii") + data).hexdigest()
+            self.assertEqual(row["baseline_blob_sha"], git_blob, artifact_id)
+
+    def test_wp5_requirements_namespace_is_narrow_and_fully_classified(self) -> None:
+        expected = {"README.md", "domain-requirements.tsv"}
+        actual = {path.name for path in (REPO / "requirements").iterdir() if path.is_file()}
+        self.assertEqual(expected, actual)
+        artifacts = self._read_rows(REPO / "engineering" / "catalog" / "artifacts.tsv")
+        managed_paths = {row["path"] for row in artifacts}
+        for name in expected:
+            self.assertIn(f"requirements/{name}", managed_paths)
+        decisions = {
+            row["artifact_id"]: row
+            for row in artifacts
+            if row["artifact_id"] in {"ENG-A-0053", "ENG-A-0110", "ENG-A-0111", "ENG-A-0112", "ENG-A-0113"}
+        }
+        self.assertEqual(5, len(decisions))
+        for row in decisions.values():
+            self.assertEqual("cross-project", row["owner_scope"])
+            self.assertTrue(row["path"].startswith("engineering/evidence/decisions/"), row)
+
+    def test_wp5_requirements_baseline_stays_put_and_old_paths_are_not_parallel_truth(self) -> None:
+        self.assertTrue((REPO / "requirements" / "domain-requirements.tsv").is_file())
+        self.assertTrue((REPO / "requirements" / "README.md").is_file())
+        migration = self._read_rows(REPO / "engineering" / "changes" / "SD-KA-01" / "MIGRATION.tsv")
+        for row in migration:
+            self.assertFalse((REPO / row["legacy_path"]).exists(), row["legacy_path"])
+            self.assertTrue((REPO / row["current_path"]).is_file(), row["current_path"])
+
     def test_fitness_mapping_must_cover_all_seeded_families(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
@@ -123,14 +172,6 @@ class EngineeringFitnessTests(unittest.TestCase):
             if not source.is_file():
                 continue
             destination = target / raw_path
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, destination)
-        for extra in (
-            "requirements/system-development-bugwave-assurance-closure-design-2026-10-04.md",
-            "requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md",
-        ):
-            source = REPO / extra
-            destination = target / extra
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, destination)
         return target
