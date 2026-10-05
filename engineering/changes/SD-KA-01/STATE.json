@@ -37,17 +37,17 @@
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp1-verified-wp2-implementing",
-  "verification_head": "git:2c683beaefa18bc07810bf91cbbe67a07ef81f6a",
+  "result_status": "wp2-verified-technical-return",
+  "verification_head": "git:e10a51a56a6db1924d4500698d2dd2be2b222bc4",
   "work_package_status": {
     "WP1": "verified",
-    "WP2": "implementing",
-    "WP3": "not-started",
+    "WP2": "verified",
+    "WP3": "ready-next",
     "WP4": "not-started",
     "WP5": "not-started",
     "WP6": "not-started"
   },
-  "current_execution": "WP2 started from main@2c683beaefa18bc07810bf91cbbe67a07ef81f6a under #257 within the existing D-016 admission. Current/query derivation may change; accepted engineering baselines do not change merely because WP2 is executing.",
-  "current_baseline_changes": "none until implementation, verification and Result Review establish an accepted consequence",
-  "whole_system_return": "WP1 return remains valid: WP1 semantic owners, F01-F45 coverage, admission trace and exact-head assurance are restartable; #244 remains the whole-system owner; no Project/manuscript state or scholarly NEXT ACTION changed. WP2 is now the bounded implementation cursor, not a programme-closure claim."
+  "current_execution": "WP2 is merged and exactly post-merge verified. No work package is currently executing. #258/WP3 is the next eligible implementation cursor within the existing D-016 admission but is not started by this return.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP2 currentness/query/applicability capability is implemented inside the still-active admitted SD-KA-01 change",
+  "whole_system_return": "changed: accepted engineering state, active-change state and explicit absence can now be reconstructed from canonical configuration/change/catalog owners and rebuilt through the current/query surface without chronology replay. #244 remains the programme/whole-system owner; WP2 technical PASS is not SD-KA-01 closure, scholarly acceptance or specialist validation. F10 and F17 residual boundaries remain unchanged. #258/WP3 is ready-next; WP4 remains later and is not started. No Project/manuscript state or scholarly NEXT ACTION changed."
 }

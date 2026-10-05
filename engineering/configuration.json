@@ -11,44 +11,14 @@
   ],
   "change_states": {
     "change:SD-KA-01": {
-      "transition_state": "admitted",
-      "basis_ref": "artifact:ENG-A-0010",
+      "transition_state": "implemented",
+      "basis_ref": "artifact:ENG-A-0032",
       "work_owner": "github-issue:esany/paleo-type#257",
       "accepted_consequence": "pending"
     }
   },
-  "current_focus": {
-    "ref": "github-issue:esany/paleo-type#257",
-    "basis_kind": "work-contract",
-    "basis_ref": "github-issue:esany/paleo-type#257",
-    "scope": "SD-KA-01/WP2"
-  },
-  "applicability": [
-    {
-      "ref": "artifact:ENG-A-0005",
-      "basis_kind": "formal-derived",
-      "basis_ref": "decision:D-016",
-      "scope": "material change admission and programme return"
-    },
-    {
-      "ref": "artifact:ENG-A-0014",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#257",
-      "scope": "WP2 configuration, currentness and transition semantics"
-    },
-    {
-      "ref": "artifact:ENG-A-0033",
-      "basis_kind": "work-contract",
-      "basis_ref": "github-issue:esany/paleo-type#257",
-      "scope": "WP2 current-first selection and applicability provenance"
-    },
-    {
-      "ref": "artifact:ENG-A-0007",
-      "basis_kind": "owner-declared",
-      "basis_ref": "artifact:ENG-A-0002",
-      "scope": "consequential technical assurance and review boundaries"
-    }
-  ],
+  "current_focus": null,
+  "applicability": [],
   "decision_owner": "decision:D-016",
   "transition_provenance": {
     "admission_ref": "artifact:ENG-A-0010",
@@ -56,10 +26,10 @@
     "programme_owner": "github-issue:esany/paleo-type#244",
     "implementation_owner": "github-issue:esany/paleo-type#257",
     "admission_head": "e18906c4d3f09645aca84d4c2fe17c37387c1109",
-    "implementation_head": "c66ef075acdde1f592886086403439507d6cc618",
+    "implementation_head": "e10a51a56a6db1924d4500698d2dd2be2b222bc4",
     "execution_baseline_head": "2c683beaefa18bc07810bf91cbbe67a07ef81f6a",
     "result_ref": "artifact:ENG-A-0032",
-    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37240159916"
+    "post_merge_ci": "https://github.com/esany/paleo-type/actions/runs/37325991648"
   },
-  "notes": "The accepted baseline remains the existing repository decision/governance layer. SD-KA-01 is admitted and active; WP2 is the bounded current implementation focus. Neither work metadata, Git recency nor CI promotes the SD-KA-01 target into accepted current architecture."
+  "notes": "The accepted architecture/Requirement baselines remain unchanged. WP2 implementation is merged and exactly post-merge verified, while the broader SD-KA-01 accepted consequence remains pending later Result Review. No active implementation focus is currently selected; the change state records the next eligible work package separately."
 }

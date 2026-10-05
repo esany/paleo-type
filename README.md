@@ -55,7 +55,7 @@ Old chat must never be required to reconstruct durable research state.
 
 ## Current system-development navigation
 
-The Human-visible current system-development work/decision view is GitHub **#244**. Pre-implementation analysis/design Issues **#245–#253 are complete**. SD-KA-01 implementation is decomposed as **#256–#261**; after the recorded D-016 admission, #256/WP1 is the active bounded implementation cursor and later Issues remain ordered by the admitted dependencies.
+The Human-visible current system-development work/decision view is GitHub **#244**. Pre-implementation analysis/design Issues **#245–#253 are complete**. SD-KA-01 implementation is decomposed as **#256–#261** under the recorded D-016 admission.
 
 The current material decision surface is:
 
@@ -65,21 +65,21 @@ The D-016 admission is durably recorded in:
 
 `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`
 
-The WP1 result and whole-system return is durably recorded in:
+Cumulative work-package results and whole-system returns are durably recorded in:
 
 `engineering/changes/SD-KA-01/RESULT.md`
 
 Current process state:
 
-> **D-016 ADMITTED / WP1 VERIFIED / WP2 READY-NEXT / SD-KA-01 ACTIVE.**
+> **D-016 ADMITTED / WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 READY-NEXT / SD-KA-01 ACTIVE.**
 
-The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from the later D-016 brief. **The D-016 brief and #244 own the current non-normative readiness/navigation interpretation.**
+The compact failure-family/bugwave map remains `requirements/system-development-bugwave-master-map-2026-10-04.md`; its pre-closure readiness wording is historical evidence where it differs from later admitted/result state. **The canonical engineering configuration/change/result owners and #244 own the current non-scholarly implementation/navigation interpretation.**
 
-The proposed target is still a repository-native Engineering Knowledge & Configuration Plane plus risk-tailored Development Readiness semantics. Detailed design now covers material-finding promotion, engineering configuration/reference transitions, context/Developer Experience, Architecture Decision Records (ADRs), activity-relative readiness/Human decision surfaces, engineering assurance, brownfield migration, `.prompt` capability and the Review Premise Inheritance safeguard.
+The repository-native Engineering Knowledge & Configuration Plane is now partially implemented: WP1 established the semantic/catalog foundation and WP2 established explicit engineering currentness, applicability provenance and rebuildable current/query views. The accepted architecture/Requirement baselines remain deliberately distinct from the still-active admitted SD-KA-01 target package.
 
-The admitted first implementation was #256: its WP1 result is verified and returned. #257/WP2 is now the next eligible implementation cursor within the admitted scope; physical migration remains deliberately later (#260), after semantics/currentness/trace/fitness are working.
+#256/WP1 and #257/WP2 are verified for their bounded slices. #258/WP3 is now the next eligible implementation cursor within the already admitted scope but is not started by this return. #259/WP4 remains later because its full context/`.prompt`-dependent fitness surface depends on WP3 as applicable. Physical migration remains deliberately later (#260).
 
-The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; the target `engineering/` structure, physical migration, METHOD change, schema/runtime and Context Compiler remain bounded implementation work, not already-accepted current configuration.
+The admission permits only the bounded SD-KA-01 target and WP1–WP6 scope. No manuscript scope or scholarly `NEXT ACTION` follows from it; physical migration, METHOD change and later context/fitness capabilities remain bounded implementation work, not automatically accepted scholarly or architecture state.
 
 ### Historical programme boundaries
 
@@ -93,9 +93,10 @@ Historical programme detail is evidence on demand, not the default current-work 
 
 ## System-development evidence / deeper provenance
 
-`requirements/` is currently a brownfield mixed-purpose namespace. That is a documented information-architecture defect and not the intended target state. Until a separately admitted migration occurs, use these current navigation artifacts rather than replaying files chronologically:
+`requirements/` is currently a brownfield mixed-purpose namespace. That is a documented information-architecture defect and not the intended target state. Until the admitted WP5 migration occurs, use these current navigation artifacts rather than replaying files chronologically:
 
-- current Human decision surface: `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md`;
+- current Human decision/admission surface: `requirements/system-development-bugwave-d016-decision-brief-2026-10-04.md` plus `requirements/system-development-bugwave-d016-owner-admission-2026-10-04.md`;
+- current engineering configuration/change/result owners: `engineering/configuration.json`, `engineering/changes/SD-KA-01/STATE.json`, `engineering/changes/SD-KA-01/RESULT.md`;
 - whole bugwave/failure-family map: `requirements/system-development-bugwave-master-map-2026-10-04.md`;
 - source-audit finding coverage: `requirements/system-development-bugwave-finding-coverage-2026-10-04.md`;
 - finding promotion design: `requirements/system-development-bugwave-finding-promotion-design-2026-10-04.md`;
@@ -134,6 +135,10 @@ Use every artifact according to its stated evidence/authority status. None creat
 | How are GitHub Milestones interpreted? | `MILESTONES.md` |
 | What stable machine-checkable Source/File/Project-use constraints apply? | `corpus/source-contract.json` + `tools/source_contract.py` |
 | What is the current structured cross-disciplinary Requirement inventory used by outcome-context resolution? | `requirements/domain-requirements.tsv` |
+| What is the accepted engineering baseline / active change / explicit current focus? | `engineering/configuration.json` |
+| What is the bounded SD-KA-01 lifecycle/work-package state? | `engineering/changes/SD-KA-01/STATE.json` |
+| What did completed SD-KA-01 work packages actually establish? | `engineering/changes/SD-KA-01/RESULT.md` |
+| What managed engineering artifacts/findings/relations exist? | `engineering/catalog/` |
 | What is a Source/File/relationship/crosswalk fact? | `corpus/` |
 | Why/what is one Project and what is its current scope? | Project `project.yml` |
 | How does the Project currently use Sources? | Project `source-uses.tsv` |
@@ -141,7 +146,7 @@ Use every artifact according to its stated evidence/authority status. None creat
 | What is the current Project restart/gate/evidence state? | Project `STATUS.md` |
 | What did the Project actually read/decide/observe? | owning Project research files |
 
-The proposed engineering configuration/ADR/catalog owners above are **not canonical yet**; they become operative only after explicit D-016 admission, implementation and accepted Result Review. Generated views such as `tools/project_context.py` are rebuildable navigation/restart aids, never canonical truth.
+The engineering configuration/catalog/change owners are now implemented for the admitted SD-KA-01 scope. Their accepted-baseline/currentness semantics are canonical where explicitly owned; `tools/engineering.py current` and other generated/query views remain rebuildable navigation/restart aids, never parallel truth stores. ADR-0001/P-001–P-012 remain the admitted target package and are not thereby promoted to accepted architecture baseline.
 
 ## Current Project directories
 
@@ -171,6 +176,7 @@ MILESTONES.md
 README.md
 methodology/
 requirements/
+engineering/
 templates/
 corpus/
 entities/
@@ -179,7 +185,7 @@ tools/
 tests/
 ```
 
-Optional Project work directories exist only when real work requires them. The proposed `engineering/` target is designed but **not implemented or current** until a separate D-016 admission, implementation and Result Review establish it.
+Optional Project work directories exist only when real work requires them. `engineering/` now carries the admitted SD-KA-01 configuration/catalog/change foundation and WP2 current/query capability; later WP3–WP6 surfaces remain bounded, not implicitly complete.
 
 ## Restartability acceptance
 
@@ -194,6 +200,6 @@ Another capable researcher/agent, given repository + authorized evidence and no 
 - whether an authorized `NEXT ACTION` exists;
 - which outputs are canonical versus derived;
 - which GitHub items are only planning/review metadata;
-- for current system-development work, which material decision is actually pending and which repository artifact/Issue owns that decision surface.
+- for current system-development work, accepted engineering baselines, active admitted change state, explicit focus/absence, completed work-package results and the next eligible bounded implementation cursor.
 
 If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of the old chat, the repository has drifted and the owning surface must be repaired.
