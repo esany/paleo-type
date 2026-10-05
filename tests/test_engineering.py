@@ -19,7 +19,7 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual([], errors)
         self.assertEqual(45, summary["finding_count"])
         self.assertEqual("admitted", summary["admission"])
-        self.assertEqual("implementing", summary["lifecycle"])
+        self.assertEqual("reviewing", summary["lifecycle"])
         self.assertEqual("github-issue:esany/paleo-type#261", summary["current_focus"]["ref"])
 
     def test_implemented_target_is_not_current_architecture_baseline(self) -> None:
@@ -51,11 +51,11 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
         self.assertEqual("change:SD-KA-01", current["active_changes"][0]["ref"])
         self.assertEqual("implemented", current["active_changes"][0]["transition_state"])
-        self.assertEqual("active", current["current_focus"]["state"])
+        self.assertEqual("present", current["current_focus"]["state"])
         self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
         self.assertFalse(current["explicit_absence"]["current_focus"])
         self.assertFalse(current["explicit_absence"]["active_changes"])
-        self.assertEqual([], current["applicability"])
+        self.assertEqual(5, len(current["applicability"]))
         self.assertNotIn("projects", current)
         self.assertFalse((REPO / "engineering" / "generated" / "CURRENT_STATE.json").exists())
 
@@ -93,7 +93,8 @@ class EngineeringContractTests(unittest.TestCase):
             errors, current = engineering.compile_current_state(fixture)
             self.assertEqual([], errors)
             self.assertEqual(2, len(current["active_changes"]))
-            self.assertEqual("absent", current["current_focus"]["state"])
+            self.assertEqual("present", current["current_focus"]["state"])
+            self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
             self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
 
     def test_newer_proposed_artifact_does_not_win_currentness(self) -> None:
@@ -115,7 +116,8 @@ class EngineeringContractTests(unittest.TestCase):
             errors, current = engineering.compile_current_state(fixture)
             self.assertEqual([], errors)
             self.assertEqual("artifact:ENG-A-0004", current["accepted_configuration"]["architecture_baselines"][0]["ref"])
-            self.assertEqual("absent", current["current_focus"]["state"])
+            self.assertEqual("present", current["current_focus"]["state"])
+            self.assertEqual("github-issue:esany/paleo-type#261", current["current_focus"]["ref"])
 
     def test_work_metadata_cannot_become_current_baseline(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
