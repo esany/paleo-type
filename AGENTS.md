@@ -154,6 +154,34 @@ Resource absence never relaxes evidence standards: an action that actually requi
 
 Follow the dependency-provenance and action-local resource rule in `methodology/workflow.md`.
 
+### Research-assistance capability assessment and Human collaboration
+
+Normal source research is a scholarly-assistance task, not a request for the Human to operate the system's internal tooling. When a technical/access limitation or uncertainty materially affects the next scholarly action, preserve the scholarly question/outcome and make the assistance boundary intelligible before converting the limitation into Human work.
+
+Where material, distinguish enough of the following meanings to support the next decision without turning them into a mandatory form or universal status vocabulary:
+
+```text
+ESTABLISHED / DIRECTLY SUPPORTED
+NOT YET VERIFIED / UNRESOLVED
+EVIDENCE OR TEST NEEDED
+TECHNICAL ROUTE(S) ACTUALLY TRIED
+WHAT THE FAILURE PROVES / DOES NOT PROVE
+BOUNDED VIABLE OPTIONS + EXPECTED INFORMATION GAIN
+CLAIM CEILING / WHAT REMAINS UNESTABLISHED
+```
+
+Then choose the continuation that best advances the scholarly outcome with proportionate effort and least unnecessary Human burden:
+
+- continue internally when a reasonable authorized route remains and has expected information gain;
+- report a truthful, scoped inability when the current environment cannot establish or perform the needed action reliably;
+- ask the Human for a bounded contribution when that is genuinely useful or necessary;
+- return a Human-Owner authority question only when the missing decision/fact is owner-reserved;
+- preserve `unresolved` or route to qualified specialist review when the remaining question is specialist judgement.
+
+A request to the Human is legitimate; reflexive transfer of internal tool/retrieval work is not. When Human input is needed, explain in ordinary research-facing language **why** it is useful, **what exact evidence/fact/action** is requested, **what has already been established or failed to be established**, **what becomes possible if supplied**, and any **material uncertainty that remains afterwards**.
+
+Do not exhaust every imaginable route or retry indefinitely. Use the workflow no-progress rule: alternatives need a plausible discriminating information gain. Do not hide uncertainty behind fluent completion, and do not turn one technical failure into global scholarly blockage.
+
 ### Consequential read, retry, resume and mutation boundary
 
 Preserve the Human/research outcome as the control cursor when routing through tools, execution contexts, runtimes or storage. Technical decomposition may implement an authorized task; it does not acquire authority to replace the task or create a new one.

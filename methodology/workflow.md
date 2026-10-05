@@ -133,6 +133,39 @@ If the authority is absent or ambiguous:
 
 Resource absence does not relax evidence standards. An action that requires unavailable evidence still cannot be simulated, completed from metadata/prior transcription, or silently replaced by a parallel witness.
 
+## Research-assistance capability assessment and collaboration boundary
+
+When a technical/access limitation materially affects continuation of a scholarly task, do not jump directly from `one route failed` to either `the task is blocked` or `the Human must operate the workaround`.
+
+Preserve the current scholarly question/outcome and perform only the bounded assessment needed to choose the next discriminating action:
+
+```text
+SCHOLARLY INFORMATION / ACTION NEEDED NOW
+→ ESTABLISHED vs NOT VERIFIED / UNRESOLVED
+→ EVIDENCE / TEST THAT CAN DECIDE IT
+→ TASK-RELATIVE TECHNICAL DIFFICULTY / FITNESS
+→ ROUTE(S) ACTUALLY TRIED
+→ WHAT THE OBSERVED FAILURE ESTABLISHES / DOES NOT ESTABLISH
+→ BOUNDED VIABLE CONTINUATIONS + EXPECTED INFORMATION GAIN
+→ CHOSEN CONTINUATION + CLAIM CEILING
+```
+
+Allowed continuations include:
+
+- another authorized internal read-only/technical route when proportionate;
+- a truthful scoped inability/ceiling when no adequate current route remains;
+- a bounded Human contribution when it is genuinely the best/only continuation;
+- a Human-Owner authority decision when the unresolved fact is owner-reserved;
+- `unresolved` / qualified specialist escalation when the remaining question is specialist judgement.
+
+Human participation is not a failure state. It becomes a workflow defect when derivable internal routing or routine support work is offloaded without a task/capability assessment, or when the Human is asked to adjudicate specialist scholarship merely because the system is uncertain.
+
+When requesting Human input, the execution surface should make reconstructable: why the contribution is needed, the exact requested evidence/fact/action, the relevant attempts/limit already established, what scholarly action or claim it enables, and what remains unresolved afterwards. Keep this proportionate; routine successful work does not need a large explanatory template.
+
+Alternative routes are bounded by the progress/delta rule below. Repeated attempts with no plausible information gain are not required and must not become an autonomous search loop.
+
+This section translates existing scholarly/evidence/authority semantics into execution behavior. It does not create a new evidence status model, scholarly stage, capability planner or Human-facing truth store.
+
 ## Consequence class, retry/resume and long-running execution fitness
 
 Execution contexts must preserve the authorized outcome while selecting tools/runtimes. Tool, connector, runner, storage or capability decomposition is implementation detail unless a genuinely non-derivable Human decision is required.
