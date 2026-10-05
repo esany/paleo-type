@@ -14,30 +14,26 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_semantic_current_work(self) -> None:
+    def test_human_overview_resolves_semantic_ready_next_work(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("active", work["state"])
-        self.assertIn("Implement engineering fitness", work["statement"])
-        self.assertNotEqual(work["statement"], work["work_ref"])
-        self.assertEqual("SD-KA-01/WP4", work["scope"])
-        self.assertEqual("github-issue:esany/paleo-type#259", work["work_ref"])
-        self.assertEqual("github-issue:esany/paleo-type#259", work["basis_ref"])
+        self.assertEqual("ready-next", work["state"])
+        self.assertIn("WP5 brownfield information-architecture migration", work["statement"])
+        self.assertEqual("github-issue:esany/paleo-type#260", work["work_ref"])
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Current work:", rendered)
-        self.assertIn("Scope: SD-KA-01/WP4", rendered)
-        self.assertIn("Resolution basis:", rendered)
+        self.assertIn("Next eligible work:", rendered)
+        self.assertIn("#260", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_active_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_and_ready_next_authority(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("implementation", execution["requested_activity"])
+        self.assertEqual("ready-next", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
-        self.assertIn("github-issue:esany/paleo-type#259", execution["authority_reads"])
+        self.assertIn("github-issue:esany/paleo-type#260", execution["authority_reads"])
         self.assertEqual("github-issue:esany/paleo-type#244", execution["whole_system_return"])
 
     def test_context_starvation_is_detected(self) -> None:
@@ -61,23 +57,19 @@ class EngineeringContextTests(unittest.TestCase):
             fixture = self._copy_contract_fixture(Path(directory))
             errors, before = engineering_context.compile_context(fixture, "system-development-execution")
             self.assertEqual([], errors)
-
             artifact_path = fixture / "engineering" / "catalog" / "artifacts.tsv"
             rows = self._read_rows(artifact_path)
-            rows.append(
-                {
-                    "artifact_id": "ENG-A-9998",
-                    "kind": "audit",
-                    "path": "engineering/changes/SD-KA-01/DESIGN.md",
-                    "owner_scope": "SD-KA-01",
-                    "authority_role": "non-normative-evidence",
-                    "lifecycle_state": "historical",
-                    "change_id": "SD-KA-01",
-                    "title": "Unrelated historical context growth fixture",
-                }
-            )
+            rows.append({
+                "artifact_id": "ENG-A-9998",
+                "kind": "audit",
+                "path": "engineering/changes/SD-KA-01/DESIGN.md",
+                "owner_scope": "SD-KA-01",
+                "authority_role": "non-normative-evidence",
+                "lifecycle_state": "historical",
+                "change_id": "SD-KA-01",
+                "title": "Unrelated historical context growth fixture",
+            })
             self._write_rows(artifact_path, rows)
-
             errors, after = engineering_context.compile_context(fixture, "system-development-execution")
             self.assertEqual([], errors)
             self.assertEqual(before["applicability"], after["applicability"])
@@ -86,43 +78,30 @@ class EngineeringContextTests(unittest.TestCase):
     def test_ambiguous_next_work_is_exposed_not_silently_selected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
-
-            config_path = fixture / "engineering" / "configuration.json"
-            config = json.loads(config_path.read_text(encoding="utf-8"))
-            config["current_focus"] = None
-            config["applicability"] = []
-            config_path.write_text(json.dumps(config), encoding="utf-8")
-
             artifact_path = fixture / "engineering" / "catalog" / "artifacts.tsv"
             artifacts = self._read_rows(artifact_path)
-            artifacts.append(
-                {
-                    "artifact_id": "ENG-A-9999",
-                    "kind": "work-metadata",
-                    "path": "github://github.com/esany/paleo-type/issues/260",
-                    "owner_scope": "SD-KA-01",
-                    "authority_role": "work-metadata",
-                    "lifecycle_state": "active",
-                    "change_id": "SD-KA-01",
-                    "title": "Migrate the brownfield repository information architecture with loss checks",
-                }
-            )
+            artifacts.append({
+                "artifact_id": "ENG-A-9999",
+                "kind": "work-metadata",
+                "path": "github://github.com/esany/paleo-type/issues/261",
+                "owner_scope": "SD-KA-01",
+                "authority_role": "work-metadata",
+                "lifecycle_state": "active",
+                "change_id": "SD-KA-01",
+                "title": "Qualify the engineering system adversarially and perform terminal Result Review",
+            })
             self._write_rows(artifact_path, artifacts)
-
             relation_path = fixture / "engineering" / "catalog" / "relations.tsv"
             relations = self._read_rows(relation_path)
-            relations.append(
-                {
-                    "relation_id": "REL-9999",
-                    "subject_ref": "artifact:ENG-A-0032",
-                    "predicate": "transitions-to",
-                    "object_ref": "github-issue:esany/paleo-type#260",
-                    "relation_status": "accepted",
-                    "evidence_ref": "artifact:ENG-A-0032",
-                }
-            )
+            relations.append({
+                "relation_id": "REL-9999",
+                "subject_ref": "artifact:ENG-A-0032",
+                "predicate": "transitions-to",
+                "object_ref": "github-issue:esany/paleo-type#261",
+                "relation_status": "accepted",
+                "evidence_ref": "artifact:ENG-A-0032",
+            })
             self._write_rows(relation_path, relations)
-
             errors, packet = engineering_context.compile_context(fixture, "human-system-overview")
             self.assertEqual([], errors)
             work = packet["current_work"]

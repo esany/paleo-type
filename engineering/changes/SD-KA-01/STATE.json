@@ -42,17 +42,17 @@
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp3-verified-wp4-implementing",
-  "verification_head": "git:743f97266260b18b7d179a2b214bff3d86fa4487",
+  "result_status": "wp4-verified-technical-return",
+  "verification_head": "git:ddecf04d0b64912498e367a4517fcaf57d71bc9d",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
     "WP3": "verified",
-    "WP4": "implementing",
-    "WP5": "not-started",
+    "WP4": "verified",
+    "WP5": "ready-next",
     "WP6": "not-started"
   },
-  "current_execution": "WP4 started from main@743f97266260b18b7d179a2b214bff3d86fa4487 under #259 within the existing SD-KA-01 D-016 admission. The package implements repository-testable engineering fitness, seeded failure fixtures, shared local/CI assurance and local-to-whole return checks. Separately admitted execution-control semantics are included only where repository-owned behavior can genuinely be falsified; WP4 does not become a runtime/orchestration layer.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP4 adds bounded assurance/fitness implementation inside the still-active admitted SD-KA-01 change",
-  "whole_system_return": "WP3 return remains valid: Human/Developer/Agent context, prompt and shared check surfaces are implemented and exactly verified. #244 remains the programme/whole-system owner. WP4 is now the bounded implementation cursor; its technical PASS cannot establish SD-KA-01 closure, scholarly acceptance, independent evidence, external runtime fitness or preservation state. F10 and F17 residual boundaries remain explicit. No Project/manuscript state or scholarly NEXT ACTION changed."
+  "current_execution": "WP4 is merged and exactly post-merge verified. No work package is currently executing. #260/WP5 is the next eligible implementation package within the existing D-016 admission but is not started by this return.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP4 engineering-fitness/CI assurance capability is implemented inside the still-active admitted SD-KA-01 change",
+  "whole_system_return": "changed: ENG-FIT-01..ENG-FIT-09 now map deterministic checks to stable owners/fixtures; stale-current/latest-wins/orphan/coverage/reference/context/local-PASS/generated-view and related repository-testable failures are mechanically guarded through the shared local/CI entrypoint. #244 remains the programme/whole-system owner. F10 remains a qualification/evidence-basis residual and F17/#225 remains a scholarly residual. External runtime, cancellation, preservation, specialist validity, independent evidence and Human acceptance are not established by WP4 PASS. #260/WP5 is ready-next but not started; WP6 remains later. No Project/manuscript state or scholarly NEXT ACTION changed."
 }
