@@ -1,0 +1,7 @@
+interface:
+  display_name: "savesax"
+  short_description: "Digitalisate des Sächsischen Staatsarchivs sichern"
+  default_prompt: "Use $savesax with the archival source already in this chat."
+
+policy:
+  allow_implicit_invocation: true
