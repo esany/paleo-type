@@ -1,6 +1,6 @@
 # SD-KA-01 work-package results and whole-system returns
 
-**Status:** `WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 VERIFIED + RETURNED / WP4 READY-NEXT / SD-KA-01 ACTIVE`
+**Status:** `WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 VERIFIED + RETURNED / WP4 VERIFIED + RETURNED / WP5 READY-NEXT / SD-KA-01 ACTIVE`
 
 ## WP1 — semantic contracts and in-place managed baseline
 
@@ -154,3 +154,57 @@ F10's generic safeguard is therefore operationalized: consequential review conte
 ### Review boundaries
 
 WP3's exact-head and post-merge technical assurance establish the deterministic/restartability properties above. The review was writer-context self-review, not independent evidence. Final SD-KA-01 acceptance, F10 evidential qualification, F17 scholarly acceptance, specialist validation and any Human-reserved consequence remain distinct and pending under their existing owners.
+
+---
+
+## WP4 — engineering fitness, CI assurance and whole-system return checks
+
+### Exact result basis
+
+- Implementation PR: [#294](https://github.com/esany/paleo-type/pull/294).
+- Final exact PR head: `bba5abc3c8ccc440f30119b53677803b5df546a0`.
+- PR-head assurance: [source-contract run #564](https://github.com/esany/paleo-type/actions/runs/37346202326), successful on that exact head through the shared `python tools/check.py` entrypoint.
+- Merge commit on `main`: `ddecf04d0b64912498e367a4517fcaf57d71bc9d`.
+- Exact post-merge assurance: [source-contract run #565](https://github.com/esany/paleo-type/actions/runs/37346411862), successful on that exact `main` head.
+- PR review: exact-head writer-context technical/restartability self-review recorded on PR #294; explicitly not claimed as independent evidence.
+- Earlier PR-head failures exposed stale WP3 fixture expectations and an unmanaged shared execution-control provenance input. Both defects were repaired; the latter became managed artifact `ENG-A-0053` rather than being hidden by weakening the fixture.
+
+### Actual state change
+
+WP4 implements the admitted deterministic engineering-fitness layer:
+
+- `engineering/assurance/fitness.json` maps ENG-FIT-01..ENG-FIT-09 to stable owners, implementations and seeded failure families;
+- `tools/engineering_fitness.py` validates that mapping and executes repository-testable assurance properties;
+- the shared `python tools/check.py` entrypoint now includes Engineering Fitness alongside Source Contract, Engineering validation, the full regression suite, fresh-process Project contexts and real-data resolver fixtures;
+- CI uses that same local entrypoint and states explicitly that PASS is exact-head deterministic assurance only;
+- committed stale `engineering/generated/CURRENT_STATE.json` is rejected in favor of on-demand current-state derivation;
+- verified work-package state requires a durable whole-system-return consequence;
+- conditional legacy-path validation is ready for WP5 migration slices without pretending an empty pre-migration map proves migration correctness;
+- activated prompt/context contracts are covered by fitness checks without turning them into semantic authority.
+
+The machine-readable contract accounts for the full admitted minimum seeded set: stale-current, latest-wins, orphan finding, coverage loophole, broken stable reference, missing transition authority, stale generated view, local-PASS trap, context starvation, false relation, no-change result, concurrent investigations, tiny routine change and exact-head assurance.
+
+### Failure-family / systemic consequence
+
+Repository-testable bugwave classes are now mechanically guarded where stable owners exist: artifact/reference integrity, currentness/config transitions, F01–F45 coverage/dispositions, relation evidence, rebuildability, bounded change state, context adequacy, conditional legacy-path continuity and bounded prompt behavior.
+
+The separately admitted outcome-preserving execution-control refinement is represented only where this repository can genuinely falsify behavior. WP4 does **not** claim to validate model behavior, external runtime fitness, actual cancellation capability, live acquisition viability or preservation state. Consequently WP4 PASS does not close the remaining #281/#282/#280/#285 systemic acceptance/runtime work.
+
+### Finding / ADR / acceptance consequence
+
+- F10 remains a qualification/evidence-basis residual: the safeguard exists and is tested, but independent evidence is not manufactured by CI or a fresh model context.
+- F17/#225 remains the scholarly whole-system residual and is not converted into engineering PASS.
+- ADR-0001 and the accepted architecture/Requirement baselines remain unchanged; implementation progress does not silently promote the full SD-KA-01 target into accepted architecture.
+- No immature judgement taxonomy was frozen merely because it could be tested; deterministic checks target stable owner/contract failures only.
+
+### Whole-system return
+
+**Changed:** the semantic/configuration/context/prompt layers from WP1–WP3 now have a repository-native engineering-fitness mapping, seeded falsification suite and one shared developer/CI assurance command. Local technical completion must surface its whole-system consequence rather than ending at a local PASS.
+
+**Downstream readiness:** the semantic, configuration, context and fitness prerequisites named by the admitted brownfield migration design now exist and are exactly post-merge verified. #260/WP5 is therefore the next eligible bounded implementation package within the existing D-016 admission, but it is not started by this return. WP6 remains later terminal qualification/Result Review.
+
+**Deliberate non-changes:** no manuscript Project purpose, priority, scope, gate or scholarly `NEXT ACTION`; no #225 acceptance; no physical migration yet; no runtime/orchestration layer; no external cancellation/preservation assurance; no specialist, independent-review or Human acceptance inferred from CI.
+
+### Review boundaries
+
+WP4's exact-head and post-merge technical assurance establish only the deterministic/restartability properties actually exercised. The review was writer-context self-review, not independent evidence. Final SD-KA-01 acceptance, F10 evidential qualification, F17 scholarly acceptance, external runtime/preservation properties, specialist validation and Human-reserved consequences remain distinct under their existing owners.
