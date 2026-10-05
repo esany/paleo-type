@@ -36,10 +36,8 @@ Completed bounded sequence:
 
 The physical moves changed locations only, not accepted/current meaning. The implementation PR is the bounded rollback unit and the exact physical-slice commits remain recorded in the migration compatibility catalog.
 
-## WP6 — qualification and terminal Result Review in progress (#261)
+## WP6 — verified, terminal Result Review accepted (#261)
 
 Execution baseline: `main@57f2bc6fdf2c9222d236d265f31433b79f99e866`, the exact WP5-result head.
 
-WP6 is executing the admitted terminal qualification across the completed WP1–WP5 implementation. It composes the fresh Human/Senior-Developer/Agent journeys, ENG-FIT adversarial fixtures, finding/residual checks, migration/F45 loss checks, prompt/review-premise boundaries and exact-head assurance into one terminal Result Review. Accepted architecture/Requirement baselines remain unchanged during the active qualification pass. Any failed qualification re-enters only the affected surface; F10 independence and F17/#225 scholarly acceptance remain explicit residual boundaries rather than being laundered by CI.
-
-Terminal acceptance, no-change or re-entry consequence is not pre-decided before exact-head evidence.
+WP6 completed the admitted terminal qualification across WP1–WP5, including fresh Human/Senior-Developer/Agent journeys, ENG-FIT adversarial fixtures, finding/residual checks, migration/F45 loss checks, prompt/review-premise boundaries and exact-head assurance. Exact PR-head run #588 / `37386628173` passed on `91a07581a2bfeabf5b7c0fb410c4803d0afa5774`; PR #301 merged at `main@b8fcc66a5ad79ce0ba7ca77634a9aec2b0fba9c1`; exact post-merge run #589 / `37386694928` passed. Terminal Result Review accepts ADR-0001 / `artifact:ENG-A-0031` as an engineering architecture baseline while leaving the accepted Requirement baseline unchanged. F10 and F17/#225 remain explicit residual boundaries; no successor work is generated automatically.
