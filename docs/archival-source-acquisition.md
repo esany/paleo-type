@@ -28,8 +28,7 @@ Supply a JSON file with `archive`, `fonds`, `signature`, `title`,
 and `image_count`. Title, date and archival identity come from intake;
 they are not inferred from image names.
 
-## Commands
-
+For chat-driven runs the same JSON may be passed on standard input with \`--metadata -\`; this avoids creating a metadata sidecar file. The source image files are still written only to the configured external root.\n\n## Commands\n
 Preview the plan using the live SStA list:
 
     python tools/archival_source_acquisition.py \
