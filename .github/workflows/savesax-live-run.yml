@@ -1,7 +1,9 @@
-name: savesax live run
+name: savesax Oppurg execution
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - run/savesax-oppurg-2026-10-05
 
 permissions:
   contents: read
@@ -37,122 +39,110 @@ jobs:
               raw = response.read()
           soup = BeautifulSoup(raw, 'html.parser')
 
-          def norm(s):
-              return ' '.join(s.split())
-
+          def norm(s): return ' '.join(s.split())
           def value_after_label(label):
-              target = None
-              for text in soup.stripped_strings:
-                  if norm(text).rstrip(':') == label.rstrip(':'):
-                      target = text
-                      break
-              if target is None:
-                  return None
               node = soup.find(string=lambda s: s is not None and norm(s).rstrip(':') == label.rstrip(':'))
-              if node is None:
-                  return None
-              parent = node.parent
-              # Prefer table/list siblings in the same row/container.
-              row = parent.find_parent(['tr', 'dl', 'div'])
+              if node is None: return None
+              row = node.parent.find_parent(['tr', 'dl', 'div'])
               if row:
                   vals = [norm(x) for x in row.stripped_strings if norm(x).rstrip(':') != label.rstrip(':')]
-                  if vals:
-                      return vals[0]
-              # Fall back to the next stripped string in document order.
+                  if vals: return vals[0]
               all_text = [norm(x) for x in soup.stripped_strings]
               for i, item in enumerate(all_text):
-                  if item.rstrip(':') == label.rstrip(':') and i + 1 < len(all_text):
-                      return all_text[i + 1]
+                  if item.rstrip(':') == label.rstrip(':') and i + 1 < len(all_text): return all_text[i + 1]
               return None
 
           signature = value_after_label('Archivaliensignatur')
           date_label = value_after_label('Datierung')
-
           title = None
-          for tag in soup.find_all(['h2', 'h3', 'h4']):
+          for tag in soup.find_all(['h2','h3','h4']):
               t = norm(tag.get_text(' ', strip=True))
-              if not t:
-                  continue
-              if t in {'Objektdetails', 'Gliederung des Bestandes:', 'Digitalisat'}:
-                  continue
-              if 'Beständeübersicht' in t or 'Archivale im Bestand' in t:
-                  continue
+              if not t or t in {'Objektdetails','Gliederung des Bestandes:','Digitalisat'}: continue
+              if 'Beständeübersicht' in t or 'Archivale im Bestand' in t: continue
               if len(t) >= 12:
                   title = t
-                  if 'Oppurg' in t or 'Rittergut' in t:
-                      break
-
+                  if 'Oppurg' in t or 'Rittergut' in t: break
           if not signature or not date_label or not title:
-              raise SystemExit(f'archive metadata parse failed: signature={signature!r}, date={date_label!r}, title={title!r}')
-
+              raise SystemExit(f'metadata parse failed: signature={signature!r}, date={date_label!r}, title={title!r}')
           metadata = {
-              'archive': 'Sächsisches Staatsarchiv',
-              'fonds': '20578 Rittergut Wolkenburg mit Kaufungen',
-              'signature': signature,
-              'title': title,
-              'date_label': date_label,
-              'guid': guid,
-              'page_url': page_url,
-              'archive_code': 'SStA',
-              'name_key': title,
-              'classification_path': '10 / 10.5 / 10.5.3 Oppurg, Knau, Grunau, Gröbitz',
-              'rights_status': 'unknown',
-              'image_count': 139,
+              'archive':'Sächsisches Staatsarchiv',
+              'fonds':'20578 Rittergut Wolkenburg mit Kaufungen',
+              'signature':signature,
+              'title':title,
+              'date_label':date_label,
+              'guid':guid,
+              'page_url':page_url,
+              'archive_code':'SStA',
+              'name_key':title,
+              'classification_path':'10 / 10.5 / 10.5.3 Oppurg, Knau, Grunau, Gröbitz',
+              'rights_status':'unknown',
+              'image_count':139,
           }
-          with open('/tmp/savesax-source.json', 'w', encoding='utf-8') as f:
-              json.dump(metadata, f, ensure_ascii=False, indent=2)
-              f.write('\n')
-          print(json.dumps(metadata, ensure_ascii=False, indent=2))
+          with open('/tmp/savesax-source.json','w',encoding='utf-8') as f:
+              json.dump(metadata,f,ensure_ascii=False,indent=2); f.write('\n')
+          print(json.dumps(metadata,ensure_ascii=False,indent=2))
           PY
 
-      - name: Run the admitted acquisition skill end to end
+      - name: Dry-run exact plan
         run: |
           mkdir -p /tmp/savesax-out
           python tools/archival_source_acquisition.py \
             --metadata /tmp/savesax-source.json \
             --output-root /tmp/savesax-out \
-            --route fullsize \
-            --rate-limit 0.10 \
-            > /tmp/savesax-manifest.stdout.json
+            --route download \
+            --dry-run > /tmp/savesax-plan.json
+          python - <<'PY'
+          import json
+          p=json.load(open('/tmp/savesax-plan.json',encoding='utf-8'))
+          assert len(p['images']) == 139
+          assert p['images'][0]['filename'] == '0001.jpg'
+          assert p['images'][-1]['filename'] == '0139.jpg'
+          print('plan PASS:', p['package_name'], len(p['images']), p['route'])
+          PY
+
+      - name: Run admitted acquisition skill end to end
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/archival_source_acquisition.py \
+            --metadata /tmp/savesax-source.json \
+            --output-root /tmp/savesax-out \
+            --route download \
+            --rate-limit 0 \
+            > /tmp/savesax-manifest.stdout.json &
+          pid=$!
+          while kill -0 "$pid" 2>/dev/null; do
+            count=$(find /tmp/savesax-out -type f -name '*.jpg' | wc -l)
+            echo "acquisition progress: ${count}/139 JPEGs complete"
+            sleep 20
+          done
+          wait "$pid"
 
       - name: Verify completed package
         run: |
           python - <<'PY'
           import hashlib, json
           from pathlib import Path
-
-          root = Path('/tmp/savesax-out')
-          packages = [p for p in root.iterdir() if p.is_dir()]
-          if len(packages) != 1:
-              raise SystemExit(f'expected one package, found {len(packages)}')
-          package = packages[0]
-          manifest = json.loads((package / 'QUELLENINFO.json').read_text(encoding='utf-8'))
-          jpgs = sorted(package.glob('*.jpg'))
-          checksum_lines = [x for x in (package / 'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines() if x.strip()]
-          if manifest.get('status') != 'complete':
-              raise SystemExit('manifest status is not complete')
-          if len(manifest.get('images', [])) != 139 or len(jpgs) != 139 or len(checksum_lines) != 139:
-              raise SystemExit(f'incomplete package: manifest={len(manifest.get("images", []))}, jpgs={len(jpgs)}, checksums={len(checksum_lines)}')
-          if [p.name for p in jpgs] != [f'{i:04d}.jpg' for i in range(1, 140)]:
-              raise SystemExit('image sequence is not exactly 0001.jpg-0139.jpg')
-
-          total_bytes = sum(p.stat().st_size for p in jpgs)
-          package_digest = hashlib.sha256((package / 'SHA256SUMS.txt').read_bytes()).hexdigest()
-          summary = {
-              'status': 'complete',
-              'package_name': package.name,
-              'image_count': len(jpgs),
-              'first_image': jpgs[0].name,
-              'last_image': jpgs[-1].name,
-              'total_image_bytes': total_bytes,
-              'sha256sums_file_sha256': package_digest,
-              'file_list_url': manifest['file_list_url'],
-              'file_list_sha256': manifest['file_list_sha256'],
-              'acquired_at_utc': manifest['acquired_at_utc'],
-              'source': manifest['source'],
+          root=Path('/tmp/savesax-out')
+          packages=[p for p in root.iterdir() if p.is_dir()]
+          if len(packages)!=1: raise SystemExit(f'expected one package, found {len(packages)}')
+          package=packages[0]
+          manifest=json.loads((package/'QUELLENINFO.json').read_text(encoding='utf-8'))
+          jpgs=sorted(package.glob('*.jpg'))
+          lines=[x for x in (package/'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert manifest.get('status')=='complete'
+          assert len(manifest.get('images',[]))==139 and len(jpgs)==139 and len(lines)==139
+          assert [p.name for p in jpgs]==[f'{i:04d}.jpg' for i in range(1,140)]
+          summary={
+              'status':'complete','package_name':package.name,'image_count':139,
+              'first_image':jpgs[0].name,'last_image':jpgs[-1].name,
+              'total_image_bytes':sum(p.stat().st_size for p in jpgs),
+              'sha256sums_file_sha256':hashlib.sha256((package/'SHA256SUMS.txt').read_bytes()).hexdigest(),
+              'file_list_url':manifest['file_list_url'],'file_list_sha256':manifest['file_list_sha256'],
+              'acquired_at_utc':manifest['acquired_at_utc'],'route':manifest['route'],'source':manifest['source'],
           }
-          Path('/tmp/savesax-run-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          Path('/tmp/savesax-run-summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
           PY
 
       - name: Upload completed source package
@@ -162,6 +152,7 @@ jobs:
           path: |
             /tmp/savesax-out/**
             /tmp/savesax-run-summary.json
+            /tmp/savesax-plan.json
           if-no-files-found: error
           compression-level: 0
           retention-days: 7
