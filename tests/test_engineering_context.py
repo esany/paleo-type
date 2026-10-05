@@ -19,10 +19,10 @@ class EngineeringContextTests(unittest.TestCase):
         self.assertEqual([], errors)
         work = packet["current_work"]
         self.assertEqual("absent", work["state"])
-        self.assertIn("No current or ready-next engineering work", work["statement"])
+        self.assertIn("No active or next eligible engineering work is explicitly resolved.", work["statement"])
         self.assertIsNone(work.get("work_ref"))
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("No current or ready-next engineering work", rendered)
+        self.assertIn("No active or next eligible engineering work is explicitly resolved.", rendered)
 
     def test_execution_profile_exposes_shared_check_without_manufacturing_successor(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
