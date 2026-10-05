@@ -3,8 +3,8 @@
   "work_package": "WP4",
   "owner_ref": "github-issue:esany/paleo-type#259",
   "programme_owner_ref": "github-issue:esany/paleo-type#244",
-  "design_ref": "path:requirements/system-development-bugwave-assurance-closure-design-2026-10-04.md",
-  "shared_execution_boundary_ref": "path:requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md",
+  "design_ref": "artifact:ENG-A-0052",
+  "shared_execution_boundary_ref": "artifact:ENG-A-0053",
   "checks": [
     {"id": "ENG-FIT-01", "owner_ref": "artifact:ENG-A-0024", "implementation": "tools/engineering.py validate", "fixture_families": ["broken-stable-reference"]},
     {"id": "ENG-FIT-02", "owner_ref": "artifact:ENG-A-0022", "implementation": "tools/engineering.py validate", "fixture_families": ["stale-current", "latest-wins-trap", "missing-transition-authority", "concurrent-investigations"]},
@@ -26,10 +26,10 @@
     "stale-generated-view": "tests/test_engineering_fitness.py::test_committed_generated_current_view_is_rejected",
     "local-pass-trap": "tests/test_engineering_fitness.py::test_verified_package_requires_whole_system_return",
     "context-starvation": "tests/test_engineering_context.py::test_context_starvation_is_detected",
-    "false-relation": "tests/test_engineering_fitness.py::test_accepted_relation_requires_accepted_status_and_evidence",
+    "false-relation": "tests/test_engineering_fitness.py::test_accepted_relation_requires_evidence",
     "no-change-result": "tests/test_engineering.py::test_transition_contract_distinguishes_acceptance_and_no_change",
     "concurrent-investigations": "tests/test_engineering_context.py::test_ambiguous_next_work_is_exposed_not_silently_selected",
-    "tiny-routine-change": "tests/test_governance_ownership.py::routine-bounded-work fixtures",
+    "tiny-routine-change": "tests/test_governance_ownership.py routine bounded-work admission fixtures",
     "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result"
   },
   "non_claims": [
