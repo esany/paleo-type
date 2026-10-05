@@ -14,26 +14,25 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_active_wp6_work(self) -> None:
+    def test_human_overview_exposes_explicit_absence_after_terminal_return(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("active", work["state"])
-        self.assertIn("WP6 adversarial qualification", work["statement"])
-        self.assertEqual("github-issue:esany/paleo-type#261", work["work_ref"])
+        self.assertEqual("absent", work["state"])
+        self.assertIn("No current or ready-next engineering work", work["statement"])
+        self.assertIsNone(work.get("work_ref"))
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Current work:", rendered)
-        self.assertIn("#261", rendered)
+        self.assertIn("No current or ready-next engineering work", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_active_wp6_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_without_manufacturing_successor(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("implementation", execution["requested_activity"])
+        self.assertEqual("absent", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
-        self.assertIn("github-issue:esany/paleo-type#261", execution["authority_reads"])
+        self.assertNotIn("github-issue:esany/paleo-type#261", execution["authority_reads"])
         self.assertEqual("github-issue:esany/paleo-type#244", execution["whole_system_return"])
 
     def test_context_starvation_is_detected(self) -> None:
