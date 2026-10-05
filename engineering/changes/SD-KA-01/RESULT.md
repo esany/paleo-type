@@ -1,6 +1,6 @@
 # SD-KA-01 work-package results and whole-system returns
 
-**Status:** `WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 VERIFIED + RETURNED / WP4 VERIFIED + RETURNED / WP5 READY-NEXT / SD-KA-01 ACTIVE`
+**Status:** `WP1 VERIFIED / WP2 VERIFIED + RETURNED / WP3 VERIFIED + RETURNED / WP4 VERIFIED + RETURNED / WP5 VERIFIED + RETURNED / WP6 READY-NEXT / SD-KA-01 ACTIVE`
 
 ## WP1 — semantic contracts and in-place managed baseline
 
@@ -208,3 +208,67 @@ The separately admitted outcome-preserving execution-control refinement is repre
 ### Review boundaries
 
 WP4's exact-head and post-merge technical assurance establish only the deterministic/restartability properties actually exercised. The review was writer-context self-review, not independent evidence. Final SD-KA-01 acceptance, F10 evidential qualification, F17 scholarly acceptance, external runtime/preservation properties, specialist validation and Human-reserved consequences remain distinct under their existing owners.
+
+---
+
+## WP5 — loss-checked brownfield information-architecture migration
+
+### Exact result basis
+
+- Implementation PR: [#298](https://github.com/esany/paleo-type/pull/298).
+- Final exact PR head: `0c4c94831f3d3266c0a532afc250bd29bf2fbd37`.
+- PR-head assurance: [source-contract run #582](https://github.com/esany/paleo-type/actions/runs/37376695008), successful on that exact head through the shared `python tools/check.py` entrypoint.
+- Merge commit on `main`: `ffc4d3736148987cd30aa805519634287d1b4b6b`.
+- Exact post-merge assurance: [source-contract run #583](https://github.com/esany/paleo-type/actions/runs/37376852591), successful on that exact `main` head.
+- PR review: exact-head writer-context technical/restartability self-review recorded on PR #298; explicitly not claimed as independent evidence.
+- Run #581 (`37376376199`) after the final namespace-narrowing slice exposed three stale recovery-assurance consumers of the old Source/Project owner-admission path. The consumers were repaired to the new stable decision-evidence owner and the final exact-head run passed. This failure/fix is retained as migration-loss evidence.
+
+### Actual state change
+
+WP5 executes the admitted M0–M4 brownfield migration without using path movement as a semantic promotion rule:
+
+- **74 classified artifacts** moved in three bounded physical slices: 16 already-managed SD-KA artifacts, 53 historical engineering audit/research/learning/work-instruction/coordination artifacts, and 5 separately owned cross-project Human decision/admission records;
+- every moved artifact retains its stable `ENG-A-*` identity, explicit current path, exact pre-move Git blob identity, legacy-path mapping and bounded rollback evidence;
+- `engineering/changes/SD-KA-01/MIGRATION.tsv` records classification basis, pre-move blob SHA, slice and rollback semantics;
+- `engineering/catalog/legacy-paths.tsv` maps old locators to current managed paths without retaining parallel compatibility copies;
+- the former mixed `requirements/` namespace is narrowed to `README.md` plus the accepted reusable `domain-requirements.tsv` baseline;
+- SD-KA-01 decision/admission evidence now lives with the bounded change, while separately owned cross-project Human decision/admission records live under `engineering/evidence/decisions/` and retain `owner_scope=cross-project` and their original authority/lifecycle semantics;
+- historical one-off work instructions/prompts now live under `engineering/evidence/work-instructions/`; historical audits, learning, coordination and research/design evidence live under their corresponding semantic evidence owners;
+- active navigation and recovery-test consumers were repaired to semantic locations rather than relying on compatibility copies.
+
+### Loss, continuity and F45 result
+
+The exact-head and post-merge shared checks verify the repository-testable migration properties:
+
+- exact moved bytes match the recorded pre-move Git blob identities;
+- each migration row resolves to the same stable artifact ID and current catalog path;
+- each old managed path has a compatibility mapping and no moved old path remains as a parallel truth file;
+- accepted architecture and Requirement baselines are unchanged by relocation;
+- `requirements/` contains no residual mixed engineering evidence class after the bounded migration;
+- Fresh Developer/current context remains derived from canonical owners rather than chronology or relocated evidence payload;
+- the recovery-assurance regression that failed on a stale old-path consumer was repaired rather than hidden, demonstrating the loss-check loop on an actual consumer.
+
+No material finding, admission, decision or evidence class was deleted to make the tree visually clean. The semantic/cognitive function of historical evidence remains available on demand through managed identities, semantic evidence directories and legacy-path lookup; default current context does not need to load the historical evidence corpus. This satisfies the bounded repository-testable F45 function-loss safeguard but is not a scholarly or independent-review claim.
+
+### Reconstruction/context consequence
+
+The main developer/navigation burden is reduced: `requirements/` now means reusable Requirement baseline/navigation instead of a mixed chronological archive, while historical engineering evidence has semantic destinations and stable lookup. A fresh developer can navigate current configuration/change/result/assurance first and descend into audit/research/decision evidence only when needed. The migration therefore reduces classification and chronology reconstruction without deleting provenance.
+
+### Finding / ADR / authority consequence
+
+- F10 remains a terminal qualification/evidence-basis residual; relocation does not create independent evidence.
+- F17/#225 remains a scholarly residual wholly outside this engineering migration.
+- ADR-0001 and accepted architecture/Requirement baselines remain unchanged; path changes do not promote the admitted target package to accepted architecture.
+- Cross-project Human decision/admission evidence remains owned by its original cross-project authority after physical relocation.
+
+### Whole-system return
+
+**Changed:** the brownfield information architecture now implements the semantic separation designed before migration, with loss-checked identities, exact-byte continuity, compatibility lookup and bounded rollback evidence. The mixed `requirements/` namespace no longer carries historical engineering evidence by default.
+
+**Downstream readiness:** WP1–WP5 are verified for their bounded slices. #261/WP6 is therefore the next eligible terminal adversarial qualification and SD-KA-01 Result Review package within the existing D-016 admission, but it is **not started** by this return.
+
+**Deliberate non-changes:** no manuscript Project purpose, priority, scope, gate or scholarly `NEXT ACTION`; no #225 acceptance; no #90 reactivation; no autonomous planner/workflow engine; no external runtime/preservation assurance; no specialist, independent-review or Human acceptance inferred from migration or CI.
+
+### Review boundaries
+
+WP5's exact-head and post-merge technical assurance establishes only the migration identity/path/byte/continuity/restartability properties actually exercised. The review was writer-context self-review, not independent evidence. Final SD-KA-01 target acceptance, F10 evidential qualification, F17 scholarly acceptance, specialist validation and Human-reserved consequences remain for WP6/their existing owners.

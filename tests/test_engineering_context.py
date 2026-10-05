@@ -14,27 +14,26 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_semantic_active_wp5_work(self) -> None:
+    def test_human_overview_resolves_semantic_ready_next_wp6_work(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("active", work["state"])
-        self.assertIn("WP5 brownfield information-architecture migration", work["statement"])
-        self.assertEqual("github-issue:esany/paleo-type#260", work["work_ref"])
-        self.assertEqual("SD-KA-01/WP5", work["scope"])
+        self.assertEqual("ready-next", work["state"])
+        self.assertIn("WP6 adversarial qualification", work["statement"])
+        self.assertEqual("github-issue:esany/paleo-type#261", work["work_ref"])
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Current work:", rendered)
-        self.assertIn("#260", rendered)
+        self.assertIn("Next eligible work:", rendered)
+        self.assertIn("#261", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_active_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_and_ready_next_authority(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("implementation", execution["requested_activity"])
+        self.assertEqual("ready-next", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
-        self.assertIn("github-issue:esany/paleo-type#260", execution["authority_reads"])
+        self.assertIn("github-issue:esany/paleo-type#261", execution["authority_reads"])
         self.assertEqual("github-issue:esany/paleo-type#244", execution["whole_system_return"])
 
     def test_context_starvation_is_detected(self) -> None:
@@ -90,12 +89,12 @@ class EngineeringContextTests(unittest.TestCase):
             artifacts.append({
                 "artifact_id": "ENG-A-9999",
                 "kind": "work-metadata",
-                "path": "github://github.com/esany/paleo-type/issues/261",
+                "path": "github://github.com/esany/paleo-type/issues/999",
                 "owner_scope": "SD-KA-01",
                 "authority_role": "work-metadata",
                 "lifecycle_state": "active",
                 "change_id": "SD-KA-01",
-                "title": "Qualify the engineering system adversarially and perform terminal Result Review",
+                "title": "Competing ready-next fixture",
             })
             self._write_rows(artifact_path, artifacts)
             relation_path = fixture / "engineering" / "catalog" / "relations.tsv"
@@ -104,7 +103,7 @@ class EngineeringContextTests(unittest.TestCase):
                 "relation_id": "REL-9999",
                 "subject_ref": "artifact:ENG-A-0032",
                 "predicate": "transitions-to",
-                "object_ref": "github-issue:esany/paleo-type#261",
+                "object_ref": "github-issue:esany/paleo-type#999",
                 "relation_status": "accepted",
                 "evidence_ref": "artifact:ENG-A-0032",
             })

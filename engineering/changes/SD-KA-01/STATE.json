@@ -45,17 +45,17 @@
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp4-verified-wp5-implementing",
-  "verification_head": "git:b01bfa1b0f523919c1d8dbd45a9b30fd5a66aba0",
+  "result_status": "wp5-verified-technical-return",
+  "verification_head": "git:ffc4d3736148987cd30aa805519634287d1b4b6b",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
     "WP3": "verified",
     "WP4": "verified",
-    "WP5": "implementing",
-    "WP6": "not-started"
+    "WP5": "verified",
+    "WP6": "ready-next"
   },
-  "current_execution": "WP5 started from main@b01bfa1b0f523919c1d8dbd45a9b30fd5a66aba0 under #260 within the existing SD-KA-01 D-016 admission. The package performs bounded, loss-checked information-architecture migration only after classification, with stable identity/currentness, legacy-path continuity, link/reference repair and rollback evidence preserved.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP5 changes physical engineering-information locators only where classification and continuity are explicit",
-  "whole_system_return": "WP4 return remains valid: ENG-FIT-01..ENG-FIT-09 and the shared assurance boundary are verified. #244 remains the programme/whole-system owner. WP5 is now the bounded implementation cursor; no WP5 result or terminal SD-KA-01 acceptance is claimed yet. F10 and F17 remain residual boundaries. No Project/manuscript state or scholarly NEXT ACTION changed."
+  "current_execution": "WP5 is merged and exactly post-merge verified. No work package is currently executing. #261/WP6 is the next eligible terminal qualification/Result Review package within the existing D-016 admission but is not started by this return.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP5 relocated 74 classified engineering/decision-evidence artifacts into semantic owners with stable IDs, exact-byte continuity and legacy-path lookup while narrowing requirements/ to its README and accepted reusable Requirement baseline",
+  "whole_system_return": "changed: the mixed requirements/ brownfield has been loss-checked into semantic engineering owners across three physical slices; 74 moved artifacts retain stable managed identities, exact pre-move blob identity, legacy-path continuity and rollback evidence. Cross-project Human decision/admission evidence remains cross-project authority after relocation. Recovery consumers exposed by exact-head CI were repaired and the exact final PR head plus implementation merge passed the shared full check. #244 remains the programme/whole-system owner. F10 remains an evidence-basis/qualification residual and F17/#225 remains a scholarly residual. No Project/manuscript state or scholarly NEXT ACTION changed. #261/WP6 is ready-next but not started."
 }

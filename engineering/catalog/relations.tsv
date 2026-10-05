@@ -72,3 +72,5 @@ REL-0070	artifact:ENG-A-0049	implements	change:SD-KA-01	accepted	artifact:ENG-A-
 REL-0071	artifact:ENG-A-0051	implements	change:SD-KA-01	accepted	artifact:ENG-A-0049
 REL-0072	artifact:ENG-A-0050	describes	artifact:ENG-A-0049	accepted	artifact:ENG-A-0050
 REL-0073	artifact:ENG-A-0032	transitions-to	github-issue:esany/paleo-type#260	accepted	artifact:ENG-A-0032
+REL-0074	change:SD-KA-01	implementation-owner	github-issue:esany/paleo-type#260	historical	artifact:ENG-A-0054
+REL-0075	artifact:ENG-A-0032	transitions-to	github-issue:esany/paleo-type#261	accepted	artifact:ENG-A-0032
