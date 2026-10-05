@@ -54,9 +54,9 @@ Canonical current owners:
 
 Current process state:
 
-> **D-016 ADMITTED / WP1–WP5 VERIFIED + RETURNED / WP6 QUALIFICATION + TERMINAL RESULT REVIEW IN PROGRESS / SD-KA-01 ACTIVE.**
+> **SD-KA-01 WP1–WP6 VERIFIED / TERMINAL RESULT REVIEW ACCEPTED / ENGINEERING BASELINE UPDATED / NO SD-KA WORK CURRENT.**
 
-**#261 / WP6 is the current bounded system-development focus:** adversarially qualify the engineering system and perform the terminal SD-KA-01 Result Review. It is executing inside the existing D-016 admission. Accepted architecture/Requirement baselines remain unchanged while qualification is in progress; technical PASS does not establish scholarly, specialist, Human or evidential-independence claims.
+SD-KA-01 is complete. Terminal Result Review accepted ADR-0001 / `artifact:ENG-A-0031` as an engineering architecture baseline after exact qualification; the accepted reusable Requirement baseline remains `artifact:ENG-A-0008`. There is no SD-KA current focus or automatically generated successor work. F10 evidential independence, F17/#225 scholarly vertical acceptance and external runtime/specialist claims remain outside this engineering acceptance.
 
 For a derived Human-readable rendering of the same repository state use:
 
