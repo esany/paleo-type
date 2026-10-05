@@ -1,8 +1,8 @@
 # Engineering knowledge and configuration
 
-This repository-native surface is the admitted SD-KA-01 Engineering Knowledge & Configuration Plane implementation. WP1 established the in-place semantic owners; WP2 added explicit currentness/applicability semantics and rebuildable current/query views; WP3 adds rebuildable role/task context products, Senior Developer bootstrap, a shared deterministic full check and the bounded prompt interaction capability without creating a second truth clock or planner.
+This repository-native surface is the admitted SD-KA-01 Engineering Knowledge & Configuration Plane implementation. WP1 established the in-place semantic owners; WP2 added explicit currentness/applicability semantics and rebuildable current/query views; WP3 added and exactly post-merge verified rebuildable role/task context products, Senior Developer bootstrap, a shared deterministic full check and the bounded prompt interaction capability without creating a second truth clock or planner. No work package is currently executing; #259/WP4 is the next eligible bounded package and is not started by the WP3 return.
 
-Existing `requirements/` files remain where they are until the separately ordered WP5 physical migration. The catalog records semantic identity and lifecycle without making a path, filename date, Git recency, Issue/PR state or CI result a currentness rule.
+Existing `requirements/` files remain where they are until the separately ordered WP5 physical migration after the required earlier fitness prerequisite. The catalog records semantic identity and lifecycle without making a path, filename date, Git recency, Issue/PR state or CI result a currentness rule.
 
 ## Owners
 
@@ -31,7 +31,7 @@ README.md
 → this file
 → python tools/engineering.py current
 → python tools/engineering_context.py --profile system-development-execution
-→ active bounded work/applicable owners
+→ active/next bounded work and applicable owners
 → python tools/check.py
 → deeper provenance only when needed
 ```
@@ -42,7 +42,7 @@ For a concise Human-readable current/next work rendering:
 python tools/engineering_context.py --profile human-system-overview --format text
 ```
 
-The visible result must be a meaningful action with scope and authority basis, not only an Issue/work-package token. Context-relative currentness is allowed; unresolved ambiguity is exposed rather than hidden behind one repository-global cursor.
+The visible result must be a meaningful action with scope and authority basis, not only an Issue/work-package token. Context-relative currentness is allowed; unresolved ambiguity is exposed rather than hidden behind one repository-global cursor. Between packages, `configuration.json` may carry explicit no-current-focus while `STATE.json`/relations expose one ready-next transition.
 
 ## Local commands
 
