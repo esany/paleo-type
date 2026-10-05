@@ -4,7 +4,7 @@
   "admission": "admitted",
   "scope": "P-001..P-012 / WP1..WP6 as defined by the D-016 decision brief",
   "admission_ref": "artifact:ENG-A-0010",
-  "work_owner": "github-issue:esany/paleo-type#257",
+  "work_owner": "github-issue:esany/paleo-type#258",
   "programme_owner": "github-issue:esany/paleo-type#244",
   "non_goals": [
     "manuscript Project purpose, priority, scope, gate or scholarly NEXT ACTION",
@@ -20,7 +20,7 @@
     "requirements": {"state": "required-satisfied", "basis": "artifact:ENG-A-0035"},
     "research": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
     "concepts": {"state": "required-satisfied", "basis": "artifact:ENG-A-0018"},
-    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033"},
+    "design": {"state": "required-satisfied", "basis": "artifact:ENG-A-0036;artifact:ENG-A-0014;artifact:ENG-A-0033;artifact:ENG-A-0040;artifact:ENG-A-0041"},
     "implementation_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
     "verification_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0037"},
     "migration_plan": {"state": "required-satisfied", "basis": "artifact:ENG-A-0016"}
@@ -33,21 +33,23 @@
     "artifact:ENG-A-0006",
     "artifact:ENG-A-0007",
     "artifact:ENG-A-0014",
-    "artifact:ENG-A-0033"
+    "artifact:ENG-A-0033",
+    "artifact:ENG-A-0040",
+    "artifact:ENG-A-0041"
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp2-verified-technical-return",
-  "verification_head": "git:e10a51a56a6db1924d4500698d2dd2be2b222bc4",
+  "result_status": "wp2-verified-wp3-implementing",
+  "verification_head": "git:ddf289fdf69f3827f287665a2a8c8e4d137fcbba",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
-    "WP3": "ready-next",
+    "WP3": "implementing",
     "WP4": "not-started",
     "WP5": "not-started",
     "WP6": "not-started"
   },
-  "current_execution": "WP2 is merged and exactly post-merge verified. No work package is currently executing. #258/WP3 is the next eligible implementation cursor within the existing D-016 admission but is not started by this return.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP2 currentness/query/applicability capability is implemented inside the still-active admitted SD-KA-01 change",
-  "whole_system_return": "changed: accepted engineering state, active-change state and explicit absence can now be reconstructed from canonical configuration/change/catalog owners and rebuilt through the current/query surface without chronology replay. #244 remains the programme/whole-system owner; WP2 technical PASS is not SD-KA-01 closure, scholarly acceptance or specialist validation. F10 and F17 residual boundaries remain unchanged. #258/WP3 is ready-next; WP4 remains later and is not started. No Project/manuscript state or scholarly NEXT ACTION changed."
+  "current_execution": "WP3 started from main@ddf289fdf69f3827f287665a2a8c8e4d137fcbba under #258 within the existing D-016 admission. Current work is to implement Human/developer/Agent context views, Senior Developer bootstrap, a shared deterministic full-check entrypoint, bounded prompt create/review/test behavior, and review-evidence-basis safeguards without creating new Project or scholarly authority.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines remain unchanged; WP3 context/profile/prompt/check surfaces are admitted-change implementation inside the still-active SD-KA-01 change",
+  "whole_system_return": "WP1/WP2 verified returns remain valid. #244 remains the programme/whole-system owner. WP3 is now the bounded implementation cursor under #258; it does not create Project/manuscript state, scholarly NEXT ACTION, specialist validation or whole-programme acceptance. F10/F17 residual boundaries remain explicit and physical migration stays later in WP5."
 }
