@@ -14,39 +14,30 @@ Execution baseline: `main@ddf289fdf69f3827f287665a2a8c8e4d137fcbba`. WP3 impleme
 
 ## WP4 — verified and returned (#259)
 
-Execution baseline: `main@743f97266260b18b7d179a2b214bff3d86fa4487`.
+Execution baseline: `main@743f97266260b18b7d179a2b214bff3d86fa4487`. WP4 implemented the ENG-FIT-01..ENG-FIT-09 mapping and fourteen admitted seeded failure families, integrated them into the shared full-check entrypoint, passed exact PR-head/post-merge assurance and returned #260/WP5 as ready-next without changing accepted baselines.
 
-Completed bounded sequence:
-
-1. advanced the canonical cursor to #259/WP4 without changing accepted architecture/Requirement baselines;
-2. implemented the ENG-FIT-01..ENG-FIT-09 mapping and all fourteen admitted seeded failure families;
-3. added `tools/engineering_fitness.py` and integrated it into the shared local/CI `python tools/check.py` entrypoint;
-4. guarded stale-current/latest-wins/orphan/coverage/reference/generated-view/local-PASS/context/prompt and conditional migration-path failure classes where deterministic owners exist;
-5. recorded runtime/orchestration, external cancellation/preservation, independent evidence, specialist validity, Human acceptance and scholarly truth as explicit non-claims rather than laundering them through CI;
-6. earlier PR-head failures exposed stale fixture assumptions and unmanaged execution-control provenance; both were repaired rather than ignored;
-7. exact PR head `bba5abc3c8ccc440f30119b53677803b5df546a0` passed source-contract run #564; PR #294 merged at `main@ddecf04d0b64912498e367a4517fcaf57d71bc9d`; exact post-merge run #565 passed;
-8. persisted the WP4 Result/whole-system return with no current implementation focus and #260/WP5 ready-next.
-
-## WP5 — implementing (#260)
+## WP5 — verified and returned (#260)
 
 Execution baseline: `main@b01bfa1b0f523919c1d8dbd45a9b30fd5a66aba0`, the exact WP4-result head with post-merge source-contract run #571 successful.
 
-Bounded sequence:
+Completed bounded sequence:
 
-1. advance current work ownership/focus to #260/WP5 under the existing D-016 admission without changing accepted architecture/Requirement baselines;
-2. use the existing managed catalog as the classification basis for the first physical slice; do not move ambiguous/unmanaged material by filename guess;
-3. keep the accepted reusable Requirement baseline `requirements/domain-requirements.tsv` in place and add explicit Requirements-namespace orientation;
-4. move classified SD-KA admission/design/audit/research artifacts into the bounded change or `engineering/evidence/{audits,research}/` using unchanged Git blobs, with stable artifact IDs preserved;
-5. record pre-move blob identity and slice/rollback evidence in `MIGRATION.tsv`, then map every moved old path to its current catalog path and exact migration commit in `legacy-paths.tsv`;
-6. repair active navigation/current-contract references so old locations remain compatibility lookup only rather than primary links or parallel copies;
-7. run deterministic migration-loss fixtures: stable ID/current-path agreement, exact pre-move-byte equivalence, no compatibility copies, active ENG-FIT-08, Fresh Developer/context journey and accepted/current-baseline invariance;
-8. expose remaining historical/cross-project/unclassified `requirements/` material rather than guessing destinations, and report that residual explicitly in the WP5 result;
-9. perform exact PR-head assurance, writer-context technical/restartability/loss self-review, merge, exact post-merge assurance and repository-first whole-system return before marking WP5 verified or advancing WP6 readiness.
+1. advanced current work ownership/focus to #260/WP5 under the existing D-016 admission without changing accepted architecture/Requirement baselines;
+2. classified material by existing managed metadata or inspected header/status/owner evidence, never by filename guess;
+3. preserved the accepted reusable Requirement baseline `requirements/domain-requirements.tsv` and narrowed the namespace to that baseline plus `requirements/README.md`;
+4. moved **74 classified artifacts in three physical slices**: 16 managed SD-KA artifacts, 53 historical engineering evidence artifacts, and 5 separately owned cross-project Human decision/admission records;
+5. preserved exact pre-move blob bytes, stable `ENG-A-*` identities, current paths, legacy-path lookup and per-slice rollback evidence in `MIGRATION.tsv`/`legacy-paths.tsv`;
+6. preserved cross-project decision authority/owner scope after relocating those records to `engineering/evidence/decisions/`;
+7. repaired active navigation and stale old-path consumers so legacy locators are compatibility lookup rather than parallel truth;
+8. ran deterministic migration-loss fixtures for stable identity/current-path agreement, exact byte equivalence, Requirements residue, no compatibility copies, ENG-FIT-08, context navigation and accepted/current-baseline invariance;
+9. source-contract run #581 exposed three stale recovery consumers of the old Source/Project owner-admission path; those consumers were repaired and the failure/fix retained as loss-check evidence;
+10. exact PR head `0c4c94831f3d3266c0a532afc250bd29bf2fbd37` passed source-contract run #582; PR #298 merged at `main@ffc4d3736148987cd30aa805519634287d1b4b6b`; exact post-merge run #583 passed;
+11. persisted the WP5 Result/whole-system return with no current implementation focus and #261/WP6 ready-next.
 
-The physical move itself never changes accepted/current meaning. The migration PR is the bounded rollback unit; its move commit and matching catalog/legacy-path evidence are kept together in the same WP5 change.
+The physical moves changed locations only, not accepted/current meaning. The implementation PR is the bounded rollback unit and the exact physical-slice commits remain recorded in the migration compatibility catalog.
 
-## Later admitted work
+## WP6 — ready-next, not started (#261)
 
-WP6 performs adversarial qualification and terminal SD-KA-01 Result Review after WP5 reaches its required verified/returned state.
+WP6 is the next eligible bounded package under the existing D-016 admission. It performs adversarial qualification and terminal SD-KA-01 Result Review across the completed WP1–WP5 implementation. Readiness does not start WP6 and does not pre-decide terminal acceptance, partial/re-entry or no-change consequences.
 
-No terminal SD-KA acceptance, scholarly acceptance or successor programme is generated by a WP5 technical PASS.
+No terminal SD-KA acceptance, scholarly acceptance or successor programme is generated by the WP5 technical return.
