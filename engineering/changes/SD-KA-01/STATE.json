@@ -39,17 +39,17 @@
   ],
   "plan_ref": "artifact:ENG-A-0037",
   "result_ref": "artifact:ENG-A-0032",
-  "result_status": "wp2-verified-wp3-implementing",
-  "verification_head": "git:ddf289fdf69f3827f287665a2a8c8e4d137fcbba",
+  "result_status": "wp3-verified-technical-return",
+  "verification_head": "git:c6575ff0c30d70fbfe64b2767d8db68351e7a8ee",
   "work_package_status": {
     "WP1": "verified",
     "WP2": "verified",
-    "WP3": "implementing",
-    "WP4": "not-started",
+    "WP3": "verified",
+    "WP4": "ready-next",
     "WP5": "not-started",
     "WP6": "not-started"
   },
-  "current_execution": "WP3 started from main@ddf289fdf69f3827f287665a2a8c8e4d137fcbba under #258 within the existing D-016 admission. Current work is to implement Human/developer/Agent context views, Senior Developer bootstrap, a shared deterministic full-check entrypoint, bounded prompt create/review/test behavior, and review-evidence-basis safeguards without creating new Project or scholarly authority.",
-  "current_baseline_changes": "accepted architecture and Requirement baselines remain unchanged; WP3 context/profile/prompt/check surfaces are admitted-change implementation inside the still-active SD-KA-01 change",
-  "whole_system_return": "WP1/WP2 verified returns remain valid. #244 remains the programme/whole-system owner. WP3 is now the bounded implementation cursor under #258; it does not create Project/manuscript state, scholarly NEXT ACTION, specialist validation or whole-programme acceptance. F10/F17 residual boundaries remain explicit and physical migration stays later in WP5."
+  "current_execution": "WP3 is merged and exactly post-merge verified. No work package is currently executing. #259/WP4 is the next eligible implementation package within the existing D-016 admission but is not started by this return. #260/WP5 remains not-started because the migration contract requires the earlier engineering-fitness prerequisite as applicable.",
+  "current_baseline_changes": "accepted architecture and Requirement baselines unchanged; WP3 context/profile/prompt/check capabilities are implemented inside the still-active admitted SD-KA-01 change",
+  "whole_system_return": "changed: role/task-derived Human/Developer/Agent contexts, semantic Human current-work rendering, Senior Developer bootstrap, bounded prompt create/review/test behavior, review-evidence-basis safeguards and one shared local/CI deterministic full-check entrypoint are now implemented and exactly post-merge verified. #244 remains the programme/whole-system owner. WP3 technical PASS is not SD-KA-01 closure, scholarly acceptance, specialist validation or independent evidence. F10 remains an evidential qualification residual despite the implemented safeguard; F17/#225 is unchanged. #259/WP4 is ready-next but not started; #260/WP5 and WP6 remain later. No Project/manuscript state or scholarly NEXT ACTION changed."
 }
