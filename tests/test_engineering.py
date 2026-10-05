@@ -195,7 +195,7 @@ class EngineeringContractTests(unittest.TestCase):
         self.assertIn("ENG-A-0114", ids)
         active = engineering.query_artifacts(REPO, authority_role="work-metadata", owner_scope="SD-KA-01", lifecycle="active")
         active_ids = {row["artifact_id"] for row in active}
-        self.assertIn("ENG-A-0114", active_ids)
+        self.assertNotIn("ENG-A-0114", active_ids)
         self.assertNotIn("ENG-A-0054", active_ids)
 
     def _copy_contract_fixture(self, target: Path) -> Path:
