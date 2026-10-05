@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "work_package": "WP4",
+  "owner_ref": "github-issue:esany/paleo-type#259",
+  "programme_owner_ref": "github-issue:esany/paleo-type#244",
+  "design_ref": "artifact:ENG-A-0052",
+  "shared_execution_boundary_ref": "artifact:ENG-A-0053",
+  "checks": [
+    {"id": "ENG-FIT-01", "owner_ref": "artifact:ENG-A-0024", "implementation": "tools/engineering.py validate", "fixture_families": ["broken-stable-reference"]},
+    {"id": "ENG-FIT-02", "owner_ref": "artifact:ENG-A-0022", "implementation": "tools/engineering.py validate", "fixture_families": ["stale-current", "latest-wins-trap", "missing-transition-authority", "concurrent-investigations"]},
+    {"id": "ENG-FIT-03", "owner_ref": "artifact:ENG-A-0025", "implementation": "tools/engineering.py validate", "fixture_families": ["orphan-finding", "coverage-loophole"]},
+    {"id": "ENG-FIT-04", "owner_ref": "artifact:ENG-A-0027", "implementation": "tools/engineering.py validate", "fixture_families": ["false-relation"]},
+    {"id": "ENG-FIT-05", "owner_ref": "artifact:ENG-A-0042", "implementation": "tools/engineering_fitness.py", "fixture_families": ["stale-generated-view"]},
+    {"id": "ENG-FIT-06", "owner_ref": "artifact:ENG-A-0029", "implementation": "tools/engineering.py validate", "fixture_families": ["no-change-result", "local-pass-trap"]},
+    {"id": "ENG-FIT-07", "owner_ref": "artifact:ENG-A-0040", "implementation": "tools/engineering_fitness.py", "fixture_families": ["context-starvation"]},
+    {"id": "ENG-FIT-08", "owner_ref": "artifact:ENG-A-0028", "implementation": "tools/engineering_fitness.py", "fixture_families": ["broken-stable-reference"], "applicability": "conditional-wp5"},
+    {"id": "ENG-FIT-09", "owner_ref": "artifact:ENG-A-0041", "implementation": "tools/prompt.py + regressions", "fixture_families": ["latest-wins-trap", "tiny-routine-change"]}
+  ],
+  "fixture_families": {
+    "stale-current": "tests/test_engineering.py::test_proposed_adr_cannot_become_current_baseline",
+    "latest-wins-trap": "tests/test_engineering.py::test_newer_proposed_artifact_does_not_win_currentness",
+    "orphan-finding": "tests/test_engineering_fitness.py::test_orphan_finding_is_detected",
+    "coverage-loophole": "tests/test_engineering_fitness.py::test_coverage_loophole_is_detected",
+    "broken-stable-reference": "tests/test_engineering.py::test_broken_relation_reference_fails",
+    "missing-transition-authority": "tests/test_engineering_fitness.py::test_missing_transition_authority_is_detected",
+    "stale-generated-view": "tests/test_engineering_fitness.py::test_committed_generated_current_view_is_rejected",
+    "local-pass-trap": "tests/test_engineering_fitness.py::test_verified_package_requires_whole_system_return",
+    "context-starvation": "tests/test_engineering_context.py::test_context_starvation_is_detected",
+    "false-relation": "tests/test_engineering_fitness.py::test_accepted_relation_requires_evidence",
+    "no-change-result": "tests/test_engineering.py::test_transition_contract_distinguishes_acceptance_and_no_change",
+    "concurrent-investigations": "tests/test_engineering_context.py::test_ambiguous_next_work_is_exposed_not_silently_selected",
+    "tiny-routine-change": "tests/test_governance_ownership.py routine bounded-work admission fixtures",
+    "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result"
+  },
+  "non_claims": [
+    "CI does not establish scholarly truth or specialist validity.",
+    "CI does not establish independent evidential review.",
+    "CI does not establish Human material acceptance or whole-system closure.",
+    "CI does not validate external runtime fitness, cancellation capability or preservation state unless that property is actually exercised by an owning fixture."
+  ]
+}

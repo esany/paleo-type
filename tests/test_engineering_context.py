@@ -14,26 +14,26 @@ REPO = Path(__file__).resolve().parents[1]
 
 
 class EngineeringContextTests(unittest.TestCase):
-    def test_human_overview_resolves_semantic_next_work(self) -> None:
+    def test_human_overview_resolves_semantic_current_work(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "human-system-overview")
         self.assertEqual([], errors)
         work = packet["current_work"]
-        self.assertEqual("ready-next", work["state"])
+        self.assertEqual("active", work["state"])
         self.assertIn("Implement engineering fitness", work["statement"])
         self.assertNotEqual(work["statement"], work["work_ref"])
-        self.assertEqual("SD-KA-01/next-eligible", work["scope"])
+        self.assertEqual("SD-KA-01/WP4", work["scope"])
         self.assertEqual("github-issue:esany/paleo-type#259", work["work_ref"])
-        self.assertEqual("artifact:ENG-A-0032", work["basis_ref"])
+        self.assertEqual("github-issue:esany/paleo-type#259", work["basis_ref"])
         rendered = engineering_context.render_human_cursor(packet)
-        self.assertIn("Next eligible work:", rendered)
-        self.assertIn("Scope: SD-KA-01/next-eligible", rendered)
+        self.assertIn("Current work:", rendered)
+        self.assertIn("Scope: SD-KA-01/WP4", rendered)
         self.assertIn("Resolution basis:", rendered)
 
-    def test_execution_profile_exposes_shared_check_and_ready_next_authority(self) -> None:
+    def test_execution_profile_exposes_shared_check_and_active_authority(self) -> None:
         errors, packet = engineering_context.compile_context(REPO, "system-development-execution")
         self.assertEqual([], errors)
         execution = packet["execution_contract"]
-        self.assertEqual("ready-next", execution["requested_activity"])
+        self.assertEqual("implementation", execution["requested_activity"])
         self.assertEqual("python tools/check.py", execution["technical_verification"])
         self.assertIn("path:GOVERNING_OBJECTIVE.md", execution["authority_reads"])
         self.assertIn("path:AGENTS.md", execution["authority_reads"])
@@ -86,6 +86,12 @@ class EngineeringContextTests(unittest.TestCase):
     def test_ambiguous_next_work_is_exposed_not_silently_selected(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             fixture = self._copy_contract_fixture(Path(directory))
+
+            config_path = fixture / "engineering" / "configuration.json"
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            config["current_focus"] = None
+            config["applicability"] = []
+            config_path.write_text(json.dumps(config), encoding="utf-8")
 
             artifact_path = fixture / "engineering" / "catalog" / "artifacts.tsv"
             artifacts = self._read_rows(artifact_path)

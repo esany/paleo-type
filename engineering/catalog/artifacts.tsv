@@ -47,3 +47,8 @@ ENG-A-0045	design	requirements/system-development-bugwave-readiness-human-decisi
 ENG-A-0046	test-result	requirements/prompt-skill-transfer-test-result-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bounded prompt transfer test result and activation constraints
 ENG-A-0047	analysis	requirements/review-premise-inheritance-generic-fit-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Review evidence-basis and inherited-premise safeguard disposition
 ENG-A-0048	work-metadata	github://github.com/esany/paleo-type/issues/259	SD-KA-01	work-metadata	active	SD-KA-01	Implement engineering fitness CI assurance and whole-system return checks
+ENG-A-0049	assurance-contract	engineering/assurance/fitness.json	SD-KA-01	admitted-change	active	SD-KA-01	Machine-readable ENG-FIT mapping and seeded-fixture contract
+ENG-A-0050	assurance-doc	engineering/assurance/README.md	SD-KA-01	admitted-change	active	SD-KA-01	Engineering fitness assurance boundary and developer guidance
+ENG-A-0051	tool	tools/engineering_fitness.py	SD-KA-01	admitted-change	active	SD-KA-01	Executable engineering fitness checker
+ENG-A-0052	design	requirements/system-development-bugwave-assurance-closure-design-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Engineering assurance and closure design
+ENG-A-0053	owner-admission	requirements/outcome-preserving-execution-control-d016-owner-admission-2026-10-05.md	cross-project	admitted-change	active		Shared outcome-preserving execution-control D-016 admission

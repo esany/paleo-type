@@ -114,6 +114,7 @@ def main() -> int:
     try:
         run_step("validate canonical Source/File/Project-use contract", [PYTHON, "tools/source_contract.py", "validate"])
         run_step("validate engineering contracts", [PYTHON, "tools/engineering.py", "validate"])
+        run_step("validate engineering fitness mapping and executable safeguards", [PYTHON, "tools/engineering_fitness.py"])
         run_step(
             "run deterministic and governance regressions",
             [PYTHON, "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py", "-v"],
@@ -125,8 +126,8 @@ def main() -> int:
         return 1
 
     print("== assurance boundary ==")
-    print("PASS: deterministic contracts, regressions, fresh-process contexts and real-data resolver fixtures passed.")
-    print("NON-CLAIM: this does not establish manuscript truth, specialist validity, Human acceptance or release authority.")
+    print("PASS: deterministic source/project/engineering contracts, fitness mappings, regressions, fresh-process contexts and real-data resolver fixtures passed.")
+    print("NON-CLAIM: this does not establish manuscript truth, specialist validity, evidential independence, Human acceptance, external runtime/preservation fitness, or whole-system closure.")
     return 0
 
 
