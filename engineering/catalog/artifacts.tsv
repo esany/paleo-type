@@ -43,3 +43,6 @@ ENG-A-0041	prompt-contract	engineering/prompts/CONTRACT.md	SD-KA-01	admitted-cha
 ENG-A-0042	tool	tools/engineering_context.py	SD-KA-01	admitted-change	active	SD-KA-01	Derived engineering context compiler
 ENG-A-0043	tool	tools/prompt.py	SD-KA-01	admitted-change	active	SD-KA-01	Bounded prompt create review and test implementation
 ENG-A-0044	tool	tools/check.py	SD-KA-01	admitted-change	active	SD-KA-01	Shared local and CI deterministic full-check entrypoint
+ENG-A-0045	design	requirements/system-development-bugwave-readiness-human-decision-contract-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Activity-relative readiness and Human material-decision contract
+ENG-A-0046	test-result	requirements/prompt-skill-transfer-test-result-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Bounded prompt transfer test result and activation constraints
+ENG-A-0047	analysis	requirements/review-premise-inheritance-generic-fit-2026-10-04.md	SD-KA-01	non-normative-evidence	active	SD-KA-01	Review evidence-basis and inherited-premise safeguard disposition
