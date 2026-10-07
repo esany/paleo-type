@@ -82,6 +82,7 @@ class SourceIntakeRegressionTests(unittest.TestCase):
         project.mkdir(parents=True)
         (project / "project.yml").write_text(
             'id: project-a\n'
+            'title: "Fixture project-a"\n'
             'project_source_id: ROOT-A\n'
             'research_object: "Fixture scholarly investigation"\n'
             'active_scope: "Fixture scope"\n'
