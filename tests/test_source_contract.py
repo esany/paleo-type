@@ -431,7 +431,7 @@ class TargetProjectUseContractTests(unittest.TestCase):
 
     def test_missing_title_fails(self) -> None:
         path = self.root / "projects" / "project-a" / "project.yml"
-        text = path.read_text(encoding="utf-8").replace('title: "Fixture project-a"\\n', "")
+        text = path.read_text(encoding="utf-8").replace('title: "Fixture project-a"\n', "")
         path.write_text(text, encoding="utf-8")
         errors, _, _ = self.validate()
         self.assertTrue(any("required project key title is missing or empty" in error for error in errors))
