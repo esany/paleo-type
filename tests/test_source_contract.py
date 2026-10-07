@@ -82,11 +82,24 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         self.assertEqual("FILE-REG-II-5-00000129-EXCERPT", li4_comparison_evidence["file_id"])
 
         for project_id, meta in cache["projects"].items():
+            self.assertTrue(meta["title"], project_id)
             self.assertTrue(meta["research_object"], project_id)
             self.assertTrue(meta["active_scope"], project_id)
             self.assertEqual("source-uses.tsv", meta["source_register"])
             self.assertTrue((REPO / "projects" / project_id / meta["source_register"]).is_file())
             self.assertTrue((REPO / "projects" / project_id / meta["canonical_status_file"]).is_file())
+
+    def test_project_template_required_labels_are_backed_by_executable_required_keys(self) -> None:
+        contract = source_contract.load_contract(REPO)
+        template = source_contract.read_simple_yaml_scalars(REPO / "templates" / "project" / "project.yml")
+        template_required = {
+            key for key, value in template.items() if value.strip().upper().startswith("REQUIRED")
+        }
+        executable_required = set(contract["tables"]["projects"]["required_keys"])
+        self.assertTrue(
+            template_required <= executable_required,
+            f"template REQUIRED fields missing from executable contract: {sorted(template_required - executable_required)}",
+        )
 
     def test_current_resolver_uses_target_use_evidence_without_legacy_primary_file(self) -> None:
         args = SimpleNamespace(
@@ -196,6 +209,7 @@ class TargetProjectUseContractTests(unittest.TestCase):
         project.mkdir(parents=True, exist_ok=True)
         (project / "project.yml").write_text(
             f'id: {project_id}\n'
+            f'title: "Fixture {project_id}"\n'
             f'project_source_id: {root_id}\n'
             'research_object: "Fixture scholarly investigation"\n'
             'active_scope: "No active scope in fixture"\n'
@@ -414,6 +428,13 @@ class TargetProjectUseContractTests(unittest.TestCase):
         self._write_project("project-c", "ROOT-B")
         errors, _, _ = self.validate()
         self.assertEqual([], errors)
+
+    def test_missing_title_fails(self) -> None:
+        path = self.root / "projects" / "project-a" / "project.yml"
+        text = path.read_text(encoding="utf-8").replace('title: "Fixture project-a"\\n', "")
+        path.write_text(text, encoding="utf-8")
+        errors, _, _ = self.validate()
+        self.assertTrue(any("required project key title is missing or empty" in error for error in errors))
 
     def test_missing_research_object_fails(self) -> None:
         path = self.root / "projects" / "project-a" / "project.yml"
