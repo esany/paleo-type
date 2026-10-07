@@ -133,6 +133,7 @@ class SourceContractAssuranceRegressionTests(unittest.TestCase):
             project.mkdir(parents=True)
             (project / "project.yml").write_text(
                 f'id: {project_id}\n'
+                f'title: "Fixture {project_id}"\n'
                 f'project_source_id: {root_id}\n'
                 'research_object: "Fixture scholarly investigation"\n'
                 'active_scope: "Fixture active scope"\n'
