@@ -1,6 +1,6 @@
 id: "REQUIRED-UNIQUE-PROJECT-ID"
 title: "REQUIRED human-readable project title"
-repository_role: "REQUIRED: why this scholarly investigation/work container exists"
+repository_role: "OPTIONAL: explanatory repository/work-container role when it adds non-duplicative boundary context"
 project_source_id: "REQUIRED after Project selection: canonical source_id of the documentary Source root used for structural resolution"
 research_object: "REQUIRED: scholarly research purpose that establishes this Project"
 active_scope: "REQUIRED: current bounded working scope; may be narrower than the documentary Source root"

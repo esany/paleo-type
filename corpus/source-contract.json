@@ -80,6 +80,7 @@
       "glob": "projects/*/project.yml",
       "required_keys": [
         "id",
+        "title",
         "project_source_id",
         "research_object",
         "active_scope",
