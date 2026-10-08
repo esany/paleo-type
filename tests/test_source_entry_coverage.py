@@ -111,10 +111,12 @@ class SourceEntryCoverageTests(unittest.TestCase):
         return source_contract.validate(root, source_contract.load_contract(root))
 
     def test_empty_owner_is_valid_and_fabricates_nothing(self) -> None:
-        errors, _, cache = self.validate(REPO)
-        self.assertEqual([], errors)
-        self.assertEqual([], cache["source_entry_routes"])
-        self.assertEqual([], cache["source_entry_coverage"])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.make_repo(tmp)
+            errors, _, cache = self.validate(root)
+            self.assertEqual([], errors)
+            self.assertEqual([], cache["source_entry_routes"])
+            self.assertEqual([], cache["source_entry_coverage"])
 
     def test_coverage_without_route_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
