@@ -70,21 +70,27 @@ The overview used nine execution-local contact sheets covering consecutive range
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
 
-The canonical source-entry owner contains one exact-locator checkpoint for each inspected JPEG in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the overview observations and their claim ceilings.
+The canonical source-entry owner contains one exact-locator checkpoint for each overview-inspected JPEG and additional exact-locator detail records in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the bounded observations and their claim ceilings.
 
-During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
+When direct reconnaissance begins, each durable coverage record must reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
+
+### Requested detail pass — 2026-10-08
+
+The exact local JPEGs for provider images `0098–0107` were inspected in sequence at full-frame detail, with `0097` and `0108` opened as boundary controls. Images `0129–0135` were then inspected in sequence, with `0129` used as the evidentiary predecessor for the second transition. The first block shows a change from ordinary bound-volume writing (`0097–0102`) to formal/seal-bearing material (`0103–0107`); `0108` is visually different again, but no archival folio or definitive internal document boundary is assigned. The second block shows a marked contrast between ordinary bound writing at `0129` and formal written sheets with calligraphic headings, seals and signatures across `0130–0135`; the leaves are not collapsed into one document merely from visual adjacency.
+
+These are source-entry observations only. No diplomatic reading, foliation, hand attribution, date normalization, document identification or narrower scholarly scope is asserted. The exact JPEG SHA-256 values for all 19 directly inspected images match the canonical File rows in the current GitHub `main` state.
 
 ## Generic gate state
 
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
-| source-entry reconnaissance | `complete for declared overview domain` | provider images 0001–0135 | Ordered overview pass is persisted as 135 exact-locator observations at overview depth; deeper document-boundary/relevance work remains open and no narrower scholarly scope is inferred. |
+| source-entry reconnaissance | `complete for declared overview + requested detail loci` | overview provider images 0001–0135; detail provider images 0097–0108 and 0129–0135 | Ordered overview and the authorized detail pass are persisted as exact-locator observations; archival foliation, definitive internal document boundaries, detailed reading and narrower scholarly relevance remain unresolved. |
 | G2–G6 | `not activated` | no active scholarly scope | No transcription, internal analysis, controlled comparison, consolidation or edition claim is made. |
 
 ## NEXT ACTION — canonical restart point
 
-Continue the already-authorized Nr. 632 source-entry block with an evidence-ranked detail pass over the unresolved document/material boundaries identified during the ordered overview. Begin with provider images **0098–0107**, where the overview shows a material/documentary transition with written leaves, signatures and/or wax-seal impressions; then assess **0130–0135**, where formal written leaves, a calligraphic heading, signatures and/or wax-seal impressions are visible. Inspect adjacent images `0097`, `0108` or `0129` only as needed to test those boundaries. Preserve provider-image, archival-folio and documentary-boundary distinctions; do not infer a narrower scholarly scope, foliation or text reading from the overview. A global restart at `0001` is not required unless later evidence shows the overview cursor or package provenance needs re-audit.
+The authorized detail pass over provider images **0098–0107**, followed by **0130–0135**, is complete at the source-entry observation level. Boundary controls `0097`, `0108` and `0129` were inspected where needed. No archival folio, definitive internal document boundary, diplomatic reading or narrower scholarly scope is established. Further work requires a new evidence-ranked question or explicit Human-Owner selection; it is not generated from the remaining visual ambiguity.
 
 Do not substitute abstract schema work, a synthetic Corpus-only fixture, OCR/HTR, guessed foliation or a narrower scholarly locus for this continuation.
 
@@ -97,9 +103,8 @@ A fresh capable context must be able to reconstruct without old chat that:
 - the research purpose is broad source-critical source-entry before evidence-based narrowing;
 - no active scholarly scope is yet selected;
 - the provider sequence 0001–0135 is the inspection domain only;
-- declared overview coverage is 135/135; this is not detail, transcription or full-resolution reading coverage;
+- declared overview coverage is 135/135, with the requested detail loci and boundary controls separately recorded; this is not transcription or full-resolution reading coverage of the whole inspection domain;
 - controlled external package existence/integrity and research-use authority are established;
-- exact per-JPEG canonical File identities, Project-use evidence bindings and overview coverage records are present for all 135 provider images;
-- overview `relevance_status` remains `UNRESOLVED` because visible documentary/material cues do not by themselves establish narrower scholarly relevance;
+- exact per-JPEG canonical File rows/evidence bindings and the requested detail observations are persisted;
 - no re-acquisition is authorized merely to reproduce existing package verification;
-- the next authorized continuation is the evidence-ranked detail pass over the unresolved material/document boundaries beginning with provider images `0098–0107`, then `0130–0135`, using adjacent images only as needed.
+- no automatic continuation is authorized from the unresolved detail observations; a new bounded question requires Human-Owner selection or another explicit canonical authority.
