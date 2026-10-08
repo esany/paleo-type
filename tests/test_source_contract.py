@@ -38,8 +38,15 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         errors, _, cache = source_contract.validate(REPO, contract)
         self.assertEqual([], errors)
         self.assertFalse(cache["project_sources"])
-        self.assertEqual(6, len(cache["source_uses"]))
+        self.assertEqual(7, len(cache["source_uses"]))
         self.assertEqual(6, len(cache["use_evidence"]))
+
+        nr632 = cache["source_uses"]["USE-SSTA-20578-NR632-ROOT"]
+        self.assertEqual("SSTA-ARCHIVIALE-EDD69AA1", nr632["source_id"])
+        self.assertEqual("principal", nr632["research_function"])
+        self.assertEqual("", nr632["relevant_locus"])
+        self.assertEqual("active", nr632["status"])
+        self.assertIn("Nr. 632 Project purpose/boundary", nr632["evidence_basis"])
 
         principal = cache["source_uses"]["USE-REGII5-00000129-PRINCIPAL"]
         self.assertEqual("THHSTAW-EGA-REG-II-5-STAT-VIS-00000129", principal["source_id"])
