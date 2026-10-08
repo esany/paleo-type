@@ -82,3 +82,10 @@ Their historical `active/identified` state is retained as migration evidence wit
 - The current Reg. Ii 3 / `00000235` crosswalk has no page URNs; the `41r–63v` Reg. Ii 3 Source currently has no canonical page crosswalk at all.
 
 Do not generalize one Source's identifier availability, page numbering, readings or work-state to another.
+
+## 2026-10-08 current Project addition — SStA 20578 Nr. 632
+
+The Human Owner has separately established `projects/ssta-20578-nr-632/` as the durable Project for the independently identified archival unit Sächsisches Staatsarchiv, Bestand 20578, Nr. 632, anchored to canonical Source `SSTA-ARCHIVIALE-EDD69AA1`.
+
+This addition does not change the three Reg.-Ii. Project decisions below and does not turn the wider fonds/classification label “Wolkenburg” into a Project boundary. Current purpose, scope, evidence and restart state belong only in that Project's `project.yml` / `STATUS.md`; this README is navigation only.
+
