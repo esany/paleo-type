@@ -294,7 +294,14 @@ class SourceEntryCoverageTests(unittest.TestCase):
 
         self.assertGreater(mapped_count, 0)
         # Loss checking does not migrate/copy legacy rows into the canonical owner.
-        self.assertEqual(1, len((REPO / "source-entry" / "inspection-coverage.tsv").read_text().splitlines()))
+        with (REPO / "source-entry" / "inspection-coverage.tsv").open(
+            "r", encoding="utf-8", newline=""
+        ) as fh:
+            canonical_rows = list(csv.DictReader(fh, delimiter="\t"))
+        self.assertFalse(any(row["inspection_id"].startswith("LOSS-") for row in canonical_rows))
+        self.assertTrue(
+            any(row["source_id"] == "SSTA-ARCHIVIALE-EDD69AA1" for row in canonical_rows)
+        )
 
 
 if __name__ == "__main__":
