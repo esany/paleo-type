@@ -80,6 +80,17 @@ The exact local JPEGs for provider images `0098–0107` were inspected in sequen
 
 These are source-entry observations only. No diplomatic reading, foliation, hand attribution, date normalization, document identification or narrower scholarly scope is asserted. The exact JPEG SHA-256 values for all 19 directly inspected images match the canonical File rows in the current GitHub `main` state.
 
+
+### GAP register — detail pass
+
+| GAP-ID | State | Severity | Evidence basis | Gap / impact | Closure criterion |
+|---|---|---|---|---|---|
+| GAP-NR632-01 | closed | critical persistence | 19 directly inspected provider images; exact SHA-256 values match canonical File rows; GitHub read-back confirms 19 detail records | Detail observations were initially present only in the local work context and absent from the online source-entry owner. | The 19 exact-locator detail rows and this status entry remain readable from the canonical GitHub branch/commit. |
+| GAP-NR632-02 | open | high boundary | P observations in provider images 0097–0108 | The transition from ordinary bound-volume writing to formal/seal-bearing material is visible, but no archival folio or definitive internal document boundary is established. | An evidenced folio/document crosswalk or a qualified, explicitly bounded adjudication is recorded; visual adjacency alone is insufficient. |
+| GAP-NR632-03 | open | high boundary | P observations in provider images 0129–0135 | Formal sheets, seals, pale/overlaid material and show-through are visible, but their documentary relation and count remain unresolved. | The relation/extent is established by direct evidence or remains explicitly qualified without collapsing the sheets into one document. |
+| GAP-NR632-04 | open | high provenance | Provider-image File IDs and canonical SHA-256 rows; no archival crosswalk | Provider image numbers remain digital locators, not archival folios/pages; archival foliation is not inferred. | An evidenced archival-folio ↔ provider-image crosswalk is established, or the absence is retained as an explicit limit. |
+| GAP-NR632-05 | open | scope protection | Detail rows explicitly exclude reading, foliation, hand attribution, date normalization and document identification | No diplomatic reading, narrower scholarly relevance or G2–G6 activation follows from the visual detail pass. | A new bounded, evidence-supported scholarly question and the required reading/review basis are explicitly authorized and recorded. |
+
 ## Generic gate state
 
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
