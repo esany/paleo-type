@@ -14,6 +14,7 @@ This README is the repository **orientation and reading-path view**. It is not a
 - **REQUIREMENTS** — `requirements/`: accepted reusable Requirement baselines plus namespace navigation. Historical engineering evidence no longer lives here after WP5.
 - **ENGINEERING** — `engineering/`: engineering configuration, bounded changes, ADRs, assurance, semantic catalogs and non-default engineering evidence/history.
 - **CORPUS** — `corpus/`, `entities/`: canonical Source/File identity, reusable source-wide mappings, evidenced relationships and normalized entities.
+- **SOURCE-ENTRY** — `source-entry/`: admitted append-only Source routing history plus granular inspection/coverage state; it references Corpus identity and optional Project binding without owning Project purpose, scholarly scope, gates or `NEXT ACTION`.
 - **PROJECT** — `projects/<id>/`: durable scholarly state for one purpose-established investigation, including source use, evidence binding, transcription/analysis and current research state.
 
 Project existence or priority is never inferred from Source/File structure or engineering state. Detailed semantics live in the owning methodology and Project files.
@@ -112,6 +113,8 @@ A green check establishes only the formal/deterministic properties actually exer
 | How are quality/falsification/review dimensions handled? | `methodology/quality-and-learning.md` |
 | How are ownership, D-016 admission and propagation handled? | `methodology/maintenance.md` |
 | What stable Source/File/Project-use constraints apply? | `corpus/source-contract.json` + `tools/source_contract.py` |
+| What owns source-entry route history and granular inspection/coverage state? | `source-entry/README.md` + `source-entry/contract.json` + `tools/source_contract.py` |
+| What is the admitted/current Option C decision basis? | `artifact:ENG-A-0119` + `artifact:ENG-A-0120` |
 | What is the accepted reusable Requirement inventory? | `requirements/domain-requirements.tsv` |
 | What is the accepted engineering baseline / active change / explicit focus? | `engineering/configuration.json` |
 | What is the bounded SD-KA lifecycle? | `engineering/changes/SD-KA-01/STATE.json` |
@@ -162,6 +165,7 @@ engineering/
   evidence/
   prompts/
 templates/
+source-entry/
 corpus/
 entities/
 projects/
