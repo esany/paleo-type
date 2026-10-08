@@ -1,0 +1,123 @@
+{
+  "version": 2,
+  "canonical_owner": "source-entry/",
+  "semantics": {
+    "route_currentness": "For each source_id, the highest contiguous transition_sequence is the current route; route rows are append-only.",
+    "coverage_route_basis": "Every coverage row references the exact resolved route_id under which the record was created.",
+    "project_scope_boundary": "This owner must not contain active scholarly scope, gate or NEXT ACTION state."
+  },
+  "tables": {
+    "routes": {
+      "path": "routes.tsv",
+      "required_columns": [
+        "route_id",
+        "source_id",
+        "transition_sequence",
+        "route_state",
+        "project_id",
+        "authority_status",
+        "authority_basis",
+        "recorded_at",
+        "notes"
+      ],
+      "required_nonempty": [
+        "route_id",
+        "source_id",
+        "transition_sequence",
+        "route_state",
+        "authority_status",
+        "authority_basis",
+        "recorded_at"
+      ]
+    },
+    "coverage": {
+      "path": "inspection-coverage.tsv",
+      "required_columns": [
+        "inspection_id",
+        "source_id",
+        "route_id",
+        "file_id",
+        "project_id",
+        "inspection_domain",
+        "locator_domain",
+        "coverage_locus",
+        "purpose",
+        "depth",
+        "coverage_status",
+        "relevance_status",
+        "evidence_status",
+        "claim_layer",
+        "result",
+        "exclusions",
+        "unresolved_or_partial",
+        "unavailable_or_unreadable",
+        "continuation_boundary",
+        "claim_ceiling",
+        "evidence_basis",
+        "recorded_at",
+        "responsibility",
+        "notes"
+      ],
+      "required_nonempty": [
+        "inspection_id",
+        "source_id",
+        "route_id",
+        "inspection_domain",
+        "locator_domain",
+        "coverage_locus",
+        "purpose",
+        "depth",
+        "coverage_status",
+        "relevance_status",
+        "evidence_status",
+        "claim_layer",
+        "continuation_boundary",
+        "claim_ceiling",
+        "evidence_basis",
+        "recorded_at"
+      ]
+    }
+  },
+  "controlled_values": {
+    "route_state": [
+      "UNRESOLVED",
+      "CANDIDATE_NEW_PROJECT",
+      "CORPUS_ONLY / NO_PROJECT_YET",
+      "EXISTING_PROJECT"
+    ],
+    "authority_status": [
+      "UNRESOLVED",
+      "HUMAN-OWNER-CONFIRMED"
+    ],
+    "coverage_status": [
+      "NOT_INSPECTED",
+      "PARTIAL",
+      "INSPECTED",
+      "COMPLETE_FOR_DECLARED_DOMAIN",
+      "UNREADABLE",
+      "UNAVAILABLE",
+      "MISSING"
+    ],
+    "relevance_status": [
+      "NOT_ASSESSED",
+      "RELEVANT",
+      "EXCLUDED",
+      "UNRESOLVED"
+    ],
+    "evidence_status": [
+      "K",
+      "P",
+      "H",
+      "UNRESOLVED",
+      "NOT-OBSERVABLE"
+    ],
+    "claim_layer": [
+      "OBSERVATION",
+      "READING",
+      "NORMALIZATION",
+      "IDENTIFICATION",
+      "INTERPRETATION",
+      "UNRESOLVED"
+    ]
+  }
+}
