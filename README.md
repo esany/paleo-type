@@ -139,9 +139,10 @@ The repository currently contains:
 
 - `projects/ega-reg-ii-3/`;
 - `projects/ega-reg-ii-4-bd-ii/`;
-- `projects/ega-reg-ii-5-knau/`.
+- `projects/ega-reg-ii-5-knau/`;
+- `projects/ssta-20578-nr-632/`.
 
-The last path is a legacy directory/id retained for continuity. Its current Project meaning, scope and priority are defined only by its canonical Project files, not by the slug.
+The `ega-reg-ii-5-knau` path is a legacy directory/id retained for continuity. Its current Project meaning, scope and priority are defined only by its canonical Project files, not by the slug.
 
 **Do not copy current Project scope/gate/`NEXT ACTION` into this README.** Read the Project owner directly or use the rebuildable Project-context view.
 
