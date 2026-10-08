@@ -70,7 +70,7 @@ The overview used nine execution-local contact sheets covering consecutive range
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
 
-The canonical source-entry owner contains one exact-locator checkpoint for each inspected JPEG in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the direct overview observations and their claim ceilings.
+The canonical source-entry owner contains one exact-locator checkpoint for each inspected JPEG in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the overview observations and their claim ceilings.
 
 When direct reconnaissance begins, each durable coverage record must reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
 
@@ -97,7 +97,7 @@ A fresh capable context must be able to reconstruct without old chat that:
 - the research purpose is broad source-critical source-entry before evidence-based narrowing;
 - no active scholarly scope is yet selected;
 - the provider sequence 0001–0135 is the inspection domain only;
-- manuscript coverage is 0/135;
+- declared overview coverage is 135/135; this is not detail, transcription or full-resolution reading coverage;
 - controlled external package existence/integrity and research-use authority are established;
 - exact per-JPEG canonical File rows/evidence bindings remain the current recovery gap;
 - no re-acquisition is authorized merely to reproduce existing package verification;
