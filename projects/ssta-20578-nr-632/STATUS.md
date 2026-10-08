@@ -72,7 +72,7 @@ The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry 
 
 The canonical source-entry owner contains one exact-locator checkpoint for each inspected JPEG in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the overview observations and their claim ceilings.
 
-When direct reconnaissance begins, each durable coverage record must reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
+During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
 
 ## Generic gate state
 
@@ -99,6 +99,7 @@ A fresh capable context must be able to reconstruct without old chat that:
 - the provider sequence 0001–0135 is the inspection domain only;
 - declared overview coverage is 135/135; this is not detail, transcription or full-resolution reading coverage;
 - controlled external package existence/integrity and research-use authority are established;
-- exact per-JPEG canonical File rows/evidence bindings remain the current recovery gap;
+- exact per-JPEG canonical File identities, Project-use evidence bindings and overview coverage records are present for all 135 provider images;
+- overview `relevance_status` remains `UNRESOLVED` because visible documentary/material cues do not by themselves establish narrower scholarly relevance;
 - no re-acquisition is authorized merely to reproduce existing package verification;
-- the next authorized continuation is exact-File recovery from the existing package, then real ordered visual reconnaissance once target-context inspectability is established.
+- the next authorized continuation is the evidence-ranked detail pass over the unresolved material/document boundaries beginning with provider images `0098–0107`, then `0130–0135`, using adjacent images only as needed.
