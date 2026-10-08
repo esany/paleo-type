@@ -327,6 +327,8 @@ If the decisive staging capability lies outside repository/tool control, record 
 
 ## Repository-first persistence in execution contexts
 
+For ChatGPT Work and Codex, the mandatory GitHub connector access, online working-branch persistence, no-local-checkout/no-local-state fallback and GitHub write-confirmation rules are owned by the **GitHub-only access for ChatGPT Work and Codex** section of `AGENTS.md`. They apply regardless of whether the chat executes locally or in the cloud. The technical-processing allowance below does not authorize another repository route.
+
 Keep transient evidence processing distinct from research-state persistence.
 
 ```text
