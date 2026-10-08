@@ -61,6 +61,212 @@ def validate_project_relative_file(project_dir: Path, raw: str, field: str, erro
     return target
 
 
+
+def validate_source_entry_owner(
+    root: Path,
+    source_by_id: dict[str, dict[str, str]],
+    file_by_id: dict[str, dict[str, str]],
+    project_by_id: dict[str, dict[str, str]],
+    errors: list[str],
+) -> dict[str, object]:
+    """Validate the admitted source-entry route/coverage owner.
+
+    Route rows are append-only. Currentness is derived from the highest contiguous
+    transition_sequence for each Source; coverage records retain the exact route_id
+    under which they were created.
+    """
+    owner_dir = root / "source-entry"
+    contract_path = owner_dir / "contract.json"
+    if not contract_path.is_file():
+        return {"routes": [], "coverage": [], "current_routes": {}}
+
+    try:
+        owner_contract = json.loads(contract_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append(f"{contract_path}: invalid JSON: {exc}")
+        return {"routes": [], "coverage": [], "current_routes": {}}
+
+    route_cfg = owner_contract.get("tables", {}).get("routes", {})
+    coverage_cfg = owner_contract.get("tables", {}).get("coverage", {})
+    route_path = owner_dir / route_cfg.get("path", "routes.tsv")
+    coverage_path = owner_dir / coverage_cfg.get("path", "inspection-coverage.tsv")
+
+    if route_path.is_file():
+        route_headers, routes = read_tsv(route_path)
+    else:
+        route_headers, routes = [], []
+    if coverage_path.is_file():
+        coverage_headers, coverage = read_tsv(coverage_path)
+    else:
+        coverage_headers, coverage = [], []
+
+    check_headers(route_path, route_headers, route_cfg.get("required_columns", []), errors)
+    check_headers(coverage_path, coverage_headers, coverage_cfg.get("required_columns", []), errors)
+
+    controlled = owner_contract.get("controlled_values", {})
+    allowed_route_states = set(controlled.get("route_state", []))
+    allowed_authority = set(controlled.get("authority_status", []))
+    allowed_coverage = set(controlled.get("coverage_status", []))
+    allowed_relevance = set(controlled.get("relevance_status", []))
+    allowed_evidence = set(controlled.get("evidence_status", []))
+    allowed_layers = set(controlled.get("claim_layer", []))
+
+    forbidden_headers = {"active_scope", "gate", "next_action", "scholarly_scope"}
+    for path, headers in ((route_path, route_headers), (coverage_path, coverage_headers)):
+        for field in sorted(forbidden_headers.intersection(headers)):
+            errors.append(
+                f"{path}: source-entry owner must not contain Project/scholarly state column {field}"
+            )
+
+    route_by_id: dict[str, dict[str, str]] = {}
+    routes_by_source: dict[str, list[tuple[int, dict[str, str]]]] = {}
+
+    for i, row in enumerate(routes, start=2):
+        for field in route_cfg.get("required_nonempty", []):
+            if not row.get(field):
+                errors.append(f"{route_path}:{i}: {field} must not be empty")
+
+        route_id = row.get("route_id", "")
+        if route_id:
+            if route_id in route_by_id:
+                errors.append(f"{route_path}:{i}: duplicate route_id {route_id}")
+            route_by_id[route_id] = row
+
+        source_id = row.get("source_id", "")
+        if source_id and source_id not in source_by_id:
+            errors.append(f"{route_path}:{i}: source_id {source_id} does not exist in corpus/sources.tsv")
+
+        try:
+            sequence = int(row.get("transition_sequence", ""))
+            if sequence < 1:
+                raise ValueError
+        except ValueError:
+            errors.append(f"{route_path}:{i}: transition_sequence must be a positive integer")
+            sequence = 0
+
+        if source_id and sequence:
+            routes_by_source.setdefault(source_id, []).append((sequence, row))
+
+        route_state = row.get("route_state", "")
+        if route_state and route_state not in allowed_route_states:
+            errors.append(f"{route_path}:{i}: unknown route_state {route_state!r}")
+
+        authority = row.get("authority_status", "")
+        if authority and authority not in allowed_authority:
+            errors.append(f"{route_path}:{i}: unknown authority_status {authority!r}")
+
+        project_id = row.get("project_id", "")
+        if route_state in {"UNRESOLVED", "CANDIDATE_NEW_PROJECT", "CORPUS_ONLY / NO_PROJECT_YET"} and project_id:
+            errors.append(f"{route_path}:{i}: {route_state} cannot carry project_id")
+
+        if route_state == "CORPUS_ONLY / NO_PROJECT_YET" and authority != "HUMAN-OWNER-CONFIRMED":
+            errors.append(
+                f"{route_path}:{i}: CORPUS_ONLY / NO_PROJECT_YET requires HUMAN-OWNER-CONFIRMED authority_status"
+            )
+
+        if route_state == "EXISTING_PROJECT":
+            if not project_id:
+                errors.append(f"{route_path}:{i}: EXISTING_PROJECT requires project_id")
+            elif project_id not in project_by_id:
+                errors.append(f"{route_path}:{i}: project_id {project_id} does not exist")
+            if authority != "HUMAN-OWNER-CONFIRMED":
+                errors.append(
+                    f"{route_path}:{i}: EXISTING_PROJECT requires HUMAN-OWNER-CONFIRMED authority_status"
+                )
+
+    current_route_by_source: dict[str, dict[str, str]] = {}
+    for source_id, entries in routes_by_source.items():
+        sequences = sorted(sequence for sequence, _ in entries)
+        if len(sequences) != len(set(sequences)):
+            errors.append(f"{route_path}: source {source_id} has duplicate transition_sequence values")
+            continue
+        expected = list(range(1, max(sequences) + 1))
+        if sequences != expected:
+            errors.append(
+                f"{route_path}: source {source_id} transition_sequence must be contiguous from 1; got {sequences}"
+            )
+        current_route_by_source[source_id] = max(entries, key=lambda item: item[0])[1]
+
+    coverage_by_id: dict[str, dict[str, str]] = {}
+    for i, row in enumerate(coverage, start=2):
+        for field in coverage_cfg.get("required_nonempty", []):
+            if not row.get(field):
+                errors.append(f"{coverage_path}:{i}: {field} must not be empty")
+
+        inspection_id = row.get("inspection_id", "")
+        if inspection_id:
+            if inspection_id in coverage_by_id:
+                errors.append(f"{coverage_path}:{i}: duplicate inspection_id {inspection_id}")
+            coverage_by_id[inspection_id] = row
+
+        source_id = row.get("source_id", "")
+        if source_id and source_id not in source_by_id:
+            errors.append(
+                f"{coverage_path}:{i}: source_id {source_id} does not exist in corpus/sources.tsv"
+            )
+
+        route_id = row.get("route_id", "")
+        route = route_by_id.get(route_id)
+        if route_id and route is None:
+            errors.append(f"{coverage_path}:{i}: route_id {route_id} does not exist in source-entry/routes.tsv")
+        elif route is not None:
+            route_source = route.get("source_id", "")
+            if source_id and route_source != source_id:
+                errors.append(
+                    f"{coverage_path}:{i}: route_id {route_id} belongs to source {route_source}, not {source_id}"
+                )
+            route_state = route.get("route_state", "")
+            if route_state not in {"CORPUS_ONLY / NO_PROJECT_YET", "EXISTING_PROJECT"}:
+                errors.append(
+                    f"{coverage_path}:{i}: durable coverage requires a resolved CORPUS_ONLY / NO_PROJECT_YET "
+                    f"or EXISTING_PROJECT route; {route_id} is {route_state or 'UNSET'}"
+                )
+
+        file_id = row.get("file_id", "")
+        if file_id:
+            if file_id not in file_by_id:
+                errors.append(f"{coverage_path}:{i}: file_id {file_id} does not exist in corpus/files.tsv")
+            elif source_id and file_by_id[file_id].get("source_id") != source_id:
+                errors.append(f"{coverage_path}:{i}: file_id {file_id} belongs to another Source")
+
+        project_id = row.get("project_id", "")
+        if project_id and project_id not in project_by_id:
+            errors.append(f"{coverage_path}:{i}: project_id {project_id} does not exist")
+        if project_id and route is not None:
+            if route.get("route_state") != "EXISTING_PROJECT" or route.get("project_id") != project_id:
+                errors.append(
+                    f"{coverage_path}:{i}: Project-bound coverage requires its route_id to be "
+                    f"EXISTING_PROJECT for {project_id}"
+                )
+
+        coverage_status = row.get("coverage_status", "")
+        relevance = row.get("relevance_status", "")
+        evidence = row.get("evidence_status", "")
+        layer = row.get("claim_layer", "")
+
+        if coverage_status and coverage_status not in allowed_coverage:
+            errors.append(f"{coverage_path}:{i}: unknown coverage_status {coverage_status!r}")
+        if relevance and relevance not in allowed_relevance:
+            errors.append(f"{coverage_path}:{i}: unknown relevance_status {relevance!r}")
+        if evidence and evidence not in allowed_evidence:
+            errors.append(f"{coverage_path}:{i}: unknown evidence_status {evidence!r}")
+        if layer and layer not in allowed_layers:
+            errors.append(f"{coverage_path}:{i}: unknown claim_layer {layer!r}")
+        if evidence == "H" and layer == "OBSERVATION":
+            errors.append(f"{coverage_path}:{i}: H evidence cannot be claim_layer OBSERVATION")
+        if coverage_status == "NOT_INSPECTED" and evidence == "P":
+            errors.append(
+                f"{coverage_path}:{i}: NOT_INSPECTED cannot claim P inspected-primary evidence"
+            )
+
+    return {
+        "routes": routes,
+        "coverage": coverage,
+        "current_routes": current_route_by_source,
+    }
+
+
+
 def is_within(source_id: str, root_id: str, parents: dict[str, list[str]]) -> bool:
     if source_id == root_id:
         return True
@@ -365,6 +571,15 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         if any(row.get("status") == "active" and row.get("relevant_locus") for row in rows) and sid not in crosswalks_by_source:
             warnings.append(f"projects/{project_id}: active source use {sid} has a relevant_locus but no source-data crosswalk yet")
 
+
+    source_entry = validate_source_entry_owner(
+        root,
+        source_by_id,
+        file_by_id,
+        project_by_id,
+        errors,
+    )
+
     cache.update(
         sources=source_by_id,
         relationships=relation_by_id,
@@ -378,6 +593,9 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         use_evidence=evidence_by_id,
         evidence_by_use=evidence_by_use,
         crosswalks=crosswalks_by_source,
+        source_entry_routes=source_entry["routes"],
+        source_entry_coverage=source_entry["coverage"],
+        source_entry_current_routes=source_entry["current_routes"],
     )
     return errors, warnings, cache
 
