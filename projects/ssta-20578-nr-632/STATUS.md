@@ -84,7 +84,7 @@ When direct reconnaissance begins, each durable coverage record must reference t
 
 ## NEXT ACTION — canonical restart point
 
-Continue the already-authorized Nr. 632 source-entry block with a targeted detail pass over the unresolved document/material boundaries identified during the ordered overview, beginning again at provider image 0001 as needed. Preserve provider-image, archival-folio and documentary-boundary distinctions; do not infer a narrower scholarly scope, foliation or text reading from the overview.
+Continue the already-authorized Nr. 632 source-entry block with an evidence-ranked detail pass over the unresolved document/material boundaries identified during the ordered overview. Begin with provider images **0098–0107**, where the overview shows a material/documentary transition with written leaves, signatures and/or wax-seal impressions; then assess **0130–0135**, where formal written leaves, a calligraphic heading, signatures and/or wax-seal impressions are visible. Inspect adjacent images `0097`, `0108` or `0129` only as needed to test those boundaries. Preserve provider-image, archival-folio and documentary-boundary distinctions; do not infer a narrower scholarly scope, foliation or text reading from the overview. A global restart at `0001` is not required unless later evidence shows the overview cursor or package provenance needs re-audit.
 
 Do not substitute abstract schema work, a synthetic Corpus-only fixture, OCR/HTR, guessed foliation or a narrower scholarly locus for this continuation.
 
