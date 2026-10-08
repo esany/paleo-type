@@ -242,6 +242,19 @@ Treat AI-produced paths, IDs, JSON/TSV/YAML fields, commands and other technical
 
 Do not maintain canonical research state in chat, Wiki, generated views, Issues or Milestones.
 
+### GitHub-only access for ChatGPT Work and Codex
+
+For every action concerning `esany/paleo-type`, ChatGPT Work and Codex must read and modify the current online GitHub repository exclusively through the authorized GitHub connector. This applies equally to locally executed and cloud-executed chats. Execution location does not authorize a different repository access or persistence route.
+
+- Resolve governance, current task/Project owners and applicable rules freshly from online GitHub. Local checkouts, synced project mirrors, sandbox files and old chat are not substitutes for current repository authority.
+- Do not clone, create or use local repository checkouts/worktrees, run local Git commands, or use shell/HTTP/API-key routes as a substitute for the GitHub connector.
+- Create/update durable work directly in its canonical online repository owner on the intended GitHub working branch. This covers research and engineering work, drafts, evidence notes, decisions, status and restart/handoff state. Do not create local project-state files for later upload or promotion. Chat, Slack and Issue/PR summaries do not replace canonical repository-file persistence.
+- If the connector, required permission or required connector operation is unavailable/fails, stop the affected repository action and visibly report the specific unavailable capability. Do not fall back to local persistence or another repository access route; do not infer changed Project priority or scholarly `NEXT ACTION`.
+- Run repository checks through the authorized GitHub/CI route where available. If a required check cannot be invoked or inspected through that route, report it as unverified rather than executing from a local checkout or claiming a PASS.
+- Non-authoritative source-byte staging, renders, crops and temporary calculations remain allowed only under the evidence-processing rules below. They are not repository checkouts or working stores for project results; source preservation/access rules still apply.
+
+Before calling a work result persisted/secured, verify GitHub confirms the write and identify its repository path, branch and commit. A working-branch commit is durable work, not an accepted main-branch result. Before handoff/completion, check that consequential results from the active work block reached all actually affected canonical owners; a fresh repository read alone does not prove persistence completeness.
+
 ### Repository-first research persistence
 
 Ephemeral chat/tool execution environments are not working stores for persistable or restart-relevant research state.
