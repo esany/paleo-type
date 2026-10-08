@@ -11,7 +11,7 @@ The admission and currentness-corrected concept are:
 
 ## Routing
 
-`routes.tsv` is append-only route history.
+`routes.tsv` is append-only route history. **Append-only is a canonical write discipline, not a claim that a single-snapshot validator can prove Git-history immutability.** The validator checks route identity, Source references, allowed states, Human authority where required, and contiguous transition sequences; repository history/review remains the evidence that an older valid row was not silently rewritten.
 
 For each Source, `transition_sequence` starts at 1 and remains contiguous. The current route is
 derived as the row with the greatest sequence; there is no mutable current flag.
@@ -53,7 +53,7 @@ Source/File identity ≠ Project binding ≠ inspection state
 ```
 
 Provider image IDs, PDF pages and archival folios remain distinct locator meanings until evidenced
-crosswalks establish a mapping.
+crosswalks establish a mapping. The owner preserves the distinction structurally through `locator_domain` + `coverage_locus`; it does not itself prove that a researcher selected the correct locator domain or establish a crosswalk.
 
 ## Truth-store boundary
 

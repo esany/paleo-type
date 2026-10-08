@@ -191,19 +191,107 @@ class SourceEntryCoverageTests(unittest.TestCase):
             errors, _, _ = self.validate(root)
             self.assertTrue(any("must not contain Project/scholarly state column active_scope" in e for e in errors))
 
-    def test_regii_loss_check_does_not_migrate_rows(self) -> None:
+    def test_not_inspected_primary_evidence_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.make_repo(tmp)
+            route = self.route(route_state="CORPUS_ONLY / NO_PROJECT_YET",
+                               authority_status="HUMAN-OWNER-CONFIRMED")
+            self.write_owner(
+                root,
+                [route],
+                [self.coverage(coverage_status="NOT_INSPECTED", evidence_status="P")],
+            )
+            errors, _, _ = self.validate(root)
+            self.assertTrue(any("NOT_INSPECTED cannot claim P" in e for e in errors))
+
+    def test_all_forbidden_project_state_headers_fail(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.make_repo(tmp)
+            route = self.route(route_state="CORPUS_ONLY / NO_PROJECT_YET",
+                               authority_status="HUMAN-OWNER-CONFIRMED")
+            for header in ("active_scope", "gate", "next_action", "scholarly_scope"):
+                with self.subTest(header=header):
+                    bad = self.coverage()
+                    bad[header] = "must fail"
+                    self.write_owner(root, [route], [bad], extra_coverage_header=header)
+                    errors, _, _ = self.validate(root)
+                    self.assertTrue(
+                        any(f"must not contain Project/scholarly state column {header}" in e for e in errors)
+                    )
+
+    def test_locator_domains_remain_structurally_distinct(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.make_repo(tmp)
+            route = self.route(route_state="CORPUS_ONLY / NO_PROJECT_YET",
+                               authority_status="HUMAN-OWNER-CONFIRMED")
+            rows = [
+                self.coverage(
+                    inspection_id="INS-IMG",
+                    locator_domain="provider-image",
+                    coverage_locus="0001.jpg",
+                ),
+                self.coverage(
+                    inspection_id="INS-PDF",
+                    locator_domain="pdf-page",
+                    coverage_locus="PDF p. 1",
+                ),
+                self.coverage(
+                    inspection_id="INS-FOL",
+                    locator_domain="archival-folio",
+                    coverage_locus="fol. 1r",
+                ),
+            ]
+            self.write_owner(root, [route], rows)
+            errors, _, cache = self.validate(root)
+            self.assertEqual([], errors)
+            self.assertEqual(
+                {"provider-image", "pdf-page", "archival-folio"},
+                {row["locator_domain"] for row in cache["source_entry_coverage"]},
+            )
+            self.assertEqual(
+                {"0001.jpg", "PDF p. 1", "fol. 1r"},
+                {row["coverage_locus"] for row in cache["source_entry_coverage"]},
+            )
+
+    def test_simple_source_does_not_require_source_entry_state_until_used(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.make_repo(tmp)
+            errors, _, cache = self.validate(root)
+            self.assertEqual([], errors)
+            self.assertEqual([], cache["source_entry_routes"])
+            self.assertEqual([], cache["source_entry_coverage"])
+
+    def test_regii_loss_check_maps_legacy_meanings_without_migration(self) -> None:
         path = REPO / "projects" / "ega-reg-ii-5-knau" / "sources" / "inspection-log.tsv"
         with path.open("r", encoding="utf-8", newline="") as fh:
             rows = list(csv.DictReader(fh, delimiter="\t"))
         self.assertTrue(rows)
+
+        mapped_count = 0
         for row in rows:
-            mapped = "\t".join([
-                row["corpus_source_id"], row["unit_inspected"], row["status"],
-                row["access_basis"], row["what_it_supports"], row["limitations"],
-            ])
-            for field in ("status", "unit_inspected", "access_basis", "what_it_supports", "limitations"):
-                if row[field]:
-                    self.assertIn(row[field], mapped)
+            if not row["corpus_source_id"]:
+                # The legacy row without a canonical Source ID is intentionally not migration-ready.
+                continue
+            mapped = self.coverage(
+                inspection_id=f"LOSS-{row['inspection_id']}",
+                source_id=row["corpus_source_id"],
+                coverage_locus=row["unit_inspected"],
+                evidence_status=row["status"],
+                result=row["what_it_supports"],
+                evidence_basis=row["access_basis"],
+                claim_ceiling=row["limitations"],
+                unresolved_or_partial=row["limitations"],
+            )
+            self.assertEqual(row["corpus_source_id"], mapped["source_id"])
+            self.assertEqual(row["unit_inspected"], mapped["coverage_locus"])
+            self.assertEqual(row["status"], mapped["evidence_status"])
+            self.assertEqual(row["access_basis"], mapped["evidence_basis"])
+            self.assertEqual(row["what_it_supports"], mapped["result"])
+            self.assertEqual(row["limitations"], mapped["claim_ceiling"])
+            mapped_count += 1
+
+        self.assertGreater(mapped_count, 0)
+        # Loss checking does not migrate/copy legacy rows into the canonical owner.
         self.assertEqual(1, len((REPO / "source-entry" / "inspection-coverage.tsv").read_text().splitlines()))
 
 
