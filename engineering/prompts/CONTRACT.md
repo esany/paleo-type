@@ -34,6 +34,10 @@ Evaluate behavior against explicit failure patterns and state what the test actu
 10. A fresh context/second model is not called independent evidence without an actually independent evidence basis.
 11. The capability does not maintain current Requirements/ADRs/issues or choose work priority; repository context/configuration owners do that.
 12. Non-repository simple prompts stay simple and do not inherit paleo-type engineering ceremony.
+13. Lean/minimality is subordinate to adequacy: a smaller change, local/CI PASS or completed work package is not evidence of root-cause resolution or user acceptance; simplification requires outcome, root-cause, owner-chain, invariant, acceptance, counter-extreme and whole-system-return evidence.
+14. Consequential esany/paleo-type repository work uses only the authorized GitHub connector; no local checkout/worktree/Git fallback is permitted, and connector or online-write failure stops the affected repository action.
+15. A consequential work block requires a pre-mutation current-main/owner/working-branch/scope proof and post-mutation remote path/branch/commit verification, plus restart/handoff and affected-owner reconciliation before completion.
+16. Technical/CI/Issue/PR/work-package status is not user or whole-system acceptance without the actual evidence/authority owner.
 
 ## Repository-target prompt minimum
 
@@ -62,6 +66,9 @@ At minimum detect or challenge:
 - self-review mislabeled independent;
 - CI/context/Issue state laundering authority or acceptance;
 - context starvation that removes material authority/uncertainty solely for compactness.
+- lean/minimality shortcut without adequacy evidence, or local/CI PASS presented as root-cause closure.
+- local-first persistence, local fallback after connector failure, or missing remote branch/commit proof.
+- stale main/PR basis, missing restart/handoff proof, affected-owner silence, or Issue/CI/PR closure laundered into whole-system acceptance.
 
 ## Assurance boundary
 
