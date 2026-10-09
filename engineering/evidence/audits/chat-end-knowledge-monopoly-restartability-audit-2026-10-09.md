@@ -385,3 +385,142 @@ It does not:
 - claim specialist review;
 - recover missing historical local file bodies;
 - prove future AI compliance merely because the knowledge monopoly is documented.
+
+## 12. Final currentness reconciliation after the initial chat-end audit
+
+**Currentness check:** 2026-10-09  
+**Shared main at this final reconciliation:** `585e29ea1e09296796505c5652c6c4c03e1f563a`
+
+The initial audit baseline above ended while PR #316 was shared but not main-adopted. The
+conversation and repository advanced after that baseline. This section records only the additional
+durable currentness needed so a new development context does not have to reconstruct those later
+turns from chat.
+
+### 12.1 Human-meaning recurrence is now separately canonicalized
+
+The repeated interaction failure in which machine/repository state became the primary explanation
+for the Human has now been audited in:
+
+`engineering/evidence/audits/human-meaning-precedence-chat-pattern-audit-2026-10-09.md`
+
+It was merged through PR #318 to
+`main@585e29ea1e09296796505c5652c6c4c03e1f563a`.
+
+That audit strengthens, but does not replace, the owner mapping already recorded here:
+
+- #308 — Human-facing mapping / disciplinary meaning before internal tokens;
+- #292 — research-assistance action/evidence/claim-ceiling/Human-collaboration semantics;
+- #297 — higher-order operative efficacy / coherent Human outcome;
+- #272 — whole-system currentness/audit return.
+
+The recurring Human corrections (“ich blick nicht mehr durch”; later “Du redest nur in zahlen”)
+therefore no longer exist only in conversation history.
+
+### 12.2 Current Human development outcome is an integrated closure block
+
+After the initial audit, the Human Owner explicitly rejected another sequence of partial fixes and
+selected one coherent closure outcome for the remaining Human-meaning / incomplete-closure family.
+The current work-metadata authority is the #297 directive:
+
+`https://github.com/esany/paleo-type/issues/297#issuecomment-6078183187`
+
+with #272 currentness return:
+
+`https://github.com/esany/paleo-type/issues/272#issuecomment-6078186467`.
+
+The integrated owner set is:
+
+- core operative-efficacy: #308, #292, #297;
+- concrete regression fixtures: #296, #306, #307;
+- whole-system acceptance: #280, then #272;
+- independent productive-runtime block required by #280: #271 + #282.
+
+Required closure order remains:
+
+~~~text
+integrated requirements/concept + owner-fit pass
+→ any Human-admitted material implementation actually needed
+→ fresh-context behavioral fixtures for #292/#296/#306/#307/#308
+→ productive runtime/package acceptance for #271/#282
+→ #280 final whole-system Result Review
+→ #297 final operative-efficacy disposition
+→ #272 final audit reconciliation / closure
+~~~
+
+This directive is development/work authority only. It creates no Project/CORPUS truth, scholarly
+priority or METHOD semantics.
+
+### 12.3 Nr. 632 targeted detail state remains shared but not main-adopted
+
+Fresh PR-state resolution at this final reconciliation still finds:
+
+- PR #316 **OPEN / not merged**;
+- head `9847cba63475daaebcd42546b6e558cf84ccd092`;
+- exact-head CI run `37838132117` = PASS;
+- changed natural owners:
+  - `projects/ssta-20578-nr-632/STATUS.md`;
+  - `source-entry/inspection-coverage.tsv`.
+
+Therefore the correct current distinction is still:
+
+~~~text
+Nr. 632 Source/File/Project/route + 135-image overview = main-adopted
+targeted 19-image detail pass = shared/restartable PR state, not main-adopted
+local dc698cb = historical local carrier only
+~~~
+
+A fresh context must resolve PR #316 before touching those owners. It must not infer that a green
+exact-head PR means the detail result is already canonical on main.
+
+### 12.4 Final knowledge-monopoly check
+
+After reconciling the entire conversation against current shared owners, no additional substantive
+current Project/CORPUS/METHOD truth remains trapped only in this chat.
+
+The remaining non-canonical chat/local material is deliberately historical:
+
+- unreachable local SHA history and dirty-worktree chronology;
+- old unrecovered bug-ticket bodies;
+- local recovery snapshots;
+- local carrier `dc698cb`;
+- wording/details of transient intermediate answers already superseded by current owners.
+
+Those materials are retained only as incident/recovery provenance. They must not be promoted into
+current canonical research state.
+
+The only current shared-but-not-main research-state item from this conversation is PR #316, which is
+already externally reachable and therefore **not** a chat knowledge monopoly.
+
+### 12.5 Final restart cursor for the next development chat
+
+A new development chat should reconstruct currentness in this order:
+
+~~~text
+1. fresh shared main
+2. GOVERNING_OBJECTIVE.md + AGENTS.md + applicable METHOD/maintenance owners
+3. #297 integrated closure directive + #272 currentness return
+4. #308/#292 Human-meaning and assistance owners
+5. #296/#306/#307 concrete behavioral fixtures
+6. #280 whole-system Result Review, including #271/#282 runtime block
+7. live PR #316 state before any Nr. 632 detail-owner mutation
+8. #267 only for the still-open legitimate CORPUS_ONLY / NO_PROJECT_YET Generic-Fit side
+9. #293 for the Nr. 632 scholarly/source-entry fixture
+~~~
+
+Do not use this audit as a substitute for those current owners. Its role is to ensure the ending
+chat itself is no longer required to discover them.
+
+### 12.6 End-of-chat claim ceiling
+
+This final reconciliation establishes that the current development/restart cursor and the material
+conversation-derived failure evidence are available in shared repository state.
+
+It does **not** establish:
+
+- that PR #316 has been accepted or merged;
+- that #297/#292/#308/#280/#272 are solved;
+- that a fresh-context behavioral fixture will pass;
+- that productive-runtime acceptance has completed;
+- any new Nr. 632 foliation, segmentation, transcription, hand attribution, interpretation or scope;
+- universal future compliance by ChatGPT/Work/Codex.
+
