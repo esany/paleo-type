@@ -79,3 +79,7 @@ REL-0077	artifact:ENG-A-0119	affects	github-issue:esany/paleo-type#267	accepted	
 REL-0078	artifact:ENG-A-0119	admitted-by	artifact:ENG-A-0120	accepted	artifact:ENG-A-0120
 REL-0079	artifact:ENG-A-0121	validates	artifact:ENG-A-0119	accepted	artifact:ENG-A-0121
 REL-0080	artifact:ENG-A-0121	affects	github-issue:esany/paleo-type#272	accepted	artifact:ENG-A-0121
+REL-0081	artifact:ENG-A-0122	affects	github-issue:esany/paleo-type#297	accepted	artifact:ENG-A-0122
+REL-0082	artifact:ENG-A-0122	affects	github-issue:esany/paleo-type#272	accepted	artifact:ENG-A-0122
+REL-0083	artifact:ENG-A-0122	affects	github-issue:esany/paleo-type#293	accepted	artifact:ENG-A-0122
+REL-0084	artifact:ENG-A-0122	affects	github-issue:esany/paleo-type#308	accepted	artifact:ENG-A-0122
