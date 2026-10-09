@@ -6,15 +6,95 @@
   "design_ref": "artifact:ENG-A-0052",
   "shared_execution_boundary_ref": "artifact:ENG-A-0053",
   "checks": [
-    {"id": "ENG-FIT-01", "owner_ref": "artifact:ENG-A-0024", "implementation": "tools/engineering.py validate", "fixture_families": ["broken-stable-reference"]},
-    {"id": "ENG-FIT-02", "owner_ref": "artifact:ENG-A-0022", "implementation": "tools/engineering.py validate", "fixture_families": ["stale-current", "latest-wins-trap", "missing-transition-authority", "concurrent-investigations"]},
-    {"id": "ENG-FIT-03", "owner_ref": "artifact:ENG-A-0025", "implementation": "tools/engineering.py validate", "fixture_families": ["orphan-finding", "coverage-loophole"]},
-    {"id": "ENG-FIT-04", "owner_ref": "artifact:ENG-A-0027", "implementation": "tools/engineering.py validate", "fixture_families": ["false-relation"]},
-    {"id": "ENG-FIT-05", "owner_ref": "artifact:ENG-A-0042", "implementation": "tools/engineering_fitness.py", "fixture_families": ["stale-generated-view"]},
-    {"id": "ENG-FIT-06", "owner_ref": "artifact:ENG-A-0029", "implementation": "tools/engineering.py validate", "fixture_families": ["no-change-result", "local-pass-trap"]},
-    {"id": "ENG-FIT-07", "owner_ref": "artifact:ENG-A-0040", "implementation": "tools/engineering_fitness.py", "fixture_families": ["context-starvation"]},
-    {"id": "ENG-FIT-08", "owner_ref": "artifact:ENG-A-0028", "implementation": "tools/engineering_fitness.py", "fixture_families": ["broken-stable-reference"], "applicability": "conditional-wp5"},
-    {"id": "ENG-FIT-09", "owner_ref": "artifact:ENG-A-0041", "implementation": "tools/prompt.py + regressions", "fixture_families": ["latest-wins-trap", "tiny-routine-change", "lean-shortcut-trap", "local-pass-without-whole-system-return", "local-first-repository-violation", "connector-failure-local-fallback", "premature-closure-laundering", "missing-remote-execution-proof"]}
+    {
+      "id": "ENG-FIT-01",
+      "owner_ref": "artifact:ENG-A-0024",
+      "implementation": "tools/engineering.py validate",
+      "fixture_families": [
+        "broken-stable-reference"
+      ]
+    },
+    {
+      "id": "ENG-FIT-02",
+      "owner_ref": "artifact:ENG-A-0022",
+      "implementation": "tools/engineering.py validate",
+      "fixture_families": [
+        "stale-current",
+        "latest-wins-trap",
+        "missing-transition-authority",
+        "concurrent-investigations"
+      ]
+    },
+    {
+      "id": "ENG-FIT-03",
+      "owner_ref": "artifact:ENG-A-0025",
+      "implementation": "tools/engineering.py validate",
+      "fixture_families": [
+        "orphan-finding",
+        "coverage-loophole"
+      ]
+    },
+    {
+      "id": "ENG-FIT-04",
+      "owner_ref": "artifact:ENG-A-0027",
+      "implementation": "tools/engineering.py validate",
+      "fixture_families": [
+        "false-relation"
+      ]
+    },
+    {
+      "id": "ENG-FIT-05",
+      "owner_ref": "artifact:ENG-A-0042",
+      "implementation": "tools/engineering_fitness.py",
+      "fixture_families": [
+        "stale-generated-view"
+      ]
+    },
+    {
+      "id": "ENG-FIT-06",
+      "owner_ref": "artifact:ENG-A-0029",
+      "implementation": "tools/engineering.py validate",
+      "fixture_families": [
+        "no-change-result",
+        "local-pass-trap"
+      ]
+    },
+    {
+      "id": "ENG-FIT-07",
+      "owner_ref": "artifact:ENG-A-0040",
+      "implementation": "tools/engineering_fitness.py",
+      "fixture_families": [
+        "context-starvation"
+      ]
+    },
+    {
+      "id": "ENG-FIT-08",
+      "owner_ref": "artifact:ENG-A-0028",
+      "implementation": "tools/engineering_fitness.py",
+      "fixture_families": [
+        "broken-stable-reference"
+      ],
+      "applicability": "conditional-wp5"
+    },
+    {
+      "id": "ENG-FIT-09",
+      "owner_ref": "artifact:ENG-A-0041",
+      "implementation": "tools/prompt.py + regressions",
+      "fixture_families": [
+        "latest-wins-trap",
+        "tiny-routine-change",
+        "lean-shortcut-trap",
+        "local-pass-without-whole-system-return",
+        "local-first-repository-violation",
+        "connector-failure-local-fallback",
+        "premature-closure-laundering",
+        "missing-remote-execution-proof",
+        "missing-outcome-return-gate",
+        "owner-existence-relativization",
+        "context-content-promotion",
+        "return-gate-positive"
+      ]
+    }
   ],
   "fixture_families": {
     "stale-current": "tests/test_engineering.py::test_proposed_adr_cannot_become_current_baseline",
@@ -36,7 +116,11 @@
     "connector-failure-local-fallback": "tests/test_prompt.py::PromptCapabilityTests.test_connector_failure_never_falls_back_to_local_staging",
     "premature-closure-laundering": "tests/test_prompt.py::PromptCapabilityTests.test_premature_status_cannot_establish_acceptance",
     "missing-remote-execution-proof": "tests/test_prompt.py::PromptCapabilityTests.test_review_adds_remote_execution_proof",
-    "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result"
+    "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result",
+    "missing-outcome-return-gate": "tests/test_prompt.py::PromptCapabilityTests.test_consequential_paleo_prompt_without_return_gate_is_rejected",
+    "owner-existence-relativization": "tests/test_prompt.py::PromptCapabilityTests.test_owner_existence_cannot_relativize_a_reproduced_failure",
+    "context-content-promotion": "tests/test_prompt.py::PromptCapabilityTests.test_collection_context_cannot_be_promoted_to_content",
+    "return-gate-positive": "tests/test_prompt.py::PromptCapabilityTests.test_complete_return_gate_can_pass"
   },
   "non_claims": [
     "CI does not establish scholarly truth or specialist validity.",
