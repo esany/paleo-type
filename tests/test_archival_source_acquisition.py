@@ -207,6 +207,75 @@ class AcquisitionTests(unittest.TestCase):
             self.assertFalse((package / "0001.jpg.part").exists())
             self.assertEqual(1, opener.call_count)
 
+    def test_manifest_failure_keeps_restartable_state_and_resume_finishes_package(self):
+        for failed_sidecar in ("QUELLENINFO.json", "QUELLENINFO.txt", "SHA256SUMS.txt"):
+            with self.subTest(failed_sidecar=failed_sidecar):
+                with tempfile.TemporaryDirectory() as temp:
+                    root = Path(temp)
+                    metadata = source(image_count=1)
+                    plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+                        metadata, one_image()
+                    )
+                    opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+                    original_writer = acquisition._write_text_atomic
+
+                    def interrupted_writer(path, content):
+                        if path.name == failed_sidecar:
+                            raise OSError("simulated manifest finalization interruption")
+                        return original_writer(path, content)
+
+                    with patch.object(
+                        acquisition, "_write_text_atomic", side_effect=interrupted_writer
+                    ):
+                        with self.assertRaisesRegex(
+                            OSError, "simulated manifest finalization interruption"
+                        ):
+                            acquisition.acquire(
+                                plan, root, opener=opener, rate_limit_seconds=0
+                            )
+
+                    target = root / plan.package_name
+                    state = json.loads(
+                        (target / acquisition.PROGRESS_FILENAME).read_text(
+                            encoding="utf-8"
+                        )
+                    )
+                    self.assertEqual("partial-restartable", state["status"])
+                    self.assertNotIn("completed_at_utc", state)
+                    self.assertEqual(
+                        "manifest-finalization", state["last_failure"]["phase"]
+                    )
+                    self.assertEqual(1, len(state["images"]))
+                    self.assertEqual(
+                        "partial-restartable",
+                        acquisition.status_for_source(metadata, root)["status"],
+                    )
+                    self.assertFalse((target / failed_sidecar).exists())
+
+                    opener.reset_mock()
+                    manifest = acquisition.acquire(
+                        plan, root, opener=opener, rate_limit_seconds=0
+                    )
+                    opener.assert_not_called()
+                    self.assertEqual("complete", manifest["status"])
+                    self.assertEqual("verified-existing", manifest["images"][0]["status"])
+                    final_state = json.loads(
+                        (target / acquisition.PROGRESS_FILENAME).read_text(
+                            encoding="utf-8"
+                        )
+                    )
+                    self.assertEqual("complete", final_state["status"])
+                    self.assertIsNone(final_state["last_failure"])
+                    self.assertTrue(final_state["completed_at_utc"])
+                    for sidecar in (
+                        "QUELLENINFO.json", "QUELLENINFO.txt", "SHA256SUMS.txt"
+                    ):
+                        self.assertTrue((target / sidecar).is_file())
+                    self.assertIn(
+                        manifest["images"][0]["sha256"],
+                        (target / "SHA256SUMS.txt").read_text(encoding="utf-8"),
+                    )
+
     def test_interruption_persists_verified_progress_and_resume_skips_completed_image(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
