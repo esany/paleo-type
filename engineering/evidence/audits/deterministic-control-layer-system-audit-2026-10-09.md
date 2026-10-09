@@ -1,6 +1,8 @@
 # System audit — deterministic control layer and failure-family roots
 
-Status: ONLINE SYSTEM AUDIT / recommendation and implementation admission boundary  
+> **Supersession notice — 2026-10-09:** The implementation recommendation in this historical audit (the proposed C1–C5 “small fail-closed control layer”) has been critically re-audited and is **not implementation-authorized**. It is retained as provenance of an unvalidated solution hypothesis. The current disposition is in [deterministic-control-layer-critical-reaudit-2026-10-09.md](deterministic-control-layer-critical-reaudit-2026-10-09.md), which concludes that existing owners and vertical qualification must be used first.
+
+Status: HISTORICAL ANALYSIS / IMPLEMENTATION RECOMMENDATION SUPERSEDED — see critical re-audit
 Repository: `esany/paleo-type`  
 Baseline: `main@9a9824028b5eeb819b6e1a2f1a94719adf9b826c`  
 Audit date: 2026-10-09  
