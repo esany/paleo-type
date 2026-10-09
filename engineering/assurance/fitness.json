@@ -14,7 +14,7 @@
     {"id": "ENG-FIT-06", "owner_ref": "artifact:ENG-A-0029", "implementation": "tools/engineering.py validate", "fixture_families": ["no-change-result", "local-pass-trap"]},
     {"id": "ENG-FIT-07", "owner_ref": "artifact:ENG-A-0040", "implementation": "tools/engineering_fitness.py", "fixture_families": ["context-starvation"]},
     {"id": "ENG-FIT-08", "owner_ref": "artifact:ENG-A-0028", "implementation": "tools/engineering_fitness.py", "fixture_families": ["broken-stable-reference"], "applicability": "conditional-wp5"},
-    {"id": "ENG-FIT-09", "owner_ref": "artifact:ENG-A-0041", "implementation": "tools/prompt.py + regressions", "fixture_families": ["latest-wins-trap", "tiny-routine-change"]}
+    {"id": "ENG-FIT-09", "owner_ref": "artifact:ENG-A-0041", "implementation": "tools/prompt.py + regressions", "fixture_families": ["latest-wins-trap", "tiny-routine-change", "lean-shortcut-trap", "local-pass-without-whole-system-return", "local-first-repository-violation", "connector-failure-local-fallback", "premature-closure-laundering", "missing-remote-execution-proof"]}
   ],
   "fixture_families": {
     "stale-current": "tests/test_engineering.py::test_proposed_adr_cannot_become_current_baseline",
@@ -30,6 +30,12 @@
     "no-change-result": "tests/test_engineering.py::test_transition_contract_distinguishes_acceptance_and_no_change",
     "concurrent-investigations": "tests/test_engineering_context.py::test_ambiguous_next_work_is_exposed_not_silently_selected",
     "tiny-routine-change": "tests/test_governance_ownership.py routine bounded-work admission fixtures",
+    "lean-shortcut-trap": "tests/test_prompt.py::PromptCapabilityTests.test_lean_shortcut_without_adequacy_is_rejected",
+    "local-pass-without-whole-system-return": "tests/test_prompt.py::PromptCapabilityTests.test_local_pass_cannot_close_the_whole_problem",
+    "local-first-repository-violation": "tests/test_prompt.py::PromptCapabilityTests.test_local_first_prompt_is_rejected",
+    "connector-failure-local-fallback": "tests/test_prompt.py::PromptCapabilityTests.test_connector_failure_never_falls_back_to_local_staging",
+    "premature-closure-laundering": "tests/test_prompt.py::PromptCapabilityTests.test_premature_status_cannot_establish_acceptance",
+    "missing-remote-execution-proof": "tests/test_prompt.py::PromptCapabilityTests.test_review_adds_remote_execution_proof",
     "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result"
   },
   "non_claims": [
