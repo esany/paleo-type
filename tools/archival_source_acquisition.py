@@ -525,15 +525,19 @@ def acquire(
         _write_progress(target, progress)
         raise AcquisitionError("image sequence is incomplete or unstable")
 
-    progress["status"] = "complete"
+    # A verified image sequence is not yet a finished source package.
+    # Persist a restartable state before generating all final sidecars, including
+    # when a previously complete package is explicitly revalidated.
+    progress["status"] = "partial-restartable"
     progress["last_failure"] = None
-    progress["completed_at_utc"] = _utc_now()
+    progress.pop("completed_at_utc", None)
     _write_progress(target, progress)
+    completed_at_utc = _utc_now()
 
     manifest = {
         "schema": MANIFEST_SCHEMA,
         "status": "complete",
-        "acquired_at_utc": progress["completed_at_utc"],
+        "acquired_at_utc": completed_at_utc,
         "file_list_url": plan.file_list_url,
         "file_list_sha256": plan.file_list_sha256,
         "package_name": plan.package_name,
@@ -551,37 +555,51 @@ def acquire(
             "creates_corpus_rows": False,
         },
     }
-    _write_text_atomic(
-        target / "QUELLENINFO.json",
-        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
-    )
-    info_lines = [
-        f"Kurztitel: {plan.package_name}",
-        f"Archiv: {plan.source.archive}",
-        f"Bestand: {plan.source.fonds}",
-        f"Archivaliensignatur: {plan.source.signature}",
-        f"Titel: {plan.source.title}",
-        f"Datierung: {plan.source.date_label}",
-        f"Digitalisat-GUID: {plan.source.guid}",
-        f"Digitalisat: {plan.source.page_url}",
-        f"Dateiliste: {plan.file_list_url}",
-        f"Dateiliste SHA-256: {plan.file_list_sha256}",
-        f"Bildroute: {plan.route}",
-        f"Umfang: {len(results)} Fullsize-JPEGs",
-        "Dateien: " + f"{expected_names[0]}–{expected_names[-1]}",
-        f"Rights-/Zugriffsstatus: {plan.source.rights_status}",
-        f"Restart-/Fortschrittsstatus: {PROGRESS_FILENAME}",
-        "",
-        "Die Ablage wurde durch paleo-type archival-source-acquisition erzeugt.",
-        "Project-, Source-use- und Forschungsfunktionsentscheidungen sind nicht enthalten.",
-    ]
-    _write_text_atomic(target / "QUELLENINFO.txt", "\n".join(info_lines) + "\n")
-    checksums = "\n".join(
-        f"{item['sha256']}  {item['filename']}" for item in results
-    )
-    _write_text_atomic(target / "SHA256SUMS.txt", checksums + "\n")
-    return manifest
+    try:
+        _write_text_atomic(
+            target / "QUELLENINFO.json",
+            json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        )
+        info_lines = [
+            f"Kurztitel: {plan.package_name}",
+            f"Archiv: {plan.source.archive}",
+            f"Bestand: {plan.source.fonds}",
+            f"Archivaliensignatur: {plan.source.signature}",
+            f"Titel: {plan.source.title}",
+            f"Datierung: {plan.source.date_label}",
+            f"Digitalisat-GUID: {plan.source.guid}",
+            f"Digitalisat: {plan.source.page_url}",
+            f"Dateiliste: {plan.file_list_url}",
+            f"Dateiliste SHA-256: {plan.file_list_sha256}",
+            f"Bildroute: {plan.route}",
+            f"Umfang: {len(results)} Fullsize-JPEGs",
+            "Dateien: " + f"{expected_names[0]}–{expected_names[-1]}",
+            f"Rights-/Zugriffsstatus: {plan.source.rights_status}",
+            f"Restart-/Fortschrittsstatus: {PROGRESS_FILENAME}",
+            "",
+            "Die Ablage wurde durch paleo-type archival-source-acquisition erzeugt.",
+            "Project-, Source-use- und Forschungsfunktionsentscheidungen sind nicht enthalten.",
+        ]
+        _write_text_atomic(target / "QUELLENINFO.txt", "\n".join(info_lines) + "\n")
+        checksums = "\n".join(
+            f"{item['sha256']}  {item['filename']}" for item in results
+        )
+        _write_text_atomic(target / "SHA256SUMS.txt", checksums + "\n")
+        except BaseException as error:
+        # Never persist COMPLETE while any manifest/checksum write is missing.
+        progress["last_failure"] = {
+            "phase": "manifest-finalization",
+            "error": str(error),
+            "at_utc": _utc_now(),
+        }
+        _write_progress(target, progress)
+        raise
 
+    progress["status"] = "complete"
+    progress["last_failure"] = None
+    progress["completed_at_utc"] = completed_at_utc
+    _write_progress(target, progress)
+    return manifest
 
 def load_source(path: Path) -> SourceMetadata:
     metadata_json = sys.stdin.read() if str(path) == "-" else path.read_text(encoding="utf-8")
