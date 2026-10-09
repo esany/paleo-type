@@ -88,11 +88,7 @@
         "local-first-repository-violation",
         "connector-failure-local-fallback",
         "premature-closure-laundering",
-        "missing-remote-execution-proof",
-        "missing-outcome-return-gate",
-        "owner-existence-relativization",
-        "context-content-promotion",
-        "return-gate-positive"
+        "missing-remote-execution-proof"
       ]
     }
   ],
@@ -105,22 +101,18 @@
     "missing-transition-authority": "tests/test_engineering_fitness.py::test_missing_transition_authority_is_detected",
     "stale-generated-view": "tests/test_engineering_fitness.py::test_committed_generated_current_view_is_rejected",
     "local-pass-trap": "tests/test_engineering_fitness.py::test_verified_package_requires_whole_system_return",
-    "context-starvation": "tests/test_engineering_context.py::test_context_starvation_is_detected",
+    "context-starvation": "tests/test_engineering_context.py::test_context_starvation_is_detected; tests/test_prompt.py::PromptCapabilityTests.test_collection_context_cannot_be_promoted_to_content",
     "false-relation": "tests/test_engineering_fitness.py::test_accepted_relation_requires_evidence",
     "no-change-result": "tests/test_engineering.py::test_transition_contract_distinguishes_acceptance_and_no_change",
     "concurrent-investigations": "tests/test_engineering_context.py::test_ambiguous_next_work_is_exposed_not_silently_selected",
     "tiny-routine-change": "tests/test_governance_ownership.py routine bounded-work admission fixtures",
-    "lean-shortcut-trap": "tests/test_prompt.py::PromptCapabilityTests.test_lean_shortcut_without_adequacy_is_rejected",
+    "lean-shortcut-trap": "tests/test_prompt.py::PromptCapabilityTests.test_lean_shortcut_without_adequacy_is_rejected; tests/test_prompt.py::PromptCapabilityTests.test_consequential_paleo_prompt_without_return_gate_is_rejected; tests/test_prompt.py::PromptCapabilityTests.test_complete_return_gate_can_pass",
     "local-pass-without-whole-system-return": "tests/test_prompt.py::PromptCapabilityTests.test_local_pass_cannot_close_the_whole_problem",
     "local-first-repository-violation": "tests/test_prompt.py::PromptCapabilityTests.test_local_first_prompt_is_rejected",
     "connector-failure-local-fallback": "tests/test_prompt.py::PromptCapabilityTests.test_connector_failure_never_falls_back_to_local_staging",
-    "premature-closure-laundering": "tests/test_prompt.py::PromptCapabilityTests.test_premature_status_cannot_establish_acceptance",
+    "premature-closure-laundering": "tests/test_prompt.py::PromptCapabilityTests.test_premature_status_cannot_establish_acceptance; tests/test_prompt.py::PromptCapabilityTests.test_owner_existence_cannot_relativize_a_reproduced_failure",
     "missing-remote-execution-proof": "tests/test_prompt.py::PromptCapabilityTests.test_review_adds_remote_execution_proof",
-    "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result",
-    "missing-outcome-return-gate": "tests/test_prompt.py::PromptCapabilityTests.test_consequential_paleo_prompt_without_return_gate_is_rejected",
-    "owner-existence-relativization": "tests/test_prompt.py::PromptCapabilityTests.test_owner_existence_cannot_relativize_a_reproduced_failure",
-    "context-content-promotion": "tests/test_prompt.py::PromptCapabilityTests.test_collection_context_cannot_be_promoted_to_content",
-    "return-gate-positive": "tests/test_prompt.py::PromptCapabilityTests.test_complete_return_gate_can_pass"
+    "exact-head": "CI PR-head and post-merge exact-SHA assurance recorded in the work-package result"
   },
   "non_claims": [
     "CI does not establish scholarly truth or specialist validity.",
