@@ -385,3 +385,16 @@ The correct repair is:
 The existing repository rules provide most of the conceptual model. The next step is to make the high-risk transitions fail closed, prove them with negative fixtures and keep scholarly judgement outside the deterministic layer.
 
 This audit does not close the open acceptance Issues. It creates a durable, bounded basis for the next implementation decision.
+
+
+## 13. External primary sources consulted
+
+- [GitHub — About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches): required status checks, reviews, conversation resolution and merge-queue controls.
+- [Open Policy Agent — documentation](https://www.openpolicyagent.org/docs): policy-as-code, structured decisions and separation of policy decision from enforcement.
+- [Open Policy Agent — agent tool calling](https://www.openpolicyagent.org/docs/agent-tool-calling): deny-reason decisions at the tool boundary and explicit enforcement behavior.
+- [NIST SP 800-218, SSDF](https://csrc.nist.gov/pubs/sp/800/218/final): change accountability, integrity and provenance preservation.
+- [W3C PROV Model Primer](https://www.w3.org/TR/prov-primer/): provenance as entities, activities and agents involved in producing or influencing an object.
+- [SLSA — security levels](https://slsa.dev/spec/v1.0/levels): verifiable build/source/process provenance as a supply-chain control.
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) and [Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf): continuous governance, documentation, provenance, change control and scaled human oversight.
+
+These sources inform the control principles only. They do not override the repository's governing objective, canonical owners, D-016 admission boundary or scholarly acceptance rules.
