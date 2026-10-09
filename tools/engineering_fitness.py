@@ -31,6 +31,12 @@ EXPECTED_FIXTURE_FAMILIES = {
     "no-change-result",
     "concurrent-investigations",
     "tiny-routine-change",
+    "lean-shortcut-trap",
+    "local-pass-without-whole-system-return",
+    "local-first-repository-violation",
+    "connector-failure-local-fallback",
+    "premature-closure-laundering",
+    "missing-remote-execution-proof",
     "exact-head",
 }
 LEGACY_HEADERS = ["legacy_path", "artifact_id", "current_path", "migration_commit"]
