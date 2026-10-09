@@ -39,6 +39,12 @@ Evaluate behavior against explicit failure patterns and state what the test actu
 15. A consequential work block requires a pre-mutation current-main/owner/working-branch/scope proof and post-mutation remote path/branch/commit verification, plus restart/handoff and affected-owner reconciliation before completion.
 16. Technical/CI/Issue/PR/work-package status is not user or whole-system acceptance without the actual evidence/authority owner.
 
+17. A consequential work block is return-gate complete only when it carries one explicit tuple: protected user/research outcome, semantic scope and negative distinctions, coupled obligations, authorized action, Definition of Ready, Definition of Done, residual/return condition and claim ceiling.
+18. Recurrence of a documented failure is an operative control failure. The existence of an owner, rule or contract is not evidence that the failure is resolved; the repeated failure must be reproduced, prevented and re-tested at its actual enforcement boundary.
+19. Collection/context metadata (including Wolkenburg) must not populate content, identity, priority, Project, `NEXT ACTION` or scholarly meaning without direct evidence and the responsible canonical owner; context and content remain separate dimensions.
+20. Closure, handoff or status reporting requires the return-gate tuple and fresh-context reconstruction evidence. Technical PASS proves only the checked property; it cannot establish root-cause resolution, user acceptance or whole-system closure.
+
+
 ## Repository-target prompt minimum
 
 A consequential prompt targeting `esany/paleo-type` should normally require the executor to:
@@ -65,6 +71,10 @@ At minimum detect or challenge:
 - unavailable capability assumptions;
 - self-review mislabeled independent;
 - CI/context/Issue state laundering authority or acceptance;
+- missing protected-outcome/return-gate tuple or claim ceiling;
+- owner/rule-existence used to relativize a reproduced failure instead of fixing its enforcement boundary;
+- collection/context promoted into content, identity, priority, Project or `NEXT ACTION`;
+- scoped admission treated as global authority, merge permission or scholarly acceptance.
 - context starvation that removes material authority/uncertainty solely for compactness.
 - lean/minimality shortcut without adequacy evidence, or local/CI PASS presented as root-cause closure.
 - local-first persistence, local fallback after connector failure, or missing remote branch/commit proof.
