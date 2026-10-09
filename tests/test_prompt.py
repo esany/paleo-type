@@ -120,6 +120,66 @@ class PromptCapabilityTests(unittest.TestCase):
         self.assertIn("D-016 admission", result)
         self.assertNotIn("automatically admit", result.lower())
 
+    def test_paleo_prompt_contains_outcome_preserving_return_gate(self) -> None:
+        result = prompt.build_prompt("Implement the authorized bounded engineering task.", repo="esany/paleo-type")
+        lowered = result.lower()
+        for marker in (
+            "protected user/research outcome",
+            "semantic scope",
+            "negative distinctions",
+            "coupled obligations",
+            "authorized action",
+            "definition of ready",
+            "definition of done",
+            "residual/return condition",
+            "claim ceiling",
+            "stop/fail closed",
+        ):
+            self.assertIn(marker, lowered)
+
+    def test_consequential_paleo_prompt_without_return_gate_is_rejected(self) -> None:
+        tested = prompt.test_prompt("Implement a bounded change.", repo="esany/paleo-type")
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("missing-outcome-return-gate", tested["findings"])
+
+    def test_owner_existence_cannot_relativize_a_reproduced_failure(self) -> None:
+        tested = prompt.test_prompt(
+            "The existing owner covers this failure, so no fix is needed.",
+            repo="esany/paleo-type",
+        )
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("owner-existence-relativization", tested["findings"])
+
+        reviewed = prompt.review_prompt(
+            "Fix the reproduced failure; the existing owner covers it, so no gap exists.",
+            repo="esany/paleo-type",
+        )
+        self.assertTrue(any("owner-existence" in issue for issue in reviewed["issues"]))
+        self.assertIn("return gate", reviewed["prompt"].lower())
+
+    def test_collection_context_cannot_be_promoted_to_content(self) -> None:
+        tested = prompt.test_prompt(
+            "Wolkenburg identifies the content and priority of this archival unit.",
+            repo="esany/paleo-type",
+        )
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("context-content-promotion", tested["findings"])
+
+        negative = prompt.test_prompt(
+            "Wolkenburg is collection context only; content and identity require direct evidence.",
+            repo="esany/paleo-type",
+        )
+        self.assertEqual("PASS", negative["status"])
+
+    def test_complete_return_gate_can_pass(self) -> None:
+        adequate = (
+            "Implement only after stating the protected user outcome, semantic scope, negative distinctions, "
+            "coupled obligations, authorized action, Definition of Ready, Definition of Done, "
+            "residual condition and claim ceiling."
+        )
+        tested = prompt.test_prompt(adequate, repo="esany/paleo-type")
+        self.assertEqual("PASS", tested["status"])
+
 
 if __name__ == "__main__":
     unittest.main()
