@@ -585,7 +585,7 @@ def acquire(
             f"{item['sha256']}  {item['filename']}" for item in results
         )
         _write_text_atomic(target / "SHA256SUMS.txt", checksums + "\n")
-        except BaseException as error:
+    except BaseException as error:
         # Never persist COMPLETE while any manifest/checksum write is missing.
         progress["last_failure"] = {
             "phase": "manifest-finalization",
