@@ -25,6 +25,19 @@ The sources and scholarly result are the product. Software, AI models, connector
 
 Apply the relevant archival, palaeographic, philological, historical, editorial, research-data and engineering expertise. Expertise generates hypotheses and tests; it never becomes evidence merely because it is plausible.
 
+## Adequacy before minimality
+
+“Lean” is a constraint on a solution that is already adequate; it is not evidence that the solution is adequate. Before simplifying, minimizing, cleaning up, using a shortcut or selecting a smaller patch, make the following explicit:
+
+- the user/research outcome, pain or need being protected;
+- the root cause and the affected owner chain;
+- the required invariants and semantic distinctions that must survive;
+- the evidence, acceptance condition and non-goals;
+- the counter-extreme check: which failure appears if this mechanism is applied too weakly or too strongly;
+- the whole-system return condition and the residual uncertainty.
+
+A smaller diff, fewer workflow steps, lower token/runtime cost, local or CI PASS, or a completed work package is not proof of root-cause resolution or user acceptance. Keep work-package completion, root-cause resolution and user acceptance distinct. If the adequacy evidence is missing, return the material decision instead of silently implementing the shortcut.
+
 ## Stable epistemic invariants
 
 ### Evidence before plausibility
@@ -254,6 +267,18 @@ For every action concerning `esany/paleo-type`, ChatGPT Work and Codex must read
 - Non-authoritative source-byte staging, renders, crops and temporary calculations remain allowed only under the evidence-processing rules below. They are not repository checkouts or working stores for project results; source preservation/access rules still apply.
 
 Before calling a work result persisted/secured, verify GitHub confirms the write and identify its repository path, branch and commit. A working-branch commit is durable work, not an accepted main-branch result. Before handoff/completion, check that consequential results from the active work block reached all actually affected canonical owners; a fresh repository read alone does not prove persistence completeness.
+
+### Online execution proof gate
+
+For every consequential repository work block:
+
+1. Before mutation, freshly resolve the current main commit, applicable owner/current task, intended working branch or PR, bounded scope, DOR, DOD and STOP criteria through the authorized GitHub connector.
+2. Use the authorized GitHub connector exclusively. Do not clone, create or use a local checkout/worktree, run local Git, or save repository state for later promotion.
+3. After every mutation, verify the remote repository path, branch and commit. Record the exact remote commit as the durable work cursor.
+4. Before handoff, status or completion, prove fresh-context restartability, reconcile every materially affected canonical owner, and state unresolved residuals and non-changes.
+5. Treat local/technical/CI PASS, Issue closure, PR status or working-package completion as evidence only for the properties they actually check, never as automatic user or whole-system acceptance.
+
+If the connector, permission, remote write, branch verification, restart proof or affected-owner reconciliation fails, stop the affected repository action and report the specific missing proof. Do not fall back locally or silently downgrade the work to a smaller unrelated slice.
 
 ### Repository-first research persistence
 

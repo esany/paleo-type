@@ -11,6 +11,49 @@ from typing import Any
 
 PALEO_REPOS = {"paleo-type", "esany/paleo-type"}
 
+MINIMALITY_TERMS = re.compile(
+    r"(?i)\b(?:lean|minimal|minimality|simplif(?:y|ied|ication)|cleanup|shortcut|quick fix|cheap(?:er)?|small(?:er)? patch)\b"
+)
+LOCAL_FIRST_VIOLATION = re.compile(
+    r"(?i)(?:develop|work|save|stage|keep|use|create|run).{0,40}(?:locally|local checkout|worktree|clone|uncommitted|local git)|(?:push|transfer|copy).{0,30}later"
+)
+CONNECTOR_FAILURE_LOCAL_FALLBACK = re.compile(
+    r"(?i)(?:connector|github).{0,80}(?:fail|unavailable|error).{0,80}(?:local|worktree|clone|checkout|save|push)|(?:local|worktree|clone|checkout|save).{0,80}(?:connector|github).{0,80}(?:fail|unavailable|error)"
+)
+PREMATURE_CLOSURE = re.compile(
+    r"(?i)(?:local|technical|unit|ci|github|issue|pr|work package).{0,60}(?:pass|green|closed|done|complete).{0,60}(?:means|proves|establishes|therefore|so|enough|accept|close)"
+)
+_ADEQUACY_MARKERS = (
+    r"(?i)\b(?:user|research) (?:outcome|pain|need)\b",
+    r"(?i)\broot cause\b",
+    r"(?i)\b(?:affected )?owner(?: chain|s)?\b",
+    r"(?i)\b(?:invariant|distinction)s?\b",
+    r"(?i)\b(?:evidence|acceptance|accept(?:ed)? criteria|dod)\b",
+    r"(?i)\bnon[- ]goal(?:s)?\b",
+    r"(?i)\b(?:counter[- ]extreme|opposite extreme)\b",
+    r"(?i)\b(?:whole[- ]system|return condition)\b",
+)
+_EXECUTION_PROOF_MARKERS = (
+    "current main commit",
+    "working branch or pr",
+    "remote branch and commit",
+    "restartability",
+    "handoff",
+    "affected canonical owner",
+    "connector",
+    "stop",
+)
+ADEQUACY_GUARDRAIL = """Adequacy before minimality:
+Treat lean/minimal/simplified implementation as a conclusion, not a starting assumption. Before taking a shortcut, state the user/research outcome or pain, root cause, affected owner chain, required invariants and semantic distinctions, evidence and acceptance condition, non-goals, counter-extreme check, whole-system return condition and residual uncertainty. A smaller diff, local/CI PASS, fewer workflow steps or completed work package is not proof of root-cause resolution or user acceptance. Keep work-package completion, root-cause resolution and user acceptance distinct. If this evidence is missing, return the material decision instead of silently implementing the shortcut."""
+ONLINE_EXECUTION_GUARDRAIL = """Repository-first execution and proof gate:
+Before consequential repository work, freshly resolve the current main commit, applicable owner/current task, intended working branch or PR, bounded scope, DOR, DOD and STOP criteria through the authorized GitHub connector. Use the authorized GitHub connector exclusively: do not clone, create or use a local checkout/worktree, run local Git, or save repository state for later promotion. After every mutation, verify the remote repository path, branch and commit and record the exact remote commit as the durable work cursor. Before handoff, status or completion, prove fresh-context restartability, reconcile every materially affected canonical owner, and state residuals and non-changes. Technical/CI PASS, Issue closure, PR status and work-package completion are not automatic user or whole-system acceptance. If connector, permission, remote-write, branch-verification, restart or owner-reconciliation proof fails, stop and do not fall back locally or silently downgrade the work."""
+def _has_adequacy_contract(text: str) -> bool:
+    return sum(bool(re.search(pattern, text)) for pattern in _ADEQUACY_MARKERS) >= 6
+def _has_execution_proof_contract(text: str) -> bool:
+    lowered = text.lower()
+    return sum(marker in lowered for marker in _EXECUTION_PROOF_MARKERS) >= 7
+
+
 
 def _is_paleo_repo(repo: str | None) -> bool:
     return bool(repo and repo.strip().lower() in PALEO_REPOS)
@@ -37,6 +80,10 @@ Before consequential work, freshly read `GOVERNING_OBJECTIVE.md`, `AGENTS.md`, t
 Stay inside already-authorized scope. Do not create or change Project purpose/priority/scholarly `NEXT ACTION`, Human-owner authority, or D-016 admission unless the task is explicitly at that authority boundary. If a genuinely new material choice appears, return it instead of silently absorbing it.
 
 Use complete applicable context, not `read everything`; keep deeper provenance reachable on demand. Persist restart-relevant results repository-first in the actual canonical owner or working branch. Treat technical/CI PASS as only the properties actually checked.
+
+{ONLINE_EXECUTION_GUARDRAIL}
+
+{ADEQUACY_GUARDRAIL}
 
 For consequential review, state the review evidence basis, what remained inherited, what was re-tested, and any evidence-depth limit. A fresh context or second model is not independent evidence merely because it is new.
 
@@ -81,7 +128,31 @@ def review_prompt(prompt: str, repo: str | None = None) -> dict[str, Any]:
     if re.search(r"(?i)(independent review|independent evidence)", improved):
         issues.append("independence claim must be supported by the actual review evidence basis, not context/model freshness")
 
+    if LOCAL_FIRST_VIOLATION.search(improved):
+        issues.append("local-first repository violation: use the authorized GitHub connector directly; do not stage repository work locally or push later")
+        if "authorized GitHub connector" not in improved:
+            improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
+
+    if CONNECTOR_FAILURE_LOCAL_FALLBACK.search(improved):
+        issues.append("connector failure cannot be routed to local staging or a later push")
+        if "authorized GitHub connector" not in improved:
+            improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
+
+    if MINIMALITY_TERMS.search(improved) and not _has_adequacy_contract(improved):
+        issues.append("lean/minimality shortcut lacks adequacy evidence: require outcome, root cause, owner chain, invariants, acceptance and whole-system return")
+        if "Adequacy before minimality" not in improved:
+            improved = improved.rstrip() + "\n\n" + ADEQUACY_GUARDRAIL
+
+    if PREMATURE_CLOSURE.search(improved):
+        issues.append("status laundering: local/technical/CI/Issue/PR completion cannot establish user or whole-system acceptance")
+        if "ONLINE_EXECUTION_GUARDRAIL" not in improved:
+            improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
+
     if _is_paleo_repo(repo):
+        if not _has_execution_proof_contract(improved):
+            issues.append("missing online execution proof gate: require current main, intended branch/PR, remote commit, restart/handoff and affected-owner reconciliation")
+            improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
+
         prefix = (
             "Freshly resolve `GOVERNING_OBJECTIVE.md`, `AGENTS.md`, the applicable current owner and canonical rules before consequential work. "
             "Do not manufacture Project priority, D-016 authority or acceptance from Issue/CI/current-context metadata.\n\n"
@@ -112,6 +183,19 @@ def test_prompt(prompt: str, result: str | None = None, self_review: bool = Fals
         findings.append("non-closable-work")
     if re.search(r"(?i)latest (?:file|issue|commit|design|architecture)", text):
         findings.append("latest-wins-authority-risk")
+    if LOCAL_FIRST_VIOLATION.search(text):
+        findings.append("local-first-repository-violation")
+    if CONNECTOR_FAILURE_LOCAL_FALLBACK.search(text):
+        findings.append("connector-failure-local-fallback")
+    if MINIMALITY_TERMS.search(text) and not _has_adequacy_contract(text):
+        findings.append("lean-shortcut-without-adequacy")
+    if (
+        re.search(r"(?i)\b(?:local|technical|ci|unit)\b.{0,80}\bpass\b", text)
+        and not re.search(r"(?i)whole[- ]system|root cause resolved|user accepted|return condition", text)
+    ):
+        findings.append("local-pass-without-whole-system-return")
+    if PREMATURE_CLOSURE.search(text):
+        findings.append("premature-closure-laundering")
     if re.search(r"(?i)(?:automatically )?(?:admit|approve|accept) (?:the )?(?:architecture|change|project)", text):
         findings.append("authority-laundering-risk")
 
