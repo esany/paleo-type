@@ -28,7 +28,7 @@ OWNER_RELATIVIZATION = re.compile(
     r"(?i)\b(?:existing|current|applicable)\s+(?:owner|rule|contract|semantics?).{0,80}\b(?:covers|sufficient|no gap|no fix|defer|wait|not needed)\b"
 )
 CONTEXT_PROMOTION = re.compile(
-    r"(?i)\bwolkenburg\b.{0,60}\b(?:is|defines|identifies|determines|sets|proves)\b.{0,40}\b(?:content|identity|priority|project|next action)\b"
+    r"(?i)\bwolkenburg\b.{0,60}\b(?:defines|identifies|determines|sets|proves|is\s+(?:the\s+)?(?:content|identity|priority|project|next action))\b.{0,40}\b(?:content|identity|priority|project|next action)\b"
 )
 _RETURN_GATE_MARKERS = (
     r"(?i)\bprotected (?:user(?:/research)?|research )?outcome\b",
