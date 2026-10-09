@@ -31,14 +31,14 @@ CONTEXT_PROMOTION = re.compile(
     r"(?i)\bwolkenburg\b.{0,60}\b(?:is|defines|identifies|determines|sets|proves)\b.{0,40}\b(?:content|identity|priority|project|next action)\b"
 )
 _RETURN_GATE_MARKERS = (
-    r"(?i)\bprotected (?:user|research )?outcome\b",
+    r"(?i)\bprotected (?:user(?:/research)?|research )?outcome\b",
     r"(?i)\bsemantic scope\b",
     r"(?i)\bnegative distinctions?\b",
     r"(?i)\bcoupled obligations?\b",
     r"(?i)\bauthorized action\b",
     r"(?i)\bdefinition of ready\b",
     r"(?i)\bdefinition of done\b",
-    r"(?i)\b(?:residual|return) (?:condition|state)\b",
+    r"(?i)\b(?:residual|return)(?:/return)? (?:condition|state)\b",
     r"(?i)\bclaim ceiling\b",
 )
 RETURN_GATE_GUARDRAIL = """Outcome-preserving return gate:
