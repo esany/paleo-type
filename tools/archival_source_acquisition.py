@@ -704,11 +704,13 @@ def main() -> int:
             if args.file_list is not None
             else provider.fetch_file_list(args.inspect_guid)
         )
-        print(json.dumps(
-            provider.inspect_file_list(args.inspect_guid, raw),
-            ensure_ascii=False,
-            indent=2,
-        ))
+        report = provider.inspect_file_list(args.inspect_guid, raw)
+        report["list_origin"] = (
+            "provided-local-bytes-unverified"
+            if args.file_list is not None
+            else "live-provider-response"
+        )
+        print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0
 
     if args.metadata is None or args.output_root is None:
