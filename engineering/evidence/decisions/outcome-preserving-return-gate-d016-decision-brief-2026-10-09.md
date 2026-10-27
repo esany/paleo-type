@@ -1,12 +1,16 @@
 # Outcome-Preserving Return Gate — D-016 decision brief
 
-Status: PROPOSED / NOT ADMITTED / no executable implementation started
+Status: ADMITTED / bounded implementation authorized / technical acceptance pending
 Repository: esany/paleo-type
 Decision owner: decision:D-016
 Decision surface: existing shared execution-control decision boundary; no new Issue owner
 Evidence basis: engineering/evidence/audits/outcome-preserving-spiral-audit-2026-10-09.md
 Proposal branch: fix/outcome-preserving-spiral-breaker-2026-10-09
-Base: main@a3c865ec60246118206be5dde3aefdbd7f9a77d1
+Base: main@256f12bc8894df6fefa7bc8e814e10cc755b9cd4
+Decision: ADMIT
+Decision date: 2026-10-27
+Decision source: explicit Human Owner authorization in the current work context
+Admission scope: exact esany/paleo-type PR #327, branch fix/outcome-preserving-spiral-breaker-2026-10-09, limited to the existing Return-Gate implementation/test/evidence boundary
 
 ## 1. Decision requested
 
@@ -19,7 +23,7 @@ The requested decision is deliberately narrow:
 - use existing vertical owners for scholarly meaning, runtime acceptance, provenance and whole-system result review;
 - do not create a new universal workflow engine, state machine, Issue lifecycle owner, ontology or parallel truth store.
 
-This is a decision surface, not an automatic admission. The current repository-backed state says implementation is not currently allowed for the cross-project work context.
+This is a bounded D-016 admission for the exact PR/branch scope recorded above. It authorizes implementation, tests and durable evidence within the existing owners. It does not authorize merge, Issue closure, scholarly or Human acceptance, Project-priority changes, or global implementation enablement.
 
 ## 2. Problem the change must solve
 
@@ -161,11 +165,13 @@ This decision does not authorize:
 - physical guarantees the GitHub connector/harness cannot provide;
 - a claim that future assistant behavior is error-proof.
 
-## 10. Decision boundary
+## 10. Decision
 
-If the Human Owner selects ADMIT, implementation may proceed only within sections 5–7 and must stop when the acceptance envelope or owner boundary is exceeded.
+The Human Owner selected **ADMIT** for the exact scope recorded at the top of this brief. The existing Return-Gate implementation may proceed and is now admitted for `implement`, `test` and `persist_evidence` only.
 
-If ADMIT is not selected, the audit remains durable evidence and no executable mechanism is claimed.
+This decision remains bounded by sections 5–7. It does not authorize merge, Issue closure, scholarly or Human acceptance, Project priority or NEXT ACTION changes, changes to Nr. 632 identity or Wolkenburg meaning, global implementation enablement, or claims that the mechanism guarantees future model behavior.
+
+The current technical branch may therefore be presented as an admitted implementation candidate, while the acceptance envelope and its vertical owners remain open obligations.
 
 The success criterion is outcome-level:
 
