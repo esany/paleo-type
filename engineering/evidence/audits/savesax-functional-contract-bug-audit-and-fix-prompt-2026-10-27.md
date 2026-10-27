@@ -1,5 +1,8 @@
 # savesax — funktionaler Systemaudit und ausführbarer Selbst-Reparaturauftrag (2026-10-27)
 
+**Ausführungsstand nach parallelem Review (2026-10-27):** Der in §5 dokumentierte ältere Selbst-Reparaturprompt ist ein historischer Entwurf. **Aktueller, einziger DEV-READY-Ausführungsprompt** für #271 ist §8 in [`savesax-dev-ready-integrated-plan-2026-10-27.md`](savesax-dev-ready-integrated-plan-2026-10-27.md) auf [Draft-PR #329](https://github.com/esany/paleo-type/pull/329). Dieser frühere Audit bleibt als Fehler-/Ursachenbeleg erhalten; er darf die integrierte W0→W3-Reihenfolge und deren Evidenz-Gates nicht überschreiben.
+
+
 **Status:** nichtnormativer, evidenzbegrenzter technischer/operativer Audit mit konkretem Ausführungsauftrag; **nicht** implementiert, produktiv abgenommen oder unabhängig bestätigt.  
 **Kontrollbasis:** `main@256f12bc8894df6fefa7bc8e814e10cc755b9cd4` am 2026-10-27 über autorisierten GitHub-Connector erneut gelesen; Issue #271/#282/#280/#297 offen; Draft-PR #329 offen. Vor jeder späteren Implementierung aktuelle HEAD-/Owner-Version frisch auflösen.  
 **Verwandte vorläufige Dokumente:** `savesax-recurrent-source-evidence-drift-audit-2026-10-09.md`; `savesax-independent-review-handoff-2026-10-09.md`. Dieses Dokument ersetzt deren Behauptungen nicht durch neue Quellenbelege.
