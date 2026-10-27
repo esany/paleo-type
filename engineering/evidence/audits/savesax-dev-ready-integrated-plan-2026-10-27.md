@@ -12,6 +12,13 @@
 - **Weiterer Planungsbezug:** [PR #321](https://github.com/esany/paleo-type/pull/321), Draft/Phase A, bündelt #271/#282 als echten Produkt-/Runtime-Akzeptanzstrang und #280 als System-Rückkehr; #297 fordert die Unterscheidung „kleinste hinreichende komplette Lösung“ statt „kleinster lokaler Patch“.
 - **Auswirkung hier:** Bestehenden Provider-Adapter und restartable Core dort weiterverwenden, wo sie tragen. Änderungen werden nicht nach Dateigröße/CI-Status, sondern nach vollständigem `Archiv-URL → tatsächliche Dateien → öffentliches Fullsize → dauerhaftes Paket` bewertet. **PR #327 bleibt ein parallel zu beachtender, nicht gemergter Review-/Assurance-Carrier.**
 
+### Frische Gegenprüfung der parallelen Carrier am 2026-10-27 (zweiter Abgleich)
+
+- **PR #327** wurde nicht nur anhand seiner PR-Zusammenfassung, sondern an den aktuellen Dateien `outcome-preserving-spiral-audit-2026-10-09.md`, `outcome-preserving-return-gate-d016-decision-brief-2026-10-09.md` und `engineering/prompts/CONTRACT.md` auf Branch `fix/outcome-preserving-spiral-breaker-2026-10-09@ebd3f100c9fb1d74e07a44d8e7da7af663518f43` gegengeprüft. Seine Kernfolgerung: **Eine erneute beobachtete Fehlleistung ist eine operative Kontrolllücke trotz vorhandener Regel; eine rein dokumentarische Wiederholung der Regel ist kein Fix.** Seine Admission bleibt exakt auf #327 begrenzt.
+- **PR #321**, `audit/systemic-closure-backlog-2026-10-09@4276441e369f1e8742516fc3a0cc825cd5cd06e3`, wurde an `systemic-closure-backlog-reconciliation-2026-10-09.md` gegengeprüft. #271/#282 gehören dort zum **produktiven** Abnahmestrang, #280 zur **Whole-System**-Rückkehr; PR #321 selbst ist eine ungemergte Phase-A-Planung, kein Abschluss.
+- **PR #329** wurde auf eigenem Arbeitsbranch gegen `paleo-type/main@256f12bc8894df6fefa7bc8e814e10cc755b9cd4` geprüft. Diese Planung wird **an einer Stelle weitergeführt**, statt einen zweiten DEV-READY-Carrier oder konkurrierende Arbeitsaufforderungen anzulegen.
+- **Genuine Delta dieser Gegenprüfung:** Die W0-Ausgabe wird unten explizit als beweisbarer, repositoryseitig referenzierter Providerbericht definiert, der neue Fix wird nach Beobachtung an seiner **echten Ausführungsgrenze** gegen Einbild-/Atlasfall getestet, und der ausführende Kontext muss vor Codeeingriffen alle inzwischen veränderten Review-HEADs neu prüfen. **Keine neue Freigabe, Priorität, Source/File/Project/METHOD-Wahrheit oder Produktabnahme** folgt daraus.
+
 ## 2. Outcome-Preserving Return Tuple für #271 / savesax
 
 | Feld | Verbindlicher Inhalt dieses Arbeitsblocks |
@@ -39,12 +46,12 @@
 ### W0 — primäre Datenprüfung und Entscheidungs-Gate (read-only, ab jetzt DEV-fähig)
 
 1. **Aktuellen Stand & URLs** bei #271 und in Providerdaten neu prüfen. Erst das Katalogobjekt, die Digitalisat-Verknüpfung und `files.json` beider Zielquellen belegen. Falls die Katalog-GUID nicht die Digitalisat-GUID ist: Beziehung aus echter Archivseite nachweisen.
-2. Einträge zählen, `name`, `typ`, `istEinzelbild`, Dubletten, Ordinal-/Listenordnung und unerkannte Formen **aus realer Antwort**, nicht aus Chatannahmen berichten. Rohbeleg mit Hash/Abfragemethode und begrenzter Evidenznotiz nachvollziehbar halten (keine Archivbilder ins Git-Repo schreiben).
+2. Einträge zählen, `name`, `typ`, `istEinzelbild`, Dubletten, Ordinal-/Listenordnung und unerkannte Formen **aus realer Antwort**, nicht aus Chatannahmen berichten. **W0-Liefergegenstand:** eine überprüfbare, nichtnormative Provider-Evidenznotiz im vorhandenen `engineering/evidence/`-Bereich auf dem neuen Entwicklungsbranch, mit je Quelle **Katalog-URL, tatsächlicher Digitalisat-GUID, Request-URL, UTC-Abrufzeit, HTTP-/Access-Ergebnis, `files.json`-SHA-256, Eintragszählung je `typ` und `istEinzelbild`, exakten Namen/Ordnungsbelegen, repräsentativen Bildrouten-/JPEG-Messwerten sowie offenem Claim Ceiling**. Nur wirklich gelesene Bytes zählen als Providerbefund. Keine Archivbild-Binaries ins Git-Repo. Bei fehlendem Zugriff stattdessen explizit `UNVERIFIED` und die genaue scheiternde Route; kein fingierter Rohbeleg.
 3. Nur **tatsächlich gelistete** Beispiele probeweise gegen `/fullsize/<exact-name>.jpg` und bei Bedarf `download.jsp` prüfen, ausdrücklich auch `false`, falls gelistet. HTTP/Redirect, Typ, Länge, JPEG-Bytes, vollständige Dekodierbarkeit, Pixelmaß/Route prüfen; keine großflächige Sicherung oder bezahlten Browseragenten.
 4. Falls `false` als gültiges öffentliches JPEG nachgewiesen: Parserkriterium gezielt nach Datenform korrigieren; falls es andere Darstellungsform/Tiles meint: separaten, belegten Datenpfad beschreiben und kein falsches JPEG-Versprechen abgeben; falls uneindeutig: **FELDSEMANTIK UNVERIFIED**, keine Blindänderung. Zugriffsmangel bleibt **lokal**, nicht „Archiv nicht erreichbar“.
 5. Einbild- und Mehrbildquelle mit exakt den gelieferten Datensätzen modellieren. Negativfall: `0002`/`0003` müssen ohne Listeneintrag im Plan unmöglich sein.
 
-**Gate W0→W1:** Für eine semantikändernde Providerparser-Korrektur müssen echte `files.json`-Feldpopulation und mindestens ein diskriminierender bildbezogener Gegenbeleg vorliegen. Kann W0 nicht erfüllt werden, darf die Änderung **nicht** als validiert implementiert werden; nur datenunabhängige Prüf-/Sicherungsverbesserungen und offene Evidenzgrenze sind zulässig.
+**Gate W0→W1:** Die W0-Evidenznotiz muss auf dem tatsächlichen Entwicklungsbranch nachweisbar persistiert und im PR referenziert sein. Für eine semantikändernde Providerparser-Korrektur müssen echte `files.json`-Feldpopulation und mindestens ein diskriminierender bildbezogener Gegenbeleg vorliegen. Kann W0 nicht erfüllt werden, darf die Änderung **nicht** als validiert implementiert werden; nur datenunabhängige Prüf-/Sicherungsverbesserungen und offene Evidenzgrenze sind zulässig.
 
 ### W1 — providerlokale Fixes am wirklichen Datenfluss (nach W0-Gate)
 
@@ -58,7 +65,7 @@
 
 - Tests: Einbild aus **einem gelisteten Namen**, keine 0002/0003; reale nicht-kontinuierliche Mehrbildliste; true/false-Mischung nach belegter Semantik; unbekannte Formate/DZI/Tile/nicht sichere Namen; Dubletten; falsche/abweichende GUID; truncated JPEG mit vorhandenem SOF; tatsächliche Webroute/Pixel; korruptes Bild; Netzwerk-/Resume-/Cancel/Sidecarfehler; `--status` read-only; keine Git-/Runner-„Preservation“; durchgängiger Human-Fall nur mit Archiv-URL.
 - Bereits bestandene Finalisierungs-/Fortschrittstests (PR #328) müssen **weiterhin** funktionieren. `complete` erst nach allen einzelnen Bildern und Manifest-/Checksummenartefakten.
-- Ergebnisorientierte Fehlertexte: nennen **welches** Bild/Beleg fehlt und warum die Quelle **noch nicht vollständig gesichert** ist; keine Pseudo-Links und kein CI-PASS als Produktresultat.
+- Ergebnisorientierte Fehlertexte: nennen **welches** Bild/Beleg fehlt und warum die Quelle **noch nicht vollständig gesichert** ist; keine Pseudo-Links und kein CI-PASS als Produktresultat. **Wirksamkeits-Retest an der tatsächlichen Bediengrenze:** Aus einer URL für die Einbildquelle dürfen ohne echten Listennachweis niemals 0002/0003 als Bilder präsentiert werden; aus einer gemischten Atlasliste darf keine durch `false` erreichbare JPEG-Datei still verschwinden. Regeltext allein oder ein lokaler Parser-Unit-Test ohne beobachteten End-to-End-Effekt ist kein bestandenes Review.
 - Code/Doku/Skill-Änderungen werden als ein gemeinsames, vollständig betrachtetes #271-PR-Paket umgesetzt. GitHub-Connector, PR-Head und exakter CI-Lauf verpflichtend, aber nicht „Produkt fertig“.
 
 ### W3 — getrennte **produktive Abnahme** erst nach #282-Fitness und realem Auftrag
@@ -71,7 +78,7 @@
 
 | Eintritt | Kontrollanforderung | Ergebnis |
 |---|---|---|
-| **Start #271-DEV-Arbeitsblock W0** | Menschliches Ergebnis, die zwei Quellen, echtes Repo-/Code-/Owner-Lesen, definierter GitHub-Branch/PR, Umfang, Negativfälle, Stop- und Review-Bedingung; keine Image-Bulk-Side-Effects | **READY** — dieser Plan ist ein ausführbarer Startauftrag für die kleinste **kohärente** evidence-first Qualifikation. |
+| **Start #271-DEV-Arbeitsblock W0** | Menschliches Ergebnis, die zwei Quellen, echtes Repo-/Code-/Owner-Lesen, definierter GitHub-Branch/PR, Umfang, W0-Evidenzartefakt, Negativfälle, Stop- und Review-Bedingung; keine Image-Bulk-Side-Effects | **READY** — dieser Plan ist ein ausführbarer Startauftrag für die kleinste **kohärente** evidence-first Qualifikation; **noch kein W0-PASS**. |
 | **Start providersemantik-ändernden Code W1** | Primärquellennachweis für `files.json` und `istEinzelbild`, diskriminierender Live-JPEG-Befund oder gleichwertige konkret belegte Providerbytes; bekannte richtige Bildliste/GUID | **CONDITIONAL / EVIDENCE PENDING** — keine regelwidrige `false`-Umdeutung nur aus Chat-/Schemaannahmen. |
 | **Start vollständige technische Integrationsabnahme W2** | Konkreter Provider-/Metadaten-/Bild-Fix einschließlich testbarer Eingabe-/Ausgabekriterien, akzeptable unbekannte Formate, angepasste Fixtures; aktuelle Arbeitsbranch und CI | **NACH W1**, keine Abnahme durch Prompt. |
 | **Produktiver Langlauf W3 / #282** | Tatsächlich gewähltes externes Ziel, persistente Runtime, Observe/Stop/Resume-Fitness, autorisierter Erwerb, gespeicherte Quellenidentität | **NICHT READY** — diese Voraussetzungen dürfen nicht fingiert werden. |
@@ -108,9 +115,13 @@
 DU BIST DER #271 SAVESAX-DEV-/QUALIFIKATIONS-KONTEXT.
 Lies online via autorisiertem GitHub-Connector aktuell GOVERNING_OBJECTIVE.md,
 AGENTS.md, #271/#282/#280/#297, SKILL.md, Downloadcode, Tests und diese
-integrierte Planung. Lies außerdem parallel PR #327 mit dem Outcome-Preserving
-Return-Gate-Audit und dem exakt auf #327 begrenzten D-016-Entscheid (nicht
-als Freigabe für dieses Vorhaben) sowie PR #321/PR #329. Prüfe HEAD/Branch.
+integrierte Planung. ENTDECKE UND LESE auch inzwischen neue/revidierte
+parallele Reviews, statt PR-Titel/alte Chat-Zusammenfassungen als Autorität
+zu übernehmen. Prüfe mindestens PR #327 (Audit, D-016, Contract),
+PR #321 (Phase-A-Evidenz) und PR #329 auf dem jeweiligen aktuellen HEAD;
+notiere exakt ihre Delta-/Admission-/Akzeptanzgrenzen. Eine D-016-
+Admission auf #327 wird NICHT zur Freigabe für #271/#329. Prüfe
+aktuelles main, Issue-Owner und Arbeitsbranch vor jeder Mutation.
 
 Dein geschütztes Ergebnis: Alle real gelisteten und öffentlich einzeln
 herunterladbaren SStA-Fullsize-JPEGs einer per Archiv-URL bezeichneten
@@ -122,9 +133,12 @@ Arbeite den kohärenten Block W0→W1→W2 durch; vor W1 die echte Provider-
 Semantik belegen. Nutze Atlas c52a0351-970a-4896-a349-918c35636cfc und
 die Einbild-Katalogquelle 112bd5fe-72e0-4694-9507-34a896b4583b.
 Nicht belegte Counts/GUID-Verknüpfungen/istEinzelbild-Bedeutungen bleiben
-offen, nicht erfunden. Falls Livezugang fehlt: benenne die Grenze, führe
-nur tatsächlich beweisbare datenneutrale Verbesserungen aus und erkläre
-W1 nicht für abgeschlossen.
+offen, nicht erfunden. Schreibe eine überprüfbare W0-Provider-Evidenznotiz
+mit HTTP-/JPEG-Messungen, wirklichen Dateien und Restgrenzen in den
+GitHub-Arbeitsbranch, verifiziere Datei/Commit/PR. Falls Livezugang fehlt:
+benenne die konkrete Route/Grenze, protokolliere UNVERIFIED, führe nur
+beweisbare datenneutrale Verbesserungen aus und erkläre W1 nicht für
+abgeschlossen.
 
 Implementiere die kleinste HINREICHENDE KOHÄRENTE Reparatur im bisherigen
 #271-Owner, mit diskriminierenden Tests und streng erhaltenen Safety-/
@@ -158,5 +172,7 @@ matrix, bewusst unveränderte Owner und präzise offene Restbedingungen.
 | [PR #321](https://github.com/esany/paleo-type/pull/321) | **Berücksichtigt:** Phase-A-Eigentümer-/Closure-Strang, nicht automatisch aktueller oder angenommen. |
 | [PR #329](https://github.com/esany/paleo-type/pull/329) | Dieser ausgearbeitete Planungskandidat zur Sichtbarkeit und Review; kein Merge und keine unabhängige Review-Rückgabe impliziert. |
 | Source/File/Project/METHOD / Wissensarbeit `implementation_allowed` | **Unverändert:** keine Registrierung, keine D-016-Ausweitung, globale Sperre nicht überschrieben. |
+
+**Verbindlicher einziger Ausführungsprompt:** §8 dieser Datei ersetzt die älteren, voneinander abweichenden Ausführungsvorschläge aus `savesax-independent-review-handoff-2026-10-09.md` und `savesax-functional-contract-bug-audit-and-fix-prompt-2026-10-27.md` **für die weitere #271-Implementierung**. Die historischen Analysen behalten ihre Evidenzfunktion, sind aber kein zweiter aktueller Arbeitsplan.
 
 **Stop-/Rückkehrbedingung:** Die Arbeit endet nicht nach einer isolierten Patcherfolgsmeldung. Sie kehrt als nachgewiesene, ganze #271-Lösung mit ausdrücklich separatem #282/#280-Endresultat zurück, oder mit einer präzisen, überprüfbaren einzigen externen Evidenz-/Autoritätsgrenze. Weitere Kommentare/Handoffs ohne neues Material sind kein Fortschritt.
