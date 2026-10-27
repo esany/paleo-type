@@ -61,7 +61,7 @@ Preview the plan using the live SStA list:
     python tools/archival_source_acquisition.py \
       --metadata <metadata.json> \
       --output-root <external-literature-root> \
-      --route download \
+      --route fullsize \
       --dry-run
 
 Use a previously captured `files.json` response for offline planning:
@@ -79,7 +79,7 @@ Read existing acquisition state without fetching or mutating anything:
       --output-root <external-literature-root> \
       --status
 
-Omit `--dry-run` to acquire the listed images after the runtime/destination gate passes. `--route fullsize` selects the direct viewer image route. The default `download` route uses the archive's individual download endpoint. `--file-list` affects planning only; actual image retrieval still needs network access.
+Omit `--dry-run` to acquire the listed images after the runtime/destination gate passes. **The Dresden `savesax` skill must pass `--route fullsize` explicitly**, as in the example above, for this known public viewer route. The CLI's historical default remains `download` for backward compatibility and selects the archive's individual `download.jsp` endpoint; this default is **not** the Dresden skill's selected route. `--file-list` affects planning only; actual image retrieval still needs network access.
 
 ## Restartable progress and completion
 
