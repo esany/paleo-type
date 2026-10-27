@@ -182,6 +182,7 @@ class AcquisitionTests(unittest.TestCase):
             result = json.loads(stdout.getvalue())
             self.assertEqual(1, result["entry_count"])
             self.assertEqual("0001.jpg", result["entries"][0]["filename"])
+            self.assertEqual("provided-local-bytes-unverified", result["list_origin"])
             self.assertEqual([file_list.name], [p.name for p in Path(temp).iterdir()])
         with patch.object(sys, "argv", ["savesax", "--inspect-guid", "bad-guid"]):
             with self.assertRaises(acquisition.AcquisitionError):
@@ -201,6 +202,7 @@ class AcquisitionTests(unittest.TestCase):
         report = json.loads(stdout.getvalue())
         self.assertEqual(["0175.jpg"], [item["filename"] for item in report["entries"]])
         self.assertEqual("list-inspected-not-acquired", report["status"])
+        self.assertEqual("live-provider-response", report["list_origin"])
         self.assertEqual(0, report["image_bytes_verified"])
 
     def test_existing_acquisition_requires_metadata_and_external_root(self):
