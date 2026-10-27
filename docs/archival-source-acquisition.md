@@ -2,6 +2,32 @@
 
 This bounded implementation acquires individual JPEGs from the Sächsisches Staatsarchiv. It uses the archive's actual `files.json` list and writes only to a configured external source destination. It does not create Corpus or Project records, search for sources, infer research roles, or treat CI artifacts as preservation.
 
+## Human-facing Dresden skill contract — corrected 2026-10-27
+
+The **`savesax` user-facing skill** applies to **Hauptstaatsarchiv Dresden** records at the exact HTTPS origin `https://www.archiv.sachsen.de`. The historical/provider test fixtures from other SStA branches are evidence of the shared adapter, **not** evidence that the Dresden-specific Human-facing skill has been validated or extended to those branches. An exact hostname and HTTPS-scheme check is required; an attacker-supplied URL merely containing that text is not authoritative.
+
+For this known host, use ordinary direct archive HTTP, **not TinyFish or a metered browser agent** to discover the viewer, thumbnails, image IDs, `files.json` or fullsize paths. Browser mediation is not the default; a text extractor returning `empty_content` for a JPG does not test JPG bytes.
+
+The viewer is already known. Thumbnail items (including the currently active `.digitalisat-viewer-thumbnail.loaded.active`) are **navigation**, not the preservation files. The OpenSeadragon display uses `.openseadragon-wrapper` / `.openseadragon-container` (initial page HTML may show only `#openseadragon`). A thumbnail preview `src` in the form:
+
+```text
+/digitalisate/<GUID>/fullsize/../preview/<LISTED-NAME>.jpg
+```
+
+identifies the displayed filename. Use the **verified same GUID and that exact filename** to form the true download target:
+
+```text
+https://www.archiv.sachsen.de/digitalisate/<GUID>/fullsize/<LISTED-NAME>.jpg
+```
+
+The existing `SaechsischesStaatsarchivProvider.image_url(guid, filename, "fullsize")` already constructs that target. Do not fetch the preview image, canvas image or screenshot as a substitute. The thumbnail's `active` class marks **one** selected item, not the complete list. For **completeness**, obtain `/digitalisate/<VERIFIED-DIGITALISAT-GUID>/files.json` and validate its actual `name`, `typ`, `istEinzelbild` entries, count, uniqueness and order. Never enumerate unlisted intermediate names or infer that catalogue GUID necessarily equals digitalisat GUID. Preserve uncertainty about unsupported `istEinzelbild=false`, tile and DZI entries; no silent filtering, and no blind reinterpretation.
+
+The intended outcome is the **publicly downloadable high-resolution online JPEG**, exactly as a Human can download it manually. No extra archival master-on-request step or speculative rights/licence debate is a prerequisite for the ordinary acquisition. This does not decide subsequent publication permissions.
+
+**Completion conditions:** use verified catalogue/source metadata and exact provider file list; preflight a controlled durable external target with observe/stop/restart fitness; dry-run against actual filenames; download complete JPEG **bytes** with an evidenced online high-resolution route; verify payload integrity and actual image pixels, not only URL construction; persist after each verified image; resume without replaying verified files; finalize `QUELLENINFO.json`, `QUELLENINFO.txt`, `SHA256SUMS.txt`, `ACQUISITION_STATE.json` before reporting `complete`. `status` is read-only. CI, fixture comparison, a single image and a remote URI are not a preserved source package. Missing access is a specific **runtime/HTTP resource limitation**, not authority to replace the original research outcome.
+
+**Known real-list regression:** For Hauptstaatsarchiv Dresden, `10001 Ältere Urkunden, Nr. 01739` (`8bdce320-0ce6-4ddb-b37a-eed8fe52cb94`), the officially observed list on 2026-10-27 contains exactly two JPEG entries in provider order `0002`, `0001`; ordered download names are `0001.jpg`, `0002.jpg`. `0003.jpg` must not be invented. This is *file-list evidence*, not proof of successful image-byte acquisition. The existing Nr. 632, Nr. 754 and Oppurg fixtures remain valid **adapter** checks at their evidenced envelope, not proof of Dresden skill scope or external archival preservation.
+
 ## Observed SStA path
 
 1. Read the GUID from the archive record URL or supplied metadata.
