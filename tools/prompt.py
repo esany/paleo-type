@@ -28,8 +28,37 @@ OWNER_RELATIVIZATION = re.compile(
     r"(?i)\b(?:existing|current|applicable)\s+(?:owner|rule|contract|semantics?).{0,80}\b(?:covers|sufficient|no gap|no fix|defer|wait|not needed)\b"
 )
 CONTEXT_PROMOTION = re.compile(
-    r"(?i)\bwolkenburg\b.{0,60}\b(?:defines|identifies|determines|sets|proves|is\s+(?:the\s+)?(?:content|identity|priority|project|next action))\b.{0,40}\b(?:content|identity|priority|project|next action)\b"
+    r"(?i)(?:\bwolkenburg\b|\bbestand\s+\d+\b|\bfonds\b|\bsammlung\b|\bcollection\b)"
+    r".{0,60}\b(?:defines|identifies|determines|sets|proves|is\s+(?:the\s+)?(?:content|identity|priority|project|next action))\b"
+    r".{0,40}\b(?:content|identity|priority|project|next action)\b"
 )
+# This is a limited negative fixture, not general semantic or host assurance.
+_RETURN_GATE_FIELD = re.compile(
+    r"(?i)^\s*(?:[-*]\s*)?(?:protected user/research outcome|protected user outcome|protected research outcome|"
+    r"semantic scope|negative distinctions|coupled obligations|authorized action|"
+    r"definition of ready|definition of done|residual/return condition|claim ceiling)\s*:\s*(.*)$"
+)
+
+
+def _has_unfilled_return_gate(text: str) -> bool:
+    # A list of field labels does not itself provide completed transition evidence.
+    # Content under a heading on the following line remains an acceptable format.
+    lines = text.splitlines()
+    unfilled = 0
+    for i, line in enumerate(lines):
+        match = _RETURN_GATE_FIELD.match(line)
+        if not match:
+            continue
+        value = match.group(1).strip()
+        if value and value.lower() not in {"todo", "tbd", "...", "[todo]", "[tbd]"}:
+            continue
+        if value:
+            unfilled += 1
+            continue
+        following = next((part.strip() for part in lines[i + 1:] if part.strip()), "")
+        if not following or _RETURN_GATE_FIELD.match(following):
+            unfilled += 1
+    return unfilled >= 2
 _RETURN_GATE_MARKERS = (
     r"(?i)\bprotected (?:user(?:/research)?|research )?outcome\b",
     r"(?i)\bsemantic scope\b",
@@ -175,6 +204,8 @@ def review_prompt(prompt: str, repo: str | None = None) -> dict[str, Any]:
             improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
 
     if _is_paleo_repo(repo):
+        if _is_consequential_prompt(improved) and _has_unfilled_return_gate(improved):
+            issues.append("return-gate fields are unfilled: labels/placeholders are not completed transition evidence")
         if _is_consequential_prompt(improved) and not _has_return_gate_contract(improved):
             issues.append("missing outcome-preserving return gate: require protected outcome, semantic scope, coupled obligations, DOR/DOD, residual return and claim ceiling")
             improved = improved.rstrip() + "\n\n" + RETURN_GATE_GUARDRAIL
@@ -233,6 +264,8 @@ def test_prompt(prompt: str, result: str | None = None, self_review: bool = Fals
         findings.append("premature-closure-laundering")
     if re.search(r"(?i)(?:automatically )?(?:admit|approve|accept) (?:the )?(?:architecture|change|project)", text):
         findings.append("authority-laundering-risk")
+    if _is_paleo_repo(repo) and _is_consequential_prompt(text) and _has_unfilled_return_gate(text):
+        findings.append("unfilled-outcome-return-gate")
     if _is_paleo_repo(repo) and _is_consequential_prompt(text) and not _has_return_gate_contract(text):
         findings.append("missing-outcome-return-gate")
     if _is_paleo_repo(repo) and OWNER_RELATIVIZATION.search(text):
