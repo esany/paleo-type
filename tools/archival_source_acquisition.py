@@ -111,12 +111,14 @@ class SaechsischesStaatsarchivProvider:
 
     def fetch_file_list(
         self,
-        source: SourceMetadata,
+        source: SourceMetadata | str,
         *,
         opener: Callable[..., object] = urlopen,
         timeout: float = 60.0,
     ) -> bytes:
-        url = self.file_list_url(source.guid)
+        # A GUID-only list probe needs no invented catalogue metadata.
+        guid = source if isinstance(source, str) else source.guid
+        url = self.file_list_url(guid)
         request = Request(
             url,
             headers={"User-Agent": "paleo-type archival-source-acquisition/0.2"},
@@ -134,6 +136,61 @@ class SaechsischesStaatsarchivProvider:
         if route == "fullsize":
             return f"{self.FULLSIZE_ENDPOINT}/{guid}/fullsize/{filename}"
         raise ValueError(f"unsupported SStA route: {route}")
+
+    def inspect_file_list(self, guid: str, file_list_bytes: bytes) -> dict:
+        """Describe the actual provider list without claiming image availability.
+
+        This read-only diagnostic is deliberately separate from plan/acquire.
+        In particular, istEinzelbild=False is reported, not silently dropped
+        or assumed to be a downloadable JPEG.
+        """
+        url = self.file_list_url(guid)
+        try:
+            entries = json.loads(file_list_bytes)
+        except (UnicodeDecodeError, json.JSONDecodeError) as error:
+            raise AcquisitionError("invalid SStA files.json") from error
+        if not isinstance(entries, list) or not entries:
+            raise AcquisitionError("SStA files.json has no image entries")
+
+        files: list[dict] = []
+        seen: set[str] = set()
+        for index, entry in enumerate(entries, start=1):
+            if not isinstance(entry, dict):
+                raise AcquisitionError(f"SStA entry {index} is not an object")
+            name, typ, single = (
+                entry.get("name"),
+                entry.get("typ"),
+                entry.get("istEinzelbild"),
+            )
+            if not isinstance(name, str) or not self.NAME_PATTERN.fullmatch(name):
+                raise AcquisitionError(f"SStA entry {index} has an unsafe or missing name")
+            if not isinstance(typ, str) or not re.fullmatch(r"[A-Za-z0-9]+", typ):
+                raise AcquisitionError(f"SStA entry {index} has an unsafe or missing typ")
+            if type(single) is not bool:
+                raise AcquisitionError(f"SStA entry {index} has no boolean istEinzelbild")
+            filename = f"{name}.{typ}"
+            if filename in seen:
+                raise AcquisitionError(f"duplicate SStA image: {filename}")
+            seen.add(filename)
+            files.append({
+                "list_index": index,
+                "filename": filename,
+                "typ": typ,
+                "istEinzelbild": single,
+            })
+
+        return {
+            "status": "list-inspected-not-acquired",
+            "image_bytes_verified": 0,
+            "file_list_url": url,
+            "file_list_sha256": hashlib.sha256(file_list_bytes).hexdigest(),
+            "entry_count": len(files),
+            "entries": files,
+            "claim_limit": (
+                "Listed filenames only; no HTTP image, JPEG integrity, "
+                "pixel resolution or external package verified."
+            ),
+        }
 
     def plan(
         self,
@@ -615,8 +672,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Acquire SStA digitalisat images into an external source root."
     )
-    parser.add_argument("--metadata", type=Path, required=True)
-    parser.add_argument("--output-root", type=Path, required=True)
+    parser.add_argument("--metadata", type=Path)
+    parser.add_argument("--output-root", type=Path)
+    parser.add_argument(
+        "--inspect-guid",
+        metavar="GUID",
+        help="read-only: inspect the real files.json entries for a verified digitalisat GUID; "
+             "no source metadata, storage root or image download required",
+    )
     parser.add_argument("--route", choices=("download", "fullsize"), default="download")
     parser.add_argument("--file-list", type=Path, help="offline files.json fixture")
     parser.add_argument("--dry-run", action="store_true")
@@ -630,7 +693,26 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> int:
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+    provider = SaechsischesStaatsarchivProvider()
+    if args.inspect_guid is not None:
+        if args.metadata is not None or args.output_root is not None or args.status:
+            parser.error("--inspect-guid cannot be combined with metadata, output-root or status")
+        raw = (
+            args.file_list.read_bytes()
+            if args.file_list is not None
+            else provider.fetch_file_list(args.inspect_guid)
+        )
+        print(json.dumps(
+            provider.inspect_file_list(args.inspect_guid, raw),
+            ensure_ascii=False,
+            indent=2,
+        ))
+        return 0
+
+    if args.metadata is None or args.output_root is None:
+        parser.error("--metadata and --output-root are required for acquisition/status")
     source = load_source(args.metadata)
     if args.status:
         print(
@@ -642,7 +724,6 @@ def main() -> int:
         )
         return 0
 
-    provider = SaechsischesStaatsarchivProvider()
     file_list_bytes = (
         args.file_list.read_bytes()
         if args.file_list is not None
