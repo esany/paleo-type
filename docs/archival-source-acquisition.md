@@ -16,6 +16,24 @@ The JSON list, not a supplied image count or a Viewer canvas, determines the ima
 
 The generic acquisition core sees only a normalized list of image specifications. SStA fields and routes stay in the provider adapter.
 
+## Read-only list verification without acquisition metadata
+
+For a **verified digitalisat GUID**, a runtime that can execute this repository can inspect the real provider list before resolving all catalog metadata or selecting a storage destination:
+
+```sh
+python tools/archival_source_acquisition.py --inspect-guid <DIGITALISAT-GUID>
+```
+
+The command requests `/digitalisate/<GUID>/files.json`, reports **exactly its actual entries in provider order**, `typ`, `istEinzelbild`, entry count and SHA-256, and writes no image, progress state or source package. To reproduce the list-only check against already captured bytes (without network):
+
+```sh
+python tools/archival_source_acquisition.py --inspect-guid <DIGITALISAT-GUID> --file-list <files.json>
+```
+
+**Do not treat a `bestand.jsp?guid=` catalogue GUID as the verified digitalisat GUID without checking the official catalog linkage.** The probe reports a provider *file list*, **not** successful image URL access, JPEG validity, resolution, or preservation. A `jpg` with `istEinzelbild=false` is surfaced in the report rather than silently excluded or assumed to be a valid direct JPEG. The acquisition plan retains its documented supported-mode checks until live provider evidence justifies a change. The probe is a diagnostic fallback, not a substitute for the normal `savesax` task.
+
+**Skill registration is host-specific.** `.agents/skills/savesax/agents/openai.yaml` expresses invocation intent for a compatible host, but its presence in GitHub is not a runtime registration or functional test in an arbitrary ChatGPT session. If the skill is not in that session's installed/available skills, the assistant must still recognize the source-preservation request, freshly load these repo instructions, and attempt the existing authorized provider-native execution path where supported; otherwise it must name the actual platform/runtime or storage boundary. Neither the probe nor the repository-only skill configuration can certify automatic invocation.
+
 ## Metadata input
 
 Supply JSON with `archive`, `fonds`, `signature`, `title`, `date_label`, `guid` and `page_url`. Optional fields include `archive_code`, `name_key`, `classification_path`, `rights_status` and `image_count`.
