@@ -8,7 +8,7 @@
 
 Ein Human gibt nur eine reale Archivalien-/Digitalisat-URL. `savesax` stellt selbständig die Identität des Archivobjekts und seine verlinkten tatsächlichen Digitalisatdaten fest, enumeriert **nur real nachgewiesene** Bilddateien, wählt für jeden belegten Eintrag die tatsächlich verfügbare hochauflösende Provider-Repräsentation und bewahrt **alle dadurch belegten und erreichbaren** Bilder ohne Bildverlust in einem kontrollierten **externen** Zielordner auf. Ein-Bild-Archivalie und Mehrbild-Atlas folgen demselben Verfahren. Eine überprüfbare Bildmenge, gültige vollständige Bildbytes, nachvollziehbare Reihenfolge, Quellenidentität, Prüfsummen und wahrhaftiger Fortschritts-/Endstatus sind Pflicht.
 
-**Auflösungsgrenze:** `fullsize` ist ohne gemessene Pixelauflösung kein Beweis, dass es die höchste *archivseitig überhaupt existierende* Original-/Master-Auflösung liefert. Die öffentliche Archivseite `https://www.archiv.sachsen.de/archivgut-online-8409.html` (Stand 13.10.2026) unterscheidet online angezeigte Downloads und auf Anfrage verfügbare höher aufgelöste Digitalisate. Belegtes Primärziel ist die beste über die unterstützten öffentlichen Providerwege verfügbare Bildrepräsentation; Archival Masters auf Anfrage sind als gesondert verfügbare Qualität kenntlich zu machen und nicht zu behaupten.
+**Korrigierter Produktumfang nach Human-Owner-Feedback (2026-10-27):** Gesichert werden die hochauflösenden Bilder, die das Sächsische Staatsarchiv **bereits öffentlich im Web über seine normalen Download-/Fullsize-Adressen bereitstellt und die ein Mensch dort auch manuell herunterladen kann**. `savesax` soll genau diesen manuellen Einzelbild-Download anhand der echten Dateiliste zuverlässig automatisieren. **Keine Masterdatei-Anfrage, keine gesonderte Rechte-/Lizenzprüfung und keine erfundene Zugangshürde als Voraussetzung für diesen normalen Abruf.** Die Archiv-URL und die richtige Quellenangabe werden im Paket dokumentiert. Dass andere, eventuell noch größere Archivreproduktionen auf Anfrage denkbar sind, ist **nicht Teil dieser Aufgabe** und darf die Arbeit weder aufhalten noch mit Prosa überlagern. „Online-Fullsize“ ist kein archivischer Mastertitel; prüfe die tatsächlich geladenen Bildpixel/Bytes, statt die Wortwahl der URL als technischen Qualitätsnachweis zu verwenden. Diese Eingrenzung ist ein Produkt-/Arbeitsumfang, **keine pauschale Aussage über eine weitergehende Veröffentlichungs- oder Verwertungslizenz**.
 
 ## 2. Beobachtete und im Code nachgewiesene Fehler
 
@@ -30,7 +30,7 @@ Ein Human gibt nur eine reale Archivalien-/Digitalisat-URL. `savesax` stellt sel
 
 **R2 (Code nachgewiesen, Live-Auswirkung offen):** Ein Provider-Metadatenflag wurde als harter Typ-/Existenzfilter kodiert, obwohl seine tatsächliche Bildrouten-Semantik für `false` nicht geklärt ist. Eine blinde Entfernung kann Tile-/Manifest-Daten fälschlich als Einzel-JPEGs behandeln. Die Heilung braucht Gegenbeispiele mit echten gelisteten Dateinamen und echten Antwortbytes.
 
-**R3 (weiterer Produktmangel im Code):** „JPEG-Datei gültig“ und „wirklich vollständig dekodierbares JPEG“ werden vermischt; Hashes belegen die Gleichheit zu heruntergeladenen, nicht zu erwarteten Originalbytes. Eine vollständigkeitsfähige technische Prüfung muss die passende Evidenzgrenze offenlegen und darf keine Master-/Originalbehauptung aus Pixelabmessungen ableiten.
+**R3 (weiterer Produktmangel im Code):** „JPEG-Datei gültig“ und „wirklich vollständig dekodierbares JPEG“ werden vermischt; Hashes belegen die Gleichheit zu heruntergeladenen Bytes, nicht zwingend ihre vollständige Lieferung durch den Webserver. Eine brauchbare Prüfung muss technisch beschädigte/abgeschnittene Bilder erkennen und die tatsächlich öffentlich gelieferte Auflösung festhalten; **keine Debatte über zusätzliche Archivmaster als Ersatz für den Download**.
 
 **R4 (systemisch):** Das Gesamtziel `Archiv-URL → belegte Daten → vollständiges externes Paket` wurde in lokal unabhängige technische Erfolge zerlegt; die durch den Human schon mehrfach korrigierte falsche-Lean-/lokaler-PASS-Verschiebung ist bei #297 als Risiko bereits beschrieben. Zusätzliche Prompt-Sätze allein sind kein Wirksamkeitsnachweis.
 
@@ -39,7 +39,7 @@ Ein Human gibt nur eine reale Archivalien-/Digitalisat-URL. `savesax` stellt sel
 - **Atlas:** `c52a0351-970a-4896-a349-918c35636cfc`. Die früher genannten „240 / 163 true / 77 false“ sind **unbestätigte Hypothesen**, keine abgenommene Dateiliste.
 - **Vergleichsarchivalie:** Katalogseite `https://www.archiv.sachsen.de/archiv/bestand.jsp?guid=112bd5fe-72e0-4694-9507-34a896b4583b`; der Human berichtet genau ein Bild; die GUID-Gleichheit zum Digitalisatpfad und tatsächliche `files.json`-Einträge sind unabhängig zu prüfen.
 - Direkte Abrufe von beiden `files.json`-Adressen und der Vergleichs-Katalogseite waren mit dem hier verfügbaren Webabruf **nicht möglich**; das ist eine lokale Tool-Grenze, **kein Provider-Ausfall**.
-- Keine automatische Mehrbild- oder Master-Bildbehauptung bis zur Quellevidenz.
+- Keine automatische Mehrbildbehauptung bis zur Quellevidenz. Online abrufbare Fullsize-Bilder sind der konkrete Erwerbsgegenstand; höher aufgelöste Sonderanfertigungen auf Anfrage und allgemeine Lizenzfragen sind kein vorgeschalteter Task.
 
 ## 5. Ausführbarer Prompt an denselben künftigen Reparaturkontext
 
@@ -97,9 +97,13 @@ Issue-/Test-Erfolge.
    d) tatsächliche Bildreihenfolge, Typ-/Namensvalidierung und
       optionale count-Konsistenz;
    e) fehlende vollständige JPEG-Prüfung (SOF allein genügt nicht);
-   f) Beleg für gewählte High-res-Route und klare Grenze zu
-      möglicherweise nur auf Anfrage verfügbaren Masterdateien;
+   f) Beleg für die gewählte Web-Fullsize-/Download-Route und
+      die tatsächlich gelieferten Pixel/Bytes; **keine** Anfragen
+      nach Sonder-Masterdateien und **keine** Lizenzdebatte als
+      Voraussetzung für öffentlich angebotene manuelle Downloads;
    g) Ende-zu-Ende-Zustand bis zur vollständig gesicherten externen Ablage.
+   Die nachgewiesene Archivquelle im Paket korrekt ausweisen;
+   keine ungeprüften Aussagen über weitergehende Nutzungsrechte.
 
 6. Entwirf den kleinsten HINREICHENDEN kohärenten Fix. Behalte
    nachgewiesen funktionierende Restart-/Checksum-/Paketmechanik bei,
