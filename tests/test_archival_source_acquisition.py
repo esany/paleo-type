@@ -187,6 +187,22 @@ class AcquisitionTests(unittest.TestCase):
             with self.assertRaises(acquisition.AcquisitionError):
                 acquisition.main()
 
+    def test_guid_only_probe_live_path_calls_provider_list_not_image_download(self):
+        stdout = StringIO()
+        with patch.object(
+            acquisition.SaechsischesStaatsarchivProvider,
+            "fetch_file_list",
+            return_value=one_image(name="0175"),
+        ) as fetcher:
+            with patch.object(sys, "argv", ["savesax", "--inspect-guid", GUID_632]), \
+                 patch.object(sys, "stdout", stdout):
+                self.assertEqual(0, acquisition.main())
+        fetcher.assert_called_once_with(GUID_632)
+        report = json.loads(stdout.getvalue())
+        self.assertEqual(["0175.jpg"], [item["filename"] for item in report["entries"]])
+        self.assertEqual("list-inspected-not-acquired", report["status"])
+        self.assertEqual(0, report["image_bytes_verified"])
+
     def test_existing_acquisition_requires_metadata_and_external_root(self):
         with patch.object(sys, "argv", ["savesax", "--dry-run"]):
             with self.assertRaises(SystemExit) as raised:
