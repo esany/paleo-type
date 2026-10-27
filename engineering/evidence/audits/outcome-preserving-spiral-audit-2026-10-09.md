@@ -1,8 +1,8 @@
 # Outcome-preserving spiral audit — roots, manifestations and control requirements
 
-Status: CURRENT SYSTEM AUDIT / mechanism specification basis / no implementation admission
+Status: CURRENT SYSTEM AUDIT / D-016 ADMITTED / bounded implementation evidence
 Repository: `esany/paleo-type`
-Baseline: `main@a3c865ec60246118206be5dde3aefdbd7f9a77d1`
+Baseline: `main@256f12bc8894df6fefa7bc8e814e10cc755b9cd4`
 Audit date: 2026-10-09
 Online source: GitHub connector only
 
@@ -274,9 +274,11 @@ A green repository check proves only the executed deterministic properties. It d
 
 ## 10. Current disposition
 
-This audit documents the failure family and the mechanism requirements. It does not silently activate a new architecture.
+D-016 is **ADMITTED** for the exact scope of esany/paleo-type PR #327 and branch `fix/outcome-preserving-spiral-breaker-2026-10-09`, based on explicit Human Owner authorization recorded on 2026-10-27.
 
-Implementation authority remains bounded by the current repository-backed owner and D-016 state. The next legitimate step is to decide whether the Return Gate can be carried by the already admitted execution-control owners and existing fitness harness, and then to implement only the smallest enforceable parts with the acceptance envelope above.
+The admission authorizes only the existing-owner implementation, deterministic tests and durable evidence for the Outcome-Preserving Return Gate. It does not activate a new architecture and does not authorize merge, Issue closure, scholarly/Human acceptance, Project-priority changes, changes to Nr. 632 identity or Wolkenburg meaning, global implementation enablement, or claims of future model immunity.
+
+The technical carrier is now implemented on the admitted branch. The remaining acceptance residuals are explicit rather than deferred: fresh-context vertical evidence across the affected failure families, external connector enforcement beyond the tested repository path, and the separate acceptance decisions owned by the existing vertical owners.
 
 The critical success criterion is not “the mechanism file exists.” It is:
 
