@@ -181,6 +181,39 @@ class AcquisitionTests(unittest.TestCase):
             plan.images[0].url,
         )
 
+    def test_dresden_1303_record_preserves_exact_two_real_listed_jpegs(self):
+        # Captured from official files.json for 10001 Ältere Urkunden
+        # Nr. 01739 on 2026-10-27. The original list is unsorted.
+        guid = "8bdce320-0ce6-4ddb-b37a-eed8fe52cb94"
+        actual_list = json.dumps([
+            {"name": "0002", "typ": "jpg", "istEinzelbild": True},
+            {"name": "0001", "typ": "jpg", "istEinzelbild": True},
+        ]).encode()
+        provider = acquisition.SaechsischesStaatsarchivProvider()
+        metadata = source(guid=guid, signature="Nr. 01739",
+                          page_url=f"https://www.archiv.sachsen.de/archiv/bestand.jsp?guid={guid}",
+                          image_count=0)
+        plan = provider.plan(metadata, actual_list, route="fullsize")
+        self.assertEqual(["0001.jpg", "0002.jpg"],
+                         [image.filename for image in plan.images])
+        self.assertEqual([
+            f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0001.jpg",
+            f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0002.jpg",
+        ], [image.url for image in plan.images])
+        self.assertEqual(2, len(plan.images))
+        self.assertNotIn("0003.jpg", [image.filename for image in plan.images])
+
+    def test_fullsize_from_nonsequential_list_never_invents_intermediate_names(self):
+        provider = acquisition.SaechsischesStaatsarchivProvider()
+        plan = provider.plan(source(image_count=0), images("0042", "0001"),
+                             route="fullsize")
+        self.assertEqual(["0001.jpg", "0042.jpg"],
+                         [image.filename for image in plan.images])
+        self.assertTrue(all("/fullsize/" in image.url for image in plan.images))
+        self.assertTrue(all("/preview/" not in image.url for image in plan.images))
+        self.assertTrue(all(image.url.startswith("https://www.archiv.sachsen.de/")
+                            for image in plan.images))
+
     def test_jpeg_dimensions_are_checked(self):
         self.assertEqual((32, 16), acquisition.jpeg_dimensions(JPEG_32X16))
         with self.assertRaises(acquisition.AcquisitionError):
