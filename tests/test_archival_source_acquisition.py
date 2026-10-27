@@ -142,6 +142,57 @@ class AcquisitionTests(unittest.TestCase):
             opener.call_args.args[0].full_url,
         )
 
+    def test_guid_only_probe_reports_one_listed_image_not_a_generated_sequence(self):
+        provider = acquisition.SaechsischesStaatsarchivProvider()
+        raw = one_image(name="0042")
+        result = provider.inspect_file_list(GUID_632, raw)
+        self.assertEqual("list-inspected-not-acquired", result["status"])
+        self.assertEqual(0, result["image_bytes_verified"])
+        self.assertEqual(1, result["entry_count"])
+        self.assertEqual(["0042.jpg"], [x["filename"] for x in result["entries"]])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), result["file_list_sha256"])
+        self.assertNotIn("0002.jpg", json.dumps(result))
+        self.assertIn("no HTTP image", result["claim_limit"])
+
+    def test_guid_only_probe_preserves_false_entries_and_unusual_sequence(self):
+        provider = acquisition.SaechsischesStaatsarchivProvider()
+        raw = json.dumps([
+            {"name": "0199", "typ": "jpg", "istEinzelbild": False},
+            {"name": "0003", "typ": "jpg", "istEinzelbild": True},
+            {"name": "0042", "typ": "dzi", "istEinzelbild": False},
+        ]).encode()
+        result = provider.inspect_file_list(GUID_632, raw)
+        self.assertEqual(3, result["entry_count"])
+        self.assertEqual(["0199.jpg", "0003.jpg", "0042.dzi"],
+                         [x["filename"] for x in result["entries"]])
+        self.assertEqual([False, True, False],
+                         [x["istEinzelbild"] for x in result["entries"]])
+        with self.assertRaisesRegex(acquisition.AcquisitionError, "single-image JPEG"):
+            provider.plan(source(image_count=0), raw)
+
+    def test_guid_only_probe_cli_requires_no_catalogue_metadata_or_output_root(self):
+        raw = one_image(name="0001")
+        with tempfile.TemporaryDirectory() as temp:
+            file_list = Path(temp) / "files.json"
+            file_list.write_bytes(raw)
+            stdout = StringIO()
+            argv = ["savesax", "--inspect-guid", GUID_632, "--file-list", str(file_list)]
+            with patch.object(sys, "argv", argv), patch.object(sys, "stdout", stdout):
+                self.assertEqual(0, acquisition.main())
+            result = json.loads(stdout.getvalue())
+            self.assertEqual(1, result["entry_count"])
+            self.assertEqual("0001.jpg", result["entries"][0]["filename"])
+            self.assertEqual([file_list.name], [p.name for p in Path(temp).iterdir()])
+        with patch.object(sys, "argv", ["savesax", "--inspect-guid", "bad-guid"]):
+            with self.assertRaises(acquisition.AcquisitionError):
+                acquisition.main()
+
+    def test_existing_acquisition_requires_metadata_and_external_root(self):
+        with patch.object(sys, "argv", ["savesax", "--dry-run"]):
+            with self.assertRaises(SystemExit) as raised:
+                acquisition.main()
+            self.assertEqual(2, raised.exception.code)
+
     def test_manifest_entries_not_supplied_count_determine_images(self):
         provider = acquisition.SaechsischesStaatsarchivProvider()
         plan = provider.plan(source(image_count=0), one_image(name="0042"))
