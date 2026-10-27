@@ -245,5 +245,47 @@ class PromptCapabilityTests(unittest.TestCase):
         )
 
 
+    def test_single_missing_markdown_return_gate_field_is_detected(self) -> None:
+        # The original >=2 threshold silently passed one explicitly empty field.
+        one_missing = (
+            "Implement and report the completed return gate:\n"
+            "**Protected user/research outcome:** Preserve source access.\n"
+            "**Semantic scope:** TBD\n"
+            "**Negative distinctions:** No unselected interpretation.\n"
+            "**Coupled obligations:** Keep evidence references intact.\n"
+            "**Authorized action:** Review bounded change only.\n"
+            "**Definition of Ready:** Current branch and owner resolved.\n"
+            "**Definition of Done:** Regression and remote proof.\n"
+            "**Residual/return condition:** Return to #297.\n"
+            "**Claim ceiling:** CI is not scholarly acceptance.\n"
+        )
+        result = prompt.test_prompt(one_missing, repo="esany/paleo-type")
+        self.assertIn("unfilled-outcome-return-gate", result["findings"])
+        review = prompt.review_prompt(one_missing, repo="esany/paleo-type")
+        self.assertTrue(any("unfilled" in issue for issue in review["issues"]))
+
+        # An instruction that is not under paleo-type's contract stays simple.
+        other = prompt.test_prompt(one_missing)
+        self.assertNotIn("unfilled-outcome-return-gate", other["findings"])
+
+    def test_single_blank_markdown_field_followed_by_another_label_is_detected(self) -> None:
+        unfilled = (
+            "Implement; completed return gate:\n"
+            "**Protected user/research outcome:** Keep real source outcome.\n"
+            "**Semantic scope:**\n"
+            "**Negative distinctions:** Context is not evidence.\n"
+            "**Coupled obligations:** Preserve research state.\n"
+            "**Authorized action:** Bounded fix.\n"
+            "**Definition of Ready:** Owner checked.\n"
+            "**Definition of Done:** Tests pass.\n"
+            "**Residual/return condition:** Report the unresolved result.\n"
+            "**Claim ceiling:** Formal check only.\n"
+        )
+        self.assertIn(
+            "unfilled-outcome-return-gate",
+            prompt.test_prompt(unfilled, repo="esany/paleo-type")["findings"],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
