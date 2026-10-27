@@ -24,7 +24,7 @@ For a **verified digitalisat GUID**, a runtime that can execute this repository 
 python tools/archival_source_acquisition.py --inspect-guid <DIGITALISAT-GUID>
 ```
 
-The command requests `/digitalisate/<GUID>/files.json`, reports **exactly its actual entries in provider order**, `typ`, `istEinzelbild`, entry count and SHA-256, and writes no image, progress state or source package. To reproduce the list-only check against already captured bytes (without network):
+The command requests `/digitalisate/<GUID>/files.json`, reports **exactly its actual entries in provider order**, `typ`, `istEinzelbild`, entry count and SHA-256, marks the provenance as `list_origin=live-provider-response`, and writes no image, progress state or source package. The `--file-list` offline variant is explicitly marked `list_origin=provided-local-bytes-unverified`; supplied bytes must never be misreported as a live provider response. To reproduce the list-only check against already captured bytes (without network):
 
 ```sh
 python tools/archival_source_acquisition.py --inspect-guid <DIGITALISAT-GUID> --file-list <files.json>
