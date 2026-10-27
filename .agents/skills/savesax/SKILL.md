@@ -5,6 +5,9 @@ description: "Start or carry out acquisition of digitized images from a Sächsis
 
 # Save SStA digitalisat images
 
+**Runtime-discovery boundary:** This repository skill and `allow_implicit_invocation: true` configure eligible repository-aware hosts; they do **not** prove that an arbitrary ChatGPT session has registered the skill or can execute the downloader. When the Human asks to save SStA archival images, check this owner **before** an ad hoc image or metadata workflow. If host auto-invocation is absent but an authorized execution runtime can read this repository, follow this skill's provider-native steps directly. If no fitted executable runtime/external destination exists, report that **specific** limit, not "skill worked", "archive unavailable" or "images secured". Do not turn missing skill registration into a fabricated fallback acquisition.
+
+
 Treat `savesax` or `$savesax` by itself as the user's request to acquire the images for the Sächsisches Staatsarchiv record already present in the conversation. Do not make the user choose an internal workflow, provider, or atom, and do not ask for a full sentence.
 
 A status/read request is different from an acquisition request. `Fertig?`, `Status?`, `läuft es noch?` or equivalent wording is **read-only**: inspect/report the existing operation/package state and never infer a rerun, resume, push, workflow trigger or new acquisition from that read alone.
