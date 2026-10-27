@@ -181,5 +181,69 @@ class PromptCapabilityTests(unittest.TestCase):
         self.assertEqual("PASS", tested["status"])
 
 
+    def test_blank_return_gate_labels_do_not_establish_completion(self) -> None:
+        unfilled = (
+            "Implement this change; completed return gate:\n"
+            "Protected user/research outcome:\n"
+            "Semantic scope:\n"
+            "Negative distinctions:\n"
+            "Coupled obligations:\n"
+            "Authorized action:\n"
+            "Definition of Ready:\n"
+            "Definition of Done:\n"
+            "Residual/return condition:\n"
+            "Claim ceiling:\n"
+        )
+        tested = prompt.test_prompt(unfilled, repo="esany/paleo-type")
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("unfilled-outcome-return-gate", tested["findings"])
+        reviewed = prompt.review_prompt(unfilled, repo="esany/paleo-type")
+        self.assertTrue(any("unfilled" in issue for issue in reviewed["issues"]))
+
+        # The gate must not reject ordinary headings followed by actual values.
+        filled = (
+            "Implement this change; report the return gate:\n"
+            "Protected user/research outcome:\n"
+            "  Keep the Human's existing source-access objective.\n"
+            "Semantic scope:\n"
+            "  Access only, no scholarly interpretation.\n"
+            "Negative distinctions:\n"
+            "  Collection metadata is not documentary content.\n"
+            "Coupled obligations:\n"
+            "  Preserve the existing evidence and destination records.\n"
+            "Authorized action:\n"
+            "  Bounded implementation in the admitted branch.\n"
+            "Definition of Ready:\n"
+            "  Current repo and owner checked.\n"
+            "Definition of Done:\n"
+            "  Tests and remote proof complete.\n"
+            "Residual/return condition:\n"
+            "  Return unresolved host acceptance to its existing owner.\n"
+            "Claim ceiling:\n"
+            "  A test pass is not whole-system acceptance.\n"
+        )
+        self.assertEqual("PASS", prompt.test_prompt(filled, repo="esany/paleo-type")["status"])
+
+    def test_context_promotion_guard_is_not_wolkenburg_only(self) -> None:
+        for invalid in (
+            "Bestand 20578 identifies the content and priority of this archival unit.",
+            "Sammlung determines the identity and priority of the manuscript.",
+            "Collection proves the content and priority of this source.",
+        ):
+            with self.subTest(invalid=invalid):
+                tested = prompt.test_prompt(invalid, repo="esany/paleo-type")
+                self.assertEqual("NEEDS_REVIEW", tested["status"])
+                self.assertIn("context-content-promotion", tested["findings"])
+
+        contextual_only = (
+            "Bestand 20578 is collection context only; documentary content and "
+            "research priority require direct evidence and authority."
+        )
+        self.assertEqual(
+            "PASS",
+            prompt.test_prompt(contextual_only, repo="esany/paleo-type")["status"],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
