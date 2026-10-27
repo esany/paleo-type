@@ -1,5 +1,8 @@
 # Unabhängiger Handoff — savesax: Datenwahrheit vor Download-Fix (2026-10-09)
 
+**Currentness-/Routing-Vermerk (2026-10-27):** Dieser Prompt beschreibt eine **unabhängige Prüfung**, nicht die aktuelle #271-Implementierungssteuerung. Der einzige kohärente, überprüfte **DEV-READY-Entwicklungsplan** einschließlich frischer PR-#327-/PR-#321-Abgleichung und Ausführungsprompt steht in [`savesax-dev-ready-integrated-plan-2026-10-27.md`](savesax-dev-ready-integrated-plan-2026-10-27.md) auf [Draft-PR #329](https://github.com/esany/paleo-type/pull/329). Ein unabhängig durchgeführter Review oder zugestellter Rückbericht wird damit nicht behauptet.
+
+
 **Status:** eigenständig ausführbarer, unvoreingenommener Prüfprompt; **noch kein durchgeführter unabhängiger Review**.  
 **Fokus:** Ende-zu-Ende-Funktion, reales Provider-Verhalten und wiederholte Evidenzüberschreitung.  
 **Primärer Aufgabenowner:** [#271](https://github.com/esany/paleo-type/issues/271); reale Ziellaufzeit-/Paketabnahme [#282](https://github.com/esany/paleo-type/issues/282); übergeordneter Result-Review [#280](https://github.com/esany/paleo-type/issues/280). Diese Referenzen sind Einstiegspunkte, **nicht ungeprüft zu übernehmende Tatsachen**.
