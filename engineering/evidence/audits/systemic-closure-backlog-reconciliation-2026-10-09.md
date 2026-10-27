@@ -38,7 +38,7 @@ Core operative-efficacy and closure block:
 - #280 — whole-system Result Review
 - #272 — final audit/currentness residuals
 
-Historical activation note (superseded by the dated currentness addendum below): PR #315 was then a candidate carrier. On 2026-10-27, all seven listed changed-file blobs were independently found identical between that PR branch and current main. No unapplied implementation delta is established for #315; do not reimplement it.
+Historical activation note (superseded by the dated currentness addendum below): PR #315 was then a candidate carrier. On 2026-10-27 all seven changed-file blobs matched main; the draft has since been **closed unmerged as superseded by merged PR #322**, with [verification evidence](https://github.com/esany/paleo-type/pull/315#issuecomment-6441857870). Do not reimplement it.
 
 ## Separate source-entry/corpus strand
 
@@ -158,7 +158,7 @@ Any Issue closure or successor creation must occur only after the relevant DoD a
 
 | PR | Current finding | Next admissible disposition; no automatic merge |
 |---|---|---|
-| #315 — execution-proof guardrail | **All seven changed-file blob SHAs equal main** when comparing main against branch fix/adequacy-before-minimality-2026-10-08 on 2026-10-27: AGENTS.md, engineering/prompts/CONTRACT.md, tools/prompt.py, tests/test_prompt.py, engineering/assurance/fitness.json, tools/engineering_fitness.py, tests/test_engineering_fitness.py. The branch supplies no presently established unapplied code delta, despite being Draft. | Reviewer to check provenance/CI and formally dispose of this redundant open PR (close/supersede only under its owner). Do not redo already-main implementation or infer automatic closure. |
+| #315 — execution-proof guardrail | **SUPERSEDED / CLOSED, NOT MERGED**, with [verified PR closeout](https://github.com/esany/paleo-type/pull/315#issuecomment-6441857870). All seven changed-file blob SHAs match main (2026-10-27); PR #322 was previously merged. | **DONE for the PR #315 duplicate only**. No effect on #297 behavioral outcome or #280 whole-system acceptance; no duplicate implementation. |
 | #327 — outcome-preserving return gate | **Actual additional delta** against main: engineering/prompts/CONTRACT.md, tools/prompt.py, tests/test_prompt.py, engineering/assurance/fitness.json plus its two audit/decision artifacts; GitHub PR-head CI has passed. Its D-016 admission is **exact branch/scope only**; it is Draft and vertical acceptance is open. | Owner to verify exact diff, tests, admission and cross-family counter-fixtures; assess merge separately. Do not grant global authority or claim host-level behavior proven. |
 | #321 — this systemic Phase A | Historical Phase-A activation from main@3dc7cff, Draft; scope includes system-control and separate scientific/deferred families. This addendum updates its current review basis. | Review and decide whether Phase A is complete; incorporate surviving owner-specific feedback; no status/priority changes from the audit alone. |
 | #329 — savesax evidence-first plan | Draft owner-local W0→W3, live provider semantics still unknown. Existing #271 critical review and pre-run matrix: https://github.com/esany/paleo-type/pull/329#issuecomment-6440298605 | Continue the already running #271 thread independently. Whole-system tracker references only the product/acceptance return; do not make #321 a duplicate downloader plan. |
@@ -174,7 +174,7 @@ Any Issue closure or successor creation must occur only after the relevant DoD a
 **G0 DoD:** one reviewable updated Phase-A carrier, explicit evidence-based owner/PR disposition, action-local unknowns, concrete G1/G2 gates and separate D-016 conditional decisions. **Status: REVIEW PROPOSAL, pending PR acceptance.**
 
 **G1 – admitted deterministic improvement and independent counter-tests (READY by scope, NOT globally accepted):**
-1. Compare #315 vs main at blob level (no code delta), then review actual #327 changes only within its recorded D-016 scope. PR #315 closure/merge decision is separate and not assumed.
+1. **COMPLETED:** #315 had no code delta against main and was closed unmerged with provenance after confirming merged PR #322; review actual #327 changes only within its separately recorded D-016 scope.
 2. Cross-check #327 outcome-return rule against real, materially different cases: fresh repo/skill preflight (#320), source-access/authority F1 (#296/#292), unselected synthesis (#306), derivation/provenance (#307), human meaning (#308), and partial-PASS (#297). Do **not** pre-seed the test prompt with the desired answer. Separate independent evidence inspection from writer self-review.
 3. Run exact-head GitHub CI on authorised change, then a **real fresh ChatGPT/Work host-context** evaluation where possible; report any connector/host enforcement ceiling instead of declaring universal reliability.
 **G1 DoD:** exact reviewed commit+PR+CI, no contradiction of existing domain/authority rules, measured PASS/FAIL/PARTIAL/UNVERIFIED per fixture, and #297/#292/#280 return. Green CI alone is insufficient.
@@ -231,7 +231,7 @@ Stop **only the affected step** when its necessary authority, evidence, safe exe
 | #280 / #272 | **UNCHANGED ISSUES** — exact remaining whole-system return conditions preserved |
 | #271 / #282 / PR #329 | **UNCHANGED PARALLEL PRODUCT WORK** — references only, no duplicated owner or productive transfer |
 | #270 / #291 / #293 / #12 / #263 / #265–#269 / PR #316 / #290 | **UNCHANGED SCIENTIFIC OWNERS** — separate evidence-driven strand, no speculative METHOD/schema |
-| #315 / #327 | **REVIEW DISPOSITION PROPOSED** — #315 byte-equivalent with main, #327 actual scope-bound delta, no PR mutation/merge |
+| #315 / #327 | **#315 CHANGED:** closed unmerged as superseded, after remote blob equivalence and #322 evidence; **#327 UNCHANGED:** real scope-bound delta, Draft, no merge, vertical tests still open |
 | #162 / transport | **UNCHANGED PAUSED** — no Slack/cross-chat send without admitted current coordination policy and actual recipient routing |
 
 **Restart pointer:** Read the **current** main/owners first, then Draft PR #321 and this addendum. In descending evidence order, use the exact main/PR code and fixture outputs, not this review summary as technical primärbeleg. If newer commits/Issues supersede this dated review, refresh its dispositions rather than replaying old chat. **A draft plan is not Implementation admission or a recorded system-wide current work selection.**
