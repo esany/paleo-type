@@ -41,24 +41,22 @@ _RETURN_GATE_FIELD = re.compile(
 
 
 def _has_unfilled_return_gate(text: str) -> bool:
-    # A list of field labels does not itself provide completed transition evidence.
-    # Content under a heading on the following line remains an acceptable format.
-    lines = text.splitlines()
-    unfilled = 0
+    # Check explicitly labelled slots only; this cannot assess the truth of values.
+    # Markdown bold/code formatting on a label is presentation, not evidence.
+    lines = [line.replace("**", "").replace("\u0060", "") for line in text.splitlines()]
     for i, line in enumerate(lines):
         match = _RETURN_GATE_FIELD.match(line)
         if not match:
             continue
         value = match.group(1).strip()
-        if value and value.lower() not in {"todo", "tbd", "...", "[todo]", "[tbd]"}:
-            continue
+        if value.lower() in {"todo", "tbd", "...", "[todo]", "[tbd]"}:
+            return True
         if value:
-            unfilled += 1
             continue
         following = next((part.strip() for part in lines[i + 1:] if part.strip()), "")
         if not following or _RETURN_GATE_FIELD.match(following):
-            unfilled += 1
-    return unfilled >= 2
+            return True
+    return False
 _RETURN_GATE_MARKERS = (
     r"(?i)\bprotected (?:user(?:/research)?|research )?outcome\b",
     r"(?i)\bsemantic scope\b",
