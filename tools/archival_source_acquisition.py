@@ -90,7 +90,7 @@ def _legacy_package_name(source: SourceMetadata) -> str:
 
 def _source_year(source: SourceMetadata) -> str:
     """First explicitly printed calendar year; do not infer years from centuries."""
-    year = re.search(r"(?<!\\d)(?:[1-9]\\d{2}|[12]\\d{3})(?!\\d)", source.date_label)
+    year = re.search(r"(?<!\d)(?:[1-9]\d{2}|[12]\d{3})(?!\d)", source.date_label)
     return year.group(0) if year else "undatiert"
 
 
