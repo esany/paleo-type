@@ -18,6 +18,22 @@ import source_contract
 
 
 SHA = re.compile(r"^[0-9a-f]{64}$")
+# Statuses actually emitted by the acquisition downloader and its existing-file
+# verification path, including the earlier "verified" designation.
+PERSISTED_VERIFIED_STATUSES = frozenset({
+    "downloaded", "already-present-adopted", "verified-existing", "verified",
+})
+
+
+def _separator_alias(a: object, b: object) -> bool:
+    """Only hyphen/underscore naming variants, not arbitrary renamed packages."""
+    if not isinstance(a, str) or not isinstance(b, str) or not a or not b:
+        return False
+    if any(part in a or part in b for part in ("/", "\\", "\x00")):
+        return False
+    if a in {".", ".."} or b in {".", ".."}:
+        return False
+    return re.sub(r"[-_]+", "_", a) == re.sub(r"[-_]+", "_", b)
 
 
 class PackageIntakeError(ValueError):
@@ -85,9 +101,26 @@ def inspect_package(package: Path, root: Path) -> dict:
         raise PackageIntakeError("manifest lacks image inventory")
     identity = progress.get("plan")
     if not isinstance(identity, dict) or any(identity.get(k) != manifest.get(k) for k in (
-        "package_name", "route", "file_list_url", "file_list_sha256"
+        "route", "file_list_url", "file_list_sha256"
     )) or identity.get("guid") != source["guid"]:
         raise PackageIntakeError("acquisition plan and completed manifest disagree")
+    # One real legacy package has '-' in its actual folder/QUELLENINFO.json and
+    # '_' in the progress plan. Do not rename either artifact. Only accept an
+    # exact separator alias if GUID, file-list hash, route and full inventory
+    # are also unchanged. A read-only result does not establish resume safety.
+    plan_name = identity.get("package_name")
+    actual_name = manifest["package_name"]
+    if plan_name == actual_name:
+        naming = {"status": "EXACT", "resume_safety": "NOT_ASSESSED"}
+    elif _separator_alias(actual_name, plan_name):
+        naming = {
+            "status": "LEGACY_SEPARATOR_ALIAS",
+            "manifest_package_name": actual_name,
+            "progress_plan_package_name": plan_name,
+            "resume_safety": "UNVERIFIED_DO_NOT_RESUME",
+        }
+    else:
+        raise PackageIntakeError("acquisition plan and manifest package identities conflict")
     if not isinstance(progress.get("images"), list):
         raise PackageIntakeError("missing verified progress image inventory")
 
@@ -115,7 +148,7 @@ def inspect_package(package: Path, root: Path) -> dict:
             raise PackageIntakeError(f"invalid original checksum: {name}")
         if sums[name] != digest or progress_map[name].get("sha256") != digest:
             raise PackageIntakeError(f"checksum or progress disagreement: {name}")
-        if progress_map[name].get("status") not in {"verified", "verified-existing"}:
+        if progress_map[name].get("status") not in PERSISTED_VERIFIED_STATUSES:
             raise PackageIntakeError(f"progress has unverified original: {name}")
         file = package / name
         if not file.is_file() or file.is_symlink() or _digest(file) != digest:
@@ -159,6 +192,7 @@ def inspect_package(package: Path, root: Path) -> dict:
         "external_durability": "NOT_ESTABLISHED_BY_THIS_TOOL",
         "source_id": existing["source_id"] if existing else None,
         "source_identity": source,
+        "package_naming": naming,
         "source_resolution": "EXISTING_SOURCE" if existing else "REQUIRES_EVIDENCED_SOURCE_RESOLUTION",
         "originals_verified": len(names),
         "already_registered": already,
