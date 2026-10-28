@@ -1,7 +1,7 @@
 # Concept — archival preservation → canonical Source/File intake (2026-10-28)
 
-**Status:** ANALYSIS / CONCEPT PROPOSAL, **NOT D-016 ADMITTED**; no implementation, Project activation, scholarly acceptance or Zotero write.
-**Human-facing outcome:** one command such as “Archivalie lokal und im Repo sichern; optional Zotero” ends in (1) verified controlled external originals, (2) a traceable canonical Repository Source/File registration, and (3) optional *separately authorized* Zotero bibliography. A source can be Corpus-registered without a research Project.
+**Status:** ANALYSIS / CONCEPT PROPOSAL, **NOT D-016 ADMITTED**; no Project activation or scholarly acceptance. **Scope split (2026-10-28): core skill #334 and entirely separate optional Zotero extension #337; Zotero is never a #334 gate.**
+**Core Human-facing outcome (#334):** one command such as “Archivalie lokal und im Repo sichern” ends in (1) verified controlled external originals and (2) a traceable canonical Repository Source/File registration. A source can be Corpus-registered without a research Project. A separately requested and independently accepted Zotero bibliography extension is owned exclusively by #337, not this core result.
 
 ## Authority and owner fit
 
@@ -36,15 +36,15 @@ For `savesax` these facts come from **JPEG originals**, `QUELLENINFO.json`, `QUE
 - `corpus/relationships.tsv` and `corpus/source-data/<source_id>/`: **only if** Source relations/crosswalks are evidenced, not from viewer order.
 - `source-entry/routes.tsv`: resolve already-authorized routing or preserve `UNRESOLVED` without auto-creating a Project or silently selecting `CORPUS_ONLY / NO_PROJECT_YET` (the latter requires explicit Human confirmation). Do not generate inspection-coverage rows for merely downloaded files; inspection and package verification are distinct.
 - Project files: **never** create a Project, Source use, research function, relevant locus, priority or scholarly `NEXT ACTION` from a new download alone.
-- Optional Zotero: one bibliographic record per archival Source (not per image), match/update rather than duplicate, archive/signature/catalogue URL and canonical Source reference; opt-in, rights-aware, no automatic JPEG/PDF upload, no research truth authority. Zotero connection/capability must be verified, not invented.
+- Optional downstream extension (#337 only, **not part of this implementation's DoD**): a Zotero bibliographic item may later reference the canonical Source, only after separate opt-in and connector/rights checks. General bibliography development remains #13. No core build or test must depend on Zotero.
 
 ## User-facing orchestration
 
-`ordinary archive preservation request → archive-specific skill/provider → validated durable acquisition package → generic Source/File intake → owner-correct GitHub writes + validation → optional Zotero (explicit opt-in) → one result`.
+**Core (#334):** `ordinary archive preservation request → archive-specific skill/provider → validated durable acquisition package → generic Source/File intake → owner-correct GitHub writes + validation → one core result`. **Separately optional (#337):** a requested Zotero step may consume that completed result, but does not delay it or prevent closing #334.
 
 The *host* must not be assumed able to invoke a second skill automatically: the archive-specific entry skill should orchestrate or invoke the generic **tool/interface** explicitly once an admitted stable interface exists; the generic `source-intake` skill may also be callable for **already preserved** packages, but only if host discovery/availability is demonstrated. Never demand that the Human hand-carry a manifest or name the next internal skill for the ordinary successful path.
 
-Use a derivable three-facet completion report: **external preservation** (`verified/partial/unverified`), **repository Source/File registration** (`validated/unwritten/failed`) and **optional Zotero** (`written/skipped/failed`). These are *presentation labels*, NOT a new canonical global state model. If GitHub write fails after preserved files exist, preserve the original package, truthfully report partial overall result and restart from the owner-correct idempotent intake boundary. Pure status questions are read-only across **all** facets.
+Use a derivable **two-facet core completion report**: **external preservation** (`verified/partial/unverified`) and **repository Source/File registration** (`validated/unwritten/failed`). These are *presentation labels*, NOT a new canonical global state model. If a Zotero extension is separately authorized under #337, report its independent outcome without rewriting core success. If GitHub write fails after preserved files exist, preserve the original package, truthfully report partial overall result and restart from the owner-correct idempotent intake boundary. Pure status questions are read-only across **all** facets.
 
 ## Alternatives and dispositions
 
@@ -52,7 +52,7 @@ Use a derivable three-facet completion report: **external preservation** (`verif
 - **Refine** narrow package→owner adapter and negative tests, potentially a new separate skill façade once runtime supports it.
 - **Reject** making `savesax` a research Project manager; rejecting Zotero as authoritative Source/File store; automatic upload of rights-unknown PDFs/JPEGs; bulk import to public GitHub; fake persistent storage in CI/scratch; creating a new general source schema; adding paid browser route by default.
 - **Defer** material #268 whole-root-File→internal-Source relation; if a real fixture reaches it, return to that owner rather than silently splitting or duplicating File identities.
-- **Optional/deferred** Zotero implementation until connected API, target library/collection, duplicate-detection and consent/rights are demonstrated; never make Zotero a prerequisite for core success.
+- **Separate/optional #337:** Zotero implementation has its own API, target library/collection, duplicate-detection, rights and opt-in acceptance tests. The core may be completed, reviewed, merged and closed regardless of #337's status.
 
 ## Generic-fit and falsification
 
