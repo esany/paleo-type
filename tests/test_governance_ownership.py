@@ -66,6 +66,22 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertIn("These are Source/File/access properties, not Project/task authority", provenance)
         self.assertIn("does not by itself establish task-wide blocker status", provenance)
 
+    def test_scholarly_source_work_activation_is_bound_to_existing_method_and_workflow(self) -> None:
+        """Protect the #336 activation failure without creating a parallel method."""
+        agents = (REPO / "AGENTS.md").read_text(encoding="utf-8")
+        workflow = (REPO / "methodology" / "workflow.md").read_text(encoding="utf-8")
+        historical = (REPO / "methodology" / "historical-source-workflow.md").read_text(encoding="utf-8")
+
+        self.assertIn("### Scholarly source-work activation checkpoint", agents)
+        self.assertIn("CURRENT OBSERVATION / UNCERTAINTY", agents)
+        self.assertIn("→ BOUNDED SCHOLARLY QUESTION", agents)
+        self.assertIn("→ GOVERNING DISCIPLINE / METHOD", agents)
+        self.assertIn("→ EXACT EVIDENCE / LOCATOR NEEDED", agents)
+        self.assertIn("→ FIRST SCHOLARLY ACTION", agents)
+        self.assertIn("A prior AI/PR observation is not new primary evidence", agents)
+        self.assertIn("## Research execution: protect the first scholarly action", workflow)
+        self.assertIn("## Research-question control", historical)
+
     def test_project_contract_v8_closes_purpose_owner_and_legacy_gaps(self) -> None:
         contract = json.loads((REPO / "corpus" / "source-contract.json").read_text(encoding="utf-8"))
         projects = contract["tables"]["projects"]
