@@ -221,7 +221,7 @@ class AcquisitionTests(unittest.TestCase):
         with self.assertRaisesRegex(acquisition.AcquisitionError, "truncated JPEG"):
             acquisition.jpeg_dimensions(JPEG_32X16[:-2])
         with self.assertRaises(acquisition.AcquisitionError):
-            acquisition.jpeg_dimensions(JPEG_32X16[:70] + b"\\xff\\xd9")
+            acquisition.jpeg_dimensions(JPEG_32X16[:70] + bytes.fromhex("ffd9"))
 
     def test_complete_repeat_run_is_network_free_and_revalidates_persisted_bytes(self):
         with tempfile.TemporaryDirectory() as temp:
