@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install JPEG integrity dependency
+        run: python -m pip install -r tools/requirements-archival-source-acquisition.txt
       - name: Run shared deterministic full check
         run: python tools/check.py
       - name: Human-readable assurance boundary
