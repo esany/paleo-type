@@ -194,37 +194,28 @@ class SaechsischesStaatsarchivProvider:
 
 
 def jpeg_dimensions(data: bytes) -> tuple[int, int]:
-    """Read dimensions from a JPEG SOF marker without third-party libraries."""
-    if len(data) < 4 or data[:2] != b"\xff\xd8":
-        raise AcquisitionError("file is not a JPEG")
-    cursor = 2
-    sof_markers = set(range(0xC0, 0xC4)) | set(range(0xC5, 0xC8))
-    sof_markers |= set(range(0xC9, 0xCC)) | set(range(0xCD, 0xD0))
-    while cursor + 4 <= len(data):
-        if data[cursor] != 0xFF:
-            cursor += 1
-            continue
-        while cursor < len(data) and data[cursor] == 0xFF:
-            cursor += 1
-        if cursor >= len(data):
-            break
-        marker = data[cursor]
-        cursor += 1
-        if marker in (0xD8, 0xD9):
-            continue
-        if marker == 0xDA:
-            break
-        if cursor + 2 > len(data):
-            break
-        segment_length = int.from_bytes(data[cursor:cursor + 2], "big")
-        if segment_length < 2 or cursor + segment_length > len(data):
-            break
-        if marker in sof_markers and segment_length >= 7:
-            height = int.from_bytes(data[cursor + 3:cursor + 5], "big")
-            width = int.from_bytes(data[cursor + 5:cursor + 7], "big")
-            return width, height
-        cursor += segment_length
-    raise AcquisitionError("JPEG dimensions could not be determined")
+    """Fully decode the JPEG payload; an SOF header alone is not evidence of integrity."""
+    from io import BytesIO
+
+    if len(data) < 4 or data[:2] != b"\xff\xd8" or not data.endswith(b"\xff\xd9"):
+        raise AcquisitionError("missing JPEG markers or truncated JPEG payload")
+    try:
+        from PIL import Image
+    except ImportError as error:
+        raise AcquisitionError(
+            "Pillow is required for complete JPEG verification; "
+            "install tools/requirements-archival-source-acquisition.txt"
+        ) from error
+    try:
+        with Image.open(BytesIO(data)) as picture:
+            if picture.format != "JPEG":
+                raise AcquisitionError("downloaded payload is not a JPEG")
+            picture.load()  # decode all image pixels, not just the SOF metadata
+            if picture.width <= 0 or picture.height <= 0:
+                raise AcquisitionError("JPEG dimensions are invalid")
+            return picture.width, picture.height
+    except (OSError, ValueError, SyntaxError) as error:
+        raise AcquisitionError(f"JPEG cannot be fully decoded: {error}") from error
 
 
 def _sha256(path: Path) -> str:
