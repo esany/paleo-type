@@ -114,3 +114,37 @@ Freshly inspected on 2026-10-27: `GOVERNING_OBJECTIVE.md`, `AGENTS.md`, `methodo
 **CI investigation/evidence, not hidden:** [source-contract run 40648913645](https://github.com/esany/paleo-type/actions/runs/40648913645) **FAILED** after first decoder change because the embedded base64 "valid JPEG" fixture was actually invalid (one failure and seven errors). Replaced it with Pillow-generated real compressed JPEG test data. [source-contract run 40649123595](https://github.com/esany/paleo-type/actions/runs/40649123595) on commit `e40601fd371fbe98c1d5be850a603fe421fc70cc` **SUCCESS**, shared full check **167 tests**, including new Dresden/list and real JPEG negative checks. **Re-check exact final head CI after further writes**, and do not count the earlier green run as final-head evidence.
 
 **Honest quality ceiling:** Code/skill/routing and stronger deterministic JPEG checks implemented; no actual remote JPEG bytes, no true one-image / mixed `istEinzelbild=false` provider proof, no fresh external host automatic trigger, no suitable new persistent runtime/destination or new completed package. Existing older Nr632 135/135 externally secured evidence is not downgraded or rerun.
+
+
+## 10. P00–P12 and H00–H05: execution disposition (single owner)
+
+The earlier [independent P00–P12 review](https://github.com/esany/paleo-type/pull/329#issuecomment-6440298605) remains valid input even though PR #329 was closed unmerged. **This table explicitly tracks the surviving gates without inventing acceptance.**
+
+| Gate | Outcome / demonstrated evidence | Status as of this execution |
+| --- | --- | --- |
+| P00 repository/currentness | Read current governing files, #271/#282/#280/#297, main and PR #332; working branch identified; all repository writes GitHub connector | **PASS for this bounded execution; recheck at next run** |
+| P01 capable direct provider runtime | Direct URL attempt failed at runtime DNS; no provider status returned | **RUNTIME FAIL / PROVIDER UNVERIFIED** |
+| P02 catalogue vs digitalisat GUID | Earlier Dresden Nr01739 catalogue and 2-entry list observed; no new direct live GUID crosswalk | **PARTIAL** |
+| P03 real one-image + Atlas lists | Existing 2-image Dresden case != one-image case; Atlas `c52a0351-...` true/false still unverified directly | **UNVERIFIED** |
+| P04 live fullsize bytes/HTTP/decoder | No reachable byte HTTP host in this runtime | **UNVERIFIED**, not server failure |
+| P05 `istEinzelbild=false` semantic | Existing parser still fails closed; no silently inferred JPEG support | **NO-GO for parser change** |
+| P06 route/image quality/resume | Provider constructs `fullsize`; route + list hash bind saved plan; public actual fullsize quality not measured here | **TECHNICAL PARTIAL** |
+| P07 complete JPEG decoding | Pillow decoder + SOI/EOI with tests; real provider sample pending | **IMPLEMENTED / DETERMINISTIC PASS on prior tested head; LIVE OPEN** |
+| P08 natural URL-only to metadata/CLI | Skill text instructs seven catalogue fields + output path; no supported host invocation proved | **HOST UNVERIFIED** |
+| P09 full regression set | Existing restart/status/sidecar tests plus Dresden list and new corrupt JPEG negatives; real mixed provider/HTTP responses not exercised | **PARTIAL** |
+| P10 integrated skill/CI/host | Thin `AGENTS.md` referral, German skill discovery, decoder and requirement are on one PR; earlier CI success after red test; final head must pass | **IMPLEMENTED PR CANDIDATE; HOST OPEN** |
+| P11 suitable external productive run | No verified new destination or stop/observe/containment preflight; historical OneDrive package remains intact | **NO-GO new bulk run (#282)** |
+| P12 full real new package | No new acquisition; historical Nr632 external 135/135 package verified separately | **OPEN for current Dresden/Atlas; historic PASS retained** |
+
+**Additional host/intent gates (a written skill is not invocation evidence):**
+
+| Gate | What would prove it | Current disposition |
+| --- | --- | --- |
+| H00 installed skill | Host shows `savesax` path and actual loaded version | **FAIL in this conversation's mounted 60-skill catalogue; not a global host claim** |
+| H01 implicit activation | Fresh compatible host receives German acquisition instruction plus URL, no skill-name hint, and actually loads skill | **UNVERIFIED** |
+| H02 negative triggers | Host does not acquire for pure `Status?`, transcription, wrong host or Leipzig case with unverified branch | **UNVERIFIED** |
+| H03 executable orchestration | Seven catalog facts from source, `--metadata -`, `--route fullsize`, correct list and fit root passed to live downloader | **UNVERIFIED** |
+| H04 cost-aware route | Fresh trace demonstrates direct provider fetch and no TinyFish/DOM rediscovery | **NOT PROVED IN HOST**; this review itself used no TinyFish |
+| H05 independent product outcome | Real destination state, images, SHA/decode, full source metadata, stop/restart, independent verification | **OPEN** |
+
+**Claim ceiling:** The branch is DEV-IMPLEMENTED for the deterministic referral/decoder improvement; **the complete user outcome is still NOT product accepted or whole-system DEV READY for W3**. Host absence and direct HTTP DNS failure are **specific unavailable resources**, not a change to the Human's acquisition goal. No blanket architecture/D-016 claim or fresh one-image/Atlas truth is created.
