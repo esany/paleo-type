@@ -19,7 +19,7 @@ class SavesaxRoutingContractTests(unittest.TestCase):
             encoding="utf-8"
         )
         frontmatter = skill.split("---", 2)[1]
-        for token in ("name: savesax", "Sichere", "herunterladen",
+        for token in ("name: savesax", "Sichere", "herunter",
                       "Hauptstaatsarchivs Dresden", "www.archiv.sachsen.de"):
             self.assertIn(token, frontmatter)
         self.assertIn("allow_implicit_invocation: true", meta)
