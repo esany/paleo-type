@@ -15,7 +15,7 @@ import re
 import sys
 import time
 import unicodedata
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable
@@ -76,16 +76,65 @@ def _safe_token(value: str) -> str:
     return value or "unbenannt"
 
 
-def package_name(source: SourceMetadata) -> str:
-    """Create a deterministic external package name from supplied metadata."""
-    date_token = _safe_token(source.date_label)
-    archive_token = _safe_token(source.archive_code)
-    fonds_token = _safe_token(source.fonds)
-    signature_token = _safe_token(source.signature)
-    name_token = _safe_token(source.name_key or source.title)
-    return "_".join(
-        (date_token, archive_token, fonds_token, signature_token, name_token)
+def _legacy_package_name(source: SourceMetadata) -> str:
+    """Prior naming contract, retained solely for existing package lookup."""
+    parts = (
+        _safe_token(source.date_label),
+        _safe_token(source.archive_code),
+        _safe_token(source.fonds),
+        _safe_token(source.signature),
+        _safe_token(source.name_key or source.title),
     )
+    return "_".join(parts)
+
+
+def _source_year(source: SourceMetadata) -> str:
+    """First explicitly printed calendar year; do not infer years from centuries."""
+    year = re.search(r"(?<!\d)(?:[1-9]\d{2}|[12]\d{3})(?!\d)", source.date_label)
+    return year.group(0) if year else "undatiert"
+
+
+def package_name(source: SourceMetadata) -> str:
+    """Start new package names with the year, preserving full date in metadata."""
+    parts = (
+        _source_year(source),
+        _safe_token(source.archive_code),
+        _safe_token(source.fonds),
+        _safe_token(source.signature),
+        _safe_token(source.name_key or source.title),
+    )
+    return "_".join(parts)
+
+
+def _selected_package_name(source: SourceMetadata, output_root: Path) -> str:
+    """Use a tracked legacy package in place; never silently fork or rename it."""
+    current = package_name(source)
+    legacy = _legacy_package_name(source)
+    if current == legacy:
+        return current
+    new_path = output_root / current
+    old_path = output_root / legacy
+    if new_path.exists() and old_path.exists():
+        raise AcquisitionError(
+            "both year-only and legacy dated package folders exist; "
+            "resolve the destination conflict before acquisition"
+        )
+    if old_path.exists():
+        if not (old_path / PROGRESS_FILENAME).is_file():
+            raise AcquisitionError(
+                "legacy dated package folder has no tracked acquisition state; "
+                "inspect it before any new acquisition"
+            )
+        return legacy
+    return current
+
+
+def _resolve_plan_destination(plan: AcquisitionPlan, output_root: Path) -> AcquisitionPlan:
+    """Keep the original progress-plan identity for tracked legacy directories."""
+    chosen = _selected_package_name(plan.source, output_root)
+    if plan.package_name not in (package_name(plan.source), _legacy_package_name(plan.source)):
+        raise AcquisitionError("plan uses an unexpected package name")
+    return replace(plan, package_name=chosen) if plan.package_name != chosen else plan
 
 
 class SaechsischesStaatsarchivProvider:
@@ -194,37 +243,28 @@ class SaechsischesStaatsarchivProvider:
 
 
 def jpeg_dimensions(data: bytes) -> tuple[int, int]:
-    """Read dimensions from a JPEG SOF marker without third-party libraries."""
-    if len(data) < 4 or data[:2] != b"\xff\xd8":
-        raise AcquisitionError("file is not a JPEG")
-    cursor = 2
-    sof_markers = set(range(0xC0, 0xC4)) | set(range(0xC5, 0xC8))
-    sof_markers |= set(range(0xC9, 0xCC)) | set(range(0xCD, 0xD0))
-    while cursor + 4 <= len(data):
-        if data[cursor] != 0xFF:
-            cursor += 1
-            continue
-        while cursor < len(data) and data[cursor] == 0xFF:
-            cursor += 1
-        if cursor >= len(data):
-            break
-        marker = data[cursor]
-        cursor += 1
-        if marker in (0xD8, 0xD9):
-            continue
-        if marker == 0xDA:
-            break
-        if cursor + 2 > len(data):
-            break
-        segment_length = int.from_bytes(data[cursor:cursor + 2], "big")
-        if segment_length < 2 or cursor + segment_length > len(data):
-            break
-        if marker in sof_markers and segment_length >= 7:
-            height = int.from_bytes(data[cursor + 3:cursor + 5], "big")
-            width = int.from_bytes(data[cursor + 5:cursor + 7], "big")
-            return width, height
-        cursor += segment_length
-    raise AcquisitionError("JPEG dimensions could not be determined")
+    """Fully decode the JPEG payload; an SOF header alone is not evidence of integrity."""
+    from io import BytesIO
+
+    if len(data) < 4 or data[:2] != b"\xff\xd8" or not data.endswith(b"\xff\xd9"):
+        raise AcquisitionError("missing JPEG markers or truncated JPEG payload")
+    try:
+        from PIL import Image
+    except ImportError as error:
+        raise AcquisitionError(
+            "Pillow is required for complete JPEG verification; "
+            "install tools/requirements-archival-source-acquisition.txt"
+        ) from error
+    try:
+        with Image.open(BytesIO(data)) as picture:
+            if picture.format != "JPEG":
+                raise AcquisitionError("downloaded payload is not a JPEG")
+            picture.load()  # decode all image pixels, not just the SOF metadata
+            if picture.width <= 0 or picture.height <= 0:
+                raise AcquisitionError("JPEG dimensions are invalid")
+            return picture.width, picture.height
+    except (OSError, ValueError, SyntaxError) as error:
+        raise AcquisitionError(f"JPEG cannot be fully decoded: {error}") from error
 
 
 def _sha256(path: Path) -> str:
@@ -426,12 +466,13 @@ def _download(
 def status_for_source(source: SourceMetadata, output_root: Path) -> dict:
     """Inspect existing acquisition state without fetching or mutating anything."""
     _assert_external_output_root(output_root)
-    target = output_root / package_name(source)
+    selected_name = _selected_package_name(source, output_root)
+    target = output_root / selected_name
     state_path = _progress_path(target)
     if not state_path.is_file():
         return {
             "status": "not-started",
-            "package_name": package_name(source),
+            "package_name": selected_name,
             "destination": str(target),
             "state_file": str(state_path),
             "read_only": True,
@@ -442,7 +483,7 @@ def status_for_source(source: SourceMetadata, output_root: Path) -> dict:
         raise AcquisitionError(f"invalid acquisition progress state: {state_path}: {error}") from error
     return {
         "status": progress.get("status", "unknown"),
-        "package_name": package_name(source),
+        "package_name": selected_name,
         "destination": str(target),
         "state_file": str(state_path),
         "completed_images": len(progress.get("images", []))
@@ -464,6 +505,7 @@ def acquire(
 ) -> dict:
     """Acquire one plan into the configured external root with durable resume state."""
     _assert_external_output_root(output_root)
+    plan = _resolve_plan_destination(plan, output_root)
     target = output_root / plan.package_name
     target.mkdir(parents=True, exist_ok=True)
     progress = _load_progress(target, plan)
@@ -649,6 +691,7 @@ def main() -> int:
         else provider.fetch_file_list(source)
     )
     plan = provider.plan(source, file_list_bytes, route=args.route)
+    plan = _resolve_plan_destination(plan, args.output_root)
     if args.dry_run:
         print(json.dumps(asdict(plan), ensure_ascii=False, indent=2))
         return 0

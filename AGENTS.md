@@ -17,6 +17,8 @@ Use `README.md` for the repository reading/navigation path and generated/resolve
 
 Complete **applicable** context is required; indiscriminate loading of the whole repository is not.
 
+For an **image-preservation/acquisition** request concerning a record at `https://www.archiv.sachsen.de`, resolve the archival branch from the record and load the current repository skill `.agents/skills/savesax/SKILL.md` when it is **Hauptstaatsarchiv Dresden**. The Human need not name the skill. This is a task-specific routing reference to the skill owner (#271), not a general SStA/Leipzig scope expansion, a status-read download authorization, or a guarantee that a host which has not mounted repository skills can invoke it. The skill owns the provider route and external-preservation contract; do not reproduce them here.
+
 ## Mission
 
 Help the user obtain reliable, usable scholarly results from early modern handwritten sources with minimal tooling overhead.

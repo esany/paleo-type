@@ -2,6 +2,32 @@
 
 This bounded implementation acquires individual JPEGs from the Sächsisches Staatsarchiv. It uses the archive's actual `files.json` list and writes only to a configured external source destination. It does not create Corpus or Project records, search for sources, infer research roles, or treat CI artifacts as preservation.
 
+## Human-facing Dresden skill contract — corrected 2026-10-27
+
+The **`savesax` user-facing skill** applies to **Hauptstaatsarchiv Dresden** records at the exact HTTPS origin `https://www.archiv.sachsen.de`. The historical/provider test fixtures from other SStA branches are evidence of the shared adapter, **not** evidence that the Dresden-specific Human-facing skill has been validated or extended to those branches. An exact hostname and HTTPS-scheme check is required; an attacker-supplied URL merely containing that text is not authoritative.
+
+For this known host, use ordinary direct archive HTTP, **not TinyFish or a metered browser agent** to discover the viewer, thumbnails, image IDs, `files.json` or fullsize paths. Browser mediation is not the default; a text extractor returning `empty_content` for a JPG does not test JPG bytes.
+
+The viewer is already known. Thumbnail items (including the currently active `.digitalisat-viewer-thumbnail.loaded.active`) are **navigation**, not the preservation files. The OpenSeadragon display uses `.openseadragon-wrapper` / `.openseadragon-container` (initial page HTML may show only `#openseadragon`). A thumbnail preview `src` in the form:
+
+```text
+/digitalisate/<GUID>/fullsize/../preview/<LISTED-NAME>.jpg
+```
+
+identifies the displayed filename. Use the **verified same GUID and that exact filename** to form the true download target:
+
+```text
+https://www.archiv.sachsen.de/digitalisate/<GUID>/fullsize/<LISTED-NAME>.jpg
+```
+
+The existing `SaechsischesStaatsarchivProvider.image_url(guid, filename, "fullsize")` already constructs that target. Do not fetch the preview image, canvas image or screenshot as a substitute. The thumbnail's `active` class marks **one** selected item, not the complete list. For **completeness**, obtain `/digitalisate/<VERIFIED-DIGITALISAT-GUID>/files.json` and validate its actual `name`, `typ`, `istEinzelbild` entries, count, uniqueness and order. Never enumerate unlisted intermediate names or infer that catalogue GUID necessarily equals digitalisat GUID. Preserve uncertainty about unsupported `istEinzelbild=false`, tile and DZI entries; no silent filtering, and no blind reinterpretation.
+
+The intended outcome is the **publicly downloadable high-resolution online JPEG**, exactly as a Human can download it manually. No extra archival master-on-request step or speculative rights/licence debate is a prerequisite for the ordinary acquisition. This does not decide subsequent publication permissions.
+
+**Completion conditions:** use verified catalogue/source metadata and exact provider file list; preflight a controlled durable external target with observe/stop/restart fitness; dry-run against actual filenames; download complete JPEG **bytes** with an evidenced online high-resolution route; verify that every acquired JPEG fully decodes with Pillow and its dimensions match the recorded manifest, not only URL construction; persist after each verified image; resume without replaying verified files; finalize `QUELLENINFO.json`, `QUELLENINFO.txt`, `SHA256SUMS.txt`, `ACQUISITION_STATE.json` before reporting `complete`. `status` is read-only. CI, fixture comparison, a single image and a remote URI are not a preserved source package. Missing access is a specific **runtime/HTTP resource limitation**, not authority to replace the original research outcome.
+
+**Known real-list regression:** For Hauptstaatsarchiv Dresden, `10001 Ältere Urkunden, Nr. 01739` (`8bdce320-0ce6-4ddb-b37a-eed8fe52cb94`), the officially observed list on 2026-10-27 contains exactly two JPEG entries in provider order `0002`, `0001`; ordered download names are `0001.jpg`, `0002.jpg`. `0003.jpg` must not be invented. This is *file-list evidence*, not proof of successful image-byte acquisition. The Nr. 632, Nr. 754 and Oppurg file-list fixtures remain valid **adapter** checks at their evidenced envelope and are not Dresden skill evidence. **Separately**, Nr. 632 already has an independently reported real controlled external package verification (135/135 JPEGs and matching SHA-256/sidecars) in [#271 issue comment 6046567327](https://github.com/esany/paleo-type/issues/271#issuecomment-6046567327); it must not be downgraded to a mere list fixture or reacquired solely to repeat that proof. This historical Leipzig package does **not** certify a new Dresden fresh-context skill/host trigger or the atlas.
+
 ## Observed SStA path
 
 1. Read the GUID from the archive record URL or supplied metadata.
@@ -22,6 +48,18 @@ Supply JSON with `archive`, `fonds`, `signature`, `title`, `date_label`, `guid` 
 
 For chat-driven runs, pass the same JSON on standard input with `--metadata -`. This avoids creating a metadata sidecar file. Source image files are still written only to the configured external root.
 
+## External destination and year-only package names
+
+The **external source root is not hard-coded in `.agents/skills/savesax/SKILL.md`**. The intended controlled destination must already be configured in the authorized execution context or be supplied once by the Human. Historical OneDrive paths prove where an older package was checked; they are **not** automatically valid/default destinations for every new archive record. Record and report the chosen absolute external root and resulting package folder before a productive run.
+
+**Naming for NEW packages:** `<SOURCE-YEAR>_<ARCHIVE-CODE>_<FONDS>_<SIGNATURE>_<SHORT-TITLE>`. The first token is **only the first explicitly recorded calendar year** from `date_label`, not its day or month. E.g. official `29. Oktober 1303` gives `1303_SStA_10001_Nr_01739_...`; `1704-1781` begins `1704_`. If a year cannot be extracted without speculation (such as `16. Jahrhundert`), the prefix is `undatiert_`. The **full unchanged** catalogue dating survives in `QUELLENINFO.json` and `QUELLENINFO.txt`; shortening the folder prefix does not rewrite the archival claim.
+
+**Legacy continuity:** Older complete-date-prefixed folders are **never renamed or silently recopied**. If an existing legacy folder contains tracked `ACQUISITION_STATE.json`, read-only status and authorized resume reuse that original path and the matching stored plan identity. If both old and new folders are present, or a legacy folder lacks tracked progress, stop with an explicit conflict rather than make a second package. The `--dry-run` package name reflects the selected existing legacy path where applicable. New packages use the year prefix.
+
+## Full JPEG decoder dependency
+
+The acquisition program uses **Pillow** to decode the complete JPEG payload, not just read its SOF width/height. Install it in the actual acquisition runtime with `python -m pip install -r tools/requirements-archival-source-acquisition.txt`. The GitHub deterministic assurance workflow installs the same declared dependency. Missing Pillow is an actionable runtime preflight failure; it is **not** a reason to skip integrity checking or treat an image's dimensions as proof that the pixels decode. The fixture tests exercise genuine compressed JPEG pixels and truncated/malformed JPEG negatives; they do not replace actual online-source samples.
+
 ## Runtime / destination gate
 
 A productive full acquisition starts only after an intended external destination/runtime is shown fit for the operation's durability and control needs. At minimum, successful task-relevant files plus `ACQUISITION_STATE.json` must persist across an ordinary process/network interruption. The executing context must have adequate observability and any material stop/containment limitation must be known before start.
@@ -35,7 +73,7 @@ Preview the plan using the live SStA list:
     python tools/archival_source_acquisition.py \
       --metadata <metadata.json> \
       --output-root <external-literature-root> \
-      --route download \
+      --route fullsize \
       --dry-run
 
 Use a previously captured `files.json` response for offline planning:
@@ -53,7 +91,7 @@ Read existing acquisition state without fetching or mutating anything:
       --output-root <external-literature-root> \
       --status
 
-Omit `--dry-run` to acquire the listed images after the runtime/destination gate passes. `--route fullsize` selects the direct viewer image route. The default `download` route uses the archive's individual download endpoint. `--file-list` affects planning only; actual image retrieval still needs network access.
+Omit `--dry-run` to acquire the listed images after the runtime/destination gate passes. **The Dresden `savesax` skill must pass `--route fullsize` explicitly**, as in the example above, for this known public viewer route. The CLI's historical default remains `download` for backward compatibility and selects the archive's individual `download.jsp` endpoint; this default is **not** the Dresden skill's selected route. `--file-list` affects planning only; actual image retrieval still needs network access.
 
 ## Restartable progress and completion
 
