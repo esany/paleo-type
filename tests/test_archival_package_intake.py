@@ -154,6 +154,67 @@ class ArchivalPackageIntakeTests(unittest.TestCase):
             self.assertIsNone(result["source_id"])
             self.assertEqual("REQUIRES_EVIDENCED_SOURCE_RESOLUTION", result["source_resolution"])
 
+    def test_actual_downloaded_progress_status_is_verified_from_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, _, progress = self.make_package(tmp)
+            progress["images"][0]["status"] = "downloaded"
+            (package / "ACQUISITION_STATE.json").write_text(json.dumps(progress), encoding="utf-8")
+            result = self.inspect(package, repo, cache)
+            self.assertEqual(1, result["originals_verified"])
+            self.assertEqual("EXACT", result["package_naming"]["status"])
+
+    def test_adopted_existing_progress_status_is_verified_from_bytes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, _, progress = self.make_package(tmp)
+            progress["images"][0]["status"] = "already-present-adopted"
+            (package / "ACQUISITION_STATE.json").write_text(json.dumps(progress), encoding="utf-8")
+            self.assertEqual(1, self.inspect(package, repo, cache)["originals_verified"])
+
+    def test_legacy_package_separator_alias_is_warned_not_resumed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_package(tmp)
+            # Real old packages can have a hyphenated physical/manifest name
+            # and the original underscored plan without different source bytes.
+            renamed = package.with_name(package.name.replace("_", "-"))
+            package.rename(renamed)
+            manifest["package_name"] = renamed.name
+            (renamed / "QUELLENINFO.json").write_text(json.dumps(manifest), encoding="utf-8")
+            before = {p.name: p.read_bytes() for p in renamed.iterdir()}
+            result = self.inspect(renamed, repo, cache)
+            self.assertEqual("LEGACY_SEPARATOR_ALIAS", result["package_naming"]["status"])
+            self.assertEqual("UNVERIFIED_DO_NOT_RESUME", result["package_naming"]["resume_safety"])
+            self.assertEqual([], result["already_registered"])
+            self.assertEqual(1, result["originals_verified"])
+            self.assertEqual(before, {p.name: p.read_bytes() for p in renamed.iterdir()})
+
+    def test_legacy_separator_alias_not_allowed_for_other_source_name(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, _, progress = self.make_package(tmp)
+            progress["plan"]["package_name"] = "1303_SStA_10001_Nr_01740_fixture"
+            (package / "ACQUISITION_STATE.json").write_text(json.dumps(progress), encoding="utf-8")
+            with self.assertRaisesRegex(intake.PackageIntakeError, "package identities conflict"):
+                self.inspect(package, repo, cache)
+
+    def test_legacy_separator_alias_does_not_hide_guid_mismatch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_package(tmp)
+            renamed = package.with_name(package.name.replace("_", "-"))
+            package.rename(renamed)
+            manifest["package_name"] = renamed.name
+            (renamed / "QUELLENINFO.json").write_text(json.dumps(manifest), encoding="utf-8")
+            progress["plan"]["guid"] = "not-the-real-source"
+            (renamed / "ACQUISITION_STATE.json").write_text(json.dumps(progress), encoding="utf-8")
+            with self.assertRaisesRegex(intake.PackageIntakeError, "acquisition plan and completed manifest disagree"):
+                self.inspect(renamed, repo, cache)
+
+    def test_unknown_progress_status_fails_even_with_correct_hash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, _, progress = self.make_package(tmp)
+            progress["images"][0]["status"] = "planned"
+            (package / "ACQUISITION_STATE.json").write_text(json.dumps(progress), encoding="utf-8")
+            with self.assertRaisesRegex(intake.PackageIntakeError, "unverified original"):
+                self.inspect(package, repo, cache)
+
     def test_repo_directory_cannot_be_source_preservation_package(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo, package, cache, _, _ = self.make_package(tmp)
