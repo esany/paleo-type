@@ -72,6 +72,8 @@ def inspect_package(package: Path, root: Path) -> dict:
         raise PackageIntakeError("acquisition progress/manifest are not both complete")
     if manifest.get("package_name") != package.name:
         raise PackageIntakeError("package name does not match its manifest")
+    if not (package / "QUELLENINFO.txt").is_file() or not (package / "QUELLENINFO.txt").read_text(encoding="utf-8").strip():
+        raise PackageIntakeError("missing/empty human-readable source sidecar")
     if manifest.get("progress_state") != "ACQUISITION_STATE.json":
         raise PackageIntakeError("manifest does not identify the expected progress state")
     source = manifest.get("source")
@@ -102,7 +104,7 @@ def inspect_package(package: Path, root: Path) -> dict:
     if set(names) != set(sums) or identity.get("expected_filenames") != names:
         raise PackageIntakeError("image list, checksums and persisted plan differ")
     progress_map = {img.get("filename"): img for img in progress["images"] if isinstance(img, dict)}
-    if len(progress_map) != len(names) or set(progress_map) != set(names):
+    if len(progress["images"]) != len(names) or len(progress_map) != len(names) or set(progress_map) != set(names):
         raise PackageIntakeError("verified progress inventory does not match the originals")
     for image in originals:
         name = image["filename"]
@@ -128,8 +130,9 @@ def inspect_package(package: Path, root: Path) -> dict:
     if len(candidates) > 1:
         raise PackageIntakeError("catalogue GUID/URL map to conflicting Source nodes")
     existing = next(iter(candidates.values()), None)
-    if existing and (existing.get("archive") != source["archive"]
-                     or source["fonds"] not in existing.get("fonds", "")):
+    if existing and (source["archive"] not in existing.get("archive", "")
+                     or source["fonds"] not in existing.get("fonds", "")
+                     or source["signature"] not in existing.get("signature", "")):
         raise PackageIntakeError("manifest catalogue and existing canonical Source disagree")
 
     hashes = {}
