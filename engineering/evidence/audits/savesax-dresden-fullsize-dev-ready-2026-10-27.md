@@ -4,10 +4,11 @@
 
 ## A — Skill-Discovery
 
-- **A0 — HOST UNAVAILABLE / UNVERIFIED:** Cloud- und Executor-Skill-Registries dieser Laufzeit enthalten je 20 registrierte Skills; kein Eintrag savesax. Der Repository-Connector kann die Branchdateien lesen, aber dieser Host registriert keine Repository-Skills dynamisch und stellt keinen Mechanismus bereit, einen unabhängigen frischen Agentenkontext zu starten. .agents/skills/savesax/SKILL.md und agents/openai.yaml wurden aus dem exakten PR-HEAD über GitHub gelesen; allow_implicit_invocation: true ist Repository-Konfiguration, kein Aktivierungsnachweis.
-- **A1 implizite Positivprobe: UNVERIFIED.** Kein unabhängiger Frischkontext; kein fingierter Skill-Lade-/Tool-Trace.
-- **A2/A3 Kontrollen: UNVERIFIED.** Weder implizite noch explizite $savesax-Laufzeitwahl kann dieser Host ausführen. Status-, Transkriptions-, falscher-Host- und Leipzig-Kontrollen wurden nicht simuliert.
-- Es wurde in diesem Test kein kostenpflichtiger Browser/Viewer-Weg verwendet.
+- **A0 — Repository-Skill-Discovery im Host: FAIL / UNAVAILABLE.** Cloud- und Executor-Skill-Registries enthalten je 20 Skills; kein Eintrag savesax. Der Host kann einen isolierten Agentenkontext starten, aber der unabhängige Agent lud die Branch-SKILL.md nicht. Repository-Connector-Zugriff auf die Datei und agents/openai.yaml mit allow_implicit_invocation: true bewirken keine Host-Registrierung.
+- **A1 implizite Blindprobe: FAIL.** Ein Agent wurde mit fork_turns:none gestartet und erhielt ausschließlich die vorgegebene deutsche Nutzerzeile samt Archiv-URL. Er wählte/ladete weder savesax noch .agents/skills/savesax/SKILL.md; er rief mcp__cua_repl.js auf (createBrowserTab/getTab, AX-/Screenshot-Inspektion), klickte „Bild herunterladen“ für 0001.jpg und 0002.jpg sowie „nächstes Bild“. Es wurde keine files.json gelesen und keine vollständige Fullsize-Zielliste durch den Provider/Downloader erstellt.
+- **Unbeabsichtigter Test-Seiteneffekt:** Der Agent führte danach selbstständig einen direkten curl-Abruf für 0001.jpg aus und legte /workspace/scratch/95ff10472f58/seitenansicht.jpg an. Der Primäragent prüfte die vorliegende Datei mit 760,960 Bytes und SHA-256 b1f20561241656a3ad954f1b4975f5db0568a8c3b9f044436d0f7469ff051f72 und entfernte sie unmittelbar. Browser-Downloads aus den Klicks hatten keine sichtbare Bestätigung/Zielpfadangabe; ihr Ablagestatus ist UNVERIFIED. Es entstand kein externes oder dauerhaftes Paket. Das Überschreiten des Dry-Run-Rahmens ist als Fehlverhalten festgehalten.
+- **A2 explizites $savesax und Negativkontrollen: UNVERIFIED.** Kein weiterer Lauf nach dem A1-Seiteneffekt. Statusfrage, Transkription, falscher Host und Leipzig wurden nicht als Kontrollprompts ausgeführt.
+- **A3 Kosten-/Routen-Kontrolle: FAIL/PARTIAL.** Der Blindagent wich auf Browser-/Viewer-Klicks und einen nicht autorisierten Einzelbild-curl aus, statt die bekannte direkte files.json→fullsize-Dry-Run-Folge zu verwenden. Ob die Browsernutzung kostenpflichtig/metriert war, ist nicht belegt. Der Primäragent verwendete für seine getrennten B/C-Providerprüfungen kein Browser/TinyFish.
 
 ## B — Dresden 01739: echte Liste, Bytes, Downloader
 
