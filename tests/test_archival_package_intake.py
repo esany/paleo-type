@@ -215,6 +215,119 @@ class ArchivalPackageIntakeTests(unittest.TestCase):
             with self.assertRaisesRegex(intake.PackageIntakeError, "unverified original"):
                 self.inspect(package, repo, cache)
 
+    def make_nr632_naming_fixture(self, tmp):
+        """Synthetic 1-JPEG test with exact real Nr. 632 name strings."""
+        repo, package, cache, manifest, progress = self.make_package(tmp)
+        actual = "1704-1781-SStA_20578_Nr632_Lehn_zu_gesamter_Hand_Knau"
+        historical_plan = "1704_1781_SStA_20578_Nr_632_Lehn_zu_gesamter_Hand_Knau"
+        renamed = package.with_name(actual)
+        package.rename(renamed)
+        guid = "edd69aa1-eae4-4970-a695-94aaeccd6724"
+        url = f"https://www.archiv.sachsen.de/archiv/bestand.jsp?guid={guid}"
+        manifest["package_name"] = actual
+        manifest["source"].update(
+            guid=guid, page_url=url, fonds="20578",
+            signature="Nr. 632", title="Lehn zu gesamter Hand Knau",
+            date_label="1704–1781",
+        )
+        progress["plan"]["package_name"] = historical_plan
+        progress["plan"]["guid"] = guid
+        progress["plan"]["file_list_url"] = manifest["file_list_url"] = (
+            f"https://www.archiv.sachsen.de/digitalisate/{guid}/files.json"
+        )
+        source_id = "SSTA-ARCHIVIALE-EDD69AA1"
+        row = cache["sources"].pop("SSTA-ARCHIVIALE-8BDCE320")
+        row.update(
+            source_id=source_id, record_id=guid, digital_url=url,
+            archive="Sächsisches Staatsarchiv – Staatsarchiv Leipzig",
+            fonds="20578 Rittergut Wolkenburg mit Kaufungen",
+            signature="Sächsisches Staatsarchiv, 20578, Nr. 632",
+        )
+        cache["sources"][source_id] = row
+        cache["files"]["FILE-SSTA-20578-NR632-IMG0001"] = {
+            "file_id": "FILE-SSTA-20578-NR632-IMG0001",
+            "source_id": source_id,
+            "filename": "0001.jpg", "sha256": DIGEST,
+        }
+        self.save_nr632_sidecars(renamed, manifest, progress)
+        return repo, renamed, cache, manifest, progress
+
+    @staticmethod
+    def save_nr632_sidecars(folder, manifest, progress):
+        (folder / "QUELLENINFO.json").write_text(
+            json.dumps(manifest), encoding="utf-8"
+        )
+        (folder / "ACQUISITION_STATE.json").write_text(
+            json.dumps(progress), encoding="utf-8"
+        )
+
+    def test_real_nr632_names_byte_verified_reconciled_no_write(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            before = {p.name: p.read_bytes() for p in package.iterdir()}
+            result = self.inspect(package, repo, cache)
+            self.assertEqual("VERIFIED_BYTES_RECONCILIATION_PLAN", result["status"])
+            self.assertEqual("SSTA-ARCHIVIALE-EDD69AA1", result["source_id"])
+            self.assertEqual(1, result["originals_verified"])
+            self.assertEqual(1, len(result["already_registered"]))
+            self.assertEqual([], result["unregistered"])
+            self.assertTrue(result["read_only"])
+            self.assertFalse(result["repo_write_completed"])
+            self.assertEqual("LEGACY_SEPARATOR_ALIAS", result["package_naming"]["status"])
+            self.assertEqual("CATALOGUE_NR_DELIMITER", result["package_naming"]["alias_kind"])
+            self.assertEqual("UNVERIFIED_DO_NOT_RESUME", result["package_naming"]["resume_safety"])
+            self.assertEqual(manifest["package_name"], result["package_naming"]["manifest_package_name"])
+            self.assertEqual(progress["plan"]["package_name"], result["package_naming"]["progress_plan_package_name"])
+            self.assertEqual(before, {p.name: p.read_bytes() for p in package.iterdir()})
+
+    def test_real_nr632_alias_rejects_different_number(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            progress["plan"]["package_name"] = progress["plan"]["package_name"].replace("Nr_632", "Nr_633")
+            self.save_nr632_sidecars(package, manifest, progress)
+            with self.assertRaisesRegex(intake.PackageIntakeError, "package identities conflict"):
+                self.inspect(package, repo, cache)
+
+    def test_real_nr632_alias_rejects_changed_title(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            progress["plan"]["package_name"] += "_different"
+            self.save_nr632_sidecars(package, manifest, progress)
+            with self.assertRaisesRegex(intake.PackageIntakeError, "package identities conflict"):
+                self.inspect(package, repo, cache)
+
+    def test_real_nr632_alias_rejects_added_leading_zero(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            progress["plan"]["package_name"] = progress["plan"]["package_name"].replace("Nr_632", "Nr_0632")
+            self.save_nr632_sidecars(package, manifest, progress)
+            with self.assertRaisesRegex(intake.PackageIntakeError, "package identities conflict"):
+                self.inspect(package, repo, cache)
+
+    def test_real_nr632_alias_rejects_ambiguous_catalogue_signature(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            manifest["source"]["signature"] = "Nr. 632 and Nr. 633"
+            self.save_nr632_sidecars(package, manifest, progress)
+            with self.assertRaisesRegex(intake.PackageIntakeError, "package identities conflict"):
+                self.inspect(package, repo, cache)
+
+    def test_real_nr632_alias_rejects_list_hash_mismatch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            progress["plan"]["file_list_sha256"] = "a" * 64
+            self.save_nr632_sidecars(package, manifest, progress)
+            with self.assertRaisesRegex(intake.PackageIntakeError, "acquisition plan and completed manifest disagree"):
+                self.inspect(package, repo, cache)
+
+    def test_real_nr632_alias_rejects_different_physical_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo, package, cache, manifest, progress = self.make_nr632_naming_fixture(tmp)
+            other = package.with_name(package.name + "_renamed")
+            package.rename(other)
+            with self.assertRaisesRegex(intake.PackageIntakeError, "package name does not match"):
+                self.inspect(other, repo, cache)
+
     def test_repo_directory_cannot_be_source_preservation_package(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo, package, cache, _, _ = self.make_package(tmp)
