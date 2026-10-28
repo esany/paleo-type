@@ -5,6 +5,7 @@ import importlib.util
 import json
 import sys
 import tempfile
+from contextlib import redirect_stdout
 import unittest
 from io import BytesIO, StringIO
 from PIL import Image
@@ -86,6 +87,36 @@ class AcquisitionTests(unittest.TestCase):
         with patch.object(sys, "stdin", StringIO(metadata_json)):
             loaded = acquisition.load_source(Path("-"))
         self.assertEqual(source(), loaded)
+
+    def test_dresden_metadata_stdin_cli_dry_run_uses_list_only_fullsize(self):
+        guid = "8bdce320-0ce6-4ddb-b37a-eed8fe52cb94"
+        metadata = source(
+            guid=guid, signature="Nr. 01739", image_count=0,
+            page_url=f"https://www.archiv.sachsen.de/archiv/bestand.jsp?guid={guid}",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            listing = Path(tmp) / "files.json"
+            listing.write_bytes(images("0002", "0001"))
+            output_root = Path(tmp) / "external-source-root"
+            buffer = StringIO()
+            argv = [
+                "archival_source_acquisition.py", "--metadata", "-",
+                "--file-list", str(listing), "--output-root", str(output_root),
+                "--route", "fullsize", "--dry-run",
+            ]
+            with patch.object(sys, "argv", argv):
+                with patch.object(sys, "stdin", StringIO(json.dumps(acquisition.asdict(metadata)))):
+                    with redirect_stdout(buffer):
+                        self.assertEqual(0, acquisition.main())
+            planned = json.loads(buffer.getvalue())
+            self.assertEqual("fullsize", planned["route"])
+            self.assertEqual(["0001.jpg", "0002.jpg"],
+                             [item["filename"] for item in planned["images"]])
+            self.assertEqual([
+                f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0001.jpg",
+                f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0002.jpg",
+            ], [item["url"] for item in planned["images"]])
+            self.assertFalse(output_root.exists())
 
     def test_real_files_json_fixtures_drive_three_distinct_plans(self):
         provider = acquisition.SaechsischesStaatsarchivProvider()
