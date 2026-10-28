@@ -91,7 +91,8 @@ class AcquisitionTests(unittest.TestCase):
     def test_dresden_metadata_stdin_cli_dry_run_uses_list_only_fullsize(self):
         guid = "8bdce320-0ce6-4ddb-b37a-eed8fe52cb94"
         metadata = source(
-            guid=guid, signature="Nr. 01739", image_count=0,
+            guid=guid, signature="Nr. 01739", fonds="10001",
+            date_label="29. Oktober 1303", image_count=0,
             page_url=f"https://www.archiv.sachsen.de/archiv/bestand.jsp?guid={guid}",
         )
         with tempfile.TemporaryDirectory() as tmp:
@@ -110,6 +111,8 @@ class AcquisitionTests(unittest.TestCase):
                         self.assertEqual(0, acquisition.main())
             planned = json.loads(buffer.getvalue())
             self.assertEqual("fullsize", planned["route"])
+            self.assertTrue(planned["package_name"].startswith("1303_SStA_10001_"))
+            self.assertNotIn("Oktober", planned["package_name"])
             self.assertEqual(["0001.jpg", "0002.jpg"],
                              [item["filename"] for item in planned["images"]])
             self.assertEqual([
@@ -117,6 +120,71 @@ class AcquisitionTests(unittest.TestCase):
                 f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0002.jpg",
             ], [item["url"] for item in planned["images"]])
             self.assertFalse(output_root.exists())
+
+    def test_year_prefix_preserves_complete_catalogue_date_only_in_metadata(self):
+        cases = (
+            ("29. Oktober 1303", "1303"),
+            ("29_Oktober_1303", "1303"),
+            ("1303-10-29", "1303"),
+            ("1704-1781", "1704"),
+            ("1627_1652-1668", "1627"),
+            ("16. Jahrhundert", "undatiert"),
+        )
+        for label, expected in cases:
+            with self.subTest(date_label=label):
+                metadata = source(date_label=label)
+                generated = acquisition.package_name(metadata)
+                self.assertEqual(expected, generated.split("_", 1)[0])
+                self.assertEqual(label, metadata.date_label)
+
+    def test_existing_legacy_dated_package_remains_readable_and_resumable(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            metadata = source(date_label="29. Oktober 1303", image_count=1)
+            plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+                metadata, one_image(), route="fullsize"
+            )
+            legacy = acquisition._legacy_package_name(metadata)
+            modern = acquisition.package_name(metadata)
+            self.assertNotEqual(legacy, modern)
+            legacy_dir = root / legacy
+            legacy_dir.mkdir()
+            old_plan = acquisition.replace(plan, package_name=legacy)
+            acquisition._write_progress(legacy_dir, acquisition._new_progress(old_plan))
+            state_before = (legacy_dir / acquisition.PROGRESS_FILENAME).read_bytes()
+            initial_status = acquisition.status_for_source(metadata, root)
+            self.assertEqual("planned", initial_status["status"])
+            self.assertEqual(legacy, initial_status["package_name"])
+            self.assertTrue(initial_status["read_only"])
+            self.assertEqual(
+                state_before, (legacy_dir / acquisition.PROGRESS_FILENAME).read_bytes()
+            )
+            resolved = acquisition._resolve_plan_destination(plan, root)
+            self.assertEqual(legacy, resolved.package_name)
+            manifest = acquisition.acquire(
+                plan,
+                root,
+                opener=lambda *_args, **_kwargs: response_for(),
+                rate_limit_seconds=0,
+            )
+            self.assertEqual(legacy, manifest["package_name"])
+            self.assertEqual("29. Oktober 1303", manifest["source"]["date_label"])
+            self.assertTrue((legacy_dir / "0001.jpg").is_file())
+            self.assertFalse((root / modern).exists())
+            self.assertEqual("complete", acquisition.status_for_source(metadata, root)["status"])
+
+    def test_legacy_and_year_only_folder_conflict_fails_without_mutation(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            metadata = source(date_label="29. Oktober 1303")
+            (root / acquisition._legacy_package_name(metadata)).mkdir()
+            (root / acquisition.package_name(metadata)).mkdir()
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "both year-only"):
+                acquisition.status_for_source(metadata, root)
+            self.assertEqual(
+                [],
+                list((root / acquisition.package_name(metadata)).iterdir()),
+            )
 
     def test_real_files_json_fixtures_drive_three_distinct_plans(self):
         provider = acquisition.SaechsischesStaatsarchivProvider()
