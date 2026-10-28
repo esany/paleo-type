@@ -1,12 +1,16 @@
 # Nr. 632 — targeted boundary investigation and PR #316 reconciliation
 
-Status: provisional AI research finding, 2026-10-28; not independent specialist validation or accepted segmentation.
+Status: provisional AI research finding, 2026-10-28, with subsequent Human-Owner source-structure correction; not independent specialist validation or accepted segmentation.
 
 ## Evidence and method
 
 Sächsisches Staatsarchiv, Bestand 20578, Nr. 632; Source `SSTA-ARCHIVIALE-EDD69AA1`; route `ROUTE-SSTA-20578-NR632-001`. Directly opened controlled original JPEGs 0097–0108 and 0129–0135, each bound to its exact `FILE-SSTA-20578-NR632-IMGnnnn` in the coverage record; all 19 SHA-256 values matched `corpus/files.tsv` at main 39d32f106b912ce61f6dab5a685039712a37adaf. No reacquisition or OCR/HTR. Image rendering displayed downscaled versions (0098 also opened at higher detail), so this is targeted visual inspection, not exhaustive full-resolution examination of every passage. The source is a monochrome representation of filmed material; obscured portions, material depth and colour are not established.
 
 The direct observations preceded inspection of PR #316's detail wording. The PR, head 9847cba63475daaebcd42546b6e558cf84ccd092, is an unmerged prior AI candidate, not an independent primary source. Provider numbers are digital locators, not folios or document IDs. Coverage rows own the per-image inspection state; this Project note owns provisional readings and source-critical assessment.
+
+### Human-Owner correction after review
+
+The earlier AI hypothesis that `0133` and `0135` might represent two related text carriers or executions is withdrawn. Human review identifies the `0133–0135` sequence as different views of the **same oversized charter**, including front/reverse views. The reverse-side/folded presentation is therefore part of the same material object, not evidence for a second execution. The provisional reading `Duplic.` on the reverse-like view, if retained as a reading hypothesis, does not by itself establish a second document or duplicate execution.
 
 ## Provisional diagnostic readings and bounded inferences
 
@@ -21,7 +25,7 @@ These are short working readings, not full diplomatic transcriptions. Uncertaint
 | 0129 right lower; 0130 left upper and right closing | 0129: “4000”; 0130: two visible “2000” figures; 0130 closing year “1780” relatively legible. Exact relationship and full date not adjudicated. | Apparent introduction followed by an arranged numeric sequence and continuing writing weakens a boundary at the image change; a related insert remains possible. Closing and later entry on 0130 are distinct layout zones, not proof of separate legal instruments. |
 | 0130 right bottom; 0131 left and right | 0131 left: “Dresden am 15ten May 1780”, plausible; right: “12ten Junii 1781”, plausible. Both require specialist checking. | Several separate writing/mark areas on the left and a newly arranged decorated text on the right support differentiated writing functions; exact documentary and physical relation remains open. |
 | 0132 pale surfaces; 0133 heading and ending | 0133 begins plausibly “Wir Friedrich August”; ending “13. Junii 1781”, provisional. | Reverse/show-through and folding explain pale/reversed features of 0132 as serious alternatives. The decorated opening and ending on 0133 support a formal textual unit; no separate object count from shadows alone. |
-| 0133 and 0135 headings, text and seal zones; 0134 lower reverse-like surface | Both headings plausibly begin “Wir Friedrich August”; both endings plausibly show “13. Junii 1781”. 0134 lower inscription may include “Duplic.”; the preceding words and connection to either surface are unresolved. | Similar formal presentation but non-identical arrangement makes two related text carriers or executions a testable hypothesis. Folding and hidden areas complicate comparison. Full textual identity, diplomatic duplicate status, legal equivalence and seal identity are not established. |
+| 0133–0135 oversized-charter views, including front/reverse presentation | 0133/0135 show the same formal charter in different views; the heading plausibly begins “Wir Friedrich August” and the ending “13. Junii 1781”, both provisional. The reverse-like inscription may include “Duplic.”; the preceding words remain unresolved. | **Human-Owner correction:** these images belong to one oversized charter, not two related executions. Folding, reverse and changed presentation explain the differing layout. The `Duplic.` reading, if correct, is a reverse-side annotation and does not by itself establish a second document. Seal identity/attachment and the unresolved reading still require separate evidence. |
 
 ## Reconciliation of each PR #316 candidate
 
@@ -43,12 +47,12 @@ These are short working readings, not full diplomatic transcriptions. Uncertaint
 | 0130 | Confirm closing-like zone, dark appearances and cords; **weaken PR's possible transition exactly after 0129**, since the intervening text layout favours continuation. |
 | 0131 | Confirm distinct left writing/round areas and formal right surface; refine possible multiple functional zones, without assigning separate acts. |
 | 0132 | Confirm faint/reversed features; **do not count shadows as independent seal objects** or assume a new document from this view. |
-| 0133 | Confirm large formal text and round seal-like area; relation to 0135 remains a comparison hypothesis. |
-| 0134 | Confirm reverse-like text, shadow and partly visible formal surface; folding/overlap provides a material alternative. |
-| 0135 | Confirm formal surface and round area; formal similarity and different placement relative to 0133 warrant comparison, not identity or duplicate status. |
+| 0133 | Confirm large formal charter view and round seal-like area; Human review identifies it as part of the same oversized charter represented across 0133–0135. |
+| 0134 | Confirm reverse-like text, shadow and partly visible formal surface; Human review places this view within the same oversized charter's front/reverse/folding sequence. |
+| 0135 | Confirm formal charter view and round area; Human review identifies it as another view of the same oversized charter represented across 0133–0135. |
 
 ## Remaining evidence ceiling and review
 
-An image change cannot by itself establish a documentary boundary; physical attachment, reverse/overlap, the number and identity of seals, and whether 0133/0135 are related executions remain unresolved. No reliable archival foliation, complete internal segmentation, selected narrower active scope or G2 transcription follows. A discriminating candidate question—not a newly selected priority—is whether the two formal texts at 0133 and 0135 correspond at their opening, dispositive passages, dating and signatures, and what the 0134 reverse inscription relates to.
+An image change cannot by itself establish a documentary boundary. Human review resolves the specific `0133–0135` object-identity question: those views belong to the same oversized charter, including front/reverse presentation. Remaining uncertainties concern physical attachment, fold/overlay details, the number and identity of seals, and unresolved diagnostic readings; the former two-execution hypothesis is withdrawn. No reliable archival foliation, complete internal segmentation, selected narrower active scope or G2 transcription follows.
 
-Qualified diplomatic review is needed for a consequential claim of execution/duplicate status and relation; palaeographic review for the short readings and a discriminating hand comparison; sphragistic review if seal identity or attachment is to carry an inference. Prior AI work and this AI agreement do not substitute for independent specialist validation. The 135-image overview and this bounded detail pass have different depth and must remain separately recoverable.
+Palaeographic review remains appropriate for consequential use of the short readings; sphragistic review remains appropriate if seal identity or attachment is to carry an inference. Diplomatic review may still be needed for the charter's formal status or relation to other documents, but not to decide between two separate 0133/0135 executions on the current Human correction. Prior AI work and this correction do not substitute for independent specialist validation of other consequential claims. The 135-image overview and this bounded detail pass have different depth and must remain separately recoverable.
