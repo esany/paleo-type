@@ -1,5 +1,47 @@
 # Systemic closure and backlog reconciliation — Phase A
 
+## 2026-10-28 — Human-requested current issue/PR closure and skills audit (non-normative)
+
+**Read basis:** online GitHub `main@ad577a38efd400017582b10a7f5b215e20a6d98f`; `GOVERNING_OBJECTIVE.md`, `AGENTS.md`, `methodology/maintenance.md` and relevant Source/File/Project/Source-entry owners. Snapshot: GitHub open issues API returned **39 entries, comprising 33 Issues + 6 PRs**. This is a repository Issue/PR backlog audit, **not independent verification of GitHub Projects V2 board-column state**. No inferred Project scholarly priority/current `NEXT ACTION` or engineering current focus.
+
+### New archival skills — partial actual implementation, not completion
+- **#333 CLOSED**: delivered bounded *drafting* phase; Human concept review/D-016 materiality moved explicitly to **#334 OPEN**; closure does not signal concept acceptance.
+- **#334 OPEN / Draft PR #335**: read-only generic `.agents/skills/source-intake/SKILL.md`, `tools/archival_package_intake.py`, and nine negative/positive `tests/test_archival_package_intake.py` fixtures now on design branch. Exact technical CI [40769585510](https://github.com/esany/paleo-type/actions/runs/40769585510) **PASS 174 tests** at `f96c09da9147e3d34cf1638b66c90bc65486c871`. Work **not** complete: real online GitHub Source/File write, durable target-context package, one-command host invocation, independent E2E acceptance, and material D-016 disposition (if the implementation adds canonical automation) remain open. No new Source/File/Project rows; Zotero optional/unimplemented.
+- **#271 OPEN / Draft PR #332**: owner-local `savesax` instruction now points to repository intake when separately available, exact-head `9b976e17458677fc1133eb777b1df7432f4d32ff`; CI [40769710448](https://github.com/esany/paleo-type/actions/runs/40769710448) **PASS 174 tests**. But the documented genuine fresh-agent A1 blind activation **FAILED**, no new controlled complete Dresden package and #282 host-runtime D is NO-GO. Merge / actual-skill acceptance not justified.
+- **#280 OPEN** independent whole-system review; **#297 OPEN** user P0-equivalent false-local-PASS regression. No status/priority change.
+
+### Every open PR, exact-head CI vs. merge gate
+
+| PR | Current exact head | Actual bounded result | Merge disposition |
+| --- | --- | --- | --- |
+| [#290](https://github.com/esany/paleo-type/pull/290) | `7a479dc5` | Draft source-entry scholarly concept; CI [37344644565](https://github.com/esany/paleo-type/actions/runs/37344644565) SUCCESS | **HOLD** — normative METHOD/research concept review and explicitly Draft/non-accepted; no D-016-derived merge |
+| [#316](https://github.com/esany/paleo-type/pull/316) | `9847cba6` | Non-draft, 19 detailed Nr. 632 **P-observation** rows + Project `STATUS.md` changes; CI [37838132117](https://github.com/esany/paleo-type/actions/runs/37838132117) SUCCESS | **HOLD** — no recorded independent PR review or source evidence adjudication; PR's own description explicitly defers complete claim/evidence Result Review and owner return; do not equate validation with scholarly verification |
+| [#321](https://github.com/esany/paleo-type/pull/321) | `f439ee52` **before this audit addendum** | Draft Phase-A nonnormative backlog/currentness audit; CI [40545127547](https://github.com/esany/paleo-type/actions/runs/40545127547) SUCCESS on previous head | **HOLD** — review/acceptance and newly written addendum require current-head check; no new planning authority |
+| [#327](https://github.com/esany/paleo-type/pull/327) | `07e1dd77` | Scoped D-016-admitted code/fixtures, CI [40544667430](https://github.com/esany/paleo-type/actions/runs/40544667430) SUCCESS | **HOLD** — Draft; genuine independent host/stage-preservation validation and review not established |
+| [#332](https://github.com/esany/paleo-type/pull/332) | `9b976e17` | `savesax` technical Fullsize/decoder/year-folder and intake continuation; CI PASS | **HOLD** — A1 real host FAIL; D external storage NO-GO; Draft |
+| [#335](https://github.com/esany/paleo-type/pull/335) | `f96c09da` **before new checkpoint commit** | Generic read-only preflight + skill facade + nine tests; CI PASS | **HOLD** — Draft, incomplete actual runtime/online GitHub writer and E2E, material admission/owner review unresolved |
+
+**Exactly no PR met its own independent review + intended complete outcome/claim-ceiling acceptance to justify an unconditional merge at this audit snapshot.** `mergeable: true` and passing CI are necessary for eligible code merges but not scholarly/host/product acceptance. No merge attempted, and no Source/Project state was mutated.
+
+### Open Issue reconciliation / no false cleanup
+
+- **Active execution/skill/system acceptance:** #334, #271, #282, #280, #297. Keep explicit real-host/external-storage/Source-file-write evidence gaps, not automatic closure on CI.
+- **Systemic/Human scholarly behavior:** #272, #292, #296, #306, #307, #308, #336. Existing named phenomena remain current real-use negative evidence; do not close by a generic skill patch.
+- **Scholarly Source/Corpus/method evidence:** #291, #293, #270, #269, #268, #267, #266, #265, #263, #12. Require their own evidence/owner decisions rather than using the latest package as scope evidence. In particular #293's historical issue header contains outdated pre-materialization statements, whereas the **current** canonical `projects/ssta-20578-nr-632/` and `corpus/` already represent Nr. 632; fix owner-local currentness in its own scholarly execution context, not by overwriting Project authority in an engineering audit.
+- **Deferred/conditional/future:** #202, #162, #90, #62, #22, #13, #6, #4, #3, #2, #1. Their future status and triggers are not `done` and no new priority is inferred.
+- **Already closed incident/drafting owners** #69, #276, #277, #281, #309, #320, #333 remain closed; no duplicate 'fix' issues.
+- **Unresolved factual boundary:** the present tools can verify GitHub Issue/PR lists and exact CI. They cannot certify a controlled OneDrive destination, interactive host skill discovery, an independent manuscript image review or the actual Projects V2 board statuses. Consequently these are **UNVERIFIED**, not implicitly completed.
+
+### Audit result and next bounded gate
+
+1. The generic skill can be used for **read-only package inspection** and owner-correct guidance on its draft code branch. The required coherent one-prompt archive→external originals→online Corpus write outcome remains **PARTIAL / NOT PRODUCT-ACCEPTED**.
+2. A future technically complete #334 must demonstrate an actual owner-authorized online Source/File update and read-back with no re-download and no extra Human invocation; optional Zotero separately evaluated.
+3. One truly fresh independent Skill host must successfully execute the known Dresden request. If host lacks `savesax`, do not pretend static YAML means invocation occurred.
+4. PR #316 needs evidence-level owner/review return for its manuscript observations, not just passing structural tests. Other draft PRs must meet their own review limits.
+5. No new main baseline, no new Project, scope, priority, NEXT ACTION, D-016 admission or general programme was created by this audit.
+
+---
+
 Status: AUTHORIZED PHASE A / OWNER-FIT AND CLOSURE DESIGN; 2026-10-27 CONSOLIDATION PROPOSAL IN DRAFT PR #321 (NOT ACCEPTED IMPLEMENTATION OR NEW D-016 ADMISSION)
 Date: 2026-10-09
 Primary repository: `esany/paleo-type`
