@@ -1,6 +1,6 @@
 ---
 name: savesax
-description: "Acquire and durably preserve original online fullsize images for Hauptstaatsarchiv Dresden records at https://www.archiv.sachsen.de/. A record URL or bare savesax with an already supplied Dresden record is sufficient. Not transcription or interpretation."
+description: "Sichere, speichere oder lade die hochauflösenden Digitalisatbilder einer Archivalie des Hauptstaatsarchivs Dresden unter https://www.archiv.sachsen.de herunter; save/acquire Dresden archival source images. Ein normaler deutscher Sicherungsauftrag mit Archiv-URL genügt, ohne den Namen savesax. Nicht für reine Statusfragen, Transkription oder andere Archivsparten."
 ---
 
 # Save Hauptstaatsarchiv Dresden digitalisat images
