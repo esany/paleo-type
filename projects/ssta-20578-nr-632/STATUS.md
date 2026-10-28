@@ -1,6 +1,6 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
-Last checkpoint: 2026-10-08
+Last checkpoint: 2026-10-28
 
 ## Research purpose and Project authority
 
@@ -66,11 +66,19 @@ The exact JPEGs are directly vision-inspectable in the current work context. An 
 
 The overview used nine execution-local contact sheets covering consecutive ranges `0001–0015`, `0016–0030`, `0031–0045`, `0046–0060`, `0061–0075`, `0076–0090`, `0091–0105`, `0106–0120` and `0121–0135`. Each sheet was rendered from the exact JPEG bytes in provider order as a proportional full-frame thumbnail grid: no crop, rotation, OCR/HTR or content-generating enhancement was applied, and every provider image was included once with its provider number retained. The sheets were temporary staging aids, not canonical historical Files; the exact JPEGs remain the evidence objects. Representative originals `0001`, `0098`, `0103`, `0104`, `0107` and `0130–0135` were additionally opened at high detail. Overview observations do not claim full-resolution reading of all 135 images.
 
+### Targeted detail and boundary reconciliation — 2026-10-28
+
+The authorized detail investigation directly opened controlled original JPEGs 0098–0107 and 0130–0135 and the needed neighbours 0097, 0108 and 0129; all 19 hashes matched the current File register in the execution context. Display was scaled during inspection (0098 also opened at higher detail), and depth does not imply exhaustive full-resolution reading. The resulting 19 append-only detail checkpoints remain distinct from the 135 overview checkpoints. The Project research note [targeted boundary investigation](research/targeted-boundary-reconciliation-2026-10-28.md) separates provisional diagnostic readings and interpretation from image observations and reconciles unmerged PR #316, head 9847cba63475daaebcd42546b6e558cf84ccd092.
+
+Closing and formal opening configurations support provisional textual transitions at 0097/0098, within the 0102–0104 complex, and around 0107/0108. The apparent continuation and numeric arrangement weaken a boundary exactly at 0129/0130; the closing area is instead visible within 0130. Repeated areas under changed overlap at 0103/0104, and pale/reversed or folded surfaces at 0132/0134, make changes of view, reverse or overlap serious alternatives to treating each image change as a documentary boundary. Formal surfaces on 0133 and 0135 are similar but differently arranged; their relationship is a candidate comparison, not established textual identity or execution status.
+
+These are AI-assisted, source-visible working findings, not independent specialist validation. Their remaining ceilings include exact material attachment and seal count/identity, the full textual relationships and the diplomatic status of the formal surfaces. No complete internal segmentation, reliable archival foliation, hand identification or selected G2 transcription locus follows.
+
 ## Source-entry route and coverage state
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
 
-The canonical source-entry owner contains one exact-locator checkpoint for each inspected JPEG in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the overview observations and their claim ceilings.
+The canonical source-entry owner contains 135 exact-locator overview checkpoints and 19 separate targeted detail checkpoints in `../../source-entry/inspection-coverage.tsv`, bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate; each checkpoint retains its depth and claim ceiling.
 
 During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
 
@@ -79,14 +87,14 @@ During any further direct reconnaissance, each durable coverage record must cont
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
-| source-entry reconnaissance | `complete for declared overview domain` | provider images 0001–0135 | Ordered overview pass is persisted as 135 exact-locator observations at overview depth; deeper document-boundary/relevance work remains open and no narrower scholarly scope is inferred. |
-| G2–G6 | `not activated` | no active scholarly scope | No transcription, internal analysis, controlled comparison, consolidation or edition claim is made. |
+| source-entry reconnaissance | `overview complete; targeted detail inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135 | 135 overview and 19 separate detail checkpoints; boundary hypotheses and residuals in the Project research note; relevance remains unresolved and no narrower scope is inferred. |
+| G2–G6 | `not activated` | no active scholarly scope | No G2 diplomatic representation, G3–G6 gate or edition claim is made; short diagnostic readings remain provisional in the Project research note. |
 
 ## NEXT ACTION — canonical restart point
 
-Continue the already-authorized Nr. 632 source-entry block with an evidence-ranked detail pass over the unresolved document/material boundaries identified during the ordered overview. Begin with provider images **0098–0107**, where the overview shows a material/documentary transition with written leaves, signatures and/or wax-seal impressions; then assess **0130–0135**, where formal written leaves, a calligraphic heading, signatures and/or wax-seal impressions are visible. Inspect adjacent images `0097`, `0108` or `0129` only as needed to test those boundaries. Preserve provider-image, archival-folio and documentary-boundary distinctions; do not infer a narrower scholarly scope, foliation or text reading from the overview. A global restart at `0001` is not required unless later evidence shows the overview cursor or package provenance needs re-audit.
+The previously authorized detail pass is complete at the depth and locators described above. **The next research decision remains open:** no new Human-prioritized scope or large research assignment is inferred from the result. A candidate question arising from the evidence is how the formally similar surfaces on 0133 and 0135 relate and what the reverse-like inscription on 0134 refers to. A targeted comparison of corresponding passages, physical layout and the inscription could discriminate alternatives; any consequential execution or seal identification requires qualified review. The candidate is not an active-scope or priority decision.
 
-Do not substitute abstract schema work, a synthetic Corpus-only fixture, OCR/HTR, guessed foliation or a narrower scholarly locus for this continuation.
+Preserve the current Project purpose and provider-image/archival-folio/document distinctions. No re-acquisition, OCR/HTR or automatic segmentation is authorized by this checkpoint.
 
 ## Restartability
 
@@ -102,4 +110,4 @@ A fresh capable context must be able to reconstruct without old chat that:
 - exact per-JPEG canonical File identities, Project-use evidence bindings and overview coverage records are present for all 135 provider images;
 - overview `relevance_status` remains `UNRESOLVED` because visible documentary/material cues do not by themselves establish narrower scholarly relevance;
 - no re-acquisition is authorized merely to reproduce existing package verification;
-- the next authorized continuation is the evidence-ranked detail pass over the unresolved material/document boundaries beginning with provider images `0098–0107`, then `0130–0135`, using adjacent images only as needed.
+- the authorized detail pass has been performed for `0098–0107` and `0130–0135`, with controls `0097`, `0108` and `0129`; the next research decision is open, and the `0133/0135` relationship with the `0134` inscription is a candidate question only.
