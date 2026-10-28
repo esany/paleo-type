@@ -48,6 +48,14 @@ Supply JSON with `archive`, `fonds`, `signature`, `title`, `date_label`, `guid` 
 
 For chat-driven runs, pass the same JSON on standard input with `--metadata -`. This avoids creating a metadata sidecar file. Source image files are still written only to the configured external root.
 
+## External destination and year-only package names
+
+The **external source root is not hard-coded in `.agents/skills/savesax/SKILL.md`**. The intended controlled destination must already be configured in the authorized execution context or be supplied once by the Human. Historical OneDrive paths prove where an older package was checked; they are **not** automatically valid/default destinations for every new archive record. Record and report the chosen absolute external root and resulting package folder before a productive run.
+
+**Naming for NEW packages:** `<SOURCE-YEAR>_<ARCHIVE-CODE>_<FONDS>_<SIGNATURE>_<SHORT-TITLE>`. The first token is **only the first explicitly recorded calendar year** from `date_label`, not its day or month. E.g. official `29. Oktober 1303` gives `1303_SStA_10001_Nr_01739_...`; `1704-1781` begins `1704_`. If a year cannot be extracted without speculation (such as `16. Jahrhundert`), the prefix is `undatiert_`. The **full unchanged** catalogue dating survives in `QUELLENINFO.json` and `QUELLENINFO.txt`; shortening the folder prefix does not rewrite the archival claim.
+
+**Legacy continuity:** Older complete-date-prefixed folders are **never renamed or silently recopied**. If an existing legacy folder contains tracked `ACQUISITION_STATE.json`, read-only status and authorized resume reuse that original path and the matching stored plan identity. If both old and new folders are present, or a legacy folder lacks tracked progress, stop with an explicit conflict rather than make a second package. The `--dry-run` package name reflects the selected existing legacy path where applicable. New packages use the year prefix.
+
 ## Full JPEG decoder dependency
 
 The acquisition program uses **Pillow** to decode the complete JPEG payload, not just read its SOF width/height. Install it in the actual acquisition runtime with `python -m pip install -r tools/requirements-archival-source-acquisition.txt`. The GitHub deterministic assurance workflow installs the same declared dependency. Missing Pillow is an actionable runtime preflight failure; it is **not** a reason to skip integrity checking or treat an image's dimensions as proof that the pixels decode. The fixture tests exercise genuine compressed JPEG pixels and truncated/malformed JPEG negatives; they do not replace actual online-source samples.
