@@ -25,15 +25,37 @@ PERSISTED_VERIFIED_STATUSES = frozenset({
 })
 
 
-def _separator_alias(a: object, b: object) -> bool:
-    """Only hyphen/underscore naming variants, not arbitrary renamed packages."""
+def _separator_alias(a: object, b: object, signature: str) -> str | None:
+    """Read-only legacy equivalence, restricted to the evidenced signature.
+
+    The observed Nr. 632 legacy package has both date separators and an
+    underscore between 'Nr' and its catalogue number in the persisted plan.
+    Never collapse arbitrary numeric tokens, leading zeros or name content.
+    """
     if not isinstance(a, str) or not isinstance(b, str) or not a or not b:
-        return False
+        return None
     if any(part in a or part in b for part in ("/", "\\", "\x00")):
-        return False
+        return None
     if a in {".", ".."} or b in {".", ".."}:
-        return False
-    return re.sub(r"[-_]+", "_", a) == re.sub(r"[-_]+", "_", b)
+        return None
+    a_sep = re.sub(r"[-_]+", "_", a)
+    b_sep = re.sub(r"[-_]+", "_", b)
+    if a_sep == b_sep:
+        return "SEPARATORS_ONLY"
+
+    # Only permit the *one* actual archival 'Nr. N' token to differ as
+    # _NrN_ vs _Nr_N_, and only if the source's signature names exactly N.
+    # Every other character (year, source, fonds, title) must stay identical.
+    numbers = re.findall(r"\bNr\.?\s*(\d+)\b", signature)
+    if len(numbers) != 1:
+        return None
+    number = numbers[0]
+    pattern = rf"(?<=_)Nr_{re.escape(number)}(?=_|$)"
+    def same_nr(value: str) -> str:
+        return re.sub(pattern, f"Nr{number}", value)
+    if same_nr(a_sep) == same_nr(b_sep):
+        return "CATALOGUE_NR_DELIMITER"
+    return None
 
 
 class PackageIntakeError(ValueError):
@@ -112,15 +134,17 @@ def inspect_package(package: Path, root: Path) -> dict:
     actual_name = manifest["package_name"]
     if plan_name == actual_name:
         naming = {"status": "EXACT", "resume_safety": "NOT_ASSESSED"}
-    elif _separator_alias(actual_name, plan_name):
+    else:
+        alias_kind = _separator_alias(actual_name, plan_name, source["signature"])
+        if alias_kind is None:
+            raise PackageIntakeError("acquisition plan and manifest package identities conflict")
         naming = {
             "status": "LEGACY_SEPARATOR_ALIAS",
+            "alias_kind": alias_kind,
             "manifest_package_name": actual_name,
             "progress_plan_package_name": plan_name,
             "resume_safety": "UNVERIFIED_DO_NOT_RESUME",
         }
-    else:
-        raise PackageIntakeError("acquisition plan and manifest package identities conflict")
     if not isinstance(progress.get("images"), list):
         raise PackageIntakeError("missing verified progress image inventory")
 
