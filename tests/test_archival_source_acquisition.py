@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import hashlib
 import importlib.util
 import json
@@ -24,11 +25,10 @@ FIXTURES = REPO / "tests" / "fixtures"
 GUID_632 = "edd69aa1-eae4-4970-a695-94aaeccd6724"
 GUID_754 = "6e0423b3-880c-431c-9a1a-b9e12086b3a7"
 GUID_OPPURG = "e741423e-c9f2-4f52-ad43-3cbbe9a7b1af"
-JPEG_32X16 = (
-    b"\xff\xd8"
-    b"\xff\xc0\x00\x11\x08\x00\x10\x00\x20\x03"
-    b"\x01\x11\x00\x02\x11\x00\x03\x11\x00"
-    b"\xff\xd9"
+# Real, independently decodable 32x16 JPEG; a synthetic SOF-only marker
+# used by earlier tests did not test the actual pixel-decoder contract.
+JPEG_32X16 = base64.b64decode(
+    "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAQACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDLooor3TxAooooA//Z"
 )
 
 
@@ -218,6 +218,10 @@ class AcquisitionTests(unittest.TestCase):
         self.assertEqual((32, 16), acquisition.jpeg_dimensions(JPEG_32X16))
         with self.assertRaises(acquisition.AcquisitionError):
             acquisition.jpeg_dimensions(b"not-a-jpeg")
+        with self.assertRaisesRegex(acquisition.AcquisitionError, "truncated JPEG"):
+            acquisition.jpeg_dimensions(JPEG_32X16[:-2])
+        with self.assertRaises(acquisition.AcquisitionError):
+            acquisition.jpeg_dimensions(JPEG_32X16[:70] + b"\\xff\\xd9")
 
     def test_complete_repeat_run_is_network_free_and_revalidates_persisted_bytes(self):
         with tempfile.TemporaryDirectory() as temp:
