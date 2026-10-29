@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "tables": {
     "sources": {
       "path": "corpus/sources.tsv",
@@ -142,8 +142,34 @@
       ],
       "locator_fields": [
         "export_image",
+        "provider_image",
         "pdf_page",
         "stable_image_urn"
+      ]
+    },
+    "digital_crosswalks": {
+      "glob": "corpus/source-data/*/digital-crosswalk.tsv",
+      "key": "mapping_id",
+      "required_columns": [
+        "mapping_id",
+        "source_id",
+        "provider_image",
+        "provider_file_id",
+        "pdf_page",
+        "pdf_file_id",
+        "mapping_status",
+        "evidence",
+        "notes"
+      ],
+      "required_nonempty": [
+        "mapping_id",
+        "source_id",
+        "provider_image",
+        "provider_file_id",
+        "pdf_page",
+        "pdf_file_id",
+        "mapping_status",
+        "evidence"
       ]
     }
   },
