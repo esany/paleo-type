@@ -243,8 +243,17 @@ Kein Hintergrundversprechen: Ein Work-Auftrag kann innerhalb seiner tatsächlich
 6. **Scholarly return:** vorhandene Nr.-632-Resultate und den offenen nächsten wissenschaftlichen Entscheid korrekt darstellen; nicht einen 0094–0116-Kandidaten stillschweigend zu Human-Priorität aufwerten.
 7. **Abschlussmeldung mit Claim Ceiling:** „Fertig“ nur für nachgewiesene Ebene; wenn Work an D-016/Runtime/Evidence endet, korrekt als PARTIAL/Entscheidungsbedarf. Keine Vermischung von technischem und wissenschaftlichem Delta.
 
-## 10. Paste-ready Startauftrag für einen Work-Chat
+## 10. Direkt startbare Work-Aufträge (A/B/C) und Review Q
 
-> Bearbeite `esany/paleo-type` als eigenständiger, evidenzgebundener Work-Kontext. Lade zuerst die aktuellen Repository-Regeln und Owners über den autorisierten GitHub-Connector. Lies dieses Arbeitsdokument `engineering/evidence/work-instructions/parallel-development-workchat-handoff-2026-10-29.md` auf dem zugehörigen Draft-PR-Branch vollständig und führe die darin definierten Stränge **B (Source-Intake #334/#335)** und **C (Source-Entry #291/#341/#290)** einschließlich der tatsächlich notwendigen Querprüfungen Q aus. Der **frühere** Chat hat #346/#347 als Analyse auf Draft-PR #348 zurückgegeben (**PARTIAL / NO-GO**, Bugs offen). Der Human Owner bestätigt: derzeit läuft kein Chat. A kann als getrennter Work-Auftrag wieder aufgenommen werden; **wenn du B/C bearbeitest**, lies #348 frisch, führe dessen unabhängige Behavioral-Fixtures nicht als erledigt und überschreibe die A-Owner nicht. Prüfe B und C zunächst gegen ihre aktuellen Owner, implementiere nur Routinearbeit innerhalb tatsächlich vorhandener Admission, entwickle materielle Änderungen nur bis zur D-016-Entscheidungsvorlage, und beginne keine unautorisierten Langläufe oder wissenschaftlichen Scope-Entscheidungen. Nach jedem Slice Ziel/Ready/STOP neu prüfen; unverifizierte Wirksamkeit niemals als PASS ausgeben. Schreibe konsequente Arbeit direkt auf passende Online-GitHub-Branches, verifiziere jeden Remote-Write, halte Issues/PRs als Arbeitsmetadaten und die wissenschaftliche Wahrheit in ihren canonical owners. Schließe mit wahrheitsgemäßer Arbeitspaket-/DEV-READY-/Implementierungs-/Host-/Fachabnahme-Trennung, exakten GitHub-Links/SHAs, den offenen Human-Entscheidungen und einem ohne alten Chat ausführbaren Restart-Punkt. Kein Slack, keine automatische Chat-Chat-Steuerung, keine pauschale Backlog-Abarbeitung.
+Die konkreten **vier kurzen Startprompts** sind auf demselben GitHub-Arbeitsbranch gesichert:
 
-**Status dieses Dokuments selbst:** Nur Work-Übergabeentwurf; vor seiner Verwendung den konkreten Branch/PR, GitHub-Commit und Readback verifizieren. Er setzt weder neue Human-Priorität noch #334/#291-Umsetzung materieller Art frei.
+`engineering/evidence/work-instructions/parallel-development-workchat-starts-2026-10-29.md`
+
+- **A** #346/#347/PR #348: offenen Fortsetzungs-/Persistenzbug durch echte, wenn verfügbar unabhängige Frischkontext-Tests falsifizieren; **kein** materieller Implementierungs-GO.
+- **B** #334/PR #335: Archivpaket-/Source-Intake innerhalb vorhandener Authorität fortsetzen; getrennte #271/#282/#280-Rückgaben.
+- **C** #291/PR #290/#341: wissenschaftlicher Methodik-/Quelleneinstieg mit echten Generic-Fit-Gegenproben; keine unautorisierte neue METHOD oder Forschungsscope.
+- **Q** #280/#297: erst nach A/B/C und **als tatsächlicher unabhängiger Review-Kontext**, nicht als Entwickler-Selbsterklärung.
+
+Dieses Dokument ``1–9 definiert den detaillierten Arbeitsvertrag und die Grenzen; die zweite Datei enthält nur die abrufbaren Startaufträge und dupliziert keinen kanonischen Project-, Corpus- oder Requirement-Zustand. Der Human hat bestätigt, dass kein anderer Chat mehr läuft; dies ist ein datierter Dispatch-Hinweis, **kein** dauerhaftes Chat-Liveness-Monitoring. Der Repository-Eintrag startet keinen Chat.
+
+**Status:** nur Entwurf einer owner-gebundenen Disposition. Kein neues `engineering/configuration.json current_focus`, keine D-016-Admission, keine Umsetzung, keine Q-Abnahme oder automatische Chat-Chat-Orchestrierung.
