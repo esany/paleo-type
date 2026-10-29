@@ -34,7 +34,7 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 class CurrentRepositoryRegressionTests(unittest.TestCase):
     def test_current_repository_validates_project_use_state(self) -> None:
         contract = source_contract.load_contract(REPO)
-        self.assertEqual(8, contract["version"])
+        self.assertEqual(9, contract["version"])
         errors, _, cache = source_contract.validate(REPO, contract)
         self.assertEqual([], errors)
         self.assertFalse(cache["project_sources"])
