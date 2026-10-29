@@ -82,11 +82,11 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertIn("## Research execution: protect the first scholarly action", workflow)
         self.assertIn("## Research-question control", historical)
 
-    def test_project_contract_v8_closes_purpose_owner_and_legacy_gaps(self) -> None:
+    def test_project_contract_v9_preserves_purpose_owner_and_legacy_gaps(self) -> None:
         contract = json.loads((REPO / "corpus" / "source-contract.json").read_text(encoding="utf-8"))
         projects = contract["tables"]["projects"]
 
-        self.assertEqual(8, contract["version"])
+        self.assertEqual(9, contract["version"])
         self.assertIn("research_object", projects["required_keys"])
         self.assertIn("active_scope", projects["required_keys"])
         self.assertEqual(["source-uses.tsv"], projects["allowed_source_registers"])
