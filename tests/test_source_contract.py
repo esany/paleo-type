@@ -44,7 +44,7 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         nr632_files = [
             row
             for row in read_tsv(REPO / "corpus" / "files.tsv")
-            if row["source_id"] == "SSTA-ARCHIVIALE-EDD69AA1" and row["filename"].endswith(".jpg")
+            if row["source_id"] == "SSTA-ARCHIVIALE-EDD69AA1"
         ]
         nr632_evidence = [
             row
@@ -53,7 +53,12 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
             )
             if row["use_id"] == "USE-SSTA-20578-NR632-ROOT"
         ]
-        self.assertTrue(nr632_files)
+        self.assertEqual(136, len(nr632_files))
+        self.assertEqual(135, sum(row["filename"].endswith(".jpg") for row in nr632_files))
+        self.assertIn(
+            "FILE-SSTA-20578-NR632-COMPACT-PDF-20261029",
+            {row["file_id"] for row in nr632_files},
+        )
         self.assertEqual(
             {row["file_id"] for row in nr632_files},
             {row["file_id"] for row in nr632_evidence},
