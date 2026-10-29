@@ -88,7 +88,7 @@ The pass does not identify every physical carrier. Long sequences such as `0020�
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
 
-The canonical source-entry owner contains 135 exact-locator overview checkpoints, 19 targeted-detail checkpoints, and 135 separate whole-domain object/view-reconnaissance checkpoints in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate; each checkpoint retains its purpose/depth and claim ceiling. Cross-image grouping, readings and documentary-function hypotheses remain Project research state rather than coverage truth.
+The canonical source-entry owner contains 135 exact-locator overview checkpoints, 19 targeted-detail checkpoints, and **one whole-domain object/view-reconnaissance checkpoint** for provider images 0001–0135 in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. The single domain checkpoint is deliberate: exact per-image File identities and earlier per-image overview coverage already exist, while the new pass has one homogeneous purpose/depth/claim ceiling across the declared domain. Cross-image grouping, readings and documentary-function hypotheses remain Project research state rather than coverage truth.
 
 During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
 
@@ -97,7 +97,7 @@ During any further direct reconnaissance, each durable coverage record must cont
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
-| source-entry reconnaissance | `overview complete; targeted detail + whole-domain object/view pass inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135; object/view 0001–0135 | 135 overview, 19 targeted-detail and 135 object/view checkpoints; the Project map preserves cross-image grouping hypotheses and residuals; relevance remains unresolved and no narrower scope is inferred. |
+| source-entry reconnaissance | `overview complete; targeted detail + whole-domain object/view pass inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135; object/view 0001–0135 | 135 overview checkpoints, 19 targeted-detail checkpoints and one complete-for-declared-domain object/view checkpoint; the Project map preserves cross-image grouping hypotheses and residuals; relevance remains unresolved and no narrower scope is inferred. |
 | G2–G6 | `not activated` | no active scholarly scope | No G2 diplomatic representation, G3–G6 gate or edition claim is made; short diagnostic readings remain provisional in the Project research note. |
 
 ## NEXT ACTION — canonical restart point
