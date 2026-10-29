@@ -1,259 +1,62 @@
-# Work-Chat-Übergabe — parallele Entwicklungsarbeit und beweisbare Reife (2026-10-29)
+# Code-first Entwicklungsplan: A/B/C und unabhängiger Review Q (2026-10-29)
 
-**Status: ENTWURF / nicht normative Arbeitsanweisung / kein DEV-READY-PASS / keine Implementierungsfreigabe.**
-**Operativer Stand 2026-10-29, 22:07 Europe/Berlin (Human-Auskunft):** aktuell **kein anderer Chat mehr aktiv**. Das ist nur ein datierter Dispatch-Hinweis, **kein** langlebiger Chat-Liveness-Owner und keine Aussage über Host-Hintergrundprozesse. A (#346/#347), B (#334) und C (#291) sind als getrennte nächste Aufträge disponierbar; **noch kein Chat gestartet**.
-**Repository:** esany/paleo-type. **Ausgangsbasis:** main@6adf6c6a944d4e8801f7ec65c376a67cc2583ebd (2026-10-29, nur Snapshot; vor jeder Aktion frisch prüfen).
-**Zweck:** Einen eigenständig ausführbaren, begrenzten Entwicklungs-/Prüfauftrag für einen ChatGPT-Work-Kontext bereitstellen, ohne Chat-Wissensmonopole, falsche Fertigmeldungen oder neue Prioritäten zu erzeugen.
-**Wahrheits- und Autoritätshierarchie:** `GOVERNING_OBJECTIVE.md` → `AGENTS.md` → tatsächlich einschlägige METHOD-/Requirement-/Contract-/Project-Owner; `methodology/workflow.md` für Ausführung, `methodology/maintenance.md` für Übergabe und D-016. Issues/PRs tragen Arbeits-/Reviewmetadaten, keine kanonische historische Forschungstatsache.
+**Status: NICHTNORMATIVER PLAN, Draft-PR #349; weder Fix noch DEV-READY, D-016-Admission, wissenschaftliches NEXT ACTION oder Produktabnahme.** Repo-Baseline main@6adf6c6a944d4e8801f7ec65c376a67cc2583ebd ist nur der geprüfte Snapshot; vor Ausführung GitHub frisch lesen. Die frühere ausführliche Entwurfsfassung ist unter PR-#349-Commit c68c83d2ba271f6bb972282aecc0fca05d19cc4d nachvollziehbar, soll aber nicht als zweiter Arbeitsowner fortleben.
 
-Dieses Dokument ist ein **Auftragspaket zur Bearbeitung vorhandener Owner**, keine neue Programmsteuerung und kein zweites Zustandsregister. Für #346/#347 liegt nun der **verifizierte Analyse-Return** auf Draft-PR #348 vor: Analyse und persistierte Testspezifikation sind abgeschlossen, die Bugs aber **OPEN / nicht behoben**, und **DEV-READY für materielle Implementierung ist PARTIAL / NO-GO**. Neue Fortschritte sind ausschließlich aus dem aktuellen Repository zu belegen, nicht aus dem früheren Chat oder dieser Zusammenfassung. Vor jeder Handlung darf daraus weder PASS noch neue Autorität gefolgert werden. Eine Statusfrage autorisiert keine Mutation. Der Work-Chat darf den eigenen Auftrag eigenständig durchführen; dieser Chat kann ihn **nicht fernsteuern, automatisch wecken oder im Hintergrund kontrollieren**.
+**Auftrag:** Vorhandene Invarianten prüfen; nur tatsächlich deterministische, mit Tool-/Repository-Daten beobachtbare Defekte im bereits owning Code durch Red/Green-Negativtests absichern. **Keine neuen allgemeinen Prosa-Regeln**, globalen Forms, Workflows, Planner, S0-Schritte oder parallelen Wahrheitsablagen. Sachliche Anforderungen bleiben bei #348 (A), #334/PR #335 (B), #291/PR #290/#341 (C); Gesamtergebnis bei #297/#280. Die vier kurzen Work-Startprompts stehen getrennt unter engineering/evidence/work-instructions/parallel-development-workchat-starts-2026-10-29.md. Keine anderen Chats sind durch diesen Plan gestartet.
 
-## Aktualisierte Abhängigkeit: unabhängiger Fehleraudit #348 (2026-10-29)
+## 1. Nachgewiesene bestehende Code-Kontrollen
 
-**Autoritativer Verweis für die tatsächlich untersuchten Bugs:** [Draft-PR #348](https://github.com/esany/paleo-type/pull/348), Datei `engineering/evidence/audits/issues-346-347-autonomous-continuation-restartability-2026-10-29.md` auf Branch `audit/issues-346-347-dev-ready-20261029`, damaliger HEAD `53508ca14ee8fedf192dc26d41ff2f437a136bdb`. Primäre Work-/Incident-Owner bleiben #346/#347; #297 Human MAX/P0 und #280/#282 haben separate unveränderte Grenzen. Diese Übergabe zitiert nur die **Grenze**, nicht den kompletten Anforderungskatalog als parallele Wahrheit.
-
-**Verifiziertes Audit-Ergebnis:** Analyse-/Requirements-/Concept-Evidenz und Arbeitsevidenz sind auf PR #348 dauerhaft verfügbar. **DEV-READY = PARTIAL / NO-GO; kein Code-Fix, kein belegter Root-Cause-Nachweis, keine unabhängige Host-/Frischkontext-Regressionsabnahme.** Als offen genannt sind ursprüngliche #346-Instruktion/Tool-/Zeit-/Ready-Frontier und die realen diskriminierenden Tests, insbesondere **T01 positive Fortsetzung, T02 legitime Erschöpfung, T03 lokaler Blocker bei unabhängig Ready-Arbeit, T06 Chat-only-Plan und T07 Repository-Readback**. Vollständige Kriterien und T04–T12 liegen **nur** im zugehörigen Audit; dort bei Bedarf frisch prüfen.
-
-**Planwirkung für diesen Work-Chat:**
-
-- **B/C dürfen weiter analysiert, getestet und innerhalb tatsächlich bestehender Autorität implementiert werden.** Eine gesperrte materielle A-Implementation ist **kein** globales Verbot unabhängiger B/C-Arbeit. Die B-/C-spezifischen D-016-Grenzen gelten unverändert.
-- **B/C sind zugleich zwei realistische Beobachtungsfälle**, ob der Work-Chat nach lokalem PASS weitere autorisierte Aufgaben prüft und persistente Nachweise vorzeigt. Der aktive Work-Kontext darf diese Beobachtung **nicht** als unabhängige #346/#347-Abnahme oder verlässliche allgemeine Fehlerheilung ausgeben. Ein echter blinder, getrennter Hosttest gegen die vorab definierten #348-Fixtures bleibt erforderlich.
-- Bei der Abgabe verpflichtend unterscheiden: (i) echtes B/C-Fach-/Code-/Review-Ergebnis, (ii) beobachtete Fortsetzungs-/STOP-/Readback-Spur des eigenen Laufs, (iii) **nicht gelaufene** unabhängige #348-Fixtures. Kein „Bug durch diesen langen Lauf bewiesen gefixt“.
-- **Vor bedingter A-Implementation** muss der tatsächlich betroffene Owner/Mechanismus per verhaltensdiskriminierender Evidenz eingegrenzt werden. Ein weiterer Hinweis auf die bereits existierenden Regeln oder ein bloßer Testplan ist kein DEV-READY-PASS.
-- Kein zweites Audit mit kopierten R01–R16/T01–T12, keine neue A-Architektur, kein Chat-zu-Chat-Steuermechanismus. Bei materiell verändertem PR #348 diesen Verweis aktualisieren, nicht die Auditwahrheit hier pflegen.
-
-## 1. Verbindlicher Einstieg für einen neuen Work-Kontext
-
-1. Frisch über den **autorisierten GitHub-Connector** lesen: `GOVERNING_OBJECTIVE.md`, `AGENTS.md`, `README.md`, `methodology/workflow.md`, `methodology/maintenance.md`, `engineering/configuration.json` und die für den konkreten Arbeitsstrang verantwortlichen Owner samt neuesten Kommentaren, PR-HEADs, Artefakten, Anforderungen und Tests. Für wissenschaftliche Bewertung zusätzlich `methodology/historical-source-workflow.md`, `methodology/research-gates.md`, `methodology/evidence-policy.md`, `methodology/source-and-provenance.md`, `methodology/project-lifecycle.md` und den aktuellen Project-STATUS lesen.
-2. **Nicht** aus diesem datierten Dokument auf gegenwärtiges main/CI/PR-Akzeptanz schließen. Stale Angaben ersetzen durch tatsächliche GitHub-Belege, den Unterschied dokumentieren. Keine lokalen Spiegel/Downloads als kanonische Repo-Wahrheit. Externe kontrollierte Originalbytes bleiben außerhalb GitHub, Rechte und Quellenevidenz bleiben unterscheidbar.
-3. Arbeitsgegenstand und Autorität trennen: Informationsbeschaffung/Analyse/Tests; Routineimplementierung bereits zugelassenen Umfangs; materieller D-016-Vorschlag; wissenschaftliche Entscheidung des Human Owners. Nur die tatsächlich autorisierte Klasse ausführen.
-4. Vor parallelen Branch-Änderungen bestehende offene PRs und Dateiberührungen vergleichen. Keine konkurrierenden unkoordinierbaren Änderungen an derselben Datei. Pro unabhängiger Implementation ein zugehöriger PR oder ein eindeutig begrenzter Update an bestehendem PR; niemals bestehende Draft-PRs vorschnell mergen.
-5. Bei längeren und extern wirksamen Arbeiten aktive Auftragsidentität, kontrolliertes Ziel, Fortschritt, Containment, Wiederaufnahme, Rechte und tatsächliche Stop-Möglichkeit prüfen. Ein tatsächliches NO-GO nur für die betroffene Aktion aussprechen; unabhängige autorisierte Arbeit nicht pauschal blockieren.
-6. Jeden wesentlichen Befund **direkt** an seinem zuständigen kanonischen GitHub-Ort oder auf einem intended GitHub-Arbeitsbranch persistieren; anschließend **remote readback** von Pfad, Branch, Commit und Inhalt. Ein Chattext, ein Issue-Kommentar oder CI allein ersetzen eine erforderliche kanonische Repository-Datei nicht.
-7. Vor Abschluss Fresh-Context-Restartcheck durchführen: höheres Ziel, tatsächliche Ergebnisse, geänderte/unveränderte Owner, offene Hypothesen, Nachweise, Berechtigung, nächster Schritt, STOP und realer Acceptance-Ceiling ohne vorherigen Chat rekonstruierbar. Abschlussmeldung immer ehrlich: Analyse/DEV-READY/admitted implementation/CI/Host-E2E/independent review/Scholarly-Human acceptance separat.
-
-## 1a. Disposition/Orchestrierung ohne laufende Chats (Human-Freigabe 2026-10-29)
-
-**Was die neue Human-Aussage autorisiert:** vorhandene Arbeit als *freie* konkrete Analyse-, Test- und mögliche Routineentwicklungsaufträge neu aufzuteilen. Sie ist **keine** pauschale D-016-Admission und kein Project-`NEXT ACTION`. Der Human hat bestätigt: *kein anderer Chat läuft*. Keine vorhandene Chat-Instanz muss überwacht oder geweckt werden. Der nächste tatsächliche Start erfolgt durch einen realen Work-Aufruf, nicht durch diesen Repositorytext.
-
-| Startgruppe | Eigener Assignment-Owner | Sofort autorisierte fachlich zulässige Arbeit | Geblockte/gesonderte Konsequenz | Wann abgeben? |
-| --- | --- | --- | --- | --- |
-| **A – zuerst/hohe Kritikalität, parallel zu B/C möglich** | #346/#347; Audit #348 | Primärspur versuchen; unabhängige Host-T01/T02/T03/T06/T07-Falsifikation; genaue Ursache/Fix-Grenze | Materiale Verhaltens-/Systemänderung NO-GO bis spezifische D-016-Admission | A-eigene Reproduktion/NOT RUN, Ursache, exakter Reifegrad, Restart |
-| **B – parallel, eigenständige Repo-Fläche** | #334; PR #335 | T0–T9-Status, vorhandenen Preflight und negative Kontrollen verifizieren, D-016 für Writer klären | Neuer Writer/produktiver Lauf nur bei tatsächlichem Zulassungs-/Control-GO; #282 bleibt externes Runtime-NO-GO | B-Core-Owner + #271/#282 Schnittstellen, kein Gesamterfolg aus CI |
-| **C – parallel als Fach-Analyse/Tests** | #291; PR #290, #341 Fixture | S1–S9/Ist-Soll, reale Quellen-/Kurzfall-Gegenprobe, Human-/Evidenzsemantik | Keine normative METHOD-/Corpus-Änderung oder eigenmächtige wissenschaftliche Priorität | C-Owner mit fachlichen Gegenbelegen, Loss-Check, ggf. D-016-Frage |
-| **Q – später tatsächlich unabhängiger Reviewer** | #280 Whole-System sowie #297/#272 nur im jeweiligen Owner-Scope | A/B/C-Resultat prüfend gegen Originalauftrag, negative Fixtures und Human-Outcome | Keine Selbstabnahme von A/B/C; ohne unabhängigen Host nur PARTIAL/INCONCLUSIVE | Umfang-scharfes Ergebnis-/Reviewurteil, Residuals, keine Auto-Schließung |
-
-**Praktisches Betriebsmodell:** Drei separate Work-Starts A/B/C sind die sauberste unabhängige Parallelisierung **wenn der Human sie jeweils tatsächlich startet**. Alternativ darf **ein** gestarteter Work-Kontext A/B/C über mehrere unabhängige Owner nacheinander oder – falls seine Plattform ausdrücklich echte isolierte Ausführungskontexte bietet – darin ausführen. Keine Behauptung, dieses ChatGPT könne normale Chat-Instanzen selbst öffnen/aktivieren, Hintergrundjobs garantiert betreiben oder synchronisierte Live-Status beobachten. Ein späterer **unabhängiger** Reviewer Q muss tatsächlich eigenständig starten und die Ergebnisse frisch rekonstruieren.
-
-**Konfliktplanung:** A arbeitet allein an PR #348/#346/#347; B an #334/PR #335 plus owner-korrekte #271/#282-Rückgaben; C an #291/PR #290 und ggf. separat admitted natural owners; Q ist **read/review-first**. A/B/C dürfen einander nicht unaufgefordert auf Branches schreiben; alle lesen vorm Konsequenzschritt die aktuellen fremden PR-HEADs. A-Fix auf shared `AGENTS.md`/`workflow.md` wäre nur mit Authority und Cross-Owner-Recheck zulässig. Keine parallele Übernahme desselben Changesets oder unbemerkter Merge.
-
-**Progress-/STOP-Semantik:** Lokaler PASS → Rest-Frontier je *bereits autorisiertem* Arbeitsauftrag neu bewerten, unabhängige Ready-Items bearbeiten. Kein allgemeines „alle 35 offenen Issues jetzt entwickeln“, keine Modell-/Token-/Dauer-SLA, keine neue P0-Priorität und keine künstliche Arbeit.
-
-## 2. Inventar und Prioritäts-/Authority-Grenze
-
-Beim ersten Snapshot waren **35 offene Issues** und **fünf ältere Draft-PRs** sichtbar: #335 (`source-intake`), #332 (`savesax`), #327 (spiral-breaker), #321 (systemic closure/backlog), #290 (source-entry capability review). **Nachträglich** sind #348 (Analyse #346/#347) und #349 (dieses Übergabepaket) hinzugekommen: bei frischem GitHub-Read am 2026-10-29 **sieben offene Draft-PRs**. Vor Arbeitsbeginn tatsächliche Anzahl/HEADs erneut lesen. Das bedeutet nicht 35 sofort ausführbare Projekte. Der Human-MAX/P0-Status von **#297** bleibt bestehen; dieses Dokument ändert keine Priorität.
-
-| Arbeitsfamilie | Offene Issues | Disposition in diesem Work-Auftrag |
+| Aktueller Owner | Technische Wirkung | Nicht durch Code nachgewiesen |
 | --- | --- | --- |
-| Ausführungs- und Persistenzbugs (A) | #346, #347 | **Neuer selbstständiger Arbeitsstrang A ist disponierbar**; PR #348 liefert Analyse/Tests, aber **NO-GO für materiellen Fix**. Primär reproduzierbare Host-/Frischkontextbelege und klarer STOP-/Weiterarbeitsentscheid; nicht pauschal in B/C integrieren. |
-| Source preservation, Corpus-Intake, produktive Runtime | #334, #271, #282 | **Primärer Work-Strang B:** konkrete Analyse, vorhandene Implementierung/Testlücken und autorisierte Reparaturen; produktiver Datenlauf nur nach echten DoR/Control-Gates. |
-| Wissenschaftliche Source-Entry/Methodenfähigkeit | #291, #341, #292, #308, #265, #266, #267, #268, #269, #270 | **Primärer Work-Strang C:** empirisch prüfen, methodisch differenzieren, Requirements/DEV-READY konkretisieren; materielle METHOD/CORPUS-Änderungen ohne D-016 nicht implementieren. |
-| Übergreifende Ergebnis-/Qualitätsevaluation | #297, #280, #272, #296, #306, #307 | **Querprüfung Q:** evidenzgebundene Readiness-, Gegenproben- und Result-Review-Rückgaben, **nicht** automatische Schließung oder implizite Implementierung. |
-| Corpus-Auswahl/Findmittelabdeckung | #12, #263 | **Separater Nachweis-/Auswahlstrang:** nur soweit tatsächlich von B/C berührt; keine pauschale Auswahl- oder Vollständigkeitsbehauptung. |
-| Eigenständige optionale Erweiterung | #337 | **Nicht Teil von #334.** Kein Zotero-Zwang/Autostart; nur separater expliziter Auftrag. |
-| Bewusst verschobene bzw. nur zukünftige Themen | #162, #90, #202, #62, #22, #13, #6, #4, #3, #2, #1 | **Nicht starten.** #162 Chat-Chat-Koordination PAUSED; kein Bot/Router/Slack-Autowake. Andere Future/Deferred erst bei vorhandenem Owner-Trigger und Human-Disposition. |
+| tools/check.py und .github/workflows/source-contract.yml | Einheitlicher Full-Check mit Source-/Engineering-Validierung, Fitness und tatsächlicher Ausführung aller unittest-Regressionen; CI auf PR und main | Agenten-/Hostverhalten, Originalbytes in externem Ziel, Forschung, Human-Abnahme |
+| tools/source_contract.py und corpus/source-contract.json / source-entry/contract.json | Formale Source-/File-/Project-use-, SHA-, Referenz-, Route- und Coverage-Invarianten | Quelleninterpretation, materielle neue Source-/Corpus-Semantik |
+| tools/engineering.py / engineering/configuration.json | Engineering-Referenzen, formale Zustände und Übergänge; aktuell active_changes=[] und current_focus=null | Human-D-016-Entscheidung |
+| tools/engineering_fitness.py / engineering/assurance/fitness.json | Neun Fitness-Kontrollen, 20 abgebildete Fixture-Familien; im Full-Check mit tatsächlicher unittest-Ausführung verbunden | ENG-FIT-09 prüft als Einzelkontrolle nur das Vorhandensein von Contract/Tool/Testdatei; bloße Referenz ist kein Verhaltenstest |
+| tools/prompt.py und tests/test_prompt.py | Heuristische, ausführbare Mustererkennung: False-Lean, lokale Fallbacks, voreilige Abschlussbehauptung etc. | Regex/Stichwörter können formal komplett, aber semantisch falsche Behauptungen nicht widerlegen |
+| Draft-PR #327, bereits begrenzt D-016-admitted | Bereits vorhandene ergänzende Return-Gate- und Negativtests innerhalb des Prompt-/Fitness-Owners | Draft; kein independent Host-PASS. Acht Pflichtfelder dürfen keine globale Zeremonie werden. **Nicht doppelt implementieren** |
+| Draft-PR #335, tools/archival_package_intake.py | Read-only-Originalbytes/SHA-/Paket-/Corpus-Reconciliation mit Tests | Neuer GitHub-Writer, automatische Skill-Auslösung, dauerhafte Host-Akquisition, E2E fehlen |
+| Draft-PR #290 + #291/#341 | Nichtnormative wissenschaftliche METHOD-/Generic-Fit-Analyse und Buggegenprobe | Keine zugelassene neue METHOD; wissenschaftliche Behauptungen erfordern konkrete Quelle und Fachprüfung |
 
-**Konfliktgrenze:** Ein früherer Kontext hat #346/#347 im nachgewiesenen **Analyse-/Planungsumfang** über PR #348 bearbeitet; eine Behebung oder materielle DEV-READY-Freigabe ist ausdrücklich **nicht** belegt. Der Human Owner bestätigt jetzt, dass **kein Chat mehr läuft**. A kann daher gezielt neu beauftragt werden, ohne die alte Analyse nochmals als laufenden Prozess anzunehmen. B und C überschreiben die A-Owner nicht und claimen keinen A-Fix aus eigenen Abläufen. Diese Übergabe sendet keinem anderen Kontext automatisch eine Anweisung. Issue-/PR-Zustand ist bei Bedarf frisch zu prüfen. Keine Chat→Chat- oder Slack-Steuerung ohne eigenständig verifizierte zulässige Koordinationspolitik. `#162` belegt gegenwärtig nur eine PAUSED/DEFERRED-Koordinationsfrage, keine akzeptierte automatische Chat-Orchestrierung.
+**Konsequenz:** keinen zehnten ENG-FIT, kein neues Formular und keinen weiteren allgemeinen Passus in AGENTS.md/workflow.md/maintenance.md erzeugen. Zuerst die **belegbare** Lücke und die Tests in den vorhandenen Owners finden.
 
-**Engineering-Konfiguration zum Snapshot:** `engineering/configuration.json` hat `active_changes: []` und `current_focus: null`; SD-KA-01 ist angenommen/abgeschlossen. Keine automatische neue D-016-Freigabe oder neue globale Roadmap ableiten.
+## 2. Test-/Code-Matrix nach bestehendem Owner
 
-## 2a. Arbeitsstrang A — #346/#347 / Draft PR #348: echter Fortsetzungs-, Persistenz- und Reife-Nachweis
-
-**Status:** nach Human-Rückmeldung kein aktueller Chat beauftragt/aktiv; **STARTBAR zur begrenzten Analyse und realen Behavioral-Falsifikation**, nicht für einen bereits ausgewählten technischen Fix. **Spezifischer Owner:** [#346](https://github.com/esany/paleo-type/issues/346) Fortsetzung/STOP und [#347](https://github.com/esany/paleo-type/issues/347) Chat-only-Plan/Readiness. [PR #348](https://github.com/esany/paleo-type/pull/348) ist der *bestehende* umfassende nichtnormative Audit, kein akzeptierter Fix.
-
-**A0 — Primary-Trace- und Readiness-Rekonstruktion:** Vorhandene originale Langauftrag-Eingabe, damalige tatsächliche Toolaktionen, ursprüngliche fünf Kommentarlinks, Kontext-/Hostgrenzen und unmittelbar nach den drei Slices autorisierte/ready/blocked Arbeit soweit zugänglich unabhängig belegen. **Fehlende Daten als nicht verfügbar dokumentieren**, nicht durch plausible Rekonstruktion ersetzen. Nur konkret vorhandene Tatsachen gegenüber Hypothesen in PR #348 referenzieren.
-
-**A1 — Verhaltensdiskriminierende Frischkontext-Fixtures:** Die im bestehenden Audit **T01, T02, T03, T06, T07** vorab festgelegten Fälle im tatsächlich unterstützten Host getrennt testen:
-- T01: nach lokalem PASS eine weitere unabhängige autorisierte Ready-Arbeit vorhanden → muss sie prüfen/fortsetzen oder echten Capability-STOP belegen.
-- T02: keine weitere autorisierte Arbeit → legitimer belegter STOP statt künstlicher Beschäftigung.
-- T03: ein lokaler Ressourcenblocker, aber unabhängig Ready-Arbeit → kein unberechtigter taskweiter STOP.
-- T06: nur grobes Issue-Gerüst, Details ausschließlich im ursprünglichen Chat → **NOT READY** statt erfundenem Dev-GO.
-- T07: angekündigtes Repo-Schreiben fehlt/ist falsch oder unvollständig → „gesichert“ muss **FAIL** sein.
-Im Audit T04/T05/T08–T12 als komplementäre Rechte-, Loop-, Claim-Ceiling- und Anti-Laundering-Kontrollen nachlesen; keine zweite kopierte Test-Spec verfassen.
-
-**A2 — Echter Testvertrag:** Unverfälschte Anfangsinstruktion, Host/Modell, Toolverfügbarkeit, Berechtigung, Ausgangs-HEAD, Vorab-Scoring, tatsächliche anonymisierte Tool-Trace/Output speichern, wenn legitimer Zugriff vorhanden. Ein Ausführender darf einen selbstleitenden Test nicht als **unabhängige** Blindabnahme deklarieren. Wenn ein neuer isolierter Context/Host nicht verfügbar ist: Fixture = **NOT RUN/INCONCLUSIVE**; synthetische Prompttests sind maximal gezielte lokale Evidenz, keine Hosterfüllung.
-
-**A3 — Ursachenentscheidung und betroffener bestehender Owner:** Nur aus diskriminierenden T01/T02/T03/T06/T07-Resultaten schließen, ob bestehende Regeln hinreichend, aber instabil angewandt werden; ob konkret maschinenprüfbare Prompt-/Assurance-Kontrolle fehlt; oder ob wirklicher Host-/Runtime-Mechanismus verantwortlich ist. Kein neuer Planner, generischer Timer, globaler State Store, Prozess-/Stage-Duplikat ohne Notwendigkeitsnachweis. Prüfe `engineering/prompts/CONTRACT.md`, `tools/prompt.py`, `tests/test_prompt.py`, `engineering/assurance/fitness.json` nur als mögliche Owner, nicht als vermutete Root Cause.
-
-**A4 — DEV-READY-/Materialitäts-Gate:** Bisheriges PR #348 Urteil **PARTIAL / NO-GO** bleibt bis zur tatsächlichen Ursachen-/Verhaltensbeweisführung. Wenn danach ein präzises bounded Delta mit DoR/DoD, Tests, betroffenen Files, negativen Fällen und Autorität existiert: Routine-/D-016-Abgrenzung durchführen; nur nichtmaterielle bereits zugelassene Arbeit selbst ausführen. Für materielle Ausführungs-/Owner-/Architekturänderung Human-D-016-Admit vor Code.
-
-**A5 — Return:** Betroffene natürliche #346/#347-Work-Owner mit tatsächlich überprüfbarem Teststatus und GitHub-Pfaden/Readbacks aktualisieren; #297 Human MAX/P0 bleibt unverändert, #280/#282 nicht eigenmächtig schließen. Resultate: `incident trace recovered / missing`, `independent replay PASS/FAIL/INCONCLUSIVE`, `cause proven / hypothetical`, `DEV-READY qualified / NO-GO`, `implementation admitted / not admitted`, exakt next ready action.
-
-**A-DoD:** Echte positive und negative Host-/Restart-Evidenz und daraus eine *qualifizierte* Entscheidungsreife oder eine belegte Capability-/Autoritätsgrenze. Ein langer neuer Work-Chat allein ist weder Heilung noch unabhängiger Nachweis; ein plausibler Konzepttext allein kein DEV-READY. Bei fehlender Originalspur weiter die unabhängigen T-Fixtures testen, wo real ausführbar; keine fingierte Root Cause.
-
-## 3. Arbeitsstrang B — #334 / Draft PR #335: Archivpaket → kanonische Source/File-Registrierung
-
-**Primärer Work-Owner:** https://github.com/esany/paleo-type/issues/334 ; Entwurfsbranch/PR: https://github.com/esany/paleo-type/pull/335 .
-**Schnittstellen/andere Owner:** #271 / PR #332 (Dresden-Provider, `savesax`), #282 (kontrollierter externer Zielort, produktive Runtime), #280 (unabhängige Whole-System-Prüfung), #297 (MAX/P0 falscher lokaler PASS), #268 (gesonderte zusammengesetzte Source/File-Semantik), #337 (optionale Zotero-Erweiterung).
-**Vorhandenes Konzept/Prüfmatrix am Draft-HEAD neu lesen:** `engineering/evidence/audits/archival-preservation-corpus-intake-concept-2026-10-28.md` und `engineering/evidence/audits/archival-preservation-corpus-intake-dev-ready-2026-10-28.md` auf PR #335 (T0–T9 für den Pflicht-Kernflow; historische T10/Zotero-Bezüge nicht als Kernbedingung behandeln).
-**Stand:** Branch enthält `tools/archival_package_intake.py`, `tests/test_archival_package_intake.py` und `.agents/skills/source-intake/`. Der zuletzt dokumentierte exakte PR-HEAD `8f3dda159cd085b63a8a868a175de04dec64f3b3` hatte erfolgreiche CI mit 187 Tests. Für das existierende Nr.-632-Paket wurde ein tatsächlicher 135-JPEG/SHA-Read-only-Preflight berichtet; das ist **kein** produktiver GitHub-Writer, keine Skill-Host-Aktivierung und keine Ende-zu-Ende-Abnahme. PR bleibt Draft.
-
-### B0 — Exakte Befund-/Anforderungs-Reconciliation (sofort)
-- Aktuelle Owner/PR/Commitstände lesen; veraltete CI-/HEAD-Angaben aus dem Issue als historisch markieren.
-- Existierende Source/File/Route-Semantik gegen `corpus/source-contract.json`, `tools/source_contract.py`, `tools/source_intake.py`, `corpus/sources.tsv`, `corpus/files.tsv`, `source-entry/routes.tsv` und bestehende SStA/Reg.-Ii-Fixtures prüfen.
-- Die tatsächliche B0–Bn-Matrix an den bestehenden T0–T9 ausrichten: [nachgewiesen], [unverifiziert], [fehlgeschlagen], [noch nicht autorisiert], [nicht anwendbar]; kein pauschales „DEV-READY“ aus vorhandener Dokumentüberschrift.
-- `#334` und Draft PR nicht unautorisiert schließen/mergen; kein erneuter 135-Bilder-Download als Test.
-
-### B1 — Reproduzierbare Preflight-/Negativkontrollen (autorisierte Tests)
-- Exaktes Paket, Sidecar- und Originalbyte/Checksum-Reconciliation testen, wenn Bytes in **diesem Kontext** tatsächlich kontrolliert zugänglich sind. Vorbericht aus einem anderen Kontext ist nicht eigene Byteinspektion.
-- Fälle: vollständiges bereits registriertes Paket (idempotent), neue ungeprüfte Einheit, fehlendes Bild, beschädigte Bytes, doppelte SHA, inkonsistente Signatur/GUID, uneindeutige historische Ordner-/Package-Namen, führende Nullen, fehlende Rechteangabe.
-- Schutz: `UNVERIFIED_DO_NOT_RESUME` darf nicht zu verdecktem Resume/Overwrite werden; `--status`/Statusfrage bleibt read-only; Source-/Project-Scope nie aus Archivtitel oder Verfügbarkeit erschließen.
-- Tests am **exakten** Arbeitsbranch/Commit dokumentieren; GitHub Actions nur für nachgewiesene deterministische Eigenschaften verwenden.
-
-### B2 — Materialitäts- und Implementierungsentscheidung (harte Grenze)
-- Prüfen, ob fehlende GitHub-Schreibsemantik, ein Skill-Router oder neue Cross-Boundary-Automation **materiale** D-016-Änderungen sind. Vorhandene DEV-READY-Spezifikation dokumentiert: die vorgeschlagene materielle GitHub-Writer/Orchestration ist **nicht** automatisch Implementation-admitted.
-- Wenn material: präzise Entscheidungsvorlage für Human Owner mit betroffenen Ownern, Alternativen, Migration-/Datenverlustschutz und Tests erstellen; **nicht** implementieren, bis eine explizite Zulassung unter D-016 vorliegt.
-- Wenn die konkret nachgewiesene Änderung routinemäßige Arbeit innerhalb bereits präzise zugelassenen Umfangs ist: erst dann isoliert implementieren; Umfang und Autorität dokumentieren. Kein Global-Writer oder zweiter Registry-Owner.
-
-### B3 — Erst bei entsprechender Autorität: sicherer Canonical Writer
-- Provider-neutrale Quelle→Paket→Verified-byte→kanonische Source/File Zuordnung auf Grundlage bestehender Contracts; keine eigene zweite Source-Datenbank.
-- GitHub-only Write mit Berechtigungsprüfung, branch/HEAD- und Blob-SHA-Konflikterkennung, idempotentem Reconciliation-Plan, vollständiger Remote-Readback-/Validation-Nachprüfung und Recovery bei Teilfehler.
-- Keine Source/File-Identität aus Dateiname allein, keine falsche Byteidentität, kein doppelter SHA-Eintrag, keine Neuinterpretation von Rights, keine Project-Erstellung oder Forschungsscope-Auswahl.
-- Edgecases gegen Reg.-Ii, bestehendes Nr. 632, neue Source, bereits vorhandene Source, falscher Provenienz-/Metadatenclaim und separate #268-Composite-Grenze testen. Bei unklarer Semantik an betroffenen Owner zurückgeben.
-
-### B4 — Host-E2E und produktive Runtime (nur bei erfüllten Kontrollbedingungen)
-- Natürlicher deutschsprachiger Auftrag „Archivbestand lokal und im Repo sichern“ muss das passende Tool/Skill **ohne Nutzer-Mikrorouting** wirklich aktivieren. Exakte Host-Trace notwendig; expliziter Skillname, Anleitungstext oder CI simulieren Host-Aktivierung nicht.
-- Altbestandfall: vorhandenes externes Paket und kanonische Zeilen ohne Download/Write-Duplikate korrekt erkennen.
-- Neuarchivfall: erst wenn #271 Provider-Evidenz und #282 kontrolliertes, persistentes Ziel samt Stop/Resume, Verifikation und Berechtigung echte PASS-Vorbedingungen bilden. Ohne diese: **NO-GO nur für diesen produktiven Teil**; keine Scratch-/Actions-Ablage als neue dauerhafte Sicherung.
-- Tatsächliche GitHub-Writes nur nach expliziter autorisierter Top-Level-Mutation, Prüfsummen, Repo-Validation, Readback. Auf Teilfehler truthful partial/restart statt „complete“.
-- Kein implizites bezahltes Browserrouting, keine Bilder/PDFs ins GitHub-Repo, keine Zotero-Arbeit (#337 gesondert).
-
-### B5 — Getrennte Result-/Review-Rückgabe
-- B-Teilresultat an #334/PR #335; Provider-Fund an #271; externe Laufzeit an #282; E2E-Fakten an #280; Konsequenz für #297 nach dessen eigenem MAX/P0-Standard, ohne Priorität/Closure zu verändern.
-- Nachweisform: exakter Tool-Trace/Datei-SHA, Testresultat, GitHub-Pfad+Branch+Commit+Remote-Readback, offene/unverifizierte T-Kriterien, unabhängige Review-Hürde.
-- **B-DoD:** ein vollständig autorisierter natürlicher End-to-End-Nutzerflow, verifiziertes dauerhaftes Paket und kanonische Registry, plus negative und Restarttests – soweit tatsächlich ausführbar und legitim. Sonst ehrliches PARTIAL/NO-GO, nicht schließen.
-- **Erster sinnvoller B-Schritt:** B0/B1/B2 durchführen und die **belegte** Implementierungslücke und Materialitätsentscheidung präzisieren; kein ungeprüfter Writer-Start.
-
-## 4. Arbeitsstrang C — #291 / Draft PR #290: unbekannte Quelle → wissenschaftlich tragfähiger Einstieg
-
-**Primärer Work-Owner:** https://github.com/esany/paleo-type/issues/291 ; Konzept-Draft: https://github.com/esany/paleo-type/pull/290 ; konkrete Skill-Erfindungsregression: https://github.com/esany/paleo-type/issues/341 .
-**Weitere Owner:** #292/#308 (Human-lesbare fachliche Bedeutung und Kompetenz-/Evidenzrouting), #265 (keine aktive Scope-Selektion), #267 (granulare Inspektionsabdeckung), #266 (Dokumentform versus Überlieferungsstufe), #269 (Relation und Evidenzstärke), #268 (Root-File/interne Sources), #270 (Wolkenburg-Fragen), #12/#263 (Findmittel-Auswahl, **nicht** interne Quelleninspektion), #307 (Aussagenprovenienz).
-**Normative Basis:** `methodology/historical-source-workflow.md` S1–S9 und `methodology/research-gates.md` G1–G6, keine neue S0-Stufe oder eigene Gate-Leiter. Relevante Diplomatik, Paläographie, historische Philologie, Überlieferungs- und Editionsmethoden aktivieren, sobald der *konkrete* Befund sie erfordert.
-**Projektstatus zum Snapshot:** `projects/ssta-20578-nr-632/STATUS.md`: G1 belegt; 135/135 Überblick über alle Providerbilder, kontrollierte Detailchecks und eine 135-Bilder-Objekt-/View-Rekognoszierung vorhanden; 38 Kandidatengruppen sind **keine** 38 abschließend bestimmten Dokumente. Kein Human-ausgewähltes neues engeres scholarly `NEXT ACTION` oder G2-Ziel. `0094–0116` ist potenzieller Kollationskandidat, nicht automatisch neue Priorität. Vor jeder Source-Aktion frisch lesen.
-
-### C0 — Methodischer Ist/Soll-Vergleich
-- Aktuelle S1–S9/G1–G6, schon existierende Source-Entry-Mechanismen, Project-Status und #291/PR #290 lesen. Explizit zeigen, **welche** Teilfähigkeit wirklich fehlt, statt sie durch neuen Skillnamen oder schematische „Vorphase“ zu behaupten.
-- #341 reproduzierbar als Negativtest: Die Aufforderung „Brauchen wir einen neuen Skill?“ darf keinen neuen METHOD-/Stage-/Skill-Owner ohne nachgewiesene einzigartige operative Lücke auslösen.
-- Kriterien: Erkenntnisschritt zuerst, nicht Tool-/Erwerbsprozess als Antwort; gleiche Quelle kann zunächst vollständig unbekannt sein, ohne dass eine enge Forschungsfrage oder relevante Stelle vorselektiert werden muss.
-
-### C1 — Empirische Gegenproben (Evidenzklassen strikt)
-- Groß/komposit: vorhandene Nr.-632-Quellenansicht und originale Kontrollbilder anhand exakter Locator und nachgewiesener Zugänglichkeit prüfen; beim Wiederverwenden früherer Befunde immer „übernommene Beobachtung“ vs „neue direkte Inspektion“ unterscheiden.
-- Kurz/einfach: **noch fehlenden** kurzen, klar begrenzten Originalquellen-Vergleich kontrolliert identifizieren. Keine generische METHOD-Änderung ohne diesen Fast-Path-Gegencheck.
-- Weitere adversariale Fälle entsprechend #291: schwierige/mehrere Hände, Register/Rechnung, Abschrift/Auszug, mehrere Zeugen, fehlende Bilder, widerlegte Relevanzhypothese, gemischte Dokumente, negativ/unentschieden relevante Passage.
-- Wo Primärbilder fehlen: exakt betroffenen Test als UNVERIFIED vermerken, keine Manuskriptbeobachtung erfinden und nicht automatisch den gesamten Analyseauftrag blockieren.
-
-### C2 — Wissenschaftlich vollständiger Eingangszyklus, aber keine parallele METHOD
-- Aus realen Quellen-/Problemgegenständen ableiten, wann breit sichtende Rekognoszierung, material-/diplomatische Grenzhypothesen, paläographische Familiarisierung, diagnostische Lesung, wechselnde Relevanz und erste gebundene Transkriptionsziele erforderlich sind.
-- Explizite Unterscheidung: Archiv-/Projektwurzel, Inspektionsdomäne, wirkliche Inspektionstiefe, festgestellte Dokument-/View-Struktur, aktive wissenschaftliche Scope, Kandidat, Lesung/Transkription, Evidenzdeckel, Rückgabe-/Spezialistenbedarf.
-- Quelle und dokumentarische Evidenz entscheiden, ob adaptive Wiederholung innerhalb S1–S9 nötig ist; der einfache Kurzfall darf **keine** 200-Seiten-Vollaufnahmebürokratie erben.
-- Fachliche Qualität: keine Original/Abschrift/Extrakt-Bestimmung aus Katalogtiteln allein; keine direkte `copy_of`-Relation ohne Zeugenprüfung; negative/unaufgelöste Befunde erhalten.
-
-### C3 — Semantische Folgefragen nur beim zuständigen Owner
-- #265: Abwesenheit eines aktuellen Forschungsumfangs nicht aus englischem Prose-Sentinel ableiten.
-- #267: exakte Granularität und Tiefe von Seiten-/View-/Locus-Inspektion inklusive Negativabdeckung bewahren; alte 135/135-Überblicks-PASS nicht zu Volltranskriptionsbeweis aufblasen.
-- #266/#269: Dokumentform, Überlieferungsstatus, Katalogbehauptung, direkte Beobachtung und textuelle Beziehung auseinanderhalten; zunächst reale Befunde und lossless Repräsentationsbedarf, nicht spontane Schemaänderung.
-- #268: eine Root-File-Instanziierung für mehrere erst später erkannte interne Sources; kein zweites File mit gleicher Byte-SHA, keine willkürliche Crop-Pflicht; mögliche Modelländerung nur als D-016-Antrag.
-- #292/#308/#307: jede interne Kennung in verständliche fachliche Tätigkeit, genaue Evidenz, Ungewissheit, zulässige Behauptung, Kompetenz und nächsten möglichen diskriminierenden Schritt übersetzen; maschinelle Felder nachgeordnet.
-
-### C4 — D-016-entscheidungsreifes Konzept statt sofortiger Methodenersetzung
-- Reife-Matrix: (i) bereits normative und anwendbare Regeln; (ii) fehlende operative Host-Anwendung; (iii) nachweisliche semantische Lücke; (iv) erforderliches kanonisches Format/Owner; (v) reales specialist validation requirement.
-- Keine neue generische Stage, Taxonomie, universal hand registry oder Skill nur wegen Chatwunsch. Wenn eine echte materielle METHOD-/CORPUS-Semantikänderung nötig erscheint: Analyse → Anforderungen → Konzept → spezifischer Human D-016-Review, **davor keine Umsetzung**.
-- Auswirkungen auf bestehende Kurz-/Kompositfixtures und Rückwärtskompatibilität/Verlustfreiheit ausweisen. Ungetestete wissenschaftliche Behauptungen als Hypothesen markieren.
-
-### C5 — Test/Review und Arbeitsergebnis
-- Konkrete frische Negativprompts: „Quelle unbekannt, alles könnte relevant sein“, „erst lesen, aber keine Vorabauswahl“, „Mache einfach einen neuen Skill“, „G2 erreicht wegen Bildpaket“, „Auszug = gesicherte Kopie“, „135/135 = alles paläographisch gelesen“ → jeweils Nachweis eines korrekten Nichtschlusses.
-- Positivprompt: normale neue Kurzquelle → proportionale erste fachliche Handlung; komplexe Quelle → quellengestützte Rekognoszierung ohne voreilige Zielgrenze; klare, Human-lesbare Aussage, keine künstliche Prozessleiter.
-- Artifacts/Requirements bei bestehenden Ownern persistieren, nicht in #291 als zweite wissenschaftliche Wahrheit. Scholarly Annotation nur an passendem Project-Owner und wenn **konkret autorisiert**.
-- **C-DoD:** empirisch falsifizierbare Fachanforderungen, Gegenbeispiele, echte semantische Restlücke oder belegte ausreichende bestehende METHOD, D-016-Freigabegegenstand nur wenn nötig, vollständiger Frischkontext-Restart und Human-/Specialist-Grenzen. Kein abstraktes „METHOD fertig“.
-- **Erster sinnvoller C-Schritt:** C0 + gesicherte Kurzquellen-Gegenprobe mit exakten echten Belegen; danach C2–C5. Ohne neue Human-Auswahl keine Nr.-632-Transkription/Kollation als eigenmächtige priorisierte Arbeit beginnen.
-
-## 5. Querprüfung Q und weitere Entwicklungsarbeit
-
-Jeder A/B/C-Work-Kontext führt eigene **beschränkte Owner-/Backlog-Reconciliation** aus, aber **nicht** die unabhängige #280/#297-Gesamtabnahme. Ein später separat gestarteter **Q-Reviewer** darf reale A/B/C-Artefakte unabhängig prüfen und eine entsprechende, nachweisbegrenzte Review-Rückgabe leisten. Ohne einen tatsächlichen getrennten Reviewer bleibt Unabhängigkeit **UNVERIFIED**.
-
-**Q0 — #297 / MAX-P0 (vorläufige Querkontrolle innerhalb jedes A/B/C-Work, nicht unabhängige Q-Abnahme):** In jedem Work-Block das vollständige Human-Ergebnis gegen lokale Patches/CI/Issue-Kommentare prüfen. Nach jedem Slice verbleibende autorisierte Ready-Arbeit prüfen; nicht Stop aus lokalem PASS. Im Gegenteil keine künstlichen Zusatzaufgaben zur Laufzeitverlängerung. #346/#347 werden vom anderen Chat bearbeitet; keine result- oder reprioritization-Übernahme.
-
-**Q1 — #280 / #296 / #306 / #307:** Objektive fresh-context Host-Evidence nur dort ansetzen, wo tool/source/rights geeignet und Test tatsächlich ausführbar ist. Fehlerkette: falsche Quellen-/Task-Autorität, Support→unselektierte Forschungssynthese, Verlust von Aussageprovenienz, fehlende Skills/Runtime; technische CI ≠ reales Nutzerergebnis. Eigenen Work-Tests nicht als unabhängige Fremdabnahme deklarieren.
-
-**Q2 — #272 / Draft PR #321 / PR #327:** Prüfen, ob wiederkehrende Audit-/Spiral-/Backlog-Arbeit echte Lücken hat oder nur bereits vorhandene Owner zusammenfasst. Relevante Dokumente/Branches lesen, kein Doppelbau oder permanenter Backlog-Manager. Längere separate Architektur-/Auditarbeiten nur wenn durch bestehenden Owner autorisiert.
-
-**Q3 — #271 / Draft PR #332, #282:** Ohne reale kontrollierte externe Runtime und neue ausdrückliche Akquisition keine neue Massendatenakquisition auslösen. Unter #271 A–C prüfen, soweit echte Provider-/Skill-Trace-Evidenz möglich; #282 D0–D5 einzeln als PASS/PARTIAL/NO-GO. `#280` hält Whole-System-Fazit. Keine Vermischung mit #334 GitHub-Source-Writer.
-
-**Q4 — #12 / #263 / #270:** Katalogauswahl-/Findmittelabdeckung, bestehende Wolkenburg-Projektgrenze und intra-Source-Rekognoszierung getrennt behandeln. Kein neuer Project-Owner/Scope aus list-search oder digitaler Bildverfügbarkeit.
-
-**Q5 — #337/andere:** Zotero optional, Zukunftsthemen ausdrücklich nicht in Core-DoD. Für Future-/Deferred-Issues nur eine knappe dispositionieren: „kein aktueller Trigger/keine Zulassung“, keine Implementierung.
-
-## 6. Reihenfolge, Parallelisierungsregeln und Konfliktmanagement
-
-`A(#346/#347)` ist **ein selbstständig disponierbarer, noch offener Test-/Analyse-Work-Owner** auf PR #348. Ein **A-bearbeitender** Work-Kontext darf seine autorisierten Befunde an den #346/#347-Ownern mit verifiziertem Readback zurückgeben; **B- und C-bearbeitende** Kontexte sollen diese Owner nicht parallel beschreiben oder ihre Tests eigenmächtig übernehmen. Nicht aus Slack lesen/senden; `#162` bleibt PAUSED und keine automatische Kommunikations-/Wake-Architektur ist zugelassen.
-
-`B0/B1/B2` und `C0/C1` sind **inhaltlich parallel prüfbar**, aber ein einzelner Work-Chat garantiert keine gleichzeitig laufenden unabhängigen Chat-Instanzen. Er darf die beiden Stränge planmäßig abwechselnd/substanziell bearbeiten oder – wenn sein Host echte isolierte Subtasks unterstützt – dort unter exakt gleicher Autoritätsgrenze delegieren. Keine erfundene Hintergrundausführung.
-
-Erlaubter Abhängigkeitsgraph:
-
-- **B0/B1 → B2 (Materialität)** → [Routine nachgewiesen: präzise B3] **oder** [D-016 Human-Entscheidung]; danach nur bei Zulassung B3 → kontrollierte B4 → B5.
-- **C0/C1 → C2/C3 → C4 (Konzept, D-016 falls material) → C5**. #265–#269 Implementierung *nicht* als automatische Folge; Besitzer-/Evidenzlage entscheidet separat.
-- **Q-Review** nimmt nur tatsächlich vorhandene B/C/A-Nachweise auf; nie vorweggenommene finale Gesamt-PASS.
-- **Scholarly project NEXT ACTION** aus `projects/<id>/STATUS.md` bzw. expliziter Human-Autorität, nicht aus der Engineering-Reihenfolge.
-
-Bei parallelen Repository-Branches: Zielpfade vor Mutation abgleichen, keine konkurrierende PR-Branch-Überschreibung, Diff auf ungewöhnliche Scope-Ausweitung prüfen. Wenn A neue generische Ausführungsregeln ändert, vor B/C-Integration frisch rebasen/vergleichend prüfen, nicht blind cherry-picken.
-
-## 7. Getrennte Abnahmepunkte — Reife nie überspringen
-
-| Ebene | Minimaler belastbarer Nachweis | Was dies **nicht** beweist |
+| Fehlergrenze | Bestehender ausführbarer Ansatz / gewünschte Negativfixture | Grenze / Authority |
 | --- | --- | --- |
-| Incident/Analyse | Belegte Fakten, Ursache/Hypothesen, betroffene Owner | Implementierungserlaubnis |
-| Requirements/Concept | widerspruchsfreie testbare Anforderungen, Alternativen, Negativtests, Generic-Fit, betroffene Interfaces | `DEV-READY` ohne konkrete DoR/DoD |
-| DEV-READY | exakter Architektur-/Owner-Fit, Änderungen/Tests/Loss-Check/Freigabegrenze, Quellen-/Runtime-Zugang geklärt bzw. als Stop markiert | D-016-Zulassung |
-| Admission | ausdrückliche Human-Owner-Entscheidung für wirklich materielle Änderung; Scope/Datum/Evidenz | Implementation oder fachliche Abnahme |
-| Code/CI | exakte Branch-/Commit-/Testlogs, negatives und positives Contract-Verhalten | Host-/Produktiv-/Dauerspeicher-PASS |
-| Runtime/E2E | echte Tool-/Host-/GitHub-Readback-/Datei-Bytes-/Stop/Resume-Trace am autorisierten Ziel | independent review / scholarly acceptance |
-| Independent Result Review | eigenständige Gegenprüfung am realen Human-Ergebnis, alle Residuals und falsifizierende Fälle | automatisch G2–G6 oder Projektpriorität |
-| Scholarly outcome | tatsächliche source-inspected Evidence, Ungewissheit, genaues Locus/Claim, ggf. qualifizierter Spezialist | universelle Methode/Host-Zuverlässigkeit |
+| A: Chat behauptet „gesichert“, Repository-Write fehlt (#347) | Nur am **wirklichen autorisierten GitHub-Tool-Call**: Zielpfad, Branch, Commit und unabhängiges Online-Readback mit erwartetem Inhalt/SHA abgleichen; Konflikt/falscher Ref/fehlender Write → fail-closed. Test: angekündigt, aber nicht geschrieben; unvollständig; falsche Branch | Reiner CI-Text-/Kommentarcheck ist kein Remote-Beweis; falls der Host keinen Hook bietet, ehrlich UNVERIFIED, kein Scheintool bauen |
+| A: lokaler PASS wird Gesamtabschluss (#346/#297) | Vor Codeänderung echte #348-T01/T02/T03-Verhaltensfixture im geeigneten getrennten Host (weiterarbeitbare unabhängige Ready-Arbeit; echte Erschöpfung; lokaler Blocker mit unabhängiger Ready-Arbeit); vorab scorbare Ergebnisse | Ein Repo-Skript kann nicht automatisch autorisierte Ready-Arbeit, Forschungspriorität, STOP-Authority oder höheren Human-Erfolg aus freien Issue-Texten erfinden |
+| A: unvollständige Reife/Readiness (#347) | #348-T06 (grobes Issue, detaillierter Plan nur im Chat → NOT READY), T07 (fehlender Readback → kein „gesichert“); bestehende Prompt-/Fitness-Negativtests nur bei reproduzierbarer maschinenlesbarer Lücke ergänzen | Ein syntaktisch ausgefülltes Return-Tupel kann falsche Evidenz enthalten; ein Formular-PASS ist keine tatsächliche DEV-READY |
+| A: falsche Engineering-Transition | tools/engineering.py und bestehende Engineering-Tests als erste Anlaufstelle; konkrete fehlende Transition-/Owner-/Evidence-Negativfixture mit tatsächlich strukturierten Daten nachweisen | Das System darf weder D-016-Admit noch Human-Priorität selbst erzeugen |
+| B: Paket- und File-Integrität (#334) | Vorhandenen PR-#335-Preflight benutzen. Tests auf korrupt/fehlend, falsche Source-/SHA-Identität, doppeltes File, Legacy-Naming-Alias und NO-RESUME, Statusabfrage ohne Mutation, tatsächliches extern kontrolliertes Bytepaket | Preflight-PASS ≠ Online-GitHub-Writer, Host-Discovery oder Dauerablage |
+| B: Source/File-GitHub-Schreiben | Erst wenn für das konkrete materielle Delta admitted: bestehende Source-/File-Contracts plus idempotentes GitHub-Write mit Konflikterkennung und separatem Remote-Readback; nie zweite Registry | #282 produktives NO-GO bleibt eigenständig, #337 Zotero optional; keine frei erfundene Rights-/Project-Entscheidung |
+| C: wissenschaftliche Modellgrenzen (#291/#341) | Bestehende Source-/Coverage-Contract-Tests nur für **bereits stabile** Dateninvarianten und reale Positiv-/Negativfixtures (z. B. Überblickstiefe ≠ Detailtiefe; Source-Identität ≠ Project-Relevanz) | Original/Kopie, Dokumentgrenzen, Hände, Lesungen, Evidenzstärke und wissenschaftliche Relevanz durch Quellenprüfung/Spezialist, nicht Regex/Universal-Skill |
+| Q: Review-Überhöhung (#280/#297) | CI/Regressionen gegen **exakten PR-HEAD** prüfen; originale Tool-/Host-Trace sowie reale Byte-/Source-Fakten als separate Evidence-Facetten abgleichen | Reviewer muss wirklich unabhängig sein; Entwickler-Selbsttest, CI, Issue-Kommentar und Draft-PR sind keine Gesamtabnahme |
 
-**Adversariale MUST-FAIL:** lokaler PASS bei weiter ausführbarem autorisiertem Gesamtauftrag; „gesichert“ ohne GitHub-Readback; DEV-READY nur als Inhaltsverzeichnis; CI grün bei Host-A1-FAIL; 135 Bilder = G2; Katalog-„Abschrift“ = direkte copying relation; fehlendes externes Ziel = globale Projektpriorität blockiert; neuer Skill ohne Funktionslückennachweis; Chattext als kanonischer Besitzer.
+## 3. Reihenfolge der tatsächlichen Entwicklungsarbeit
 
-## 8. Arbeitsverträge, Fortschritt und STOP
+**A – kritisch, PR #348 (#346/#347, #297 bleibt MAX/P0).** Originalen Auftrag/5 damalige Kommentar-Links/Tool- und Ready-Frontier nach Möglichkeit rekonstruieren; Nichtverfügbarkeit ausdrücklich festhalten. T01/T02/T03/T06/T07 und nötige negativen #348-Gegenproben im tatsächlichen unabhängigen Host prüfen. Erst daraus die konkrete betroffene Komponente ermitteln. PR #327 am aktuellen exakten HEAD als **bestehenden** Codekandidaten adversarial testen: Falsch ausgefülltes Tupel darf keine behauptete Wirksamkeit erzeugen; kurzes Routinevorhaben darf nicht acht Pflichtfelder übernehmen. Falls kein technisch erreichbarer Hook: kein erfundener Runtime-/Code-Fix, Hostversuch als NOT RUN/INCONCLUSIVE. Vor materialem A-Code Human-D-016-Admission.
 
-Zu Beginn **pro Lane** erfassen: Ziel, Owner, gültige Autorität, erste real ausführbare Handlung, Voraussetzungen (PASS/FAIL/unknown), Evidenz/Locator, erlaubte Mutation, Nicht-Ziele, Completion, Return, Restart-Cursor. Dies ist ein semantischer Vertrag, keine neue persistente globale Tabelle. Nur wirklich geänderte Tatsachen und notwendige Nachweise dauerhaft schreiben.
+**B – parallel bei unabhängiger Autorität, PR #335 (#334).** Vorhandenen Preflight und T0–T9-Negativ-/Positivkontrollen statt neuen Prozessschritt vervollständigen. Fehlende eindeutige GitHub-Writer-Semantik, Runtime-Persistenz und Host-Autoselektion *getrennt* prüfen. Tests im bestehenden unittest-Suite/Full-Check; tatsächliche GitHub-Write-/Readback-Tests erst nach Freigabe. Kein produktiver Download ohne #282-Kontrollnachweis, keine Source-Mutation nur für einen Test.
 
-Nach jeder kohärenten Teilaufgabe: (a) Ergebnisbeweis + owner-korrekte Persistenz, (b) Was fehlt am Gesamtziel?, (c) Welche unabhängigen autorisierten nächsten Schritte sind Ready?, (d) echte Blocker/Autoritätsgrenze?, (e) weiterarbeiten statt lokalen PASS zum Gesamtabschluss zu erklären.
+**C – parallel als Fach-/Contract-Analyse, PR #290 (#291/#341).** Vorhandene METHOD S1–S9/G1–G6 an komplexem sowie kurzem realem Quellenbeispiel falsifizieren; keine neue allgemeine Leiter oder Skill. Nur nachweisbar stabile Datenverluste in aktuellen Source-/Coverage-/Project-Ownern durch Tests absichern; materielle METHOD-/CORPUS-Änderung ausschließlich nach spezifischem D-016-Admit. Ohne neue Human-Owner-Auswahl kein automatisch aktiver Forschungsumfang für Nr. 632.
 
-**STOP** nur bei belegter Ausschöpfung, explizitem Human-Stopp, echter Laufzeit-/Toolgrenze, zwingender Rechte-/D-016-/Scholarly-Entscheidung oder wirklich nicht ausführbaren Voraussetzungen. Eine fehlende Quelle für C1 blockiert nicht automatisch B0/B1. Fehlender neuer GitHub-Writer blockiert nicht C0/C2. Keine künstliche Laufzeit und keine Unterstützungs-zu-Unterstützungs-Spirale.
+**Q – später, getrennt von Ausführenden, Owner #280/#297.** Echte A/B/C-Resultate inklusive negative Cases, exakte Commits und frische Host-/Quellenevidenz gegen höheren Human-Auftrag prüfen. CI allein, lange Laufdauer oder korrekt geschriebene Repo-Checkliste reichen nicht. Nicht gelaufene Tests als NOT RUN dokumentieren; keine automatischen Issue-Schließungen.
 
-Kein Hintergrundversprechen: Ein Work-Auftrag kann innerhalb seiner tatsächlichen aktiven Ausführungszeit arbeiten; er ist kein autonom dauerhaft aktiver Supervisor anderer Chats.
+**Code-Arbeit je Lücke:** Erst Test, der bei tatsächlich falschem Verhalten reproduzierbar scheitert; dann kleinstmögliche Reparatur **im bestehenden Owner**; Positiv- und Negativfälle, exakter-HEAD-Full-Check (python tools/check.py), GitHub-Readback; reale Host-/Fachwirkung separat. Nicht bei rein semantischer Mehrdeutigkeit automatisch Code produzieren.
 
-## 9. Geforderte Endabgabe an den Human Owner und an kanonische Owner
+## 4. Gegenproben gegen zusätzliche Prosa und Schein-Gates
 
-1. **Aktualisierte Task-Matrix** je B/C/Q: Ergebnis vs offenes Kriterium; exakte Issue-/PR-/Dateirefs, branch + HEAD, Testscope/CI, Host-/Evidenz-/Reviewstatus, Statusklasse (FACT/PARTIAL/UNVERIFIED/FAIL).
-2. **Echte Artefakte:** bewertete vorhandene DEV-READY-/Methodenanalysen, ownergerechte GitHub-Änderungen auf getrennten PRs (nur wo erlaubt), Tests und Rückgaben; nicht nur Chat-Zusammenfassung.
-3. **Materielle Entscheidungen:** genaue D-016-Vorlage und die *einzelne* durch Human zu entscheidende Frage; ohne Entscheidung keine entsprechende Implementation.
-4. **Cross-owner-Disposition:** geändert / unverändert / noch offen für alle materiell betroffenen Owner; keine automatische Schließung von #297/#280/#334/#291.
-5. **Fresh-context-Restartnachweis:** Ein neuer Kontext kann ohne alten Chat den aktuellen Stand, Resultat, offenen Test, zulässige nächste Aktion und STOP aus GitHub ableiten. GitHub-Write und Readback für jeden persistierten Befund nachweisen.
-6. **Scholarly return:** vorhandene Nr.-632-Resultate und den offenen nächsten wissenschaftlichen Entscheid korrekt darstellen; nicht einen 0094–0116-Kandidaten stillschweigend zu Human-Priorität aufwerten.
-7. **Abschlussmeldung mit Claim Ceiling:** „Fertig“ nur für nachgewiesene Ebene; wenn Work an D-016/Runtime/Evidence endet, korrekt als PARTIAL/Entscheidungsbedarf. Keine Vermischung von technischem und wissenschaftlichem Delta.
+- **FAIL:** noch ein Prompt-/AGENTS-Absatz ohne neue Prüfbarkeit; neue 8-Felder-Form für trivialen Task; neue Fitness-ID nur zur Anzeige; doppelte #348-Testspezifikation; neues A/B/C-Koordinationsregister; eigener Planner/Scheduler.
+- **FAIL:** alle Feldlabels vorhanden, aber falsch; ein Regex erkennt das Wort „STOP“ und setzt damit die Autoritätsfrage voraus; CI grün, aber Host lädt Skill nicht; SHA-Text in Kommentar als GitHub-Readback; 135/135-Bildpaket als G2-/wissenschaftlicher Evidenz-PASS.
+- **PASS nur begrenzt:** bestehende Invariante wird durch echte ausgeführte Red/Green-Fixtures gesichert, ohne fremde Fach-/Human-Entscheidung zu kodieren.
+- **HOST-PASS erst bei echter Host-Trace:** eine unabhängige berechtigte Folgeaufgabe wird tatsächlich fortgesetzt oder ein tatsächlich legitimer STOP erklärt; Readback erfolgt online, nicht nur auf Papier.
+- **Kein Code-Pfad für Fachurteil:** historisch-paläographische Lesung, Belegstärke, Source-Auswahl und Research-NEXT-ACTION bleiben bei den realen Ownern.
+- **D-016:** PR #327 besitzt nur seine **eigene** eng begrenzte Admission. Weder das noch ein offenes Issue autorisiert neue material shared Semantik, Canonical Writer oder METHOD-/Corpus-Modell.
 
-## 10. Direkt startbare Work-Aufträge (A/B/C) und Review Q
+## 5. Schmale Abgabe, ohne zweiten Wahrheitsspeicher
 
-Die konkreten **vier kurzen Startprompts** sind auf demselben GitHub-Arbeitsbranch gesichert:
+Die ausführlichen Primäranforderungen bleiben in PR #348, #335, #290 und den natürlichen Issues. Diese Datei ist nur **Wegweiser/Code-first-Disposition**; die vorherige 43k-Langfassung wird in der PR-Historie erhalten statt als neue normative Regel kopiert. Getrennte Startprompts: engineering/evidence/work-instructions/parallel-development-workchat-starts-2026-10-29.md.
 
-`engineering/evidence/work-instructions/parallel-development-workchat-starts-2026-10-29.md`
+Ein Work-Kontext liest frisch GOVERNING_OBJECTIVE.md, AGENTS.md, methodology/workflow.md, methodology/maintenance.md, seinen konkreten Owner und die zugehörigen Tests. Er führt nur den tatsächlich authorized Slice aus, sichert ein Resultat direkt im passenden GitHub-Owner/Branch, verifiziert Commit und Remote-Inhalt, prüft weitere unabhängige Ready-Arbeit und gibt exakten STOP/Restartpunkt. Kein automatisches Wecken von Chats oder Slack-Verkehr (#162 PAUSED).
 
-- **A** #346/#347/PR #348: offenen Fortsetzungs-/Persistenzbug durch echte, wenn verfügbar unabhängige Frischkontext-Tests falsifizieren; **kein** materieller Implementierungs-GO.
-- **B** #334/PR #335: Archivpaket-/Source-Intake innerhalb vorhandener Authorität fortsetzen; getrennte #271/#282/#280-Rückgaben.
-- **C** #291/PR #290/#341: wissenschaftlicher Methodik-/Quelleneinstieg mit echten Generic-Fit-Gegenproben; keine unautorisierte neue METHOD oder Forschungsscope.
-- **Q** #280/#297: erst nach A/B/C und **als tatsächlicher unabhängiger Review-Kontext**, nicht als Entwickler-Selbsterklärung.
-
-Dieses Dokument ``1–9 definiert den detaillierten Arbeitsvertrag und die Grenzen; die zweite Datei enthält nur die abrufbaren Startaufträge und dupliziert keinen kanonischen Project-, Corpus- oder Requirement-Zustand. Der Human hat bestätigt, dass kein anderer Chat mehr läuft; dies ist ein datierter Dispatch-Hinweis, **kein** dauerhaftes Chat-Liveness-Monitoring. Der Repository-Eintrag startet keinen Chat.
-
-**Status:** nur Entwurf einer owner-gebundenen Disposition. Kein neues `engineering/configuration.json current_focus`, keine D-016-Admission, keine Umsetzung, keine Q-Abnahme oder automatische Chat-Chat-Orchestrierung.
+**Plan-DoD:** bestehende Codechecks/PR-Überlappungen untersucht, testbare und semantische Fehler sauber getrennt, minimaler Red/Green-/Host-Prüfweg festgelegt, überflüssige kopierte Prosa in PR #349 reduziert, GitHub-Schreiben und Remote-Readback bestätigt. **Nicht erledigt:** echte Agent-/Host-Regression, Bug-Fix, neue Runtime, material-admitted Implementierung oder unabhängige Abnahme.
