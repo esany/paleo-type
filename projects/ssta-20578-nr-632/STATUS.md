@@ -1,6 +1,6 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
-Last checkpoint: 2026-10-29
+Last checkpoint: 2026-10-30 (reviewed Nr. 632 content/function and business-process candidate; no independent specialist validation)
 
 ## Research purpose and Project authority
 
@@ -20,7 +20,7 @@ The catalogue record establishes the archival-unit identity and boundary at sign
 
 ## Active scope
 
-**No evidence-selected active scholarly scope is currently established.**
+**No narrower evidence-selected diplomatic/transcription locus or G2–G6 scholarly scope is currently established.** The Human Owner has separately authorized the **bounded research tasks #350, #351 and #352** to characterize the whole archival unit at overview/function, business-process and targeted source-critical depth. These tasks do not constitute a G2 transcription activation or subsequent automatic scope.
 
 The verified provider sequence `0001.jpg`–`0135.jpg` is the current **inspection domain** for source-entry/reconnaissance. Inspection domain is not active scholarly scope, manuscript coverage, a documentary boundary or G2 transcription scope. Scope may narrow, multiply or remain unresolved only after direct evidence supports that move.
 
@@ -84,6 +84,18 @@ A further source-critical delta is the `0094–0116` complex: two 1760 closing b
 
 The pass does not identify every physical carrier. Long sequences such as `0020–0054`, `0055–0071` and `0072–0087` remain partly describable only as overlay/view/text complexes. No canonical internal Source, final documentary segmentation, archival foliation or G2 scope follows.
 
+### Reviewed content/function and business-process results — 2026-10-30
+
+Human-authorized research Issues [#350](https://github.com/esany/paleo-type/issues/350), [#351](https://github.com/esany/paleo-type/issues/351), [#352](https://github.com/esany/paleo-type/issues/352) have produced separate, **AI/source-visible and reviewable provisional research owners**:
+
+- [Content and document-function inventory](research/content-document-function-inventory-2026-10-30.md) — maps the full 0001–0135 PDF/provider-image domain to recognizable written-function zones. The file contains formal Lehnbrief/confirmation texts, diagnostically named `Lehen-Briefs Concept` (0042R), `Revers` (0061R), `Vollmacht` (0069R), `Lehn-Schein` (0071R), petitions/administrative writing, copies and authentication/chancery notes, older represented texts and a large 1781 charter. These are not assumed to be one physical document per image or accepted legal-functional classifications.
+- [Lehns-/administrative process and chronology](research/business-process-chronology-2026-10-30.md) — separates recurring earlier functional zones, a clearer two-1760-petition/copy/possible-presentation complex, texts dated 1678/1679 transmitted in a later copy setting, and late formal instruments dated provisionally 1780/1781. The original image order is **not** a demonstrated historic process order. `1678/1679` are represented **text dates**, not photographed carrier dates. One contiguous whole-case chronology is **not** established.
+- [Targeted source-critical dispositions](research/targeted-source-criticism-2026-10-30.md) — discriminates read titles from legal/diplomatic identification, copy labels from demonstrated concrete template links, and surface observations from material/seal hypotheses. `vorstehende Abschrift`/`Original Supplicat` are evidenced at 0102R; A/B-copy/Originalien reference in 0115L remains provisional in exact extent. No exact photograph-to-photograph original/copy chain is accepted.
+
+**Human visual corrections supersede weaker earlier AI hypotheses:** the `0094–0096/0097 ↔ later Abschriften` Vorlage chain is withdrawn; `0006L` and `0006R` are not one text (possible `0006R↔0007L` front/reverse); `0008L` has dispatch-like folds/closure/address while `0008R` has only a light vertical fold and no obvious letter character; `0131R` contains an additional small sheet obscuring a signature/chancery area, with `0132L` as reverse of the main carrier. `Chur. Für... … Kanzley` is only a fragmentary Human reading; paste/rubbing/seal explanations remain unverified. The one-object correction for `0133–0135` remains in force. The existing [object/view map](research/documentary-object-view-map-2026-10-29.md) was reconciled to these observations without replacing its distinct material ownership.
+
+**Review/evidence ceiling:** exact compact PDF SHA-256 was checked again on 2026-10-30; targeted visually inspected pages 0042, 0061, 0069, 0071, 0102, 0115, 0131. Prior 135-JPEG visual coverage remains the existing #342 observation at its declared lower overview depth; no new complete 135-original inspection, no full transcription or specialist validation is claimed. Unresolved: material object/text boundaries, many names and exact dates, particular Lehnbrief↔Revers relationships, precise A/B and photo-template collation, seal/attachment details and internal Source identities. No G2–G6 gate, new Source, foliation or generic method contract follows.
+
 ## Source-entry route and coverage state
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
@@ -102,13 +114,13 @@ The exact supplied compact PDF now has an additive Source-level digital crosswal
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
 | source-entry reconnaissance | `overview complete; targeted detail + whole-domain object/view pass inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135; object/view 0001–0135 | 135 overview checkpoints, 19 targeted-detail checkpoints and one complete-for-declared-domain object/view checkpoint; the Project map preserves cross-image grouping hypotheses and residuals; relevance remains unresolved and no narrower scope is inferred. |
-| G2–G6 | `not activated` | no active scholarly scope | No G2 diplomatic representation, G3–G6 gate or edition claim is made; short diagnostic readings remain provisional in the Project research note. |
+| content/function/business-process review | `provisional research results available` | whole PDF/provider-image domain 0001–0135 at diagnostic depth, with targeted 2026-10-30 review loci | Three Project research owners linked above, separate from material/view map; Human corrections reconciled; not specialist acceptance or G2. |\n| G2–G6 | `not activated` | no selected G2 transcription/edition scope | No G2 diplomatic representation, G3–G6 gate or edition claim; diagnostic readings remain provisional in the three Project research notes. |
 
 ## NEXT ACTION — canonical restart point
 
-The previously authorized detail pass and the #342 whole-domain object/view reconnaissance are complete at their declared depths. **The next research decision remains open:** no new Human-prioritized scope or large research assignment is inferred from these results. The object/view map now provides a restartable basis for choosing a discriminating follow-up without equating image sequence with document structure. The `0094–0116` copy/authentication complex is a source-supported candidate for later collation because it may discriminate concrete original/copy relations, but it is not thereby selected as Project priority.
+The Human-authorized **#350–#352 research cycle** has produced bounded inventory, business-process and source-critical results in the linked Project research owners, with residual claims explicitly marked. **Their Issue/PR acceptance and closure remain separate from the existence of these research files.** After this authorized review/persistence work, **no successor research priority, transcription/edition target or automatic NEXT ACTION is selected.** Later targeted collation or specialist adjudication requires a concrete reason and correct authority; open uncertainties alone do not activate it.
 
-Preserve the current Project purpose and provider-image/archival-folio/document distinctions. No re-acquisition, OCR/HTR or automatic segmentation is authorized by this checkpoint.
+Preserve Project purpose, direct source evidence, provider-image/archival-folio/document distinctions, and all Human corrections. No re-acquisition, OCR/HTR, automatic segmentation, internal Source generation or generic METHOD/CORPUS implementation is authorized by this checkpoint.
 
 ## Restartability
 
@@ -129,4 +141,4 @@ A fresh capable context must be able to reconstruct without old chat that:
 - a later #342 Work pass directly opened all 135 original JPEGs at object/view reconnaissance depth; its 38-group candidate map is persisted in `research/documentary-object-view-map-2026-10-29.md`, while source-entry stores only the inspection checkpoints;
 - Human review identifies `0133–0135` as different views, including front/reverse, of the same oversized charter, and the new pass adds high-confidence repeated-view evidence linking `0132R` to the same reverse-side surface at `0134L`;
 - the `0094–0116` copy/authentication complex is a candidate for future collation, not an accepted original/copy relation or selected priority;
-- the next research decision remains open.
+- the Human-authorized #350–#352 content/chronology/targeted criticism tasks have separate 2026-10-30 Project research files; Human corrections replace older AI candidate views and are source-referenced;\n- the 1760er copy labels do not establish a photographed template relation, and older text dates do not date copy carriers;\n- a new research decision after the #350–#352 bounded review/persistence cycle remains open.
