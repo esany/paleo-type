@@ -129,9 +129,14 @@ Mappings that remain true independent of Project use belong once under:
 
 `corpus/source-data/<source_id>/`
 
-A typical crosswalk maps `archival_folio ↔ export_image ↔ PDF_page ↔ evidenced provider locator/URN` where those values are actually established.
+Two additive mapping cases are supported under the same Source owner:
 
-Keep only loci assignable to that Source. Adjacent pages in an export outside the evidenced Source boundary remain File coverage/provenance, not forced Source mapping.
+- `crosswalk.tsv` maps `archival_folio ↔ export_image/provider_image ↔ PDF_page ↔ evidenced provider locator/URN` where archival foliation is actually established;
+- `digital-crosswalk.tsv` may map an exact provider-image File to a page of an exact PDF File when that digital correspondence is observed but archival foliation is not yet established.
+
+The second case does **not** weaken or replace the first. It exists to avoid fabricating a folio merely to record a useful digital mapping. If foliation is later established, add the folio evidence through the folio-centred mapping owner; preserve the earlier digital mapping and its evidence basis. When several PDF representations exist, PDF page locators remain bound to the exact File identity whose sequence was inspected.
+
+Keep only mappings assignable to that Source. Adjacent pages in an export outside the evidenced Source boundary remain File coverage/provenance, not forced Source mapping.
 
 Project-relative research function/locus belongs to the Project owner defined by `project-lifecycle.md`, not to the Source crosswalk.
 
