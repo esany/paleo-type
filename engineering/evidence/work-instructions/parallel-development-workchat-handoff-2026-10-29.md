@@ -4,6 +4,24 @@
 
 **Auftrag:** Vorhandene Invarianten prüfen; nur tatsächlich deterministische, mit Tool-/Repository-Daten beobachtbare Defekte im bereits owning Code durch Red/Green-Negativtests absichern. **Keine neuen allgemeinen Prosa-Regeln**, globalen Forms, Workflows, Planner, S0-Schritte oder parallelen Wahrheitsablagen. Sachliche Anforderungen bleiben bei #348 (A), #334/PR #335 (B), #291/PR #290/#341 (C); Gesamtergebnis bei #297/#280. Die vier kurzen Work-Startprompts stehen getrennt unter engineering/evidence/work-instructions/parallel-development-workchat-starts-2026-10-29.md. Keine anderen Chats sind durch diesen Plan gestartet.
 
+## 0. Drei Perspektiven des Human-Intents — keine neuen Systemrollen (2026-10-29)
+
+**Datierte Human-Präzisierung, NICHTNORMATIVER ABGLEICH** mit GOVERNING_OBJECTIVE.md, bestehender METHOD, #225, #292, #297 und methodology/workflow.md. Die nachfolgenden **A/B/C/Q sind Entwicklungs-Workstränge, NICHT diese drei Modi**. Hier wird weder eine neue Architektur noch ein neuer kanonischer Status oder ein automatisch aktives Forschungsprogramm angenommen.
+
+| Perspektive / Modus | Eigenständiges Ergebnis | Wirksamkeitsgrenze |
+| --- | --- | --- |
+| **1. Organisch-technologischer Organismus** | Reale technische Möglichkeiten/Defekte erkennen; die kleinste ausreichende Architektur, Automatisierung, Tool-/Runtime- und Qualitätskontrolle entwickeln. **Code-first** für stabile maschinenprüfbare Invarianten im bestehenden Owner. | Technik muss die Qualität und Nutzbarkeit von **2 und 3** ermöglichen und soweit technisch entscheidbar absichern. Lean **nach** fachlicher Angemessenheit; ein Code-/CI-PASS ist kein fachlicher oder Forschungs-PASS. |
+| **2. Fachlichkeit / domänenspezifisches Erfahrungswissen** | Fachliche Kompetenzen, Methoden, kritisch geprüfte Vergleichserfahrung und transdisziplinäre KI-Assistenz durch Quellenarbeit, aktuelle Forschung und gezielte Gegenproben verbessern. | Methodische Angemessenheit und evidenzgebundene Beurteilung; KI-Fachhilfe ist nicht automatisch unabhängige fachliche Validierung. Keine Verengung auf eine neue Skill-Liste oder technische Feldsemantik. |
+| **3. Konkreter Forschungskontext / Gebrauch** | Eine autorisierte historische Quellenfrage praktisch erforschen: originale Evidenz prüfen, lesen, vergleichen, kritisieren, verstehen, gegebenenfalls edieren. | Quellenbezogenes Ergebnis mit Provenienz, Unsicherheit und angemessener Prüfung. Die Quelle/Fragestellung, nicht die jüngste Technologie, bestimmt die fachlichen Schritte und aktuellen Forschungszwecke. |
+
+**Wechselwirkung, keine Stufenleiter:** Forschungsfälle aus 3 können fachliche Lernbedarfe in 2 oder reproduzierbare Technikdefekte in 1 aufzeigen; 2 kann Anforderungen an 1 geben und Forschung in 3 verbessern; 1 kann neue Möglichkeiten für 2/3 erschließen. Übergänge verwenden die bestehenden Domain→Dev/Dev→Domain-Owner, Generic-Fit, D-016 und echte Wirksamkeits-/fachliche Reviews. Keine neue 3-Modi-Engine, kein weiterer Master-Prompt oder doppelte Wahrheit.
+
+**Steuerung ohne Ersatz-Expertise:** Der nicht-spezialisierte Human Owner bestimmt nur tatsächlich nicht ableitbare Zwecke, Prioritäten, Rechte-/Publikations- und materielle D-016-Entscheidungen. KI/Domain/Dev übernehmen die fachliche und technische Exploration, erzeugen konkurrierende begründete Lösungsoptionen, testen sie mit realen Gegenbeispielen, führen bereits autorisierte Routinearbeit aus und legen nur echte Entscheidungsgrenzen verständlich vor. Nicht nach einem Systemdesign oder Fachurteil fragen, das das System selbst erarbeiten soll.
+
+**Konkrete Fehlertests für alle Workstränge:** (a) zusätzliche Prosa/Schema/Skill ohne diskriminierenden Defekt oder fachlichen Nutzen; (b) technische Simplifizierung verliert eine fachliche Unterscheidung; (c) lokaler Test-/PR-/Form-PASS beansprucht fachliche Kompetenz- oder Forschungsergebnis-Abnahme; (d) erneute Verschiebung der Fach-/Tool-Arbeit zum Human; (e) Erkenntnisse/Resultate verbleiben nur im Chat. Dagegen vorhandene Code-Regressionsprüfung **plus** fachliche Gegenprobe **plus** tatsächliche Forschungs-/Host-Wirksamkeit am jeweils eigenen Owner prüfen. Nicht gelaufene/ungeprüfte Ebenen offenlassen.
+
+**Owner-/Claim-Grenze:** Diese Passage sichert die Human-Intent-Präzisierung zunächst auf dem **Draft-PR-#349-Planungsbranch**. Sie ändert weder GOVERNING_OBJECTIVE.md/METHOD/DECISIONS.md noch D-016, #297 (MAX/P0), Project purpose/priority/NEXT ACTION oder wissenschaftliche Resultate. Main-D-020 ist bereits die präprioritäre Forschungsrichtungsentscheidung; keine neue kollidierende D-020 oder fingierte Admission. Ob eine zusätzliche dauerhafte cross-project Entscheidung trotz bereits vorhandener Owner nötig ist, bedarf separater Generic-Fit-/Owner-Prüfung.
+
 ## 1. Nachgewiesene bestehende Code-Kontrollen
 
 | Aktueller Owner | Technische Wirkung | Nicht durch Code nachgewiesen |
