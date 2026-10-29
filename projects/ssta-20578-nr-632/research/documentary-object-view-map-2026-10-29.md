@@ -22,17 +22,17 @@ Object-candidate IDs below are working identifiers only. Overlap between groups 
 
 ## Context used as K, not manuscript evidence
 
-The inspection tests were informed by the project-specific context gathered in Issue #342:
+External context was checked on **2026-10-29**. It supplies tests, vocabulary and comparison expectations only; it does not establish what is present in Nr. 632.
 
-- Sächsisches Staatsarchiv, Best. 20578 — finding-aid history, archival rearrangement and microfilm/digitization context: https://www.archiv.sachsen.de/archiv/bestand.jsp?bestandid=20578&oid=06.02&syg_id=196773
-- LEO-BW — Urkunden: format, folding, layout, script, seals and dorsal notes as external features: https://www.leo-bw.de/en/themenmodul/sudwestdeutsche-archivalienkunde/archivaliengattungen/urkunden
-- LEO-BW — Briefe im 18. Jahrhundert: folding, address side and closure evidence: https://www.leo-bw.de/en-GB/themenmodul/sudwestdeutsche-archivalienkunde/archivaliengattungen/texte/briefe/briefe-18-jh
-- LEO-BW — frühneuzeitliche Verwaltungs-/Gesandtschaftsakten: exterior address, closure and chancery annotations: https://www.leo-bw.de/fr/themenmodul/sudwestdeutsche-archivalienkunde/archivaliengattungen/akten/inhaltliche-unterscheidung/gesandtschaftsakten-bis-1806
-- Deutsches Rechtswörterbuch — Lehnrevers: https://drw.hadw-bw.de/drw-cgi/zeige?index=lemmata&term=Lehnrevers
-- Same-fonds comparator Best. 20578 Nr. 854, `Gesuch um Belehnung zu gesamter Hand ...`: https://www.archiv.sachsen.de/archiv/bestand.jsp?guid=9c96627c-faf2-4552-bded-dbadbe76b735
+| K-source | Access route / checked | What it supports for this Project | What it does **not** establish |
+|---|---|---|---|
+| Sächsisches Staatsarchiv, Best. 20578 Rittergut Wolkenburg mit Kaufungen, Bestandsgeschichte / Bestandsanalyse | https://www.archiv.sachsen.de/archiv/bestand.jsp?bestandid=20578&oid=06.02&syg_id=196773 — checked 2026-10-29 | The second part of the fonds was initially unordered, loose material was later grouped, the family archive was newly arranged, and the fonds was microfilmed for preservation. This supports separating historical business/document order from later archival arrangement and reproduction order. | It does not establish the original order, documentary boundaries or physical sheet relations inside Nr. 632. |
+| Mark Mersiowsky, `Urkunden`, Südwestdeutsche Archivalienkunde / LEO-BW | https://www.leo-bw.de/en/themenmodul/sudwestdeutsche-archivalienkunde/archivaliengattungen/urkunden — checked 2026-10-29 | Diplomatics distinguishes external features including format, folding, layout, script, sealing and dorsal notes; concepts may show corrections; graphic articulation can emphasize the document opening. This supports using layout/material features as discriminating tests. | It does not prove that any particular Nr. 632 surface is an original, concept, charter or separate document. |
+| Andreas Neuburger, `Gesandtschaftsakten der Frühen Neuzeit (1500-1806)`, Südwestdeutsche Archivalienkunde / LEO-BW | https://www.leo-bw.de/fr/themenmodul/sudwestdeutsche-archivalienkunde/archivaliengattungen/akten/inhaltliche-unterscheidung/gesandtschaftsakten-bis-1806 — checked 2026-10-29 | Early-modern outgoing writings commonly preserve folding, exterior addresses, closure-seal remains and chancery annotations; dossiers can mix concepts, executions, copies and enclosures. This supplies concrete tests for letter/reverse/address/administrative layers. | Nr. 632 is not thereby identified as a Gesandtschaftsakte, and these features do not prove a particular function without direct image evidence. |
+| Deutsches Rechtswörterbuch, `Lehn(s)revers` | https://drw.hadw-bw.de/drw-cgi/zeige?index=lemmata&term=Lehnrevers — checked 2026-10-29 | Defines the Lehn(s)revers as a written acknowledgement of receipt of the fief by the vassal to the lord and gives `Gegenbrief` as a comparison term. This provides a controlled functional comparison for a directly read `Revers` label. | It does not identify the Nr. 632 `Revers` candidate, establish its text, or prove its relation to another photographed item. |
+| Sächsisches Staatsarchiv, Best. 20578 Nr. 854 | https://www.archiv.sachsen.de/archiv/bestand.jsp?guid=9c96627c-faf2-4552-bded-dbadbe76b735 — checked 2026-10-29 | Same-fonds catalogue comparator explicitly titled `Gesuch um Belehnung zu gesamter Hand ...`, dated chiefly 1759–1760. It shows that petition/investiture wording is genuinely present in the same archival environment and is a reasonable comparison category. | Catalogue metadata for Nr. 854 is not manuscript evidence for Nr. 632 and does not identify any Nr. 632 text as that document type. |
 
-These sources generate tests and terminology only. They do not establish what is present in Nr. 632.
-
+The previously cited dedicated LEO-BW page on eighteenth-century letters was not needed for the retained claims after this audit; the verified early-modern administrative-writing source above already supports the concrete folding/address/closure tests. No inaccessible link is required as evidential support here.
 ## Review conclusions before the matrix
 
 1. The run provides complete provider-image coverage at an object/view reconnaissance depth, but **not complete identification of every physical carrier**.
