@@ -51,7 +51,7 @@ Catalogue/provenance facts currently established:
 
 A complete controlled external OneDrive package has been independently re-verified at package level: 135/135 JPEGs are present in exact `0001.jpg`–`0135.jpg` sequence, package/manifests report complete state, and all 135 JPEG byte checks pass against the persisted checksum inventory. No re-acquisition was used or is warranted merely to reproduce that verification.
 
-**Canonical exact-File population is now complete for the primary provider images.** `corpus/files.tsv` contains one byte-exact File identity per JPEG, with the manifest SHA-256, `external-controlled` storage, truthful rights wording and provider-image-only locator semantics. The full PDF and compact PDF are retained as separate derivative working representations in the controlled package; they are not used as substitutes for the JPEG File identities, and no unsupported parent/derivative relation is asserted in the current contract.
+**Canonical exact-File population is complete for the primary provider images.** `corpus/files.tsv` contains one byte-exact File identity per JPEG, with the manifest SHA-256, `external-controlled` storage, truthful rights wording and provider-image-only locator semantics. On 2026-10-29 the Human supplied the 135-page compact PDF to the active research context; that exact byte sequence is now separately registered as `FILE-SSTA-20578-NR632-COMPACT-PDF-20261029` (SHA-256 `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`). It remains a convenience/working instantiation, not a substitute for the JPEG File identities. No byte-identity claim is made for any other compact/full PDF copy in the external package without separate hash verification, and no unsupported parent/derivative relation is asserted.
 
 Rights/authority basis:
 
@@ -92,6 +92,10 @@ The canonical source-entry owner contains 135 exact-locator overview checkpoints
 
 During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
 
+### Digital locator crosswalk — 2026-10-29
+
+The exact supplied compact PDF now has an additive Source-level digital crosswalk at `../../corpus/source-data/SSTA-ARCHIVIALE-EDD69AA1/digital-crosswalk.tsv`. It records the observed one-to-one correspondence between the 135 exact provider JPEG Files and PDF pages 1–135. This is **digital-instantiation mapping only**: it does not establish archival foliation, material-object boundaries, documentary-unit boundaries or internal Source identity. The existing folio-centred crosswalk model remains unchanged for Sources where archival folios are evidenced. If Nr. 632 foliation is later established, that is added as separate folio evidence rather than inferred from numeric coincidence.
+
 ## Generic gate state
 
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
@@ -118,6 +122,7 @@ A fresh capable context must be able to reconstruct without old chat that:
 - declared overview coverage is 135/135; this is not detail, transcription or full-resolution reading coverage;
 - controlled external package existence/integrity and research-use authority are established;
 - exact per-JPEG canonical File identities, Project-use evidence bindings and overview coverage records are present for all 135 provider images;
+- the exact Human-supplied 135-page compact PDF is separately registered and Project-use-bound; its digital crosswalk maps PDF pages 1–135 to provider-image Files 0001–0135 without asserting archival folios;
 - overview `relevance_status` remains `UNRESOLVED` because visible documentary/material cues do not by themselves establish narrower scholarly relevance;
 - no re-acquisition is authorized merely to reproduce existing package verification;
 - the authorized detail pass has been performed for `0098–0107` and `0130–0135`, with controls `0097`, `0108` and `0129`;
