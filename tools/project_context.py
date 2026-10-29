@@ -102,6 +102,11 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
         for source_id in sorted(used_source_ids)
         if source_id in cache["crosswalks"]
     ]
+    digital_crosswalk_paths = [
+        f"corpus/source-data/{source_id}/digital-crosswalk.tsv"
+        for source_id in sorted(used_source_ids)
+        if source_id in cache["digital_crosswalks"]
+    ]
 
     return 0, {
         "status": "OK",
@@ -128,6 +133,7 @@ def compile_project_context(root: Path, project_id: str) -> tuple[int, dict]:
             "source_ids": sorted(used_source_ids),
             "file_ids": sorted(evidence_file_ids),
             "crosswalk_paths": crosswalk_paths,
+            "digital_crosswalk_paths": digital_crosswalk_paths,
         },
         "project_definition": project,
         "documentary_anchor": cache["sources"].get(root_id),
