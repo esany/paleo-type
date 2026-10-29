@@ -1,6 +1,6 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
-Last checkpoint: 2026-10-28
+Last checkpoint: 2026-10-29
 
 ## Research purpose and Project authority
 
@@ -74,11 +74,21 @@ Closing and formal opening configurations support provisional textual transition
 
 These are AI-assisted, source-visible working findings with the stated Human-Owner correction; they are not independent specialist validation. Remaining ceilings include exact material attachment and seal count/identity, unresolved readings, and the broader internal documentary structure beyond the corrected 0133–0135 object identity. No complete internal segmentation, reliable archival foliation, hand identification or selected G2 transcription locus follows.
 
+### Whole-domain documentary-object / view reconnaissance — 2026-10-29
+
+Issue #342 has now supplied a direct-original, whole-domain object/view pass across provider images **0001–0135**. The Work context visually opened all 135 controlled original JPEGs and reported SHA-256 agreement with the current File register; images were mostly viewed scaled with selected detail enlargements. The Fachchat review accepts this as source-visible AI research at the declared depth, not as independent specialist validation.
+
+The durable Project map is [documentary-object / view structure map](research/documentary-object-view-map-2026-10-29.md). It records 38 overlapping working groups to keep material-object/view hypotheses distinct from provider-image numbering and from canonical Source identity. Strong repeated-view evidence now includes `0003/0004`, `0011/0012`, `0013/0014`, `0103/0104`, `0122/0123` and `0132R/0134L`. The latter extends the already Human-corrected oversized-charter view complex `0133–0135` by identifying `0132R` as the same reverse-side surface with high confidence.
+
+A further source-critical delta is the `0094–0116` complex: two 1760 closing blocks can be compared with later passages provisionally read as `vorstehende Abschrift` / `Original Supplicat`; a subsequent writing apparently refers to both 1760 dates; and the older `0109–0115` complex includes a provisional note referring to two `Abschriften` A/B and `Originalien`. These readings make transmission-stage and business-context relationships testable, but **do not establish which concrete photographed text is the exact original/template for which copy**. That requires independent reading/collation.
+
+The pass does not identify every physical carrier. Long sequences such as `0020–0054`, `0055–0071` and `0072–0087` remain partly describable only as overlay/view/text complexes. No canonical internal Source, final documentary segmentation, archival foliation or G2 scope follows.
+
 ## Source-entry route and coverage state
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
 
-The canonical source-entry owner contains 135 exact-locator overview checkpoints and 19 separate targeted detail checkpoints in `../../source-entry/inspection-coverage.tsv`, bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate; each checkpoint retains its depth and claim ceiling.
+The canonical source-entry owner contains 135 exact-locator overview checkpoints, 19 targeted-detail checkpoints, and **one whole-domain object/view-reconnaissance checkpoint** for provider images 0001–0135 in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. The single domain checkpoint is deliberate: exact per-image File identities and earlier per-image overview coverage already exist, while the new pass has one homogeneous purpose/depth/claim ceiling across the declared domain. Cross-image grouping, readings and documentary-function hypotheses remain Project research state rather than coverage truth.
 
 During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
 
@@ -87,12 +97,12 @@ During any further direct reconnaissance, each durable coverage record must cont
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
-| source-entry reconnaissance | `overview complete; targeted detail inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135 | 135 overview and 19 separate detail checkpoints; boundary hypotheses and residuals in the Project research note; relevance remains unresolved and no narrower scope is inferred. |
+| source-entry reconnaissance | `overview complete; targeted detail + whole-domain object/view pass inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135; object/view 0001–0135 | 135 overview checkpoints, 19 targeted-detail checkpoints and one complete-for-declared-domain object/view checkpoint; the Project map preserves cross-image grouping hypotheses and residuals; relevance remains unresolved and no narrower scope is inferred. |
 | G2–G6 | `not activated` | no active scholarly scope | No G2 diplomatic representation, G3–G6 gate or edition claim is made; short diagnostic readings remain provisional in the Project research note. |
 
 ## NEXT ACTION — canonical restart point
 
-The previously authorized detail pass is complete at the depth and locators described above. **The next research decision remains open:** no new Human-prioritized scope or large research assignment is inferred from the result. The former 0133/0135 comparison question is withdrawn because Human review identifies 0133–0135 as different views, including front/reverse, of the same oversized charter. No replacement priority is inferred from this correction.
+The previously authorized detail pass and the #342 whole-domain object/view reconnaissance are complete at their declared depths. **The next research decision remains open:** no new Human-prioritized scope or large research assignment is inferred from these results. The object/view map now provides a restartable basis for choosing a discriminating follow-up without equating image sequence with document structure. The `0094–0116` copy/authentication complex is a source-supported candidate for later collation because it may discriminate concrete original/copy relations, but it is not thereby selected as Project priority.
 
 Preserve the current Project purpose and provider-image/archival-folio/document distinctions. No re-acquisition, OCR/HTR or automatic segmentation is authorized by this checkpoint.
 
@@ -110,4 +120,8 @@ A fresh capable context must be able to reconstruct without old chat that:
 - exact per-JPEG canonical File identities, Project-use evidence bindings and overview coverage records are present for all 135 provider images;
 - overview `relevance_status` remains `UNRESOLVED` because visible documentary/material cues do not by themselves establish narrower scholarly relevance;
 - no re-acquisition is authorized merely to reproduce existing package verification;
-- the authorized detail pass has been performed for `0098–0107` and `0130–0135`, with controls `0097`, `0108` and `0129`; the next research decision is open; Human review corrects the earlier AI hypothesis by identifying `0133–0135` as different views, including front/reverse, of the same oversized charter.
+- the authorized detail pass has been performed for `0098–0107` and `0130–0135`, with controls `0097`, `0108` and `0129`;
+- a later #342 Work pass directly opened all 135 original JPEGs at object/view reconnaissance depth; its 38-group candidate map is persisted in `research/documentary-object-view-map-2026-10-29.md`, while source-entry stores only the inspection checkpoints;
+- Human review identifies `0133–0135` as different views, including front/reverse, of the same oversized charter, and the new pass adds high-confidence repeated-view evidence linking `0132R` to the same reverse-side surface at `0134L`;
+- the `0094–0116` copy/authentication complex is a candidate for future collation, not an accepted original/copy relation or selected priority;
+- the next research decision remains open.
