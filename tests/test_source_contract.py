@@ -34,7 +34,7 @@ def read_tsv(path: Path) -> list[dict[str, str]]:
 class CurrentRepositoryRegressionTests(unittest.TestCase):
     def test_current_repository_validates_project_use_state(self) -> None:
         contract = source_contract.load_contract(REPO)
-        self.assertEqual(8, contract["version"])
+        self.assertEqual(9, contract["version"])
         errors, _, cache = source_contract.validate(REPO, contract)
         self.assertEqual([], errors)
         self.assertFalse(cache["project_sources"])
@@ -44,7 +44,7 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
         nr632_files = [
             row
             for row in read_tsv(REPO / "corpus" / "files.tsv")
-            if row["source_id"] == "SSTA-ARCHIVIALE-EDD69AA1" and row["filename"].endswith(".jpg")
+            if row["source_id"] == "SSTA-ARCHIVIALE-EDD69AA1"
         ]
         nr632_evidence = [
             row
@@ -53,7 +53,12 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
             )
             if row["use_id"] == "USE-SSTA-20578-NR632-ROOT"
         ]
-        self.assertTrue(nr632_files)
+        self.assertEqual(136, len(nr632_files))
+        self.assertEqual(135, sum(row["filename"].endswith(".jpg") for row in nr632_files))
+        self.assertIn(
+            "FILE-SSTA-20578-NR632-COMPACT-PDF-20261029",
+            {row["file_id"] for row in nr632_files},
+        )
         self.assertEqual(
             {row["file_id"] for row in nr632_files},
             {row["file_id"] for row in nr632_evidence},
