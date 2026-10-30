@@ -112,17 +112,17 @@ The following is a **source-grounded line-address and partial-reading ledger**, 
 
 | Local physical line | Visually supported partial reading / attempt | Remaining limit |
 |---|---|---|
-| `0102L-A01` | `[Briefe?], in ⟦attempted, unresolved⟧` | Initial whole word only tentative; top of written field. |
-| `0102L-A02` | `⟦attempted, unresolved⟧ [Gnaden?]` | Last word a graphic hypothesis only. |
+| `0102L-A01` | `[Briefe?], in [Ew.?]` | Initial whole word only tentative; top of written field. |
+| `0102L-A02` | `[Ew.?] Gnaden` | Last word a graphic hypothesis only. |
 | `0102L-A03` | `zu [bekommen?]` | Source-near partial phrase; precise letters of verb uncertain. |
 | `0102L-A04` | `[verdienet?] ⟦attempted, unresolved⟧` | Word division, ending unresolved. |
 | `0102L-A05` | `⟦attempted, unresolved⟧` | Distinct ink baseline, no responsibly secured complete word. |
 | `0102L-A06` | `⟦attempted, unresolved⟧ [Lehn-?]` | Do not infer a legal act from a lexical possibility. |
 | `0102L-A07` | `[und?] [Lehn-?] ⟦attempted, unresolved⟧` | Ending/line division unconfirmed. |
-| `0102L-A08` | `⟦attempted, unresolved⟧` | Long leftward entry flourish and loop are not automatically letters. |
-| `0102L-A09` | `⟦attempted, unresolved⟧ [zu?]` | Final group requires grapheme check. |
-| `0102L-A10` | `⟦attempted, unresolved⟧` | Do not assimilate to A09/A11 on syntax. |
-| `0102L-A11` | `[Dresden?] [und?]` | Both lexemes provisional, not a place identification. |
+| `0102L-A08` | `[Briefe?] ⟦visible continuation unresolved⟧` | Long leftward entry flourish and loop are not automatically letters. |
+| `0102L-A09` | `[vorzeigen?] ⟦visible continuation unresolved⟧` | Final group requires grapheme check. |
+| `0102L-A10` | `lassen[.?]` | Do not assimilate to A09/A11 on syntax. |
+| `0102L-A11` | `[derselbe?] und` | Both lexemes provisional, not a place identification. |
 | `0102L-A12` | `⟦attempted, unresolved⟧ [ich?] [in?]` | No accepted continuous syntax. |
 | `0102L-A13` | `⟦attempted, unresolved⟧` | Distinct baseline; visible text not adjudicated. |
 | `0102L-A14` | `⟦attempted, unresolved⟧` | Distinct baseline; overlapping descenders. |
@@ -145,8 +145,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0104R-A02` | `[gewesener?] [erster?] Chur-` | Last part and physical line-end stroke visible; opening uncertain. |
 | `0104R-A03` | `Marschall, ⟦attempted, unresolved⟧` | `Marschall` comparatively positive; trailing group not named. |
 | `0104R-A04` | `George [Ernst?] von ⟦attempted, unresolved⟧` | Name-like words as partial graphemic candidates; no person identification or hand equation. |
-| `0104R-A05` | `⟦attempted, unresolved⟧` | Several words visible, no responsibly established full word sequence. |
-| `0104R-A06` | `[verstorbener?] Vater,` | First adjective still uncertain; do not deduce kinship from language. |
+| `0104R-A05` | `⟦first visible group unresolved⟧ mein [seelig?]` | Several words visible, no responsibly established full word sequence. |
+| `0104R-A06` | `verstorbener Vater,` | First adjective still uncertain; do not deduce kinship from language. |
 | `0104R-A07` | `welcher am 17. [ten?] des` | Graph of numeral ending unclear; **not** resolved by expected date formula. |
 | `0104R-A08` | `Monaths Januar: h. a.` | Working visible final line; punctuation/abbreviated `h. a.` remain literal, unexpanded. |
 | `0104R-E01` | `⟦visible narrow right-edge writing, not yet line-indexed/read⟧` | Partly overlaid separate strip; not a continuation or source-level gap verdict. |
@@ -159,3 +159,126 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 **Exact continuation in the authorized work:** in the *same owner*, (1) native original JPEG `IMG0102` left writing field: test physical A01–A16 boundaries and high-yield fragments, including overlapping descenders; (2) `IMG0104` full right field: discriminate `H01–H03` date/title and `A02–A08` against line-internal letterforms; (3) explicitly account for right-edge `E01` and check `0103R↔0104R` repetition against `IMG0103`; (4) continue to remaining separate already authorized local regions, not a new planning task. Results stay working/candidate until graphically verified. No independent source-witness collation, full PDF, G2 pass, G5/G6 or public image rights are implied.
 
 **AI provenance:** GPT-6 direct examination of the stated embedded original scans, non-generative crops, 2026-10-30; source is the same archival-unit image data, not independent testimony.
+
+
+## Native-resolution continuation and corrections — 2026-10-30 (T2/S3 with local S4 checks)
+
+**Fresh inspected bytes:** Sächsisches Staatsarchiv Leipzig, 20578 Nr. 632 / Source `SSTA-ARCHIVIALE-EDD69AA1`. This pass extracted and directly viewed the single embedded JPEG per page from the **full-size**, 135-page working PDF `/1704-1781-SStA_20578_Nr632_Lehn_zu_gesamter_Hand_Knau.pdf`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, for **PDF pp. 71–72, 101–107**. Specifically `0102` is 4324×3880, `0104` and `0107` 4310×3891, `0105` 4318×3885, and `0106` 4318×3884 pixels. The registered *compact* 135-page PDF has separately been freshly hash-verified as `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`. **No separately registered `IMGxxxx` original-JPEG file was byte-verified in this pass**: these are directly studied embedded photographic JPEGs, not a claim to have reopened the external OneDrive package. No OCR/HTR, content generation, external text, or specialist validation. Provider-image number/PDF-page number and local L/R area are **not archival foliation**; the document's own physical manuscript page number remains unresolved.
+
+**Correction to earlier first-pass ledger, against native higher-resolution pixels:** `0102L` A01 and A02 now preserve the observed address-like `Ew` group (still uncertain in A01/A02); A08–A09 now carry only graphically conceivable `Briefe` and `vorzeigen` candidates; A10 is a visible `lassen` candidate; crucially, previously guessed **`[Dresden?]` at 0102L-A11 is NOT supported** and is replaced by `[derselbe?] und`. This is a real falsification of a former semantic/silhouette reading, not added confidence by repetition. `0104R-A05–A06` now preserve `mein [seelig?] / verstorbener Vater,` rather than an entire empty row. The six edited rows above are the **canonical revised entries**; this paragraph is decision history, not a second live text. `0102L` remains incompletely transcribed: neither the 16-slot earlier segmentation nor the unsettled lines A04–A07/A12–A16 are certified by this local pass. `0104R-E01` is directly inspected as a **narrow strip of clipped terminal fragments of a different, partly overlaid writing plane**, at the right of 0103R/0104R and still repeated in later views. A `06.`-like small group is present low in the strip but **not unambiguously a date or independent main-text token**. There is no responsible continuous reading or full physical-line count from this sliver; it must be re-exposed on a less covered view, not filled from the running petition.
+
+**Crucial source/view test:** 0104R's title/main opening is physically the better-exposed alternative to narrow 0103R; it is **not** transcribed twice. The written 0104R A07/A08 joins lexically with 0105L, and 0105R A17 with 0106L A01, but these are *provisional textual joins*, not material identity or same-hand claims. 0106R's lower attestation continues in the more legible 0107L photograph; **it is a distinct local written occurrence** with date `8. July 1760`, not a silent copy/paste of the earlier 0102R→0103L attestation dated `16. April 1760`.
+
+**Conventions:** each row records a physically distinguished baseline **within that local, named region** at full PDF-embedded scan resolution. `[...]`/`?` = visible candidate not yet certified; `⟦...⟧` = ink attempted but unable to be read responsibly; neither means editorial supply or a claim of source-intrinsic illegibility. D/B/C regions have their own line order and must not be linearized into the main A sequence. Hyphen is retained only at observable or strongly suggested manuscript line ends, and remains provisional where the stroke is uncertain. The existing research owner remains canonical; this is *not* a second manually maintained PDF reading.
+
+### 0105L — exposed left-hand continuation of the 0104R running text
+
+| Physical writing line | Source-near diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0105L-A01` | `dieses Zeitliche geseg-` | final sequence graphically tested against following line; no expansion |
+| `0105L-A02` | `net, und [nachbezeich-?]` | line-initial continuation positive; internal letters second word uncertain |
+| `0105L-A03` | `[bene?] von Ihme beses-` | first group candidate continuation of A02, not supplied |
+| `0105L-A04` | `sene, und von Ew:` | possible `Ew:` superscript/abbreviation left unexpanded |
+| `0105L-A05` | `Königl: Majts: zu Lehen` | running text; abbreviations retained |
+| `0105L-A06` | `rührende Güther, [nem-?]` | end may continue into short A07 |
+| `0105L-A07` | `lich:` | isolated short written continuation, not a paragraph marker supplied by editor |
+| `0105L-A08` | `das Erb-Lehen-Guth` | strong text group, source division as seen |
+| `0105L-A09` | `[Wersdorff?],` | place-name graphically candidate, no identification |
+| `0105L-A10` | `und` | isolated separate left-positioned short baseline |
+| `0105L-A11` | `das Mann- und Wei-` | physical terminal hyphen |
+| `0105L-A12` | `ber Lehen-Guth,` | continuation; sibilants/`e` under review |
+| `0105L-A13` | `Knau und [Pabren?],` | last name graphically uncertain; not normalized to a gazetteer form |
+| `0105L-A14` | `auch mich und meinen` | positive sequence, final n strokes need grapheme control |
+| `0105L-A15` | `Brüdern, [⟦name-like group unresolved⟧]` | do not deduce personal identity |
+| `0105L-A16` | `Kindern, Herrn [Adolph?]` | proper-name letters remain candidates |
+| `0105L-A17` | `Carl Marschall von [⟦name-part unresolved⟧]` | writing partly crowded at right |
+| `0105L-A18` | `[⟦opening group unresolved⟧], pro individuo` | Latin expression seen, preceding word not certified |
+
+### 0105R — separately exposed facing running text, direct native-pixel attempt
+
+| Physical writing line | Source-near diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0105R-A01` | `[verfallet?] hat; [⟦short transition uncertain⟧]` | first predicate and short final group uncertain |
+| `0105R-A02` | `[fordert?] meine Pflicht,` | `fordert` or verbal continuation needs control against A01; no semantic supply |
+| `0105R-A03` | `schuldigster Gehorsam` | strong positive graphic reading |
+| `0105R-A04` | `der [respective?] Lehn und` | spelling/endings uncertain; keep as visible rather than normalize |
+| `0105R-A05` | `gesamten Hand, an` | positive word-sequence |
+| `0105R-A06` | `diesen beyden Güthern` | positive word-sequence |
+| `0105R-A07` | `Folge zu thun, welches` | positive word-sequence |
+| `0105R-A08` | `mich in Allerunter-` | visible physical word division |
+| `0105R-A09` | `thänigkeit hierdurch be-` | continued word at physical line end |
+| `0105R-A10` | `[werkstellige?]; Und` | middle consonants uncertain |
+| `0105R-A11` | `an Ew: Königl: Majts:` | abbreviated forms retained |
+| `0105R-A12` | `gelanget mein aller-` | written division |
+| `0105R-A13` | `gehorsamstes Bitten,` | positive group |
+| `0105R-A14` | `allerhöchst Dieselben` | positive group |
+| `0105R-A15` | `wollen allergnädigst` | positive group |
+| `0105R-A16` | `geruhen, mich zur` | positive group |
+| `0105R-A17` | `Leistung der schuldig-` | line-end division into 0106L A01 is a text-join candidate, not proof same physical leaf |
+
+### 0106L — written left continuation, first source-near diplomatic reading
+
+| Physical writing line | Source-near diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0106L-A01` | `gen des Huldigungs-` | visual continuation from 0105R A17; boundary and suffix checked at full resolution |
+| `0106L-A02` | `und Lehens-Pflicht, zu` | source compound/abbreviation must not be expanded |
+| `0106L-A03` | `admittiren und mir` | positive sequence; Latin-derived form as written |
+| `0106L-A04` | `so dann, nicht nur` | spacing/stop provisional |
+| `0106L-A05` | `die Lehen an [⟦word(s) before be- uncertain⟧]` | ending seen; preceding group cannot be accepted |
+| `0106L-A06` | `melten Erb-Lehen-` | line division visible; relation to A05 provisional |
+| `0106L-A07` | `Guthe [Wersdorff?], und` | proper-name reading uncertain, internal comparison only |
+| `0106L-A08` | `dem Mann- und` | positive sequence |
+| `0106L-A09` | `Weiber-Lehen-Guthe` | positive sequence |
+| `0106L-A10` | `Knau und [Pabren?],` | second proper noun uncertain in this line too |
+| `0106L-A11` | `samt deren Zugehö-` | line-end division |
+| `0106L-A12` | `rungen, zu meinen` | line-initial continuation |
+| `0106L-A13` | `[Vortheile?] [reichen?],` | words difficult and subject to falsification; no legal interpretation accepted |
+| `0106L-A14` | `sondern auch denen` | positive sequence |
+| `0106L-A15` | `[sämtlichen?] [angezo-?]` | two graph candidates, not certified |
+| `0106L-A16` | `[⟦visible groups unresolved⟧] meines Herrn` | middle text attempted, no formula-completion |
+| `0106L-A17` | `Bruders [⟦several visible groups unresolved⟧]` | end of exposure and letter segmentation to be rechecked |
+
+### 0106R — main right text, date and subscriptions kept as different regions
+
+| Physical writing line | Source-near diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0106R-A01` | `[Antheilen?] inhalts deren` | first word uncertain |
+| `0106R-A02` | `Lehn-Briefe, in hohen` | first/second group graphically supported |
+| `0106R-A03` | `Gnaden bekommen, [deren?]` | ending questionable |
+| `0106R-A04` | `bey [gewöhnliche?] Lehn-` | declension and h/n unresolved |
+| `0106R-A05` | `Scheine ertheilen, und` | running sequence |
+| `0106R-A06` | `die Lehn-Briefe aus-` | line-ending mark visible |
+| `0106R-A07` | `fertigen zu lassen;` | strong source-near reading |
+| `0106R-A08` | `Dafür ich in Pflicht-` | physical division |
+| `0106R-A09` | `schuldigster Treue Zeit-` | physical division; `Zeit` graph remains inspectable |
+| `0106R-A10` | `Lebens verharren werde,` | positive sequence |
+| `0106R-A11` | `Ew: Königl: Majts:` | separate enlarged dedicatory line |
+| `0106R-D01` | `Dresden` | separately placed date group, left of subscription |
+| `0106R-D02` | `am 3. Julii,` | source date; not year of paper |
+| `0106R-D03` | `1760.` | separate third physical date line |
+| `0106R-B01` | `allerunterthänigst` | right-positioned subscription |
+| `0106R-B02` | `gehorsamster` | right-positioned subscription |
+| `0106R-B03` | `Johann [George?] Friedrich` | name-like script, middle word uncertain |
+| `0106R-B04` | `[Fr:?] von [Einsiedel?].` | abbreviation and surname graphic hypothesis only; no person identification |
+| `0106R-C01` | `Daß vorstehende Abschrifft mit dem` | separate *fainter* attestation main line, not a continuation of petition |
+| `0106R-C02` | `bey der Königl: Pohl: und Churfürstl:` | faint original writing, abbreviations left literal |
+| `0106R-C03` | `[Sächßl:?] [⟦faint continuation unresolved⟧]` | continuation needs 0107L scan; faint is not automatically illegible |
+
+### 0107L — original-image continuation of 0106R lower attestation
+
+| Physical writing line | Source-near diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0107L-A01` | `[Sächßl.?] Cantzley vorhandenen` | starts as continuation of 0106R C03, not independently certified document |
+| `0107L-A02` | `original Supplicat gleichlau-` | visible physical break |
+| `0107L-A03` | `tend; Solches wird unter dem Kö-` | continuation; terminal abbreviation uncertain |
+| `0107L-A04` | `nigl: und Churfürstl: Cantzley Se-` | visible hyphen or divide stroke; `Cantzley` source spelling |
+| `0107L-A05` | `cret hierdurch attestirt. Signat.` | spatially continuous; `Secret` split over lines |
+| `0107L-A06` | `Dresden am 8. July 1760.` | written date; no inference of photographic carrier age |
+| `0107L-B01` | `Königlich Pohlnische und Churfürstlich Sächßische` | separate display/chancery line partly behind dark circular impression |
+| `0107L-B02` | `Cantzley.` | second centred display line |
+| `0107L-C01` | `[H: F:?] von [⟦surname uncertain⟧]` | handwritten large subscription below imprint, no reliable person ID |
+| `0107L-D01` | `[Joh:?] Benedict [Lehmann?]` | far-lower small line; partial name-like candidate, independent of 0103L D01 |
+
+**Quality/disposition:** New full-resolution line-by-line visual work covers `0105L` (18 local lines), `0105R` (17), `0106L` (17), `0106R` (21 across main/date/subscription/attestation) and `0107L` (10 across attestation, separate chancery lettering, large and lower subscription), **83 locally indexed physical writing lines**; these are **working readings**, not 83 certified lines. The central continuous petition is substantially readable; proper names, some prepositions/consonant runs, the 0102L left field and physically hidden edge strips remain open. The 0107L seal-like impression and nearby cord/rotated cover visible in 0107R are observed **material/graphic phenomena**, not safely identified seals, hands or extra text lines. The finer A-line division in 0106L may require adjustment on specialist reinspection. All 83 new rows are **new working observations at their specific photo loci**, not an accepted whole-unit transcript or independent palaeographic corroboration. No G2/G3/G4/G5/G6 claim; no internal derived PDF release.
+
+**Exact next source action:** resolve `0102L-A04–A07/A12–A16` from native 0102 image and controlled `IMG0102` where accessible; align the undecided 0106L-A13–A17 continuation against 0106R-A01; compare the 0106R lower faint attestation and 0107L-A01 in a joint crop; then advance to the next distinct visible source region past 0107 while preserving the right-edge overlay as a separate unattempted reading problem. Do not normalize names from context or treat recurrence in the same archive as independent witness evidence.
