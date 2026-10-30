@@ -96,6 +96,14 @@ Human-authorized research Issues [#350](https://github.com/esany/paleo-type/issu
 
 **Review/evidence ceiling:** exact compact PDF SHA-256 was checked again on 2026-10-30; targeted visually inspected pages 0042, 0061, 0069, 0071, 0102, 0115, 0131. Prior 135-JPEG visual coverage remains the existing #342 observation at its declared lower overview depth; no new complete 135-original inspection, no full transcription or specialist validation is claimed. Unresolved: material object/text boundaries, many names and exact dates, particular Lehnbrief↔Revers relationships, precise A/B and photo-template collation, seal/attachment details and internal Source identities. No G2–G6 gate, new Source, foliation or generic method contract follows.
 
+### Bounded direct-transcription experiments — 2026-10-30 (review candidates, no G2 activation)
+
+A failed first PDF-to-text attempt and subsequent **partial experimental re-readings** are recorded with source locators, uncertainties, error diagnosis, and learning dispositions in [iteration 2 experiment](research/direct-transcription-experiment-iteration-02-2026-10-30.md) and [iterations 3–4](research/direct-transcription-iterations-03-04-2026-10-30.md). The latter note is the owning Project **candidate** for the short 0102R→0103L attestation continuation (seven working main-text lines plus isolated `102R-K01 supplicat` as a **possible Kustode**, not a confirmed additional word). Neither research note is a canonical G2 transcription or independent palaeographic/specialist validation.
+
+Practical documented corrections: the first attempt confused microfilm frame counters with the already verified PDF-page/provider-image crosswalk; image-by-image reading missed known repeated views and material overlaps; incomplete/unattempted text had been confused with illegibility. These are applications of **existing** Source/Provenance, S2/S3/transcription and Learning rules, not evidence for a new method, software requirement or automatic scholarly scope. An integrated line/region/variation viewer remains a tooling *candidate*, not admitted development. The previous 0094–0097↔later-copy chain remains withdrawn. The downloadable experimental PDFs remain derived presentation outputs external to canonical repository truth, so future work must recover candidate readings from the linked research notes and recheck exact controlled source images.
+
+**Status unchanged:** no source-wide G2 representation, no G2–G6 gate, no new archival foliation, no accepted original-copy identity and no successor scholarly NEXT ACTION. This section is restart/navigation and result classification only.
+
 ## Source-entry route and coverage state
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
