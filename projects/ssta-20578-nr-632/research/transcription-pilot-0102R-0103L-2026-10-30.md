@@ -790,3 +790,165 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0120R-A16` | `Königl: Hoheit [⟦line end⟧]` | positive fragments and marked unresolved ink, working |
 
 **Quality/ceiling:** 67 newly addressed photo-local line/mark slots, NOT a claim of as many fully deciphered source lines. No complete G2, qualified palaeography adjudication, same-hand assertion or source-wide PDF. **Next immediate physical source:** read 0117L running field and the 0120R continuation on 0121, revisiting 0102L and 0104R edge slivers as graphics permit.
+
+
+## Source-first diplomatic reading, 0121–0124; repeated exposures 0122/0123 (2026-10-30)
+
+**Actual primary-image inspections:** full-size 135-page working PDF, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`; embedded single photographic JPEG for provider/PDF images **0121, 0122, 0123, 0124** extracted to native 4304–4324 px raster and visually examined as separate L/R source regions. No OCR/HTR or generative restoration; not a separate reopening of independently registered provider original JPEG File bytes. Source `SSTA-ARCHIVIALE-EDD69AA1`. Local region names are photographic, not historic folia.
+
+**S2 view test/phenomena:** the right-hand petition writing in **0122R and 0123R is a duplicate photographed surface** at materially similar positions with the same overwritten word groups; it is indexed/transcribed **only at 0122R**. The 0123L picture largely hides the right side of the previously more fully visible 0122L text, by an overlying leaf. That is complementary/obscured exposure, **not a distinct independent copy**. Images 0121R and 0124R each have visible cancellations in the decorated address/title or text body; they must not be regularized away. Written dates `3. August 1764.` (0122L) and `7. Novbr. 1763.` (0124L) are text-internal events, not photographic carrier dating. Source chronology cannot be simply read off PDF image order.
+
+**Line notation/epistemic boundary:** plain words are positive source-near working readings; `⟦...⟧` is observed ink partially untranscribed, not physical manuscript gap or editorially supplied words; square-bracket words are tentative. The original spellings and physical line breaks remain visible as working representations. The heavily struck-through title on 0121R remains distinct from the replacement text, not silently deleted from the scientific transcription; exact crossed-out letters still need a graph-level pass. No independent scholar or G2 certification.
+
+### 0121L — local physical line ledger
+
+| Local physical line | Working source-near written text | Evidential state |
+|---|---|---|
+| `0121L-A01` | `Höchst dieselben wollen in hohen Gnaden geruhen, mich` | direct working reading; uncertainty retained |
+| `0121L-A02` | `zu Leistung der schuldigen Verpflichtung und Lehn-` | direct working reading; uncertainty retained |
+| `0121L-A03` | `Pflicht zu admittiren, und sodann` | direct working reading; uncertainty retained |
+| `0121L-A04` | `an diesen Mann- und Weiber Lehn-Guthe Knau` | direct working reading; uncertainty retained |
+| `0121L-A05` | `nebst Zubehör, samt Zugehörungen` | direct working reading; uncertainty retained |
+| `0121L-A06` | `mir die Lehen zu meinen Antheil, nebst der Lehn-` | direct working reading; uncertainty retained |
+| `0121L-A07` | `Briefe ertheilen, auch die gesammte Hand zu ver-` | direct working reading; uncertainty retained |
+| `0121L-A08` | `[⟦middle⟧] zum Besitz und Genuß` | direct working reading; uncertainty retained |
+| `0121L-A09` | `der Lehn-Brief [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0121L-A10` | `Ew: Königl: Hoheit` | direct working reading; uncertainty retained |
+| `0121L-A11` | `Dresden am [⟦crossed-out day⟧] 7. Februar` | direct working reading; uncertainty retained |
+| `0121L-A12` | `1764.` | direct working reading; uncertainty retained |
+
+### 0121R — local physical line ledger
+
+| Local physical line | Working source-near written text | Evidential state |
+|---|---|---|
+| `0121R-H01` | `[⟦large initial, first title line partly cancelled⟧]` | direct working reading; uncertainty retained |
+| `0121R-H02` | `[⟦overwritten earlier title line⟧]` | direct working reading; uncertainty retained |
+| `0121R-A01` | `Ew: Königl: Hoheit wollen Sich` | direct working reading; uncertainty retained |
+| `0121R-A02` | `gehorßamst vortragen lassen,` | direct working reading; uncertainty retained |
+| `0121R-A03` | `und nachdem der [⟦title⟧]` | direct working reading; uncertainty retained |
+| `0121R-A04` | `Vaters Königl: Majst: allergnädigst` | direct working reading; uncertainty retained |
+| `0121R-A05` | `ich mit dem Vater Lehen auf mich` | direct working reading; uncertainty retained |
+| `0121R-A06` | `und meinem Bruder, Herrn Johann` | direct working reading; uncertainty retained |
+| `0121R-A07` | `George Friedrich Grafen von Einsie-` | direct working reading; uncertainty retained |
+| `0121R-A08` | `del, [Cämmerherren?], auf Hof- und` | direct working reading; uncertainty retained |
+| `0121R-A09` | `Justitien-Rath, verliehen Mann-` | direct working reading; uncertainty retained |
+| `0121R-A10` | `und Weiber Lehn-Guthe Knau, nebst` | direct working reading; uncertainty retained |
+| `0121R-A11` | `Lehen und Zugehörungen pro indiviso` | direct working reading; uncertainty retained |
+| `0121R-A12` | `[⟦other passage⟧] und zu gewinnen Hand, [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0121R-A13` | `betheilen respective Lehn- und gesammte Hand, um mich` | direct working reading; uncertainty retained |
+| `0121R-A14` | `beyhändigen [⟦word⟧] und hierzu die Lehn-` | direct working reading; uncertainty retained |
+| `0121R-A15` | `1. an dem Mann und Weiber Lehn-Guthe Knau,` | direct working reading; uncertainty retained |
+| `0121R-A16` | `zu meinem Antheil und` | direct working reading; uncertainty retained |
+| `0121R-A17` | `2. an die gesammte Hand [⟦words⟧] meiner Brüder` | direct working reading; uncertainty retained |
+| `0121R-A18` | `[⟦words⟧] und Güther [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0121R-A19` | `3. an dem Erb- und Allodial-Guthe [⟦end⟧]` | direct working reading; uncertainty retained |
+
+### 0122L — local physical line ledger
+
+| Local physical line | Working source-near written text | Evidential state |
+|---|---|---|
+| `0122L-A01` | `4. an denen ... Vetter und [⟦word⟧] Erb- und Allodial-` | direct working reading; uncertainty retained |
+| `0122L-A02` | `Berg- und Hütten-wercken, samt` | direct working reading; uncertainty retained |
+| `0122L-A03` | `5. an denen auf der Lehn-Güther [⟦end⟧] gelegenen [⟦name⟧]` | direct working reading; uncertainty retained |
+| `0122L-A04` | `und deren allerhand Zugehörungen, in desgleichen` | direct working reading; uncertainty retained |
+| `0122L-A05` | `die letztern Dreyen betreff [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0122L-A06` | `während und [⟦words⟧] andurch, die schuldige Erbhul-` | direct working reading; uncertainty retained |
+| `0122L-A07` | `digung- und Lehn-Pflicht in meines Vaters [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0122L-A08` | `die Lehn und respective gesammte Hand [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0122L-A09` | `und den Handschlag desfalls abstatte, um Ausferti-` | direct working reading; uncertainty retained |
+| `0122L-A10` | `gung derer Lehn-Scheine, auch Lehn- und Erb-Briefe` | direct working reading; uncertainty retained |
+| `0122L-A11` | `gehorsamst bitte, und solcher allergnädigst [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0122L-A12` | `in meinem Nahmen hiermit [⟦words⟧] und die Lehn-` | direct working reading; uncertainty retained |
+| `0122L-A13` | `Schuldigkeit erfodert und mir in Person zu [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0122L-A14` | `abgegeben. Ich halte deshalb [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0122L-A15` | `und habe diese Vollmacht eigenhändig untergeschrie-` | direct working reading; uncertainty retained |
+| `0122L-A16` | `ben, und besiegelt wie mir gestellet. So geschehen` | direct working reading; uncertainty retained |
+| `0122L-A17` | `Dresden, am 3. August 1764.` | direct working reading; uncertainty retained |
+| `0122L-A18` | `[⟦separate large autograph at bottom⟧]` | direct working reading; uncertainty retained |
+
+### 0122R — local physical line ledger
+
+| Local physical line | Working source-near written text | Evidential state |
+|---|---|---|
+| `0122R-H01` | `Durchlauchtigster Churfürst,` | direct working reading; uncertainty retained |
+| `0122R-H02` | `gnädigster Fürst und Herr` | direct working reading; uncertainty retained |
+| `0122R-A01` | `Ew: Königl: Hoheit wollen Sich` | direct working reading; uncertainty retained |
+| `0122R-A02` | `gehorsamst vortragen lassen,` | direct working reading; uncertainty retained |
+| `0122R-A03` | `und nachdem von Dero in Gott` | direct working reading; uncertainty retained |
+| `0122R-A04` | `ruhenden Herrn Vaters Königl:` | direct working reading; uncertainty retained |
+| `0122R-A05` | `Majst: glorwürdigsten Gedächtnüß,` | direct working reading; uncertainty retained |
+| `0122R-A06` | `ich mit dem Vater Lehn auf mich` | direct working reading; uncertainty retained |
+| `0122R-A07` | `und meinen Bruder, Herrn Johann` | direct working reading; uncertainty retained |
+| `0122R-A08` | `George Friedrich Grafen von Einsie-` | direct working reading; uncertainty retained |
+| `0122R-A09` | `del, [Cämmerherren?], auf Hof- und` | direct working reading; uncertainty retained |
+| `0122R-A10` | `Justitien-Rath, verliehen Mann-` | direct working reading; uncertainty retained |
+| `0122R-A11` | `und Weiber Lehn-Guthe Knau, nebst` | direct working reading; uncertainty retained |
+| `0122R-A12` | `Lehen und Zugehörungen pro indiviso` | direct working reading; uncertainty retained |
+| `0122R-A13` | `[⟦one word⟧], wie auch die gesammte Hand` | direct working reading; uncertainty retained |
+| `0122R-A14` | `an gedachter meinem Bruders An-` | direct working reading; uncertainty retained |
+| `0122R-A15` | `theil, bekannt worden.` | direct working reading; uncertainty retained |
+| `0122R-A16` | `Erbitten nun aber [⟦title⟧] Hoch-` | direct working reading; uncertainty retained |
+| `0122R-A17` | `fürstl. Hoheit allergnädigst ver-` | direct working reading; uncertainty retained |
+| `0122R-A18` | `[⟦group⟧] Königl. Majst: und Churfürstl:` | direct working reading; uncertainty retained |
+| `0122R-A19` | `Durchl: meinen unterthänigst ab-` | direct working reading; uncertainty retained |
+| `0122R-A20` | `gelegten [⟦group⟧], der respect-` | direct working reading; uncertainty retained |
+| `0122R-A21` | `[⟦word⟧] den Herrn den dritten` | direct working reading; uncertainty retained |
+| `0122R-A22` | `auch geläuterten [⟦continuation⟧]` | direct working reading; uncertainty retained |
+
+### 0124L — local physical line ledger
+
+| Local physical line | Working source-near written text | Evidential state |
+|---|---|---|
+| `0124L-A01` | `Hoheit mir [⟦first word⟧] [⟦group⟧] bitten,` | direct working reading; uncertainty retained |
+| `0124L-A02` | `Höchst Dieselben wollen Sich [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0124L-A03` | `geruhen, mich zu Leistung der` | direct working reading; uncertainty retained |
+| `0124L-A04` | `schuldigen Verpflichtung und` | direct working reading; uncertainty retained |
+| `0124L-A05` | `Lehn-Pflicht admittiren, und mir` | direct working reading; uncertainty retained |
+| `0124L-A06` | `so dann an bemelten` | direct working reading; uncertainty retained |
+| `0124L-A07` | `Mann- und Weiber Lehn-Guthe` | direct working reading; uncertainty retained |
+| `0124L-A08` | `Knau, nebst Lehen, samt Zu-` | direct working reading; uncertainty retained |
+| `0124L-A09` | `gehörungen` | direct working reading; uncertainty retained |
+| `0124L-A10` | `die Lehen zu meinem Antheil, in-` | direct working reading; uncertainty retained |
+| `0124L-A11` | `halt derer Lehn-Briefe, [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0124L-A12` | `auch die gesammte Hand an vorer-` | direct working reading; uncertainty retained |
+| `0124L-A13` | `wehnten meines Bruders [⟦words⟧]` | direct working reading; uncertainty retained |
+| `0124L-A14` | `habenden Antheil, erkennen,` | direct working reading; uncertainty retained |
+| `0124L-A15` | `darüber gewöhnlichen Lehn-Schein` | direct working reading; uncertainty retained |
+| `0124L-A16` | `ertheilen und Lehn-Brief aus-` | direct working reading; uncertainty retained |
+| `0124L-A17` | `fertigen zu lassen; dafür ich in` | direct working reading; uncertainty retained |
+| `0124L-A18` | `Pflichtschuldigster Treue Lebens-` | direct working reading; uncertainty retained |
+| `0124L-A19` | `lang verharren` | direct working reading; uncertainty retained |
+| `0124L-A20` | `Ew: Königl: Hoheit` | direct working reading; uncertainty retained |
+| `0124L-A21` | `Dresden am 7. Novbr. 1763.` | direct working reading; uncertainty retained |
+
+### 0124R — local physical line ledger
+
+| Local physical line | Working source-near written text | Evidential state |
+|---|---|---|
+| `0124R-H01` | `Durchlauchtigster Königs Prinz,` | direct working reading; uncertainty retained |
+| `0124R-H02` | `gnädigster Herr` | direct working reading; uncertainty retained |
+| `0124R-A01` | `Ich nehme die bey der Churfürstlich-` | direct working reading; uncertainty retained |
+| `0124R-A02` | `Sächsischen Hoff-Lehn-Cantzley vor-` | direct working reading; uncertainty retained |
+| `0124R-A03` | `handenen Lehn-Acten, des Mann-` | direct working reading; uncertainty retained |
+| `0124R-A04` | `und Weiber-Lehn-guths Knau mit` | direct working reading; uncertainty retained |
+| `0124R-A05` | `seinen [⟦rights groups⟧] Dero Königl:` | direct working reading; uncertainty retained |
+| `0124R-A06` | `Hoheit, in Gott ruhenden Herrn Vaters` | direct working reading; uncertainty retained |
+| `0124R-A07` | `Königl: Majst: glorwürdigsten Ge-` | direct working reading; uncertainty retained |
+| `0124R-A08` | `dächtnüß, ich mit dem Vater Lehen, auf` | direct working reading; uncertainty retained |
+| `0124R-A09` | `mich und meinen Bruder, Herrn Johann` | direct working reading; uncertainty retained |
+| `0124R-A10` | `George Friedrich Grafen von Einsiedel,` | direct working reading; uncertainty retained |
+| `0124R-A11` | `Churfürstl: Sächß: geheimbden Cabinets-` | direct working reading; uncertainty retained |
+| `0124R-A12` | `Minister, verliehen [⟦crossed-out group⟧]` | direct working reading; uncertainty retained |
+| `0124R-A13` | `guths, den 24. Martii, 1762. zu meinem` | direct working reading; uncertainty retained |
+| `0124R-A14` | `Antheil belehnen, wie auch die ge-` | direct working reading; uncertainty retained |
+| `0124R-A15` | `sammte Hand an erwenten meinen` | direct working reading; uncertainty retained |
+| `0124R-A16` | `Bruders Antheil erkannt worden,` | direct working reading; uncertainty retained |
+| `0124R-A17` | `und ich auch erfolgtes [⟦title⟧]` | direct working reading; uncertainty retained |
+| `0124R-A18` | `allergnädigst zu [⟦end⟧] Dec-` | direct working reading; uncertainty retained |
+| `0124R-A19` | `[⟦continuation⟧] Königl: Majst: unterm` | direct working reading; uncertainty retained |
+| `0124R-A20` | `7. Novbr. 1763. und [⟦following group⟧]` | direct working reading; uncertainty retained |
+| `0124R-A21` | `die Lehn [⟦end⟧] gehabt,` | direct working reading; uncertainty retained |
+| `0124R-A22` | `[⟦start⟧] in meinen [⟦end⟧]` | direct working reading; uncertainty retained |
+| `0124R-A23` | `zum Besitz Königl: Hoheit [⟦end⟧]` | direct working reading; uncertainty retained |
+
+**Current limit:** 121 newly addressed image-local line slots, mostly with positive source text but numerous still unverified words and some overlapping additions/deletions. The 0123 repeated view is not counted as another transcript. None is an independent qualified paleographic certification or whole-unit G2 pass. Continue 0124R lower line into 0125 exposed fields, then return to partially unresolved 0102L and 0104R marginal strip by best original JPEG evidence.
