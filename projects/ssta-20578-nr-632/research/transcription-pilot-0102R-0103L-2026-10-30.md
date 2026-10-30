@@ -694,3 +694,99 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | `0116R-A25` | `[⟦continuation below crop⟧]` | working physical line; mark uncertainty retained |
 
 **Coverage ceiling and quality:** 122 locally addressed new physical line/mark slots; the majority preserve legible text but some lines contain undeciphered spans, and the separate 0115L autograph/overlaid note slots cannot be called completed transcription. Same archival unit, not automatically same hand or documentary witness; neither T1 whole-unit completion nor G2/G3/G4/G5/G6 attained. No PDF generated in this pass. **Next** inspect original-pixel continuation on provider 0117L after 0116R, then revisit 0116L A07–A14 and 0115L lower overlay on a complementary source view if one exists; continue independent written areas regardless of local unresolved words.
+
+
+## Direct native-image reading — differentiated 1762 Lehn-Schein texts and 0119–0120 (2026-10-30)
+
+Source: Sächsisches Staatsarchiv Leipzig Nr. 632, Source ID `SSTA-ARCHIVIALE-EDD69AA1`; direct native-pixel embedded-photograph inspection of PDF/provider images **0117–0120** (4299–4304px wide), from the full-size 135-page working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Exact provider-JPEG file objects were NOT reopened. No OCR/HTR or generated reconstruction, no independent specialist control. Local image-side/line addresses are not archival foliation. Only source-graphic positive readings are in plain words; graphically tentative words are bracketed, physically present undeciphered ink is noted with `⟦...⟧`, no editorial supply.
+
+Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein texts**, despite similar heading/date/formula. `0117R` explicitly includes Johann George Friedrich, while `0118R` includes Detlev Carl von Einsiedel. Do not deduplicate the two, nor fill either from the other. The left photo regions 0118L/0119L/0120L mostly show pale reversed-looking bleed-through and were NOT treated as independent transcribed running main text. 0119R contains visible overwritten/cancelled upper text, and 0120R an independently ornate petition/address with a visibly crossed-out header group, not photographic duplicates of the Lehn-Scheine.
+
+### 0117R — separately visible writing region
+
+| Local physical line | Diplomatic working reading | Status |
+|---|---|---|
+| `0117R-H01` | `Lehn-Schein` | positive fragments and marked unresolved ink, working |
+| `0117R-A01` | `Den 24ten Martii, 1762. ist der Hoch- und Wohl-` | positive fragments and marked unresolved ink, working |
+| `0117R-A02` | `gebohren, Herr Johann George Friedrich Graf von` | positive fragments and marked unresolved ink, working |
+| `0117R-A03` | `Einsiedel, [Cämmerherr?] [⟦middle⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A04` | `Rath, und wegen [⟦word⟧] gegen einen` | positive fragments and marked unresolved ink, working |
+| `0117R-A05` | `Handschlag, welchen der [⟦name⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A06` | `[⟦group⟧] wegen geschehen [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A07` | `[⟦verb⟧] mit dem [⟦word⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A08` | `Weiberlehen- und [⟦word⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A09` | `Mann und Weiber Lehn-Guthe Knau, nebst [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A10` | `und Zugehörungen, wegen der Lehn-Briefe, [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A11` | `[⟦phrase⟧] auf die gesammte Hand [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-A12` | `des [⟦name/word⟧] Antheils, bekannt worden.` | positive fragments and marked unresolved ink, working |
+| `0117R-A13` | `Signatum Dresden ut supra` | positive fragments and marked unresolved ink, working |
+| `0117R-B01` | `Königlich Pohlnische und Churfürstlich-` | positive fragments and marked unresolved ink, working |
+| `0117R-B02` | `Sächsische Cantzley` | positive fragments and marked unresolved ink, working |
+| `0117R-C01` | `[⟦right-side lower signature/name⟧]` | positive fragments and marked unresolved ink, working |
+| `0117R-D01` | `[⟦very low short note in margin⟧]` | positive fragments and marked unresolved ink, working |
+
+### 0118R — separately visible writing region
+
+| Local physical line | Diplomatic working reading | Status |
+|---|---|---|
+| `0118R-H01` | `Lehn-Schein` | positive fragments and marked unresolved ink, working |
+| `0118R-A01` | `Den 24ten Martii, 1762. ist der Hoch- und Wohl-` | positive fragments and marked unresolved ink, working |
+| `0118R-A02` | `gebohren, Herr Detlev Carl Graf von Einsiedel,` | positive fragments and marked unresolved ink, working |
+| `0118R-A03` | `[Cämmer-Juncker?] und wegen [⟦word⟧] gegen einen` | positive fragments and marked unresolved ink, working |
+| `0118R-A04` | `Handschlag, welchen der [⟦title⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A05` | `[⟦word⟧] Vollmacht desfalls wegen geschehen [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A06` | `[⟦group⟧] Antheil, mit dem Weiberlehen, [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A07` | `seinen Brüdern, dem [⟦name⟧] [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A08` | `Herrn Johann George Friedrich Grafen von` | positive fragments and marked unresolved ink, working |
+| `0118R-A09` | `Einsiedel, [Cämmerherren?], auch [⟦other group⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A10` | `Mann- und Weiber-Lehn-Guthe Knau, [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A11` | `Lehn-Guthe Knau; nebst Lehen, und Zugehörun-` | positive fragments and marked unresolved ink, working |
+| `0118R-A12` | `gen, Besitzer der Lehn-Briefe [⟦continuation⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A13` | `[⟦text⟧] gesammte Hand [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-A14` | `Antheil; bekannt worden. Signatum Dresden` | positive fragments and marked unresolved ink, working |
+| `0118R-A15` | `ut supra` | positive fragments and marked unresolved ink, working |
+| `0118R-B01` | `Königlich Pohlnische und Churfürstlich` | positive fragments and marked unresolved ink, working |
+| `0118R-B02` | `Sächsische Cantzley` | positive fragments and marked unresolved ink, working |
+| `0118R-C01` | `[⟦large signature group unresolved⟧]` | positive fragments and marked unresolved ink, working |
+| `0118R-D01` | `[⟦small bottom signature note⟧]` | positive fragments and marked unresolved ink, working |
+
+### 0119R — separately visible writing region
+
+| Local physical line | Diplomatic working reading | Status |
+|---|---|---|
+| `0119R-A01` | `worauf, ein halb [⟦word⟧]` | positive fragments and marked unresolved ink, working |
+| `0119R-A02` | `[⟦following group⟧] gleich-` | positive fragments and marked unresolved ink, working |
+| `0119R-A03` | `[⟦overwritten/cancelled span⟧]` | positive fragments and marked unresolved ink, working |
+| `0119R-A04` | `Vollmacht eigenhändig unter-` | positive fragments and marked unresolved ink, working |
+| `0119R-A05` | `schrieben, auch [⟦word⟧] von` | positive fragments and marked unresolved ink, working |
+| `0119R-A06` | `uns gestellet, Regensburg` | positive fragments and marked unresolved ink, working |
+| `0119R-A07` | `den 3ten Februar 1762,` | positive fragments and marked unresolved ink, working |
+| `0119R-B01` | `Johann George Friedrich Graf` | positive fragments and marked unresolved ink, working |
+| `0119R-B02` | `von Einsiedel.` | positive fragments and marked unresolved ink, working |
+| `0119R-C01` | `Detlev Carl Graf von` | positive fragments and marked unresolved ink, working |
+| `0119R-C02` | `Einsiedel.` | positive fragments and marked unresolved ink, working |
+
+### 0120R — separately visible writing region
+
+| Local physical line | Diplomatic working reading | Status |
+|---|---|---|
+| `0120R-H01` | `Durchlauchtigster [⟦crossed-out address word⟧] Königlicher Prinz,` | positive fragments and marked unresolved ink, working |
+| `0120R-H02` | `gnädigster Herr,` | positive fragments and marked unresolved ink, working |
+| `0120R-A01` | `Ew: Königl: Hoheit haben Sich unterthänigst [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A02` | `[⟦start⟧] bey [⟦title⟧] Dresden [⟦group⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A03` | `Vaters Königl: Majt: [⟦additional title⟧] [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A04` | `dem Vater lehen, auf mich und meinem Bruder, Herrn` | positive fragments and marked unresolved ink, working |
+| `0120R-A05` | `Detlev Carl Grafen von Einsiedel [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A06` | `und Ober-Vormündern, [⟦middle⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A07` | `Mann- und Weiber-Lehn-` | positive fragments and marked unresolved ink, working |
+| `0120R-A08` | `Guthe Knau mit Zinsen und deren Zugehörungen, am` | positive fragments and marked unresolved ink, working |
+| `0120R-A09` | `24. Martii, 1762. pro individuo belehnen, wie auch die` | positive fragments and marked unresolved ink, working |
+| `0120R-A10` | `gesammte Hand angebothe, mittels Bruder [⟦end⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A11` | `[⟦line unread⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A12` | `[⟦opening⟧] in derselben [⟦group⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A13` | `[⟦phrase⟧] die respective` | positive fragments and marked unresolved ink, working |
+| `0120R-A14` | `[⟦continuation⟧] [⟦term⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A15` | `[⟦opening⟧] dieser [⟦source group⟧]` | positive fragments and marked unresolved ink, working |
+| `0120R-A16` | `Königl: Hoheit [⟦line end⟧]` | positive fragments and marked unresolved ink, working |
+
+**Quality/ceiling:** 67 newly addressed photo-local line/mark slots, NOT a claim of as many fully deciphered source lines. No complete G2, qualified palaeography adjudication, same-hand assertion or source-wide PDF. **Next immediate physical source:** read 0117L running field and the 0120R continuation on 0121, revisiting 0102L and 0104R edge slivers as graphics permit.
