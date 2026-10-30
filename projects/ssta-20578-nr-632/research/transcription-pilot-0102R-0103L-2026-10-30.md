@@ -533,3 +533,164 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0113R-A17` | `[⟦start⟧] so hierinnen specificè zugleich` | Latin word directly visible |
 
 **Coverage and challenge:** This pass adds **68 physically indexed working lines**, 17 per named L/R region. Many have multiple positive source words, but this is **not 68 fully resolved lines** and not independent human or specialist review. Prime unresolved graphemic targets: 0112L first title/archival toponym and second date numeral; 0112R 1.) item subject; 0113L `Hante`/`Brande` writing; 0113R Latin `exercirlich` candidate and physical continuation. A reliable source-wide leaf/view census and critical acceptance remain open. Next authorized source action is a true source-focused pass on the newly exposed 0114–0116 writing surfaces and visible repeated/overlaid areas, not another planning stage.
+
+
+## Native-image physical-line reading, 0114–0116 — 2026-10-30
+
+Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/provider photographs **0114–0116** as native 4304–4310 px embedded JPEGs from the full-size 135-page working PDF, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Images cropped only non-generatively. These embedded photographic JPEGs were seen, **not** independent registered original provider JPEG file-byte reopens. L/R and line IDs are digitally assigned visual locators, not archival foliation. Plain groups are provisional positive reading, `[...?]` graphically unsure, `⟦...⟧` source ink actually present but reading unresolved; these are NOT text supplied by editor nor certified physical gaps. Full line text still requires adjudication, and no independent specialist assessment occurred.
+
+0114L text runs with tentative `quasi possessi-` into 0114R `one`, but photographic adjacency does not prove a material leaf join. 0114R far-right narrow written strip is another partially covered exposure, not part of the main numbered lines. 0115L has a short closing text, several distinct autograph/mark areas, and a triangular overlay concealing lower notes; do not pretend the visible ink under overlay is legible. 0115R has a different running passage referring to 1678/1679 text events; written dates are NOT carrier dating. 0116R includes a visibly struck/cancelled word in its first few lines; deleted source ink is retained as phenomenon rather than silently regularized. The dates on 0116L are separately positioned from the body.
+
+### 0114L — visible writing field
+
+| Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
+|---|---|---|
+| `0114L-A01` | `nicht mit benennet stehet, unberühret` | working physical line; mark uncertainty retained |
+| `0114L-A02` | `des Gebrauchs der Niedern Koppel Jagd,` | working physical line; mark uncertainty retained |
+| `0114L-A03` | `mit [wegen?], [gegen?], und Stellen, so sonst [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0114L-A04` | `[Würth?] zu Dorbe, benebst dem [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0114L-A05` | `daselbst, auf solche maße, in dortigen` | working physical line; mark uncertainty retained |
+| `0114L-A06` | `Fluße, gehabt, und [früher?] exerciret,` | working physical line; mark uncertainty retained |
+| `0114L-A07` | `wie nicht minder auch die [⟦word⟧] streitig` | working physical line; mark uncertainty retained |
+| `0114L-A08` | `gewesene Grenze in der [⟦place⟧], bey` | working physical line; mark uncertainty retained |
+| `0114L-A09` | `anfang des [⟦word⟧] und hier` | working physical line; mark uncertainty retained |
+| `0114L-A10` | `des Teich, bis zu dem [⟦name⟧] Weg,` | working physical line; mark uncertainty retained |
+| `0114L-A11` | `und folgend hierüber bis an den Lin-` | working physical line; mark uncertainty retained |
+| `0114L-A12` | `dnischen Gemeinde Teich, von dort` | working physical line; mark uncertainty retained |
+| `0114L-A13` | `weiter bis auff den Weg, welcher von` | working physical line; mark uncertainty retained |
+| `0114L-A14` | `Linda aus gegen Dittersdorff, sodann` | working physical line; mark uncertainty retained |
+| `0114L-A15` | `gegen die Reuß: Grenze ziehet, allda` | working physical line; mark uncertainty retained |
+| `0114L-A16` | `woselbst es die [⟦group⟧] des Ritter-` | working physical line; mark uncertainty retained |
+| `0114L-A17` | `guths Knau hinhero in quasi possessi-` | working physical line; mark uncertainty retained |
+
+### 0114R — visible writing field
+
+| Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
+|---|---|---|
+| `0114R-A01` | `one gehabt, und sich derselben hinun-` | working physical line; mark uncertainty retained |
+| `0114R-A02` | `ter getraüt, Gleichwie nun die Jagd,` | working physical line; mark uncertainty retained |
+| `0114R-A03` | `fürstl: Durchl: [Jägern?] Bediente sich` | working physical line; mark uncertainty retained |
+| `0114R-A04` | `des jagens und schießens künftig, und` | working physical line; mark uncertainty retained |
+| `0114R-A05` | `nach dem diese [⟦group⟧] dermaleinst auf` | working physical line; mark uncertainty retained |
+| `0114R-A06` | `einen richtigen [Reiß?], vermittelst` | working physical line; mark uncertainty retained |
+| `0114R-A07` | `gegenwärtigen Recessus gesetzt,` | working physical line; mark uncertainty retained |
+| `0114R-A08` | `in obberührten gestatteten Orten,` | working physical line; mark uncertainty retained |
+| `0114R-A09` | `zu erhalten wißen werden, Also` | working physical line; mark uncertainty retained |
+| `0114R-A10` | `will der Herr Graff in denen Wegen` | working physical line; mark uncertainty retained |
+| `0114R-A11` | `ihnen nacher abgetretenen Gehölzen,` | working physical line; mark uncertainty retained |
+| `0114R-A12` | `dem sogenannten Brandt oder Hante,` | working physical line; mark uncertainty retained |
+| `0114R-A13` | `nichts minder obmäßige Verfolgung` | working physical line; mark uncertainty retained |
+| `0114R-A14` | `niemahls an seine Bedienten, nach` | working physical line; mark uncertainty retained |
+| `0114R-A15` | `Anleitung hierunter allenhalben` | working physical line; mark uncertainty retained |
+| `0114R-A16` | `[constituitum?] limitum, ergehen` | working physical line; mark uncertainty retained |
+| `0114R-A17` | `lassen, Und endlich ist dieser` | working physical line; mark uncertainty retained |
+
+### 0115L — visible writing field
+
+| Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
+|---|---|---|
+| `0115L-A01` | `Recess bis zu erfolgender gnädigster` | working physical line; mark uncertainty retained |
+| `0115L-A02` | `Ratification sigillando et sub-` | working physical line; mark uncertainty retained |
+| `0115L-A03` | `scribendo gebührend vollzogen wor-` | working physical line; mark uncertainty retained |
+| `0115L-A04` | `den, So geschehen den 22. Nov:` | working physical line; mark uncertainty retained |
+| `0115L-A05` | `Anno 1678.` | working physical line; mark uncertainty retained |
+| `0115L-B01` | `[⟦left marginal autograph partly cut off⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-B02` | `[⟦central initials/name with L. S. mark⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-B03` | `[⟦ornamented signature: ... Graff von Ronow?⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-B04` | `[⟦separate lower autograph: Hoffr: Grimm...?⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-C01` | `[⟦small lower left notes, overlaid by triangular paper⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-C02` | `[⟦overlaid note⟧] mit ihren Originali...` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-C03` | `[⟦overlaid note⟧] Obligt. [⟦continuation⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-C04` | `[⟦overlaid note⟧] allodirt. Cantzley [⟦end⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-D01` | `[⟦separate elaborate lower signed mark⟧]` | separate date, signature or overlay note; no automatic running-text join |
+| `0115L-D02` | `[⟦other lower chancery-letter groups unresolved⟧]` | separate date, signature or overlay note; no automatic running-text join |
+
+### 0115R — visible writing field
+
+| Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
+|---|---|---|
+| `0115R-A01` | `[⟦opening⟧] Gräffens, die zwischen denen` | working physical line; mark uncertainty retained |
+| `0115R-A02` | `Fürstlich-Sächsischen Ambt [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0115R-A03` | `[⟦group⟧], und Herrn Johann Albrecht` | working physical line; mark uncertainty retained |
+| `0115R-A04` | `[gebohrnen?] Ronow und Lieben-` | working physical line; mark uncertainty retained |
+| `0115R-A05` | `stein, als damaligen Besitzer` | working physical line; mark uncertainty retained |
+| `0115R-A06` | `derer Ritter-Güther Oppurg und` | working physical line; mark uncertainty retained |
+| `0115R-A07` | `Knau, wegen Verlegung derer` | working physical line; mark uncertainty retained |
+| `0115R-A08` | `Grenzen und Jagd-Gerechtigkei-` | working physical line; mark uncertainty retained |
+| `0115R-A09` | `ten in denen Wege-Derb- und` | working physical line; mark uncertainty retained |
+| `0115R-A10` | `[Lindischen?] Teichen, entstandenen` | working physical line; mark uncertainty retained |
+| `0115R-A11` | `Differentien, vor einer desfalls` | working physical line; mark uncertainty retained |
+| `0115R-A12` | `verordnet gewesenen Commission,` | working physical line; mark uncertainty retained |
+| `0115R-A13` | `verglichen und verRecessiret` | working physical line; mark uncertainty retained |
+| `0115R-A14` | `worden, wie der desfalls errich-` | working physical line; mark uncertainty retained |
+| `0115R-A15` | `tete und in Abschrifft hiebey lie-` | working physical line; mark uncertainty retained |
+| `0115R-A16` | `gende Commissarische Recess, d. d.` | working physical line; mark uncertainty retained |
+| `0115R-A17` | `22. Novbr. 1678. und der dane-` | working physical line; mark uncertainty retained |
+| `0115R-A18` | `ben unterm dato Merseburg an` | working physical line; mark uncertainty retained |
+| `0115R-A19` | `der Elster den 26. May, ao 1679.` | working physical line; mark uncertainty retained |
+| `0115R-A20` | `gnädigst ertheilte [Hochfürstl.?]` | working physical line; mark uncertainty retained |
+| `0115R-A21` | `ratification in mehreren besaget,` | working physical line; mark uncertainty retained |
+| `0115R-A22` | `wodurch aber weder eine Verän-` | working physical line; mark uncertainty retained |
+| `0115R-A23` | `derung, alienation der [⟦word⟧]` | working physical line; mark uncertainty retained |
+| `0115R-A24` | `noch der [⟦continuation at edge⟧]` | working physical line; mark uncertainty retained |
+
+### 0116L — visible writing field
+
+| Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
+|---|---|---|
+| `0116L-A01` | `gewesenen Grenz-Differentien, in` | working physical line; mark uncertainty retained |
+| `0116L-A02` | `Richtigkeit gesetzet worden;` | working physical line; mark uncertainty retained |
+| `0116L-A03` | `So leben Ew. der allerunterthänig-` | working physical line; mark uncertainty retained |
+| `0116L-A04` | `sten Hoffnung es werden Dero hoch-` | working physical line; mark uncertainty retained |
+| `0116L-A05` | `Majst: weiter kein Bedencken fin-` | working physical line; mark uncertainty retained |
+| `0116L-A06` | `den, uns, an mehrerwehnten ge-` | working physical line; mark uncertainty retained |
+| `0116L-A07` | `Mann- und Weiber-Lehn-Guthe` | working physical line; mark uncertainty retained |
+| `0116L-A08` | `Knau mit Lehen, und deren [Zu-?]` | working physical line; mark uncertainty retained |
+| `0116L-A09` | `gehörungen, zu Lehe zu mir [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116L-A10` | `[diesen?] Antheil, und die recipror-` | working physical line; mark uncertainty retained |
+| `0116L-A11` | `cirlich gesammte Hand, [⟦continuation⟧]` | working physical line; mark uncertainty retained |
+| `0116L-A12` | `an die anderen Antheil allerge-` | working physical line; mark uncertainty retained |
+| `0116L-A13` | `nädigst zu bekennen, [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116L-A14` | `[⟦opening⟧] Lehn-Schein ertheilen,` | working physical line; mark uncertainty retained |
+| `0116L-A15` | `und Lehn-Brief ausfertigen zu` | working physical line; mark uncertainty retained |
+| `0116L-A16` | `lassen, als denen wir [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116L-A17` | `nochmahls, in allerunterthänig-` | working physical line; mark uncertainty retained |
+| `0116L-A18` | `keit Bitten, und in Pflichtschul-` | working physical line; mark uncertainty retained |
+| `0116L-A19` | `digster Treue Lebenslang ver-` | working physical line; mark uncertainty retained |
+| `0116L-A20` | `harren` | working physical line; mark uncertainty retained |
+| `0116L-B01` | `Ew. Königl. Majst.` | separate date, signature or overlay note; no automatic running-text join |
+| `0116L-D01` | `Dresden` | separate date, signature or overlay note; no automatic running-text join |
+| `0116L-D02` | `am 15. Octbr.` | separate date, signature or overlay note; no automatic running-text join |
+| `0116L-D03` | `1760.` | separate date, signature or overlay note; no automatic running-text join |
+
+### 0116R — visible writing field
+
+| Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
+|---|---|---|
+| `0116R-A01` | `[⟦beginning⟧] auf ergebenste Anzeige` | working physical line; mark uncertainty retained |
+| `0116R-A02` | `allein, unseres Vaters, als weil-` | working physical line; mark uncertainty retained |
+| `0116R-A03` | `gewesenen Königl. Pohl. und Churfürstl.` | working physical line; mark uncertainty retained |
+| `0116R-A04` | `Sächs. [⟦line ending⟧] Hof-` | working physical line; mark uncertainty retained |
+| `0116R-A05` | `Marschall, Herrn Johann George` | working physical line; mark uncertainty retained |
+| `0116R-A06` | `[⟦surname/title⟧], dessen [⟦group⟧]` | working physical line; mark uncertainty retained |
+| `0116R-A07` | `[⟦beginning⟧] verursachet, daß von` | working physical line; mark uncertainty retained |
+| `0116R-A08` | `[⟦opening⟧] Mann und Weiber` | working physical line; mark uncertainty retained |
+| `0116R-A09` | `Lehn-Guth Knau, mit [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116R-A10` | `auf uns beyde Gebrüdern` | working physical line; mark uncertainty retained |
+| `0116R-A11` | `zu gleichen Theilen verfallen` | working physical line; mark uncertainty retained |
+| `0116R-A12` | `worden, wie auch die Lehe davon` | working physical line; mark uncertainty retained |
+| `0116R-A13` | `allergehorsamst gemüthet, [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116R-A14` | `und solch allerunterthänigst` | working physical line; mark uncertainty retained |
+| `0116R-A15` | `[⟦opening⟧] zu mündliche Belehnung` | working physical line; mark uncertainty retained |
+| `0116R-A16` | `darüber, und daß als Vater und [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116R-A17` | `[⟦opening⟧], nunmehro aber solch` | working physical line; mark uncertainty retained |
+| `0116R-A18` | `von Ew: Königl: Majst: aller-` | working physical line; mark uncertainty retained |
+| `0116R-A19` | `gnädigst bewilliget werden,` | working physical line; mark uncertainty retained |
+| `0116R-A20` | `und uns davor oblieget der-` | working physical line; mark uncertainty retained |
+| `0116R-A21` | `stellen die allergehorsamste Folg-` | working physical line; mark uncertainty retained |
+| `0116R-A22` | `ziehung;` | working physical line; mark uncertainty retained |
+| `0116R-A23` | `Deshalb wir hierdurch gehorsam` | working physical line; mark uncertainty retained |
+| `0116R-A24` | `vor uns, unsere Erb- Leibes [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0116R-A25` | `[⟦continuation below crop⟧]` | working physical line; mark uncertainty retained |
+
+**Coverage ceiling and quality:** 122 locally addressed new physical line/mark slots; the majority preserve legible text but some lines contain undeciphered spans, and the separate 0115L autograph/overlaid note slots cannot be called completed transcription. Same archival unit, not automatically same hand or documentary witness; neither T1 whole-unit completion nor G2/G3/G4/G5/G6 attained. No PDF generated in this pass. **Next** inspect original-pixel continuation on provider 0117L after 0116R, then revisit 0116L A07–A14 and 0115L lower overlay on a complementary source view if one exists; continue independent written areas regardless of local unresolved words.
