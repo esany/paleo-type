@@ -1,12 +1,12 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
-Last checkpoint: 2026-10-30 (reviewed Nr. 632 content/function and business-process candidate; no independent specialist validation)
+Last checkpoint: 2026-10-30 (T0 owner-authorized full-unit diplomatic-transcription objective reconciled with Issue #358; prior source-research findings remain provisional; no independent specialist validation)
 
 ## Research purpose and Project authority
 
 The Human Owner has established this independent archival unit as its own durable scholarly Project within the selected 20578 / 10 / 10.5 / 10.5.3 research set. The exact selected object is Sächsisches Staatsarchiv, Bestand 20578 Rittergut Wolkenburg mit Kaufungen, Nr. 632, GUID `edd69aa1-eae4-4970-a695-94aaeccd6724`.
 
-The Project exists for source-critical scholarly investigation and unlocking of Nr. 632. Its initial purpose is to establish the actually observable documentary/material structure of the unit and discover research-relevant internal documents or loci across the controlled digital evidence before any narrower scholarly scope is asserted. This purpose does not claim that any particular internal document, boundary, hand, transmission relation or relevant locus has already been observed.
+The Project was originally established for source-critical investigation and first-pass documentary/material reconnaissance, without presupposing internal document boundaries or foliation. **T0 / 2026-10-30:** the Human Owner has now explicitly selected the whole archival unit for an as-complete-as-the-digital-evidence-allows scholarly diplomatic transcription, supported by palaeographic/philological and source-critical review, a reproducible **internal** PDF working view from canonical transcription data, and evidence-based methods/tooling evaluation. This is an authorized extension of research purpose **within the existing Project root**, not the discovery of any particular internal Source, material carrier or historical foliation. Source inspection remains primary; issues, prior AI readings and generated PDFs are not canonical manuscript truth.
 
 The archival/fonds label “Wolkenburg” is contextual catalogue language. It does not enlarge this Project beyond Nr. 632 and does not select research priority by itself.
 
@@ -20,9 +20,9 @@ The catalogue record establishes the archival-unit identity and boundary at sign
 
 ## Active scope
 
-**No narrower evidence-selected diplomatic/transcription locus or G2–G6 scholarly scope is currently established.** The Human Owner has separately authorized the **bounded research tasks #350, #351 and #352** to characterize the whole archival unit at overview/function, business-process and targeted source-critical depth. These tasks do not constitute a G2 transcription activation or subsequent automatic scope.
+**Owner-selected target as of T0 / 2026-10-30:** comprehensive diplomatic representation of **all distinct relevant historical writing surfaces actually visible** in the archival unit Nr. 632, with explicit unresolved/illegible/not-yet-attempted and repeated-view accounting. This selection comes from the Human Owner’s explicit handoff to execute #358, not from the 135-image count, provenance preparation or prior exploratory experiments. Earlier bounded research tasks #350–#352 remain historical completed/reviewable work, not G2 achievements.
 
-The verified provider sequence `0001.jpg`–`0135.jpg` is the current **inspection domain** for source-entry/reconnaissance. Inspection domain is not active scholarly scope, manuscript coverage, a documentary boundary or G2 transcription scope. Scope may narrow, multiply or remain unresolved only after direct evidence supports that move.
+**Current bounded action:** #358 **T1**, audit observable distinct surfaces and view/physical-carrier relations using prior object and content maps **against direct PDF/original-image evidence**; then progress to the two contrasting source-tested pilots under T2 only after T1 locators/coverage permit it. The verified `0001.jpg`–`0135.jpg` sequence is the **digital inspection domain** for this already selected full-unit target, not a count of distinct manuscripts, independent texts, archival folios or physically exposed surfaces. No archival foliation is inferred. G2 is now in scope but **not attained**; G3–G6 likewise not attained. Internal PDF work views are planned; public dissemination of protected source imagery/edition remains a separate rights/Human decision.
 
 ## Sources used
 
@@ -102,7 +102,7 @@ A failed first PDF-to-text attempt and subsequent **partial experimental re-read
 
 Practical documented corrections: the first attempt confused microfilm frame counters with the already verified PDF-page/provider-image crosswalk; image-by-image reading missed known repeated views and material overlaps; incomplete/unattempted text had been confused with illegibility. These are applications of **existing** Source/Provenance, S2/S3/transcription and Learning rules, not evidence for a new method, software requirement or automatic scholarly scope. An integrated line/region/variation viewer remains a tooling *candidate*, not admitted development. The previous 0094–0097↔later-copy chain remains withdrawn. The downloadable experimental PDFs remain derived presentation outputs external to canonical repository truth, so future work must recover candidate readings from the linked research notes and recheck exact controlled source images.
 
-**Status unchanged:** no source-wide G2 representation, no G2–G6 gate, no new archival foliation, no accepted original-copy identity and no successor scholarly NEXT ACTION. This section is restart/navigation and result classification only.
+**Historical experiment disposition remains:** no source-wide G2 representation, no G2–G6 gate *reached*, no new archival foliation, no accepted original-copy identity. The statement that no scholarly successor was selected described the pre-T0 state; it is superseded by the explicitly owner-authorized T1 target above. These prior experiments remain candidates/restart navigation, not current G2 truth.
 
 ## Source-entry route and coverage state
 
@@ -123,13 +123,13 @@ The exact supplied compact PDF now has an additive Source-level digital crosswal
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
 | source-entry reconnaissance | `overview complete; targeted detail + whole-domain object/view pass inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135; object/view 0001–0135 | 135 overview checkpoints, 19 targeted-detail checkpoints and one complete-for-declared-domain object/view checkpoint; the Project map preserves cross-image grouping hypotheses and residuals; relevance remains unresolved and no narrower scope is inferred. |
 | content/function/business-process review | `provisional research results available` | whole PDF/provider-image domain 0001–0135 at diagnostic depth, with targeted 2026-10-30 review loci | Three Project research owners linked above, separate from material/view map; Human corrections reconciled; not specialist acceptance or G2. |
-| G2–G6 | `not activated` | no selected G2 transcription/edition scope | No G2 diplomatic representation, G3–G6 gate or edition claim; diagnostic readings remain provisional in the three Project research notes. |
+| G2–G6 | `research target authorized; none reached` | full unique visible written surfaces of Nr. 632; T1 inventory currently executable | Whole-unit G2 diplomatic work is authorized by the Human Owner but **no gate is reached**; earlier diagnostic readings are provisional; no critical text/edition/specialist validation claimed. |
 
 ## NEXT ACTION — canonical restart point
 
-The Human-authorized **#350–#352 research cycle** has produced bounded inventory, business-process and source-critical results in the linked Project research owners, with residual claims explicitly marked. **Their Issue/PR acceptance and closure remain separate from the existence of these research files.** After this authorized review/persistence work, **no successor research priority, transcription/edition target or automatic NEXT ACTION is selected.** Later targeted collation or specialist adjudication requires a concrete reason and correct authority; open uncertainties alone do not activate it.
+**Authorized current action: Issue #358 / T1** — verify the unique visible historical writing-surface inventory, repeat-view relations, physical/text-bearing carrier boundaries and access/coverage limits of the whole Nr. 632 against controlled direct source evidence (PDF pages 1–135 ↔ provider images 0001–0135). Start from existing object/view and documentary-function maps, without treating their AI hypotheses as independently verified or the 135 images as 135 texts. Track observed, untested and inaccessible areas separately. Then test two bounded contrasting T2 transcription pilots (proposed 0071R and 0102R→0103L) **only with direct image/region/physical-line inspection**, before determining any minimal data representation. T3 falsification precedes broader T4 transcription. T5/T6 are problem-driven; T7–T9 remain dependent work, not accepted outputs.
 
-Preserve Project purpose, direct source evidence, provider-image/archival-folio/document distinctions, and all Human corrections. No re-acquisition, OCR/HTR, automatic segmentation, internal Source generation or generic METHOD/CORPUS implementation is authorized by this checkpoint.
+**Authority/provenance:** the Human Owner explicitly assigned the full archival-unit transcription goal and requested execution of T0–T9 via the 2026-10-30 handoff; [Issue #358](https://github.com/esany/paleo-type/issues/358) supplies its proposed dependency chain. The authorized target is research; it does not establish a specialist-validated reading, G2 pass, public reproduction permission, unlimited autonomous execution, D-016 software admission or an automatic successor after this work block.
 
 ## Restartability
 
@@ -137,8 +137,8 @@ A fresh capable context must be able to reconstruct without old chat that:
 
 - the Project is exactly the independent archival unit Nr. 632, not the whole fonds/classification group;
 - the Project root is `SSTA-ARCHIVIALE-EDD69AA1`;
-- the research purpose is broad source-critical source-entry before evidence-based narrowing;
-- no active scholarly scope is yet selected;
+- reconnaissance was the earlier research purpose; the new owner-selected outcome is as-complete-as-evidence-allows whole-unit diplomatic transcription, source criticism, an internal derived PDF view and empirical tool/method learning;
+- as of T0 2026-10-30 the full-unit, visible unique-text-surfaces diplomatic transcription target **is** Human-Owner-selected; T1 inventory is the bounded current executable step;
 - the provider sequence 0001–0135 is the inspection domain only;
 - declared overview coverage is 135/135; this is not detail, transcription or full-resolution reading coverage;
 - controlled external package existence/integrity and research-use authority are established;
@@ -152,4 +152,4 @@ A fresh capable context must be able to reconstruct without old chat that:
 - the `0094–0116` copy/authentication complex is a candidate for future collation, not an accepted original/copy relation or selected priority;
 - the Human-authorized #350–#352 content/chronology/targeted criticism tasks have separate 2026-10-30 Project research files; Human corrections replace older AI candidate views and are source-referenced;
 - the 1760er copy labels do not establish a photographed template relation, and older text dates do not date copy carriers;
-- a new research decision after the #350–#352 bounded review/persistence cycle remains open.
+- the former post-#350–#352 absence of a research successor is superseded by the 2026-10-30 explicit full-unit objective and bounded T1; no unrelated successor or scholarly gate status may be inferred.
