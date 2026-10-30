@@ -1123,3 +1123,160 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `0128R-A21` | `auch [⟦word⟧] [⟦end⟧] und die Succession [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
 
 **Coverage/result:** 130 new physically indexed line slots (not equally many fully resolved/validated readings); substantial positive lexical text is present on every listed line, but many span-local undeciphered groups remain. No G2 claim, independent specialist review or premature PDF output. The next new exposed text starts at 0129R, with its view/photographic relation to 0130R requiring checking before a distinct running text is inferred. Recheck the source-native 0102L graph groups when source-readability is better than these passages.
+
+
+## Full native photograph diplomatic pass: 0129–0131, money signs and 1780/1781 subscription boundaries (2026-10-30)
+
+**Primary evidence actually inspected:** Sächsisches Staatsarchiv Leipzig, Best. 20578, Nr. 632; Source `SSTA-ARCHIVIALE-EDD69AA1`. Full-size PDF with SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, its embedded 4299–4304px original-photographic scans for PDF/provider **0129, 0130, 0131** directly inspected in native pixel L/R crops. These are specific embedded JPEG exposures, not standalone registered provider JPEG File byte checks. No HTR/OCR, AI source-image regeneration or independent specialist validation. Image sequence ≠ foliation; `L/R` is photo-side locator only.
+
+**Critical distinctions:** the written `4000` and `2000` followed by handwritten signs are *numeric/graphic transcription evidence*, NOT an accepted unit or currency (do not turn to Taler without direct sign proof). The photographed 0129L text explicitly includes written dates `30. Nov: 1768` and `20. April: 1769`; 0130R contains a distinct dated subscription about `14. und 17ten Februar, 1780`; 0131R includes a textual `1781` closure. None determines the age of the photographed carrier without separate material analysis. Autographs, large legal-seal-like impressions, and overwritten/partly obscured material at 0131L/R are separated from running text. At 0131R an additional small sheet overlies part of the writing/signature zone (previous Human correction), so those underlying graphemes are **not** unconditionally legible. Nor does 0131R alone establish a new independent physical object relative to the large charter on 0133–0135.
+
+**Transcription discipline:** each row below corresponds to a working visually separated physical baseline in its specific photo region. Some 0131R lines are primarily uncertainty-bearing because of the ornate script/overlay; **do not count them as fully transcribed**. Positive words are working, `[...?]` are source-visible but graphically unsure, `⟦...⟧` are present ink not responsibly deciphered, not an invented gap or editor-supplied phrase. Physical breaks and historical spelling kept when directly supported.
+
+### 0129L written-source field
+
+| Local physical written line | Diplomatic source-near working reading | Limits |
+|---|---|---|
+| `0129L-A01` | `solchendes Recht nicht eher, als nach gänzlichen` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A02` | `Hinsichten ihres Herren Bruders und deren De-` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A03` | `scendenten männlichen und weiblichen Geschlechts` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A04` | `praetendiren wollen, sich aber dabey ausdruck-` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A05` | `lich reserviret haben, daß, wenn [⟦word⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A06` | `der Herr von Einsiedel oder seine Descenden-` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A07` | `ten und andern Lehnfolgern vom [⟦Guth⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A08` | `Knau und Pahren [⟦group⟧] die völlige Succession` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A09` | `an sich oder ihre Descendenten kommen [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A10` | `ist, daß die Familie ex alienatione welchen` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A11` | `abgedachten Lehn-Quantum an 4000. [⟦sign⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A12` | `auch in anderer Absicht [⟦group⟧] [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A13` | `werden sollte, und es dann geschehen, daß` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A14` | `wir [⟦word⟧] als Besitzer [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A15` | `der Güther Knau und Pahren solches samt` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A16` | `Pertinentien laut des de dato Wolkenburg` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A17` | `den 30. Nov: 1768. geschlossenen und` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A18` | `sub dato den 20. April: 1769. gnädigst` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A19` | `confirmirten Kauf-Contracts, jedoch mit` | direct source working, incomplete graphemes expressly marked |
+| `0129L-A20` | `Consens der vor gedachten [⟦group⟧]` | direct source working, incomplete graphemes expressly marked |
+
+### 0129R written-source field
+
+| Local physical written line | Diplomatic source-near working reading | Limits |
+|---|---|---|
+| `0129R-A01` | `[⟦opening⟧] Arten erkauffet haben, als` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A02` | `ist wegen [⟦group⟧] aberrufener Lehn-` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A03` | `Quanti, an 4000. [⟦sign⟧] zwischen und` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A04` | `und [⟦word⟧] Mitbelehnten, nament-` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A05` | `lich:` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A06` | `Herrn Friedrich Wilhelm August Carl` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A07` | `Graf [⟦name⟧],` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A08` | `Frauen Mariannen Wilhelminen, vermählt` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A09` | `der von der [⟦title⟧] gebohrene` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A10` | `Fräulein [⟦surname⟧],` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A11` | `Herrn Carl August von [Schönberg?],` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A12` | `Herrn Friedrich Alexander von Schön-` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A13` | `berg,` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A14` | `Frauen Christianen Wilhelminen, ver-` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A15` | `mählte von [⟦name⟧], gebohrene von` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A16` | `[⟦surname⟧],` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A17` | `und denen Frey-Herren von [⟦name⟧], [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A18` | `[⟦group⟧] daß obgedachte 4000.` | direct source working, incomplete graphemes expressly marked |
+| `0129R-A19` | `Lehn-Quantum folgendergestalt [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+
+### 0130L written-source field
+
+| Local physical written line | Diplomatic source-near working reading | Limits |
+|---|---|---|
+| `0130L-A01` | `2000. [⟦written monetary sign⟧], auf das mir [⟦word⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A02` | `Herrn George Friedrich Grafen von Ein-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A03` | `siedel gehörige Guth [⟦name⟧], und` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A04` | `2000. [⟦written monetary sign⟧], auf das mir, Det-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A05` | `lev Carl Grafen von Einsiedel gehören-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A06` | `dige [⟦word⟧] [⟦place⟧] versichert werden` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A07` | `sollen; und wollen dahero wir hier und` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A08` | `unsere Erben, [⟦group⟧] und Leibes Lehn-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A09` | `folger abbenannten Herren und Frauen` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A10` | `Mitbelehnten und deren Erben, dadurch` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A11` | `uns und Leibs Lehnfolgern, an ge-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A12` | `dachten beyden Güthern, Geld oder und` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A13` | `Forderung samt Zugehörungen solches Lehn-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A14` | `Quantum deren 4000. [⟦sign⟧] und zwar` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A15` | `auf jedes Guth 2000. [⟦sign⟧] hinlänglich` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A16` | `bis auf höchsten Landes herrlichen Con-` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A17` | `sens und Confirmation dergestalt` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A18` | `und also versichern, auch eine Hypothec` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A19` | `auf so hoch daran verschrieben und zu` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A20` | `gegeben, daß solches Quanta [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0130L-A21` | `[⟦continuation ends with Descen-⟧]` | direct source working, incomplete graphemes expressly marked |
+
+### 0130R written-source field
+
+| Local physical written line | Diplomatic source-near working reading | Limits |
+|---|---|---|
+| `0130R-A01` | `denten, männ- und weiblichen Geschlechts` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A02` | `gänzlich mit Tode abgegangen, hernach` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A03` | `und als dann erst an obbenannte [⟦word⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A04` | `liche Successores und von Schönbergische Mit-` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A05` | `belehnte und deren Descendenten, männ-` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A06` | `und weiblichen Geschlechts ausgezahlt` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A07` | `werden sollen.` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A08` | `Zu Urkund dessen haben wir ge-` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A09` | `genwärtiges Versicherungs-Document` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A10` | `wohlbedächtig in duplo ausgefertigt, solches auch` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A11` | `eigenhändig unterschrieben und besiegelt.` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A12` | `Datum [⟦place⟧] und Dresden den 14. und` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A13` | `17ten Februar, 1780.` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A14` | `Johann Georg Friedrich Gr. von Einsiedel` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A15` | `Detlev Carl Graf von Einsiedel.` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A16` | `Mildel den 3 Martz 1780.` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A17` | `Acta [⟦group⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0130R-A18` | `Ihre Excellenc[e] H. Johann Georg [⟦surname⟧]` | direct source working, incomplete graphemes expressly marked |
+
+### 0131L written-source field
+
+| Local physical written line | Diplomatic source-near working reading | Limits |
+|---|---|---|
+| `0131L-A01` | `Hierweil Ihro [⟦name⟧] von Einsiedel` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A02` | `Churfürstl. Sächß. Cabinets-Ministre` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A03` | `vorgedachtes Versicherungs-Document` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A04` | `nebst dessen eigenhändigen Unterschrifft` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A05` | `und vorgedruckten Wappen [⟦word⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A06` | `gerichtlich recognosciret, welches hierdurch` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A07` | `unter dem mir anvertrauten Gerichts-` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A08` | `Siegel in fidem attestiret wird, ut supra.` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A09` | `[⟦impression-like dark circle beneath upper text⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A10` | `[⟦separate handwritten short confirmation/name⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A11` | `Justiz- und [⟦title⟧] am 13ten May 1780.` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A12` | `Dato haben Sr. Excellency, dem [⟦name⟧] [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A13` | `und Herrn Vormünder Director, [⟦word⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A14` | `Ritter, Herrn Detlev Carl Graf von [⟦surname⟧],` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A15` | `sich in eigenem [⟦word⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A16` | `nachfolgendem Versicherungs-Document [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A17` | `Dresden den 14. und 17ten Februar 1780,` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A18` | `quoad contenta et subscriptionem, [⟦group⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131L-A19` | `[⟦other ink under seal impression⟧]` | direct source working, incomplete graphemes expressly marked |
+
+### 0131R written-source field
+
+| Local physical written line | Diplomatic source-near working reading | Limits |
+|---|---|---|
+| `0131R-H01` | `[Ernest?] [⟦elaborately drawn royal title line⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A01` | `[⟦given royal names and title⟧] [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A02` | `[⟦line of calligraphic titulature⟧] [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A03` | `[⟦opening⟧] zu [⟦source word⟧] [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A04` | `Herrn [⟦group⟧] des Lehn Quanti à Vier Tau-` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A05` | `send Thaler, und die hierauf Einsiedelischen [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A06` | `[⟦word⟧] ergangenen Rechten wollen in Unserer` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A07` | `[⟦middle⟧] das Lehn-Quanti haben, alle [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A08` | `[⟦group⟧] in dem Fürstl. [⟦group⟧] begraben:` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A09` | `Wie es in der Confirmation des Kaufes über und` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A10` | `gedachten [⟦document name⟧] de dato den 20ten April 1769,` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A11` | `[⟦continuation⟧] incluisve, so ihnen [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A12` | `[⟦group⟧] Lehn-Quantum der 4000 Thaler bis` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A13` | `[⟦text⟧] begründen [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A14` | `[⟦large textual date⟧] am 12ten Juni` | direct source working, incomplete graphemes expressly marked |
+| `0131R-A15` | `1781.` | direct source working, incomplete graphemes expressly marked |
+| `0131R-B01` | `[⟦left large autograph line⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-B02` | `[⟦right large autograph line⟧]` | direct source working, incomplete graphemes expressly marked |
+| `0131R-C01` | `[⟦additional lower chancery note⟧]` | direct source working, incomplete graphemes expressly marked |
+
+**Quality/ceiling:** 116 additional physically addressed line/mark slots, not a same-number certified complete diplomatic transcription. Crucial money-sign and copy/document stages are not inferred. **Next** inspect the unique full charter text on **0133/0135 front** once, and the **0132R/0134L** complementary reverse-side, not as four separate witnesses; proceed to remaining unprocessed mid-domain regions in subsequent run, and revisit difficult 0102L handwritten baselines.
