@@ -71,7 +71,7 @@ class WorkReturnS1Tests(unittest.TestCase):
         # #346: host said 'completed'; no image access, research owner change or commit.
         rc, out = self.run_report()
         self.assertNotEqual(0, rc)
-        self.assertFalse(out["research_delta"])
+        self.assertFalse(out["owner_change"])
         self.assertIn("kein Forschungsdelta", " ".join(out["findings"]))
         self.assertNotIn("Erfolg", out["result"])
 
@@ -115,8 +115,72 @@ class WorkReturnS1Tests(unittest.TestCase):
             continuation_anchor=OWNER_LINE,
         )
         self.assertEqual(0, rc, out)
-        self.assertTrue(out["research_delta"])
-        self.assertIn("strukturell belegt", out["result"])
+        self.assertTrue(out["owner_change"])
+        self.assertIn("Änderung im Forschungs-Owner gespeichert; Lesegewinn nicht geprüft", out["result"])
+
+
+    def init_baseline(self) -> tuple[str, Path]:
+        self.git("init", "-q")
+        self.git("config", "user.email", "test@example.invalid")
+        self.git("config", "user.name", "CI Fixture")
+        research = self.project / "research" / "source-notes.md"
+        research.write_text("before\\n", encoding="utf-8")
+        self.git("add", "projects")
+        self.git("commit", "-qm", "baseline")
+        return self.git("rev-parse", "HEAD"), research
+
+    def test_same_block_status_and_research_change_passes_with_baseline_hash(self) -> None:
+        baseline, research = self.init_baseline()
+        baseline_hash = self.status_sha
+        research.write_text("before\\nnew source note\\n", encoding="utf-8")
+        updated_line = "**Authorized current action: continue the visible document text."
+        self.set_status(updated_line)
+        self.git("add", "projects")
+        self.git("commit", "-qm", "research and status in same block")
+        result = self.git("rev-parse", "HEAD")
+        rc, out = self.run_report(
+            baseline_commit=baseline, result_commit=result,
+            recorded_status_sha256=baseline_hash,
+            research_owner=f"projects/{PROJECT}/research/source-notes.md",
+            continuation_anchor=updated_line,
+        )
+        self.assertEqual(0, rc, out)
+        self.assertTrue(out["owner_change"])
+
+    def test_status_hash_older_than_baseline_is_rejected(self) -> None:
+        baseline, research = self.init_baseline()
+        stale_hash = hashlib.sha256(b"obsolete status\\n").hexdigest()
+        research.write_text("before\\nnew source note\\n", encoding="utf-8")
+        self.git("add", "projects")
+        self.git("commit", "-qm", "research")
+        rc, out = self.run_report(
+            baseline_commit=baseline, result_commit=self.git("rev-parse", "HEAD"),
+            recorded_status_sha256=stale_hash,
+            research_owner=f"projects/{PROJECT}/research/source-notes.md",
+            continuation_anchor=OWNER_LINE,
+        )
+        self.assertNotEqual(0, rc)
+        self.assertIn("Project-Owner geaendert", " ".join(out["findings"]))
+
+    def test_one_character_continuation_anchor_is_rejected(self) -> None:
+        rc, out = self.run_report(run_status="not-run", continuation_anchor="A")
+        self.assertNotEqual(0, rc)
+        self.assertIn("Fortsetzung nicht belegt", " ".join(out["findings"]))
+
+    def test_later_worktree_edit_does_not_invalidate_committed_owner_change(self) -> None:
+        baseline, research = self.init_baseline()
+        research.write_text("before\\nnew source note\\n", encoding="utf-8")
+        self.git("add", "projects")
+        self.git("commit", "-qm", "first result")
+        result = self.git("rev-parse", "HEAD")
+        research.write_text("before\\nnew source note\\nfurther local work\\n", encoding="utf-8")
+        rc, out = self.run_report(
+            baseline_commit=baseline, result_commit=result,
+            research_owner=f"projects/{PROJECT}/research/source-notes.md",
+            continuation_anchor=OWNER_LINE,
+        )
+        self.assertEqual(0, rc, out)
+        self.assertTrue(out["owner_change"])
 
     def test_justified_access_stop_reports_no_delta_without_claiming_success(self) -> None:
         rc, out = self.run_report(
