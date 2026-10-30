@@ -348,3 +348,91 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 **Local control and ceiling:** On 0108R the wording `Mann- und Wei-` / `ber-Lehn-Guthe Knau` is supported by physical line ends; its similarity to the separate 0104R→0106R text is *not* a second independent witness nor licence to complete missing signs. The proper name after `George` and `Fortgerechtigkeit` on 0109R were deliberately left uncertain despite plausible source context. These **45 new addressed physical lines** (`0108R` 28 including H; `0109R` 17 including H) have **positive text in most rows but are not 45 complete scholarly adjudications**. The 0108 marginal deletion and 0109L main script require separate line inventories/readings; no full region/page, act-level G2 or specialist signoff is asserted.
 
 **Next source reading locus (without re-planning):** direct full-pixel 0109L first/last lines to determine whether it continues 0108R or merely occupies an adjacent view; then the 0110–0112 available photographic regions, checking physical lineation/view overlap; return to 0071R and unresolved 0102L physical rows for graphemic control. Keep image files as controlled source objects; no public source-image redistribution or PDF interim edition.
+
+
+## Direct source transcription extension — 0110L/R to 0111L/R (2026-10-30)
+
+**Inspected source:** same exact full-size source-embedded JPEG PDF described above (full PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`); PDF/provider images **0110 and 0111**, original embedded JPEGs each **4304 × 3897 px**, directly inspected as whole scans then left/right separated native-resolution, non-generative crops. They have **not** been separately verified as registered provider original JPEG bytes. Physical line IDs below are **local observed graphic baselines**, not archival folio numbers. `0110` shows dense left and right writing; `0111` has a left running block followed by a separately displayed right closure, date and autograph/`L. S.`-looking marks. These writing surfaces should not be mistaken for four independent original deeds; neither a verified material join nor distinct hands are asserted. Repeated narrow right-edge writing fragments remain outside the respective main scripts.
+
+**Transcription vs. uncertainty:** Plain text preserves only visible original-looking forms, including `Recess`, `Ratification`, `Remonstration`, `Successoren`, local spellings, abbreviations, and physical split words; all are **working**, not accepted legal semantics. Bracketed proposed words are graphically uncertain. `⟦...⟧` is actually inked/attempted but undecided and must not be treated as a genuine physical gap. The 0110/0111 joining clauses and text order have not been proven across hidden leaf regions. These rows do **not** silently revise preceding transcriptions or transcribe the far-right thin strip.
+
+### 0109R text's separate 0110L running field; physical-continuation relationship provisional
+
+| Physically indexed line | Diplomatic source-near working reading | Limit / note |
+|---|---|---|
+| `0110L-A01` | `bringen werde; zu deren genießlichen Un-` | first word seems continued from preceding written area, verify join |
+| `0110L-A02` | `tersuch: und Abstellung Unsers deßf[?] ge-` | abbreviation `deßf` not expanded; form uncertain |
+| `0110L-A03` | `wiese Commissarien zu verordnen,` | line-initial group candidate, `Commissarien` visible |
+| `0110L-A04` | `auch mit ertheilten Vergleich über die obge-` | running line-end division |
+| `0110L-A05` | `handelte Puncte, biß zu Unserer gnä-` | line-initial continuation; candidate word spacing |
+| `0110L-A06` | `digsten Ratification, einen verbind-` | source Latin noun; following word division |
+| `0110L-A07` | `lichen Recess von beyden Theilen vollzo-` | some middle letters unsettled |
+| `0110L-A08` | `gen, [⟦middle⟧] zu lassen; So` | opening and ending positive, centre unresolved |
+| `0110L-A09` | `ist solches dergestalt bewerkstelliget,` | working positive |
+| `0110L-A10` | `wie uns hierbey gefügten Original` | source Latin noun, physical group |
+| `0110L-A11` | `zu ersehen; Und [⟦continuation⟧]` | no supplied verb |
+| `0110L-A12` | `der Vollziehung dieses Recessus [⟦end⟧]` | working compound |
+| `0110L-A13` | `[⟦opening⟧] [nicht?] [⟦end⟧]` | not promoted as a fluent sentence |
+| `0110L-A14` | `indem besagter Herr Graff [⟦end⟧]` | title/name not person identification |
+| `0110L-A15` | `[⟦opening⟧] als ob die [⟦centre⟧] [nicht?] minder` | surviving ink partly crowded |
+| `0110L-A16` | `unter andern [gemelte?] Grenze bis an` | reading of `gemelte` uncertain |
+| `0110L-A17` | `den [Lindnischen?] Teich also zu verstehen` | toponym uncertain and not normalized |
+
+### right-hand exposed running text opposite 0110L; refrain from material/source identity claims
+
+| Physically indexed line | Diplomatic source-near working reading | Limit / note |
+|---|---|---|
+| `0110R-A01` | `und in Zukunften [gewesen?], daß die Jagd` | grammatical group still uncertain |
+| `0110R-A02` | `in solchen Teich mit eingeschlossen seyn,` | positive reading |
+| `0110R-A03` | `und ihm zukommen solte; So ist` | positive reading |
+| `0110R-A04` | `durch der Herrn Graff auf diesfalls` | first words uncertain in original case |
+| `0110R-A05` | `eingegangenen Bericht, und ihm darauf` | positive running words |
+| `0110R-A06` | `beschehen Remonstration von sol-` | written division; foreign noun retained |
+| `0110R-A07` | `chen Sachen abgestanden, also, daß` | line-initial candidate from A06 |
+| `0110R-A08` | `es bey den Worten des angezogenen Re-` | word-final abbreviation? preserve uncertainty |
+| `0110R-A09` | `cessus verbleiben, und die Jagd im` | Latin `Recessus` visible |
+| `0110R-A10` | `Teich ihm nicht zugestanden solle, Wir` | positive sequence |
+| `0110R-A11` | `wollen aber darbey dieses in Gnaden` | positive sequence |
+| `0110R-A12` | `verwilligen, wann auf Gräfl: Seiten` | abbreviation not expanded |
+| `0110R-A13` | `Wildprett angeflossen würde, so in` | technical-looking word directly read, interpretation separate |
+| `0110R-A14` | `den Teich laufen, und darinnen verfal-` | line-end division |
+| `0110R-A15` | `len solte, daß den Herrn Grafen und` | continued from prior line |
+| `0110R-A16` | `seinen Successoren solches auf` | Latin plural source-near |
+| `0110R-A17` | `den [⟦word(s)⟧] angeflossenes in Teich` | last word group uncertain, text continues in 0111 |
+
+### new left written field after 0110R, observed lineation before any definitive carrier/text join
+
+| Physically indexed line | Diplomatic source-near working reading | Limit / note |
+|---|---|---|
+| `0111L-A01` | `[verfallendes?] [Wiederrecht?], mit [⟦end⟧]` | two large graph hypotheses |
+| `0111L-A02` | `des [Fürsters?], den die [Revier?]en be-` | words/line terminal uncertain |
+| `0111L-A03` | `[⟦opening⟧], und beweislicher Anzeige des an-` | positive middle phrase |
+| `0111L-A04` | `[⟦word⟧] Herrn zu nehmen, gestattet, und` | not a prose paraphrase |
+| `0111L-A05` | `ihm abgelegt worden solte, [⟦end⟧]` | verb tense uncertain |
+| `0111L-A06` | `dieser Special Vorstellung keine Con-` | source Latin-derived word and line division visible |
+| `0111L-A07` | `sequenz auf die Folge an andre Orthe` | physical line continuation |
+| `0111L-A08` | `zu machen, so hiermit expresse be-` | written `expresse` |
+| `0111L-A09` | `dungen wird. Im übrigen aber, [⟦end⟧]` | source division |
+| `0111L-A10` | `Wir den Recess Krafft dies ratifici-` | legal verb split at line end |
+| `0111L-A11` | `ren, und wollen, daß solcher in allen` | positive source-near |
+| `0111L-A12` | `Puncten und Clausulen bestehen, dar-` | source Latin plural, break |
+| `0111L-A13` | `bey unverbrüchlich gehalten, und in kei-` | running text |
+| `0111L-A14` | `nerley wege zuwider gelebet wer-` | uncertain morphology at end |
+| `0111L-A15` | `den solle; [⟦opening of subscription phrase⟧]` | no supplied completion |
+| `0111L-A16` | `mit Unser eigenhändigen Unter-` | adjective/spelling provisional |
+| `0111L-A17` | `schrifft und Churfl: Secret bekräff-` | source abbreviation not expanded |
+
+### right-hand short closure/dating and three separate subscription/impression marks
+
+| Physically indexed line | Diplomatic source-near working reading | Limit / note |
+|---|---|---|
+| `0111R-A01` | `[⟦opening⟧] und geben zu Merseburg an der` | right-hand closing sentence; city label working |
+| `0111R-A02` | `Elster, den 20. May Anno 1679.` | **written represented date** only, not material creation time |
+| `0111R-B01` | `[Moritz?]` | large single name/signature word, undecided; no biographical identification |
+| `0111R-B02` | `(L. S.)` | positionally separate letters/mark, source feature, not a validated physical seal |
+| `0111R-C01` | `[V:?] von [⟦surname undecided⟧]` | separate small autograph-looking line |
+| `0111R-D01` | `[J:?] [⟦surname undecided⟧]` | lower separate autograph-looking line |
+
+**Local QA / actual coverage:** 0110L **17** and 0110R **17** running physical-line candidates, 0111L **17** continuing lines, 0111R **two** closing lines and **four** separately positioned marks = **57 new physical writing-line/mark slots**, overwhelmingly with positive source-word content. The `0111R` written date **1679** is not the creation date of the photographed carrier, and `L. S.` is not automatically an observed intact material seal. The `0111R` signature lines are uncertain, not editorially supplied. `0111L` and `0110R` show possible textual continuity but their exact physical-carrier relationship remains source-critical, not established by prior AI hypotheses. Quality is source-visible AI direct reading; **not independent palaeographic validation**. A whole-unit T1 count/G2 or complete PDF working edition is still not reached.
+
+**Immediately subsequent transcription locus:** the new 0112L ornate heading and 0112L→0112R densely written paragraph, with their own physical-line sequence and possible incorporated 1677/1678 documentary dates, then continue to exposed 0113 areas. The thin far-right underlying leaf fragments must be approached at a more exposed view, rather than being guessed from the surrounding script.
