@@ -2,11 +2,14 @@ name: source-contract
 
 on:
   pull_request:
+    types: [opened, reopened, synchronize, labeled, unlabeled, edited, ready_for_review]
   push:
     branches: [main]
 
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
 
 jobs:
   validate:
@@ -24,8 +27,28 @@ jobs:
           {
             echo '## paleo-type source/project/engineering assurance'
             echo
-            echo '- The same repository-local `python tools/check.py` entrypoint used by developers was executed.'
+            echo '- The same repository-local python tools/check.py entrypoint used by developers was executed.'
             echo '- It covers Source Contract validation, Engineering validation, the WP4 engineering-fitness mapping/safeguards, regressions, fresh-process Project contexts and managed real-data resolver fixtures.'
             echo '- A passing workflow establishes formal/deterministic consistency for the properties actually exercised at this exact workflow head.'
             echo '- It does **not** by itself establish manuscript truth, specialist validity, evidential independence, target-context evidence staging/vision inspectability, Human Owner acceptance, external runtime/cancellation/preservation fitness, or whole-system/programme closure.'
           } >> "$GITHUB_STEP_SUMMARY"
+
+  p0-procedure-freeze:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Show P0 measures in the PR's check summary
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/metrics.py --base "$BASE_SHA" --summary
+      - name: Reject unjustified new evidence files and procedural growth
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python tools/metrics.py --base "$BASE_SHA" --guard
