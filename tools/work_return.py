@@ -28,7 +28,7 @@ def _git(root: Path, *args: str) -> subprocess.CompletedProcess[bytes]:
 
 
 def _owner_change(root: Path, project_id: str, report: dict) -> bool:
-    """Only a changed committed Project research file read back at the given SHA counts."""
+    """Detect a committed Project research-owner change between the two claimed commits."""
     before = report.get("baseline_commit")
     after = report.get("result_commit")
     owner = report.get("research_owner")
@@ -61,18 +61,18 @@ def evaluate(root: Path, project_id: str, report: dict) -> tuple[int, dict]:
     project_dir = root / "projects" / project_id
     project_file = project_dir / "project.yml"
     if not project_file.is_file():
-        return 1, {"result": "Halt: Project-Owner fehlt", "research_delta": False,
+        return 1, {"result": "Halt: Project-Owner fehlt", "owner_change": False,
                    "findings": ["project.yml nicht vorhanden"]}
 
     definition = read_simple_yaml_scalars(project_file)
     status_name = definition.get("canonical_status_file", "")
     rel = Path(status_name)
     if not status_name or rel.is_absolute() or ".." in rel.parts or len(rel.parts) != 1:
-        return 1, {"result": "Halt: STATUS-Owner ungueltig", "research_delta": False,
+        return 1, {"result": "Halt: STATUS-Owner ungueltig", "owner_change": False,
                    "findings": ["canonical_status_file nicht aufloesbar"]}
     status_file = project_dir / rel
     if not status_file.is_file():
-        return 1, {"result": "Halt: STATUS-Owner fehlt", "research_delta": False,
+        return 1, {"result": "Halt: STATUS-Owner fehlt", "owner_change": False,
                    "findings": ["STATUS.md nicht vorhanden"]}
     status = status_file.read_text(encoding="utf-8")
     baseline = report.get("baseline_commit")
@@ -158,7 +158,7 @@ def main() -> int:
     try:
         rc, answer = evaluate(args.root.resolve(), args.project, json.loads(args.report.read_text(encoding="utf-8")))
     except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:
-        rc, answer = 1, {"result": "Halt: unlesbare Eingabe", "research_delta": False, "findings": [str(exc)]}
+        rc, answer = 1, {"result": "Halt: unlesbare Eingabe", "owner_change": False, "findings": [str(exc)]}
     print(json.dumps(answer, ensure_ascii=False, indent=2))
     return rc
 
