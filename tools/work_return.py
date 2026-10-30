@@ -110,7 +110,7 @@ def evaluate(root: Path, project_id: str, report: dict) -> tuple[int, dict]:
             failures.append("no-research-delta")
 
     if failures:
-        result = "Halt: Rueckgabe/Owner-Widerspruch nicht geklaert (kein Erfolg)"
+        result = "Halt: Rueckgabe/Owner-Widerspruch nicht geklaert"
     elif has_stop:
         result = "Halt mit Grund; kein wissenschaftlicher Erfolg behauptet"
     elif delta:
