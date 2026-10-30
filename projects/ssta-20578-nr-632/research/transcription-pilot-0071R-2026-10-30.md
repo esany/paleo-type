@@ -20,12 +20,12 @@ Local editor-assigned IDs follow the **observed physical sequence** within this 
 | `0071R-A02` | `von [Heinrich?] [Gottl.?] [Marschall?] und ⟦unresolved⟧` | Only `von`, `und` and intervening **graphic hypotheses** identified; personal-name segmentation and end of line **unresolved**. Do **not** infer a family/agency relationship from the possible names. |
 | `0071R-A03` | `[Platz?] gegen einen [Handschlag?], welchen` | `gegen einen` and `welchen` comparatively clear; first noun and handshake reading need discriminating letter comparison. |
 | `0071R-A04` | `[Benjamin?] [Thünen?], ⟦unresolved⟧` | Two candidate name-like groups, no identification. Dense crossing/overwritten strokes in the following group **may** be cancellation or simply letter ascenders; deletion not accepted without targeted source-phenomenon test. |
-| `0071R-A05` | `nach [derselben?] [wegen?] gethan, mit dem ⟦unresolved⟧` | Graphically weak middle words; **not** a completed legal formula. |
+| `0071R-A05` | `nach [derselben?] [wegen?] gethan, mit dem in ⟦unresolved⟧` | Fresh exact-scan reinspection supports a separate visible short `in` after `mit dem`; intervening words and the continuation remain unresolved. **Not** a completed legal formula. |
 | `0071R-A06` | `confirmirter ⟦unresolved⟧` | Latin-derived visible opening candidate only; the remaining line is *attempted/unresolved*, not editorially completed. |
 | `0071R-A07` | `angenommenen Mann- und Weiber-` | Working positive reading; **visible line-end dash** after `Weiber-` retained. |
 | `0071R-A08` | `Lehn-Guth[?] Knau und [das?] ⟦unresolved⟧` | `Knau` and the Mann-/Weiberlehn context visible, but **word division, Guth-ending, remaining clause unresolved**; no automatic modernisation. |
-| `0071R-A09` | `[rechten?], deren die [auf?] ⟦unresolved⟧` | Candidate fragments only; not yet a defensible complete physical line. |
-| `0071R-A10` | `[Schriften?] geschehen, ⟦unresolved⟧` | Source-visible line attempted; neither the uncertain noun nor the remaining clause accepted. |
+| `0071R-A09` | `[rechten?], deren die [Auflaßung?] in ⟦unresolved⟧` | Original-sized scan comparison yields a positive *graphically tentative* `Auflaßung` with visible following `in`; first word and grammatical/line joins remain unresolved, and the noun must be discriminated graphemically before acceptance. |
+| `0071R-A10` | `[Schrifften?] geschehen, ⟦unresolved⟧` | Wordform may include doubled `ff` on the scan; alternative `[Schriften?]` retained. Following text is not transcribed from formula/context. |
 | `0071R-A11` | `beliehen worden. Signatum Dresden` | Working positive reading, punctuation and possible stroke over the last word require reinspection. |
 | `0071R-A12` | `ut supra` | Separate final physical line below `Signatum Dresden`; positive Latin source reading, **not** a silently supplied date. |
 
@@ -41,6 +41,14 @@ Local editor-assigned IDs follow the **observed physical sequence** within this 
 | `0071R-C01` | `Joh[?] Benedict L[?]manns[?].` | Separate small lower name-like line. The same *candidate lexical sequence* is visible in `0103L-D01` (independent visual comparison of two scan regions **within the same archival unit**). The surname vowel/ending and abbreviation are unresolved; **no identified person, shared scribe, common original or photographic repetition inferred**. |
 | `0071R-E01` | **Bottom-edge horizontal writing, not yet deciphered** | Narrow text visible at the lower border; *separate positional region*, not a thirteenth main-text line, not evidence of physical foliation. |
 | `0071R-E02` | **Rightmost narrow vertical writing strip, not yet deciphered** | Exposure along the right edge; source-carrier/text relation to main `0071R` remains unproven. |
+
+### Direct-image line reread of unresolved A05/A09/A10 — separate S3/S4 test, 2026-10-30
+
+**P evidence:** the exact registered compact PDF `FILE-SSTA-20578-NR632-COMPACT-PDF-20261029` was reopened, with its SHA-256 recalculated to `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`. The embedded source JPEG for PDF page 71 / provider image 0071 was extracted as an unaltered 2500 × 2257 pixel original-scan view, and the right-hand main-writing region was scrutinised in adjacent physical-line crops. The actual handwritten areas in `A05`, `A09` and `A10` were compared directly against the prior ledger. A crop is evidence-access support, not new Source identity. No OCR/HTR or generative alteration and no separate JPEG provider-file reopening occurred.
+
+**Revised recorded candidate fragments** (directly changed in the ledger above, not in an independent second transcription): `A05` newly records the visible short `in` following `mit dem`; `A09` tests `[Auflaßung?] in` rather than the empty `[auf?]` stem, retaining the first word as unresolved; `A10` records `[Schrifften?]` with `[Schriften?]` as a distinct spelling/graphemic alternative. These are small **testable graphemic improvements**, not declaration of completed lines.
+
+**Falsification and ceiling:** `A09` requires a direct comparison of the initial `Au`, double-s / `ß` form and the final `-ung` with independently readable glyphs of the same *observed* text; the candidate cannot be upgraded merely because a historical act commonly uses that noun. `A10` needs a repeatable discrimination of one vs two `f`-style strokes, not normalised orthography. Other line parts, the possible manuscript correction at `A04`, name readings and line continuities remain precisely where the prior ledger left them. The word count and physical-line count are not proof of G2 completion; neither `A09` nor `A10` is fully read, and no specialist review has occurred.
 
 ## Specific S4 checks and next bounded research action
 
