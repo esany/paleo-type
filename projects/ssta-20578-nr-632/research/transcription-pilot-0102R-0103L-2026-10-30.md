@@ -46,6 +46,35 @@ The previously indexed `0103L-A01–A04` remain a **separate four-line main-text
 
 **Coverage delta and ceiling:** The 0103L **four-line clause**, **two chancery lines**, **one signature zone** and **one lower note line** are now individually represented as separate local written regions with attempted source-near readings/explicit unresolved status. That is **four newly indexed writing regions/lines**, not four securely fully transcribed lines, and does **not** exhaust the 0102R upper writing, the 0103R partly concealed text, right-edge strips, impressions or all local marginalia. No G2 pass, independent identity attribution or full-document transcription follows.
 
+## New direct-image S3 block — 0102R upper writing and 0103L graphemic controls (2026-10-30)
+
+**Fresh direct P evidence:** registered controlled PDF `FILE-SSTA-20578-NR632-COMPACT-PDF-20261029`, 135 pages, SHA-256 `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`. Actual embedded source scans newly extracted and directly inspected: **PDF p. 102 ↔ provider image 0102** (2500 × 2243 pixels, JPEG SHA-256 `4cbc538ac257b2823828c36a483590a052c123e9df9f7de254b78666435f9d44`) and **PDF p. 103 ↔ provider image 0103** (2500 × 2257, JPEG SHA-256 `4ae99b3ca4bcea89db09b5625d4aee8ede53a00dda273f748d4794e6f2583e3a`). Original image pixels and non-generative crops/contrast only; **not** a new independent reopening of the registered individual provider JPEG Files, no OCR/HTR, no invented text. Source `SSTA-ARCHIVIALE-EDD69AA1`; image/page locators are **not archival foliation**.
+
+**S2 boundary:** previously untranscribed *upper and middle right-hand photographed writing area* on 0102, approximately native scan x=1280–2190, y=690–1680, **distinct from** the already owned lower `0102R-A01–A03` attestation. Date, address, sign-off-like words and name-like words below are positional/graphic observations, not proof of sender, document identity, original/copy relation, same hand or cross-column reading order. Local `U` line identifiers are editor-assigned physical region/line addresses, not historical manuscript numbers. `U08L` and `U08R` are spatially separated words in the same approximate y-band, not a presumed continuous sentence.
+
+| Physical line/region | Direct source-near working reading | Evidence limit / reading status |
+|---|---|---|
+| `0102R-U01` | `⟦unresolved visible upper cursive line⟧` | Directly attempted. Tempting `[Hiermit?] [werde?]` segmentation **not accepted**; neither blank nor source-intrinsically illegible. |
+| `0102R-U02` | `Ew. Königl. Majt.` | Separately large centered line; `Ew.` positive working abbreviation, opening graph still reviewable; no silent expansion. |
+| `0102R-U03` | `Dresden` | First physical line of distinct date cluster. |
+| `0102R-U04` | `am 1. April.` | Second date-cluster line; punctuation provisional as observed. |
+| `0102R-U05` | `1760.` | Third date-cluster line; *written* date, not photographic or material date. |
+| `0102R-U06` | `[allerunterthänigst?]` | Upper right-aligned cursive line, spelling/suffix not certified. |
+| `0102R-U07` | `[gehorsamster?]` | Second right-aligned cursive line, graphically plausible but not independently verified. |
+| `0102R-U08L` | `[bin?]` | Isolated left-side short word; no accepted joining to U08R. |
+| `0102R-U08R` | `[Detlev?] Carl [Graf?]` | Right-side name-like group; `Carl` clearest; first and last group uncertain, no person identification. |
+| `0102R-U09` | `Ihro Königl. Majt. und Churfürstl.` | Long separate physical line, working source spellings and unexpanded abbreviations. |
+| `0102R-U10` | `in Pohlen` | Short indented physical line, not merged into U09. |
+| `0102R-U11` | `und` | Independently positioned short physical line. |
+| `0102R-U12` | `Churfürstl. Durchl.` | Separate calligraphic line; abbreviations preserved. |
+| `0102R-U13` | `zu Sachsen` | Final short line in this cluster; final flourish/punctuation remains open. |
+
+**Direct S4 recheck of the original seven-line attestation:** on the freshly extracted 0103 scan, compare `0103L-A01` after `solches` with `0103L-A02` `und`, and `0103L-A03` after `Secret`. The word after `solches` remains **`[wird?]`** (the previous `[und?]` is not graphically established); a fresh view does **not** resolve all `w/u/i/n/r/d` strokes and is not independent specialist corroboration. The A03 letter sequence continues to support **`[hierdurch?]`** better than earlier context-driven `Siegel`, but no unqualified reading is promoted. Preserve the existing A01/A03 uncertainty in the canonical seven-line ledger. The separately placed `0102R-K01` `supplicat` and `0103L-M01/M02` overlay/cord/impression observations remain separate source phenomena.
+
+**Coverage result:** **14 directly inspected/indexed written line-or-region units** (U01–U13 plus U08L/U08R split), not 14 fully resolved lines. U01 is attempted/unresolved, U06–U08R and abbreviations remain candidates. 0102L writing, 0103R partially covered writing, far-right edge strips, other 0102R areas and whole-unit T1 remain unfinished; none is falsely called blank/illegible. G2–G6 **not reached**. This is an S2→S3→S4 local iteration, not a new scholarly stage or a complete edition.
+
+**Targeted next source checks:** test U01 graphemes against actual nearby letterforms, discriminate U06/U07 endings and U08R name/title without historical identity inference, check U02/U09 abbreviations, and independently address 0102L/0103R visible writing. Do not count repeated AI readings as independent validation. **Provenance:** GPT-6, direct controlled PDF source-image inspection 2026-10-30; no specialist signoff, original provider JPEG byte check or public redistribution authority asserted.
+
 ## Direct delta against experiments 2–4
 
 1. The previous candidate line `0103L-A01` ended with `[solches?] [und?]`. Direct reinspection identifies `solches` more clearly; the last verb reads plausibly `[wird?]`, but **graphically unresolved**. Source grammar alone may not decide.
@@ -57,7 +86,7 @@ The previously indexed `0103L-A01–A04` remain a **separate four-line main-text
 - **Highest priority:** `0103L-A01` last word `wird` versus `und` or another graphic reading; compare individual **w/u, i/n, r/d** traits within the *same observed hand*, without grammar leading the decision.
 - **Second priority:** `0103L-A03` `hierdurch` graphemes (especially opening `h` and `rch`) against the same writing hand; the earlier `Siegel` proposal is rejected as accepted text but preserved as correction history.
 - `0102R-A03` abbreviated adjective, end-of-line dash/compound boundary; compare corresponding abbreviation practice before any supplied expansion.
-- **Updated by the T2 extension above:** `0103L` chancery B01–B02 now has working text, lower D01 has a partial name reading, C01 signature was **attempted but remains unresolved**, and impression/overlay regions M01/M02 are source phenomena, not text lines. **Still not transcribed:** adjacent `0102R` upper date/handwriting, `0103R` distinct partially occluded opening, far-right edge writing and all other writing beyond the locally bounded regions. `0104` is a complementary exposure, not automatically another text. No claim of complete page/document transcription.
+- **Updated by the T2 extension above:** `0103L` chancery B01–B02 now has working text, lower D01 has a partial name reading, C01 signature was **attempted but remains unresolved**, and impression/overlay regions M01/M02 are source phenomena, not text lines. **Still not fully transcribed:** adjacent `0102R` upper writing (now partially line-indexed as `U01–U13` below, with U01 unresolved and several tentative wordforms), `0103R` distinct partially occluded opening, far-right edge writing and all other writing beyond the locally bounded regions. `0104` is a complementary exposure, not automatically another text. No claim of complete page/document transcription.
 - Primary image can expose only what it visibly shows. No original-versus-copy photographic-template claim, seal attribution, independent specialist acceptance or G2 PASS follows.
 
 ## Method/flow learning — demonstrated gating defect
