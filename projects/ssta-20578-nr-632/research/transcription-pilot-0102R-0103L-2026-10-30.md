@@ -163,7 +163,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ## Native-resolution continuation and corrections — 2026-10-30 (T2/S3 with local S4 checks)
 
-**Fresh inspected bytes:** Sächsisches Staatsarchiv Leipzig, 20578 Nr. 632 / Source `SSTA-ARCHIVIALE-EDD69AA1`. This pass extracted and directly viewed the single embedded JPEG per page from the **full-size**, 135-page working PDF `/1704-1781-SStA_20578_Nr632_Lehn_zu_gesamter_Hand_Knau.pdf`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, for **PDF pp. 71–72, 101–107**. Specifically `0102` is 4324×3880, `0104` and `0107` 4310×3891, `0105` 4318×3885, and `0106` 4318×3884 pixels. The registered *compact* 135-page PDF has separately been freshly hash-verified as `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`. **No separately registered `IMGxxxx` original-JPEG file was byte-verified in this pass**: these are directly studied embedded photographic JPEGs, not a claim to have reopened the external OneDrive package. No OCR/HTR, content generation, external text, or specialist validation. Provider-image number/PDF-page number and local L/R area are **not archival foliation**; the document's own physical manuscript page number remains unresolved.
+**Fresh inspected bytes:** Sächsisches Staatsarchiv Leipzig, 20578 Nr. 632 / Source `SSTA-ARCHIVIALE-EDD69AA1`. This pass extracted and directly viewed the single embedded JPEG per page from the **full-size**, 135-page working PDF `/1704-1781-SStA_20578_Nr632_Lehn_zu_gesamter_Hand_Knau.pdf`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, for **PDF pp. 71–72, 101–107**. Specifically `0102` is 4324×3880, `0104` and `0107` 4310×3891, `0105` 4318×3885, and `0106` 4318×3884 pixels. The registered *compact* 135-page PDF has separately been freshly hash-verified as `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`. **No separately registered `IMGxxxx` original-JPEG file was byte-verified in this pass**: these are directly studied embedded photographic JPEGs, not a claim to have reopened the external OneDrive package. No OCR/HTR, content generation, external text, or specialist validation. Provider-image number/PDF-page number and local L/R area are **not archival foliation**; the document's own physical manuscript page number remains unresolved. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 **Correction to earlier first-pass ledger, against native higher-resolution pixels:** `0102L` A01 and A02 now preserve the observed address-like `Ew` group (still uncertain in A01/A02); A08–A09 now carry only graphically conceivable `Briefe` and `vorzeigen` candidates; A10 is a visible `lassen` candidate; crucially, previously guessed **`[Dresden?]` at 0102L-A11 is NOT supported** and is replaced by `[derselbe?] und`. This is a real falsification of a former semantic/silhouette reading, not added confidence by repetition. `0104R-A05–A06` now preserve `mein [seelig?] / verstorbener Vater,` rather than an entire empty row. The six edited rows above are the **canonical revised entries**; this paragraph is decision history, not a second live text. `0102L` remains incompletely transcribed: neither the 16-slot earlier segmentation nor the unsettled lines A04–A07/A12–A16 are certified by this local pass. `0104R-E01` is directly inspected as a **narrow strip of clipped terminal fragments of a different, partly overlaid writing plane**, at the right of 0103R/0104R and still repeated in later views. A `06.`-like small group is present low in the strip but **not unambiguously a date or independent main-text token**. There is no responsible continuous reading or full physical-line count from this sliver; it must be re-exposed on a less covered view, not filled from the running petition.
 
@@ -352,7 +352,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ## Direct source transcription extension — 0110L/R to 0111L/R (2026-10-30)
 
-**Inspected source:** same exact full-size source-embedded JPEG PDF described above (full PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`); PDF/provider images **0110 and 0111**, original embedded JPEGs each **4304 × 3897 px**, directly inspected as whole scans then left/right separated native-resolution, non-generative crops. They have **not** been separately verified as registered provider original JPEG bytes. Physical line IDs below are **local observed graphic baselines**, not archival folio numbers. `0110` shows dense left and right writing; `0111` has a left running block followed by a separately displayed right closure, date and autograph/`L. S.`-looking marks. These writing surfaces should not be mistaken for four independent original deeds; neither a verified material join nor distinct hands are asserted. Repeated narrow right-edge writing fragments remain outside the respective main scripts.
+**Inspected source:** same exact full-size source-embedded JPEG PDF described above (full PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`); PDF/provider images **0110 and 0111**, original embedded JPEGs each **4304 × 3897 px**, directly inspected as whole scans then left/right separated native-resolution, non-generative crops. They have **not** been separately verified as registered provider original JPEG bytes. Physical line IDs below are **local observed graphic baselines**, not archival folio numbers. `0110` shows dense left and right writing; `0111` has a left running block followed by a separately displayed right closure, date and autograph/`L. S.`-looking marks. These writing surfaces should not be mistaken for four independent original deeds; neither a verified material join nor distinct hands are asserted. Repeated narrow right-edge writing fragments remain outside the respective main scripts. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 **Transcription vs. uncertainty:** Plain text preserves only visible original-looking forms, including `Recess`, `Ratification`, `Remonstration`, `Successoren`, local spellings, abbreviations, and physical split words; all are **working**, not accepted legal semantics. Bracketed proposed words are graphically uncertain. `⟦...⟧` is actually inked/attempted but undecided and must not be treated as a genuine physical gap. The 0110/0111 joining clauses and text order have not been proven across hidden leaf regions. These rows do **not** silently revise preceding transcriptions or transcribe the far-right thin strip.
 
@@ -537,7 +537,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ## Native-image physical-line reading, 0114–0116 — 2026-10-30
 
-Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/provider photographs **0114–0116** as native 4304–4310 px embedded JPEGs from the full-size 135-page working PDF, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Images cropped only non-generatively. These embedded photographic JPEGs were seen, **not** independent registered original provider JPEG file-byte reopens. L/R and line IDs are digitally assigned visual locators, not archival foliation. Plain groups are provisional positive reading, `[...?]` graphically unsure, `⟦...⟧` source ink actually present but reading unresolved; these are NOT text supplied by editor nor certified physical gaps. Full line text still requires adjudication, and no independent specialist assessment occurred.
+Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/provider photographs **0114–0116** as native 4304–4310 px embedded JPEGs from the full-size 135-page working PDF, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Images cropped only non-generatively. These embedded photographic JPEGs were seen, **not** independent registered original provider JPEG file-byte reopens. L/R and line IDs are digitally assigned visual locators, not archival foliation. Plain groups are provisional positive reading, `[...?]` graphically unsure, `⟦...⟧` source ink actually present but reading unresolved; these are NOT text supplied by editor nor certified physical gaps. Full line text still requires adjudication, and no independent specialist assessment occurred. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 0114L text runs with tentative `quasi possessi-` into 0114R `one`, but photographic adjacency does not prove a material leaf join. 0114R far-right narrow written strip is another partially covered exposure, not part of the main numbered lines. 0115L has a short closing text, several distinct autograph/mark areas, and a triangular overlay concealing lower notes; do not pretend the visible ink under overlay is legible. 0115R has a different running passage referring to 1678/1679 text events; written dates are NOT carrier dating. 0116R includes a visibly struck/cancelled word in its first few lines; deleted source ink is retained as phenomenon rather than silently regularized. The dates on 0116L are separately positioned from the body.
 
@@ -698,7 +698,7 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 
 ## Direct native-image reading — differentiated 1762 Lehn-Schein texts and 0119–0120 (2026-10-30)
 
-Source: Sächsisches Staatsarchiv Leipzig Nr. 632, Source ID `SSTA-ARCHIVIALE-EDD69AA1`; direct native-pixel embedded-photograph inspection of PDF/provider images **0117–0120** (4299–4304px wide), from the full-size 135-page working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Exact provider-JPEG file objects were NOT reopened. No OCR/HTR or generated reconstruction, no independent specialist control. Local image-side/line addresses are not archival foliation. Only source-graphic positive readings are in plain words; graphically tentative words are bracketed, physically present undeciphered ink is noted with `⟦...⟧`, no editorial supply.
+Source: Sächsisches Staatsarchiv Leipzig Nr. 632, Source ID `SSTA-ARCHIVIALE-EDD69AA1`; direct native-pixel embedded-photograph inspection of PDF/provider images **0117–0120** (4299–4304px wide), from the full-size 135-page working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Exact provider-JPEG file objects were NOT reopened. No OCR/HTR or generated reconstruction, no independent specialist control. Local image-side/line addresses are not archival foliation. Only source-graphic positive readings are in plain words; graphically tentative words are bracketed, physically present undeciphered ink is noted with `⟦...⟧`, no editorial supply. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein texts**, despite similar heading/date/formula. `0117R` explicitly includes Johann George Friedrich, while `0118R` includes Detlev Carl von Einsiedel. Do not deduplicate the two, nor fill either from the other. The left photo regions 0118L/0119L/0120L mostly show pale reversed-looking bleed-through and were NOT treated as independent transcribed running main text. 0119R contains visible overwritten/cancelled upper text, and 0120R an independently ornate petition/address with a visibly crossed-out header group, not photographic duplicates of the Lehn-Scheine.
 
@@ -794,7 +794,7 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ## Source-first diplomatic reading, 0121–0124; repeated exposures 0122/0123 (2026-10-30)
 
-**Actual primary-image inspections:** full-size 135-page working PDF, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`; embedded single photographic JPEG for provider/PDF images **0121, 0122, 0123, 0124** extracted to native 4304–4324 px raster and visually examined as separate L/R source regions. No OCR/HTR or generative restoration; not a separate reopening of independently registered provider original JPEG File bytes. Source `SSTA-ARCHIVIALE-EDD69AA1`. Local region names are photographic, not historic folia.
+**Actual primary-image inspections:** full-size 135-page working PDF, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`; embedded single photographic JPEG for provider/PDF images **0121, 0122, 0123, 0124** extracted to native 4304–4324 px raster and visually examined as separate L/R source regions. No OCR/HTR or generative restoration; not a separate reopening of independently registered provider original JPEG File bytes. Source `SSTA-ARCHIVIALE-EDD69AA1`. Local region names are photographic, not historic folia. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 **S2 view test/phenomena:** the right-hand petition writing in **0122R and 0123R is a duplicate photographed surface** at materially similar positions with the same overwritten word groups; it is indexed/transcribed **only at 0122R**. The 0123L picture largely hides the right side of the previously more fully visible 0122L text, by an overlying leaf. That is complementary/obscured exposure, **not a distinct independent copy**. Images 0121R and 0124R each have visible cancellations in the decorated address/title or text body; they must not be regularized away. Written dates `3. August 1764.` (0122L) and `7. Novbr. 1763.` (0124L) are text-internal events, not photographic carrier dating. Source chronology cannot be simply read off PDF image order.
 
@@ -956,7 +956,7 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ## Further direct photographic diplomatic reading 0125–0128 — 2026-10-30
 
-**Direct evidence:** registered Project Source `SSTA-ARCHIVIALE-EDD69AA1`; full-size archival-unit working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, native embedded source JPEGs (approx. 4299–4324px wide) for **PDF/provider 0125–0128** directly extracted/inspected as left/right local photographic regions, non-generative contrast/crop only. No standalone registered provider JPEG File was independently opened/hashed, no OCR or fabricated image, and no qualified human expert review. Image-side IDs remain distinct from true archival foliation, which is unestablished.
+**Direct evidence:** registered Project Source `SSTA-ARCHIVIALE-EDD69AA1`; full-size archival-unit working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, native embedded source JPEGs (approx. 4299–4324px wide) for **PDF/provider 0125–0128** directly extracted/inspected as left/right local photographic regions, non-generative contrast/crop only. No standalone registered provider JPEG File was independently opened/hashed, no OCR or fabricated image, and no qualified human expert review. Image-side IDs remain distinct from true archival foliation, which is unestablished. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 **S2 and source phenomenon:** 0125L/R are separate visible written regions; their grammatical associations are *not* automatically identical material leaf or same hand. 0126R and 0127R contain distinct 1764 Lehn-Schein-type texts for **Johann George Friedrich** and **Detlev Carl von Einsiedel** respectively, not duplicate photographs despite similar date and formula. At 0127L and 0128L the photographed pale/reversed writing cannot be securely described as a new independently written main text and is not silently transcribed. The 0128R begins a separate historically earlier represented 1726 transaction on one visible photo, **not** conclusive evidence that the photograph's substrate dates to 1726. Several isolated bottom handwritten names and 0126R calligraphic office text are separate from running paragraph; preserve them as distinct lines. Textual `4000` plus a currency-looking mark on 0128R is NOT expanded into a currency or modern amount without discriminating graphic test.
 
@@ -966,168 +966,168 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0125L-A01` | `[⟦opening⟧] auch [⟦word⟧] daß von` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A02` | `gehöriger [⟦word⟧] abgelegt, der` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A03` | `Lehn auf unseren in Mann` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A04` | `Dominante [⟦verb⟧],` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A05` | `gehörend solche Lehen, welche` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A06` | `so künftig in Unterthänigkeit be-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A07` | `werkstelligen, Und an Ew. Königl.` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A08` | `Hoheit [⟦phrase⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A09` | `[⟦intro⟧] Ritter, [⟦group⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A10` | `[⟦word⟧] mir die Lehen` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A11` | `an bemelten Mann und Weiber-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A12` | `Lehn-Guthe Knau mit Zinsen,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A13` | `samt Zugehörungen,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A14` | `zu meinem Antheil, nebst derer` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A15` | `Lehn-Briefe reichen, wie auch` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A16` | `die gesammte Hand an erwer-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A17` | `ten meines Bruders daran habenden` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A18` | `Antheil erkennen, und [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A19` | `darüber gewöhnlichen Lehn-Schein` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A20` | `ertheilen und Lehn-Brief ausfertigen` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A21` | `[⟦word⟧] zu leisten Handschlag` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A22` | `von mir [⟦word⟧] legitimirten` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A23` | `gewollmächtigten Admittiren,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A24` | `sodann darüber mein gewöhn-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A25` | `lichen Lehn-Schein ertheilen,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A26` | `Ew. Königl. Hoheit` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125L-A27` | `Dresden am 1. August [1764?]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A01` | `[⟦opening⟧] ⟦auch?⟧ [⟦word⟧] daß von` | Unsicher am direkt betrachteten Bild: ⟦opening⟧, ⟦word⟧, „auch“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A02` | `gehöriger [⟦word⟧] abgelegt, der` | Unsicher am direkt betrachteten Bild: „gehöriger“, ⟦word⟧, „abgelegt“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A03` | `⟦Lehn auf unseren?⟧ in Mann` | Unsicher am direkt betrachteten Bild: „Lehn auf unseren“ (nicht bildbestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0125L-A04` | `Dominante [⟦verb⟧],` | Unsicher am direkt betrachteten Bild: „Dominante“, ⟦verb⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A05` | `gehörend solche Lehen, welche` | Unsicher am direkt betrachteten Bild: „gehörend“, „Lehen“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A06` | `so künftig in Unterthänigkeit be-` | Unsicher am direkt betrachteten Bild: „Unterthänigkeit“, „be-“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A07` | `werkstelligen, Und an Ew. Königl.` | Unsicher am direkt betrachteten Bild: „werkstelligen“, „Ew.“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A08` | `Hoheit [⟦phrase⟧] [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦phrase⟧, ⟦end⟧ nach „Hoheit“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A09` | `[⟦intro⟧] Ritter, [⟦group⟧]` | Unsicher am direkt betrachteten Bild: ⟦intro⟧, „Ritter“, ⟦group⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A10` | `[⟦word⟧] mir die Lehen` | Unsicher am direkt betrachteten Bild: ⟦word⟧, „mir“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A11` | `an bemelten Mann und Weiber-` | Unsicher am direkt betrachteten Bild: „bemelten“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A12` | `Lehn-Guthe Knau mit Zinsen,` | keine Unsicherheit beobachtet |
+| `0125L-A13` | `samt Zugehörungen,` | keine Unsicherheit beobachtet |
+| `0125L-A14` | `zu meinem Antheil, nebst derer` | keine Unsicherheit beobachtet |
+| `0125L-A15` | `Lehn-Briefe reichen, wie auch` | Unsicher am direkt betrachteten Bild: „Lehn-Briefe“, „reichen“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A16` | `die gesammte Hand an erwer-` | Unsicher am direkt betrachteten Bild: „erwer-“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A17` | `ten meines Bruders daran habenden` | Unsicher am direkt betrachteten Bild: „ten“, „meines“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A18` | `Antheil erkennen, und [⟦end⟧]` | Unsicher am direkt betrachteten Bild: „erkennen“, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A19` | `darüber gewöhnlichen Lehn-Schein` | Unsicher am direkt betrachteten Bild: „darüber gewöhnlichen“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A20` | `⟦ertheilen?⟧ und Lehn-Brief ⟦ausfertigen?⟧` | Unsicher am direkt betrachteten Bild: „ertheilen“, „ausfertigen“ (Zeilenabgleich); keine bestätigte Lesung dieser Stelle. |
+| `0125L-A21` | `[⟦word⟧] zu leisten Handschlag` | Unsicher am direkt betrachteten Bild: ⟦word⟧, „Handschlag“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A22` | `von mir [⟦word⟧] legitimirten` | Unsicher am direkt betrachteten Bild: ⟦word⟧, „legitimirten“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A23` | `gewollmächtigten Admittiren,` | Unsicher am direkt betrachteten Bild: „gewollmächtigten“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A24` | `sodann darüber mein gewöhn-` | Unsicher am direkt betrachteten Bild: „sodann“, „gewöhn-“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A25` | `lichen Lehn-Schein ertheilen,` | Unsicher am direkt betrachteten Bild: „lichen“, „ertheilen“; keine bestätigte Lesung dieser Stelle. |
+| `0125L-A26` | `Ew. Königl. Hoheit` | keine Unsicherheit beobachtet |
+| `0125L-A27` | `Dresden am 1. August [1764?]` | Unsicher am direkt betrachteten Bild: „1764“ (Ziffern); keine bestätigte Lesung dieser Stelle. |
 
 ### 0125R physical written-line first reading
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0125R-A01` | `[Ich?] zu [⟦word⟧] unterschrieben [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A02` | `[⟦group⟧] der Lehn- und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A03` | `gesammten Hand` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A04` | `an dem Mann- und Weiber Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A05` | `Guth Knau mit Zinsen,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A06` | `2/3 die Lehen, [⟦group⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A07` | `das Erb- und allodial-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A08` | `Guth [⟦word⟧], und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A09` | `andere Erb- und allodial Gü-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A10` | `ther Wercken im [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A11` | `[⟦group⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A12` | `[⟦word⟧] Lehe zu meinem Antheil` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A13` | `a/ an dem Mann und Weiber Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A14` | `guth Knau mit Zinsen, und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A15` | `die gesammte Hand an meines` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A16` | `Bruders, des Hochgebohrnen Herrn` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A17` | `Johann George Friedrich Grafens` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A18` | `von Einsiedel, Churfürstl: Sächß:` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A19` | `geheimden Cabinets-Ministers` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A20` | `daran habenden Antheil, und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A21` | `b/ an dem Erb- und allodial Guthe` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A22` | `[⟦place⟧], ingl[eichen]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A23` | `c/ an dem Erb- und allodial-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A24` | `Berg- und Hütten Werken, wie` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A25` | `Vetter der [⟦word⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0125R-A26` | `sondern auch die [⟦group⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A01` | `⟦bisheriger Kandidat am Bild nicht bestätigt: Ich? zu [word] unterschrieben [end]⟧` | Unsicher am direkt betrachteten Bild: „Ich? zu … unterschrieben“ (nicht bildbestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0125R-A02` | `[⟦group⟧] der Lehn- und` | Unsicher am direkt betrachteten Bild: ⟦group⟧, „Lehn-“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A03` | `gesammten Hand` | keine Unsicherheit beobachtet |
+| `0125R-A04` | `an dem Mann- und Weiber Lehn-` | Unsicher am direkt betrachteten Bild: „an dem“, „Weiber Lehn-“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A05` | `Guth Knau mit Zinsen,` | keine Unsicherheit beobachtet |
+| `0125R-A06` | `2/3 die Lehen, [⟦group⟧]` | Unsicher am direkt betrachteten Bild: „2/3“, ⟦group⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A07` | `das Erb- und allodial-` | keine Unsicherheit beobachtet |
+| `0125R-A08` | `Guth [⟦word⟧], und` | Unsicher am direkt betrachteten Bild: ⟦word⟧ nach „Guth“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A09` | `andere Erb- und allodial Gü-` | Unsicher am direkt betrachteten Bild: „andere“, „allodial“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A10` | `ther Wercken im [⟦word⟧]` | Unsicher am direkt betrachteten Bild: „Wercken“, ⟦word⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A11` | `[⟦group⟧] [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦group⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A12` | `[⟦word⟧] Lehe zu meinem Antheil` | Unsicher am direkt betrachteten Bild: ⟦word⟧ vor „Lehe“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A13` | `a/ an dem Mann und Weiber Lehn-` | Unsicher am direkt betrachteten Bild: „a/“, „Lehn-“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A14` | `guth Knau mit Zinsen, und` | Unsicher am direkt betrachteten Bild: „Zinsen“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A15` | `die gesammte Hand an meines` | keine Unsicherheit beobachtet |
+| `0125R-A16` | `Bruders, des Hochgebohrnen Herrn` | Unsicher am direkt betrachteten Bild: „Hochgebohrnen“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A17` | `Johann George Friedrich Grafens` | Unsicher am direkt betrachteten Bild: „Grafens“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A18` | `von Einsiedel, Churfürstl: Sächß:` | Unsicher am direkt betrachteten Bild: „Churfürstl: Sächß:“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A19` | `geheimden Cabinets-Ministers` | Unsicher am direkt betrachteten Bild: „geheimden“, „Cabinets-“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A20` | `daran habenden Antheil, und` | Unsicher am direkt betrachteten Bild: „daran“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A21` | `b/ an dem Erb- und allodial Guthe` | Unsicher am direkt betrachteten Bild: „b/“, „allodial“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A22` | `[⟦place⟧], ingl[eichen]` | Unsicher am direkt betrachteten Bild: ⟦place⟧, „ingl[eichen]“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A23` | `c/ an dem Erb- und allodial-` | Unsicher am direkt betrachteten Bild: „c/“, „allodial-“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A24` | `Berg- und Hütten Werken, wie` | Unsicher am direkt betrachteten Bild: „Berg-“, „Hütten“; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A25` | `Vetter der [⟦word⟧] [⟦end⟧]` | Unsicher am direkt betrachteten Bild: „Vetter“, ⟦word⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0125R-A26` | `sondern auch die [⟦group⟧]` | Unsicher am direkt betrachteten Bild: ⟦group⟧ nach „die“; keine bestätigte Lesung dieser Stelle. |
 
 ### 0126L physical written-line first reading
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0126L-A01` | `gelegenen Häuser, auch deren` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A02` | `die [⟦word⟧] behörig, und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A03` | `Behalte der Gültigkeit, samt` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A04` | `deren allerhand Erb- und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A05` | `Zugehörungen, [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A06` | `den Handschlag, auf den mir` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A07` | `mir allerseits geleistete Erb-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A08` | `huldigung- und Lehn-Pflicht` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A09` | `durchfall abstatte, Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A10` | `Scheine hierauf mir allergnädigst` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A11` | `und Ausfertigung derer re-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A12` | `spective Lehn- und Erb-Briefe` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A13` | `bitte, und alles anderen` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A14` | `hier [⟦word⟧] dero Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A15` | `gesammte Hand wegen [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A16` | `mir abgelegten Pflicht` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A17` | `dester [⟦group⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A18` | `und habe diese Vollmacht` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A19` | `eigenhändig unterschrieben,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A20` | `und besiegelt [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A21` | `Dresden am 1. August 1764.` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126L-A22` | `L.S. Detlev Carl Graf von Einsiedel` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A01` | `gelegenen Häuser, auch deren` | Unsicher am direkt betrachteten Bild: „gelegenen“ (Anschluss); keine bestätigte Lesung dieser Stelle. |
+| `0126L-A02` | `die [⟦word⟧] behörig, und` | Unsicher am direkt betrachteten Bild: ⟦word⟧ vor „behörig“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A03` | `Behalte der Gültigkeit, samt` | Unsicher am direkt betrachteten Bild: „Behalte“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A04` | `deren allerhand Erb- und` | Unsicher am direkt betrachteten Bild: „allerhand“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A05` | `Zugehörungen, [⟦word⟧]` | Unsicher am direkt betrachteten Bild: ⟦word⟧; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A06` | `den Handschlag, auf den mir` | Unsicher am direkt betrachteten Bild: „mir“ nach „Handschlag“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A07` | `mir allerseits geleistete Erb-` | Unsicher am direkt betrachteten Bild: „mir allerseits“ (nicht bestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0126L-A08` | `huldigung- und Lehn-Pflicht` | Unsicher am direkt betrachteten Bild: „huldigung-“, „Lehn-Pflicht“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A09` | `⟦durchfall?⟧ abstatte, Lehn-` | Unsicher am direkt betrachteten Bild: „durchfall“ (nicht bestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0126L-A10` | `Scheine hierauf mir allergnädigst` | Unsicher am direkt betrachteten Bild: „Scheine“, „allergnädigst“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A11` | `und Ausfertigung derer re-` | Unsicher am direkt betrachteten Bild: „Ausfertigung“, „re-“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A12` | `spective Lehn- und Erb-Briefe` | keine Unsicherheit beobachtet |
+| `0126L-A13` | `bitte, und alles anderen` | Unsicher am direkt betrachteten Bild: „alles anderen“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A14` | `hier [⟦word⟧] dero Lehn-` | Unsicher am direkt betrachteten Bild: ⟦word⟧, „Lehn-“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A15` | `gesammte Hand wegen [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦end⟧ nach „wegen“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A16` | `mir abgelegten Pflicht` | Unsicher am direkt betrachteten Bild: „mir“, „abgelegten“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A17` | `dester [⟦group⟧] [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦group⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A18` | `und habe diese Vollmacht` | Unsicher am direkt betrachteten Bild: „Vollmacht“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A19` | `eigenhändig unterschrieben,` | keine Unsicherheit beobachtet |
+| `0126L-A20` | `und besiegelt [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦end⟧ nach „besiegelt“; keine bestätigte Lesung dieser Stelle. |
+| `0126L-A21` | `Dresden am 1. August 1764.` | keine Unsicherheit beobachtet |
+| `0126L-A22` | `L.S. Detlev Carl Graf von Einsiedel` | Unsicher am direkt betrachteten Bild: „Detlev“, „Einsiedel“ (Signatur); keine bestätigte Lesung dieser Stelle. |
 
 ### 0126R physical written-line first reading
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0126R-A01` | `Den 22ten August 1764. ist der Hoch- und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A02` | `Wohlgebohrne, Herr Johann George Friedrich` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A03` | `Graf von Einsiedel, Geheimer Cabinets-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A04` | `Ministre, und [⟦group⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A05` | `und Lehn-Pflicht, welche [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A06` | `[⟦title⟧] dessen Vollmacht in die [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A07` | `[⟦word⟧] zu seinem Antheil mit dem Mann-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A08` | `und Weiber-Lehn-Guthe Knau und Zinsen,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A09` | `nebst Zugehörungen, besage der Lehn Briefe,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A10` | `[⟦group⟧] [⟦end⟧] gesammte Hand an` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A11` | `seines Bruders, des Gräfl: und Wohlgebohrnen,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A12` | `Herrn Detlev Carl Grafen von Einsiedel,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A13` | `[⟦group⟧] [⟦end⟧] Signatum Dresden` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A14` | `ut supra.` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A15` | `Churfürstlich Sächsische Cantzley` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A16` | `Johann George von [⟦surname⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0126R-A17` | `[⟦lower separately placed name⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A01` | `Den 22ten August 1764. ist der Hoch- und` | keine Unsicherheit beobachtet |
+| `0126R-A02` | `Wohlgebohrne, Herr Johann George Friedrich` | keine Unsicherheit beobachtet |
+| `0126R-A03` | `Graf von Einsiedel, Geheimer Cabinets-` | Unsicher am direkt betrachteten Bild: „Geheimer“ (Titel); keine bestätigte Lesung dieser Stelle. |
+| `0126R-A04` | `Ministre, und [⟦group⟧] [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦group⟧, ⟦end⟧ nach „Ministre“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A05` | `und Lehn-Pflicht, welche [⟦word⟧]` | Unsicher am direkt betrachteten Bild: ⟦word⟧, „Lehn-Pflicht“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A06` | `[⟦title⟧] dessen Vollmacht in die [⟦word⟧]` | Unsicher am direkt betrachteten Bild: ⟦title⟧, ⟦word⟧, „Vollmacht“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A07` | `[⟦word⟧] zu seinem Antheil mit dem Mann-` | Unsicher am direkt betrachteten Bild: ⟦word⟧, „Antheil“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A08` | `und Weiber-Lehn-Guthe Knau und Zinsen,` | keine Unsicherheit beobachtet |
+| `0126R-A09` | `nebst Zugehörungen, besage der Lehn Briefe,` | Unsicher am direkt betrachteten Bild: „Lehn Briefe“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A10` | `[⟦group⟧] [⟦end⟧] gesammte Hand an` | Unsicher am direkt betrachteten Bild: ⟦group⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A11` | `seines Bruders, des Gräfl: und Wohlgebohrnen,` | Unsicher am direkt betrachteten Bild: „Gräfl:“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A12` | `Herrn Detlev Carl Grafen von Einsiedel,` | keine Unsicherheit beobachtet |
+| `0126R-A13` | `[⟦group⟧] [⟦end⟧] Signatum Dresden` | Unsicher am direkt betrachteten Bild: ⟦group⟧, ⟦end⟧ vor „Signatum“; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A14` | `ut supra.` | keine Unsicherheit beobachtet |
+| `0126R-A15` | `Churfürstlich Sächsische Cantzley` | keine Unsicherheit beobachtet |
+| `0126R-A16` | `Johann George von [⟦surname⟧]` | Unsicher am direkt betrachteten Bild: ⟦surname⟧; keine bestätigte Lesung dieser Stelle. |
+| `0126R-A17` | `[⟦lower separately placed name⟧]` | Unsicher am direkt betrachteten Bild: ⟦lower separately placed name⟧; keine bestätigte Lesung dieser Stelle. |
 
 ### 0127R physical written-line first reading
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0127R-A01` | `Den 22ten Augusti, 1764. ist der Hoch- und Wohl-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A02` | `gebohrne, Herr Detlev Carl Graf von Einsiedel,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A03` | `[⟦title⟧] [⟦word⟧] und Ober-Vormundschaft,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A04` | `und, und wegen [⟦word⟧] gegen einen Handschlag, wel-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A05` | `chen [⟦name⟧] in betroffenen Vollmacht` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A06` | `desfalls wegen gethan, zu seinem Antheil, mit` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A07` | `dem Mann- und Weiber Lehn-Guthe Knau und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A08` | `dessen Zugehörungen, besage der Lehn-Briefe,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A09` | `beliehen, ihm auch die gesammte Hand an seines` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A10` | `Bruders, des Hoch und Wohlgebohrnen Herrn` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A11` | `Johann George Friedrich Grafens von Einsiedel,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A12` | `geheimden Cabinets-Ministers, daran habenden` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A13` | `Antheil bekannt worden. Signatum` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A14` | `Dresden ut supra.` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A15` | `Churfürstlich Sächsische Cantzley` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A16` | `Johann George von [⟦surname⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0127R-A17` | `[⟦lower separately placed name⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A01` | `Den 22ten Augusti, 1764. ist der Hoch- und Wohl-` | keine Unsicherheit beobachtet |
+| `0127R-A02` | `gebohrne, Herr Detlev Carl Graf von Einsiedel,` | keine Unsicherheit beobachtet |
+| `0127R-A03` | `[⟦title⟧] [⟦word⟧] und Ober-Vormundschaft,` | Unsicher am direkt betrachteten Bild: ⟦title⟧, ⟦word⟧, „Ober-Vormundschaft“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A04` | `⟦und, und?⟧ wegen [⟦word⟧] gegen einen Handschlag, wel-` | Unsicher am direkt betrachteten Bild: „und, und“ (nicht bestätigt), ⟦word⟧; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A05` | `chen [⟦name⟧] in betroffenen Vollmacht` | Unsicher am direkt betrachteten Bild: ⟦name⟧, „betroffenen“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A06` | `desfalls wegen gethan, zu seinem Antheil, mit` | Unsicher am direkt betrachteten Bild: „desfalls“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A07` | `dem Mann- und Weiber Lehn-Guthe Knau und` | keine Unsicherheit beobachtet |
+| `0127R-A08` | `dessen Zugehörungen, besage der Lehn-Briefe,` | Unsicher am direkt betrachteten Bild: „dessen“, „Lehn-Briefe“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A09` | `beliehen, ihm auch die gesammte Hand an seines` | Unsicher am direkt betrachteten Bild: „beliehen“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A10` | `Bruders, des Hoch und Wohlgebohrnen Herrn` | Unsicher am direkt betrachteten Bild: „Hoch und Wohlgebohrnen“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A11` | `Johann George Friedrich Grafens von Einsiedel,` | keine Unsicherheit beobachtet |
+| `0127R-A12` | `geheimden Cabinets-Ministers, daran habenden` | Unsicher am direkt betrachteten Bild: „geheimden“, „Cabinets-“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A13` | `Antheil bekannt worden. Signatum` | Unsicher am direkt betrachteten Bild: „bekannt“; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A14` | `Dresden ut supra.` | keine Unsicherheit beobachtet |
+| `0127R-A15` | `Churfürstlich Sächsische Cantzley` | keine Unsicherheit beobachtet |
+| `0127R-A16` | `Johann George von [⟦surname⟧]` | Unsicher am direkt betrachteten Bild: ⟦surname⟧; keine bestätigte Lesung dieser Stelle. |
+| `0127R-A17` | `[⟦lower separately placed name⟧]` | Unsicher am direkt betrachteten Bild: ⟦lower separately placed name⟧; keine bestätigte Lesung dieser Stelle. |
 
 ### 0128R physical written-line first reading
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0128R-A01` | `Nachdem weyl. Herr Casp Rudolph` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A02` | `Haubold von Einsiedel, bey dem ihm in der` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A03` | `brüderlichen Theilung vom 15. April: 1726.` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A04` | `unter andern zugefallenen und von ihm ange-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A05` | `nommenen Mann- und Weiber-Lehn-Guthe` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A06` | `Knau und Pahren seine damahls lebenden` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A07` | `beyden Frauen Schwestern, nehmlich die Fräu-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A08` | `lein [⟦name⟧] und Frau [⟦name⟧] gebohrene [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A09` | `von [⟦name⟧] zwar in der Mitbelehngesuches` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A10` | `angestellt, diese aber in den 15. April` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A11` | `1726. ausgestellten und den` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A12` | `17. ejusdem mensis et anni allergnädigst` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A13` | `confirmirten Revers, sich dahin erkläret,` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A14` | `daß sie benannten ihrem von Einsiedel` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A15` | `und dessen Mann- und weibliche Descen-` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A16` | `denten an der freyen Disposition und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A17` | `Alienation gedachten Guths bis auf ein` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A18` | `Quantum von 4000 [⟦currency sign⟧] ... mehr [⟦text⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A19` | `von und ihren Descendenten, männ- und` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A20` | `weiblichen [⟦word⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
-| `0128R-A21` | `auch [⟦word⟧] [⟦end⟧] und die Succession [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A01` | `Nachdem weyl. Herr Casp Rudolph` | Unsicher am direkt betrachteten Bild: „Casp“ (Abkürzung); keine bestätigte Lesung dieser Stelle. |
+| `0128R-A02` | `Haubold von Einsiedel, bey dem ihm in der` | Unsicher am direkt betrachteten Bild: „bey“, „ihm“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A03` | `brüderlichen Theilung vom 15. April: 1726.` | keine Unsicherheit beobachtet |
+| `0128R-A04` | `unter andern zugefallenen und von ihm ange-` | Unsicher am direkt betrachteten Bild: „ange-“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A05` | `nommenen Mann- und Weiber-Lehn-Guthe` | keine Unsicherheit beobachtet |
+| `0128R-A06` | `Knau und Pahren seine damahls lebenden` | Unsicher am direkt betrachteten Bild: „Pahren“ (Name); keine bestätigte Lesung dieser Stelle. |
+| `0128R-A07` | `beyden Frauen Schwestern, nehmlich die Fräu-` | Unsicher am direkt betrachteten Bild: „beyden“, „Fräu-“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A08` | `lein [⟦name⟧] und Frau [⟦name⟧] gebohrene [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦name⟧, ⟦name⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A09` | `von [⟦name⟧] zwar in der ⟦Mitbelehngesuches?⟧` | Unsicher am direkt betrachteten Bild: ⟦name⟧, „Mitbelehngesuches“ (nicht bildbestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0128R-A10` | `angestellt, diese aber in den 15. April` | Unsicher am direkt betrachteten Bild: „angestellt“, „den 15. April“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A11` | `1726. ausgestellten und den` | Unsicher am direkt betrachteten Bild: „1726“, „ausgestellten“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A12` | `17. ejusdem mensis et anni allergnädigst` | keine Unsicherheit beobachtet |
+| `0128R-A13` | `confirmirten Revers, sich dahin erkläret,` | keine Unsicherheit beobachtet |
+| `0128R-A14` | `daß sie benannten ⟦ihrem?⟧ von Einsiedel` | Unsicher am direkt betrachteten Bild: „ihrem“ (nicht bildbestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0128R-A15` | `und dessen ⟦Mann-?⟧ und weibliche Descen-` | Unsicher am direkt betrachteten Bild: „Mann-“ (vielleicht „männ-“; offen); keine bestätigte Lesung dieser Stelle. |
+| `0128R-A16` | `denten an der freyen Disposition und` | keine Unsicherheit beobachtet |
+| `0128R-A17` | `Alienation gedachten Guths bis auf ein` | Unsicher am direkt betrachteten Bild: „Guths“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A18` | `Quantum von 4000 [⟦currency sign⟧] ... ⟦mehr?⟧ [⟦text⟧]` | Unsicher am direkt betrachteten Bild: ⟦currency sign⟧, ⟦text⟧, „mehr“ (nicht bestätigt); keine bestätigte Lesung dieser Stelle. |
+| `0128R-A19` | `von und ihren Descendenten, männ- und` | Unsicher am direkt betrachteten Bild: „von“, „männ-“; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A20` | `weiblichen [⟦word⟧] [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦word⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
+| `0128R-A21` | `auch [⟦word⟧] [⟦end⟧] und die Succession [⟦end⟧]` | Unsicher am direkt betrachteten Bild: ⟦word⟧, ⟦end⟧, ⟦end⟧; keine bestätigte Lesung dieser Stelle. |
 
 **Coverage/result:** 130 new physically indexed line slots (not equally many fully resolved/validated readings); substantial positive lexical text is present on every listed line, but many span-local undeciphered groups remain. No G2 claim, independent specialist review or premature PDF output. The next new exposed text starts at 0129R, with its view/photographic relation to 0130R requiring checking before a distinct running text is inferred. Recheck the source-native 0102L graph groups when source-readability is better than these passages.
 
 
 ## Full native photograph diplomatic pass: 0129–0131, money signs and 1780/1781 subscription boundaries (2026-10-30)
 
-**Primary evidence actually inspected:** Sächsisches Staatsarchiv Leipzig, Best. 20578, Nr. 632; Source `SSTA-ARCHIVIALE-EDD69AA1`. Full-size PDF with SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, its embedded 4299–4304px original-photographic scans for PDF/provider **0129, 0130, 0131** directly inspected in native pixel L/R crops. These are specific embedded JPEG exposures, not standalone registered provider JPEG File byte checks. No HTR/OCR, AI source-image regeneration or independent specialist validation. Image sequence ≠ foliation; `L/R` is photo-side locator only.
+**Primary evidence actually inspected:** Sächsisches Staatsarchiv Leipzig, Best. 20578, Nr. 632; Source `SSTA-ARCHIVIALE-EDD69AA1`. Full-size PDF with SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, its embedded 4299–4304px original-photographic scans for PDF/provider **0129, 0130, 0131** directly inspected in native pixel L/R crops. These are specific embedded JPEG exposures, not standalone registered provider JPEG File byte checks. No HTR/OCR, AI source-image regeneration or independent specialist validation. Image sequence ≠ foliation; `L/R` is photo-side locator only. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 **Critical distinctions:** the written `4000` and `2000` followed by handwritten signs are *numeric/graphic transcription evidence*, NOT an accepted unit or currency (do not turn to Taler without direct sign proof). The photographed 0129L text explicitly includes written dates `30. Nov: 1768` and `20. April: 1769`; 0130R contains a distinct dated subscription about `14. und 17ten Februar, 1780`; 0131R includes a textual `1781` closure. None determines the age of the photographed carrier without separate material analysis. Autographs, large legal-seal-like impressions, and overwritten/partly obscured material at 0131L/R are separated from running text. At 0131R an additional small sheet overlies part of the writing/signature zone (previous Human correction), so those underlying graphemes are **not** unconditionally legible. Nor does 0131R alone establish a new independent physical object relative to the large charter on 0133–0135.
 
@@ -1284,7 +1284,7 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ## One oversized 1781 charter: direct photo front/reverse first diplomatic control (2026-10-30)
 
-**Evidence:** exact full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`; source `SSTA-ARCHIVIALE-EDD69AA1`; native embedded 4300px photographic JPEG views **0132–0135**, directly visually inspected in their own frames plus native cropped L/R fields. The individual externally registered original-JPEG File bytes were not reopened separately. No OCR/HTR, image-content generation, qualified specialist control, or assertion of historical foliation.
+**Evidence:** exact full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`; source `SSTA-ARCHIVIALE-EDD69AA1`; native embedded 4300px photographic JPEG views **0132–0135**, directly visually inspected in their own frames plus native cropped L/R fields. The individual externally registered original-JPEG File bytes were not reopened separately. No OCR/HTR, image-content generation, qualified specialist control, or assertion of historical foliation. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
 
 **Direct S2 / deduplication:** The **same single oversized 1781 charter** is photographed on **0133/0135 on its front** (0135 wider/usable; 0133 supplementary) and **0132R/0134L on its reverse** (0134L preferred for more exposed reverse-side note). This follows current Project Human correction and direct match of distinctive ornament, material fold and inscription positions; **not four independent texts**. The 0134L dark circular area is not proof of an intact or identifiable wax seal; the front has a separate dark impression/cover sheet that physically obscures some parts of the writing. The upper reverse lettering is strongly shadowed/partly stencilled and is not silently decoded or mirrored into an invented text. Charters/publication rights are not expanded by local study.
 
@@ -1332,4 +1332,4 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### Native-image targeted recheck 0102L difficult A06/A07/A13/A14 (2026-10-30)
 
-Directly re-viewed original native-resolution source-photographic scan for PDF/provider image **0102** (4324 × 3880 embedded JPEG pixels) in the full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Upper and lower left writing area inspected in separate contrast-only crops; no independent original provider JPEG File byte reopening, no OCR/HTR or scholarly specialist check. The opening `A06` permits candidate two-group `[Lehn-?] [Sachen?];`; `A07` has visible second `und` and final `Lehn-` with a physical division mark. The `A13` lower cursive line has a longer candidate `[vollmächtigen?]`, while `A14` begins with a group tentatively `[dieser?]`, but the middle strokes are **not** clear enough for certainty. The uncertainty cannot be overcome by conventional chancery syntax, so all candidate words stay bracketed; the previously unresolved baselines remain unfinished rather than downgraded to material lacunae. These updates revise **four existing local physical-line rows**, not four new lines, and do not assert full 0102L witness coverage or G2 completion.
+Directly re-viewed original native-resolution source-photographic scan for PDF/provider image **0102** (4324 × 3880 embedded JPEG pixels) in the full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Upper and lower left writing area inspected in separate contrast-only crops; no independent original provider JPEG File byte reopening, no OCR/HTR or scholarly specialist check. The opening `A06` permits candidate two-group `[Lehn-?] [Sachen?];`; `A07` has visible second `und` and final `Lehn-` with a physical division mark. The `A13` lower cursive line has a longer candidate `[vollmächtigen?]`, while `A14` begins with a group tentatively `[dieser?]`, but the middle strokes are **not** clear enough for certainty. The uncertainty cannot be overcome by conventional chancery syntax, so all candidate words stay bracketed; the previously unresolved baselines remain unfinished rather than downgraded to material lacunae. These updates revise **four existing local physical-line rows**, not four new lines, and do not assert full 0102L witness coverage or G2 completion. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
