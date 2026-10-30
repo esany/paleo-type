@@ -53,6 +53,21 @@ The prior Human-corrected non-identities (e.g. rejected `0094–0097 → later c
 5. **Observed ergonomic gap:** no integrated region/line/source-phenomenon editor with adjacent views, per-reading grapheme evidence, and versioned candidate→adjudication diff. This is a candidate usability need, not a generic software requirement or authorization to implement OCR/HTR.
 6. One model re-reading its own output is **not independent review**. This test's source crops are direct P evidence but its palaeographic conclusions remain AI working judgements.
 
+## Learning routing and Generic-Fit disposition (integration review 2026-10-30)
+
+The failure/repair case is **retained as Project evidence**, with the following explicit returns to the already-owned method rather than duplicated normative rules:
+
+| Observed finding | Existing owner / correct classification | Disposition and actual change |
+|---|---|---|
+| The first draft mapped PDF S. 1 to film-counter `0021` rather than provider image `0001` | `corpus/source-data/SSTA-ARCHIVIALE-EDD69AA1/digital-crosswalk.tsv`, `methodology/source-and-provenance.md`; locator/provenance application defect | **fuse / apply existing rule**: use the verified PDF→provider crosswalk; do not alter the crosswalk and do not trust the earlier transcription's page labels |
+| Independent PDF-image transcription disregarded repeated views and actual text-carrier relationships | Existing Nr. 632 object/view map, S2/S3 in `historical-source-workflow.md`, `transcription-guidelines.md`; `segmentation_error` | **fuse / correct application**: consult image/view map before assigning physical lines; no new universal image-object schema |
+| Isolated 0102R `supplicat` plus 0103L `Supplicat` | This experiment's locus-specific primary-image observations and seven working main-text lines; source-phenomenon/continuation candidate | **retain Project candidate, no generic promotion**: `102R-K01` is a probable Kustode; the exact reading/function remains open for controlled S3/S4 inspection |
+| `[unleserlich]` and `[nicht transkribiert]` had been mixed in the first attempt | `transcription-guidelines.md` source phenomena / completeness requirements | **fuse / existing rule sufficient**: distinguish unattempted from actually illegible and uncertain positive readings; no second uncertainty taxonomy |
+| Integrated S2-linked region/line/variant/diff view would reduce human reconstruction | `methodology/workflow.md` Dev interface and the Project's experiment evidence | **defer — only a tooling hypothesis**: specific research interaction problem identified; no demonstrated inadequacy of existing crop + structured candidate + derived PDF route, so no D-016 admission/new implementation or new priority |
+| Prior lessons remained only in an unmerged review branch and external PDF | `AGENTS.md` repository-first persistence, `maintenance.md` propagation, `quality-and-learning.md` learning loop | **repair discoverability**: merge these evidence notes to `main` after review and add a pointer in the existing Project `STATUS.md`, not a parallel truth store |
+
+**Independent assurance boundary:** no qualified specialist reviewed the manuscript; the bounded experiment constitutes AI-assisted internal observation and re-reading only. The proposal to carry these findings into the Project's research history is **not** a G2 activation, a correction to canonical source/file identity or an accepted critical text. A later context can recover the candidate and its limits from this note plus the cited canonical owners without needing this chat.
+
 ## End and disposition
 
 Two actual sub-iterations (102R alone, then 103L plus reinspection of 102R) were executed. Their visualized working result is a six-page PDF (new conversation artifact) and a typed JSON excerpt; a markdown experiment protocol is also delivered. No autonomous new cycle is created. More work would require an identified scholarly return and appropriate authority. Preserve existing Project truth owners; this research note is intentionally non-canonical review evidence on a separate branch.
