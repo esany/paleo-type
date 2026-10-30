@@ -436,3 +436,100 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 **Local QA / actual coverage:** 0110L **17** and 0110R **17** running physical-line candidates, 0111L **17** continuing lines, 0111R **two** closing lines and **four** separately positioned marks = **57 new physical writing-line/mark slots**, overwhelmingly with positive source-word content. The `0111R` written date **1679** is not the creation date of the photographed carrier, and `L. S.` is not automatically an observed intact material seal. The `0111R` signature lines are uncertain, not editorially supplied. `0111L` and `0110R` show possible textual continuity but their exact physical-carrier relationship remains source-critical, not established by prior AI hypotheses. Quality is source-visible AI direct reading; **not independent palaeographic validation**. A whole-unit T1 count/G2 or complete PDF working edition is still not reached.
 
 **Immediately subsequent transcription locus:** the new 0112L ornate heading and 0112L→0112R densely written paragraph, with their own physical-line sequence and possible incorporated 1677/1678 documentary dates, then continue to exposed 0113 areas. The thin far-right underlying leaf fragments must be approached at a more exposed view, rather than being guessed from the surrounding script.
+
+
+## 0112–0113 direct native-scan line readings — 2026-10-30
+
+**Fresh direct evidence:** same SHA-256 identified **full-size 135-page working PDF** as earlier, newly extracted embedded JPEGs and inspected native pixels for PDF/provider positions **0112–0113**, each 4304×3897. Separate left/right source crops from these pages were read without OCR/HTR or content generation. No external original JPEG File bytes were claimed inspected separately. **Important boundary:** ornamental 0112L heading does not provide a reliable archival folio; `0112L→0112R→0113L→0113R` describes a *working photographed writing-order hypothesis*, not established material join or original/copy stage. The photographed text itself includes dates such as `23 Martij 1677` and `4. Octbr: 1678`; these are **represented textual dates** and are not promoted to material-carrier dating.
+
+**Source phenomena:** 0112L has a prominent ornamental opening and separate main body; 0112R and 0113L/R are tightly written, with visible Latin terms (`recessiret`, `praetendiret`, `excipiendo`, `Contrarium`, `in eventum`, `intuitu`) kept as manuscript forms rather than modern German equivalents. All marked groups are positive but uncertain or visibly inked/unresolved; do not read the brackets as editorial supplies. The source is physically photographed with a very narrow rightmost strip of yet another underlying exposure: it is not appended as main-text lines. No G2 completion from these working tables.
+
+### 0112L — ornate initial and main left script
+
+| Local physical writing line | Source-near diplomatic candidate | Specific constraint |
+|---|---|---|
+| `0112L-H01` | `zu wißen, Demnach zwischen dem Durch-` | display opening with decorative flourish, source split |
+| `0112L-A01` | `laucht: Fürstl: Ambt [⟦proper group⟧] und` | part of H01 continuation; location omitted rather than supplied |
+| `0112L-A02` | `dem Gräfl: Reußischen Gerichten zu` | positive source terms; historical entity not identified |
+| `0112L-A03` | `Oppurg, andern Theils, die Jagdgerech-` | word division |
+| `0112L-A04` | `tigkeit, und was diesem mehr anhängig` | source continuation |
+| `0112L-A05` | `betrif: einige Differentien sich [⟦end⟧]` | word `Differentien` visually strong |
+| `0112L-A06` | `eignen wollen, daher und Krafft er-` | word end uncertain, not resolved |
+| `0112L-A07` | `gangener Höchsten [⟦middle⟧] gnädigster Re-` | line includes written abbreviated groups |
+| `0112L-A08` | `scripten, de datis Merseburg an` | Latin wording retained |
+| `0112L-A09` | `der Elster den 23 Martij 1677. und` | earlier represented documentary date not source-carrier date |
+| `0112L-A10` | `4. Octbr: 1678. [⟦end⟧]` | second represented date, reading of numeral to be controlled |
+| `0112L-A11` | `mit Zuziehung gewisser hierzu ver-` | written break |
+| `0112L-A12` | `ordneter Personen, gründlich unter-` | source physical break |
+| `0112L-A13` | `sucht, und in eventum, auch bis zu` | Latin `in eventum` visible |
+| `0112L-A14` | `Sr: Hochfürstl: Durchl: zu Sachsen` | abbreviations not expanded |
+| `0112L-A15` | `Naumburg, [⟦middle⟧] Herrn` | partly readable |
+| `0112L-A16` | `gnädigsten ratification [⟦end⟧]` | source word `ratification` visible |
+
+### 0112R — separate right facing continuation
+
+| Local physical writing line | Source-near diplomatic candidate | Specific constraint |
+|---|---|---|
+| `0112R-A01` | `[müssen?] verglichen, und ver recessiret` | word start uncertain; Latin compound |
+| `0112R-A02` | `worden: Nemlich und 1.) So hat Hoch-` | source item numeral and wording |
+| `0112R-A03` | `gedachtes Fürstl: Ambt [⟦end⟧]` | group following title not resolved |
+| `0112R-A04` | `dem [⟦place/word⟧] bis an den [⟦end⟧]` | spatial writing evident, incomplete |
+| `0112R-A05` | `Fluß gestanden, die Jagd [⟦end⟧]` | phrase partial |
+| `0112R-A06` | `praetendiret, wogegen zwar [⟦end⟧]` | latinized original verb |
+| `0112R-A07` | `[⟦opening⟧] der Herr Graff von Ronow` | family name candidate visible |
+| `0112R-A08` | `excipiendo eingewendet, wie Er` | source Latin adverb |
+| `0112R-A09` | `das Contrarium dessen aus denen` | positive source terms |
+| `0112R-A10` | `obhandenen Lehnbriefen bedürffenden` | graph of `obhandenen` uncertain but positive |
+| `0112R-A11` | `Falls zu documentiren vermöchte,` | latinized original verb |
+| `0112R-A12` | `also ist was dem [⟦end⟧]` | not a syntactic completion |
+| `0112R-A13` | `einzuräumen, nicht allerdings bey-` | line-end division |
+| `0112R-A14` | `stimmig seyn könnte, Ohnge-` | physical break |
+| `0112R-A15` | `achtet [⟦middle⟧] aber Hochgedachter` | poorly separated graphemes |
+| `0112R-A16` | `Durchl: zu unterthänigsten Respect,` | abbrev retained |
+| `0112R-A17` | `auch Abwendung sonst künftig [⟦end⟧]` | main line ending incomplete |
+
+### 0113L — densely handwritten left historical dispute text
+
+| Local physical writing line | Source-near diplomatic candidate | Specific constraint |
+|---|---|---|
+| `0113L-A01` | `[⟦opening⟧] und [⟦word⟧] Dispu-` | physical line end visible |
+| `0113L-A02` | `tats, haben Selbe [⟦middle⟧] einge-` | continuation proposed, not certified |
+| `0113L-A03` | `räumet, auch freiwillig [⟦end⟧]` | positive words |
+| `0113L-A04` | `lassen, die hohe Jagd im Brande die` | distinct `hohe Jagd` lettering, not modernization |
+| `0113L-A05` | `Hante genant, so im [⟦middle⟧]` | place/name reading not identified |
+| `0113L-A06` | `situirt, wie man von [⟦end⟧] an` | source Latin participle `situirt` |
+| `0113L-A07` | `dem Wege folget, der [⟦middle⟧] nach` | partially read |
+| `0113L-A08` | `[⟦opening⟧] führet, und hier [⟦end⟧]` | partially read |
+| `0113L-A09` | `Hand bis [⟦middle⟧] zu der [⟦end⟧]` | not a legal property claim |
+| `0113L-A10` | `an Wiesen, auch folgend [⟦end⟧]` | only source-near partials |
+| `0113L-A11` | `bey dem [⟦word⟧], nicht minder` | positive short group |
+| `0113L-A12` | `zur linken Seiten hinweg streichet,` | physical line text |
+| `0113L-A13` | `worbey gleichfalls die Folge des an-` | positive source string |
+| `0113L-A14` | `gezogenen [⟦noun⟧] in der Gräfl:` | uncertain text |
+| `0113L-A15` | `Antheil man ausdrücklich reservi-` | Latin form divided |
+| `0113L-A16` | `ret, So viel aber nächst dem die hier,` | source punctuation provisional |
+| `0113L-A17` | `[⟦opening⟧] gehörte [⟦word⟧] Oberst-` | last group uncertain |
+
+### 0113R — right historical dispute field
+
+| Local physical writing line | Source-near diplomatic candidate | Specific constraint |
+|---|---|---|
+| `0113R-A01` | `und [⟦word⟧] betref verbleiben, solches be-` | start unresolved, end physical division |
+| `0113R-A02` | `[⟦opening⟧] denen zu gewissen Zeiten ge-` | spatial writing uncertain |
+| `0113R-A03` | `falligen [⟦word⟧] [⟦end⟧]` | weak source phrase |
+| `0113R-A04` | `ingleichen die Jagd auf denen Feldern,` | directly positive |
+| `0113R-A05` | `auf alle demjenigen, was als solchen` | partly uncertain morphology |
+| `0113R-A06` | `Weg zur rechten Hand im übrigen Weg-` | line end uncertain |
+| `0113R-A07` | `[⟦start⟧] Fluß gelegen, dem Herrn Gra-` | physical division |
+| `0113R-A08` | `fen und dessen Descendenten, [⟦end⟧]` | Latin noun visible |
+| `0113R-A09` | `an von künftig [⟦end⟧] Güter ge-` | source working |
+| `0113R-A10` | `langen möchten, so vor, so nachmals` | visible text phrase |
+| `0113R-A11` | `beständig und ohne Contradiction` | positive historical spelling |
+| `0113R-A12` | `gedacht [⟦word⟧] [exercirlich?]` | last verb candidate, not accepted |
+| `0113R-A13` | `gegen 2.) und intuitu [⟦end⟧]` | written list marker and Latin word |
+| `0113R-A14` | `Vergleich, ist dem Herrn Grafen die` | positive |
+| `0113R-A15` | `Befugnuß der hohen und Niedern Jagd` | working, `Niedern` uncertain |
+| `0113R-A16` | `in denen Dorfs und [⟦word⟧]` | remainder source text |
+| `0113R-A17` | `[⟦start⟧] so hierinnen specificè zugleich` | Latin word directly visible |
+
+**Coverage and challenge:** This pass adds **68 physically indexed working lines**, 17 per named L/R region. Many have multiple positive source words, but this is **not 68 fully resolved lines** and not independent human or specialist review. Prime unresolved graphemic targets: 0112L first title/archival toponym and second date numeral; 0112R 1.) item subject; 0113L `Hante`/`Brande` writing; 0113R Latin `exercirlich` candidate and physical continuation. A reliable source-wide leaf/view census and critical acceptance remain open. Next authorized source action is a true source-focused pass on the newly exposed 0114–0116 writing surfaces and visible repeated/overlaid areas, not another planning stage.
