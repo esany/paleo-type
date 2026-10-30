@@ -53,10 +53,14 @@ class CurrentRepositoryRegressionTests(unittest.TestCase):
             )
             if row["use_id"] == "USE-SSTA-20578-NR632-ROOT"
         ]
-        self.assertEqual(136, len(nr632_files))
+        self.assertEqual(137, len(nr632_files))
         self.assertEqual(135, sum(row["filename"].endswith(".jpg") for row in nr632_files))
         self.assertIn(
             "FILE-SSTA-20578-NR632-COMPACT-PDF-20261029",
+            {row["file_id"] for row in nr632_files},
+        )
+        self.assertIn(
+            "FILE-SSTA-20578-NR632-FULL-PDF-20261030",
             {row["file_id"] for row in nr632_files},
         )
         self.assertEqual(
