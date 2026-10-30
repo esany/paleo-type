@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""P0 (#353): derived PR measures and enforceable evidence-growth constraints."""
+"""S0 (#353): PR measures and a narrow new-evidence-file freeze."""
 from __future__ import annotations
 
 import argparse
 import json
 import math
 import os
-import re
 import subprocess
 import sys
 import urllib.request
@@ -15,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "engineering/evidence/"
 LABEL = "verfahren-ausnahme"
+RESCUE_LABEL = "rettung-eigentümer"
 CATEGORIES = ("Forschung", "Technik", "Verfahren")
 
 
@@ -35,18 +35,9 @@ def new_evidence_files(base: set[str], head: set[str]) -> list[str]:
     return sorted(path for path in head - base if path.startswith(PREFIX))
 
 
-def has_reason(body: str, heading: str) -> bool:
-    match = re.search(r"(?im)^" + re.escape(heading) + r":\s*(\S[^\r\n]*)$", body)
-    return bool(match and len(match.group(1).strip()) >= 12 and match.group(1).rstrip().endswith((".", "!", "?")))
-
-
-def guard_evidence(added: list[str], labels: set[str], body: str) -> None:
-    if not added:
-        return
-    if LABEL not in labels:
+def guard_evidence(added: list[str], labels: set[str]) -> None:
+    if added and LABEL not in labels:
         raise GuardFailure(f"Neue engineering/evidence/-Dateien ohne Label {LABEL}: {', '.join(added)}")
-    if not has_reason(body, "Verfahren-Ausnahme-Begründung"):
-        raise GuardFailure("Ausnahme erfordert einen Satz: Verfahren-Ausnahme-Begründung: ... .")
 
 
 def added_lines(base: str) -> tuple[int, int]:
@@ -61,15 +52,6 @@ def added_lines(base: str) -> tuple[int, int]:
         elif path.startswith("projects/"):
             proj += int(added)
     return eng, proj
-
-
-def guard_growth(eng: int, proj: int, body: str) -> None:
-    # #353's target: <= 1 procedural line per 2 research lines, with exceptions explained.
-    if eng and eng * 2 > proj and not has_reason(body, "Verfahrenszuwachs-Begründung"):
-        raise GuardFailure(
-            f"Verfahrenszuwachs {eng}, Forschungszuwachs {proj}: "
-            "Begründungssatz im PR erforderlich (Verfahrenszuwachs-Begründung: ... .)."
-        )
 
 
 def tracked_text_sizes() -> tuple[dict[str, int], int]:
@@ -97,35 +79,61 @@ def issue_counts(issues: list[dict]) -> dict[str, int]:
     return result
 
 
-def live_issue_counts() -> tuple[dict[str, int] | None, str]:
+def rescue_counts(items: list[dict]) -> dict[str, int]:
+    """Explicit owner-rescue labels only; include closed items and PRs exactly once."""
+    counts = {"Issues": 0, "Pull Requests": 0}
+    for item in items:
+        labels = {lab["name"].casefold() for lab in item.get("labels", [])}
+        if RESCUE_LABEL.casefold() in labels:
+            counts["Pull Requests" if "pull_request" in item else "Issues"] += 1
+    return counts
+
+
+def fetch_issues(state: str) -> tuple[list[dict] | None, str]:
     repo, token = os.getenv("GITHUB_REPOSITORY"), os.getenv("GITHUB_TOKEN")
     if not repo or not token:
         return None, "Keine authentifizierte GitHub-API verfügbar."
-    issues = []
+    items = []
     try:
         for page in range(1, 21):
             request = urllib.request.Request(
-                f"https://api.github.com/repos/{repo}/issues?state=open&per_page=100&page={page}",
+                f"https://api.github.com/repos/{repo}/issues?state={state}&per_page=100&page={page}",
                 headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json",
                          "User-Agent": "paleo-type-metrics"},
             )
             with urllib.request.urlopen(request, timeout=15) as response:
                 batch = json.load(response)
-            issues.extend(batch)
+            if not isinstance(batch, list):
+                return None, "GitHub-API-Antwort ist keine Liste."
+            items.extend(batch)
             if len(batch) < 100:
-                return issue_counts(issues), "Nur eindeutige Bereich-Labels zählen; P3 ordnet die übrigen Issues."
+                return items, "vollständig"
         return None, "Unvollständig: mehr als 2000 Einträge."
     except (OSError, ValueError, KeyError) as exc:
-        return None, f"Issue-Abfrage nicht verifiziert: {exc}"
+        return None, f"GitHub-API-Abfrage fehlgeschlagen: {exc}"
 
 
-def event_pr() -> tuple[set[str], str]:
+def live_issue_counts() -> tuple[dict[str, int] | None, str]:
+    items, note = fetch_issues("open")
+    if items is None:
+        return None, note
+    return issue_counts(items), "Nur eindeutige Bereich-Labels zählen; S0 ordnet fehlende Labels nicht selbst zu."
+
+
+def live_rescue_counts() -> tuple[dict[str, int] | None, str]:
+    items, note = fetch_issues("all")
+    if items is None:
+        return None, note
+    return rescue_counts(items), "Nur Label rettung-eigentümer; offene und geschlossene Issues und PRs."
+
+
+def event_labels() -> set[str]:
     path = os.getenv("GITHUB_EVENT_PATH")
     if not path:
         raise GuardFailure("GITHUB_EVENT_PATH fehlt; Fail-Closed")
     try:
         pr = json.loads(Path(path).read_text(encoding="utf-8"))["pull_request"]
-        return {x["name"] for x in pr.get("labels", [])}, pr.get("body") or ""
+        return {x["name"] for x in pr.get("labels", [])}
     except (OSError, KeyError, ValueError, TypeError) as exc:
         raise GuardFailure(f"PR-Ereignis unlesbar: {exc}") from exc
 
@@ -138,12 +146,12 @@ def report(base: str | None) -> str:
     approx_tokens = math.ceil(sum(required.values()) / 4)
     added_e, added_p = added_lines(base) if base else (0, 0)
     counts, note = live_issue_counts()
+    rescues, rescue_note = live_rescue_counts()
     lines = [
         "## P0 – Verfahren und Forschung (#353)", "",
         f"- Bestand: engineering/ {e:,} Textzeichen; projects/ {p:,}; Verhältnis {e / p:.2f}:1."
         if p else f"- Bestand: engineering/ {e:,} Zeichen; projects/ 0 (kein Verhältnis).",
-        f"- Neue PR-Zeilen: engineering/ {added_e}, projects/ {added_p} "
-        "(Ziel maximal 1:2; größerer Verfahrenszuwachs erfordert PR-Begründung).",
+        f"- Neue PR-Zeilen (nur Messwert): engineering/ {added_e}, projects/ {added_p}.",
         f"- Start-Pflichtlektüre: GOVERNING_OBJECTIVE.md {required['GOVERNING_OBJECTIVE.md']:,} "
         f"und AGENTS.md {required['AGENTS.md']:,} Zeichen; zusammen ca. {approx_tokens:,} Tokens. "
         "Näherung Zeichen/4, kein Tokenizer; weitere Lektüre ist auftragsabhängig.",
@@ -155,6 +163,16 @@ def report(base: str | None) -> str:
     else:
         lines.extend(f"- {key}: {counts[key]}" for key in (*CATEGORIES, "Unklassifiziert"))
         lines.append(f"- {note}")
+    lines.extend(["", "### Rettungseingriffe des Eigentümers (Label rettung-eigentümer)"])
+    if rescues is None:
+        lines.append(f"- Nicht geprüft: {rescue_note}")
+    else:
+        lines.extend([
+            f"- Issues (offen und geschlossen): {rescues['Issues']}",
+            f"- Pull Requests (offen und geschlossen): {rescues['Pull Requests']}",
+            f"- Gesamt: {sum(rescues.values())}",
+            f"- {rescue_note}",
+        ])
     lines.extend(["", "CI und Kennzahlen prüfen keine historische Lesung oder fachliche Validierung.", ""])
     return "\n".join(lines)
 
@@ -169,9 +187,8 @@ def main() -> int:
         if args.guard:
             if not args.base:
                 raise GuardFailure("Base-SHA fehlt; Fail-Closed")
-            labels, body = event_pr()
-            guard_evidence(new_evidence_files(tree_paths(args.base), tree_paths("HEAD")), labels, body)
-            guard_growth(*added_lines(args.base), body)
+            labels = event_labels()
+            guard_evidence(new_evidence_files(tree_paths(args.base), tree_paths("HEAD")), labels)
             print("P0 GUARD PASS")
         else:
             text = report(args.base)
