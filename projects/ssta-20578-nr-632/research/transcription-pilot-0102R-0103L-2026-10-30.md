@@ -98,36 +98,36 @@ The general rules in `methodology/historical-source-workflow.md` (S2↔S3↔S4 a
 
 ## Source-visible extension — 0102L and 0103R/0104R, 2026-10-30
 
-**Actual evidence / authority:** Sächsisches Staatsarchiv Leipzig, 20578, Nr. 632; Source \`SSTA-ARCHIVIALE-EDD69AA1\`, working compact PDF \`FILE-SSTA-20578-NR632-COMPACT-PDF-20261029\` freshly verified by full-file SHA-256 \`8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f\` in this execution. Embedded original photographic scans were extracted from PDF pp. **101–104** and inspected at their embedded **2500-pixel** size, with separately enlarged, non-generative crops (the 0102 and 0104 scans are 2500 × 2243 and 2500 × 2257 pixels respectively). The registered provider JPEGs were **not** independently reopened as byte-identical original File objects in this pass. No OCR/HTR, word-generating reconstruction, external witness or specialist review. P evidence is limited to the inspected digital exposures. All below are provisional image-region/physical-line addresses, **not archival folia**.
+**Actual evidence / authority:** Sächsisches Staatsarchiv Leipzig, 20578, Nr. 632; Source `SSTA-ARCHIVIALE-EDD69AA1`, working compact PDF `FILE-SSTA-20578-NR632-COMPACT-PDF-20261029` freshly verified by full-file SHA-256 `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f` in this execution. Embedded original photographic scans were extracted from PDF pp. **101–104** and inspected at their embedded **2500-pixel** size, with separately enlarged, non-generative crops (the 0102 and 0104 scans are 2500 × 2243 and 2500 × 2257 pixels respectively). The registered provider JPEGs were **not** independently reopened as byte-identical original File objects in this pass. No OCR/HTR, word-generating reconstruction, external witness or specialist review. P evidence is limited to the inspected digital exposures. All below are provisional image-region/physical-line addresses, **not archival folia**.
 
 ### T1/S2: exposure, segmentation and non-duplication
 
 - **0102L** contains a separate densely handwritten left field, visible in full enough to distinguish approximately **16 successive physical baselines**. It was previously outside this pilot's transcription ledger. The exact relation of this field to 0101R and to 0102R is *not* resolved here; its independent photographed position must not be used to assert independent material carrier or document.
-- The right area visible in **0103R** is partly concealed by a foreground leaf. The more open **0104R** exposes the *same diagnostically matching* ornate crowned initial, title, salutation and lower written group. Therefore the new working text is indexed **once**, at \`0104R\`, with \`0103R\` as the obscured alternative exposure, not another independent transcript/witness. This confirms the view hypothesis already recorded in the documentary-object/view map, while adding actual physical-line evidence.
+- The right area visible in **0103R** is partly concealed by a foreground leaf. The more open **0104R** exposes the *same diagnostically matching* ornate crowned initial, title, salutation and lower written group. Therefore the new working text is indexed **once**, at `0104R`, with `0103R` as the obscured alternative exposure, not another independent transcript/witness. This confirms the view hypothesis already recorded in the documentary-object/view map, while adding actual physical-line evidence.
 - The new 0104R opening is **distinct** from the better-exposed 0103L attestation and its chancery/subscription area. Physical adjacency does not establish a text join. A thin rightmost **writing sliver** on 0104R remains on a different exposure plane, separately indexed below; it is *not* the continuation of every line in the principal 0104R field.
 
 ### New 0102L physical-line attempt (one left text field)
 
-The following is a **source-grounded line-address and partial-reading ledger**, *not* a complete diplomatic transcription. \`⟦attempted, unresolved⟧\` means the relevant ink is present and was examined, but the graphemes were not responsibly decided; it does **not** mean blank, source-level illegibility or a supplied lacuna. The relative baseline count is provisional at crowded descender crossings and should be checked in a full-resolution original-JPEG re-pass. Rows contain **no semantic fill** from the neighbouring pages.
+The following is a **source-grounded line-address and partial-reading ledger**, *not* a complete diplomatic transcription. `⟦attempted, unresolved⟧` means the relevant ink is present and was examined, but the graphemes were not responsibly decided; it does **not** mean blank, source-level illegibility or a supplied lacuna. The relative baseline count is provisional at crowded descender crossings and should be checked in a full-resolution original-JPEG re-pass. Rows contain **no semantic fill** from the neighbouring pages.
 
 | Local physical line | Visually supported partial reading / attempt | Remaining limit |
 |---|---|---|
-| \`0102L-A01\` | \`[Briefe?], in ⟦attempted, unresolved⟧\` | Initial whole word only tentative; top of written field. |
-| \`0102L-A02\` | \`⟦attempted, unresolved⟧ [Gnaden?]\` | Last word a graphic hypothesis only. |
-| \`0102L-A03\` | \`zu [bekommen?]\` | Source-near partial phrase; precise letters of verb uncertain. |
-| \`0102L-A04\` | \`[verdienet?] ⟦attempted, unresolved⟧\` | Word division, ending unresolved. |
-| \`0102L-A05\` | \`⟦attempted, unresolved⟧\` | Distinct ink baseline, no responsibly secured complete word. |
-| \`0102L-A06\` | \`⟦attempted, unresolved⟧ [Lehn-?]\` | Do not infer a legal act from a lexical possibility. |
-| \`0102L-A07\` | \`[und?] [Lehn-?] ⟦attempted, unresolved⟧\` | Ending/line division unconfirmed. |
-| \`0102L-A08\` | \`⟦attempted, unresolved⟧\` | Long leftward entry flourish and loop are not automatically letters. |
-| \`0102L-A09\` | \`⟦attempted, unresolved⟧ [zu?]\` | Final group requires grapheme check. |
-| \`0102L-A10\` | \`⟦attempted, unresolved⟧\` | Do not assimilate to A09/A11 on syntax. |
-| \`0102L-A11\` | \`[Dresden?] [und?]\` | Both lexemes provisional, not a place identification. |
-| \`0102L-A12\` | \`⟦attempted, unresolved⟧ [ich?] [in?]\` | No accepted continuous syntax. |
-| \`0102L-A13\` | \`⟦attempted, unresolved⟧\` | Distinct baseline; visible text not adjudicated. |
-| \`0102L-A14\` | \`⟦attempted, unresolved⟧\` | Distinct baseline; overlapping descenders. |
-| \`0102L-A15\` | \`⟦attempted, unresolved⟧\` | End-of-line punctuation unresolved. |
-| \`0102L-A16\` | \`⟦attempted, unresolved⟧\` | Bottom exposed baseline; terminal signs unresolved. |
+| `0102L-A01` | `[Briefe?], in ⟦attempted, unresolved⟧` | Initial whole word only tentative; top of written field. |
+| `0102L-A02` | `⟦attempted, unresolved⟧ [Gnaden?]` | Last word a graphic hypothesis only. |
+| `0102L-A03` | `zu [bekommen?]` | Source-near partial phrase; precise letters of verb uncertain. |
+| `0102L-A04` | `[verdienet?] ⟦attempted, unresolved⟧` | Word division, ending unresolved. |
+| `0102L-A05` | `⟦attempted, unresolved⟧` | Distinct ink baseline, no responsibly secured complete word. |
+| `0102L-A06` | `⟦attempted, unresolved⟧ [Lehn-?]` | Do not infer a legal act from a lexical possibility. |
+| `0102L-A07` | `[und?] [Lehn-?] ⟦attempted, unresolved⟧` | Ending/line division unconfirmed. |
+| `0102L-A08` | `⟦attempted, unresolved⟧` | Long leftward entry flourish and loop are not automatically letters. |
+| `0102L-A09` | `⟦attempted, unresolved⟧ [zu?]` | Final group requires grapheme check. |
+| `0102L-A10` | `⟦attempted, unresolved⟧` | Do not assimilate to A09/A11 on syntax. |
+| `0102L-A11` | `[Dresden?] [und?]` | Both lexemes provisional, not a place identification. |
+| `0102L-A12` | `⟦attempted, unresolved⟧ [ich?] [in?]` | No accepted continuous syntax. |
+| `0102L-A13` | `⟦attempted, unresolved⟧` | Distinct baseline; visible text not adjudicated. |
+| `0102L-A14` | `⟦attempted, unresolved⟧` | Distinct baseline; overlapping descenders. |
+| `0102L-A15` | `⟦attempted, unresolved⟧` | End-of-line punctuation unresolved. |
+| `0102L-A16` | `⟦attempted, unresolved⟧` | Bottom exposed baseline; terminal signs unresolved. |
 
 **Scholarly disposition:** This is meaningful coverage of the *existence and positions* of a previously unrepresented writing field and a small set of attempted lexical fragments, **not** 16 read lines. In particular the noncommittal rows must be **revisited**, not silently counted as G2-complete. A01–A16 are only the visible current working line slots; precise numbering is revisionable if native original inspection reveals interline additions or a missegmented baseline.
 
@@ -137,25 +137,25 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 | Region / physical line | Diplomatic working fragment | Reading boundary |
 |---|---|---|
-| \`0104R-H01\` | \`[28.?] [Jun:?] 4. Julii 1760.\` | Two adjoining date-like/registry groups at page head; \`4. Julii 1760.\` strongly visible, earlier cluster undetermined; do not infer two historical execution dates. |
-| \`0104R-H02\` | \`AllerDurchlauchtigster-[Großmächtig-?]\` | First large title line after ornate initial; exact spelling, double consonants and division mark need control. |
-| \`0104R-H03\` | \`[tigster?] König und Churfürst,\` | Continuation/address line, independently physically visible; first group remains dependent on H02 reading. |
-| \`0104R-H04\` | \`Allergnädigster Herr!\` | Separately centred salutation; graph/punctuation working, not proof of addressed individual. |
-| \`0104R-A01\` | \`[Ew.?] Königl. Majts.\` | Decorated initial at left; abbreviated wording and punctuation provisional, do not expand. |
-| \`0104R-A02\` | \`[gewesener?] [erster?] Chur-\` | Last part and physical line-end stroke visible; opening uncertain. |
-| \`0104R-A03\` | \`Marschall, ⟦attempted, unresolved⟧\` | \`Marschall\` comparatively positive; trailing group not named. |
-| \`0104R-A04\` | \`George [Ernst?] von ⟦attempted, unresolved⟧\` | Name-like words as partial graphemic candidates; no person identification or hand equation. |
-| \`0104R-A05\` | \`⟦attempted, unresolved⟧\` | Several words visible, no responsibly established full word sequence. |
-| \`0104R-A06\` | \`[verstorbener?] Vater,\` | First adjective still uncertain; do not deduce kinship from language. |
-| \`0104R-A07\` | \`welcher am 17. [ten?] des\` | Graph of numeral ending unclear; **not** resolved by expected date formula. |
-| \`0104R-A08\` | \`Monaths Januar: h. a.\` | Working visible final line; punctuation/abbreviated \`h. a.\` remain literal, unexpanded. |
-| \`0104R-E01\` | \`⟦visible narrow right-edge writing, not yet line-indexed/read⟧\` | Partly overlaid separate strip; not a continuation or source-level gap verdict. |
-| \`0104R-P01\` | \`ornate crowned/initial element (non-running-text feature)\` | Visible source mark, not safely identified as seal, hand, coat of arms or authenticated addressee. |
+| `0104R-H01` | `[28.?] [Jun:?] 4. Julii 1760.` | Two adjoining date-like/registry groups at page head; `4. Julii 1760.` strongly visible, earlier cluster undetermined; do not infer two historical execution dates. |
+| `0104R-H02` | `AllerDurchlauchtigster-[Großmächtig-?]` | First large title line after ornate initial; exact spelling, double consonants and division mark need control. |
+| `0104R-H03` | `[tigster?] König und Churfürst,` | Continuation/address line, independently physically visible; first group remains dependent on H02 reading. |
+| `0104R-H04` | `Allergnädigster Herr!` | Separately centred salutation; graph/punctuation working, not proof of addressed individual. |
+| `0104R-A01` | `[Ew.?] Königl. Majts.` | Decorated initial at left; abbreviated wording and punctuation provisional, do not expand. |
+| `0104R-A02` | `[gewesener?] [erster?] Chur-` | Last part and physical line-end stroke visible; opening uncertain. |
+| `0104R-A03` | `Marschall, ⟦attempted, unresolved⟧` | `Marschall` comparatively positive; trailing group not named. |
+| `0104R-A04` | `George [Ernst?] von ⟦attempted, unresolved⟧` | Name-like words as partial graphemic candidates; no person identification or hand equation. |
+| `0104R-A05` | `⟦attempted, unresolved⟧` | Several words visible, no responsibly established full word sequence. |
+| `0104R-A06` | `[verstorbener?] Vater,` | First adjective still uncertain; do not deduce kinship from language. |
+| `0104R-A07` | `welcher am 17. [ten?] des` | Graph of numeral ending unclear; **not** resolved by expected date formula. |
+| `0104R-A08` | `Monaths Januar: h. a.` | Working visible final line; punctuation/abbreviated `h. a.` remain literal, unexpanded. |
+| `0104R-E01` | `⟦visible narrow right-edge writing, not yet line-indexed/read⟧` | Partly overlaid separate strip; not a continuation or source-level gap verdict. |
+| `0104R-P01` | `ornate crowned/initial element (non-running-text feature)` | Visible source mark, not safely identified as seal, hand, coat of arms or authenticated addressee. |
 
-**T3/adversarial quality sample on this new block:** the 0103R crop alone **would silently omit** the opening ornament, first part of the title and initial characters of the lower text; 0104R is a materially better exposure. Conversely, *seeing 0104R clearly* does not justify merging the thin right-edge script into it. In the lower lines \`George [Ernst?]\`, \`[verstorbener?]\` and \`[ten?]\` are explicitly demoted to graphic hypotheses, not accepted legal/person/chronological facts. \`h. a.\` is retained as written-looking shorthand, not expanded. The 0102L count is an editorial image-reading count requiring exact-JPEG reinspection before it can support a final G2 inventory. This is self-falsification/second-view control, **not an independent human expert review**.
+**T3/adversarial quality sample on this new block:** the 0103R crop alone **would silently omit** the opening ornament, first part of the title and initial characters of the lower text; 0104R is a materially better exposure. Conversely, *seeing 0104R clearly* does not justify merging the thin right-edge script into it. In the lower lines `George [Ernst?]`, `[verstorbener?]` and `[ten?]` are explicitly demoted to graphic hypotheses, not accepted legal/person/chronological facts. `h. a.` is retained as written-looking shorthand, not expanded. The 0102L count is an editorial image-reading count requiring exact-JPEG reinspection before it can support a final G2 inventory. This is self-falsification/second-view control, **not an independent human expert review**.
 
-**Incremental result/ceiling:** **28 newly addressed physical writing-line slots** across \`0102L-A01–A16\` and \`0104R-H01–H04/A01–A08\`, plus two separate \`0104R\` non-running/edge phenomena. Most slots remain partial or attempted-unresolved; **zero newly certified complete G2 lines** are claimed. The previously recorded seven-line 0102R→0103L clause, separate chancery/signature groups and 0071R pilot are not double-counted. The whole-unit T1 unique-surface inventory and G2–G6 are still open.
+**Incremental result/ceiling:** **28 newly addressed physical writing-line slots** across `0102L-A01–A16` and `0104R-H01–H04/A01–A08`, plus two separate `0104R` non-running/edge phenomena. Most slots remain partial or attempted-unresolved; **zero newly certified complete G2 lines** are claimed. The previously recorded seven-line 0102R→0103L clause, separate chancery/signature groups and 0071R pilot are not double-counted. The whole-unit T1 unique-surface inventory and G2–G6 are still open.
 
-**Exact continuation in the authorized work:** in the *same owner*, (1) native original JPEG \`IMG0102\` left writing field: test physical A01–A16 boundaries and high-yield fragments, including overlapping descenders; (2) \`IMG0104\` full right field: discriminate \`H01–H03\` date/title and \`A02–A08\` against line-internal letterforms; (3) explicitly account for right-edge \`E01\` and check \`0103R↔0104R\` repetition against \`IMG0103\`; (4) continue to remaining separate already authorized local regions, not a new planning task. Results stay working/candidate until graphically verified. No independent source-witness collation, full PDF, G2 pass, G5/G6 or public image rights are implied.
+**Exact continuation in the authorized work:** in the *same owner*, (1) native original JPEG `IMG0102` left writing field: test physical A01–A16 boundaries and high-yield fragments, including overlapping descenders; (2) `IMG0104` full right field: discriminate `H01–H03` date/title and `A02–A08` against line-internal letterforms; (3) explicitly account for right-edge `E01` and check `0103R↔0104R` repetition against `IMG0103`; (4) continue to remaining separate already authorized local regions, not a new planning task. Results stay working/candidate until graphically verified. No independent source-witness collation, full PDF, G2 pass, G5/G6 or public image rights are implied.
 
 **AI provenance:** GPT-6 direct examination of the stated embedded original scans, non-generative crops, 2026-10-30; source is the same archival-unit image data, not independent testimony.
