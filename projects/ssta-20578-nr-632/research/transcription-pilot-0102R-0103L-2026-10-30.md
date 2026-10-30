@@ -1280,3 +1280,51 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `0131R-C01` | `[⟦additional lower chancery note⟧]` | direct source working, incomplete graphemes expressly marked |
 
 **Quality/ceiling:** 116 additional physically addressed line/mark slots, not a same-number certified complete diplomatic transcription. Crucial money-sign and copy/document stages are not inferred. **Next** inspect the unique full charter text on **0133/0135 front** once, and the **0132R/0134L** complementary reverse-side, not as four separate witnesses; proceed to remaining unprocessed mid-domain regions in subsequent run, and revisit difficult 0102L handwritten baselines.
+
+
+## One oversized 1781 charter: direct photo front/reverse first diplomatic control (2026-10-30)
+
+**Evidence:** exact full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`; source `SSTA-ARCHIVIALE-EDD69AA1`; native embedded 4300px photographic JPEG views **0132–0135**, directly visually inspected in their own frames plus native cropped L/R fields. The individual externally registered original-JPEG File bytes were not reopened separately. No OCR/HTR, image-content generation, qualified specialist control, or assertion of historical foliation.
+
+**Direct S2 / deduplication:** The **same single oversized 1781 charter** is photographed on **0133/0135 on its front** (0135 wider/usable; 0133 supplementary) and **0132R/0134L on its reverse** (0134L preferred for more exposed reverse-side note). This follows current Project Human correction and direct match of distinctive ornament, material fold and inscription positions; **not four independent texts**. The 0134L dark circular area is not proof of an intact or identifiable wax seal; the front has a separate dark impression/cover sheet that physically obscures some parts of the writing. The upper reverse lettering is strongly shadowed/partly stencilled and is not silently decoded or mirrored into an invented text. Charters/publication rights are not expanded by local study.
+
+**S3 working reading:** the front shows ornate titulature, a dense running text with repeated Lehn-Quantum references and a clearly written internal **13. Junii 1781**, plus signing regions. The writing is smaller/denser and some leftmost characters lie beyond a partial photo crop; the following are preliminary source-near fragments at **editor-assigned physical lines within the front writing field**. `⟦...⟧` means *actually visible but unresolved written ink or obscured text*, **not** supplied text, accepted physical gap or completed line. Letters in plain terms are working direct readings and remain open to S4 falsification. The one physical reverse note `Duplic.` is distinct from the main running text and appears on the more exposed 0134L view.
+
+### 1781-CH-FRONT — single charter front (references: 0135R + 0133R)
+
+| Local line/phenomenon | Source-near written working text | State |
+|---|---|---|
+| `1781-CH-FRONT-H01` | `Wir [⟦ornate initial title/name⟧] Herzog zu Sachsen, Jülich, Cleve [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-H02` | `[⟦other royal titles⟧] Erzmarschall und Churfürst, Landgraf in Thüringen,` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A01` | `Marggraf zu Meißen, [⟦additional titles⟧] Graf zu Henneberg, [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A02` | `[⟦titulature⟧] Unsern lieben und getreuen, Herrn Johann George Friedrich Graf von Einsiedel` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A03` | `[⟦petition phrasing⟧] [⟦title⟧] und [⟦office⟧] [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A04` | `[⟦opening⟧] in Unterthänigkeit zu erkennen gegeben worden,` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A05` | `[⟦group⟧] und [⟦word⟧] Lehn Quanti an Vier Tausend Thalern,` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A06` | `[⟦group⟧] von unserm [⟦office⟧] [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A07` | `[⟦phrase⟧] mit [⟦word⟧] zu Zwey Tausend Thalern;` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A08` | `[⟦ending⟧] und zum [⟦word⟧] in Unsern [⟦rights phrase⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A09` | `[⟦word⟧] dieses [⟦word⟧] Intereßenten, im Hofe [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A10` | `[⟦phrase⟧] [⟦word⟧] und Consorten, [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A11` | `[⟦phrase⟧] die deshalb auf die Güther [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A12` | `[⟦phrase⟧] Lehn-Consens gegeben haben; Ihme denselben auch zu [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A13` | `[⟦title/condition⟧] und bekennen [⟦end⟧] Intereßenten` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A14` | `[⟦clause⟧] Lehn-Quantum [⟦group⟧] in Originali` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A15` | `[⟦phrase⟧] und dero [⟦word⟧] Unßer [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A16` | `[⟦clause⟧] daß [⟦group⟧] [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A17` | `[⟦closing clause⟧] [⟦group⟧] [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A18` | `[⟦closing text⟧] [⟦group⟧] [⟦end⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-A19` | `So geschehen zu Dresden am 13. Junii 1781.` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-B01` | `[⟦large separate autograph beneath charter body⟧]` | directly attempted; unresolved spans are not editorial supplies |
+| `1781-CH-FRONT-C01` | `[⟦additional autograph at lower edge⟧]` | directly attempted; unresolved spans are not editorial supplies |
+
+### 1781-CH-REVERSE — single charter reverse (0134L, checked 0132R)
+
+| Region / visible unit | Source evidence / partial diplomatic text | State |
+|---|---|---|
+| `1781-CH-REVERSE-H01` | `[⟦large reverse-side cut/stencilled lettering, letter sequence unresolved⟧]` | separate, only this view's observable graphemes |
+| `1781-CH-REVERSE-B01` | `[⟦one short line beneath impression⟧] Confer.` | separate, only this view's observable graphemes |
+| `1781-CH-REVERSE-B02` | `Duplic.` | separate, only this view's observable graphemes |
+| `1781-CH-REVERSE-M01` | `[⟦dark round imprint/mark: material evidence, no signature text asserted⟧]` | separate, only this view's observable graphemes |
+
+**Coverage/quality ceiling:** 23 front-local line/mark slots and four reverse-side unit/mark slots, **NOT 27 complete transcribed physical lines**. The very dense charter still requires a more exhaustive targeted high-magnification palaeographic pass, especially its head titling, very long sentence and Latin legal terminology; isolated `Confer.` reading is provisional. A formal G2 acceptance, substantive expert review and full internal PDF edition are not obtained by this partial ledger. The next high-return scholarly work is to return to prepared **0102L** and **0071R** gaps with the native 4300px scan and fresh independent letterform test, while remaining unattempted earlier photo domains still prevent entire-unit G2 completeness.
