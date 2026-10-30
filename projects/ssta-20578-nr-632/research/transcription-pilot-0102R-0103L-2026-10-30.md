@@ -952,3 +952,174 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0124R-A23` | `zum Besitz Königl: Hoheit [⟦end⟧]` | direct working reading; uncertainty retained |
 
 **Current limit:** 121 newly addressed image-local line slots, mostly with positive source text but numerous still unverified words and some overlapping additions/deletions. The 0123 repeated view is not counted as another transcript. None is an independent qualified paleographic certification or whole-unit G2 pass. Continue 0124R lower line into 0125 exposed fields, then return to partially unresolved 0102L and 0104R marginal strip by best original JPEG evidence.
+
+
+## Further direct photographic diplomatic reading 0125–0128 — 2026-10-30
+
+**Direct evidence:** registered Project Source `SSTA-ARCHIVIALE-EDD69AA1`; full-size archival-unit working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, native embedded source JPEGs (approx. 4299–4324px wide) for **PDF/provider 0125–0128** directly extracted/inspected as left/right local photographic regions, non-generative contrast/crop only. No standalone registered provider JPEG File was independently opened/hashed, no OCR or fabricated image, and no qualified human expert review. Image-side IDs remain distinct from true archival foliation, which is unestablished.
+
+**S2 and source phenomenon:** 0125L/R are separate visible written regions; their grammatical associations are *not* automatically identical material leaf or same hand. 0126R and 0127R contain distinct 1764 Lehn-Schein-type texts for **Johann George Friedrich** and **Detlev Carl von Einsiedel** respectively, not duplicate photographs despite similar date and formula. At 0127L and 0128L the photographed pale/reversed writing cannot be securely described as a new independently written main text and is not silently transcribed. The 0128R begins a separate historically earlier represented 1726 transaction on one visible photo, **not** conclusive evidence that the photograph's substrate dates to 1726. Several isolated bottom handwritten names and 0126R calligraphic office text are separate from running paragraph; preserve them as distinct lines. Textual `4000` plus a currency-looking mark on 0128R is NOT expanded into a currency or modern amount without discriminating graphic test.
+
+Plain text is source-near positive **working reading**; `⟦...⟧` means actually observed but undecided strokes and is neither editorial supply nor certified source-intrinsic illegibility. Original-like abbreviations, punctuation, case and physical word division are preserved where identified. The sample remains provisional/partly unresolved; no legal narrative or genealogical identification can supply missing graphemes.
+
+### 0125L physical written-line first reading
+
+| Physical local line | Diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0125L-A01` | `[⟦opening⟧] auch [⟦word⟧] daß von` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A02` | `gehöriger [⟦word⟧] abgelegt, der` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A03` | `Lehn auf unseren in Mann` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A04` | `Dominante [⟦verb⟧],` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A05` | `gehörend solche Lehen, welche` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A06` | `so künftig in Unterthänigkeit be-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A07` | `werkstelligen, Und an Ew. Königl.` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A08` | `Hoheit [⟦phrase⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A09` | `[⟦intro⟧] Ritter, [⟦group⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A10` | `[⟦word⟧] mir die Lehen` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A11` | `an bemelten Mann und Weiber-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A12` | `Lehn-Guthe Knau mit Zinsen,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A13` | `samt Zugehörungen,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A14` | `zu meinem Antheil, nebst derer` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A15` | `Lehn-Briefe reichen, wie auch` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A16` | `die gesammte Hand an erwer-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A17` | `ten meines Bruders daran habenden` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A18` | `Antheil erkennen, und [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A19` | `darüber gewöhnlichen Lehn-Schein` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A20` | `ertheilen und Lehn-Brief ausfertigen` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A21` | `[⟦word⟧] zu leisten Handschlag` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A22` | `von mir [⟦word⟧] legitimirten` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A23` | `gewollmächtigten Admittiren,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A24` | `sodann darüber mein gewöhn-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A25` | `lichen Lehn-Schein ertheilen,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A26` | `Ew. Königl. Hoheit` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125L-A27` | `Dresden am 1. August [1764?]` | positive fragments; uncertain words/spans explicitly not resolved |
+
+### 0125R physical written-line first reading
+
+| Physical local line | Diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0125R-A01` | `[Ich?] zu [⟦word⟧] unterschrieben [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A02` | `[⟦group⟧] der Lehn- und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A03` | `gesammten Hand` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A04` | `an dem Mann- und Weiber Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A05` | `Guth Knau mit Zinsen,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A06` | `2/3 die Lehen, [⟦group⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A07` | `das Erb- und allodial-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A08` | `Guth [⟦word⟧], und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A09` | `andere Erb- und allodial Gü-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A10` | `ther Wercken im [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A11` | `[⟦group⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A12` | `[⟦word⟧] Lehe zu meinem Antheil` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A13` | `a/ an dem Mann und Weiber Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A14` | `guth Knau mit Zinsen, und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A15` | `die gesammte Hand an meines` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A16` | `Bruders, des Hochgebohrnen Herrn` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A17` | `Johann George Friedrich Grafens` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A18` | `von Einsiedel, Churfürstl: Sächß:` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A19` | `geheimden Cabinets-Ministers` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A20` | `daran habenden Antheil, und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A21` | `b/ an dem Erb- und allodial Guthe` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A22` | `[⟦place⟧], ingl[eichen]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A23` | `c/ an dem Erb- und allodial-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A24` | `Berg- und Hütten Werken, wie` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A25` | `Vetter der [⟦word⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0125R-A26` | `sondern auch die [⟦group⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+
+### 0126L physical written-line first reading
+
+| Physical local line | Diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0126L-A01` | `gelegenen Häuser, auch deren` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A02` | `die [⟦word⟧] behörig, und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A03` | `Behalte der Gültigkeit, samt` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A04` | `deren allerhand Erb- und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A05` | `Zugehörungen, [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A06` | `den Handschlag, auf den mir` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A07` | `mir allerseits geleistete Erb-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A08` | `huldigung- und Lehn-Pflicht` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A09` | `durchfall abstatte, Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A10` | `Scheine hierauf mir allergnädigst` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A11` | `und Ausfertigung derer re-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A12` | `spective Lehn- und Erb-Briefe` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A13` | `bitte, und alles anderen` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A14` | `hier [⟦word⟧] dero Lehn-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A15` | `gesammte Hand wegen [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A16` | `mir abgelegten Pflicht` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A17` | `dester [⟦group⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A18` | `und habe diese Vollmacht` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A19` | `eigenhändig unterschrieben,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A20` | `und besiegelt [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A21` | `Dresden am 1. August 1764.` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126L-A22` | `L.S. Detlev Carl Graf von Einsiedel` | positive fragments; uncertain words/spans explicitly not resolved |
+
+### 0126R physical written-line first reading
+
+| Physical local line | Diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0126R-A01` | `Den 22ten August 1764. ist der Hoch- und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A02` | `Wohlgebohrne, Herr Johann George Friedrich` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A03` | `Graf von Einsiedel, Geheimer Cabinets-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A04` | `Ministre, und [⟦group⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A05` | `und Lehn-Pflicht, welche [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A06` | `[⟦title⟧] dessen Vollmacht in die [⟦word⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A07` | `[⟦word⟧] zu seinem Antheil mit dem Mann-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A08` | `und Weiber-Lehn-Guthe Knau und Zinsen,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A09` | `nebst Zugehörungen, besage der Lehn Briefe,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A10` | `[⟦group⟧] [⟦end⟧] gesammte Hand an` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A11` | `seines Bruders, des Gräfl: und Wohlgebohrnen,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A12` | `Herrn Detlev Carl Grafen von Einsiedel,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A13` | `[⟦group⟧] [⟦end⟧] Signatum Dresden` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A14` | `ut supra.` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A15` | `Churfürstlich Sächsische Cantzley` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A16` | `Johann George von [⟦surname⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0126R-A17` | `[⟦lower separately placed name⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+
+### 0127R physical written-line first reading
+
+| Physical local line | Diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0127R-A01` | `Den 22ten Augusti, 1764. ist der Hoch- und Wohl-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A02` | `gebohrne, Herr Detlev Carl Graf von Einsiedel,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A03` | `[⟦title⟧] [⟦word⟧] und Ober-Vormundschaft,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A04` | `und, und wegen [⟦word⟧] gegen einen Handschlag, wel-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A05` | `chen [⟦name⟧] in betroffenen Vollmacht` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A06` | `desfalls wegen gethan, zu seinem Antheil, mit` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A07` | `dem Mann- und Weiber Lehn-Guthe Knau und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A08` | `dessen Zugehörungen, besage der Lehn-Briefe,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A09` | `beliehen, ihm auch die gesammte Hand an seines` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A10` | `Bruders, des Hoch und Wohlgebohrnen Herrn` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A11` | `Johann George Friedrich Grafens von Einsiedel,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A12` | `geheimden Cabinets-Ministers, daran habenden` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A13` | `Antheil bekannt worden. Signatum` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A14` | `Dresden ut supra.` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A15` | `Churfürstlich Sächsische Cantzley` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A16` | `Johann George von [⟦surname⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0127R-A17` | `[⟦lower separately placed name⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+
+### 0128R physical written-line first reading
+
+| Physical local line | Diplomatic working reading | Evidential limit |
+|---|---|---|
+| `0128R-A01` | `Nachdem weyl. Herr Casp Rudolph` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A02` | `Haubold von Einsiedel, bey dem ihm in der` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A03` | `brüderlichen Theilung vom 15. April: 1726.` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A04` | `unter andern zugefallenen und von ihm ange-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A05` | `nommenen Mann- und Weiber-Lehn-Guthe` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A06` | `Knau und Pahren seine damahls lebenden` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A07` | `beyden Frauen Schwestern, nehmlich die Fräu-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A08` | `lein [⟦name⟧] und Frau [⟦name⟧] gebohrene [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A09` | `von [⟦name⟧] zwar in der Mitbelehngesuches` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A10` | `angestellt, diese aber in den 15. April` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A11` | `1726. ausgestellten und den` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A12` | `17. ejusdem mensis et anni allergnädigst` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A13` | `confirmirten Revers, sich dahin erkläret,` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A14` | `daß sie benannten ihrem von Einsiedel` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A15` | `und dessen Mann- und weibliche Descen-` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A16` | `denten an der freyen Disposition und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A17` | `Alienation gedachten Guths bis auf ein` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A18` | `Quantum von 4000 [⟦currency sign⟧] ... mehr [⟦text⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A19` | `von und ihren Descendenten, männ- und` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A20` | `weiblichen [⟦word⟧] [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+| `0128R-A21` | `auch [⟦word⟧] [⟦end⟧] und die Succession [⟦end⟧]` | positive fragments; uncertain words/spans explicitly not resolved |
+
+**Coverage/result:** 130 new physically indexed line slots (not equally many fully resolved/validated readings); substantial positive lexical text is present on every listed line, but many span-local undeciphered groups remain. No G2 claim, independent specialist review or premature PDF output. The next new exposed text starts at 0129R, with its view/photographic relation to 0130R requiring checking before a distinct running text is inferred. Recheck the source-native 0102L graph groups when source-readability is better than these passages.
