@@ -117,15 +117,15 @@ The following is a **source-grounded line-address and partial-reading ledger**, 
 | `0102L-A03` | `zu [bekommen?]` | Source-near partial phrase; precise letters of verb uncertain. |
 | `0102L-A04` | `[verdienet?] ⟦attempted, unresolved⟧` | Word division, ending unresolved. |
 | `0102L-A05` | `⟦attempted, unresolved⟧` | Distinct ink baseline, no responsibly secured complete word. |
-| `0102L-A06` | `⟦attempted, unresolved⟧ [Lehn-?]` | Do not infer a legal act from a lexical possibility. |
-| `0102L-A07` | `[und?] [Lehn-?] ⟦attempted, unresolved⟧` | Ending/line division unconfirmed. |
+| `0102L-A06` | `[Lehn-?] [Sachen?];` | Do not infer a legal act from a lexical possibility. |
+| `0102L-A07` | `[an?] und Lehn-` | Ending/line division unconfirmed. |
 | `0102L-A08` | `[Briefe?] ⟦visible continuation unresolved⟧` | Long leftward entry flourish and loop are not automatically letters. |
 | `0102L-A09` | `[vorzeigen?] ⟦visible continuation unresolved⟧` | Final group requires grapheme check. |
 | `0102L-A10` | `lassen[.?]` | Do not assimilate to A09/A11 on syntax. |
 | `0102L-A11` | `[derselbe?] und` | Both lexemes provisional, not a place identification. |
 | `0102L-A12` | `⟦attempted, unresolved⟧ [ich?] [in?]` | No accepted continuous syntax. |
-| `0102L-A13` | `⟦attempted, unresolved⟧` | Distinct baseline; visible text not adjudicated. |
-| `0102L-A14` | `⟦attempted, unresolved⟧` | Distinct baseline; overlapping descenders. |
+| `0102L-A13` | `[vollmächtigen?] ⟦remaining group unresolved⟧` | Distinct baseline; visible text not adjudicated. |
+| `0102L-A14` | `[dieser?] ⟦visible continuation unresolved⟧` | Distinct baseline; overlapping descenders. |
 | `0102L-A15` | `⟦attempted, unresolved⟧` | End-of-line punctuation unresolved. |
 | `0102L-A16` | `⟦attempted, unresolved⟧` | Bottom exposed baseline; terminal signs unresolved. |
 
@@ -1328,3 +1328,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `1781-CH-REVERSE-M01` | `[⟦dark round imprint/mark: material evidence, no signature text asserted⟧]` | separate, only this view's observable graphemes |
 
 **Coverage/quality ceiling:** 23 front-local line/mark slots and four reverse-side unit/mark slots, **NOT 27 complete transcribed physical lines**. The very dense charter still requires a more exhaustive targeted high-magnification palaeographic pass, especially its head titling, very long sentence and Latin legal terminology; isolated `Confer.` reading is provisional. A formal G2 acceptance, substantive expert review and full internal PDF edition are not obtained by this partial ledger. The next high-return scholarly work is to return to prepared **0102L** and **0071R** gaps with the native 4300px scan and fresh independent letterform test, while remaining unattempted earlier photo domains still prevent entire-unit G2 completeness.
+
+
+### Native-image targeted recheck 0102L difficult A06/A07/A13/A14 (2026-10-30)
+
+Directly re-viewed original native-resolution source-photographic scan for PDF/provider image **0102** (4324 × 3880 embedded JPEG pixels) in the full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Upper and lower left writing area inspected in separate contrast-only crops; no independent original provider JPEG File byte reopening, no OCR/HTR or scholarly specialist check. The opening `A06` permits candidate two-group `[Lehn-?] [Sachen?];`; `A07` has visible second `und` and final `Lehn-` with a physical division mark. The `A13` lower cursive line has a longer candidate `[vollmächtigen?]`, while `A14` begins with a group tentatively `[dieser?]`, but the middle strokes are **not** clear enough for certainty. The uncertainty cannot be overcome by conventional chancery syntax, so all candidate words stay bracketed; the previously unresolved baselines remain unfinished rather than downgraded to material lacunae. These updates revise **four existing local physical-line rows**, not four new lines, and do not assert full 0102L witness coverage or G2 completion.
