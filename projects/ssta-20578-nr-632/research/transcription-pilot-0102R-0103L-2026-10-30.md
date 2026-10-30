@@ -282,3 +282,69 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 **Quality/disposition:** New full-resolution line-by-line visual work covers `0105L` (18 local lines), `0105R` (17), `0106L` (17), `0106R` (21 across main/date/subscription/attestation) and `0107L` (10 across attestation, separate chancery lettering, large and lower subscription), **83 locally indexed physical writing lines**; these are **working readings**, not 83 certified lines. The central continuous petition is substantially readable; proper names, some prepositions/consonant runs, the 0102L left field and physically hidden edge strips remain open. The 0107L seal-like impression and nearby cord/rotated cover visible in 0107R are observed **material/graphic phenomena**, not safely identified seals, hands or extra text lines. The finer A-line division in 0106L may require adjustment on specialist reinspection. All 83 new rows are **new working observations at their specific photo loci**, not an accepted whole-unit transcript or independent palaeographic corroboration. No G2/G3/G4/G5/G6 claim; no internal derived PDF release.
 
 **Exact next source action:** resolve `0102L-A04–A07/A12–A16` from native 0102 image and controlled `IMG0102` where accessible; align the undecided 0106L-A13–A17 continuation against 0106R-A01; compare the 0106R lower faint attestation and 0107L-A01 in a joint crop; then advance to the next distinct visible source region past 0107 while preserving the right-edge overlay as a separate unattempted reading problem. Do not normalize names from context or treat recurrence in the same archive as independent witness evidence.
+
+
+## Further direct photographic transcription, 0108R and 0109R — 2026-10-30
+
+**New primary-image inspection:** the exact full-size PDF already described in the immediately previous section was newly opened at PDF/provider positions **0108** and **0109**, with original 4304 × 3897-pixel embedded JPEG exposures extracted and studied at native size and in non-generative separate upper/middle/lower crops. These images are not newly independently byte-verified provider JPG files. In the 0108 view the left half is essentially without a full running text field; on its right a separate narrow running text field with **smaller cursive script** includes a long passage and date-like marks. At its *upper-left* is a crossed-through, partially obscured handwritten note with several lines; this is an actual **deletion/cancellation candidate**, not a blank margin. At the lower left of the 0108R text is a separate dated note apparently ending in `24. Decbr. [1765?]`; date and function are **not accepted**, and the note has **not been fully diplomatically read**. In 0109, a partly cropped left-hand text block and a separate newly exposed right-hand **large ornamental/title opening** are both present; only the **right-hand opening** is transcribed below. Do not merge the 0109R document opening with the preceding 0108R text because of provider-image adjacency, and do not deduce a common hand from book proximity. The thin right-edge writing of still another overlapped exposure remains separate. No unsupported inferred original/copy relation. These region delimitations are digital working locators, not archival folio numbers.
+
+**Physical lines: strong fragments preserved, weak words in brackets; the indeterminate parts are not source-lacunae.** The 0108R line count and reading order are provisional because several long cursive descenders crowd adjacent baselines, and text at the top overlaps the separate marginal deletion. Abbreviations and word-breaks were not filled from chancery formulae or title lists. Historical/legal context is not graphemic evidence.
+
+### 0108R separate long narrow right-hand written field
+
+| Local physical line | Diplomatic source-near working reading | Reading/phenomenon note |
+|---|---|---|
+| `0108R-H01` | `Allergnädigster Herr` | separately set address at head |
+| `0108R-A01` | `Daß bey Ew: Königl: Majts:` | written initial/source abbreviation; strongly supported |
+| `0108R-A02` | `nach dem erfolgten Absterben,` | strong sequence |
+| `0108R-A03` | `des Vaters, der [gewesenen?] ersten` | mid-word endings uncertain |
+| `0108R-A04` | `Hoff-Marschalls, Herrn Johann` | scripted abbreviation/title; positive first-reading |
+| `0108R-A05` | `George [⟦surname/title unresolved⟧]` | do not import 0104 personal-name guess |
+| `0108R-A06` | `an dem von ihm verlassenen, und auf` | positive phrases, written spacing approximate |
+| `0108R-A07` | `uns verfallenen Mann- und Wei-` | continued word visible at line break |
+| `0108R-A08` | `ber-Lehn-Guthe Knau, mit Lehen` | written join from A07, spelling and comma provisional |
+| `0108R-A09` | `die respective Lehn- und [⟦following group uncertain⟧]` | `respective` Latin-derived writing retained |
+| `0108R-A10` | `Hand, allergnädigst [abgeleget?],` | uncertain verb, visible letter grouping |
+| `0108R-A11` | `haben allergnädigst Dieselben, dem Vor-` | text partly visually crowded |
+| `0108R-A12` | `nehmen nach, [keinen?] Anstand ge-` | first group before `Anstand` unsettled |
+| `0108R-A13` | `nommen, und [solche?] denen be-` | writing continuing at physical line end |
+| `0108R-A14` | `[⟦several words⟧], mit vorher erst` | clearly seen ending phrase, beginning unresolved |
+| `0108R-A15` | `die [⟦visible undecided line⟧]` | attempted, not a lacuna |
+| `0108R-A16` | `Fristen und [⟦other text⟧]` | first word candidate |
+| `0108R-A17` | `und [⟦line beginning⟧] unter denen [⟦end⟧]` | no invented legal relation |
+| `0108R-A18` | `Portionen, [⟦middle⟧] Guth [⟦end⟧]` | `Portionen` positive; no narrative consolidation |
+| `0108R-A19` | `etwan vorgekommen alienationes, [⟦end⟧]` | Latin `alienationes` visibly distinct |
+| `0108R-A20` | `[gänzig?] zu untersuchen und in Richtig-` | adverb uncertain; line-division at right |
+| `0108R-A21` | `keit zu setzen, [⟦end of line⟧]` | line-initial continuation of `Richtig-` candidate |
+| `0108R-A22` | `und, daß zum Beweis der von uns` | visible text starts after shifted indent |
+| `0108R-A23` | `[beobachteten?] [allergnädigsten?] Ob-` | not promoted to secure words; `Ob-` unfinished |
+| `0108R-A24` | `[liegenheit?], die man uns [⟦continuation⟧]` | first group candidate continuation |
+| `0108R-A25` | `datis den 1. April, und 3. July` | Latin-style date heading uncertain; days visible |
+| `0108R-A26` | `1760. und præsentatis den [3ten?]` | `præsentatis` read as source Latin-style word, ordinal uncertain |
+| `0108R-A27` | `April und 4. July, d. a. [⟦end⟧]` | closing group unresolved, written dates not evidence for carrier creation |
+
+### 0109R separately ornate opening, not conflated with 0108R / 0109L
+
+| Local physical line | Diplomatic source-near working reading | Reading/phenomenon note |
+|---|---|---|
+| `0109R-H01` | `Von Gottes Gnaden Wir [⟦princely name⟧] Herzog` | large initial/ornament and title; name unadjudicated |
+| `0109R-A01` | `zu Sachsen, Jülich, Cleve, Berg, postulirter` | positive titulature, orthography source-near |
+| `0109R-A02` | `Administrator des Stiffts Naumburg,` | positive reading |
+| `0109R-A03` | `Landgraff in Thüringen, Marggraff` | positive reading |
+| `0109R-A04` | `zu Meißen, auch Ober- und Nieder-Lausitz,` | positive reading, dashes physically in compound |
+| `0109R-A05` | `gefürsteter Graff zu Henneberg, [⟦end⟧]` | first words supported, next count unresolved |
+| `0109R-A06` | `zu der Marck und Ravensberg, Herr` | positive sequence |
+| `0109R-A07` | `zum Ravenstein, auch der [⟦other title⟧]` | exact following group uncertain |
+| `0109R-A08` | `[ringen?] Statthalter: p. Thun kund hier-` | initial looks like continuation from A07; not certified |
+| `0109R-A09` | `mit, daß zwischen Unsern [Ambt?]` | source continuation of A08; final abbreviation unclear |
+| `0109R-A10` | `[⟦other official title⟧], und des [⟦title⟧]` | uncertain, not silently collapsed |
+| `0109R-A11` | `Unsers lieben getreuen, Herrn Johann` | positive textual sequence |
+| `0109R-A12` | `Albrechts, des Heil. Röm. Reichs [Graffens?]` | first and abbreviations as written; ending uncertain |
+| `0109R-A13` | `von Ronow und Bieberstein, [⟦further title⟧]` | proper nouns graphically positive but historical identification separate |
+| `0109R-A14` | `zu Oppurg, wegen Verlegung der Grenzen` | positive strong text |
+| `0109R-A15` | `und [Fortgerechtigkeit?] einige Diffe-` | noun difficult; written word division |
+| `0109R-A16` | `rentien entstanden, und Wir darauf` | continuation from A15, following text on next exposed carrier unknown |
+
+**Local control and ceiling:** On 0108R the wording `Mann- und Wei-` / `ber-Lehn-Guthe Knau` is supported by physical line ends; its similarity to the separate 0104R→0106R text is *not* a second independent witness nor licence to complete missing signs. The proper name after `George` and `Fortgerechtigkeit` on 0109R were deliberately left uncertain despite plausible source context. These **45 new addressed physical lines** (`0108R` 28 including H; `0109R` 17 including H) have **positive text in most rows but are not 45 complete scholarly adjudications**. The 0108 marginal deletion and 0109L main script require separate line inventories/readings; no full region/page, act-level G2 or specialist signoff is asserted.
+
+**Next source reading locus (without re-planning):** direct full-pixel 0109L first/last lines to determine whether it continues 0108R or merely occupies an adjacent view; then the 0110–0112 available photographic regions, checking physical lineation/view overlap; return to 0071R and unresolved 0102L physical rows for graphemic control. Keep image files as controlled source objects; no public source-image redistribution or PDF interim edition.
