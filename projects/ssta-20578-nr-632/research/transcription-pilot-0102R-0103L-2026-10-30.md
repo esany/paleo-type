@@ -273,12 +273,12 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 |---|---|---|
 | `0106R-A01` | `[Antheilen?] inhalts deren` | first word uncertain |
 | `0106R-A02` | `Lehn-Briefe, in hohen` | first/second group graphically supported |
-| `0106R-A03` | `Gnaden bekennen, [darü-?]` | Vergrößertes Bild stützt `bekennen` gegenüber früherem `bekommen`; möglicher Wortanfang `darü-` erst mit A04 prüfbar, kein Formelschluss. |
-| `0106R-A04` | `[ber?] gewöhnliche Lehn-` | Bild zeigt eher Fortsetzung der A03-Gruppe (`darü- / ber`) als selbständiges `bey`; Zeilenbruch bleibt als Kandidat. |
+| `0106R-A03` | `Gnaden [bekommen/bekennen?], [⟦Schlussgruppe ungesichert⟧]` | Direkte Nachprüfung des Originalfotos: Binnenkonsonanten des Verbs nicht eindeutig getrennt; vormals sicher behauptetes `bekennen` nicht als gesichert übernehmen. Verbindung mit A04 offen; keine Formelergänzung. |
+| `0106R-A04` | `bey [gewöhnliche/gewöhnlicher?] [Lehn-/Lehen-?]` | Das vergrößerte Originalbild stützt ein selbständiges `bey` am Zeilenanfang; frühere Hypothese `darü- / ber` nicht gestützt. Endung von `gewöhnlich` und Wortform `Lehn/Lehen` mit unabhängigem, jedoch erst nach dem Hauptchat-Commit gespeichertem KI-Vergleich noch offen. |
 | `0106R-A05` | `Scheine ertheilen, und` | running sequence |
 | `0106R-A06` | `die Lehn-Briefe aus-` | line-ending mark visible |
 | `0106R-A07` | `fertigen zu laßen;` | Quellenform am vergrößerten Bild mit ß beibehalten, kein stilles ss. |
-| `0106R-A08` | `Dafür ich in Pflicht-` | physical division |
+| `0106R-A08` | `Darüber ich in [Pflicht-?]` | Bildevidenz und unabhängige Nachlesung zeigen `Darüber` statt unmarkiertem `Dafür` der vorigen Arbeitsfassung; das Wortend-/Teilungszeichen von `Pflicht` bleibt offen. |
 | `0106R-A09` | `schuldigster Treue Zeit-` | physical division; `Zeit` graph remains inspectable |
 | `0106R-A10` | `Lebens verharren werde,` | positive sequence |
 | `0106R-A11` | `Ew: Königl: Majts:` | separate enlarged dedicatory line |
@@ -291,7 +291,13 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0106R-B04` | `[Fr:?] von [Einsiedel?].` | abbreviation and surname graphic hypothesis only; no person identification |
 | `0106R-C01` | `Daß vorstehende Abschrifft mit dem` | separate *fainter* attestation main line, not a continuation of petition |
 | `0106R-C02` | `bey der Königl: Pohl: und Churfürstl:` | faint original writing, abbreviations left literal |
-| `0106R-C03` | `[Sächßl:?] [⟦faint continuation unresolved⟧]` | continuation needs 0107L scan; faint is not automatically illegible |
+| `0106R-C03` | `[Sächßl.?]` | Eine einzelne blasse, separat positionierte Abkürzungsgruppe am unteren rechten Schreibfeld sichtbar; keine darüber hinaus sicher lesbare Fortsetzung auf *dieser* Bildfläche belegt. **Nicht still mit 0107L-A01 verschmelzen**, dort beginnt erneut eine `Sächßl.`-ähnliche Gruppe. |
+
+**0106R – gezielte Originalbild-Nachprüfung und spätere KI-Gegenlesung (31.10.2026, Einzelblock):** Die auf `main` im Eigentümerplan registrierte vollständige 135-Seiten-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030` wurde in diesem Chat **erneut vollständig SHA-256-verifiziert** (`d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`). Daraus das **unveränderte eingebettete Foto** PDF-/Providerbild `0106` (4318×3884 Pixel) sowie `0107` (4318×3885 Pixel) unmittelbar betrachtet. Für 0106R Haupttextbildausschnitte in Originalkoordinaten etwa x=2270–3710/y=1030–2180 und x=2260–3720/y=1890–2830, für die blasse Beglaubigung x=2150–3690/y=2670–3400; 0107L-Anfang x=750–2210/y=1120–2100. Diese Koordinaten lokalisieren Fotoausschnitte, **keine archivalische Foliierung**.
+
+Die inzwischen neu auf dem separaten `review/nr632-gegenlesung-vorab`-Branch vorliegende, laut Gegenleser blinde KI-Probe 0106R umfasst A04 (Z.4), A08 (Z.8) und die zweite Datumszeile D02. Sie war **beim eigenen 0106R-Seiten-Commit `8d0b92c9946415b953c42aaa65b12ad5dab556a0` noch nicht vorhanden** (damaliger Forschungs- und Review-Rückkehrpunkt: „Gegenlesung offen“); nach dem inzwischen auf `main` geltenden Ablauf `docs/gegenlesung-vorab.md` ist sie darum **keine gültige zeitlich vorab gesicherte Probe**. Als unabhängige *nachträgliche* Falsifikationshilfe wurde sie dennoch ausdrücklich separat vom direkten Bildbefund verglichen: A04 `bey gewöhnlicher Lehen-⟦…⟧` gegenüber alter Hauptchat-Lesung `[ber?] gewöhnliche Lehn-` (unentschiedene Endungen), A08 `Darüber ich in [Pflicht-/Pflicht] ⟦…⟧` gegenüber unmarkiertem `Dafür ich in Pflicht-`, D02 `am 3. Julii[,/;]` gegenüber `am 3. Julii,` (nur Trennzeichen strittig). **Mindestens ein sicher unmarkiert falsches Wort in drei nachträglich unabhängig betrachteten Zeilen: `Dafür` → `Darüber`;** mögliche weitere Wort-/Zeichenabweichungen sind nicht sicher als Fehler gezählt. Die entsprechenden Tabellenzeilen oben wurden quellengebunden nachbearbeitet. **Keine gültige Vorab-Fehlerquote, kein „passt“ und keine fachwissenschaftliche Freigabe.**
+
+**Beglaubigungsgrenze 0106R-C03 → 0107L-A01:** Die blassere dritte Zeile des kleinen unteren rechten Beglaubigungsblocks von Foto 0106 zeigt eine abgesetzte `Sächßl.`-ähnliche Abkürzung ohne verantwortbar zusätzlich gelesene Wörter. Im separaten Originalfoto 0107 beginnt der linke Textblock auf seiner ersten optisch getrennten Zeile **erneut** mit einer `Sächßl.`-ähnlichen Abkürzung vor `Cantzley vorhandenen`. Die **Wiederholung ist beobachtbar**, nicht ihre Ursache: Ein nahtloser einmaliger Wortanschluss, dieselbe materielle Schreibfläche, ein vermuteter Fehler des Schreibers oder eine konkrete Entstehungs-/Aufnahmefolge werden **nicht** aus der Wortähnlichkeit abgeleitet. Beide physisch lokalisierten Vorkommen bleiben getrennt im kanonischen Lesungsdatensatz; die C03→A01-Beziehung lautet **offen**, bis ein unabhängiger bild-/materialbezogener Test unterscheidet. Die frühere kategorische Fortsetzungsbehauptung in A01 wurde deshalb ausdrücklich zurückgenommen.
 
 ### 0107L — original-image continuation of 0106R lower attestation
 
@@ -300,7 +306,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0107L-A01` | `[Sächßl.?] Cantzley vorhandenen` | starts as continuation of 0106R C03, not independently certified document |
+| `0107L-A01` | `[Sächßl.?] Cantzley vorhandenen` | Originalfoto 0107 (linkes oberes Schriftfeld) zeigt eine eigene A01-Baseline; die `Sächßl.`-ähnliche Gruppe erscheint auch auf 0106R-C03. **Wiederholung oder Text-/Aufnahmeanschluss offen**; keine bewiesene identische Schriftfläche oder nahtlose Fortsetzung. |
 | `0107L-A02` | `original Supplicat gleichlau-` | visible physical break |
 | `0107L-A03` | `tend; Solches wird unter dem Kö-` | continuation; terminal abbreviation uncertain |
 | `0107L-A04` | `nigl: und Churfürstl: Cantzley Se-` | visible hyphen or divide stroke; `Cantzley` source spelling |
