@@ -8,6 +8,7 @@ Dieser Zettel erklärt nur die Bedienung. Was gilt, steht in den verlinkten Date
 - [`ARBEITSPLAN.md`](projects/ssta-20578-nr-632/ARBEITSPLAN.md): Plan für Nr. 632
 - [`GEGENLESUNG.md`](projects/ssta-20578-nr-632/GEGENLESUNG.md): Ablauf der Gegenlesung
 - `STATUS.md`: Rückkehrpunkt der Forschung
+- [Issue #368](https://github.com/esany/paleo-type/issues/368): was am Ablauf noch fehlt (Blocker)
 
 ---
 
@@ -102,7 +103,8 @@ Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze
 |---|---|
 | Plan für Nr. 632 | `projects/ssta-20578-nr-632/ARBEITSPLAN.md` |
 | Ablauf Gegenlesung | `projects/ssta-20578-nr-632/GEGENLESUNG.md` |
-| Rückkehrpunkt, offene Vorab-Seiten | `STATUS.md` im aktuellen Forschungsbranch (oben) |
+| Rückkehrpunkt | `STATUS.md` im aktuellen Forschungsbranch (oben) |
+| Offene Vorab-Seiten | Zeile `Vorab offen` oben in `gegenlesung-vorab.md` |
 | Vorab-Lesungen | Branch `review/nr632-gegenlesung-vorab`, Datei `research/gegenlesung-vorab.md` |
 | Laufende Forschung | PR #359 |
 | Forschungsplan (Übersicht) | Issue #358 |
