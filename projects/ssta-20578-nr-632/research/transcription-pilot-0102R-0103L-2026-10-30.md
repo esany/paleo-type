@@ -179,26 +179,30 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ### 0105L — exposed left-hand continuation of the 0104R running text
 
+**0105L — seitenweise Neulesung 31.10.2026:** Das kontrollierte Voll-PDF (SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`) ist lokal byteverifiziert; PDF-/Providerbild 0105 wurde direkt als eingebettetes Foto (4318 × 3885 Pixel) geöffnet, die linke Schriftfläche als Ganzes und in drei vergrößerten, überlappenden Ausschnitten betrachtet. Alle 18 optisch getrennten Haupttext-Baselines sind erneut gezählt und bildgebunden versucht. **Dies ist die neue KI-Arbeitslesung, noch keine blinde Gegenlesung oder Freigabe.** Gerade die schwer diskriminierbaren Binnenformen und die Trennzeichen werden nicht aus einer erwarteten Lehensformel ergänzt.
+
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0105L-A01` | `dieses Zeitliche geseg-` | final sequence graphically tested against following line; no expansion |
-| `0105L-A02` | `net, und [nachbezeich-?]` | line-initial continuation positive; internal letters second word uncertain |
-| `0105L-A03` | `[bene?] von Ihme beses-` | first group candidate continuation of A02, not supplied |
-| `0105L-A04` | `sene, und von Ew:` | possible `Ew:` superscript/abbreviation left unexpanded |
-| `0105L-A05` | `Königl: Majts: zu Lehen` | running text; abbreviations retained |
-| `0105L-A06` | `rührende Güther, [nem-?]` | end may continue into short A07 |
-| `0105L-A07` | `lich:` | isolated short written continuation, not a paragraph marker supplied by editor |
-| `0105L-A08` | `das Erb-Lehen-Guth` | strong text group, source division as seen |
-| `0105L-A09` | `[Wersdorff?],` | place-name graphically candidate, no identification |
-| `0105L-A10` | `und` | isolated separate left-positioned short baseline |
-| `0105L-A11` | `das Mann- und Wei-` | physical terminal hyphen |
-| `0105L-A12` | `ber Lehen-Guth,` | continuation; sibilants/`e` under review |
-| `0105L-A13` | `Knau und [Pabren?],` | last name graphically uncertain; not normalized to a gazetteer form |
-| `0105L-A14` | `auch mich und meinen` | positive sequence, final n strokes need grapheme control |
-| `0105L-A15` | `Brüdern, [⟦name-like group unresolved⟧]` | do not deduce personal identity |
-| `0105L-A16` | `Kindern, Herrn [Adolph?]` | proper-name letters remain candidates |
-| `0105L-A17` | `Carl Marschall von [⟦name-part unresolved⟧]` | writing partly crowded at right |
-| `0105L-A18` | `[⟦opening group unresolved⟧], pro individuo` | Latin expression seen, preceding word not certified |
+| `0105L-A01` | `dieses Zeitliche geseg[=/−?]` | Wortgruppe sichtbar; das terminale Teilungszeichen -/= ist noch nicht zweifelsfrei unterschieden. |
+| `0105L-A02` | `net, und [nachbe-…?]` | `net` als Fortsetzung von A01 sichtbar; anschließende Binnenzeichen bleiben positiv, aber ungelöst. |
+| `0105L-A03` | `[bene?] von Ihme beses[=/−?]` | Zeilenanfang und Teilungszeichen bildgebunden noch nicht sicher diskriminiert, keine Expansion. |
+| `0105L-A04` | `sene, und von [Ew:?]` | `sene` schließt sichtbar an A03 an; Abkürzung am Schluss unaufgelöst. |
+| `0105L-A05` | `Königl: Majts: zu Lehn` | Schreibform im vergrößerten Schriftfeld überprüft; keine Abkürzungsauflösung. |
+| `0105L-A06` | `rührende Güther, [nem-?]` | Ende der letzten Gruppe nicht sicher; nicht semantisch aufgefüllt. |
+| `0105L-A07` | `lich:` | Eigene kurze Schreibzeile, an A06 textlich anschließbar. |
+| `0105L-A08` | `das Erb-Lehn-Guth` | `Lehn` direkt bildgeprüft, keine Vereinheitlichung zu `Lehen`. |
+| `0105L-A09` | `[Wersdorff?],` | Ortsname bleibt grafisch unsicher, keine Identifizierung. |
+| `0105L-A10` | `und` | Separater, links abgesetzter Schreibansatz. |
+| `0105L-A11` | `das Mann [und?] Wei[=/-?]` | Kleiner Verbindungs-/Trennstrich und genaue Binnenform offen; nicht zur Formelnorm geglättet. |
+| `0105L-A12` | `ber [Lehen?]-Guth,` | A11/A12-Wortfolge sichtbar; Vokalfolge in `Lehen` nicht sicher. |
+| `0105L-A13` | `Knau und [Pabßen?],` | Zweiter Ortsname nach erneutem Schriftvergleich weiterhin unsicher; ältere Hypothese `[Pabren?]` nicht still akzeptiert. |
+| `0105L-A14` | `auch mich und [meinen?]` | Endung des letzten Worts unsicher. |
+| `0105L-A15` | `Brüder[n?], [Dero?] [⟦weiterer Schriftzug unaufgelöst⟧]` | Nur sichtbare Segmente positiv versucht; Titel/Name nicht ergänzt. |
+| `0105L-A16` | `Kindern, Herrn [Adolph?]` | Erste Gruppen deutlich; Eigenname bleibt graphischer Kandidat. |
+| `0105L-A17` | `Carl Marschall von Ein[=/-?]` | Gegen Ende ist `Ein` sichtbar, mit noch offener Teilungszeichenform. |
+| `0105L-A18` | `siedel, pro indiviso` | Am hochaufgelösten Bild direkt gegenüber älterem `pro individuo` geprüft: `indiviso` ist die schreibungsnähere positive Lesung; A17/A18 ist der sichtbare geteilte Name. |
+
+**Revision und Grenze:** Die alten Kandidaten `pro individuo` (A18) und die unaufgelöste Anfangsgruppe A18 sind durch direkten Bildbefund `siedel, pro indiviso` widerlegt; A17 ergänzt keine Person allein aus Kontext. Zeilen A02–A04, A11–A15 bleiben teils unsicher und dürfen nicht als glatter fertiger Text gezählt werden. Der Übergang 0104R-A08 → 0105L-A01 ist als fortlaufender Satz am Bild plausibel, **materielle Träger-/Blattrelation und einzelner physischer Textjoin bleiben gesondert offen**. Kein externes Namen-/Formelwissen wurde als Bildbeweis behandelt. Nach #358 ist zunächst eine neue unabhängige Blind-Gegenlesung von 2–3 0105L-Zeilen zu erhalten; bis zur Disposition **0105R nicht neu lesen**.
 
 ### 0105R — separately exposed facing running text, direct native-pixel attempt
 
