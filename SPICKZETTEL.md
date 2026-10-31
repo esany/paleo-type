@@ -1,6 +1,6 @@
 # Spickzettel für den Eigentümer
 
-Alle Stichworte, Prompts und Handgriffe an einem Ort. Stand: **31.10.2026**.
+Alle Stichworte, Prompts und Handgriffe an einem Ort. Stand: **31.10.2026** (Chatwechsel ergänzt).
 
 **Pflege:** Wer ein Stichwort, einen Prompt oder einen Ablauf einführt oder ändert (Astra, Claude oder eine andere KI), ändert ihn **hier im selben PR**. Ältere Fassungen stehen in der Git-Historie dieser Datei. Was hier fehlt, gilt als nicht eingeführt.
 
@@ -22,6 +22,8 @@ Dieser Zettel erklärt nur die Bedienung. Was gilt, steht in den verlinkten Date
 | **Prüfen** + PR-Nummer | Claude | Claude prüft den PR gegen Plan und Regeln, führt Tests selbst aus und schreibt ein Urteil in den PR. |
 | **übernehmen** | Claude | Nach bestandener Prüfung übernimmt Claude den PR auf `main`. |
 | **Stichprobe** | Claude | Claude liest eine Seite, deren Lesung es noch nicht kennt, blind gegen und trägt das Ergebnis in den Forschungs-PR ein. |
+| **paleo-type** | neuer Claude-Chat | Claude startet als Prüfer: liest diesen Spickzettel, den Übergabestand und die offenen Blocker (#368) und nennt Stand und nächsten Schritt in zwei Sätzen. |
+| **Abschluss** | jeder Chat | Der Chat beendet seine Sitzung sauber: Er schreibt seinen Übergabestand fort (Astra: Rückkehrpunkt im STATUS; Claude: Übergabekommentar in #368) und nennt dir den Start-Satz für den nächsten Chat. |
 
 Ein normaler Chat arbeitet nur, solange er antwortet. Darum braucht jeder Durchgang einen Anstoß von dir. Innerhalb eines Durchgangs läuft alles ohne dich.
 
@@ -38,6 +40,21 @@ paleo-type / Nr. 632: Bei „vorab“ oder „gegenlesen“: im GitHub-Repo esan
 **b) PDF bereitstellen.** Das PDF von Nr. 632 einmal in die Projektdateien legen (voll oder kompakt, siehe Prüfsummen in `GEGENLESUNG.md`). Die Bilder liegen bewusst nicht im Repo.
 
 **c) GitHub:** Settings → General → „Automatically delete head branches“ einschalten. Dann verschwinden Branches nach dem Übernehmen von selbst.
+
+## 2b · Chat wechseln
+
+Ein Chat wird lang oder hängt? So geht es ohne Verlust weiter:
+1. Im alten Chat **„Abschluss“** schreiben und auf die Bestätigung warten, dass der Übergabestand gespeichert ist.
+2. Neuen Chat öffnen:
+   - Astra: Prompt „Neuer Hauptchat“ (§3), danach „weiter“.
+   - Claude: **„paleo-type“**.
+   - Gegenlese-Chat: einfach „gegenlesen“.
+3. Nichts aus dem alten Chat hineinkopieren. Alles Nötige steht im Repo.
+
+Für Claude gehört einmalig diese Zeile in die Anweisungen des Claude-Projekts (zusätzlich zur Zeile aus §2a):
+```
+paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-Repo esany/paleo-type SPICKZETTEL.md auf main, dann den jüngsten Übergabekommentar von Claude in Issue #368 und die offenen Blocker dort. Nenne Stand und nächsten Schritt in zwei Sätzen und warte auf den Auftrag. Bei „Abschluss“: Übergabestand als Kommentar in #368 fortschreiben.
+```
 
 ---
 
