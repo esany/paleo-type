@@ -5,8 +5,8 @@ Regeln des Repos. Er ordnet nur Reihenfolge und Zuständigkeit.
 
 ROLLEN
 - Ich (Eigentümer): Ziel, Reihenfolge, Freigaben. Ich lese keine Handschrift.
-- Astra-Arbeitschat (du): liest, baut, sichert.
-- Astra-Gegenlese-Chat: liest blind gegen (eigener Prompt, kennt deine Lesung nicht).
+- Astra-Hauptchat (normaler Chat): liest, baut, sichert.
+- Gegenlese-Chat (neuer normaler Chat): liest blind gegen (eigener Prompt, kennt deine Lesung nicht).
 - Claude: prüft jeden PR, macht gelegentlich Stichproben, prüft Zwischenstände vor dem
   Übernehmen auf main.
 Keine Fachleute nötig. Ergebnisse heißen „KI-Arbeitslesung, blind gegengeprüft“.
@@ -105,8 +105,8 @@ Nach jedem Block kurz in Alltagssprache: welche Seiten fertig sind, die Fehlerqu
 Gegenlesung, Reibungen, nächster Schritt.
 
 === NACHTRAG 31.10.2026 · ARBEITSRHYTHMUS (vier Schritte) ===
-Ergänzung zum Human-Owner-Rhythmus vom 31.10.2026 in #358; der ursprüngliche
-Eigentümerplan oben bleibt unverändert.
+Ergänzung zum Human-Owner-Rhythmus vom 31.10.2026 in #358; spätere
+Rollenpräzisierung siehe datierten Nachtrag unten.
 
 1. SEITE LESEN UND PRÜFPUNKTE FESTHALTEN
    Seite am registrierten Originalbild lesen, mit vergrößerten Ausschnitten.
@@ -122,7 +122,7 @@ Eigentümerplan oben bleibt unverändert.
 2. ZUR BLINDEN GEGENLESUNG GEBEN
    Nach jeder Seite einen Commit auf dem Forschungsbranch von PR #359 sichern.
    Auf #359 ausschließlich die Zeile „bereit zur Gegenlesung: <Seite>“
-   veröffentlichen, ohne Lesungstext. Ein frischer Astra-Gegenlese-Chat erhält
+   veröffentlichen, ohne Lesungstext. Ein frischer Gegenlese-Chat (neuer normaler Chat) erhält
    für die 2–3 ausgewählten Zeilen nur Bildquelle, Seite und Bild-/Zeilenlocator,
    niemals vorab die eigene Lesung. Claude kann gelegentlich zusätzlich prüfen.
 
@@ -145,7 +145,7 @@ Eigentümerplan oben bleibt unverändert.
    geht vor Menge; erst dann die nächste Seite im vorgegebenen Verlauf lesen.
 
 === NACHTRAG 31.10.2026 · PROMPT FÜR DEN GEGENLESE-CHAT ===
-Den folgenden Prompt in einem NEUEN, unabhängigen Astra-Chat verwenden.
+Den folgenden Prompt in einem NEUEN, unabhängigen normalen Chat verwenden.
 Die Platzhalter werden nur mit Quelle und Bildlocators befüllt, nicht mit
 Lesungstext. Es erfolgt keine automatische Chat-zu-Chat-Weitergabe.
 
@@ -184,3 +184,9 @@ Nichts löschen gilt für Forschungsinhalte; Branches werden nach #364 mit Tag
 `archiv/…` aufgeräumt.
 Vor dem Archivieren gilt der dort bestimmte Verlusttest. Dieser Nachtrag
 ist keine Anweisung, aktive Forschungs-/Prüf-/Planbranches zu löschen.
+
+=== NACHTRAG 31.10.2026 · CHAT-ROLLEN UND ARBEITSMODUS ===
+Die Rollenbezeichnungen im Plan und im Gegenleseschritt wurden auf Anweisung
+des Eigentümers vom 31.10.2026 präzisiert.
+Alle Arbeit läuft in normalen Chats; Work oder Codex nur auf ausdrückliche
+Anweisung des Eigentümers.
