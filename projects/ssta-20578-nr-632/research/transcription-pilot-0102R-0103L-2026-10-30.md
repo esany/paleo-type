@@ -279,6 +279,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ### 0107L — original-image continuation of 0106R lower attestation
 
+**0107L — Bildlesung vor Öffnen des Vorab-Abschnitts (31.10.2026):** Direkt inspiziert: Originalfoto eingebettet in SHA-256-verifiziertem Voll-PDF, PDF-/Providerbild 0107 (4318×3885 px), linke Fläche und vergrößerter mittlerer Schrift-/Impressionsbereich. Physisch nachgezählt: **sechs Zeilen fortlaufender Beglaubigung A01–A06**, daneben darunter **zweizeilige abgesetzte Kanzleizeile B01–B02**, eigenständiger Namens-/Zeichnungsbereich C01 und schmale weit unterhalb stehende Zeile D01. Die A-Zeilen lauten als konservative KI-Arbeitsversuche `[Sächßl.?] Cantzley vorhandenen / original Supplicat gleichlau- / tend; Solches wird unter dem Kö- / nigl: und Churfürstl: Cantzley Se- / cret hierdurch attestirt. Signat. / [Dreßden?] am 8. July 1760.` (Schreibdetails und Übergang C03/A01 offen). Eine große dunkle kreisförmige Abdruck-/Materialspur liegt an B01/B02 und überschneidet einen Teil der Schrift; das ist **kein allein dadurch nachgewiesener Siegeltyp**, die rechts sichtbare Schnur-/Trägerkonfiguration ist nicht Teil der hier transkribierten Hauptfläche. C01/D01 bleiben nur teils lesbare eigenständige Namensfelder. **Eigener Bild-/Lesungsstand vor Vorab-Einsicht**: keine Voreintragung des Gegenlesers vor diesem Commit geöffnet. Kein G2-/Fach-PASS.\n\n
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0107L-A01` | `[Sächßl.?] Cantzley vorhandenen` | starts as continuation of 0106R C03, not independently certified document |
@@ -286,7 +287,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0107L-A03` | `tend; Solches wird unter dem Kö-` | continuation; terminal abbreviation uncertain |
 | `0107L-A04` | `nigl: und Churfürstl: Cantzley Se-` | visible hyphen or divide stroke; `Cantzley` source spelling |
 | `0107L-A05` | `cret hierdurch attestirt. Signat.` | spatially continuous; `Secret` split over lines |
-| `0107L-A06` | `Dresden am 8. July 1760.` | written date; no inference of photographic carrier age |
+| `0107L-A06` | `[Dreßden?] am 8. July 1760.` | Geschriebene Datumszeile, Ortsnamen-s/ß-Schriftform bleibt Graphemkandidat und wird nicht still normalisiert; keine Aussage über Trägerdatum. |
 | `0107L-B01` | `Königlich Pohlnische und Churfürstlich Sächßische` | separate display/chancery line partly behind dark circular impression |
 | `0107L-B02` | `Cantzley.` | second centred display line |
 | `0107L-C01` | `[H: F:?] von [⟦surname uncertain⟧]` | handwritten large subscription below imprint, no reliable person ID |
