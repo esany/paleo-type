@@ -18,11 +18,10 @@ Zweck: Kommende Seiten werden **vor** ihrer Bearbeitung stichprobenweise gelesen
 
 ## Schritt 1 · Offene Seiten bestimmen
 
-- In `projects/ssta-20578-nr-632/STATUS.md` auf dem aktuellen Forschungsbranch (Rückkehrpunkt oben nennt ihn) **nur** die Zeile `Vorab offen: …` lesen.
-- Auf dem Branch `review/nr632-gegenlesung-vorab` die Datei `projects/ssta-20578-nr-632/research/gegenlesung-vorab.md` lesen: Welche Seiten haben schon einen Abschnitt?
-- **Offen** = Seiten aus `Vorab offen`, die dort noch keinen Abschnitt haben.
+- Auf dem Branch `review/nr632-gegenlesung-vorab` die Datei `projects/ssta-20578-nr-632/research/gegenlesung-vorab.md` öffnen. **Nur** die Zeile `Vorab offen: …` ganz oben und die Überschriften `## <Seite>` lesen, keine Lesungen anderer Leser.
+- **Offen** = Seiten aus `Vorab offen`, die noch keinen eigenen Abschnitt haben. Eine Angabe wie `0105L (Z. 14–16 von oben)` heißt: genau diese Zeilen lesen.
 - Bis zu **5** offene Seiten in der genannten Reihenfolge übernehmen.
-- Ist nichts offen: dem Eigentümer „keine offenen Gegenlese-Aufträge“ melden und enden.
+- Fehlt die Zeile `Vorab offen` oder ist nichts offen: dem Eigentümer „keine offenen Gegenlese-Aufträge“ melden und enden.
 
 ## Schritt 2 · Blindheit sichern
 
@@ -63,7 +62,7 @@ In `projects/ssta-20578-nr-632/research/gegenlesung-vorab.md` auf dem Branch `re
 ```
 
 Regeln:
-- **Ein Commit pro Durchgang**, nur diese Datei, Nachricht `vorab: <Seiten> (<Leser>)`.
+- **Ein Commit pro Durchgang**, nur diese Datei (die Zeile `Vorab offen` nicht ändern; sie pflegt der Hauptchat), Nachricht `vorab: <Seiten> (<Leser>)`.
 - Kein PR, kein Merge, keine andere Datei ändern.
 - Vorhandene Abschnitte nie ändern; Korrekturen nur als neuer Abschnitt mit Hinweis.
 
@@ -79,7 +78,7 @@ Kurz an den Eigentümer, in Alltagssprache:
 
 ## Für den Hauptchat (Auslöser „weiter“)
 
-- **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen: …` im STATUS auf die nächsten **10** Seiten in Planreihenfolge setzen, die noch keinen Vorab-Abschnitt haben.
+- **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen: …` oben in `gegenlesung-vorab.md` (Branch `review/nr632-gegenlesung-vorab`) auf die nächsten **10** Seiten in Planreihenfolge setzen, die noch keinen Vorab-Abschnitt haben. Nur diese eine Zeile ändern, keine Abschnitte öffnen.
 - **Vergleich:** Eine Seite lesen und committen, **erst dann** ihren Vorab-Abschnitt öffnen. Im Forschungsowner einen Vergleichsvermerk anlegen:
   - eigener Lesungs-Commit (SHA)
   - verglichene Zeilen
