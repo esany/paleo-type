@@ -199,7 +199,8 @@ unveränderte Forschungsowner und die Human-Übernahmeentscheidung bleiben beste
 1. Vorab, vor der Lesung des Astra-Hauptchats, liest eine beliebige unabhängige KI
    blind je 2–3 originale Schriftzeilen kommender Seiten am Bild und speichert
    ihre Lesung auf Branch `review/nr632-gegenlesung-vorab` in
-   `projects/ssta-20578-nr-632/research/gegenlesung-vorab-claude.md`.
+   `projects/ssta-20578-nr-632/research/gegenlesung-vorab.md`;
+   Ablauf im Einzelnen: `GEGENLESUNG.md`.
    Weitere KIs dürfen eigene Abschnitte oder eigene Dateien daneben anlegen.
    Die eigene Lesung der Hauptchat-Seite darf dem Gegenleser vor dessen
    Sicherung nicht bekannt sein.
