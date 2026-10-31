@@ -1,5 +1,9 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
+**GELTENDER NÄCHSTER SCHRITT (Human Owner, 2026-10-31): 0104R am vollständigen Originalbild neu lesen; danach Commit auf PR #359 und ausschließlich „bereit zur Gegenlesung: 0104R“ ohne Lesungstext posten; vor 0105L die blinde Gegenlesung und etwaige Bildklärung abwarten.**
+
+**Verbindliche Ablösung:** Der seitenweise Rhythmus und die Fehlergrenze aus dem Human-Owner-Auftrag vom 31.10.2026 ersetzen alle nachstehenden älteren Ausführungs-, NEXT-ACTION- und Weiterlese-Anweisungen. Diese bleiben als historische Nachweise erhalten, steuern aber keine Fortsetzung. 0108–0131 sind ungeprüfte Entwürfe mit hoher Stichproben-Fehlerrate und werden später vollständig neu gelesen, nicht bloß punktuell repariert. G2–G6 bleiben offen.
+
 Last checkpoint: 2026-10-30 (T0 owner-authorized full-unit diplomatic-transcription objective reconciled with Issue #358; prior source-research findings remain provisional; no independent specialist validation)
 
 ## Research purpose and Project authority
@@ -190,7 +194,10 @@ Following [Claude's source-provenance and uncertainty quality halt](https://gith
 
 This is one bounded documentation/source recheck, **not** a new transcription sweep, positive validation of the other unmarked wording, proof of physical-line segmentation completeness, a passed scholarly gate or a finished edition. Claude's independent/blind sample has **not** been received or used here; **no readings were sent to Claude**. The Human Owner explicitly prohibits opening *new* writing surfaces until that sample result is available. Existing #358 research scope and G2–G6 not-attained ceilings remain unchanged.
 
-## NEXT ACTION — canonical restart point (updated 2026-10-30, Issue #358)
+## Historischer NEXT ACTION / Rückkehrpunkt vom 30.10.2026 — durch den Owner-Beschluss vom 31.10. abgelöst
+
+**Historische Dokumentation, keine laufende Arbeitsanweisung:** Die folgenden damaligen Handlungsformeln und Rückkehrhinweise sind durch den obersten geltenden nächsten Schritt ersetzt; die Forschungsbeobachtungen bleiben als historische Kandidaten erhalten.
+
 
 **Authorized whole-unit target unchanged:** evidence-constrained complete diplomatic representation of all unique visible writing surfaces of Sächsisches Staatsarchiv 20578 Nr. 632 and a reproducible internal PDF working edition; 135 images are provider views, not 135 textual witnesses or archival folios. **G2–G6 NOT ATTAINED.** Do not infer independent specialist review, publication rights, material seals, provenance relationships or certified completeness.
 
