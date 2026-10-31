@@ -37,3 +37,47 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Textblock oben links, Z. 1 von oben: `Sächßl. Cantzley vorhandenen`
 - Textblock oben links, Z. 6 von oben: `Dreßden am 8. July 1760.`
 - Kanzleivermerk unter dem Siegel, 2 Zeilen: `Königlich Pohlnische und Chur-Fürstlich Sächsische` / `Cantzley.`
+## 0106L
+- Datum: 2026-10-31
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 106
+- Blind: ja (keine vorhandenen Lesungen dieser Zeilen eingesehen)
+- Haupttext links, Z. 3 von oben: `admittiren und mir ⟦…⟧`
+- Haupttext links, Z. 9 von oben: `Weiber-Lehn[-/=]Güther ⟦…⟧`
+- Haupttext links, Z. 13 von oben: `Antheile welche ⟦…⟧`
+
+## 0106R
+- Datum: 2026-10-31
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 106
+- Blind: ja (keine vorhandenen Lesungen dieser Zeilen eingesehen)
+- Haupttext rechts, Z. 4 von oben: `bey gewöhnlicher Lehen-⟦…⟧`
+- Haupttext rechts, Z. 8 von oben: `Darüber ich in [Pflicht-/Pflicht] ⟦…⟧`
+- Datumsblock unter dem Haupttext rechts, Z. 2 von oben: `am 3. Julii[,/;]`
+
+## 0108R
+- Datum: 2026-10-31
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 108
+- Blind: ja (keine vorhandenen Lesungen dieser Zeilen eingesehen)
+- Anrede oben rechts, Z. 1 von oben: `Allergnädigster Herr`
+- Haupttext rechts, Z. 9 von oben (ohne Anrede): `die respective Lehe- und ⟦…⟧`
+- Haupttext rechts, Z. 2 von unten: `datis den 1. April und 3. ⟦…⟧` (unterer Zeilenlocator wegen eng anschließender Schrift nachzuprüfen)
+
+## 0109R
+- Datum: 2026-10-31
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 109
+- Blind: ja (keine vorhandenen Lesungen dieser Zeilen eingesehen)
+- Titel rechts, Z. 1 von oben: `Von Gottes Gnaden Wir [Friderich?] ⟦…⟧`
+- Titulatur rechts, Z. 7 von oben (Titel als Z. 1): `zu der Marck und Ravensbergh, [Herr?] ⟦…⟧`
+- Titulatur rechts, Z. 14 von oben (Titel als Z. 1): `von Ronov und Lieberstein. [p?] ⟦…⟧`
+
+## 0110L
+- Datum: 2026-10-31
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 110
+- Blind: ja (keine vorhandenen Lesungen dieser Zeilen eingesehen)
+- Haupttext links, Z. 3 von oben: `unsre Commissarien zu verordnen,`
+- Haupttext links, Z. 9 von oben: `ist solches dergestalt bewerckstellig[et?] ⟦…⟧`
+- Haupttext links, Z. 13 von oben: `der Vollziehung dieses Recessus ein ⟦…⟧`
