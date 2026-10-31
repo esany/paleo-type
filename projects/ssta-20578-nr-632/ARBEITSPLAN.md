@@ -222,3 +222,18 @@ Die jetzt beauftragten Vorab-Abschnitte betreffen 0105L, 0105R und 0107L.
 Arbeit in normalen Chats, kein Work/Codex ohne ausdrückliche Eigentümeranweisung.
 Kein selbstständiger Merge, kein Gate, keine neue Transkriptionswahrheit
 außerhalb des kanonischen Forschungsowners. `#364` bleibt separate Pflegearbeit.
+
+=== NACHTRAG 31.10.2026 · PARAMETER: GEGENLESUNG ===
+Der allgemeine Ablauf steht in docs/gegenlesung-vorab.md. Für dieses Projekt gilt:
+- Bildquellen (liegen als Projektquelle der Chat-Projekte vor, nicht im Repo):
+  FILE-SSTA-20578-NR632-FULL-PDF-20261030,
+    SHA-256 d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e
+  FILE-SSTA-20578-NR632-COMPACT-PDF-20261029,
+    SHA-256 8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f
+  PDF-Seite = Bildnummer (0001–0135); L/R = linke/rechte Bildhälfte, keine Foliierung.
+- Vorab-Datei: Branch review/nr632-gegenlesung-vorab,
+  Pfad projects/ssta-20578-nr-632/research/gegenlesung-vorab.md
+- Hauptchat-Forschungsowner: Forschungsbranch laut Rückkehrpunkt im STATUS.md
+  (derzeit PR #359)
+- Fehlerschwelle: mehr als ein unmarkiert falsches Wort in der Stichprobe
+  (Vereinheitlichung und Abkürzungsauflösung zählen als Fehler) → überarbeiten.
