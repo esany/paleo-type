@@ -103,16 +103,20 @@ class WorkReturnS1Tests(unittest.TestCase):
         self.git("add", "projects")
         self.git("commit", "-qm", "baseline")
         baseline = self.git("rev-parse", "HEAD")
+        baseline_hash = self.status_sha
         research.write_text("before\nnew source observation, with evidence locator\n", encoding="utf-8")
+        new_anchor = "**Next review: source notes have been updated in this block.**"
+        self.set_status(OWNER_LINE + "\n" + new_anchor)
         self.git("add", "projects")
-        self.git("commit", "-qm", "research delta")
+        self.git("commit", "-qm", "research delta and STATUS return")
         result = self.git("rev-parse", "HEAD")
         rc, out = self.run_report(
             baseline_commit=baseline,
             result_commit=result,
+            recorded_status_sha256=baseline_hash,
             research_owner=f"projects/{PROJECT}/research/source-notes.md",
             local_pass=True,
-            continuation_anchor=OWNER_LINE,
+            continuation_anchor=new_anchor,
         )
         self.assertEqual(0, rc, out)
         self.assertTrue(out["owner_change"])
@@ -169,15 +173,19 @@ class WorkReturnS1Tests(unittest.TestCase):
 
     def test_later_worktree_edit_does_not_invalidate_committed_owner_change(self) -> None:
         baseline, research = self.init_baseline()
+        baseline_hash = self.status_sha
         research.write_text("before\nnew source note\n", encoding="utf-8")
+        new_anchor = "**Return: committed research file is ready to review.**"
+        self.set_status(OWNER_LINE + "\n" + new_anchor)
         self.git("add", "projects")
         self.git("commit", "-qm", "first result")
         result = self.git("rev-parse", "HEAD")
         research.write_text("before\nnew source note\nfurther local work\n", encoding="utf-8")
         rc, out = self.run_report(
             baseline_commit=baseline, result_commit=result,
+            recorded_status_sha256=baseline_hash,
             research_owner=f"projects/{PROJECT}/research/source-notes.md",
-            continuation_anchor=OWNER_LINE,
+            continuation_anchor=new_anchor,
         )
         self.assertEqual(0, rc, out)
         self.assertTrue(out["owner_change"])
