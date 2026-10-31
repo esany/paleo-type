@@ -107,7 +107,13 @@ def evaluate(root: Path, project_id: str, report: dict) -> tuple[int, dict]:
     anchor = report.get("continuation_anchor")
     stop_reason = report.get("stop_reason")
     stop_evidence = report.get("stop_evidence")
-    has_continuation = isinstance(anchor, str) and bool(anchor.strip()) and anchor in anchor_status.splitlines()
+    # A continuation must have been written by this block, not merely found again.
+    has_continuation = (
+        isinstance(anchor, str) and bool(anchor.strip())
+        and baseline is not None and result_commit is not None
+        and anchor in anchor_status.splitlines()
+        and anchor not in recorded_bytes.decode("utf-8").splitlines()
+    )
     has_stop = isinstance(stop_reason, str) and bool(stop_reason.strip()) and (
         isinstance(stop_evidence, str) and bool(stop_evidence.strip())
     )
