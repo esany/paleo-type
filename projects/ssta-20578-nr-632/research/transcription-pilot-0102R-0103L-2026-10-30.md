@@ -210,7 +210,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0105R-A01` | `[verfallet?] hat; [⟦short transition uncertain⟧]` | first predicate and short final group uncertain |
-| `0105R-A02` | `[fordert?] meine Pflicht,` | `fordert` or verbal continuation needs control against A01; no semantic supply |
+| `0105R-A02` | `[fordert?] mein Pflicht-` | Bild und danach geöffnete blinde Vorab-Zeile stützen `mein` statt des alten unmarkierten `meine`; sichtbare Teilung statt Komma, Anfang des Verbs bleibt graphisch unsicher. |
 | `0105R-A03` | `schuldigster Gehorsam` | strong positive graphic reading |
 | `0105R-A04` | `der [respective?] Lehn und` | spelling/endings uncertain; keep as visible rather than normalize |
 | `0105R-A05` | `gesamten Hand, an` | positive word-sequence |
@@ -227,7 +227,7 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0105R-A16` | `geruhen, mich zur` | positive group |
 | `0105R-A17` | `Leistung der schuldig-` | line-end division into 0106L A01 is a text-join candidate, not proof same physical leaf |
 
-### 0106L — written left continuation, first source-near diplomatic reading
+**Vorab-Gegenlesung 0105R — disposition (31.10.2026):** Der eigene, vorab nicht beeinflusste Lesungs-Commit ist `070f65f03d19e6e16463d1f8685d11e2199f8ff2`; **erst danach** wurde der Abschnitt 0105R im getrennten Vorab-Owner `review/nr632-gegenlesung-vorab:research/gegenlesung-vorab.md` (unter dem Project-Pfad; Blob `0635d1e441ce4b24694e0bedf375675c5ea1c2e0`) geöffnet. Drei von Claude blind deklarierte Originalbildzeilen: Z. 2/A02 `fordert mein pflicht-`, Z. 4/A04 `der respective Lehn und`, Z. 6/A06 `diesen beyden Güthern`. A06 stimmt, A04 war in der Ersttabelle bereits ausdrücklich nur bei `[respective?]` unsicher; A02 hatte dagegen das **unmarkierte `meine` statt `mein`** (ein Wort), außerdem ein abweichendes Teilungszeichen/Komma. Die Originalbildbetrachtung stützt `mein Pflicht-`; A02 ist oben berichtigt, das Verb bleibt als Kandidat offen. **Stichprobe: 1 unmarkiert abweichendes Wort in 3 Zeilen (= 1/3 der Zeilen), Fehlerschwelle >1 nicht überschritten: begrenztes „passt“**; kein vollständiges G2-/Fachurteil und kein Beweis für den anschließenden Textjoin.\n\n### 0106L — written left continuation, first source-near diplomatic reading
 
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
