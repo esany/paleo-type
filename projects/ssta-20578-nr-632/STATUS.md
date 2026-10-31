@@ -1,5 +1,7 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
+Arbeitsplan: ARBEITSPLAN.md (Eigentümerentscheidung 31.10.2026)
+
 **GELTENDER NÄCHSTER SCHRITT (2026-10-31, nach Bildlesung 0104R): Blinde Gegenlesung von 2–3 Zeilen aus 0104R in einem frischen unabhängigen Astra-Chat einholen und bildgebunden abgleichen; bei mehr als einem unmarkierten Fehler 0104R vor 0105L neu bearbeiten. Bis dahin 0105L NICHT beginnen.**
 
 **Aktueller Bildblock:** 0104R aus der registrierten Voll-PDF mit vergrößerten originalen Bildausschnitten erneut gelesen; acht tatsächlich sichtbare Haupttextzeilen zuzüglich eigenständiger Titel-/Datum-/Anredebereiche. Der vorhandene Forschungseintrag wurde im Commit `f25c5943a8a0558c0b9aaf4af37518e3e220f21a` berichtigt; unter anderem unzulässige `Julii`-Expansion verworfen, unklare Buchstaben bleiben markiert. **Noch kein Blindvergleich, keine bestätigte Fehlerquote, kein Seiten-PASS; 0105L–0107L bislang nicht neu gelesen.**
