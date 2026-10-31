@@ -286,11 +286,15 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ## Further direct photographic transcription, 0108R and 0109R — 2026-10-30
 
+**ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)** — Alle folgenden Lesungen dieses Abschnitts sind bisherige KI-Kandidaten, keine verlässliche diplomatische Transkription. Blindstichproben [1](https://github.com/esany/paleo-type/pull/359#issuecomment-6534416744) und [2](https://github.com/esany/paleo-type/pull/359#issuecomment-6534500276) begründen die seitenweise Neulesung; frühere Angabe „keine Unsicherheit beobachtet“ ist **keine Bestätigung**.
+
 **New primary-image inspection:** the exact full-size PDF already described in the immediately previous section was newly opened at PDF/provider positions **0108** and **0109**, with original 4304 × 3897-pixel embedded JPEG exposures extracted and studied at native size and in non-generative separate upper/middle/lower crops. These images are not newly independently byte-verified provider JPG files. In the 0108 view the left half is essentially without a full running text field; on its right a separate narrow running text field with **smaller cursive script** includes a long passage and date-like marks. At its *upper-left* is a crossed-through, partially obscured handwritten note with several lines; this is an actual **deletion/cancellation candidate**, not a blank margin. At the lower left of the 0108R text is a separate dated note apparently ending in `24. Decbr. [1765?]`; date and function are **not accepted**, and the note has **not been fully diplomatically read**. In 0109, a partly cropped left-hand text block and a separate newly exposed right-hand **large ornamental/title opening** are both present; only the **right-hand opening** is transcribed below. Do not merge the 0109R document opening with the preceding 0108R text because of provider-image adjacency, and do not deduce a common hand from book proximity. The thin right-edge writing of still another overlapped exposure remains separate. No unsupported inferred original/copy relation. These region delimitations are digital working locators, not archival folio numbers.
 
 **Physical lines: strong fragments preserved, weak words in brackets; the indeterminate parts are not source-lacunae.** The 0108R line count and reading order are provisional because several long cursive descenders crowd adjacent baselines, and text at the top overlaps the separate marginal deletion. Abbreviations and word-breaks were not filled from chancery formulae or title lists. Historical/legal context is not graphemic evidence.
 
 ### 0108R separate long narrow right-hand written field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Diplomatic source-near working reading | Reading/phenomenon note |
 |---|---|---|
@@ -325,6 +329,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ### 0109R separately ornate opening, not conflated with 0108R / 0109L
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical line | Diplomatic source-near working reading | Reading/phenomenon note |
 |---|---|---|
 | `0109R-H01` | `Von Gottes Gnaden Wir [⟦princely name⟧] Herzog` | large initial/ornament and title; name unadjudicated |
@@ -357,6 +363,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 **Transcription vs. uncertainty:** Plain text preserves only visible original-looking forms, including `Recess`, `Ratification`, `Remonstration`, `Successoren`, local spellings, abbreviations, and physical split words; all are **working**, not accepted legal semantics. Bracketed proposed words are graphically uncertain. `⟦...⟧` is actually inked/attempted but undecided and must not be treated as a genuine physical gap. The 0110/0111 joining clauses and text order have not been proven across hidden leaf regions. These rows do **not** silently revise preceding transcriptions or transcribe the far-right thin strip.
 
 ### 0109R text's separate 0110L running field; physical-continuation relationship provisional
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physically indexed line | Diplomatic source-near working reading | Limit / note |
 |---|---|---|
@@ -446,6 +454,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ### 0112L — ornate initial and main left script
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical writing line | Source-near diplomatic candidate | Specific constraint |
 |---|---|---|
 | `0112L-H01` | `zu wißen, Demnach zwischen dem Durch-` | display opening with decorative flourish, source split |
@@ -467,6 +477,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0112L-A16` | `gnädigsten ratification [⟦end⟧]` | source word `ratification` visible |
 
 ### 0112R — separate right facing continuation
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical writing line | Source-near diplomatic candidate | Specific constraint |
 |---|---|---|
@@ -490,6 +502,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ### 0113L — densely handwritten left historical dispute text
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical writing line | Source-near diplomatic candidate | Specific constraint |
 |---|---|---|
 | `0113L-A01` | `[⟦opening⟧] und [⟦word⟧] Dispu-` | physical line end visible |
@@ -511,6 +525,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0113L-A17` | `[⟦opening⟧] gehörte [⟦word⟧] Oberst-` | last group uncertain |
 
 ### 0113R — right historical dispute field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical writing line | Source-near diplomatic candidate | Specific constraint |
 |---|---|---|
@@ -543,6 +559,8 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 
 ### 0114L — visible writing field
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
 | `0114L-A01` | `nicht mit benennet stehet, unberühret` | working physical line; mark uncertainty retained |
@@ -564,6 +582,8 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | `0114L-A17` | `guths Knau hinhero in quasi possessi-` | working physical line; mark uncertainty retained |
 
 ### 0114R — visible writing field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
@@ -587,6 +607,8 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 
 ### 0115L — visible writing field
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
 | `0115L-A01` | `Recess bis zu erfolgender gnädigster` | working physical line; mark uncertainty retained |
@@ -606,6 +628,8 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | `0115L-D02` | `[⟦other lower chancery-letter groups unresolved⟧]` | separate date, signature or overlay note; no automatic running-text join |
 
 ### 0115R — visible writing field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
@@ -636,6 +660,8 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 
 ### 0116L — visible writing field
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
 | `0116L-A01` | `gewesenen Grenz-Differentien, in` | working physical line; mark uncertainty retained |
@@ -664,6 +690,8 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | `0116L-D03` | `1760.` | separate date, signature or overlay note; no automatic running-text join |
 
 ### 0116R — visible writing field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
@@ -704,6 +732,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ### 0117R — separately visible writing region
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical line | Diplomatic working reading | Status |
 |---|---|---|
 | `0117R-H01` | `Lehn-Schein` | positive fragments and marked unresolved ink, working |
@@ -726,6 +756,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0117R-D01` | `[⟦very low short note in margin⟧]` | positive fragments and marked unresolved ink, working |
 
 ### 0118R — separately visible writing region
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Diplomatic working reading | Status |
 |---|---|---|
@@ -752,6 +784,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ### 0119R — separately visible writing region
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical line | Diplomatic working reading | Status |
 |---|---|---|
 | `0119R-A01` | `worauf, ein halb [⟦word⟧]` | positive fragments and marked unresolved ink, working |
@@ -767,6 +801,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0119R-C02` | `Einsiedel.` | positive fragments and marked unresolved ink, working |
 
 ### 0120R — separately visible writing region
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Diplomatic working reading | Status |
 |---|---|---|
@@ -802,6 +838,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ### 0121L — local physical line ledger
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical line | Working source-near written text | Evidential state |
 |---|---|---|
 | `0121L-A01` | `Höchst dieselben wollen in hohen Gnaden geruhen, mich` | direct working reading; uncertainty retained |
@@ -818,6 +856,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0121L-A12` | `1764.` | direct working reading; uncertainty retained |
 
 ### 0121R — local physical line ledger
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Working source-near written text | Evidential state |
 |---|---|---|
@@ -845,6 +885,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ### 0122L — local physical line ledger
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical line | Working source-near written text | Evidential state |
 |---|---|---|
 | `0122L-A01` | `4. an denen ... Vetter und [⟦word⟧] Erb- und Allodial-` | direct working reading; uncertainty retained |
@@ -867,6 +909,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0122L-A18` | `[⟦separate large autograph at bottom⟧]` | direct working reading; uncertainty retained |
 
 ### 0122R — local physical line ledger
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Working source-near written text | Evidential state |
 |---|---|---|
@@ -897,6 +941,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 
 ### 0124L — local physical line ledger
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical line | Working source-near written text | Evidential state |
 |---|---|---|
 | `0124L-A01` | `Hoheit mir [⟦first word⟧] [⟦group⟧] bitten,` | direct working reading; uncertainty retained |
@@ -922,6 +968,8 @@ Critical S2 distinction: **0117R and 0118R are distinct written Lehn-Schein text
 | `0124L-A21` | `Dresden am 7. Novbr. 1763.` | direct working reading; uncertainty retained |
 
 ### 0124R — local physical line ledger
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Working source-near written text | Evidential state |
 |---|---|---|
@@ -964,6 +1012,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0125L physical written-line first reading
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0125L-A01` | `[⟦opening⟧] ⟦auch?⟧ [⟦word⟧] daß von` | Unsicher am direkt betrachteten Bild: ⟦opening⟧, ⟦word⟧, „auch“; keine bestätigte Lesung dieser Stelle. |
@@ -996,6 +1046,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0125R physical written-line first reading
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0125R-A01` | `⟦bisheriger Kandidat am Bild nicht bestätigt: Ich? zu [word] unterschrieben [end]⟧` | Unsicher am direkt betrachteten Bild: „Ich? zu … unterschrieben“ (nicht bildbestätigt); keine bestätigte Lesung dieser Stelle. |
@@ -1027,6 +1079,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0126L physical written-line first reading
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0126L-A01` | `gelegenen Häuser, auch deren` | Unsicher am direkt betrachteten Bild: „gelegenen“ (Anschluss); keine bestätigte Lesung dieser Stelle. |
@@ -1054,6 +1108,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0126R physical written-line first reading
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0126R-A01` | `Den 22ten August 1764. ist der Hoch- und` | keine Unsicherheit beobachtet |
@@ -1076,6 +1132,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0127R physical written-line first reading
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0127R-A01` | `Den 22ten Augusti, 1764. ist der Hoch- und Wohl-` | keine Unsicherheit beobachtet |
@@ -1097,6 +1155,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `0127R-A17` | `[⟦lower separately placed name⟧]` | Unsicher am direkt betrachteten Bild: ⟦lower separately placed name⟧; keine bestätigte Lesung dieser Stelle. |
 
 ### 0128R physical written-line first reading
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physical local line | Diplomatic working reading | Evidential limit |
 |---|---|---|
@@ -1135,6 +1195,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0129L written-source field
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical written line | Diplomatic source-near working reading | Limits |
 |---|---|---|
 | `0129L-A01` | `solchendes Recht nicht eher, als nach gänzlichen` | direct source working, incomplete graphemes expressly marked |
@@ -1160,6 +1222,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0129R written-source field
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical written line | Diplomatic source-near working reading | Limits |
 |---|---|---|
 | `0129R-A01` | `[⟦opening⟧] Arten erkauffet haben, als` | direct source working, incomplete graphemes expressly marked |
@@ -1183,6 +1247,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `0129R-A19` | `Lehn-Quantum folgendergestalt [⟦end⟧]` | direct source working, incomplete graphemes expressly marked |
 
 ### 0130L written-source field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical written line | Diplomatic source-near working reading | Limits |
 |---|---|---|
@@ -1210,6 +1276,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 
 ### 0130R written-source field
 
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
+
 | Local physical written line | Diplomatic source-near working reading | Limits |
 |---|---|---|
 | `0130R-A01` | `denten, männ- und weiblichen Geschlechts` | direct source working, incomplete graphemes expressly marked |
@@ -1232,6 +1300,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `0130R-A18` | `Ihre Excellenc[e] H. Johann Georg [⟦surname⟧]` | direct source working, incomplete graphemes expressly marked |
 
 ### 0131L written-source field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical written line | Diplomatic source-near working reading | Limits |
 |---|---|---|
@@ -1256,6 +1326,8 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 | `0131L-A19` | `[⟦other ink under seal impression⟧]` | direct source working, incomplete graphemes expressly marked |
 
 ### 0131R written-source field
+
+> **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical written line | Diplomatic source-near working reading | Limits |
 |---|---|---|
