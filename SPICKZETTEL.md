@@ -1,14 +1,16 @@
 # Spickzettel für den Eigentümer
 
-Alle Stichworte, Prompts und Handgriffe an einem Ort. Stand: **31.10.2026** (Chatwechsel ergänzt).
+Alle Stichworte, Prompts und Handgriffe an einem Ort. Gilt für jedes Projekt. Stand: **31.10.2026**.
 
-**Pflege:** Wer ein Stichwort, einen Prompt oder einen Ablauf einführt oder ändert (Astra, Claude oder eine andere KI), ändert ihn **hier im selben PR**. Ältere Fassungen stehen in der Git-Historie dieser Datei. Was hier fehlt, gilt als nicht eingeführt.
+**Pflege:** Wer ein Stichwort, einen Prompt oder einen Ablauf einführt oder ändert (Astra, Claude oder eine andere KI), ändert ihn **hier im selben PR**. Hier stehen nur allgemeine Regeln; was ein einzelnes Projekt betrifft, steht in dessen `projects/<id>/ARBEITSPLAN.md`. Ältere Fassungen stehen in der Git-Historie.
 
-Dieser Zettel erklärt nur die Bedienung. Was gilt, steht in den verlinkten Dateien:
-- [`ARBEITSPLAN.md`](projects/ssta-20578-nr-632/ARBEITSPLAN.md): Plan für Nr. 632
-- [`GEGENLESUNG.md`](projects/ssta-20578-nr-632/GEGENLESUNG.md): Ablauf der Gegenlesung
-- `STATUS.md`: Rückkehrpunkt der Forschung
-- [Issue #368](https://github.com/esany/paleo-type/issues/368): was am Ablauf noch fehlt (Blocker)
+## Aktive Projekte
+
+| Projekt-ID | Plan |
+|---|---|
+| `ssta-20578-nr-632` | [`ARBEITSPLAN.md`](projects/ssta-20578-nr-632/ARBEITSPLAN.md) |
+
+Ohne Angabe beziehen sich die Stichworte auf diese Projekte, in dieser Reihenfolge.
 
 ---
 
@@ -16,79 +18,70 @@ Dieser Zettel erklärt nur die Bedienung. Was gilt, steht in den verlinkten Date
 
 | Du schreibst | an wen | was passiert |
 |---|---|---|
-| **weiter** | Astra (Hauptchat) | Astra liest Plan und Rückkehrpunkt und arbeitet den nächsten Durchgang selbständig ab: lesen, speichern, mit Vorab vergleichen, nachbessern. Am Ende kommt eine kurze Meldung an dich. |
-| **vorab** oder **gegenlesen** | jeder Chat, jede KI | Der Chat führt `GEGENLESUNG.md` aus: Er liest bis zu 5 offene Seiten blind vorab und legt das Ergebnis im Repo ab. |
-| **weiter mit #364** | Astra | Branches und PRs aufräumen (Pflegeticket). |
-| **Prüfen** + PR-Nummer | Claude | Claude prüft den PR gegen Plan und Regeln, führt Tests selbst aus und schreibt ein Urteil in den PR. |
-| **übernehmen** | Claude | Nach bestandener Prüfung übernimmt Claude den PR auf `main`. |
-| **Stichprobe** | Claude | Claude liest eine Seite, deren Lesung es noch nicht kennt, blind gegen und trägt das Ergebnis in den Forschungs-PR ein. |
-| **paleo-type** | neuer Claude-Chat | Claude startet als Prüfer: liest diesen Spickzettel, den Übergabestand und die offenen Blocker (#368) und nennt Stand und nächsten Schritt in zwei Sätzen. |
-| **Abschluss** | jeder Chat | Der Chat beendet seine Sitzung sauber: Er schreibt seinen Übergabestand fort (Astra: Rückkehrpunkt im STATUS; Claude: Übergabekommentar in #368) und nennt dir den Start-Satz für den nächsten Chat. |
+| **weiter** | Hauptchat (Astra) | Der Chat liest den Plan und den Rückkehrpunkt im `STATUS.md` des Projekts und arbeitet den nächsten Durchgang selbständig ab. Am Ende kommt eine kurze Meldung an dich. |
+| **vorab** / **gegenlesen** | jeder Chat | Der Chat führt [`docs/gegenlesung-vorab.md`](docs/gegenlesung-vorab.md) aus: Er liest offene Seiten blind vorab und legt das Ergebnis im Repo ab. |
+| **Prüfen** + PR-Nummer | Prüfchat (Claude) | Der Chat prüft den PR gegen Plan und Regeln, führt Tests selbst aus und schreibt ein Urteil in den PR. |
+| **übernehmen** | Prüfchat | Nach bestandener Prüfung wird der PR auf `main` übernommen. |
+| **Stichprobe** | Prüfchat | Der Chat liest eine Seite, deren Lesung er noch nicht kennt, blind gegen und trägt das Ergebnis im Forschungs-PR ein. |
+| **Pflege** + Issue-Nummer | Prüfchat | Aufräumen von Branches und PRs nach dem Pflegeticket (braucht Git, das der Hauptchat nicht hat). |
+| **paleo-type** | neuer Prüfchat | Der Chat startet als Prüfer: Er liest diesen Spickzettel und den jüngsten Übergabestand und nennt Stand und nächsten Schritt in zwei Sätzen. |
+| **Abschluss** | jeder Chat | Der Chat beendet seine Sitzung sauber: Er schreibt seinen Übergabestand fort (Hauptchat: Rückkehrpunkt im `STATUS.md`; Prüfchat: Kommentar im Issue mit Label `uebergabe`) und nennt den Start-Satz für den nächsten Chat. |
 
-Ein normaler Chat arbeitet nur, solange er antwortet. Darum braucht jeder Durchgang einen Anstoß von dir. Innerhalb eines Durchgangs läuft alles ohne dich.
+Optional mit Projekt-ID, z. B. „weiter ssta-20578-nr-632“. Ein normaler Chat arbeitet nur, solange er antwortet; jeder Durchgang braucht einen Anstoß von dir. Innerhalb eines Durchgangs läuft alles ohne dich.
 
 ---
 
 ## 2 · Einmal einrichten
 
-**a) Projekt-Anweisung.** Diese Zeile gehört in die Projekt-Anweisungen: in ChatGPT in das Projekt mit den Astra-Chats, in Claude unter „Instructions“ des Projekts.
-
+**a) Projekt-Anweisung im ChatGPT-Projekt** (Hauptchat und Gegenlese-Chats):
 ```
-paleo-type / Nr. 632: Bei „vorab“ oder „gegenlesen“: im GitHub-Repo esany/paleo-type die Datei projects/ssta-20578-nr-632/GEGENLESUNG.md auf main lesen und vollständig ausführen. Bei „weiter“: ARBEITSPLAN.md auf main und den Rückkehrpunkt in STATUS.md lesen und den Plan fortsetzen. Immer normaler Chat, kein Work/Codex.
+paleo-type: Bei „vorab“ oder „gegenlesen“: im GitHub-Repo esany/paleo-type docs/gegenlesung-vorab.md auf main lesen und vollständig ausführen. Bei „weiter“: SPICKZETTEL.md auf main lesen, dann ARBEITSPLAN.md und den Rückkehrpunkt im STATUS.md des Projekts, und den Plan fortsetzen. Bei „Abschluss“: Rückkehrpunkt im STATUS.md fortschreiben und den Start-Satz für den nächsten Chat nennen. Immer normaler Chat, kein Work/Codex.
 ```
 
-**b) PDF bereitstellen.** Das PDF von Nr. 632 einmal in die Projektdateien legen (voll oder kompakt, siehe Prüfsummen in `GEGENLESUNG.md`). Die Bilder liegen bewusst nicht im Repo.
+**b) Anweisung im Claude-Projekt** (Prüfchat):
+```
+paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-Repo esany/paleo-type SPICKZETTEL.md auf main und den jüngsten Kommentar „Übergabestand“ im offenen Issue mit Label uebergabe. Nenne Stand und nächsten Schritt in zwei Sätzen und warte auf den Auftrag. Bei „Abschluss“: Übergabestand als neuen Kommentar in diesem Issue fortschreiben. Bei „vorab“ oder „gegenlesen“: docs/gegenlesung-vorab.md ausführen.
+```
 
-**c) GitHub:** Settings → General → „Automatically delete head branches“ einschalten. Dann verschwinden Branches nach dem Übernehmen von selbst.
+**c) Bildquellen:** Die Bilddateien (z. B. PDFs) eines Projekts liegen als **Projektquelle** in beiden Chat-Projekten, nie im Repo. Welche Datei gilt, steht mit Prüfsumme im Projekt-Abschnitt „Parameter: Gegenlesung“.
+
+**d) GitHub:** Settings → General → „Automatically delete head branches“ einschalten.
+
+---
 
 ## 2b · Chat wechseln
 
-Ein Chat wird lang oder hängt? So geht es ohne Verlust weiter:
-1. Im alten Chat **„Abschluss“** schreiben und auf die Bestätigung warten, dass der Übergabestand gespeichert ist.
+1. Im alten Chat **„Abschluss“** schreiben und auf die Bestätigung warten.
 2. Neuen Chat öffnen:
-   - Astra: Prompt „Neuer Hauptchat“ (§3), danach „weiter“.
-   - Claude: **„paleo-type“**.
-   - Gegenlese-Chat: einfach „gegenlesen“.
+   - Hauptchat: „weiter“
+   - Prüfchat: „paleo-type“
+   - Gegenlese-Chat: „gegenlesen“
 3. Nichts aus dem alten Chat hineinkopieren. Alles Nötige steht im Repo.
-
-Für Claude gehört einmalig diese Zeile in die Anweisungen des Claude-Projekts (zusätzlich zur Zeile aus §2a):
-```
-paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-Repo esany/paleo-type SPICKZETTEL.md auf main, dann den jüngsten Übergabekommentar von Claude in Issue #368 und die offenen Blocker dort. Nenne Stand und nächsten Schritt in zwei Sätzen und warte auf den Auftrag. Bei „Abschluss“: Übergabestand als Kommentar in #368 fortschreiben.
-```
 
 ---
 
 ## 3 · Prompts zum Kopieren
 
-### Neuer Hauptchat für Astra
-Für einen frischen Start oder wenn der alte Chat zu lang geworden ist.
+### Hauptchat ohne Projekt-Anweisung
 ```
-Repo: esany/paleo-type. Du bist der Astra-Hauptchat für Nr. 632.
-Lies nur:
-1. AGENTS.md (nur den Start)
-2. projects/ssta-20578-nr-632/ARBEITSPLAN.md auf main: das ist mein Plan
-3. projects/ssta-20578-nr-632/STATUS.md auf dem aktuellen Forschungsbranch: der
-   Rückkehrpunkt steht ganz oben
-Arbeite den Plan selbständig ab, beginnend mit dem Rückkehrpunkt. Frag nur bei:
+Repo: esany/paleo-type. Du bist der Hauptchat (Bauer).
+Lies SPICKZETTEL.md auf main, dann für das aktive Projekt projects/<id>/ARBEITSPLAN.md
+und den Rückkehrpunkt oben im STATUS.md. Arbeite den Plan selbständig ab. Frag nur bei:
 Forschungsinhalt löschen, Übernahme auf main, neues Werkzeug, Widerspruch zum Plan.
-Jeder Durchgang endet mit tools/work_return.py (und tools/gegenlesung_check.py, sobald
-vorhanden) und einer kurzen Meldung an mich in Alltagssprache.
+Jeder Durchgang endet mit einer kurzen Meldung an mich in Alltagssprache.
 Normaler Chat; kein Work, kein Codex.
 ```
 
 ### Gegenlesung ohne Projekt-Anweisung
-Falls ein Chat das Stichwort „vorab“ nicht kennt.
 ```
-Lies im GitHub-Repo esany/paleo-type die Datei
-projects/ssta-20578-nr-632/GEGENLESUNG.md auf main und führe sie vollständig aus.
-Das PDF von Nr. 632 ist angehängt.
+Lies im GitHub-Repo esany/paleo-type docs/gegenlesung-vorab.md auf main und führe sie
+vollständig aus.
 ```
 
-### Prüfauftrag an Claude
-Für einen PR, wenn „Prüfen“ allein nicht reicht.
+### Prüfauftrag, ausführlich
 ```
 Repo: esany/paleo-type. Du bist Prüfer, nicht Bauer.
-Prüfe PR #<Nummer> gegen ARBEITSPLAN.md und den Schritt, den er umsetzt:
+Prüfe PR #<Nummer> gegen den Plan des Projekts und den Schritt, den er umsetzt:
 - tut er genau seinen Schritt?
 - bleibt Geschütztes unangetastet (Provenienz, Quelle/Datei, Unsicherheit,
   Aussageebenen, Gates)?
@@ -105,24 +98,21 @@ höchstens drei Fragen an mich in Alltagssprache.
 
 ## 4 · Wann du gefragt bist
 
-- **Zwischenstand auf `main`:** nach dem Gesuch 0104R–0107L, danach etwa alle zwei Texteinheiten. Claude prüft, du entscheidest.
-- **Werkzeug-Vorschlag:** Astra legt höchstens ein Werkzeug vor, mit Nutzen und Aufwand in Alltagssprache. Du sagst ja oder nein.
-- **Alte Entwürfe (#364, Gruppe D):** einmal entscheiden.
+- **Zwischenstände auf `main`:** wann, steht im Plan des Projekts. Der Prüfchat prüft, du entscheidest.
+- **Werkzeug-Vorschlag:** höchstens ein Werkzeug auf einmal, mit Nutzen und Aufwand in Alltagssprache. Du sagst ja oder nein.
+- **Alte Entwürfe aufräumen:** einmal entscheiden, was bleibt.
 - **Lesungen beurteilen musst du nie.**
 
 ## 5 · Rettungseingriff festhalten
 
-Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze das Label `rettung-eigentümer` an das betroffene Issue oder den PR. Die Anzahl erscheint in der automatischen PR-Prüfung. So siehst du, ob das System besser wird.
+Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze das Label `rettung-eigentümer` an das Issue oder den PR. Die Anzahl erscheint in der automatischen PR-Prüfung.
 
 ## 6 · Wo steht was
 
 | Was | Wo |
 |---|---|
-| Plan für Nr. 632 | `projects/ssta-20578-nr-632/ARBEITSPLAN.md` |
-| Ablauf Gegenlesung | `projects/ssta-20578-nr-632/GEGENLESUNG.md` |
-| Rückkehrpunkt | `STATUS.md` im aktuellen Forschungsbranch (oben) |
-| Offene Vorab-Seiten | Zeile `Vorab offen` oben in `gegenlesung-vorab.md` |
-| Vorab-Lesungen | Branch `review/nr632-gegenlesung-vorab`, Datei `research/gegenlesung-vorab.md` |
-| Laufende Forschung | PR #359 |
-| Forschungsplan (Übersicht) | Issue #358 |
-| Aufräumen | Issue #364 |
+| Plan eines Projekts | `projects/<id>/ARBEITSPLAN.md` |
+| Parameter (Bildquellen, Vorab-Datei, Fehlerschwelle) | dort, Abschnitt „Parameter: Gegenlesung“ |
+| Rückkehrpunkt | `STATUS.md` des Projekts (oben), im aktuellen Forschungsbranch |
+| Ablauf der Gegenlesung | `docs/gegenlesung-vorab.md` |
+| Übergabestand des Prüfchats | offenes Issue mit Label `uebergabe` |
