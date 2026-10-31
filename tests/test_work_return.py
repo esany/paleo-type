@@ -167,6 +167,55 @@ class WorkReturnS1Tests(unittest.TestCase):
         self.assertNotEqual(0, rc)
         self.assertIn("Fortsetzung nicht belegt", " ".join(out["findings"]))
 
+    def test_preexisting_separator_is_not_a_new_continuation(self) -> None:
+        self.set_status(OWNER_LINE + "\n---")
+        baseline, research = self.init_baseline()
+        starting_hash = self.status_sha
+        research.write_text("before\nchanged\n", encoding="utf-8")
+        self.git("add", "projects")
+        self.git("commit", "-qm", "research-only change")
+        rc, out = self.run_report(
+            baseline_commit=baseline, result_commit=self.git("rev-parse", "HEAD"),
+            recorded_status_sha256=starting_hash,
+            research_owner=f"projects/{PROJECT}/research/source-notes.md",
+            continuation_anchor="---",
+        )
+        self.assertNotEqual(0, rc)
+        self.assertIn("Fortsetzung nicht belegt", " ".join(out["findings"]))
+
+    def test_preexisting_heading_is_not_a_new_continuation(self) -> None:
+        self.set_status(OWNER_LINE + "\n## Existing heading")
+        baseline, research = self.init_baseline()
+        starting_hash = self.status_sha
+        research.write_text("before\nchanged\n", encoding="utf-8")
+        self.git("add", "projects")
+        self.git("commit", "-qm", "research-only change")
+        rc, out = self.run_report(
+            baseline_commit=baseline, result_commit=self.git("rev-parse", "HEAD"),
+            recorded_status_sha256=starting_hash,
+            research_owner=f"projects/{PROJECT}/research/source-notes.md",
+            continuation_anchor="## Existing heading",
+        )
+        self.assertNotEqual(0, rc)
+        self.assertIn("Fortsetzung nicht belegt", " ".join(out["findings"]))
+
+    def test_new_status_line_at_result_commit_is_valid_continuation(self) -> None:
+        baseline, research = self.init_baseline()
+        starting_hash = self.status_sha
+        new_line = "**New continuation: re-check the exact image after this work block.**"
+        research.write_text("before\nchanged\n", encoding="utf-8")
+        self.set_status(OWNER_LINE + "\n" + new_line)
+        self.git("add", "projects")
+        self.git("commit", "-qm", "research with new continuation")
+        rc, out = self.run_report(
+            baseline_commit=baseline, result_commit=self.git("rev-parse", "HEAD"),
+            recorded_status_sha256=starting_hash,
+            research_owner=f"projects/{PROJECT}/research/source-notes.md",
+            continuation_anchor=new_line,
+        )
+        self.assertEqual(0, rc, out)
+        self.assertTrue(out["owner_change"])
+
     def test_later_worktree_edit_does_not_invalidate_committed_owner_change(self) -> None:
         baseline, research = self.init_baseline()
         research.write_text("before\nnew source note\n", encoding="utf-8")
