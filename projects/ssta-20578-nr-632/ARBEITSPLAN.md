@@ -190,3 +190,34 @@ Die Rollenbezeichnungen im Plan und im Gegenleseschritt wurden auf Anweisung
 des Eigentümers vom 31.10.2026 präzisiert.
 Alle Arbeit läuft in normalen Chats; Work oder Codex nur auf ausdrückliche
 Anweisung des Eigentümers.
+
+=== NACHTRAG 31.10.2026 · GEGENLESUNG VORAB (EIGENTÜMERENTSCHEIDUNG) ===
+Dieser datierte Nachtrag ersetzt für die kommenden Seiten allein den bisherigen
+zeitlichen Gegenleseablauf; F1–F5, Fehlergrenze, Quelle-vor-Plausibilität, Rollen,
+unveränderte Forschungsowner und die Human-Übernahmeentscheidung bleiben bestehen.
+
+1. Vorab, vor der Lesung des Astra-Hauptchats, liest eine beliebige unabhängige KI
+   blind je 2–3 originale Schriftzeilen kommender Seiten am Bild und speichert
+   ihre Lesung auf Branch `review/nr632-gegenlesung-vorab` in
+   `projects/ssta-20578-nr-632/research/gegenlesung-vorab-claude.md`.
+   Weitere KIs dürfen eigene Abschnitte oder eigene Dateien daneben anlegen.
+   Die eigene Lesung der Hauptchat-Seite darf dem Gegenleser vor dessen
+   Sicherung nicht bekannt sein.
+2. Der Astra-Hauptchat liest eine ganze Seite direkt vom Originalbild und
+   committet seine Arbeitslesung auf dem Forschungsbranch von PR #359.
+   **Erst nach diesem Seiten-Commit** öffnet er den Vorab-Abschnitt genau
+   dieser Seite und hält dessen Branch-/Quellstand fest.
+3. Lesungen unter Nennung des eigenen Seiten-Commits vergleichen; Abweichungen
+   allein am Schriftbild klären, Varianten offenlassen und bei mehr als einem
+   unmarkiert falschen Wort (einschließlich stiller Normalisierung) die Seite
+   vor Fortsetzung nachbessern und erneut prüfen. Die Vorab-Lesung darf die
+   ursprüngliche Erstlesung nicht rückwirkend beeinflussen.
+4. Nach der Disposition sofort zur nächsten Seite, ohne auf den Eigentümer zu
+   warten. Fehlt ein Vorab-Abschnitt, die Seite dennoch lesen und sichern,
+   im `STATUS.md` ausdrücklich als „Gegenlesung offen“ führen und fortsetzen.
+
+Die jetzt beauftragten Vorab-Abschnitte betreffen 0105L, 0105R und 0107L.
+0106L und 0106R erhalten mangels Vorab den Status „Gegenlesung offen“.
+Arbeit in normalen Chats, kein Work/Codex ohne ausdrückliche Eigentümeranweisung.
+Kein selbstständiger Merge, kein Gate, keine neue Transkriptionswahrheit
+außerhalb des kanonischen Forschungsowners. `#364` bleibt separate Pflegearbeit.
