@@ -229,10 +229,11 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 **Vorab-Gegenlesung 0105R — disposition (31.10.2026):** Der eigene, vorab nicht beeinflusste Lesungs-Commit ist `070f65f03d19e6e16463d1f8685d11e2199f8ff2`; **erst danach** wurde der Abschnitt 0105R im getrennten Vorab-Owner `review/nr632-gegenlesung-vorab:research/gegenlesung-vorab.md` (unter dem Project-Pfad; Blob `0635d1e441ce4b24694e0bedf375675c5ea1c2e0`) geöffnet. Drei von Claude blind deklarierte Originalbildzeilen: Z. 2/A02 `fordert mein pflicht-`, Z. 4/A04 `der respective Lehn und`, Z. 6/A06 `diesen beyden Güthern`. A06 stimmt, A04 war in der Ersttabelle bereits ausdrücklich nur bei `[respective?]` unsicher; A02 hatte dagegen das **unmarkierte `meine` statt `mein`** (ein Wort), außerdem ein abweichendes Teilungszeichen/Komma. Die Originalbildbetrachtung stützt `mein Pflicht-`; A02 ist oben berichtigt, das Verb bleibt als Kandidat offen. **Stichprobe: 1 unmarkiert abweichendes Wort in 3 Zeilen (= 1/3 der Zeilen), Fehlerschwelle >1 nicht überschritten: begrenztes „passt“**; kein vollständiges G2-/Fachurteil und kein Beweis für den anschließenden Textjoin.\n\n### 0106L — written left continuation, first source-near diplomatic reading
 
+**0106L — erneute Bildlesung 31.10.2026, ohne Vorab-Abschnitt:** Das eingebettete Originalfoto von PDF-/Providerbild 0106 aus der SHA-256-verifizierten Voll-PDF (4318×3884 px) wurde mit vergrößertem linken Haupttext und separat vergrößerten Schlusszeilen direkt betrachtet. **17 optisch getrennte Haupttext-Baselines A01–A17** geprüft. Die erste Zeile enthält graphisch `gen Erb-Huldigungs-` (der ältere Text `gen des Huldigungs-` ist nicht haltbar), A02 `und Lehn-Pflicht, zu`, A14 `sondern auch die ge-` statt des zuvor unmarkierten `denen`. Bei A13–A17 bleiben Teile der Wörter und die Frage der physischen Zeilen-/Wortanschlüsse ausdrücklich offen. Die Tabelle unten enthält die aktualisierten kanonischen Bildkandidaten; dieser Nachtrag ist nur Prüfgeschichte. **Gegenlesung offen**: im benannten Vorab-Branch liegt gemäß Eigentümerauftrag kein Vorab-Abschnitt 0106L; keine KI-Blindprüfquote berechenbar, keine lokale wissenschaftliche Freigabe.\n\n
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
-| `0106L-A01` | `gen des Huldigungs-` | visual continuation from 0105R A17; boundary and suffix checked at full resolution |
-| `0106L-A02` | `und Lehens-Pflicht, zu` | source compound/abbreviation must not be expanded |
+| `0106L-A01` | `gen Erb-Huldigungs-` | `Erb` als eigener graphisch sichtbarer Bestandteil nach erneutem Originalbild; alter Einschub `des` nicht gestützt. Fortsetzung von 0105R A17 textlich wahrscheinlich, Trägerjoin nicht belegt. |
+| `0106L-A02` | `und Lehn-Pflicht, zu` | `Lehn` am Foto ohne zusätzliches `es`, nicht normalisieren. |
 | `0106L-A03` | `admittiren und mir` | positive sequence; Latin-derived form as written |
 | `0106L-A04` | `so dann, nicht nur` | spacing/stop provisional |
 | `0106L-A05` | `die Lehen an [⟦word(s) before be- uncertain⟧]` | ending seen; preceding group cannot be accepted |
@@ -244,8 +245,8 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 | `0106L-A11` | `samt deren Zugehö-` | line-end division |
 | `0106L-A12` | `rungen, zu meinen` | line-initial continuation |
 | `0106L-A13` | `[Vortheile?] [reichen?],` | words difficult and subject to falsification; no legal interpretation accepted |
-| `0106L-A14` | `sondern auch denen` | positive sequence |
-| `0106L-A15` | `[sämtlichen?] [angezo-?]` | two graph candidates, not certified |
+| `0106L-A14` | `sondern auch die ge-` | Auf dem Originalbild keine durchgehende Buchstabenfolge `denen`; sichtbare Wortteilung, anschließende A15 noch unklar. |
+| `0106L-A15` | `[⟦Schriftfolge nach ge- noch unaufgelöst⟧]` | Alte Ganzwortkandidaten nicht als lesbare Buchstaben bestätigt; auf neuer Bildprüfung zurückgestellt. |
 | `0106L-A16` | `[⟦visible groups unresolved⟧] meines Herrn` | middle text attempted, no formula-completion |
 | `0106L-A17` | `Bruders [⟦several visible groups unresolved⟧]` | end of exposure and letter segmentation to be rechecked |
 
