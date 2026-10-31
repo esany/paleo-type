@@ -1,6 +1,8 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
-**GELTENDER NÄCHSTER SCHRITT (Human Owner, 2026-10-31): 0104R am vollständigen Originalbild neu lesen; danach Commit auf PR #359 und ausschließlich „bereit zur Gegenlesung: 0104R“ ohne Lesungstext posten; vor 0105L die blinde Gegenlesung und etwaige Bildklärung abwarten.**
+**GELTENDER NÄCHSTER SCHRITT (2026-10-31, nach Bildlesung 0104R): Blinde Gegenlesung von 2–3 Zeilen aus 0104R in einem frischen unabhängigen Astra-Chat einholen und bildgebunden abgleichen; bei mehr als einem unmarkierten Fehler 0104R vor 0105L neu bearbeiten. Bis dahin 0105L NICHT beginnen.**
+
+**Aktueller Bildblock:** 0104R aus der registrierten Voll-PDF mit vergrößerten originalen Bildausschnitten erneut gelesen; acht tatsächlich sichtbare Haupttextzeilen zuzüglich eigenständiger Titel-/Datum-/Anredebereiche. Der vorhandene Forschungseintrag wurde im Commit `f25c5943a8a0558c0b9aaf4af37518e3e220f21a` berichtigt; unter anderem unzulässige `Julii`-Expansion verworfen, unklare Buchstaben bleiben markiert. **Noch kein Blindvergleich, keine bestätigte Fehlerquote, kein Seiten-PASS; 0105L–0107L bislang nicht neu gelesen.**
 
 **Verbindliche Ablösung:** Der seitenweise Rhythmus und die Fehlergrenze aus dem Human-Owner-Auftrag vom 31.10.2026 ersetzen alle nachstehenden älteren Ausführungs-, NEXT-ACTION- und Weiterlese-Anweisungen. Diese bleiben als historische Nachweise erhalten, steuern aber keine Fortsetzung. 0108–0131 sind ungeprüfte Entwürfe mit hoher Stichproben-Fehlerrate und werden später vollständig neu gelesen, nicht bloß punktuell repariert. G2–G6 bleiben offen.
 
