@@ -1,6 +1,6 @@
 # Methodenprotokoll Nr. 632 (F2/W0)
 
-Projektbezogener Forschungsstand, begonnen 31.10.2026. Getrennt vom [Eigentümer-Arbeitsplan](../ARBEITSPLAN.md); keine neue allgemeine Regel. Ein Methodenstandard wird erst nach dem in F2 beschriebenen Vergleich ausgewählt und datiert festgehalten.
+Projektbezogener Forschungsstand, begonnen 31.10.2026. Getrennt vom [Eigentümer-Arbeitsplan auf dem separaten PR #363](https://github.com/esany/paleo-type/blob/plan/nr632-owner-plan-20261031/projects/ssta-20578-nr-632/ARBEITSPLAN.md); keine neue allgemeine Regel. Ein Methodenstandard wird erst nach dem in F2 beschriebenen Vergleich ausgewählt und datiert festgehalten.
 
 ## F2 — Vergleich der Leseweisen
 
