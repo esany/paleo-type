@@ -144,3 +144,11 @@ Ein frischer Reviewer kann ohne diesen Chat:
 
 ---
 **Audit-Eigenstatus:** Nichtnormatives Review-Artefakt unter dem bereits bestehenden `engineering/evidence/audits/`-Owner. Alle wissenschaftlichen Resultate und gegenwärtigen Arbeitsanweisungen verbleiben ausschließlich in den verlinkten kanonischen Projekt-/Methoden-/Corpus-Ownern; historische Snapshot-SHAs sind Provenienz, nicht lebende Status-Claims.
+
+## Nachtrag 31.10.2026 — Stichproben 1 und 2 aus PR #359 (Korrektur, kein Merge)
+- [Stichprobe 1](https://github.com/esany/paleo-type/pull/359#issuecomment-6534416744), Claude: 0116R mit rund zehn Zeilen unmarkiert falscher Wörter; 0120R mit unmarkierten Fehlern und Auslassungen; 0128R hat 22 statt 17 Zeilen, davon fünf ausgelassen und etwa zehn der erfassten 17 fehlerhaft.
+- Konsequenz aus Stichprobe 1: Der Schub 0114–0131 ist in dieser Fassung als Arbeitslesung **nicht verwendbar**; äußerlich flüssige, unmarkierte Wörter sind keine gesicherte Transkription.
+- Damit ist die frühere Aussage in Abschnitt 3.4 über „substantielle Arbeitslesungen“ 0112–0116 durch den konkreten Gegenbefund auf 0116R **widerlegt**; für 0112–0116 ist kein belegter positiver Qualitätsnachweis erbracht.
+- [Stichprobe 2](https://github.com/esany/paleo-type/pull/359#issuecomment-6534500276), Claude: ca. 45 Zeilen 0104R/0106L/0106R verglichen, ca. zehn unmarkierte Abweichungen, darunter Abkürzungsauflösung, stille Normalisierung und sinnändernde Wortfehler; dennoch deutlich bessere, grundsätzlich brauchbare **vorläufige** Arbeitsfassung mit Korrekturbedarf.
+- Die bessere Stichprobe 2 rehabilitiert **nicht** den fehlerreichen Schub aus Stichprobe 1 und ist weder blind in allen Teilstellen noch eine unabhängige Fachabnahme; beide Ergebnisse sind KI-Gegenlesungen mit benannter Evidenzgrenze.
+- Dieser Nachtrag korrigiert nur die Auditbewertung; Forschungsdateien/STATUS, Rollen, Gates und Übernahmeentscheidung bleiben davon unberührt.
