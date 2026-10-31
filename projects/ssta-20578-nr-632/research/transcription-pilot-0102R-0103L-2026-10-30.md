@@ -137,20 +137,24 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 | Region / physical line | Diplomatic working fragment | Reading boundary |
 |---|---|---|
-| `0104R-H01` | `[28.?] [Jun:?] 4. Julii 1760.` | Two adjoining date-like/registry groups at page head; `4. Julii 1760.` strongly visible, earlier cluster undetermined; do not infer two historical execution dates. |
-| `0104R-H02` | `AllerDurchlauchtigster-[Großmächtig-?]` | First large title line after ornate initial; exact spelling, double consonants and division mark need control. |
-| `0104R-H03` | `[tigster?] König und Churfürst,` | Continuation/address line, independently physically visible; first group remains dependent on H02 reading. |
-| `0104R-H04` | `Allergnädigster Herr!` | Separately centred salutation; graph/punctuation working, not proof of addressed individual. |
-| `0104R-A01` | `[Ew.?] Königl. Majts.` | Decorated initial at left; abbreviated wording and punctuation provisional, do not expand. |
-| `0104R-A02` | `[gewesener?] [erster?] Chur-` | Last part and physical line-end stroke visible; opening uncertain. |
-| `0104R-A03` | `Marschall, ⟦attempted, unresolved⟧` | `Marschall` comparatively positive; trailing group not named. |
-| `0104R-A04` | `George [Ernst?] von ⟦attempted, unresolved⟧` | Name-like words as partial graphemic candidates; no person identification or hand equation. |
-| `0104R-A05` | `⟦first visible group unresolved⟧ mein [seelig?]` | Several words visible, no responsibly established full word sequence. |
-| `0104R-A06` | `verstorbener Vater,` | First adjective still uncertain; do not deduce kinship from language. |
-| `0104R-A07` | `welcher am 17. [ten?] des` | Graph of numeral ending unclear; **not** resolved by expected date formula. |
-| `0104R-A08` | `Monaths Januar: h. a.` | Working visible final line; punctuation/abbreviated `h. a.` remain literal, unexpanded. |
+| `0104R-H01` | `⟦vorgestelltes Datums-/Registraturzeichen unsicher⟧ 4. Jul: 1760.` | `Jul:` als sichtbare Abkürzung erhalten, nicht `Julii`; Gruppe davor graphisch ungeklärt. |
+| `0104R-H02` | `Aller⟦Trennstrich?⟧Durchlauchtigster-⟦Großmächtig-?⟧` | Titelzeile direkt am Bild: Durchlauchtigster deutlich; Grenz-/Trennstriche und letzte Wortzeichen unsicher, nicht geglättet. |
+| `0104R-H03` | `⟦tigster?⟧ König und Chur-fürst,` | Physische zweite Titelzeile; Beginn als möglicher Anschluss an H02, `Chur-fürst` nicht modernisiert; Endzeichen offen. |
+| `0104R-H04` | `Allergnädigster Herr!` | Eigene zentrierte Anrede am Bild; keine inhaltliche Ergänzung. |
+| `0104R-A01` | `Nachdem Ew: Königl: Majts:` | Zierinitiale gehört zu `Nachdem` am Bild; Quellabkürzungen und Doppelpunkt nicht still expandiert. |
+| `0104R-A02` | `gewesener [Oberster?] Hoff-` | `Hoff-` am Zeilenende sichtbar; `[Oberster?]` nach Vergleich der Strichfolge plausibel, aber nicht als sicher behauptet. |
+| `0104R-A03` | `Marschall, Herr Johann` | `Herr Johann` im Originalbild lesbar, nicht mehr unaufgelöst; physische Baseline direkt gezählt. |
+| `0104R-A04` | `George Graf von Ein-` | `George Graf von Ein-` sichtbare Buchstabenfolge; früheres `[Ernst?]` graphisch nicht haltbar, nicht ergänzt. |
+| `0104R-A05` | `siedel, mein seelig` | Sichtbarer Zeilenanfang `siedel` schließt A04-Wortteilung; Wortstellung nicht aus Familienwissen übernommen. |
+| `0104R-A06` | `verstorbener Vater,` | Am Bild unterscheidbare Buchstabenfolge, keine Identitätsbestätigung. |
+| `0104R-A07` | `welcher am 17. ⟦Datumszusatz?⟧ des` | `17.` sichtbar; unklare Zeichen danach ausdrücklich offen, nicht zum erwarteten Datum ergänzt. |
+| `0104R-A08` | `Monaths Januar: h. a.` | Sichtbare Abkürzung `h. a.` beibehalten, keine Jahres-/Ausdrucksauflösung; Wortende der vorangehenden Zeile noch zu prüfen. |
 | `0104R-E01` | `⟦visible narrow right-edge writing, not yet line-indexed/read⟧` | Partly overlaid separate strip; not a continuation or source-level gap verdict. |
 | `0104R-P01` | `ornate crowned/initial element (non-running-text feature)` | Visible source mark, not safely identified as seal, hand, coat of arms or authenticated addressee. |
+
+**Seite 0104R — erneute Bildlesung nach Human-Owner-Rhythmus (2026-10-31):** Aus dem hashverifizierten Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030` wurde ausschließlich PDF-/Providerbild 0104 als eingebettetes Foto in 4310 × 3891 px direkt geöffnet; rechte Schriftfläche samt vergrößertem Titel, unterem Haupttext und schmalem Randschriftstreifen separat betrachtet. **Am Bild** unterscheidbar: zwei große Titelzeilen (H02–H03), eine zentrierte Anrede (H04), eine eigenständige Datums-/Registraturzeile (H01) und **acht** aufeinanderfolgende Haupttext-Baselines A01–A08. Die Zeilenzahl wurde aus diesem Bild bestimmt und nicht aus einem vorgegebenen 17-Zeilenraster übernommen. Die Randschrift E01 ist eine überlagerte andere Exposition und weiterhin **nicht** als eigener fortlaufender Text dieser Seite transkribiert.
+
+**Graphematische Gegenprüfung zu Claudes Stichprobe 2:** `Jul:` statt stiller `Julii`-Expansion; das Zierinitial zeigt `Nachdem`; A03 zeigt `Herr Johann`, A04/A05 `Ein- / siedel`; A02 `[Oberster?]` und A07 der Datumszusatz bleiben unsicher, weil die sichtbaren Buchstaben nicht hinreichend diskriminiert sind. Claudes KI-Vorschläge wurden nicht automatisch zu kanonischer Sicherheit erhoben. Keine Wortform aus Lehensformeln ergänzt; Groß-/Kleinschreibung, `ß` und Abkürzungen nur soweit am Bild gesehen belassen. Die 0104R-A08 → 0105L-A01-Verbindung bleibt **provisorisch**, bis 0105L separat bildgeprüft ist. Bisherige Quellenlesung wird hier als prüfbare AI-Arbeitslesung erfasst; die zweite **blinde Gegenlesung von 2–3 Zeilen ist noch ausstehend**. **Keine nächste Seite vor ihrer Disposition.**
 
 **T3/adversarial quality sample on this new block:** the 0103R crop alone **would silently omit** the opening ornament, first part of the title and initial characters of the lower text; 0104R is a materially better exposure. Conversely, *seeing 0104R clearly* does not justify merging the thin right-edge script into it. In the lower lines `George [Ernst?]`, `[verstorbener?]` and `[ten?]` are explicitly demoted to graphic hypotheses, not accepted legal/person/chronological facts. `h. a.` is retained as written-looking shorthand, not expanded. The 0102L count is an editorial image-reading count requiring exact-JPEG reinspection before it can support a final G2 inventory. This is self-falsification/second-view control, **not an independent human expert review**.
 
