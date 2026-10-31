@@ -2,7 +2,7 @@
 
 Vorab offen: 0105L (Z. 14–16 von oben, Nachprüfung nach Korrektur), 0106L, 0106R, 0108R, 0109R, 0110L, 0110R, 0111L, 0111R, 0112L
 
-Anleitung: `projects/ssta-20578-nr-632/GEGENLESUNG.md` (auf `main`). Abschnitte nur anhängen, nie ändern.
+Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Abschnitt „Parameter: Gegenlesung“. Abschnitte nur anhängen, nie ändern.
 
 **Nicht blind für Claude** (Lesungstext schon gesehen):
 - 0104R; 0105L Z. 1–6 von oben und die letzte Zeile
