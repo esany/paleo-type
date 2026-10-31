@@ -252,20 +252,21 @@ The source shows a small upper date/notation, an ornate crowned/initial mark, tw
 
 ### 0106R — main right text, date and subscriptions kept as different regions
 
+**0106R — Originalbild-Neulesung 31.10.2026; keine Vorab-Gegenlesung:** Aus dem SHA-256-verifizierten Voll-PDF das eingebettete Foto PDF-/Providerbild 0106 (4318×3884 px), rechte Hauptschrift und getrennt die Datums-/Unterschrifts- und deutlich blassere Beglaubigungszone, unmittelbar und vergrößert betrachtet. **11 physische Haupttextzeilen A01–A11** plus **D01–D03 Datum**, **B01–B04 Schreiber-/Unterzeichnerbereich** und auf der rechts unten neu beginnenden Textfläche **C01–C03 blasse Beglaubigung**: nicht ineinander linearisiert. A03 `bekennen` statt des früheren unmarkierten `bekommen`; die A03→A04-Grenze `[darü-?] / [ber?]` noch graphisch offen. A07 `laßen`, Datum D01 `Dreßden` statt still normalisierter Formen; die darunterliegende blasse Schrift ist keine Fortsetzung des Gesuch-Haupttextes, sondern der Beginn eines separaten Beglaubigungsbereichs, dessen Textanschluss an 0107L quellengebunden zu testen ist. Die Tabelle enthält die datiert revidierten kanonischen Zeilen; restliche Wortformen sind KI-Kandidaten, keine Fremdvalidierung. **Gegenlesung offen** (kein Vorab-Abschnitt 0106R gemäß Eigentümerentscheidung); keine Fehlerquote, kein Gate oder vollständiger Seiten-PASS.\n\n
 | Physical writing line | Source-near diplomatic working reading | Evidential limit |
 |---|---|---|
 | `0106R-A01` | `[Antheilen?] inhalts deren` | first word uncertain |
 | `0106R-A02` | `Lehn-Briefe, in hohen` | first/second group graphically supported |
-| `0106R-A03` | `Gnaden bekommen, [deren?]` | ending questionable |
-| `0106R-A04` | `bey [gewöhnliche?] Lehn-` | declension and h/n unresolved |
+| `0106R-A03` | `Gnaden bekennen, [darü-?]` | Vergrößertes Bild stützt `bekennen` gegenüber früherem `bekommen`; möglicher Wortanfang `darü-` erst mit A04 prüfbar, kein Formelschluss. |
+| `0106R-A04` | `[ber?] gewöhnliche Lehn-` | Bild zeigt eher Fortsetzung der A03-Gruppe (`darü- / ber`) als selbständiges `bey`; Zeilenbruch bleibt als Kandidat. |
 | `0106R-A05` | `Scheine ertheilen, und` | running sequence |
 | `0106R-A06` | `die Lehn-Briefe aus-` | line-ending mark visible |
-| `0106R-A07` | `fertigen zu lassen;` | strong source-near reading |
+| `0106R-A07` | `fertigen zu laßen;` | Quellenform am vergrößerten Bild mit ß beibehalten, kein stilles ss. |
 | `0106R-A08` | `Dafür ich in Pflicht-` | physical division |
 | `0106R-A09` | `schuldigster Treue Zeit-` | physical division; `Zeit` graph remains inspectable |
 | `0106R-A10` | `Lebens verharren werde,` | positive sequence |
 | `0106R-A11` | `Ew: Königl: Majts:` | separate enlarged dedicatory line |
-| `0106R-D01` | `Dresden` | separately placed date group, left of subscription |
+| `0106R-D01` | `Dreßden` | Separat links stehende Datumszeile, am Bild ß-Form statt stiller Normalisierung zu `ss`. |
 | `0106R-D02` | `am 3. Julii,` | source date; not year of paper |
 | `0106R-D03` | `1760.` | separate third physical date line |
 | `0106R-B01` | `allerunterthänigst` | right-positioned subscription |
