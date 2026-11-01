@@ -258,3 +258,48 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Blind: ja (keine fremden Lesungen zu diesem Bereich eingesehen)
 - Bildbefund, linke Bildhälfte oben/Mitte/unten: nur sehr blasse, teilweise spiegelverkehrt wirkende Schriftspuren; keine mit ausreichender Sicherheit eigenständig lesbare Zeile.
 - Stichprobe: 0 eigenständige Schriftzeilen; keine Normalisierung oder Rekonstruktion aus der rechten Bildhälfte.
+
+## 0120R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 120
+- Blind: ja (keine fremde Lesung zu diesen Zeilen eingesehen)
+- Anrede rechts, eigene Z. 2 von oben: `Gnädigster Herr`
+- Haupttext rechts, Z. 9 von oben (Anrede nicht mitgezählt): `24. Martii, 1762. pro individuo ⟦…⟧`
+- Haupttext rechts, unterer Teil, Z. 2 von unten (vor den blassen Schlusszeilen): `Königl. Hoheit [geruhet?] meine [gehorsamste?] Bitte,`
+
+## 0121L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 121
+- Blind: ja (keine fremde Lesung zu diesen Zeilen eingesehen)
+- Haupttext links, Z. 1 von oben: `[Höchst?] Dieselben wollen in hohen Gnaden geruhen, mich`
+- Haupttext links, letzte Zeile des oberen Textblocks: `Ew. Königl. Hoheit`
+- Datumsblock links unten, Z. 2 von oben: `am [gestrichen: ⟦…⟧] 7. Februar.`
+
+## 0121R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 121
+- Blind: ja (keine fremde Lesung zu diesen Zeilen eingesehen)
+- Haupttext rechts, Z. 1 von oben (Zierinitiale mitgezählt): `[Ich?] zu Ende benannter gebe hierdurch vor mich und`
+- Haupttext rechts, mittlerer Absatz, Zeile mit lateinischer Wendung: `⟦…⟧ in manu dominante ⟦…⟧` (Zeilenzählung im dicht beschriebenen Absatz noch nicht sicher)
+- Aufzählung rechts unten, Z. 1 der mit `3.` bezeichneten Position: `3. an dem Erb- und Allodial-Güther ⟦…⟧`
+
+## 0122L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 122
+- Blind: ja (keine fremde Lesung zu diesen Zeilen eingesehen)
+- Aufzählung links oben, Z. 1 der mit `4.` bezeichneten Position: `4. an denen mit ⟦…⟧ Erb- und Allodial-`
+- Aufzählung links oben, Z. 2 der mit `4.` bezeichneten Position: `Berg- und Hütten-wercken, ⟦…⟧`
+- Datumszeile links unten über Unterschrift/Siegelabdruck: `Dresden, am 3. August, 1764.`
+
+## 0122R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 122
+- Blind: ja (keine fremde Lesung zu diesen Zeilen eingesehen)
+- Anrede rechts oben, Z. 1 von oben: `Durchlauchtigster Churfürst,`
+- Haupttext rechts, Z. 3 von oben (Anrede mitgezählt): `Ew. Königl. Hoheit wollen dies`
+- Haupttext rechts, Z. 7 von oben (Anrede mitgezählt): `Majt. gewiesene [Gedult?], ⟦…⟧`
