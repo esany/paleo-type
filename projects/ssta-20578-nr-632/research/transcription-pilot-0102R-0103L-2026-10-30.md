@@ -416,19 +416,21 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### 0109R text's separate 0110L running field; physical-continuation relationship provisional
 
+**0110L · begrenzte Quellenkontrolle 01.11.2026 (kein abgeschlossener F2-Neulesedurchgang):** Vergrößerte linke Originalschriftfläche des im registrierten Voll-PDF enthaltenen Fotos, PDF-/Providerbild **0110**, 4304×3897 px, ungefähr x=940–2200/y=1060–3200; lokale SHA-256-Prüfung des Voll-PDF `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Die extern mit `Blind: ja` bezeichnete Probe umfasst alte A03 (Z.3) `unsre Commissarien zu verordnen,`, A09 (Z.9) `ist solches dergestalt bewerckstellig[et?]` und A12 (Z.13 nach dortiger Zählung) `der Vollziehung dieses Recessus ein ⟦…⟧`. Gegenüber dem bereits 30.10. gespeicherten ungeprüften Sammelentwurf ist **A03 `wiese` → `unsre` ein sicher unmarkierter Wortfehler**. A09 war bisher `bewerkstelliget`; die c/k- und Endzeichenfrage wird nun als Variante statt als sichere Schreibung geführt. Bei der Zeile mit `der Vollziehung dieses Recessus` hatte der Entwurf die Folgeschrift ohnehin `⟦…⟧` als ungelöst gekennzeichnet, also keine zusätzlich unmarkierte Wortabweichung; die Zeilenordinalzahl bedarf der physischen Reinspektion. **Stichprobe drei Loci: ein nachgewiesener unmarkierter Wortfehler, weitere graphische/Zeilenlocatorgrenzen offen.** Die Altentwurfs-Gesamtfläche ist dadurch nicht neu komplett gelesen oder für G2/F2 gutgeheißen; keine erfundene qualitätsgemessene Lesemethode und noch keine eindeutige originale seitenbezogene Erstlesungs-SHA.
+
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physically indexed line | Diplomatic source-near working reading | Limit / note |
 |---|---|---|
 | `0110L-A01` | `bringen werde; zu deren genießlichen Un-` | first word seems continued from preceding written area, verify join |
 | `0110L-A02` | `tersuch: und Abstellung Unsers deßf[?] ge-` | abbreviation `deßf` not expanded; form uncertain |
-| `0110L-A03` | `wiese Commissarien zu verordnen,` | line-initial group candidate, `Commissarien` visible |
+| `0110L-A03` | `unsre Commissarien zu verordnen,` | 01.11.2026 Originalfoto 0110 linke Schriftfläche vergrößert: der alte unmarkierte Zeilenanfang `wiese` ist am Bild nicht haltbar, `unsre` ist die quellennahe graphische Wortfolge; die Restgruppe stimmt mit der unabhängigen Blindlesung. |
 | `0110L-A04` | `auch mit ertheilten Vergleich über die obge-` | running line-end division |
 | `0110L-A05` | `handelte Puncte, biß zu Unserer gnä-` | line-initial continuation; candidate word spacing |
 | `0110L-A06` | `digsten Ratification, einen verbind-` | source Latin noun; following word division |
 | `0110L-A07` | `lichen Recess von beyden Theilen vollzo-` | some middle letters unsettled |
 | `0110L-A08` | `gen, [⟦middle⟧] zu lassen; So` | opening and ending positive, centre unresolved |
-| `0110L-A09` | `ist solches dergestalt bewerkstelliget,` | working positive |
+| `0110L-A09` | `ist solches dergestalt [bewerkstelliget/bewerckstelliget?],` | Originalbild/Blindtext unterscheiden sich möglicherweise im c/k- und Schlusszeichendetail; keine scheinbar sichere Normform. |
 | `0110L-A10` | `wie uns hierbey gefügten Original` | source Latin noun, physical group |
 | `0110L-A11` | `zu ersehen; Und [⟦continuation⟧]` | no supplied verb |
 | `0110L-A12` | `der Vollziehung dieses Recessus [⟦end⟧]` | working compound |
