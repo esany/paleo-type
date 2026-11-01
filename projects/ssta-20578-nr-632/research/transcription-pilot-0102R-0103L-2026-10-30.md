@@ -492,7 +492,7 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 | Physically indexed line | Diplomatic source-near working reading | Limit / note |
 |---|---|---|
-| `0111R-A01` | `[⟦opening⟧] und geben zu Merseburg an der` | right-hand closing sentence; city label working |
+| `0111R-A01` | `[⟦opening⟧] und geben zu [Morizburgk/Moritzburgk?] an der` | Quelle 0111R: alte unmarkierte Lesung `Merseburg` nicht am Schriftbild gestützt; Schlussform bleibt offen. |
 | `0111R-A02` | `Elster, den 20. May Anno 1679.` | **written represented date** only, not material creation time |
 | `0111R-B01` | `[Moritz?]` | large single name/signature word, undecided; no biographical identification |
 | `0111R-B02` | `(L. S.)` | positionally separate letters/mark, source feature, not a validated physical seal |
