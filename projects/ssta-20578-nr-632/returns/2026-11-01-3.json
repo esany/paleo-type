@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-01-3",
+  "run_status": "completed",
+  "baseline_commit": "8fe7362a815755cb42a32065106ede3b2b380ecf",
+  "result_commit": "05aa1753cfe11a8b3f7676418ff8dd31851984fc",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "54780e129c7e45a56805c257c9239d66c99f37ed3d6f280c1b1d349fcbcec66e",
+  "continuation_anchor": "**RÜCKKEHRANKER 2026-11-01 / 0112L-Fehlerschwelle überschritten: Nachkorrektur am Original gesichert; 0112L-Neulesung und neue Blindprobe vor 0112R erforderlich.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
