@@ -10,6 +10,11 @@ on:
     branches:
       - main
       - research/nr632-transcription-t0-t1-20261030
+  workflow_run:
+    workflows: ["source-contract"]
+    types: [completed]
+    branches:
+      - research/nr632-transcription-t0-t1-20261030
   workflow_dispatch:
 
 permissions:
@@ -47,7 +52,7 @@ jobs:
           path: site/
 
   publish:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'research/nr632-transcription-t0-t1-20261030')
     needs: edition
     runs-on: ubuntu-latest
     permissions:
