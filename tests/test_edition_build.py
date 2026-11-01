@@ -22,11 +22,11 @@ class EditionTests(unittest.TestCase):
             "PROSA NICHT AUSGEBEN\n"
             "| Local physical line | Reading | Note |\n"
             "|---|---|---|\n"
-            "| \`0104R-A01\` | \`Herr [Name?]\` | unsicher am Schriftbild |\n"
-            "| \`0104R-A02\` | \`ALT\` | früher |\n"
+            "| `0104R-A01` | `Herr [Name?]` | unsicher am Schriftbild |\n"
+            "| `0104R-A02` | `ALT` | früher |\n"
             "\n| Local physical line | Reading | Note |\n"
             "|---|---|---|\n"
-            "| \`0104R-A02\` | \`NEU\` | gegen Bild nachgelesen |\n",
+            "| `0104R-A02` | `NEU` | gegen Bild nachgelesen |\n",
             encoding="utf-8",
         )
         (r / "content-document-function-inventory-2026-10-30.md").write_text(
