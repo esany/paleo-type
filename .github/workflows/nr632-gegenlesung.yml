@@ -35,6 +35,18 @@ jobs:
         run: |
           git -C research-checkout fetch origin \
             +refs/heads/review/nr632-gegenlesung-vorab:refs/remotes/origin/review/nr632-gegenlesung-vorab
+      - name: Deliberately invalid return report must fail (negative CI proof)
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("research-checkout/projects/ssta-20578-nr-632/returns/2026-11-01-1.json")
+          report = json.loads(p.read_text(encoding="utf-8"))
+          report["continuation_anchor"] = "**A continuation line never recorded in STATUS.**"
+          Path("/tmp/nr632-invalid-return.json").write_text(json.dumps(report), encoding="utf-8")
+          PY
+          python tools/work_return.py --root research-checkout \
+            --project ssta-20578-nr-632 --report /tmp/nr632-invalid-return.json
       - name: Verify work_return against latest committed return report
         run: |
           REPORT=$(find research-checkout/projects/ssta-20578-nr-632/returns \
