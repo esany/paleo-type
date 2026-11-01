@@ -69,6 +69,25 @@ class GegenlesungCI(unittest.TestCase):
         self.assertEqual(0, rc, out)
         self.assertEqual(1, out["checked"])
 
+    def test_semicolon_after_blind_ja_is_still_explicitly_blind(self):
+        # Existing independent review entries use "Blind: ja; ..." (#371).
+        self.review.write_text(
+            self.review.read_text(encoding="utf-8").replace(
+                "Blind: ja (kein Hauptchat-Text eingesehen)",
+                "Blind: ja; keine fremden Lesungen eingesehen",
+            ),
+            encoding="utf-8",
+        )
+        self.git("add", ".")
+        self.git("commit", "-qm", "blind declaration with explanatory semicolon")
+        review_commit = self.git("rev-parse", "HEAD")
+        rc, out = self.check(
+            line=f"Vergleich: 0106R | Lesung {self.reading} | Vorab {review_commit} "
+                 "| Abweichungen 1 | davon Vereinheitlichung 0 | Urteil passt",
+            review_ref=review_commit,
+        )
+        self.assertEqual(0, rc, out)
+
     def test_nonblind_section_rejected(self):
         self.review.write_text(self.review.read_text().replace("Blind: ja", "Blind: nein"))
         self.git("add", ".")
