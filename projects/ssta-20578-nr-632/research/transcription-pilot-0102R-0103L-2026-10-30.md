@@ -514,11 +514,13 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### 0112L — ornate initial and main left script
 
+**0112L, direkte Quellenkontrolle 01.11.2026:** Registrierte Voll-PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, Originalfoto PDF-/Providerbild 0112 (4304×3897 px), linke Schriftfläche x≈800–2220/y≈840–3370. Der getrennte Review-Abschnitt erklärt `Blind: ja` und nennt drei Stellen: H01 nach Zierschrift, die Zeile `scripten, de datis ...` sowie die Zeile `4. Octbr: ...`. Der ältere ungeprüfte Entwurf hatte **mindestens zwei nicht markierte, am Bild nicht haltbare Wortformen**: H01 `Durch-` statt graphisch näherem `[Hoch-?]` und A08 `Merseburg` statt `[Morizburg/Moritzburg?]`. Außerdem ist die bisher feste Datums-Endziffer `8` von `1678` gegenüber dem unabhängigen Kandidaten `[1675?]` graphisch nicht sicher; Variante statt korrigierter Jahreszahl. **Mindestens 2 unmarkiert falsche Wortgruppen an 3 geprüften Loci; Schwelle >1 überschritten.** Alte Zeilen als Variantenhistorie erhalten, Haupttabelle quellengebunden markiert. Keine vollständige Seiten-Neulesung und kein gültiges begrenztes `passt`; 0112L benötigt nach erneuter Vollseiten-Neulesung eine frische unabhängige Gegenprobe, bevor die nächste Seite bearbeitet oder ein F2-Methodenurteil beansprucht wird. Auch für diesen alten Entwurf ist der ursprüngliche seitenbezogene Lesungs-Commit noch nicht sicher identifiziert; keine erfundene maschinenlesbare `Vergleich:`-Zeile.
+
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical writing line | Source-near diplomatic candidate | Specific constraint |
 |---|---|---|
-| `0112L-H01` | `zu wißen, Demnach zwischen dem Durch-` | display opening with decorative flourish, source split |
+| `0112L-H01` | `[Zu?] wißen, Demnach zwischen dem [Hoch-?]` | Quelle 0112L, großer Zieranfang: früheres unmarkiertes `Durch-` nicht gestützt; der folgende Titel beginnt graphisch eher `Hoch-`, Erstbuchstabe/Teilung bleiben offen. |
 | `0112L-A01` | `laucht: Fürstl: Ambt [⟦proper group⟧] und` | part of H01 continuation; location omitted rather than supplied |
 | `0112L-A02` | `dem Gräfl: Reußischen Gerichten zu` | positive source terms; historical entity not identified |
 | `0112L-A03` | `Oppurg, andern Theils, die Jagdgerech-` | word division |
@@ -526,9 +528,9 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 | `0112L-A05` | `betrif: einige Differentien sich [⟦end⟧]` | word `Differentien` visually strong |
 | `0112L-A06` | `eignen wollen, daher und Krafft er-` | word end uncertain, not resolved |
 | `0112L-A07` | `gangener Höchsten [⟦middle⟧] gnädigster Re-` | line includes written abbreviated groups |
-| `0112L-A08` | `scripten, de datis Merseburg an` | Latin wording retained |
+| `0112L-A08` | `scripten, de datis [Morizburg/Moritzburg?] an` | Originalbild stützt die alte unmarkierte Lesung `Merseburg` nicht; keine Ortsidentifizierung, Varianten ausdrücklich offen. |
 | `0112L-A09` | `der Elster den 23 Martij 1677. und` | earlier represented documentary date not source-carrier date |
-| `0112L-A10` | `4. Octbr: 1678. [⟦end⟧]` | second represented date, reading of numeral to be controlled |
+| `0112L-A10` | `4. Octbr: [1675/1678?]. [⟦end⟧]` | Am vergrößerten Foto erscheint die Schlussziffer eher 5; die zuvor unmarkierte 8 nicht als eindeutig bewiesen belassen. Datierung nur im Schrifttext. |
 | `0112L-A11` | `mit Zuziehung gewisser hierzu ver-` | written break |
 | `0112L-A12` | `ordneter Personen, gründlich unter-` | source physical break |
 | `0112L-A13` | `sucht, und in eventum, auch bis zu` | Latin `in eventum` visible |
