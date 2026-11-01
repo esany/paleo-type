@@ -442,22 +442,24 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### right-hand exposed running text opposite 0110L; refrain from material/source identity claims
 
+**0110R · begrenzter bildgebundener Gegenvergleich 01.11.2026 (keine neue gesamte Seite):** Eingebettetes 4304×3897-Pixel-Originalfoto des lokal verifizierten Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, Providerbild/PDF-Seite **0110**, rechte Haupttextfläche etwa x=2310–3720/y=1130–3120. Der Gegenleseabschnitt `0110R` auf Branch `review/nr632-gegenlesung-vorab` erklärt `Blind: ja` für Z.3, Z.9 und Z.14. Im schon vor der Gegenlesung angelegten, aber als **hochfehleranfälliger Entwurf** markierten Hauptchat-Stand lauten diese Gruppen `und ihm zukommen solte; So ist`, `cessus verbleiben, und die Jagd im` sowie `den Teich laufen, und darinnen verfal-`; der Gegenleser schreibt `ihnen`, `Zeit`, `Theil kauffen`. Die am Original sichtbaren Buchstabenfolgen lassen `ihm/ihnen` und `Jagd/Zeit` vorerst **nicht sicher** gegeneinander aussondern. Beim Bildwort `Teich/Theil` und `lauffen/kauffen` erscheint dem Hauptchat die alte Wortwahl `Teich` und die Quellenform `lauffen` plausibler, aber nicht sicher genug für ein unmarkiertes Wort oder einen gezählten Fehler: Das vormals sichere `laufen` könnte ein Doppel-f vereinfacht haben. **Drei Bildloci, 0 *sicher nachgewiesene* unmarkierte Fehlwörter; 3 entscheidungsbedürftige Wort-/Zeichenstellen, davon eine mögliche Normalisierung. Keine belastbare Fehlerquote / kein `passt` für die Entwurfsfläche**, weil der Wortstatus nicht sicher ist. Der bereits vor dem Review publizierte Entwurf bleibt als Historie erkennbar; weitere vollständige seitenweise Neulesung mit eindeutiger seitenbezogener Commit-Provenienz ist offen. Keine archivarische Folio- oder Trägerrelation allein aus der Foto-Reihenfolge behauptet.
+
 | Physically indexed line | Diplomatic source-near working reading | Limit / note |
 |---|---|---|
 | `0110R-A01` | `und in Zukunften [gewesen?], daß die Jagd` | grammatical group still uncertain |
 | `0110R-A02` | `in solchen Teich mit eingeschlossen seyn,` | positive reading |
-| `0110R-A03` | `und ihm zukommen solte; So ist` | positive reading |
+| `0110R-A03` | `und [ihm/ihnen?] zukommen solte; So ist` | Originalfoto und Blindprobe unterscheiden sich bei der Personalschriftgruppe (`ihm` / `ihnen`); die Vergrößerung erlaubt hier keine verantwortbare Ein-Form-Entscheidung. |
 | `0110R-A04` | `durch der Herrn Graff auf diesfalls` | first words uncertain in original case |
 | `0110R-A05` | `eingegangenen Bericht, und ihm darauf` | positive running words |
 | `0110R-A06` | `beschehen Remonstration von sol-` | written division; foreign noun retained |
 | `0110R-A07` | `chen Sachen abgestanden, also, daß` | line-initial candidate from A06 |
 | `0110R-A08` | `es bey den Worten des angezogenen Re-` | word-final abbreviation? preserve uncertainty |
-| `0110R-A09` | `cessus verbleiben, und die Jagd im` | Latin `Recessus` visible |
+| `0110R-A09` | `cessus verbleiben, und die [Jagd/Zeit?] im` | Zeilenbeginn ist Fortsetzung des vorherigen `Re-`; im folgenden Substantiv alter KI-Kandidat `Jagd`, unabhängiger Blindtext `Zeit`: Bildunterschied noch nicht zweifelsfrei graphisch diskriminiert. |
 | `0110R-A10` | `Teich ihm nicht zugestanden solle, Wir` | positive sequence |
 | `0110R-A11` | `wollen aber darbey dieses in Gnaden` | positive sequence |
 | `0110R-A12` | `verwilligen, wann auf Gräfl: Seiten` | abbreviation not expanded |
 | `0110R-A13` | `Wildprett angeflossen würde, so in` | technical-looking word directly read, interpretation separate |
-| `0110R-A14` | `den Teich laufen, und darinnen verfal-` | line-end division |
+| `0110R-A14` | `den [Teich/Theil?] [lauffen/kauffen?], und darinnen verfal-` | Das Originalbild scheint eher `Teich lauffen` zu stützen als die unabhängige Lesung `Theil kauffen`; alte Form `laufen` könnte das geschriebene ff still vereinfacht haben. Varianten, kein Urteil nach Sprachsinn. |
 | `0110R-A15` | `len solte, daß den Herrn Grafen und` | continued from prior line |
 | `0110R-A16` | `seinen Successoren solches auf` | Latin plural source-near |
 | `0110R-A17` | `den [⟦word(s)⟧] angeflossenes in Teich` | last word group uncertain, text continues in 0111 |
