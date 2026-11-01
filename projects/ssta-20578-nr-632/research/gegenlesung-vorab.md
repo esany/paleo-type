@@ -303,3 +303,13 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Anrede rechts oben, Z. 1 von oben: `Durchlauchtigster Churfürst,`
 - Haupttext rechts, Z. 3 von oben (Anrede mitgezählt): `Ew. Königl. Hoheit wollen dies`
 - Haupttext rechts, Z. 7 von oben (Anrede mitgezählt): `Majt. gewiesene [Gedult?], ⟦…⟧`
+
+## 0124R
+- Datum: 2026-11-02
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 124
+- Blind: ja (keine Lesung von 0124R vor der Bildprüfung eingesehen)
+- Haupttext rechts, Z. 2 von oben: `gnädigster Herr`
+- Haupttext rechts, Z. 12 von oben: `Georg Fridrich Grafen von [Einsiedel?],`
+- Haupttext rechts, Z. 9 von unten: `7. Novbr. 1763. und [præs.?] den 9ten Dito,`
+- Unsicherheit: Zählung bezieht sich nur auf den durchlaufenden rechten Haupttextblock; die gesonderte linke Anrede und der blasse untere Randvermerk wurden nicht mitgezählt.
