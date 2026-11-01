@@ -9,7 +9,7 @@ Arbeitsplan: `ARBEITSPLAN.md` auf `main` (Eigentümerentscheidung 31.10.2026).
 - **Vorab-Warteschlange:** Auf `review/nr632-gegenlesung-vorab` seit Commit `9b43954a6b102ee1f9990796061eafd04c77d0f5` zuerst `0105L-2` (Z. 14–16 von oben), `0112L-2` (2–3 Zeilen), danach 0123L–0126R. Keine zweite Probe ist damit schon erfolgt.
 - **Nächste fachliche Aktion:** Ein *anderer*, bisher unvoreingenommener Chat liest die beiden Nachproben blind am registrierten Bild und sichert die Abschnitte; danach vergleicht der Hauptchat ausschließlich gegen den jeweils **vor Einsicht** committeten eigenen Lesungsstand und klärt Abweichungen am Bild.
 - **Sperre:** 0112R bleibt bis zur Disposition der neuen 0112L-2-Probe gesperrt. F1/F2 und die wissenschaftlichen Gates G2–G6 sind nicht abgenommen.
-- **Werkzeug:** PR #375 auf Arbeitsbranch an `main` angepasst; neuer GitHub-CI-Nachweis und Prüferabnahme noch gesondert zu bestätigen. Kein Merge ohne Human-Owner-Entscheidung.
+- **Werkzeug:** PR #375 konfliktfrei, HEAD `0ed136f` mit GitHub-Runs `41343302861` und `41343302868` grün; **Prüferabnahme offen**. Der vorhandene Formatprüfer erkennt neue Nachprobenüberschriften mit `-2` noch nicht eigenständig; diese Grenze ist in PR #375 zur Prüfung gemeldet. Kein Merge ohne Human-Owner-Entscheidung.
 - **RÜCKKEHRANKER 2026-11-01 / #379: Nachproben 0105L-2 und 0112L-2 angefordert; 0112R gesperrt; keine neue Lesung.**
 - Frühere Rückkehrpunkt-Fassungen bleiben vollständig in der Git-Historie; darunter folgt der weiter bestehende Forschungskontext.
 
