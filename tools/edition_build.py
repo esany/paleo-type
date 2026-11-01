@@ -108,3 +108,15 @@ def sort_page(page: str) -> tuple[int, int, str]:
         return (int(page[:4]), 0 if page.endswith("L") else 1, "")
     return (9999, 0, page)
 
+
+def render_diplomatic(reading: str) -> str:
+    pieces = []
+    for token in UNCLEAR.split(reading):
+        if not token:
+            continue
+        if UNCLEAR.fullmatch(token):
+            pieces.append('<span class="uncertain">' + esc(token) + '</span>')
+            pieces.append('<span class="uncertainty-flag" aria-label="unsicher">?</span>')
+        else:
+            pieces.append(esc(token))
+    return "".join(pieces)
