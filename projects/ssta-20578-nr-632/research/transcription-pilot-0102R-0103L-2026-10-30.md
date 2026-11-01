@@ -342,6 +342,8 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### 0108R separate long narrow right-hand written field
 
+**0108R · begrenzte Quellenkontrolle 01.11.2026 (noch KEINE komplette seitenweise Neulesung):** Original eingebettetes JPEG des byteverifizierten Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, PDF-/Providerbild **0108**, 4304×3897 px, rechte Schriftfläche und ihre getrennte obere Anrede; Bildfenster Haupttext ungefähr x=2820–3940, y=930–3600. Eine **bereits vor dem Gegenlese-Chat entstandene, als ungeprüfter Entwurf markierte** KI-Tabelle wurde an drei vorher blind deklarierten Stellen mit der nun getrennt gespeicherten Probe auf `review/nr632-gegenlesung-vorab` verglichen. H01 `Allergnädigster Herr`: Übereinstimmung im sichtbar separaten Anredefeld. Haupttext Z. 9 / bisher A09: alte unmarkierte Form `Lehn-` gegen blindes `Lehe-`; vergrößertes Foto zeigt keine für diesen Chat sicher beweisbare n-/e-Grenze, deswegen **nicht als erwiesen falsches Wort**, sondern eng markierte Variante. Blind genannte Zeile „2 von unten“ mit `datis den 1. April und 3.` liegt im unteren Datumsabschnitt; die genaue Zuordnung zu den alten A25–A27 ist angesichts der zuvor **nur vorläufig** festgelegten Zeilenzählung nicht sicher; die Zeichenfolge selbst ist am Foto positiv lokalisierbar, die ordinalen Zeilenlocators aber zu prüfen. **0 sicher nachgewiesene unmarkierte Wortfehler in 3 verglichenen Zeilen, 1 unaufgelöste Wort-/Schreibvariante und 1 Locatorfrage.** Das ist **keine Freigabe** der als hochfehlerhaft bekannten Entwurfsseite; keine F2-Fehlerrate für eine neu angewandte Lesemethode und kein methodischer „passt“-Nachweis aus dem alten Entwurf. Für eine formal gültige seitenweise Nachlese-/Gegenprobe fehlt hier zudem der exakt lokal verifizierte **ursprüngliche Seitenlesungs-Commit** als eindeutiger Provenienzanker; keinen späteren, nur zufällig den Sammelowner ändernden Commit als solchen ausgeben.
+
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Diplomatic source-near working reading | Reading/phenomenon note |
@@ -355,7 +357,7 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 | `0108R-A06` | `an dem von ihm verlassenen, und auf` | positive phrases, written spacing approximate |
 | `0108R-A07` | `uns verfallenen Mann- und Wei-` | continued word visible at line break |
 | `0108R-A08` | `ber-Lehn-Guthe Knau, mit Lehen` | written join from A07, spelling and comma provisional |
-| `0108R-A09` | `die respective Lehn- und [⟦following group uncertain⟧]` | `respective` Latin-derived writing retained |
+| `0108R-A09` | `die respective [Lehe-/Lehn-?] und [⟦following group uncertain⟧]` | 01.11.2026 Originalbild-Nachprüfung: Vorab-Gegenlesung schlägt `Lehe-` vor, alte unmarkierte Arbeitsform war `Lehn-`; die graphische Endung wird ohne sichere Diskriminierung als Variante geführt, keine stillschweigende Vereinheitlichung. |
 | `0108R-A10` | `Hand, allergnädigst [abgeleget?],` | uncertain verb, visible letter grouping |
 | `0108R-A11` | `haben allergnädigst Dieselben, dem Vor-` | text partly visually crowded |
 | `0108R-A12` | `nehmen nach, [keinen?] Anstand ge-` | first group before `Anstand` unsettled |
