@@ -1,6 +1,6 @@
 # Nr. 632 — Vorab-Gegenlesung
 
-Vorab offen: 0115R, 0116L, 0116R, 0117L, 0117R, 0118L, 0118R, 0119L, 0119R, 0120L
+Vorab offen: 0118L, 0118R, 0119L, 0119R, 0120L, 0120R, 0121L, 0121R, 0122L, 0122R
 
 Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Abschnitt „Parameter: Gegenlesung“. Abschnitte nur anhängen, nie ändern.
 
