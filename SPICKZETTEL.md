@@ -126,3 +126,25 @@ Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze
 | Übergabestand des Prüfchats | offenes Issue mit Label `uebergabe` |
 | Aufträge an den Hauptchat | offene Issues mit Label `an:hauptchat` |
 | Offene Entscheidungen für dich | offene Issues mit Label `an:eigentümer` |
+
+
+## GitHub-Prüfbelege für den Hauptchat (Nr. 632)
+
+Bei `weiter` gilt für Nr. 632 die aktuelle Eigentümerentscheidung:
+**alle Seiten mit vorhandenen blinden Gegenlese-Abschnitten bis
+höchstens vier pro Durchgang** bearbeiten; erst danach kurz melden.
+Das ist eine Obergrenze, keine Anweisung, fachlich nötige Nachprüfung
+oder die Reihenfolge aus `ARBEITSPLAN.md` zu übergehen.
+Der gültige Vergleich richtet sich nach `docs/gegenlesung-vorab.md`
+und #371: deklarierte `Blind: ja`-Probe und gesicherter eigener
+Lesungs-Commit vor Einsicht, unabhängig von der Commit-Reihenfolge.
+
+Für den auf #368 Punkt 1 freigegebenen Prüfer legt der Hauptchat pro
+Durchgang eine datierte, nummerierte JSON-Meldung unter
+`projects/ssta-20578-nr-632/returns/` an und schreibt pro verglichener
+Seite die vereinbarte maschinenlesbare `Vergleich:`-Zeile in den
+Forschungsowner. Der Check auf GitHub führt
+`tools/work_return.py` und `tools/gegenlesung_check.py` aus;
+sein grünes Ergebnis belegt nur Git-/Format- und Rückkehrpunktprüfung,
+**keine** wissenschaftliche Transkriptionsgüte, keine Fachprüfung,
+keine automatische Freigabe oder Übernahme.
