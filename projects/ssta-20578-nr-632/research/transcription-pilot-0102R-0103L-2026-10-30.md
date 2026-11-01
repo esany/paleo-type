@@ -379,6 +379,8 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### 0109R separately ornate opening, not conflated with 0108R / 0109L
 
+**0109R · begrenzte Quellenkontrolle 01.11.2026 (noch KEINE komplette seitenweise Neulesung):** Eingebettetes Foto des byteverifizierten Original-Voll-PDF (SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`), PDF-/Providerbild **0109**, 4304×3897 px, rechte große Zierinitial-/Titulaturfläche, vergrößert etwa x=2120–3800, y=940–3410. Die unabhängig in `review/nr632-gegenlesung-vorab` mit `Blind: ja` ausgewiesenen drei Loci werden mit dem **schon vor der unabhängigen Probe als ungeprüft gespeicherten Altentwurf**, nicht mit einem methodisch neu/erst blind gelesenen Vollseitenstand, konfrontiert. H01: `Von Gottes Gnaden Wir` ist positiv bildgestützt, der Vorab-Kandidat `[Friderich?]` wird **nicht** ohne weiteres zur eindeutigen Hauptlesung befördert. Die siebte Titulaturzeile ab Titelbeginn (`zu der Marck und Ravensbergh, [Herr?]`) stimmt in der beobachtbaren Folge weitgehend mit alter A06, dabei bleibt die lokale Zählung `H01` vs. `A06` getrennt dokumentiert. Bei `von Ronov und Lieberstein` gegenüber früherem unmarkiertem `von Ronow und Bieberstein` trägt die Vergrößerung `Lieberstein` als graphisch näheren Kandidaten; `Bieberstein` war zu sicher. **Mindestens eine betroffene, zuvor unmarkierte Namenswortgruppe in drei geprüften Zeilen**, wobei der exakte Anfangsbuchstabe und die Ronov-/Ronow-Schlussform noch offen sind (keine Zweifelsauflösung aus Geschichte). Der alte Kandidat bleibt als verworfene/zu prüfende Fassung hier rekonstruierbar. Keine G2- oder F2-Abnahme: Rest der Seite ist weiter alter ungeprüfter Entwurf; der originale commitgenaue Erstlesungsstand der Texteinheit ist noch nicht an eine eindeutige seitenbezogene SHA gebunden.
+
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical line | Diplomatic source-near working reading | Reading/phenomenon note |
@@ -396,7 +398,7 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 | `0109R-A10` | `[⟦other official title⟧], und des [⟦title⟧]` | uncertain, not silently collapsed |
 | `0109R-A11` | `Unsers lieben getreuen, Herrn Johann` | positive textual sequence |
 | `0109R-A12` | `Albrechts, des Heil. Röm. Reichs [Graffens?]` | first and abbreviations as written; ending uncertain |
-| `0109R-A13` | `von Ronow und Bieberstein, [⟦further title⟧]` | proper nouns graphically positive but historical identification separate |
+| `0109R-A13` | `von [Ronov/Ronow?] und [Lieberstein?], [⟦further title⟧]` | 01.11.2026 Neuprüfung an vergrößertem Originalfoto und getrenntem Blindtext: vormals unmarkiertes `Bieberstein` nicht bildlich gesichert, der graphisch näherliegende Kandidat `Lieberstein` wird markiert; am Namenende `Ronov/Ronow` keine stille Angleichung oder historische Identifizierung. |
 | `0109R-A14` | `zu Oppurg, wegen Verlegung der Grenzen` | positive strong text |
 | `0109R-A15` | `und [Fortgerechtigkeit?] einige Diffe-` | noun difficult; written word division |
 | `0109R-A16` | `rentien entstanden, und Wir darauf` | continuation from A15, following text on next exposed carrier unknown |
