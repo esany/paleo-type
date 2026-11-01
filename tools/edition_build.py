@@ -49,7 +49,7 @@ def read_inventory(root: Path) -> list[dict[str, str]]:
         area, function, date, evidence, unresolved = cols
         slug = re.sub(r"[^a-z0-9]+", "-", area.lower()).strip("-")
         out.append({"anchor": f"doc-{slug}", "area": area, "function": function,
-                    "date": date or "offen", "evidence": evidence,
+                    "date": date if date not in ("", "–", "-") else "offen", "evidence": evidence,
                     "open": unresolved or "offen"})
     return out
 
