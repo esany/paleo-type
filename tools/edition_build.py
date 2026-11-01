@@ -132,3 +132,19 @@ def render_line(identifier: str, reading: str, note: str) -> str:
     else:
         body = number + text
     return '<li id="' + esc(anchor) + '" class="reading-line">' + body + '</li>'
+
+
+def render_page(page: str, rows: list[tuple[str, str, str]], verified: bool) -> str:
+    state = ('KI-Stichprobe: geprüft (keine Fachprüfung)' if verified
+             else 'KI-Entwurf, ungeprüft')
+    badge = '<span class="status ' + ('checked' if verified else 'draft') + '">' + state + '</span>'
+    link = '<span>Fotobeziehung offen; siehe Archivkatalog</span>'
+    if PAGE_ID.fullmatch(page):
+        num = page[:4]
+        url = f"https://www.archiv.sachsen.de/digitalisate/{GUID}/fullsize/{num}.jpg"
+        link = '<a rel="external" href="' + esc(url) + '">Foto beim Archiv (Ansicht ' + num + ')</a>'
+    lines = "\n".join(render_line(*row) for row in rows)
+    return ('<article class="page" id="page-' + esc(page.lower()) + '">'
+            '<h3>Schriftfläche ' + esc(page) + '</h3>' + badge
+            + '<p>' + link + '</p><ol class="diplomatic-lines">' + lines
+            + '</ol></article>')
