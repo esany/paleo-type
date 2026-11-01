@@ -4,7 +4,7 @@ Eigentümerentscheidung vom 31.10.2026. Gilt für jedes Projekt, jede KI und jed
 
 **Auslöser:** Der Eigentümer schreibt **„vorab“** oder **„gegenlesen“**, optional mit Projekt-ID (z. B. „vorab ssta-20578-nr-632“). Beide Wörter bedeuten dasselbe: offene Gegenlese-Aufträge abarbeiten. Ein Chat braucht außer dieser Datei und den Projektparametern nichts aus früheren Unterhaltungen.
 
-**Zweck:** Kommende Seiten werden **vor** ihrer Bearbeitung stichprobenweise gelesen. So ist die Gegenlesung blind, und der Hauptchat kann ohne Warten vergleichen.
+**Zweck:** Seiten werden von einem zweiten Chat stichprobenweise blind gelesen, möglichst **vor** ihrer Bearbeitung. So kann der Hauptchat ohne Warten vergleichen.
 
 ## Projekt und Parameter bestimmen
 
@@ -92,7 +92,12 @@ Kurz an den Eigentümer, in Alltagssprache:
   - Klärung am Bild
   - Urteil nach der Fehlerschwelle des Projekts
 - **Seite ohne Vorab:** lesen und speichern, als „Gegenlesung offen“ führen. Kein „passt“.
-- Ein Vergleich ist nur gültig, wenn der Vorab-Abschnitt **vor** dem Lesungs-Commit committet wurde.
+- **Gültig ist ein Vergleich**, wenn
+  1. der Gegenleser „Blind: ja“ erklärt hat (er kannte den Lesungstext nicht), und
+  2. der Hauptchat den Lesungsstand vergleicht, den er **vor dem Öffnen** des Abschnitts committet hatte (Commit im Vermerk nennen).
+
+  Ob der Vorab-Abschnitt vor oder nach diesem Lesungs-Commit entstand, spielt keine Rolle. Auch früher gelesene Seiten lassen sich so gültig gegenprüfen.
+- **Mehrere Seiten je Durchgang:** Der Hauptchat arbeitet in einem Durchgang alle Seiten ab, für die ein Vorab-Abschnitt vorliegt, höchstens so viele, wie der Plan des Projekts je Durchgang erlaubt. Danach meldet er sich.
 
 ## Ein Projekt einrichten
 
