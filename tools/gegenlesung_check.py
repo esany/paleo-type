@@ -65,8 +65,19 @@ def review_sections(contents: str, findings: list[str], *, all_sections: bool = 
                     findings.append(f"{page}: missing {label} in review section")
             if not re.search(r"^-\s*Blind:\s*ja(?:[\s;,.]|$)", section, re.M):
                 findings.append(f"{page}: reviewer did not declare Blind: ja")
-            if not re.search(r"^-\s*(?:.*\bZ\.\s*\d+\b.*):\s*.+", section, re.M):
-                findings.append(f"{page}: no numbered physical-line locus")
+            has_numbered_line = bool(re.search(
+                r"^-\s*(?:.*\bZ\.\s*\d+\b.*):\s*.+", section, re.M
+            ))
+            # Some photographed views show only bleed-through and therefore
+            # have no independently transcribable physical lines. Do not force
+            # fabricated graphemes or numbered lines to satisfy a format check.
+            # This validates an explicit ZERO observation, not a 2-3-line PASS.
+            zero_line_observation = bool(
+                re.search(r"^-\s*Stichprobe:\s*0(?:\s|$)", section, re.M)
+                and re.search(r"^-\s*Bildbefund[^:]*:\s*\S+", section, re.M)
+            )
+            if not (has_numbered_line or zero_line_observation):
+                findings.append(f"{page}: no numbered physical-line locus or evidenced zero-line observation")
     return result
 
 
