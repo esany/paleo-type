@@ -26,7 +26,8 @@ Eigentümerentscheidung vom 31.10.2026. Gilt für jedes Projekt, jede KI und jed
 ## Schritt 1 · Offene Seiten bestimmen
 
 - In der Vorab-Datei **nur** die Zeile `Vorab offen: …` ganz oben und die Überschriften `## <Seite>` lesen, keine Lesungen.
-- **Offen** = Seiten aus `Vorab offen` ohne eigenen Abschnitt. Eine Angabe wie `0105L (Z. 14–16 von oben)` heißt: genau diese Zeilen lesen.
+- **Offen** = Einträge aus `Vorab offen` ohne eigenen Abschnitt. Eine Angabe wie `0105L (Z. 14–16 von oben)` heißt: genau diese Zeilen lesen.
+- **Nachprobe:** Ein Eintrag mit Zusatz, z. B. `0105L-2 (Z. 14–16 von oben)`, ist eine zweite Probe einer schon geprüften Seite. Sie ist offen, solange es keinen Abschnitt `## 0105L-2` gibt. Ältere Abschnitte derselben Seite enthalten Lesungstext und werden nicht geöffnet.
 - Bis zu **5** offene Seiten in der genannten Reihenfolge übernehmen.
 - Fehlt die Zeile oder ist nichts offen: dem Eigentümer „keine offenen Gegenlese-Aufträge“ melden und enden.
 
@@ -84,7 +85,7 @@ Kurz an den Eigentümer, in Alltagssprache:
 
 ## Pflichten des Hauptchats (Stichwort „weiter“)
 
-- **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen` in der Vorab-Datei auf die nächsten **10** Seiten in Planreihenfolge ohne Abschnitt setzen. Nur diese Zeile ändern.
+- **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen` in der Vorab-Datei setzen: **zuerst alle Nachproben**, die der Plan nach einer Korrektur verlangt (z. B. `0112L-2 (2–3 Zeilen)`), dann die nächsten Seiten in Planreihenfolge ohne Abschnitt, zusammen höchstens **10** Einträge. Nur diese Zeile ändern.
 - **Vergleich:** Seite lesen und committen, **erst dann** ihren Vorab-Abschnitt öffnen. Im Forschungsowner einen Vergleichsvermerk anlegen:
   - eigener Lesungs-Commit
   - verglichene Zeilen
@@ -99,6 +100,19 @@ Kurz an den Eigentümer, in Alltagssprache:
   Ob der Vorab-Abschnitt vor oder nach diesem Lesungs-Commit entstand, spielt keine Rolle. Auch früher gelesene Seiten lassen sich so gültig gegenprüfen.
 - **Mehrere Seiten je Durchgang:** Der Hauptchat arbeitet in einem Durchgang alle Seiten ab, für die ein Vorab-Abschnitt vorliegt, höchstens so viele, wie der Plan des Projekts je Durchgang erlaubt. Danach meldet er sich.
 
+## Namensstellen für den Eigentümer (freiwillig, je Projekt)
+
+Nur, wenn `ARBEITSPLAN.md` unter „Parameter: Gegenlesung“ eine Zahl für **Namensstellen je Durchgang** nennt.
+
+- **Was:** Personen- und Ortsnamen, bei denen die eigene Lesung unsicher ist oder von der Vorab-Lesung abweicht. Unsichere zuerst.
+- **Wie:** Am Ende von „weiter“ zeigt der Hauptchat dem Eigentümer je Stelle **nur einen Bildausschnitt** mit Seite und Zeile. Er zeigt keine eigene Lesung und keine Vorschläge. Der Eigentümer tippt, was er liest, oder „?“.
+- **Vorher:** Die eigene Lesung der Stelle ist schon committet.
+- **Bildausschnitte** nur im Chat, nie im Repo.
+- **Festhalten** im Forschungsowner, je Stelle eine Zeile:
+  `Namenshinweis: <Seite> <Locator> | Eigentümer: <Text> | Lesung <sha> | Klärung am Bild: <Ergebnis>`
+- **Gewicht:** Ein Hinweis, keine Gegenlesung. Er zählt nicht für die Fehlerschwelle. Abweichungen werden am Bild geklärt. Bleibt es offen, als `[a/b]` stehen lassen.
+- Antwortet der Eigentümer nicht, weiterarbeiten; die Stellen bleiben offen.
+
 ## Ein Projekt einrichten
 
 Im Projekt `projects/<id>/ARBEITSPLAN.md` den Abschnitt „Parameter: Gegenlesung“ anlegen. Die Vorab-Datei mit der Zeile `Vorab offen:` auf ihrem Branch anlegen. Das Projekt in `SPICKZETTEL.md` unter „Aktive Projekte“ eintragen.
@@ -107,7 +121,6 @@ Im Projekt `projects/<id>/ARBEITSPLAN.md` den Abschnitt „Parameter: Gegenlesun
 
 - KI-Gegenlesung, keine Fachprüfung, kein Gate.
 - Die Gegenlesung entscheidet nicht allein: Abweichungen werden am Bild geklärt.
-
 
 **Nullzeilen-Bildbefund (kein positives Gegenleseergebnis):** Trägt eine
 Fotoansicht tatsächlich **keine** mit eigener Leserichtung sicher
@@ -121,42 +134,3 @@ dies als **dokumentierte Nullbeobachtung**, **nicht** als positive
 Flächenabnahme. Für tatsächlich lesbare Schrift bleiben nummerierte physische
 Zeilenlocators zwingend. Eine Nullbeobachtung ist nicht automatisch
 quellenkritisch bewiesen; sie bleibt eine überprüfbare KI-Aussage am Bild.
-
-## GitHub-Prüfung der Durchgänge (für Nr. 632, #368 Punkt 1)
-
-Der Hauptchat speichert bei abgeschlossener Runde auf dem **Forschungsbranch**
-die fortlaufend nummerierte Meldedatei
-`projects/ssta-20578-nr-632/returns/JJJJ-MM-TT-N.json`.
-Sie nennt `baseline_commit`, `result_commit`, `research_owner`,
-`recorded_status_sha256` und den neuen `continuation_anchor`
-(oder `stop_reason` plus `stop_evidence`). Die Meldung ist kein eigenes
-Wahrheits- oder Fortschrittssystem: Der STATUS und der Forschungsowner bleiben
-maßgeblich. Der Prüf-Job führt `tools/work_return.py` an der zuletzt
-committeten Meldung auf GitHub aus.
-
-Für jede bereits tatsächlich verglichene Seite enthält der kanonische
-Forschungsowner zusätzlich genau eine maschinenlesbare Zeile:
-
-`Vergleich: 0106R | Lesung <40-hex-SHA> | Vorab <40-hex-SHA> | Abweichungen 1 | davon Vereinheitlichung 0 | Urteil passt`
-
-Die SHA bei `Lesung` gehört zum **vor Öffnen des Gegenlesetexts**
-gesicherten eigenen Textstand und muss selbst den Forschungsowner ändern.
-Die SHA bei `Vorab` gehört zur unabhängigen Gegenlese-Datei, deren
-Abschnitt für die Seite ausdrücklich `Blind: ja` enthält. **Keine
-zeitliche Reihenfolge zwischen diesen beiden Commits wird verlangt**
-(Entscheidung #371). Die Zeile wird erst nach bildgebundener Klärung
-geschrieben; `Abweichungen` zählt unmarkiert falsche Wörter,
-`davon Vereinheitlichung` deren ausdrücklich identifizierten Anteil,
-das Urteil ist `passt` oder `überarbeiten`. Die fachliche
-Begründung, offene Alternativen und Originalbild-Fundstellen bleiben
-direkt daneben im Forschungsowner erhalten.
-
-`tools/gegenlesung_check.py` und der GitHub-Actions-Job
-`.github/workflows/nr632-gegenlesung.yml` prüfen das Format, die
-deklarierte Blindheit, die tatsächlich vorhandenen Commits und ob
-der Lesungs-Commit den genannten Forschungsowner geändert hat.
-`passt` mit mehr als einem angegebenen unmarkierten Wortfehler wird
-abgewiesen. Die Ausführung läuft als PR-Check; der GitHub-Check ist
-weder eine maschinelle Transkription noch eine fachwissenschaftliche
-Wahrheitsprüfung und kann nicht beweisen, wann ein Chat einen Text
-tatsächlich geöffnet hat.
