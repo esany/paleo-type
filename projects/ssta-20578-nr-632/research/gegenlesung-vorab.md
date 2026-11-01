@@ -171,3 +171,48 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttext links oben, Z. 2 von oben: `Ratification sigillando et sub-`
 - Haupttext links oben, Z. 5 von oben: `Anno 1678.`
 - Kanzleivermerk links unten, Z. 2 von oben (eigener Vermerkblock): `Abschriften, mit ihr [Originali?] ⟦…⟧`
+
+## 0115R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 115
+- Blind: ja; keine vorhandenen Lesungen dieses Bereichs eingesehen
+- Haupttext rechts, Z. 4 von oben: `gewesenen [Revers?] und ⟦…⟧-`
+- Haupttext rechts, Z. 11 von oben: `Differentien, vor einer desfalls`
+- Haupttext rechts, Z. 19 von oben: `der Erste den 26. May, ao 1679.`
+
+## 0116L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 116
+- Blind: ja; keine vorhandenen Lesungen dieses Bereichs eingesehen
+- Haupttext links, Z. 1 von oben: `gewesenen Grenz-Differentien, in`
+- Haupttext links, Z. 7 von oben: `Mann- und Weiber-Lehe-Güther`
+- Haupttext links, Z. 10 von oben: `einen Antheil, und die Recipro-`
+
+## 0116R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 116
+- Blind: ja; keine vorhandenen Lesungen dieses Bereichs eingesehen
+- Haupttext rechts, Z. 10 von oben: `zu gleichen Theilen vertheilet`
+- Haupttext rechts, Z. 11 von oben: `werden, wie auch die Lehe davon`
+- Haupttext rechts, Z. 18 von oben: `Ihro Königl. Mayt. aller-`
+
+## 0117L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 117
+- Blind: ja; keine vorhandenen Lesungen dieses Bereichs eingesehen
+- Haupttext links, Z. 7 von oben: `Mann- und Weiber Lehe güther`
+- Haupttext links, Z. 12 von oben: `geziemend bitte, den Herrn`
+- Haupttext links, Z. 15 von oben: `und Ehe-⟦…⟧ des Geld-`
+
+## 0117R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 117
+- Blind: ja; keine vorhandenen Lesungen dieses Bereichs eingesehen
+- Überschrift rechts, eigene Schriftzeile oben: `Lehn-Schein`
+- Haupttext rechts, Z. 1 unter der Überschrift: `Den 24ten Martii, [176?] ist der Hoch- und Wohl-`
+- Kanzleivermerk rechts unter dem Haupttext, Z. 1: `Signatum Dreßden ut supra`
