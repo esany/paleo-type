@@ -100,6 +100,19 @@ Kurz an den Eigentümer, in Alltagssprache:
   Ob der Vorab-Abschnitt vor oder nach diesem Lesungs-Commit entstand, spielt keine Rolle. Auch früher gelesene Seiten lassen sich so gültig gegenprüfen.
 - **Mehrere Seiten je Durchgang:** Der Hauptchat arbeitet in einem Durchgang alle Seiten ab, für die ein Vorab-Abschnitt vorliegt, höchstens so viele, wie der Plan des Projekts je Durchgang erlaubt. Danach meldet er sich.
 
+## Namensstellen für den Eigentümer (freiwillig, je Projekt)
+
+Nur, wenn `ARBEITSPLAN.md` unter „Parameter: Gegenlesung“ eine Zahl für **Namensstellen je Durchgang** nennt.
+
+- **Was:** Personen- und Ortsnamen, bei denen die eigene Lesung unsicher ist oder von der Vorab-Lesung abweicht. Unsichere zuerst.
+- **Wie:** Am Ende von „weiter“ zeigt der Hauptchat dem Eigentümer je Stelle **nur einen Bildausschnitt** mit Seite und Zeile. Er zeigt keine eigene Lesung und keine Vorschläge. Der Eigentümer tippt, was er liest, oder „?“.
+- **Vorher:** Die eigene Lesung der Stelle ist schon committet.
+- **Bildausschnitte** nur im Chat, nie im Repo.
+- **Festhalten** im Forschungsowner, je Stelle eine Zeile:
+  `Namenshinweis: <Seite> <Locator> | Eigentümer: <Text> | Lesung <sha> | Klärung am Bild: <Ergebnis>`
+- **Gewicht:** Ein Hinweis, keine Gegenlesung. Er zählt nicht für die Fehlerschwelle. Abweichungen werden am Bild geklärt. Bleibt es offen, als `[a/b]` stehen lassen.
+- Antwortet der Eigentümer nicht, weiterarbeiten; die Stellen bleiben offen.
+
 ## Ein Projekt einrichten
 
 Im Projekt `projects/<id>/ARBEITSPLAN.md` den Abschnitt „Parameter: Gegenlesung“ anlegen. Die Vorab-Datei mit der Zeile `Vorab offen:` auf ihrem Branch anlegen. Das Projekt in `SPICKZETTEL.md` unter „Aktive Projekte“ eintragen.

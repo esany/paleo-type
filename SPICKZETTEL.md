@@ -1,6 +1,6 @@
 # Spickzettel für den Eigentümer
 
-Alle Stichworte, Prompts und Handgriffe an einem Ort. Gilt für jedes Projekt. Stand: **31.10.2026**.
+Alle Stichworte, Prompts und Handgriffe an einem Ort. Gilt für jedes Projekt. Stand: **01.11.2026**.
 
 **Pflege:** Wer ein Stichwort, einen Prompt oder einen Ablauf einführt oder ändert (Astra, Claude oder eine andere KI), ändert ihn **hier im selben PR**. Hier stehen nur allgemeine Regeln; was ein einzelnes Projekt betrifft, steht in dessen `projects/<id>/ARBEITSPLAN.md`. Ältere Fassungen stehen in der Git-Historie.
 
@@ -118,7 +118,7 @@ höchstens drei Fragen an mich in Alltagssprache.
 - **Zwischenstände auf `main`:** wann, steht im Plan des Projekts. Der Prüfchat prüft, du entscheidest.
 - **Werkzeug-Vorschlag:** höchstens ein Werkzeug auf einmal, mit Nutzen und Aufwand in Alltagssprache. Du sagst ja oder nein.
 - **Alte Entwürfe aufräumen:** einmal entscheiden, was bleibt.
-- **Lesungen beurteilen musst du nie.**
+- **Lesungen beurteilen musst du nie.** Freiwillig: Am Ende von „weiter“ zeigt dir Astra bis zu 5 Bildausschnitte mit Namen, ohne ihre Lesung. Du tippst, was du liest, oder „?“. Keine Antwort ist auch in Ordnung.
 
 ## 5 · Rettungseingriff festhalten
 

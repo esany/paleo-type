@@ -237,3 +237,5 @@ Der allgemeine Ablauf steht in docs/gegenlesung-vorab.md. Für dieses Projekt gi
   (derzeit PR #359)
 - Fehlerschwelle: mehr als ein unmarkiert falsches Wort in der Stichprobe
   (Vereinheitlichung und Abkürzungsauflösung zählen als Fehler) → überarbeiten.
+- Namensstellen je Durchgang (Eigentümer, nur Bild): höchstens 5
+  (Eigentümerentscheidung 01.11.2026; Ablauf in docs/gegenlesung-vorab.md).
