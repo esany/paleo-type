@@ -81,3 +81,48 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttext links, Z. 3 von oben: `unsre Commissarien zu verordnen,`
 - Haupttext links, Z. 9 von oben: `ist solches dergestalt bewerckstellig[et?] ⟦…⟧`
 - Haupttext links, Z. 13 von oben: `der Vollziehung dieses Recessus ein ⟦…⟧`
+
+## 0110R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), unabhängiger Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 110
+- Blind: ja (keine Lesungen anderer Leser zu 0110R vor eigener Lesung eingesehen)
+- Haupttext rechts, Z. 3 von oben: `und ihnen zukommen solte; So ist`
+- Haupttext rechts, Z. 9 von oben: `[cessus?] verbleiben, und die Zeit im` (Zeilenbeginn setzt ein Wort der vorigen Zeile fort)
+- Haupttext rechts, Z. 14 von oben: `den Theil kauffen, und darinnen verfal-`
+
+## 0111L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), unabhängiger Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 111
+- Blind: ja (keine Lesungen anderer Leser zu 0111L vor eigener Lesung eingesehen)
+- Haupttext links, Z. 6 von oben: `diese Special Vorstellung keine Con-`
+- Haupttext links, Z. 8 von oben: `zu machen, so hiermit expresse be-`
+- Haupttext links, Z. 12 von oben: `Puncten und Clausulen bestehen, darü-`
+
+## 0111R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), unabhängiger Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 111
+- Blind: ja (keine Lesungen anderer Leser zu 0111R vor eigener Lesung eingesehen)
+- Abschlussformel rechts, Z. 1 von oben: `⟦…⟧ und geben Zu [Morizburgk?] an der`
+- Abschlussformel rechts, Z. 2 von oben: `Elster, den 20. May Anno 1679.`
+- Große Unterschrift rechts, erste separate Schriftzeile unter der Datierung: `[Moritz?]`
+
+## 0112L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), unabhängiger Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 112
+- Blind: ja (keine Lesungen anderer Leser zu 0112L vor eigener Lesung eingesehen)
+- Überschrift/Haupttext links, Z. 1 von oben (nach Zierzug): `[Zu?] wißen, Demnach zwischen dem [Hoch-?]`
+- Haupttext links, Z. 9 von oben (Überschrift als Z. 1): `scripten, de datis [Morizburg?] an`
+- Haupttext links, Z. 11 von oben (Überschrift als Z. 1): `4. Octobr: [1675?] ⟦…⟧`
+
+## 0112R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), unabhängiger Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 112
+- Blind: ja (keine Lesungen anderer Leser zu 0112R vor eigener Lesung eingesehen)
+- Haupttext rechts, Z. 1 von oben: `maßen verglichen, und [recassiret?]`
+- Haupttext rechts, Z. 8 von oben: `excipiendo eingewendet, wie Er`
+- Haupttext rechts, Z. 11 von oben: `[Falls?] Zu documentiren vermöchte,`
