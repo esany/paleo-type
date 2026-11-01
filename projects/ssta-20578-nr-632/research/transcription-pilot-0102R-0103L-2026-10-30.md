@@ -514,6 +514,32 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### 0112L — ornate initial and main left script
 
+**0112L — vollständiger neuer Bildlesungsversuch, 01.11.2026; eigenständiger Quellenstand vor erneuter unabhängiger Blindprobe.** Die komplette linke, mit einer großen Zierinitiale beginnende Schriftfläche auf dem eingebetteten Originalfoto der kontrollierten Voll-PDF wurde erneut zeilenweise betrachtet. Quelle `FILE-SSTA-20578-NR632-FULL-PDF-20261030`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, PDF-/Providerbild **0112**, extrahiertes Foto **4304×3897 px**. Hauptschrift links, Bildlocators x≈930–2200/y≈1450–3350; zusätzlich großgezogene Initialschleife y≈1020–1600. **17 physische Schrift-Baselines: H01 und A01–A16.** Die hohe Zierfläche über H01 ist keine zusätzliche befundene Textzeile. Reste/Überschneidungen am rechten Rand sind keine sichere fortlaufende Schriftfläche der 0112L-Hauptspalte. In den nachfolgenden Zeilen ist `[... ?]` eine graphische Hypothese, `⟦…⟧` ein am Bild sichtbarer, aber nicht lesbar entscheidbarer Bereich und `-` nur ein vorsichtig beobachteter physischer Wort-/Zeilenende-Kandidat, niemals eine ergänzte Rechtsform.
+
+| Neu gelesener physischer Locator | Diplomatischer Bildversuch 01.11.2026 | Genau begrenzte Quellensicherheit |
+|---|---|---|
+| `0112L-H01` | `Zu wißen, Demnach zwischen dem [Hoch-?]` | Großes Zier-Z und folgende eigene Schriftbasis direkt sichtbar; `Hoch-` ist noch ein Kandidat, kein aus dem Vordokument ergänzter Titel. |
+| `0112L-A01` | `[fürstl:?] [Sächß:?] Ambt [⟦Orts-/Amtsgruppe⟧] eines, und` | Anfang folgt räumlich der H01-Gruppe; besondere Kürzung, ausgeschriebene Titel nicht behauptet. |
+| `0112L-A02` | `dem Gräfl: [Reußischen?] Gerichten zu` | Erste und letzte Gruppe gut zu verfolgen; Schriftform des Namens als Kandidat. |
+| `0112L-A03` | `Oppurg, andern Theils, die Jagdgerecht-` | Physischer Wortschluss rechts, Fortsetzung in A04 nur graphisch plausibel. |
+| `0112L-A04` | `tigkeit, und was diesem mehr anhängig` | Getrennte Zeilenbasis, wahrscheinliche Wortanschlussfolge A03/A04. |
+| `0112L-A05` | `betrif: einige Differentien sich [⟦Endgruppe⟧]` | `Differentien` sichtbarer Lateinismus; nicht gelesene Endgruppe nicht ergänzt. |
+| `0112L-A06` | `[ereignen?] wollen, daher und Krafft er-` | Verbgruppe nur als Kandidat, Wortbruch am rechten Zeilenrand. |
+| `0112L-A07` | `gangener [Höchsten?] [⟦Mittelgruppe⟧] gnädigster Re-` | `gangener` Anfangsfortsetzung; Kürzungs-/Binnenzeichen offen, keinen Kanzleiformeltext hinzudichten. |
+| `0112L-A08` | `scripten, de datis [Morizburg/Moritzburg?] an` | Eigene sichtbare `de datis`-Gruppe, Ortsnamensgraphie nicht unabhängig entschieden. |
+| `0112L-A09` | `der Elster den 23 Martij 1677. und` | Schriftlich dargestelltes Datum, keine Materialdatierung. |
+| `0112L-A10` | `4. Octbr: [1675?]. [⟦weitere Schriftgruppe⟧], des [Werck?]` | Schlussziffer der Jahreszahl im Bild eher `5` als `8`; rechts angrenzende Gruppe nur bildhypothetisch, keine Datumsangleichung. |
+| `0112L-A11` | `mit Zuziehung gewisser hierzu ver-` | Sichtbarer Zeilenbruch, historische Wortform nicht ersetzt. |
+| `0112L-A12` | `ordneter Personen, gründlich unter-` | Anfang folgt graphisch A11; weiterer Bruch nach `unter-`. |
+| `0112L-A13` | `sucht, und in eventum, auch bis zu` | Eigenständige physische Zeile, lateinischer Ausdruck bewahrt. |
+| `0112L-A14` | `Sr: Hochfürstl: Durchl: zu Sachsen` | Kürzungen nur wie geschrieben; keine nachträgliche Auflösung. |
+| `0112L-A15` | `Naumburg, Unsers gnädigsten Herrn` | Wortfolgen am Bild sichtbar; keine separate Personenidentifizierung. |
+| `0112L-A16` | `gnädigsten ratification [folgender?] [⟦Endgruppe⟧]` | Abschluss berührt die rechte Schriftflächengrenze; Folgewort und Anschluss zu 0112R offen. |
+
+**Stand und Grenze:** Dies ist eine **vollständige Durchsicht aller 17 sichtbaren Haupt-Baselines**, jedoch keine vollständige in jedem Buchstaben abgesicherte Lesung, keine unabhängige Gegenlesung und keine F2-Methodenvergleichsmessung. Der Bearbeiter kennt ältere Kandidaten und die erste fehlerhafte Vergleichsstichprobe; dieser zweite Bildversuch ist ausdrücklich **nicht blind** gegenüber dieser Forschungshistorie. Die **nachstehende frühere Tabelle bleibt nur als historische, fehleranfällige Kandidatenschicht** erhalten, nicht als gleichrangige aktuelle Diplomatik. Ein *neuer* unabhängiger Gegenlese-Chat muss nun 2–3 selbst ausgewählte Bildzeilen zu diesem **hier zuerst committeten Stand** ohne Einsicht in Textfassungen prüfen. Bis zu einer belegten frischen Probe **0112L = erneute Gegenlesung offen; kein „passt“** und **0112R vorerst nicht anfangen** (Schwelle der alten Stichprobe: mindestens 2 unmarkierte falsche Wortgruppen). Die andere offene Nachkorrekturprobe `0105L-A14–A16` bleibt unabhängig hiervon für F1 erforderlich.
+
+**Historische erste Tabelle (30.10./31.10., nur zur Rückverfolgbarkeit; von obiger Neulesung ersetzt):**
+
 **0112L, direkte Quellenkontrolle 01.11.2026:** Registrierte Voll-PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, Originalfoto PDF-/Providerbild 0112 (4304×3897 px), linke Schriftfläche x≈800–2220/y≈840–3370. Der getrennte Review-Abschnitt erklärt `Blind: ja` und nennt drei Stellen: H01 nach Zierschrift, die Zeile `scripten, de datis ...` sowie die Zeile `4. Octbr: ...`. Der ältere ungeprüfte Entwurf hatte **mindestens zwei nicht markierte, am Bild nicht haltbare Wortformen**: H01 `Durch-` statt graphisch näherem `[Hoch-?]` und A08 `Merseburg` statt `[Morizburg/Moritzburg?]`. Außerdem ist die bisher feste Datums-Endziffer `8` von `1678` gegenüber dem unabhängigen Kandidaten `[1675?]` graphisch nicht sicher; Variante statt korrigierter Jahreszahl. **Mindestens 2 unmarkiert falsche Wortgruppen an 3 geprüften Loci; Schwelle >1 überschritten.** Alte Zeilen als Variantenhistorie erhalten, Haupttabelle quellengebunden markiert. Keine vollständige Seiten-Neulesung und kein gültiges begrenztes `passt`; 0112L benötigt nach erneuter Vollseiten-Neulesung eine frische unabhängige Gegenprobe, bevor die nächste Seite bearbeitet oder ein F2-Methodenurteil beansprucht wird. Auch für diesen alten Entwurf ist der ursprüngliche seitenbezogene Lesungs-Commit noch nicht sicher identifiziert; keine erfundene maschinenlesbare `Vergleich:`-Zeile.
 
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
