@@ -37,6 +37,11 @@ def strip_code(value: str) -> str:
     return value[1:-1] if len(value) >= 2 and value.startswith(backtick) and value.endswith(backtick) else value
 
 
+def plain_inventory(value: str) -> str:
+    """Strip presentation-only Markdown without touching diplomatic readings."""
+    return value.replace("**", "").replace(chr(96), "")
+
+
 def read_inventory(root: Path) -> list[dict[str, str]]:
     file = root / PROJECT / "research/content-document-function-inventory-2026-10-30.md"
     if not file.is_file():
@@ -48,9 +53,11 @@ def read_inventory(root: Path) -> list[dict[str, str]]:
             continue
         area, function, date, evidence, unresolved = cols
         slug = re.sub(r"[^a-z0-9]+", "-", area.lower()).strip("-")
-        out.append({"anchor": f"doc-{slug}", "area": area, "function": function,
-                    "date": date if date not in ("", "–", "-") else "offen", "evidence": evidence,
-                    "open": unresolved or "offen"})
+        out.append({"anchor": f"doc-{slug}", "area": plain_inventory(area),
+                    "function": plain_inventory(function),
+                    "date": plain_inventory(date) if date not in ("", "–", "-") else "offen",
+                    "evidence": plain_inventory(evidence),
+                    "open": plain_inventory(unresolved) if unresolved else "offen"})
     return out
 
 
@@ -60,6 +67,7 @@ def read_lines(root: Path) -> tuple[dict[str, tuple[str, str]], dict[str, bool]]
         raise FileNotFoundError("no canonical transcription-pilot-*.md sources")
     latest: dict[str, tuple[str, str]] = {}
     checked: dict[str, bool] = {}
+    highest_sample: dict[str, int] = {}
     for file in files:
         for line in file.read_text(encoding="utf-8").splitlines():
             cols = table_cells(line)
@@ -70,7 +78,12 @@ def read_lines(root: Path) -> tuple[dict[str, tuple[str, str]], dict[str, bool]]
                     latest[key] = (reading, " | ".join(cols[2:]))
             m = CHECK.fullmatch(line)
             if m and int(m["normalized"]) <= int(m["errors"]):
-                checked[m["page"]] = m["decision"] == "passt" and int(m["errors"]) <= 1
+                recorded_id = m["page"]
+                page, sep, suffix = recorded_id.partition("-")
+                number = int(suffix) if sep else 1
+                if number >= highest_sample.get(page, 0):
+                    checked[page] = m["decision"] == "passt" and int(m["errors"]) <= 1
+                    highest_sample[page] = number
     return latest, checked
 
 
@@ -79,7 +92,7 @@ def status_lines(root: Path) -> dict[str, str]:
     values = {}
     if file.is_file():
         for line in file.read_text(encoding="utf-8").splitlines():
-            m = re.match(r"^- \*\*(Forschungsstand|Nächste fachliche Aktion|Sperre):\*\* (.+)$", line)
+            m = re.match(r"^- \*\*(Stand für den Eigentümer):\*\* (.+)$", line)
             if m and m[1] not in values:
                 values[m[1]] = m[2].replace(chr(96), "").replace("**", "")
     return values
