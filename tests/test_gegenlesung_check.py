@@ -185,6 +185,63 @@ class GegenlesungCI(unittest.TestCase):
         self.assertNotEqual(0, rc)
 
 
+
+    @staticmethod
+    def followup_section(page, blind="ja"):
+        return (
+            f"\n## {page}\n"
+            "- Datum: 2026-11-02\n"
+            "- Leser: other fresh blind chat\n"
+            "- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 105\n"
+            f"- Blind: {blind}\n"
+            "- Haupttext links, Z. 14 von oben: " + chr(96) + "[Wort?]" + chr(96) + "\n"
+        )
+
+    def followup_commit(self, sections):
+        self.review.write_text(
+            self.review.read_text(encoding="utf-8") + "".join(sections),
+            encoding="utf-8",
+        )
+        self.git("add", ".")
+        self.git("commit", "-qm", "independent original and follow-up sections")
+        return self.git("rev-parse", "HEAD")
+
+    def test_followup_nonblind_section_rejected(self):
+        # Old HEADER silently absorbs ## 0105L-2 into the previous 0106R.
+        pre = self.followup_commit([
+            self.followup_section("0105L-2", blind="nein")
+        ])
+        rc, out = self.check(review_ref=pre)
+        self.assertNotEqual(0, rc, out)
+        self.assertIn("0105L-2: reviewer did not declare Blind: ja", out["findings"])
+
+    def test_followup_cannot_borrow_original_review_section(self):
+        # A comparison citing the -2 sample must not bind to ## 0105L.
+        pre = self.followup_commit([self.followup_section("0105L")])
+        rc, out = self.check(
+            line=f"Vergleich: 0105L-2 | Lesung {self.reading} | Vorab {pre} "
+                 "| Abweichungen 0 | davon Vereinheitlichung 0 | Urteil passt",
+            review_ref=pre,
+        )
+        self.assertNotEqual(0, rc, out)
+        self.assertIn(
+            "0105L-2: no review section in active review branch", out["findings"]
+        )
+
+    def test_original_and_followup_are_distinct_valid_keys(self):
+        pre = self.followup_commit([
+            self.followup_section("0105L"),
+            self.followup_section("0105L-2"),
+        ])
+        rc, out = self.check(
+            line=f"Vergleich: 0105L-2 | Lesung {self.reading} | Vorab {pre} "
+                 "| Abweichungen 0 | davon Vereinheitlichung 0 | Urteil passt",
+            review_ref=pre,
+        )
+        self.assertEqual(0, rc, out)
+        self.assertEqual(3, out["review_sections"])
+        self.assertEqual(1, out["checked"])
+
     def test_work_return_explicitly_rejects_missing_new_status_anchor(self):
         # A malformed block must fail via the REAL work_return script.
         import hashlib
