@@ -126,3 +126,48 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttext rechts, Z. 1 von oben: `maßen verglichen, und [recassiret?]`
 - Haupttext rechts, Z. 8 von oben: `excipiendo eingewendet, wie Er`
 - Haupttext rechts, Z. 11 von oben: `[Falls?] Zu documentiren vermöchte,`
+
+## 0113L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 113
+- Blind: ja (keine fremde Lesung dieser Bildbereiche eingesehen)
+- Haupttext links, Z. 4 von oben: `lassen, die hohe Jagd im Brande die`
+- Haupttext links, Z. 12 von oben: `zur lincken Seiten hinweg streichet,`
+- Haupttext links, Z. 15 von oben: `⟦…⟧ man ausdrücklich reservi-`
+
+## 0113R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 113
+- Blind: ja (keine fremde Lesung dieser Bildbereiche eingesehen)
+- Haupttext rechts, Z. 4 von oben: `ingleichen die Jagd auf deren Feldern,`
+- Haupttext rechts, Z. 11 von oben: `beständig und ohne Contradiction`
+- Haupttext rechts, Z. 14 von oben: `Vergleich, ist dem Herrn Grafen die`
+
+## 0114L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 114
+- Blind: ja (keine fremde Lesung dieser Bildbereiche eingesehen)
+- Haupttext links, Z. 2 von oben: `als Gebrauchs der Niedern [Koppel?] Jagd,`
+- Haupttext links, Z. 6 von oben: `Fluß, [vorbehalt?], und Fischen exerciret,`
+- Haupttext links, Z. 13 von oben: `weiter bis auf den Weg, welcher von`
+
+## 0114R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 114
+- Blind: ja (keine fremde Lesung dieser Bildbereiche eingesehen)
+- Haupttext rechts, Z. 7 von oben: `gegenwärtigen Recessus gesetzet,`
+- Haupttext rechts, Z. 12 von oben: `den sogenannten Brandt oder ⟦…⟧,`
+- Haupttext rechts, Z. 16 von oben: `[constitutione?] limitum, ergehen`
+
+## 0115L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 115
+- Blind: ja (keine fremde Lesung dieser Bildbereiche eingesehen)
+- Haupttext links oben, Z. 2 von oben: `Ratification sigillando et sub-`
+- Haupttext links oben, Z. 5 von oben: `Anno 1678.`
+- Kanzleivermerk links unten, Z. 2 von oben (eigener Vermerkblock): `Abschriften, mit ihr [Originali?] ⟦…⟧`
