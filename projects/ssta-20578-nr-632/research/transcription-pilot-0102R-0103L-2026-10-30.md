@@ -538,6 +538,32 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 | `0112L-A15` | `Naumburg, [⟦middle⟧] Herrn` | partly readable |
 | `0112L-A16` | `gnädigsten ratification [⟦end⟧]` | source word `ratification` visible |
 
+### 0112L — vollständiger neuer Hauptchat-Bildversuch (01.11.2026), vor erneuter unabhängiger Probe
+
+**Quellenhandlung und Begrenzung:** Alle optisch vorhandenen **17 physischen Hauptschrift-Baselines** der linken Schriftfläche des eingebetteten Originalfotos auf PDF-/Providerbild **0112** wurden in einem neuen Durchgang direkt betrachtet (Originalaufnahme 4304 × 3897 Pixel; Bildfenster im Original ungefähr x=730–2250, y=1130–3370). Grundlage: lokale Originalbytes der registrierten **Voll-PDF** `FILE-SSTA-20578-NR632-FULL-PDF-20261030`, erneut gemessener SHA-256 **`d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`**; das Foto stammt unmittelbar als eingebettetes JPEG aus PDF-Seite 112. Geprüft wurden die Gesamtfläche und getrennte unverfälschte Originalpixel-Ausschnitte des Zieranfangs, oberen/mittleren und unteren Schriftkörpers. **H01** umfasst den ornamentierten Initialbereich und die erste Haupttext-Baseline; **A01–A16** sind die folgenden 16 optisch getrennten Zeilen. Die Buchstaben hinter einigen Zierzügen, schmalen Wortkörpern und am Bildrand sind **nicht sicher**, nicht still ergänzt. Dies ist ein neuer **nicht blinder** KI-Arbeitsversuch an der Quelle; die vorherige Hauptchat-Altlesung mit mindestens zwei unmarkierten Fehlgruppen wird nicht als Kontrolle für die Neulesung behandelt. Frühere Entwurfszeilen unmittelbar darüber bleiben ausdrücklich **historische, überholte Kandidaten**, nicht zweite aktuelle Lesung.
+
+| Neu gezählte Baseline | Neuer diplomatischer Originalbild-Versuch (01.11.) | Bildgebundener Vorbehalt |
+|---|---|---|
+| `0112L-H01` | `[Zu?] wißen, Demnach zwischen dem [Hoch-?]` | Ornamentierte große Initiale; letzte Hoch-/Titelgruppe am rechten Rand/Übergang weiter unsicher |
+| `0112L-A01` | `[laucht:?] [Fürstl:?] Ambt [⟦Orts-/Namengruppe⟧] und` | Zeile beginnt im fortgesetzten Fürstentitel; Binnenzeichen und Ortsgruppe nicht sicher getrennt |
+| `0112L-A02` | `dem Gräfl: Reußischen Gerichten zu` | Quellennahe, abgekürzte Titel; `Reußischen` graphischer Kandidat |
+| `0112L-A03` | `Oppurg, andern Theils, die Jagdgerecht-` | Nach dem Ortswort weitere Buchstaben sichtbar; Teilung des letzten Worts beobachtet |
+| `0112L-A04` | `tigkeit, und was diesem mehr anhängig` | Fortsetzung des getrennten `Jagdgerech-`; Endbuchstaben nur auf Bild |
+| `0112L-A05` | `betrif: einige Differentien sich [⟦Schlussgruppe⟧]` | Schlusskörper nicht sicher diskriminiert; `betrif:` mit sichtbarer Interpunktion |
+| `0112L-A06` | `[ereignen?] wollen, daher und Krafft er-` | Erstes Wort als Schriftkandidat, kein syntaktisch erschlossenes sicheres Wort |
+| `0112L-A07` | `[gangener?] Hochfürstl: gnädigster Re-` | Erster Wortkörper und lateinische Amtsformel vorsichtig, Trennzeichen am Ende |
+| `0112L-A08` | `scripten, de datis [Morizburg/Moritzburg?] an` | Initialsegment gehört zu `Re- / scripten`; Ortsname nach sichtbaren Zeichen nur als Variante, nicht identifiziert |
+| `0112L-A09` | `der Elster den 23 Martij [1677?]. und` | Geschriebene Datumsangabe, nicht Datierung der Foto- oder Trägeraufnahme |
+| `0112L-A10` | `4. Octbr: [1675?]. [Jahres?], das Werck` | Unterer Datumsstrich wirkt wie eine 5, andere Details bleiben geschriebene Ziffernkandidaten |
+| `0112L-A11` | `mit Zuziehung gewißer hierzu ver-` | Getrenntes Wort `ver-` führt in nächste physische Zeile |
+| `0112L-A12` | `ordneter Personen, gründlich unter-` | Sichtbares Zeilenende `unter-`; keine stille Zusammenschreibung |
+| `0112L-A13` | `sucht, und in eventum, auch bis zu` | `in eventum` als geschriebene lateinische Gruppe, kein Übersetzungsschluss |
+| `0112L-A14` | `Sr: Hochfürstl: Durchl: zu Sachsen` | Abkürzungen bleiben quellennah; deren Expansion unterbleibt |
+| `0112L-A15` | `Naumburg, Unsers gnädigsten [Herren?]` | Familien-/Amtstitel nicht aus Kontext identifizieren, letzte Endung offen |
+| `0112L-A16` | `gnädigsten ratification [⟦Schlussfolge⟧]` | Schlussgruppe am rechten Rand nicht sicher lesbar; Satz läuft möglicherweise auf 0112R weiter, Join **offen** |
+
+**Disposition dieses Seitenblocks:** Der vollständige **bildgestützte Erstversuch** ist nun separat von der älteren, als hochfehlerhaft markierten Lesung festgehalten. Die früher im Altversuch unmarkierten Formen `Durch-`, `Merseburg` und die feste Endziffer `1678` wurden nicht übernommen. **Vor Öffnen einer *neuen* unabhängigen Gegenprobe ist genau dieser Commit als Lesungsstand zu fixieren.** Für die Neulesung gibt es zum Zeitpunkt dieses Speicherns **noch keine neue unabhängige 2–3-Zeilen-Blindprobe**. Der bereits am 01.11. eingetragene 0112L-Review-Abschnitt wurde schon im vorigen Bildkontrollblock geöffnet und kann die notwendige **erneute Nachkorrekturprobe nicht ersetzen**. Damit lautet der Status **„Gegenlesung offen; nach überschrittener Fehlerschwelle kein begrenztes passt; 0112R weiterhin gesperrt“**. Keine komplette Quellen-/Fachabnahme, kein F2-Methodenurteil und kein archivarischer Blattnachweis.
+
 ### 0112R — separate right facing continuation
 
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
