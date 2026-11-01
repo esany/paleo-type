@@ -237,3 +237,25 @@ Der allgemeine Ablauf steht in docs/gegenlesung-vorab.md. Für dieses Projekt gi
   (derzeit PR #359)
 - Fehlerschwelle: mehr als ein unmarkiert falsches Wort in der Stichprobe
   (Vereinheitlichung und Abkürzungsauflösung zählen als Fehler) → überarbeiten.
+
+=== NACHTRAG 01.11.2026 · REGEL #371 UND VIER SEITEN JE „WEITER“ ===
+Eigentümerentscheidung: Die verbindliche allgemeine Gegenleseregel auf main
+steht in `docs/gegenlesung-vorab.md` (Änderung #371). Ein Vergleich ist
+gültig, wenn der unabhängige Gegenleser für seinen Abschnitt ausdrücklich
+`Blind: ja` erklärt und der Hauptchat den eigenen, **vor Einsicht in diesen
+Gegenlese-Abschnitt** auf dem Forschungsbranch committeten Lesungsstand
+vergleicht. Ob der Vorab-/Gegenlese-Commit zeitlich vor oder nach dem
+Lesungs-Commit liegt, ist **keine** Gültigkeitsbedingung.
+Bereits vorliegende Blindabschnitte zu 0106L und 0106R dürfen deshalb
+gegen die vor Einsicht gesicherten Seiten-Commits geprüft werden.
+F1 bleibt bis zur unabhängigen Prüfung der **nachkorrigierten** Zeilen
+0105L-A14–A16 und der sonstigen belegten F1-Bedingungen offen.
+
+Bei `weiter` bearbeitet der Hauptchat in einem Durchgang die
+planmäßig anstehenden Seiten mit bereits vorhandenem Blindabschnitt,
+**höchstens vier Seiten**, und meldet sich erst nach diesem Durchgang.
+Eine Seite ohne neuen Gegenlese-Abschnitt wird quellengebunden gesichert,
+aber als `Gegenlesung offen` geführt. Eine schon vor eigener neuer
+Seitenlesung eingesehene Gegenlesung darf keine nachträgliche
+Unkenntnis vortäuschen. Keine Vorgabe der Qualitätsschwelle, der
+F1→F2/F3-Reihenfolge oder der Human-Übernahmegrenzen wird aufgehoben.
