@@ -27,7 +27,7 @@ Eigentümerentscheidung vom 31.10.2026. Gilt für jedes Projekt, jede KI und jed
 
 - In der Vorab-Datei **nur** die Zeile `Vorab offen: …` ganz oben und die Überschriften `## <Seite>` lesen, keine Lesungen.
 - **Offen** = Einträge aus `Vorab offen` ohne eigenen Abschnitt. Eine Angabe wie `0105L (Z. 14–16 von oben)` heißt: genau diese Zeilen lesen.
-- **Nachprobe:** Ein Eintrag mit Zusatz, z. B. `0105L-2 (Z. 14–16 von oben)`, ist eine zweite Probe einer schon geprüften Seite. Sie ist offen, solange es keinen Abschnitt `## 0105L-2` gibt. Ältere Abschnitte derselben Seite enthalten Lesungstext und werden nicht geöffnet.
+- **Nachprobe:** Ein Eintrag mit Zusatz, z. B. `0105L-2 (Z. 14–16 von oben)`, ist eine zweite Probe einer schon geprüften Seite. Sie ist offen, solange es keinen Abschnitt `## 0105L-2` gibt. Ältere Abschnitte derselben Seite enthalten Lesungstext und werden nicht geöffnet. Nachproben heißen `<Seite>-<n>` (z. B. `0105L-2`); der Abschnitt `## 0105L-2` und eine spätere `Vergleich: 0105L-2 | …`-Zeile müssen exakt diese eigenständige ID verwenden, nicht die ursprüngliche `0105L`.
 - Bis zu **5** offene Seiten in der genannten Reihenfolge übernehmen.
 - Fehlt die Zeile oder ist nichts offen: dem Eigentümer „keine offenen Gegenlese-Aufträge“ melden und enden.
 
@@ -121,3 +121,16 @@ Im Projekt `projects/<id>/ARBEITSPLAN.md` den Abschnitt „Parameter: Gegenlesun
 
 - KI-Gegenlesung, keine Fachprüfung, kein Gate.
 - Die Gegenlesung entscheidet nicht allein: Abweichungen werden am Bild geklärt.
+
+**Nullzeilen-Bildbefund (kein positives Gegenleseergebnis):** Trägt eine
+Fotoansicht tatsächlich **keine** mit eigener Leserichtung sicher
+diplomatisch lesbare physische Schriftzeile (z. B. nur Durchschein-/Spiegelschrift),
+dürfen weder Buchstaben noch Zeilenlocator erfunden werden. Der unabhängige
+Gegenleser notiert stattdessen im Abschnitt die genaue Bildquelle, `Blind: ja`,
+einen ausdrücklich ortsbezogenen `- Bildbefund, …: …` und
+`- Stichprobe: 0 eigenständige Schriftzeilen …`. Der CI-Formatcheck erkennt
+dies als **dokumentierte Nullbeobachtung**, **nicht** als positive
+2–3-Zeilen-Gegenlesung, Fehlerquote, bestandenen Vergleich oder fachliche
+Flächenabnahme. Für tatsächlich lesbare Schrift bleiben nummerierte physische
+Zeilenlocators zwingend. Eine Nullbeobachtung ist nicht automatisch
+quellenkritisch bewiesen; sie bleibt eine überprüfbare KI-Aussage am Bild.

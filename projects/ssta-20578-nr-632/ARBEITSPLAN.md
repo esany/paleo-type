@@ -239,3 +239,64 @@ Der allgemeine Ablauf steht in docs/gegenlesung-vorab.md. Für dieses Projekt gi
   (Vereinheitlichung und Abkürzungsauflösung zählen als Fehler) → überarbeiten.
 - Namensstellen je Durchgang (Eigentümer, nur Bild): höchstens 5
   (Eigentümerentscheidung 01.11.2026; Ablauf in docs/gegenlesung-vorab.md).
+
+=== NACHTRAG 01.11.2026 · REGEL #371 UND VIER SEITEN JE „WEITER“ ===
+Eigentümerentscheidung: Die verbindliche allgemeine Gegenleseregel auf main
+steht in `docs/gegenlesung-vorab.md` (Änderung #371). Ein Vergleich ist
+gültig, wenn der unabhängige Gegenleser für seinen Abschnitt ausdrücklich
+`Blind: ja` erklärt und der Hauptchat den eigenen, **vor Einsicht in diesen
+Gegenlese-Abschnitt** auf dem Forschungsbranch committeten Lesungsstand
+vergleicht. Ob der Vorab-/Gegenlese-Commit zeitlich vor oder nach dem
+Lesungs-Commit liegt, ist **keine** Gültigkeitsbedingung.
+Bereits vorliegende Blindabschnitte zu 0106L und 0106R dürfen deshalb
+gegen die vor Einsicht gesicherten Seiten-Commits geprüft werden.
+F1 bleibt bis zur unabhängigen Prüfung der **nachkorrigierten** Zeilen
+0105L-A14–A16 und der sonstigen belegten F1-Bedingungen offen.
+
+Bei `weiter` bearbeitet der Hauptchat in einem Durchgang die
+planmäßig anstehenden Seiten mit bereits vorhandenem Blindabschnitt,
+**höchstens vier Seiten**, und meldet sich erst nach diesem Durchgang.
+Eine Seite ohne neuen Gegenlese-Abschnitt wird quellengebunden gesichert,
+aber als `Gegenlesung offen` geführt. Eine schon vor eigener neuer
+Seitenlesung eingesehene Gegenlesung darf keine nachträgliche
+Unkenntnis vortäuschen. Keine Vorgabe der Qualitätsschwelle, der
+F1→F2/F3-Reihenfolge oder der Human-Übernahmegrenzen wird aufgehoben.
+
+=== NACHTRAG 01.11.2026 · GITHUB-PRÜFBELEGE FÜR NR. 632 (#368 P1 / #379) ===
+
+Der Hauptchat speichert bei abgeschlossener Runde auf dem **Forschungsbranch**
+die fortlaufend nummerierte Meldedatei
+`projects/ssta-20578-nr-632/returns/JJJJ-MM-TT-N.json`.
+Sie nennt `baseline_commit`, `result_commit`, `research_owner`,
+`recorded_status_sha256` und den neuen `continuation_anchor`
+(oder `stop_reason` plus `stop_evidence`). Die Meldung ist kein eigenes
+Wahrheits- oder Fortschrittssystem: Der STATUS und der Forschungsowner bleiben
+maßgeblich. Der Prüf-Job führt `tools/work_return.py` an der zuletzt
+committeten Meldung auf GitHub aus.
+
+Für jede bereits tatsächlich verglichene Seite enthält der kanonische
+Forschungsowner zusätzlich genau eine maschinenlesbare Zeile:
+
+`Vergleich: 0106R | Lesung <40-hex-SHA> | Vorab <40-hex-SHA> | Abweichungen 1 | davon Vereinheitlichung 0 | Urteil passt`
+
+Die SHA bei `Lesung` gehört zum **vor Öffnen des Gegenlesetexts**
+gesicherten eigenen Textstand und muss selbst den Forschungsowner ändern.
+Die SHA bei `Vorab` gehört zur unabhängigen Gegenlese-Datei, deren
+Abschnitt für die Seite ausdrücklich `Blind: ja` enthält. **Keine
+zeitliche Reihenfolge zwischen diesen beiden Commits wird verlangt**
+(Entscheidung #371). Die Zeile wird erst nach bildgebundener Klärung
+geschrieben; `Abweichungen` zählt unmarkiert falsche Wörter,
+`davon Vereinheitlichung` deren ausdrücklich identifizierten Anteil,
+das Urteil ist `passt` oder `überarbeiten`. Die fachliche
+Begründung, offene Alternativen und Originalbild-Fundstellen bleiben
+direkt daneben im Forschungsowner erhalten.
+
+`tools/gegenlesung_check.py` und der GitHub-Actions-Job
+`.github/workflows/nr632-gegenlesung.yml` prüfen das Format, die
+deklarierte Blindheit, die tatsächlich vorhandenen Commits und ob
+der Lesungs-Commit den genannten Forschungsowner geändert hat.
+`passt` mit mehr als einem angegebenen unmarkierten Wortfehler wird
+abgewiesen. Die Ausführung läuft als PR-Check; der GitHub-Check ist
+weder eine maschinelle Transkription noch eine fachwissenschaftliche
+Wahrheitsprüfung und kann nicht beweisen, wann ein Chat einen Text
+tatsächlich geöffnet hat.
