@@ -194,8 +194,12 @@ h1,h2,h3 {font-family:Georgia,serif;font-weight:500;line-height:1.25;}
 h1 {font-size:clamp(2rem, 5vw, 3.3rem);margin:.2rem 0;}
 h2 {margin:2.6rem 0 1rem;font-size:1.65rem;}
 h3 {font-size:1.25rem;}
-.layout {display:grid;grid-template-columns:minmax(11rem,19rem) minmax(0,75ch);gap:3rem;max-width:82rem;margin:auto;padding:1rem;}
+.layout {max-width:82rem;margin:auto;padding:1rem;}
+.layout main {display:grid;grid-template-columns:minmax(11rem,19rem) minmax(0,75ch);column-gap:3rem;min-width:0;}
+.layout aside {grid-column:1;grid-row:1 / span 4;}
+.layout section {grid-column:2;}
 nav {position:sticky;top:1rem;max-height:95vh;overflow:auto;font-size:.9rem;}
+.mobile-outline {display:none;}
 nav ol {padding-left:1.3rem;}
 nav li {padding-bottom:.5rem;}
 main {min-width:0;overflow-wrap:anywhere;}
@@ -216,7 +220,7 @@ main {min-width:0;overflow-wrap:anywhere;}
 .line-note p {font: .87rem/1.5 system-ui,sans-serif;margin:.3rem 0 .9rem 8.6rem;}
 .metadata {color:#454540;}
 footer {padding:2rem 1rem;border-top:1px solid #cbc9c1;}
-@media(max-width:760px) {.layout {display:block;padding:1rem;}nav {position:static;max-height:none;border-bottom:1px solid #ccc;} .line-id {width:7rem;} .line-note p {margin-left:0;}}
+@media(max-width:700px) {.layout{padding:1rem;} .layout main{display:block;} nav{position:static;max-height:none;border-bottom:1px solid #ccc;} .desktop-outline{display:none;} .mobile-outline{display:block;} .line-id{width:7rem;} .line-note p{margin-left:0;}}
 @media(prefers-reduced-motion:reduce) {* {scroll-behavior:auto !important;}}
 """
 
@@ -236,15 +240,15 @@ def build_site(root: Path, output: Path) -> None:
         + esc(d["area"]) + " — " + esc(d["function"]) + "</a></li>"
         for d in documents
     )
+    navigation = ('<h2>Gliederung</h2><ol class="desktop-outline">' + nav + '</ol>'
+                  '<details class="mobile-outline"><summary>Gliederung anzeigen</summary>'
+                  '<ol>' + nav + '</ol></details>')
     docs = "\n".join(render_document(d, pages) for d in documents)
     transcription = "\n".join(
         render_page(p, grouped[p], checks.get(p, False)) for p in pages
     )
-    report = "".join(
-        '<p><strong>' + esc(label) + ':</strong> '
-        + esc(status.get(label, "offen")) + '</p>'
-        for label in ("Forschungsstand", "Nächste fachliche Aktion", "Sperre")
-    )
+    report = '<p>' + esc(status.get("Stand für den Eigentümer",
+                                  "Aktueller Arbeitsstand noch nicht zusammengefasst.")) + '</p>'
     catalog_link = ('<a href="' + esc(catalog) + '" rel="external">Zum Archivkatalog</a>'
                     if catalog else '<span>Archivkatalog-Link offen</span>')
     html_text = (
@@ -258,12 +262,11 @@ def build_site(root: Path, output: Path) -> None:
         '<p>GUID: ' + GUID + ' · ' + catalog_link + '</p>'
         '<p class="metadata">KI-Arbeitsstand, nicht fachlich begutachtet. '
         'Bildrechte: Bilder nur beim Archiv, hier keine Bilddateien.</p></header>'
-        '<div class="layout"><aside><nav aria-label="Schriftstückgliederung">'
-        '<h2>Gliederung</h2><ol>' + nav + '</ol></nav></aside>'
-        '<main id="hauptinhalt"><section id="arbeitsstand">'
+        '<div class="layout"><main id="hauptinhalt"><section id="arbeitsstand">'
         '<h2>Aktueller Arbeitsstand</h2>' + report
         + '<p>Eigentümerentscheidungen richten sich nach dem Arbeitsplan; '
         'aus dieser Ansicht wird kein neuer Auftrag abgeleitet.</p></section>'
+        '<aside><nav aria-label="Schriftstückgliederung">' + navigation + '</nav></aside>'
         '<section id="inventar"><h2>Schriftstücke und offene Grenzen</h2>'
         '<p>Die Gliederung enthält vorläufige Funktions- und Datierungskandidaten; '
         'Ansichtsnummern sind keine archivalische Foliierung.</p>'
