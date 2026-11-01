@@ -68,6 +68,43 @@ class EditionTests(unittest.TestCase):
         self.assertNotIn("PROSA NICHT AUSGEBEN", h)
         self.assertIn('id="line-0104r-a02"', h)
 
+    def test_latest_followup_status_belongs_to_original_page(self):
+        sha_a, sha_b = "a"*40, "b"*40
+        self.readings.write_text(
+            self.readings.read_text(encoding="utf-8") +
+            "\nVergleich: 0104R-2 | Lesung " + sha_a + " | Vorab " + sha_b +
+            " | Abweichungen 0 | davon Vereinheitlichung 0 | Urteil passt\n" +
+            "Vergleich: 0104R | Lesung " + sha_a + " | Vorab " + sha_b +
+            " | Abweichungen 2 | davon Vereinheitlichung 0 | Urteil überarbeiten\n",
+            encoding="utf-8",
+        )
+        rendered = self.html()
+        page = rendered.split('id="page-0104r"', 1)[1].split("</article>", 1)[0]
+        self.assertIn("KI-Stichprobe: geprüft", page)
+        self.assertNotIn("KI-Entwurf, ungeprüft", page)
+
+    def test_markdown_not_rendered_in_inventory_titles(self):
+        p = self.root / "projects/ssta-20578-nr-632/research/content-document-function-inventory-2026-10-30.md"
+        p.write_text(p.read_text(encoding="utf-8").replace("Gesuch", "**`Gesuch`**"), encoding="utf-8")
+        self.assertNotIn("**", self.html())
+        self.assertIn("Gesuch", self.html())
+
+    def test_human_status_only_and_mobile_collapsible_outline(self):
+        p = self.root / "projects/ssta-20578-nr-632/STATUS.md"
+        p.write_text(
+            p.read_text(encoding="utf-8")
+            + "- **Stand für den Eigentümer:** Ich prüfe ältere Schriftzüge. "
+            "Zwei unabhängige Stichproben sind offen. Dafür braucht es einen zweiten Chat.\n",
+            encoding="utf-8",
+        )
+        output = self.html()
+        self.assertIn("Ich prüfe ältere Schriftzüge.", output)
+        self.assertNotIn("Forschungsstand:", output)
+        self.assertIn('class="mobile-outline"', output)
+        self.assertIn('<summary', output)
+        stylesheet = (self.dest / "style.css").read_text(encoding="utf-8")
+        self.assertIn("@media(max-width:700px)", stylesheet)
+
     def test_fixed_addresses_and_stylesheet(self):
         h = self.html()
         self.assertIn('id="doc-0103-0107"', h)
