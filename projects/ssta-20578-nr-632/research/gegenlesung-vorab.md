@@ -216,3 +216,45 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Überschrift rechts, eigene Schriftzeile oben: `Lehn-Schein`
 - Haupttext rechts, Z. 1 unter der Überschrift: `Den 24ten Martii, [176?] ist der Hoch- und Wohl-`
 - Kanzleivermerk rechts unter dem Haupttext, Z. 1: `Signatum Dreßden ut supra`
+
+## 0118L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 118
+- Blind: ja (keine fremden Lesungen zu diesem Bereich eingesehen)
+- Bildbefund, linke Bildhälfte oben/Mitte/unten: blasse spiegelverkehrte Durchscheinschrift sichtbar; kein sicher eigenständiger, diplomatisch lesbarer Textblock auf dieser Seite feststellbar.
+- Stichprobe: 0 eigenständige Schriftzeilen lesbar; daher keine erfundene Zeilenlesung oder Zeilennummer. Kein Urteil über eine sichere physische Blattseite/Foliierung.
+
+## 0118R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 118
+- Blind: ja (keine fremden Lesungen zu diesem Bereich eingesehen)
+- Titel rechts, eigene Z. 1 von oben: `Lehn Schein,`
+- Haupttext rechts, Z. 1 unter dem Titel: `Den 24ten Martii, 1762. ist der Hoch- und Wohl-`
+- Abschlussvermerk rechts, Z. 2 von unten im laufenden Textblock: `ut supra)` (Fortsetzung des Vermerks der vorigen Zeile; Zählung ohne Unterschriftenblock)
+
+## 0119L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 119
+- Blind: ja (keine fremden Lesungen zu diesem Bereich eingesehen)
+- Bildbefund, linke Bildhälfte oben/Mitte/unten: blasse, überwiegend spiegelverkehrte Durchscheinschrift. Keine eigenständigen physischen Schriftzeilen mit gesicherter Leserichtung abgrenzbar.
+- Stichprobe: 0 eigenständige Schriftzeilen diplomatisch transkribiert; nicht als erfolgreiche Drei-Zeilen-Textprobe zählen.
+
+## 0119R
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 119
+- Blind: ja (keine fremden Lesungen zu diesem Bereich eingesehen)
+- Haupttext rechts, Z. 4 von oben: `[Volmacht/Vollmacht] eigenhändig unter-`
+- Haupttext rechts, Z. 7 von oben: `den 13ten Februar 1762.`
+- Unterschriftsblock rechts, Z. 1 unter dem Haupttext: `[Johann?] Georg Friedrich [Graf?]`
+
+## 0120L
+- Datum: 2026-11-01
+- Leser: ChatGPT (GPT-6), Vorab-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 120
+- Blind: ja (keine fremden Lesungen zu diesem Bereich eingesehen)
+- Bildbefund, linke Bildhälfte oben/Mitte/unten: nur sehr blasse, teilweise spiegelverkehrt wirkende Schriftspuren; keine mit ausreichender Sicherheit eigenständig lesbare Zeile.
+- Stichprobe: 0 eigenständige Schriftzeilen; keine Normalisierung oder Rekonstruktion aus der rechten Bildhälfte.
