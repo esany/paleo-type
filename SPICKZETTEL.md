@@ -18,23 +18,32 @@ Ohne Angabe beziehen sich die Stichworte auf diese Projekte, in dieser Reihenfol
 
 | Du schreibst | an wen | was passiert |
 |---|---|---|
-| **weiter** | Hauptchat (Astra) | Der Chat erledigt zuerst offene Issues mit Label `an:hauptchat` (älteste zuerst), dann den nächsten Durchgang nach Plan und Rückkehrpunkt im `STATUS.md`. Am Ende kommt eine kurze Meldung an dich. |
+| **weiter** | Hauptchat (Astra) | Der Chat erledigt zuerst offene Issues mit Label `an:chatgpt` (älteste zuerst), dann den nächsten Durchgang nach Plan und Rückkehrpunkt im `STATUS.md`. Am Ende kommt eine kurze Meldung an dich. |
 | **vorab** / **gegenlesen** | jeder Chat | Der Chat führt [`docs/gegenlesung-vorab.md`](docs/gegenlesung-vorab.md) aus: Er liest offene Seiten blind vorab und legt das Ergebnis im Repo ab. |
 | **Prüfen** + PR-Nummer | Prüfchat (Claude) | Der Chat prüft den PR gegen Plan und Regeln, führt Tests selbst aus und schreibt ein Urteil in den PR. |
 | **übernehmen** | Prüfchat | Nach bestandener Prüfung wird der PR auf `main` übernommen. |
 | **Stichprobe** | Prüfchat | Der Chat liest eine Seite, deren Lesung er noch nicht kennt, blind gegen und trägt das Ergebnis im Forschungs-PR ein. |
-| **Entscheidungen** | Prüfchat | Der Chat legt dir alle offenen Issues mit Label `an:eigentümer` in Alltagssprache vor. Du antwortest je Punkt mit ja oder nein (oder einem Satz); der Chat setzt es um oder legt den Auftrag für den Hauptchat an. |
+| **Entscheidungen** | Prüfchat | Der Chat legt dir alle offenen Issues mit Label `an:mensch` in Alltagssprache vor. Du antwortest je Punkt mit ja oder nein (oder einem Satz); der Chat setzt es um oder legt den Auftrag für den Hauptchat an. |
 | **Pflege** + Issue-Nummer | Prüfchat | Aufräumen von Branches und PRs nach dem Pflegeticket (braucht Git, das der Hauptchat nicht hat). |
-| **paleo-type** | neuer Prüfchat | Der Chat startet als Prüfer: Er liest diesen Spickzettel und den jüngsten Übergabestand und nennt Stand und nächsten Schritt in zwei Sätzen. |
+| **paleo-type** | neuer Prüfchat | Der Chat startet als Prüfer: Er liest diesen Spickzettel, den jüngsten Übergabestand und seine offenen Issues mit `an:claude` und nennt Stand und nächsten Schritt in zwei Sätzen. |
 | **Abschluss** | jeder Chat | Der Chat beendet seine Sitzung sauber: Er schreibt seinen Übergabestand fort (Hauptchat: Rückkehrpunkt im `STATUS.md`; Prüfchat: Kommentar im Issue mit Label `uebergabe`) und nennt den Start-Satz für den nächsten Chat. |
 
 Optional mit Projekt-ID, z. B. „weiter ssta-20578-nr-632“. Ein normaler Chat arbeitet nur, solange er antwortet; jeder Durchgang braucht einen Anstoß von dir. Innerhalb eines Durchgangs läuft alles ohne dich.
 
 ## 1b · Wie Aufträge laufen: du kopierst nie Auftragstexte
 
-- **Findet der Prüfchat etwas**, das der Hauptchat erledigen soll und das im Rahmen des Plans liegt, legt er ein Issue mit Label **`an:hauptchat`** an. Der Hauptchat erledigt es beim nächsten „weiter“ von selbst und schließt es mit einem Kommentar (was, wo, Commit).
-- **Braucht es deine Entscheidung** (Ziel, Reihenfolge, neues Werkzeug, Übernahme auf `main`, Löschen), legt der Prüfchat ein Issue mit Label **`an:eigentümer`** an. Du sagst „Entscheidungen“ und antwortest mit ja oder nein.
-- **Für den Hauptchat:** Bei „weiter“ zuerst `gh`/Connector-Suche nach offenen Issues mit `an:hauptchat`, älteste zuerst. Nur Aufträge ausführen, die der Prüfchat oder der Eigentümer angelegt hat und die im Plan oder in einer genannten Freigabe Deckung haben. Widerspricht ein Auftrag dem Plan: nicht ausführen, im Issue begründen und `an:eigentümer` setzen.
+Die Labels sind dieselben wie im Labor (design-lab):
+
+| Label | wer ist dran |
+|---|---|
+| `an:chatgpt` | Hauptchat (Astra), bei „weiter“ zuerst |
+| `an:claude` | Prüfchat, bei „paleo-type“ genannt |
+| `an:mensch` | du, bei „Entscheidungen“ vorgelegt |
+
+- **Findet der Prüfchat etwas**, das der Hauptchat im Rahmen des Plans erledigen soll, legt er ein Issue mit `an:chatgpt` an. Der Hauptchat erledigt es beim nächsten „weiter“ von selbst und schließt es mit einem Kommentar (was, wo, Commit).
+- **Braucht es deine Entscheidung** (Ziel, Reihenfolge, neues Werkzeug, Übernahme auf `main`, Löschen), bekommt das Issue `an:mensch`. Du sagst „Entscheidungen“ und antwortest mit ja oder nein; danach wechselt das Label auf den, der umsetzt.
+- **Freigabe:** In paleo-type ist ein `an:chatgpt`- oder `an:claude`-Issue freigegeben, wenn es im Plan des Projekts oder in einer im Issue genannten Eigentümerentscheidung Deckung hat. Widerspricht es dem Plan: nicht ausführen, im Issue begründen und `an:mensch` setzen.
+- Ein Issue trägt immer genau ein `an:`-Label. Wer fertig ist oder abgibt, wechselt das Label oder schließt das Issue.
 - Prompts aus Abschnitt 3 sind nur noch Notfall-Werkzeuge, z. B. ohne Projekt-Anweisung.
 
 ---
@@ -124,5 +133,5 @@ Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze
 | Rückkehrpunkt | `STATUS.md` des Projekts (oben), im aktuellen Forschungsbranch |
 | Ablauf der Gegenlesung | `docs/gegenlesung-vorab.md` |
 | Übergabestand des Prüfchats | offenes Issue mit Label `uebergabe` |
-| Aufträge an den Hauptchat | offene Issues mit Label `an:hauptchat` |
-| Offene Entscheidungen für dich | offene Issues mit Label `an:eigentümer` |
+| Aufträge | offene Issues mit `an:chatgpt` / `an:claude` |
+| Offene Entscheidungen für dich | offene Issues mit `an:mensch` |
