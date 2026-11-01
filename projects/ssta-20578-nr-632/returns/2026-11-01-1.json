@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-01-1",
+  "run_status": "completed",
+  "baseline_commit": "dc71015cf8929dab49c82a019208a23e4a33bd64",
+  "result_commit": "a080f6fce7db90f818beb9dc0e814215922e818e",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "226956be487236ae835648fa17b6e25fb212e1619040c287df24007ce2e04b03",
+  "continuation_anchor": "**RÜCKKEHRANKER 2026-11-01: 0106L und 0106R nach #371 verglichen; 0105L-Nachprobe fehlt; GitHub-Checker #375 noch in Prüfung.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
