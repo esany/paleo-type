@@ -206,3 +206,81 @@ footer {padding:2rem 1rem;border-top:1px solid #cbc9c1;}
 @media(max-width:760px) {.layout {display:block;padding:1rem;}nav {position:static;max-height:none;border-bottom:1px solid #ccc;} .line-id {width:7rem;} .line-note p {margin-left:0;}}
 @media(prefers-reduced-motion:reduce) {* {scroll-behavior:auto !important;}}
 """
+
+
+def build_site(root: Path, output: Path) -> None:
+    """Compile one disposable presentation from the current named research owners."""
+    documents = read_inventory(root)
+    lines, checks = read_lines(root)
+    status = status_lines(root)
+    catalog = catalog_url(root)
+    grouped = defaultdict(list)
+    for identifier, (reading, note) in sorted(lines.items()):
+        grouped[line_page(identifier)].append((identifier, reading, note))
+    pages = sorted(grouped, key=sort_page)
+    nav = "".join(
+        '<li><a href="#' + esc(d["anchor"]) + '">'
+        + esc(d["area"]) + " — " + esc(d["function"]) + "</a></li>"
+        for d in documents
+    )
+    docs = "\n".join(render_document(d, pages) for d in documents)
+    transcription = "\n".join(
+        render_page(p, grouped[p], checks.get(p, False)) for p in pages
+    )
+    report = "".join(
+        '<p><strong>' + esc(label) + ':</strong> '
+        + esc(status.get(label, "offen")) + '</p>'
+        for label in ("Forschungsstand", "Nächste fachliche Aktion", "Sperre")
+    )
+    catalog_link = ('<a href="' + esc(catalog) + '" rel="external">Zum Archivkatalog</a>'
+                    if catalog else '<span>Archivkatalog-Link offen</span>')
+    html_text = (
+        '<!doctype html><html lang="de"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width, initial-scale=1">'
+        '<title>Nr. 632 — Diplomatische KI-Arbeitsedition</title>'
+        '<link rel="stylesheet" href="style.css"></head><body>'
+        '<a class="skip" href="#hauptinhalt">Zum Text springen</a>'
+        '<header class="masthead"><p>Sächsisches Staatsarchiv · Staatsarchiv Leipzig'
+        ' · Bestand 20578</p><h1>Nr. 632 — Lehn zu gesamter Hand</h1>'
+        '<p>GUID: ' + GUID + ' · ' + catalog_link + '</p>'
+        '<p class="metadata">KI-Arbeitsstand, nicht fachlich begutachtet. '
+        'Bildrechte: Bilder nur beim Archiv, hier keine Bilddateien.</p></header>'
+        '<div class="layout"><aside><nav aria-label="Schriftstückgliederung">'
+        '<h2>Gliederung</h2><ol>' + nav + '</ol></nav></aside>'
+        '<main id="hauptinhalt"><section id="arbeitsstand">'
+        '<h2>Aktueller Arbeitsstand</h2>' + report
+        + '<p>Eigentümerentscheidungen richten sich nach dem Arbeitsplan; '
+        'aus dieser Ansicht wird kein neuer Auftrag abgeleitet.</p></section>'
+        '<section id="inventar"><h2>Schriftstücke und offene Grenzen</h2>'
+        '<p>Die Gliederung enthält vorläufige Funktions- und Datierungskandidaten; '
+        'Ansichtsnummern sind keine archivalische Foliierung.</p>'
+        + docs + '</section>'
+        '<section id="lesungen"><h2>Diplomatische Arbeitslesungen</h2>'
+        '<p>Jede Zeile ist direkt adressierbar. Prüfstand bezeichnet allein '
+        'KI-Gegenlese-Stichproben, keine wissenschaftliche Abnahme.</p>'
+        + transcription + '</section>'
+        '<section id="legende"><h2>Legende</h2><p><span class="uncertain">'
+        '[Lesung?]</span> = vorgeschlagene, unsichere Lesung; '
+        '<span class="uncertain">⟦…⟧</span> = sichtbare, nicht sicher '
+        'transkribierte Schrift. Kürzungen bleiben in der diplomatischen '
+        'Schreibung; Ergänzungen und Normalisierung sind nicht still erlaubt. '
+        'Streichungen, Nachträge und Schäden bedürfen eigener '
+        'quellenbezogener Kennzeichnung.</p></section></main></div>'
+        '<footer>Reproduzierbare Darstellung aus den Forschungsdateien '
+        'von Nr. 632. Keine neue Textautorität.</footer></body></html>'
+    )
+    output.mkdir(parents=True, exist_ok=True)
+    (output / "index.html").write_text(html_text, encoding="utf-8")
+    (output / "style.css").write_text(STYLES, encoding="utf-8")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    build_site(args.root.resolve(), args.output.resolve())
+
+
+if __name__ == "__main__":
+    main()
