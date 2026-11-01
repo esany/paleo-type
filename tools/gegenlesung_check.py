@@ -63,7 +63,7 @@ def review_sections(contents: str, findings: list[str], *, all_sections: bool = 
             for label in REVIEW_LABELS:
                 if not re.search(r"^-\s*" + re.escape(label) + r"\s*\S+", section, re.M):
                     findings.append(f"{page}: missing {label} in review section")
-            if not re.search(r"^-\s*Blind:\s*ja(?:\s|$)", section, re.M):
+            if not re.search(r"^-\s*Blind:\s*ja(?:[\s;,.]|$)", section, re.M):
                 findings.append(f"{page}: reviewer did not declare Blind: ja")
             if not re.search(r"^-\s*(?:.*\bZ\.\s*\d+\b.*):\s*.+", section, re.M):
                 findings.append(f"{page}: no numbered physical-line locus")
@@ -125,7 +125,7 @@ def run(root: Path, owner_path: str, review_path: str, review_ref: str) -> tuple
             continue
         historical = review_sections(recorded, [], all_sections=False)
         if page not in historical or not re.search(
-            r"^-\s*Blind:\s*ja(?:\s|$)", historical[page], re.M
+            r"^-\s*Blind:\s*ja(?:[\s;,.]|$)", historical[page], re.M
         ):
             findings.append(f"{page}: cited review snapshot lacks a Blind: ja section")
     return (1 if findings else 0), {
