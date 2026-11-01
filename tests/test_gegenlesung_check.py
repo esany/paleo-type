@@ -114,5 +114,41 @@ class GegenlesungCI(unittest.TestCase):
         self.assertNotEqual(0, rc)
 
 
+    def test_work_return_explicitly_rejects_missing_new_status_anchor(self):
+        # A malformed block must fail via the REAL work_return script.
+        import hashlib
+        project = self.root / BASE
+        (project / "project.yml").write_text(
+            "canonical_status_file: STATUS.md\n", encoding="utf-8"
+        )
+        status = project / "STATUS.md"
+        status.write_text("before\n", encoding="utf-8")
+        self.git("add", ".")
+        self.git("commit", "-qm", "baseline status")
+        baseline = self.git("rev-parse", "HEAD")
+        recorded = hashlib.sha256(b"before\n").hexdigest()
+        self.owner.write_text("# Forschungsowner\n0106R-A08: Darueber\n", encoding="utf-8")
+        status.write_text("before\nnew but different return\n", encoding="utf-8")
+        self.git("add", ".")
+        self.git("commit", "-qm", "real source delta and changed status")
+        result = self.git("rev-parse", "HEAD")
+        report = {
+            "run_status": "completed",
+            "recorded_status_sha256": recorded,
+            "baseline_commit": baseline,
+            "result_commit": result,
+            "research_owner": OWNER,
+            "continuation_anchor": "**not actually stored in STATUS**",
+        }
+        dest = self.root / "invalid-return.json"
+        dest.write_text(json.dumps(report), encoding="utf-8")
+        cmd = [sys.executable, str(TOOL.parent / "work_return.py"),
+               "--root", str(self.root), "--project", "ssta-20578-nr-632",
+               "--report", str(dest)]
+        proc = subprocess.run(cmd, capture_output=True, text=True, check=False)
+        self.assertNotEqual(0, proc.returncode, proc.stdout)
+        self.assertIn("Fortsetzung nicht belegt", proc.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()
