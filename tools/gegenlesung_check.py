@@ -17,10 +17,10 @@ import subprocess
 from pathlib import Path
 
 SHA = re.compile(r"[0-9a-f]{40}\Z")
-PAGE = re.compile(r"\d{4}[LR]\Z")
-HEADER = re.compile(r"^## (\d{4}[LR])\s*$", re.M)
+PAGE = re.compile(r"\d{4}[LR](?:-\d+)?\Z")
+HEADER = re.compile(r"^## (\d{4}[LR](?:-\d+)?)\s*$", re.M)
 COMPARISON = re.compile(
-    r"^Vergleich: (?P<page>\d{4}[LR]) \| "
+    r"^Vergleich: (?P<page>\d{4}[LR](?:-\d+)?) \| "
     r"Lesung (?P<reading>[0-9a-f]{40}) \| "
     r"Vorab (?P<review>[0-9a-f]{40}) \| "
     r"Abweichungen (?P<errors>\d+) \| "
