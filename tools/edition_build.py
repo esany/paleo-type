@@ -120,3 +120,15 @@ def render_diplomatic(reading: str) -> str:
         else:
             pieces.append(esc(token))
     return "".join(pieces)
+
+
+def render_line(identifier: str, reading: str, note: str) -> str:
+    number = '<span class="line-id">' + esc(identifier) + '</span>'
+    text = '<span class="diplomatic">' + render_diplomatic(reading) + '</span>'
+    anchor = 'line-' + identifier.lower()
+    if UNCLEAR.search(reading):
+        body = ('<details><summary>' + number + text + '</summary>'
+                '<p>Hinweis zur Zeile: ' + esc(note or "Unsicherer Befund") + '</p></details>')
+    else:
+        body = number + text
+    return '<li id="' + esc(anchor) + '" class="reading-line">' + body + '</li>'
