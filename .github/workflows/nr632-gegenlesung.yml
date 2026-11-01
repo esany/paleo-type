@@ -37,9 +37,13 @@ jobs:
             +refs/heads/review/nr632-gegenlesung-vorab:refs/remotes/origin/review/nr632-gegenlesung-vorab
       - name: Verify work_return against latest committed return report
         run: |
+          REPORT=$(find research-checkout/projects/ssta-20578-nr-632/returns \
+            -maxdepth 1 -name '????-??-??-*.json' -type f | sort -V | tail -n 1)
+          test -n "$REPORT" && test -f "$REPORT"
+          echo "Validating committed report: $REPORT"
           python tools/work_return.py \
             --root research-checkout --project ssta-20578-nr-632 \
-            --report research-checkout/projects/ssta-20578-nr-632/returns/latest.json
+            --report "$REPORT"
       - name: Verify review declarations and historical reading-owner commits
         run: |
           python tools/gegenlesung_check.py \
