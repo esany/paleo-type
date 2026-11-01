@@ -107,6 +107,39 @@ class GegenlesungCI(unittest.TestCase):
         )
         self.assertEqual(0, rc, out)
 
+    def test_explicit_zero_readable_lines_is_not_a_fabricated_line(self):
+        # Reviewers can observe a left view containing no distinct readable lines.
+        # This is NOT a positive 2-3-line transcription or a scholarly PASS.
+        self.review.write_text(
+            self.review.read_text(encoding="utf-8")
+            + "\n## 0118L\n"
+            + "- Datum: 2026-11-01\n"
+            + "- Leser: fresh blind reviewer\n"
+            + "- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, PDF-Seite 118\n"
+            + "- Blind: ja (no earlier reading seen)\n"
+            + "- Bildbefund, linke Bildhälfte: nur spiegelverkehrte Durchscheinschrift, kein sicher eigener Textblock.\n"
+            + "- Stichprobe: 0 eigenständige Schriftzeilen; keine diplomatische Zeilenlesung.\n",
+            encoding="utf-8",
+        )
+        self.git("add", ".")
+        self.git("commit", "-qm", "separate image view with zero readable lines")
+        rc, out = self.check(review_ref=self.git("rev-parse", "HEAD"))
+        self.assertEqual(0, rc, out)
+        self.assertEqual(1, out["checked"])
+
+    def test_missing_locus_without_zero_line_evidence_is_rejected(self):
+        self.review.write_text(
+            self.review.read_text(encoding="utf-8").replace(
+                "- Haupttext rechts, Z. 8 von oben: " + chr(96) + "Darüber ich in [Pflicht?]" + chr(96),
+                "- Bildbefund, rechts: Schrift sichtbar, aber keine Zeile genannt.",
+            ),
+            encoding="utf-8",
+        )
+        self.git("add", ".")
+        self.git("commit", "-qm", "missing locator in non-zero review")
+        rc, out = self.check(review_ref=self.git("rev-parse", "HEAD"))
+        self.assertNotEqual(0, rc)
+
     def test_nonblind_section_rejected(self):
         self.review.write_text(self.review.read_text().replace("Blind: ja", "Blind: nein"))
         self.git("add", ".")
