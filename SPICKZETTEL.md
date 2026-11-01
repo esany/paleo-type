@@ -132,6 +132,7 @@ Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze
 | Parameter (Bildquellen, Vorab-Datei, Fehlerschwelle) | dort, Abschnitt „Parameter: Gegenlesung“ |
 | Rückkehrpunkt | `STATUS.md` des Projekts (oben), im aktuellen Forschungsbranch |
 | Ablauf der Gegenlesung | `docs/gegenlesung-vorab.md` |
+| Textedition Nr. 632 | [GitHub Pages](https://esany.github.io/paleo-type/) (erst nach Prüfung und Freischaltung live; Vorschau im [PR #382](https://github.com/esany/paleo-type/pull/382)) |
 | Übergabestand des Prüfchats | offenes Issue mit Label `uebergabe` |
 | Aufträge | offene Issues mit `an:chatgpt` / `an:claude` |
 | Offene Entscheidungen für dich | offene Issues mit `an:mensch` |
