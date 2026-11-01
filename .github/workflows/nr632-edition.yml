@@ -1,0 +1,62 @@
+name: Nr. 632 – text edition preview and Pages
+on:
+  pull_request:
+    paths:
+      - "tools/edition_build.py"
+      - "tests/test_edition_build.py"
+      - ".github/workflows/nr632-edition.yml"
+      - "SPICKZETTEL.md"
+  push:
+    branches:
+      - main
+      - research/nr632-transcription-t0-t1-20261030
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  edition:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout builder from main for research pushes
+        if: github.ref == 'refs/heads/research/nr632-transcription-t0-t1-20261030'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Checkout builder for PRs and main
+        if: github.ref != 'refs/heads/research/nr632-transcription-t0-t1-20261030'
+        uses: actions/checkout@v4
+      - name: Checkout current research owner separately
+        uses: actions/checkout@v4
+        with:
+          ref: research/nr632-transcription-t0-t1-20261030
+          path: source
+      - name: Test derived edition contract
+        run: python -m unittest discover -s tests -p "test_edition_build.py" -v
+      - name: Build preview from canonical research owner
+        run: python tools/edition_build.py --root source --output site
+      - name: Preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nr632-edition-preview
+          path: site/
+      - name: Prepare Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  publish:
+    if: github.event_name == 'push'
+    needs: edition
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publish current generated edition
+        id: deploy
+        uses: actions/deploy-pages@v4
