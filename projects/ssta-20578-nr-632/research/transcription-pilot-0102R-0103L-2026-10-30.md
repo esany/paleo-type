@@ -490,6 +490,8 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 
 ### right-hand short closure/dating and three separate subscription/impression marks
 
+**0111R, Bildvergleich 01.11.2026:** Originalfoto PDF-Seite 111, rechts (4304×3897 px; etwa x=2180–3920/y=700–3420), aus der geprüften Voll-PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Drei vom getrennten KI-Gegenleser als `Blind: ja` bezeichnete Stellen: Schlussformel A01, Datum A02, Namenszug B01. Datum `Elster, den 20. May Anno 1679.` stimmt; B01 war schon als `[Moritz?]` unsicher. A01 hatte hingegen das unmarkierte `Merseburg`, das das Bild nicht trägt; der Korrekturkandidat `[Morizburgk/Moritzburgk?]` bleibt ausdrücklich unentschieden. **1 bisher unmarkiert falsches Wort in 3 Loci**. Die alte Fassung ist ungeprüfter Entwurf; kein belegter ursprünglicher seitenbezogener Lesungs-Commit für eine maschinenlesbare `Vergleich:`-Zeile, keine vollständige Neulesung und keine F2-/G2-Abnahme. Die rechts überlagerte schmale Fremdschrift und abgesetzte Zeichen-/Namensfelder bleiben separat.
+
 | Physically indexed line | Diplomatic source-near working reading | Limit / note |
 |---|---|---|
 | `0111R-A01` | `[⟦opening⟧] und geben zu [Morizburgk/Moritzburgk?] an der` | Quelle 0111R: alte unmarkierte Lesung `Merseburg` nicht am Schriftbild gestützt; Schlussform bleibt offen. |
