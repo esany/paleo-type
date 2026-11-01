@@ -3,13 +3,14 @@
 Arbeitsplan: `ARBEITSPLAN.md` auf `main` (Eigentümerentscheidung 31.10.2026).
 
 ## Geltender Rückkehrpunkt — 01.11.2026
+- **Stand für den Eigentümer:** Die Handschrift wird Seite für Seite am Originalbild überprüft. Für 0105L und 0112L fehlen noch unabhängige Nachproben; die nächste Seite 0112R bleibt bis dahin zurückgestellt. Für diese Nachproben bitte in einem neuen, unabhängigen Chat „gegenlesen“ starten.
 - **Forschungsstand:** 0112L neu über 17 physische Zeilen (H01, A01–A16) als **ungeprüfte KI-Arbeitslesung** im bestehenden Forschungsowner; Lesungs-Commit `beec14411272b22924951851438dd957aaf1da1d`. Keine neue Lesung in diesem #379-Durchgang.
 - **Quelle:** registrierte Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, Provider-/PDFbild 0112 links; nicht archivalisch foliiert.
 - **Fehlerschwelle:** Die alte Probe zu 0112L fand mindestens zwei unmarkierte falsche Wortgruppen in drei Loci; sie validiert die Neulesung **nicht**. Auch 0105L-A14–A16 wurde nach einer Fehlerüberschreitung korrigiert, aber nicht erneut blind geprüft.
 - **Vorab-Warteschlange:** Auf `review/nr632-gegenlesung-vorab` seit Commit `9b43954a6b102ee1f9990796061eafd04c77d0f5` zuerst `0105L-2` (Z. 14–16 von oben), `0112L-2` (2–3 Zeilen), danach 0123L–0126R. Keine zweite Probe ist damit schon erfolgt.
 - **Nächste fachliche Aktion:** Ein *anderer*, bisher unvoreingenommener Chat liest die beiden Nachproben blind am registrierten Bild und sichert die Abschnitte; danach vergleicht der Hauptchat ausschließlich gegen den jeweils **vor Einsicht** committeten eigenen Lesungsstand und klärt Abweichungen am Bild.
 - **Sperre:** 0112R bleibt bis zur Disposition der neuen 0112L-2-Probe gesperrt. F1/F2 und die wissenschaftlichen Gates G2–G6 sind nicht abgenommen.
-- **Werkzeuge (nur Entwürfe):** PR #375 erkennt nach #381 `-N`-Nachproben eigenständig (HEAD `7e083465`, CI `41361314859` grün); PR #382 erzeugt eine textbasierte Editionsvorschau (HEAD `8867b959`, CI `41362319008` grün, Artefakt vorhanden). Beide ohne Merge und ohne unabhängige Prüfer-/Eigentümerabnahme. Kein automatischer Forschungs-PASS.
+- **Werkzeuge:** PR #375 ist nach unabhängiger Prüfung auf `main` übernommen (Merge-Stand `0d9226c`); dies ist ein technischer Formatprüfer, keine Handschriftenabnahme. PR #382 ist weiter ein nicht übernommener Editionsentwurf, derzeit Nachbesserung #383. Kein automatischer Forschungs-PASS.
 - **RÜCKKEHRANKER 2026-11-02 / #381/#376: Nachprobentechnik und Editionsvorschau im Prüf-PR; unabhängige Nachproben 0105L-2/0112L-2 weiter offen, 0112R gesperrt; keine neue Lesung.**
 - Frühere Rückkehrpunkt-Fassungen bleiben vollständig in der Git-Historie; darunter folgt der weiter bestehende Forschungskontext.
 
