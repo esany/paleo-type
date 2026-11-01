@@ -26,7 +26,8 @@ Eigentümerentscheidung vom 31.10.2026. Gilt für jedes Projekt, jede KI und jed
 ## Schritt 1 · Offene Seiten bestimmen
 
 - In der Vorab-Datei **nur** die Zeile `Vorab offen: …` ganz oben und die Überschriften `## <Seite>` lesen, keine Lesungen.
-- **Offen** = Seiten aus `Vorab offen` ohne eigenen Abschnitt. Eine Angabe wie `0105L (Z. 14–16 von oben)` heißt: genau diese Zeilen lesen.
+- **Offen** = Einträge aus `Vorab offen` ohne eigenen Abschnitt. Eine Angabe wie `0105L (Z. 14–16 von oben)` heißt: genau diese Zeilen lesen.
+- **Nachprobe:** Ein Eintrag mit Zusatz, z. B. `0105L-2 (Z. 14–16 von oben)`, ist eine zweite Probe einer schon geprüften Seite. Sie ist offen, solange es keinen Abschnitt `## 0105L-2` gibt. Ältere Abschnitte derselben Seite enthalten Lesungstext und werden nicht geöffnet.
 - Bis zu **5** offene Seiten in der genannten Reihenfolge übernehmen.
 - Fehlt die Zeile oder ist nichts offen: dem Eigentümer „keine offenen Gegenlese-Aufträge“ melden und enden.
 
@@ -84,7 +85,7 @@ Kurz an den Eigentümer, in Alltagssprache:
 
 ## Pflichten des Hauptchats (Stichwort „weiter“)
 
-- **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen` in der Vorab-Datei auf die nächsten **10** Seiten in Planreihenfolge ohne Abschnitt setzen. Nur diese Zeile ändern.
+- **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen` in der Vorab-Datei setzen: **zuerst alle Nachproben**, die der Plan nach einer Korrektur verlangt (z. B. `0112L-2 (2–3 Zeilen)`), dann die nächsten Seiten in Planreihenfolge ohne Abschnitt, zusammen höchstens **10** Einträge. Nur diese Zeile ändern.
 - **Vergleich:** Seite lesen und committen, **erst dann** ihren Vorab-Abschnitt öffnen. Im Forschungsowner einen Vergleichsvermerk anlegen:
   - eigener Lesungs-Commit
   - verglichene Zeilen
