@@ -148,3 +148,21 @@ def render_page(page: str, rows: list[tuple[str, str, str]], verified: bool) -> 
             '<h3>Schriftfläche ' + esc(page) + '</h3>' + badge
             + '<p>' + link + '</p><ol class="diplomatic-lines">' + lines
             + '</ol></article>')
+
+
+def render_document(item: dict[str, str], pages: list[str]) -> str:
+    nums = [int(x) for x in re.findall(r"\d{4}", item["area"])]
+    matches = [p for p in pages if PAGE_ID.fullmatch(p) and nums
+               and min(nums) <= int(p[:4]) <= max(nums)]
+    links = " · ".join(
+        '<a href="#page-' + esc(p.lower()) + '">' + esc(p) + '</a>' for p in matches
+    )
+    return (
+        '<article class="document" id="' + esc(item["anchor"]) + '">'
+        '<h3>' + esc(item["area"]) + ' — ' + esc(item["function"]) + '</h3>'
+        '<p><strong>Datum/Akteure:</strong> ' + esc(item["date"]) + '</p>'
+        '<p><strong>Beobachtung:</strong> ' + esc(item["evidence"]) + '</p>'
+        '<p><strong>Offen:</strong> ' + esc(item["open"]) + '</p>'
+        + ('<p>Schriftflächen: ' + links + '</p>' if links
+           else '<p>Textlesung in dieser Zone: offen.</p>') + '</article>'
+    )
