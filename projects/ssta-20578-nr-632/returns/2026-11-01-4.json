@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-01-4",
+  "run_status": "completed",
+  "baseline_commit": "309669f0a0c3f196d2f0d8317183370c5f5cea26",
+  "result_commit": "921b92d088761a78614443151e5339ffc7cc51a2",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "a4bfae25a492991a326325c4ba7c7006efca4d9c7fa656baaf5210003f3ad501",
+  "continuation_anchor": "**RÜCKKEHRANKER 2026-11-01 / 0112L-Vollbild-Neulesung: 17 physische Zeilen im Forschungsowner vor neuer Blindprobe gesichert; 0112R bis zur Disposition gesperrt.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
