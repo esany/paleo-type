@@ -88,6 +88,25 @@ class GegenlesungCI(unittest.TestCase):
         )
         self.assertEqual(0, rc, out)
 
+    def test_comma_after_blind_ja_is_explicit_declaration(self):
+        # The reviewer may add a comma-separated provenance explanation.
+        self.review.write_text(
+            self.review.read_text(encoding="utf-8").replace(
+                "Blind: ja (kein Hauptchat-Text eingesehen)",
+                "Blind: ja, keine fremde Lesung vorab gesehen",
+            ),
+            encoding="utf-8",
+        )
+        self.git("add", ".")
+        self.git("commit", "-qm", "blind declaration with comma")
+        review_commit = self.git("rev-parse", "HEAD")
+        rc, out = self.check(
+            line=f"Vergleich: 0106R | Lesung {self.reading} | Vorab {review_commit} "
+                 "| Abweichungen 1 | davon Vereinheitlichung 0 | Urteil passt",
+            review_ref=review_commit,
+        )
+        self.assertEqual(0, rc, out)
+
     def test_nonblind_section_rejected(self):
         self.review.write_text(self.review.read_text().replace("Blind: ja", "Blind: nein"))
         self.git("add", ".")
