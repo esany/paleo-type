@@ -667,15 +667,19 @@ Vergleich: 0112L-2 | Lesung a23823ef1d904aee2d583fbd17ee8f35016ab241 | Vorab 81a
 
 ### 0113L — densely handwritten left historical dispute text
 
+**F2-(b) Zeilenstreifen-Versuch 02.11.2026, zwei Flächen `0113L/0113R` (keine Blindprobe):** Die im Methodenowner vorregistrierte Leseweise `Zeile für Zeile in schmalen Streifen` wurde am SHA-256-verifizierten Original-JPEG aus Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030` durchgeführt; PDF-/Providerbild 0113, 4304×3897 px, JPEG-SHA `84332e5cc36b271a68a717ea7cec27fdd80b85438b33a0bbd5897fee0a2f85bf` (identisch `IMG0113` in `corpus/files.tsv`). Auf beiden Hauptschriftflächen 0113L/R wurden nacheinander **je acht vertikale native Originalpixel-Streifen** von ~315 px mit 35 px Überlappung durchgesehen (L x~900–2160, R x~2440–3675, y~1230–3410), in Zeilenfolge der bestehenden A01–A17-IDs. **Keine** systematische gleiche-Buchstaben-Kollation im selben Bild bei Methode (b). Der Ausschnittstreifen zeigt jeweils mehrere Zeilen/Überhänge, nicht eine künstlich flachgelegte oder OCR-berechnete Wortfolge.
+
+**Neues, enges quellenkritisches Delta:** 0113L-A02 `[gehorsamst?]` statt ganz unversuchtem Wortkörper, A03 i/y-Schreibvariante `[freywillig/freiwillig?]` an Stelle unmarkierter Normannahme und A05 `[Hante/Hanse?]` statt sicheren Ortsnamens; 0113R-A12 **unmarkiertes altes `gedacht` gegen graphisch stützbares `gebührend` ersetzt**, mit weiterhin unsicherem `[exercirlich?]`. Das sind vier **bestehende** Zeilenrevisionspunkte, **keine** vier neuen physischen Zeilen. Die Altlesungen bleiben in der Git-Historie rekonstruierbar. Für die übrigen A-Zeilen gab die erneute Streifenansicht keinen verantwortbar sicheren neuen Graphembefund; auch die rechts schmal überdeckte Randfolge wird nicht eingefügt. Vor der Messung muss eine unabhängige Bildgegenlesung **nach** Sicherung dieses eigenen Forschungscommits bereitstehen; die alten, dem Kontext teilweise schon bekannten KI-Entwürfe/Blindhinweise sind keine neue Blindprüfung. Zahl neuer geprüfter Fehler/Vereinheitlichungen und methodischer Sieger: **offen**.
+
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Local physical writing line | Source-near diplomatic candidate | Specific constraint |
 |---|---|---|
 | `0113L-A01` | `[⟦opening⟧] und [⟦word⟧] Dispu-` | physical line end visible |
-| `0113L-A02` | `tats, haben Selbe [⟦middle⟧] einge-` | continuation proposed, not certified |
-| `0113L-A03` | `räumet, auch freiwillig [⟦end⟧]` | positive words |
+| `0113L-A02` | `tats, haben Selbe [gehorsamst?] einge-` | F2-(b), JPEG 0113L aus 280-px-Zeilenstreifen: eng begrenzter Graphem-Kandidat im früher komplett offenen Mittelteil, ohne Auslautbeweis oder formelhafte Sicherheit. |
+| `0113L-A03` | `räumet, auch [freywillig/freiwillig?] [⟦end⟧]` | F2-(b): i/y-Zeichen des mittleren Worts am Bild nicht zweifelsfrei diskriminiert; ältere unmarkierte moderne Lesung `freiwillig` nicht als bildgesicherte historische Schreibung ausgeben. |
 | `0113L-A04` | `lassen, die hohe Jagd im Brande die` | distinct `hohe Jagd` lettering, not modernization |
-| `0113L-A05` | `Hante genant, so im [⟦middle⟧]` | place/name reading not identified |
+| `0113L-A05` | `[Hante/Hanse?] genant, so im [⟦middle⟧]` | F2-(b): ungewöhnlich kräftige/hervorgehobene Schreibung mit t/s-Graphemfrage; keine Ortsidentifikation oder stillschweigende Vereinheitlichung. |
 | `0113L-A06` | `situirt, wie man von [⟦end⟧] an` | source Latin participle `situirt` |
 | `0113L-A07` | `dem Wege folget, der [⟦middle⟧] nach` | partially read |
 | `0113L-A08` | `[⟦opening⟧] führet, und hier [⟦end⟧]` | partially read |
@@ -706,7 +710,7 @@ Vergleich: 0112L-2 | Lesung a23823ef1d904aee2d583fbd17ee8f35016ab241 | Vorab 81a
 | `0113R-A09` | `an von künftig [⟦end⟧] Güter ge-` | source working |
 | `0113R-A10` | `langen möchten, so vor, so nachmals` | visible text phrase |
 | `0113R-A11` | `beständig und ohne Contradiction` | positive historical spelling |
-| `0113R-A12` | `gedacht [⟦word⟧] [exercirlich?]` | last verb candidate, not accepted |
+| `0113R-A12` | `gebührend [exercirlich?]` | F2-(b), JPEG 0113R unten in direktem Zeilenstreifen: der bisher unmarkierte Anfang `gedacht` wird von der sichtbaren Schriftgruppe **nicht** gestützt; `gebührend` erscheint graphisch besser, das lateinische/latinisierende Folgewort bleibt unsicher. Keine methodische Fehlerquote ohne unabhängige neue Probe. |
 | `0113R-A13` | `gegen 2.) und intuitu [⟦end⟧]` | written list marker and Latin word |
 | `0113R-A14` | `Vergleich, ist dem Herrn Grafen die` | positive |
 | `0113R-A15` | `Befugnuß der hohen und Niedern Jagd` | working, `Niedern` uncertain |
