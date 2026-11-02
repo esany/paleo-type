@@ -728,6 +728,10 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 
 ### 0114L — visible writing field
 
+**F2-(c) Zeilenstreifen mit bildinternem Graphemvergleich, 02.11.2026, 0114L/0114R:** Nach Vorregistrierung auf Forschungsbranch-Methodenowner (`research/methodenprotokoll.md`, Commit `90277aeba3eface8f332e85d484dc5730f6ea122`) wurde aus der SHA-256-verifizierten Voll-PDF das originale JPEG von PDF-/Providerbild **0114**, 4304×3897 Pixel, SHA-256 `e0c71e0471ede605f6eac11dd62da307313708fd10578ee3cef8c37fe5b404ef` extrahiert und bytegenau mit `FILE-SSTA-20578-NR632-IMG0114` verglichen. Beide getrennten Schriftflächen wurden in jeweils acht nativen, vertikal leicht überlappenden 280/315-px-Zeilenstreifen von oben nach unten erneut betrachtet (L x~900–2160, R x~2440–3675, y~1230–3410). Zusätzlich wurden **nur auf derselben Seite** grafische Referenzen verglichen: 0114L, wiederkehrender Schriftkörper `Grenze` in A08/A15 und `Teich` im A10/A12-Bereich; 0114R, markanter G-Anlaut von `Gleichwie` (A02) und `Graff` (A10). Dies sind Formvergleichsloci, keine Identifizierungen einer Schreibhand oder folioübergreifenden Wortbeweise; begrenzte Fotokontraste erschweren gerade die Unterscheidung ähnlicher Verbindungsstriche.
+
+**Quellenresultat:** Die meisten bestehenden A01–A17-Zeilen je Fläche bleiben mangels neuen sicherer lesbaren Wortkörpers unverändert; 0114L-A04 wird wegen des direkt sichtbaren Initial- und Folgeschriftbilds von `[Würth?]` zu `[Wild/Würth?]` als **nicht entschiedene** Alternative erweitert. Gleiche Buchstabenformen von `Grenze` oder `Teich` stützen keine stillschweigende Normalisierung eines Namens oder einer Koppel-/Flurbezeichnung. 0114R wurde bildlich durchgehend überprüft, aber keine alte graphisch zweifelhafte Form (u. a. A06/A16) gegen Sprache, Recht oder erwartete Formel entschieden. Zwei alte `A01–A17`-Raster geprüft, **nicht 34 neu fertig transkribierte Zeilen**. Vorläufige Fehlerzahl/Vereinheitlichungszahl **offen**, kein methodischer Sieger, keine unabhängige Blindprobe; frühere alte KI-Lesungen dürfen nicht zur scheinbaren Kontrollgruppe werden.
+
 > **ungeprüfter Entwurf – Stichprobe mit hoher Fehlerrate (siehe #359)**. Bestehende Zeilen nicht als bildgeprüfte Wahrheit übernehmen; diese Schriftfläche im neuen Rhythmus vollständig neu lesen.
 
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
@@ -735,7 +739,7 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | `0114L-A01` | `nicht mit benennet stehet, unberühret` | working physical line; mark uncertainty retained |
 | `0114L-A02` | `des Gebrauchs der Niedern Koppel Jagd,` | working physical line; mark uncertainty retained |
 | `0114L-A03` | `mit [wegen?], [gegen?], und Stellen, so sonst [⟦end⟧]` | working physical line; mark uncertainty retained |
-| `0114L-A04` | `[Würth?] zu Dorbe, benebst dem [⟦end⟧]` | working physical line; mark uncertainty retained |
+| `0114L-A04` | `[Wild/Würth?] zu [Dorbe?], benebst dem [⟦end⟧]` | F2-(c): Bildstreifen und Binnenvergleich auf 0114L zeigen einen graphisch eher `Wild`-ähnlichen Wortanfang; die ältere unsichere Hypothese `Würth` bleibt als tatsächlich noch offene Alternative, keine Orts-/Sachwortidentifikation. |
 | `0114L-A05` | `daselbst, auf solche maße, in dortigen` | working physical line; mark uncertainty retained |
 | `0114L-A06` | `Fluße, gehabt, und [früher?] exerciret,` | working physical line; mark uncertainty retained |
 | `0114L-A07` | `wie nicht minder auch die [⟦word⟧] streitig` | working physical line; mark uncertainty retained |
