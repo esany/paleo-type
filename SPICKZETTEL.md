@@ -19,7 +19,7 @@ Ohne Angabe beziehen sich die Stichworte auf diese Projekte, in dieser Reihenfol
 | Du schreibst | an wen | was passiert |
 |---|---|---|
 | **weiter** | Hauptchat (Astra) | Der Chat erledigt zuerst offene Issues mit Label `an:chatgpt` (älteste zuerst), dann den nächsten Durchgang nach Plan und Rückkehrpunkt im `STATUS.md`. Am Ende kommt eine kurze Meldung an dich. |
-| **vorab** / **gegenlesen** | jeder Chat | Der Chat führt [`docs/gegenlesung-vorab.md`](docs/gegenlesung-vorab.md) aus: Er liest offene Seiten blind vorab und legt das Ergebnis im Repo ab. |
+| **vorab** / **gegenlesen** | **neuer** Chat im ChatGPT-Projekt (dort liegt das PDF), nicht der Astra-Chat | Der Chat führt [`docs/gegenlesung-vorab.md`](docs/gegenlesung-vorab.md) aus: Er liest offene Seiten blind vorab und legt das Ergebnis im Repo ab. |
 | **Prüfen** + PR-Nummer | Prüfchat (Claude) | Der Chat prüft den PR gegen Plan und Regeln, führt Tests selbst aus und schreibt ein Urteil in den PR. |
 | **übernehmen** | Prüfchat | Nach bestandener Prüfung wird der PR auf `main` übernommen. |
 | **Stichprobe** | Prüfchat | Der Chat liest eine Seite, deren Lesung er noch nicht kennt, blind gegen und trägt das Ergebnis im Forschungs-PR ein. |
@@ -72,7 +72,7 @@ paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-R
 2. Neuen Chat öffnen:
    - Hauptchat: „weiter“
    - Prüfchat: „paleo-type“
-   - Gegenlese-Chat: „gegenlesen“
+   - Gegenlese-Chat: „gegenlesen“, immer in einem neuen Chat im ChatGPT-Projekt
 3. Nichts aus dem alten Chat hineinkopieren. Alles Nötige steht im Repo.
 
 ---
