@@ -502,3 +502,43 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttextblock, Z. 9 von oben: `cessus verblieben, und die Jagd im`
 - Haupttextblock, Z. 3 von unten: `ben solte, daß den Herrn Grafen und`
 - Bildbefund: Die drei Zeilen wurden unabhängig im Originalbild geprüft; die erste Wortform ist unsicher. Die Schriftfragmente am äußersten rechten Rand gehören nicht zur hier geprüften Haupttextspalte. Digitale Bildnummer und Zeilenzählung sind keine archivalische Foliierung.
+
+## 0129R
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 129 (0129R)
+- Blind: ja
+- Oberer Haupttextabsatz, Z. 3 von oben: \`Quanti, an 4000. [Rthlr?] — — ⟦…⟧\`
+- Mittlere Namensaufzählung, Z. 1 von oben: \`Herrn Friedrich Wilhelm August Carl\`
+- Unterer Haupttextabsatz, Z. 7 von oben: \`Lehns-Quantum [⟦…⟧]\`
+- Bildbefund, Trennung der Textbereiche: Der obere Absatz, die eingerückte Namensaufzählung und der untere Absatz besitzen eigene Zeilenfolgen; die hier angegebenen Zeilenzahlen gelten jeweils nur für den benannten Textblock.
+
+## 0130L
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 130 (0130L)
+- Blind: ja
+- Haupttext, Z. 1 von oben: \`2000. [Rthlr?] — — auf das mir ⟦…⟧\`
+- Haupttext, Z. 13 von oben: \`Quantum derer 4000. [Rthlr?] — ⟦…⟧\`
+- Haupttext, Z. 1 von unten: \`bis wir und unser [sämtliche?] [Descen…?]\`
+- Bildbefund, letzter Zeilenabschluss: Der Text läuft am Falz beziehungsweise rechten Bildrand weiter; kein Wortende aus Kontext ergänzt.
+
+## 0130R
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 130 (0130R)
+- Blind: ja
+- Oberer Haupttext, Z. 3 von oben: \`und als dann erst an [obernannte?] ⟦…⟧\`
+- Urkundenvermerk, Z. 1 von oben: \`Datum [Wilkau?] und Dresden den 14. und\`
+- Unterer Datumsvermerk, Z. 1 von oben: \`[Nickel?] den 3 Martz 1780.\`
+- Bildbefund, Mitte links: Zwei dunkle anhängende Siegelkörper überdecken Schriftzüge; verdeckte Zeichen bleiben ungelesen.
+
+## 0131L
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 131 (0131L)
+- Blind: ja
+- Oberer Haupttextblock, Z. 2 von oben: \`Churfürstl: Sächßl: Cabinets-Ministre\`
+- Oberer Haupttextblock, Z. 6 von oben: \`gerichtlich recognosciret, welches hierdurch\`
+- Unterer Haupttextblock, Z. 1 von oben: \`[Justiz?] Amt Dresden am 13ten [Nov?] 1780.\`
+- Bildbefund, Textgliederung: Zwei Schriftblöcke mit je eigener Zeilenfolge; je ein dunkler Siegelkörper liegt im Bereich der Blöcke.
