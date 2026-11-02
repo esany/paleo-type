@@ -64,6 +64,8 @@ paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-R
 
 **d) GitHub:** Settings → General → „Automatically delete head branches“ einschalten.
 
+**e) `main` ist geschützt** (Ruleset „Main“, seit 02.11.2026, #90): Änderungen nur über einen PR, und nur wenn `validate` grün ist. Niemand kann das umgehen, auch du und die KIs nicht. Löschen und Überschreiben sind gesperrt.
+
 ---
 
 ## 2b · Chat wechseln
