@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-02-4",
+  "run_status": "completed",
+  "baseline_commit": "b1216d948a92d653c3430d52915f41fd52191648",
+  "result_commit": "ddee8ed748ad605ad3f53ee665cd633de830a675",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "b5ada979a828bb88096754d86f34b67762cc69a055272544067624fe7b2dc3cb",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-02 / F2-Praxisprobe:** Die drei Leseweisen wurden quellennah auf insgesamt sechs Schriftflächen ausgeführt: (a) 0110L/R `5923025134bb2bb87267b0cd2396d4c06d87ba8b`, (b) 0113L/R `8fea0bd2cd54262065ffa71bdd3c00829ec86fec`, (c) 0114L/R `dd4bb06826c70ff4c24aa5c85b3234277fc939b3`; die sechs Prozess-/Messzeilen im Methodenowner `14accbacb704353a490f372a27e6a4dc9b6218d3`. **Fehlerquoten, Vereinheitlichungen und Methodensieger bleiben offen, keine Nullwerte ohne neue Blindproben.** Review-Queue sechs neue `-2`-Proben vorne (`71c6912`), dann 0125L–0126R. Nächster Schritt unabhängige F2-Gegenlesung, danach bildgebundene Disposition und erst dann Methodenentscheid. F1-Projektrhythmus weiterhin abgeschlossen, F2/F3/G2–G6 nicht.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
