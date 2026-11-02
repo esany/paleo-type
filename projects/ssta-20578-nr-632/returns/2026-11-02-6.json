@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-02-6",
+  "run_status": "completed",
+  "baseline_commit": "7c22474aa3e1450ded6a04993b4dc95c2d0aff04",
+  "result_commit": "6e5d1196264ea13011e8e4cdad14efd462923821",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "f5bedbf55d5115ea60870d0919021ed4b2e12f7fc2761d05ea801b428919a954",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-02 / F2 0110R-3 und 0113L-2:** Original-JPEGs 0110 und 0113 am registrierten Voll-PDF bildgeprüft; zwei unabhängige Blindabschnitte mit jeweiligem vorherigen Forschungs-Commit verglichen. `0110R-3` gegen `55e0f92` mit **1** sicher falscher unmarkierter Wortgruppe / 3 Loci, **0** Vereinheitlichungen, begrenzt `passt` nach Korrektur; `0113L-2` gegen `8fea0bd` mit **2** sicheren Wortfehlern / 3 Loci, **1** Normalisierung → `überarbeiten`, A01–A17 nochmals vollständig im Originalsichtfeld angeschaut. Forschungsstand `f356a5cc7dce454e5304df75a6160ae1b7b916bd`; Methodenowner `3fad9d409630a26e74d5984d38e182b6f93d84a6`, Review-Queue nun `0113L-3`, `0131R` (Commit `4517af6`). **Nächster Schritt `0113L-3` unabhängige Nachprobe; danach 0113R-2 und 0114L/R-2, F2/F3/G2–G6 nicht abgenommen.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
