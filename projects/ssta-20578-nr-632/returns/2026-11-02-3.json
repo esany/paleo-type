@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-02-3",
+  "run_status": "completed",
+  "baseline_commit": "78d39071e6c45159fbe9ea487a1ef08f5ec8a5f6",
+  "result_commit": "d37e1c9ebc7c89dd749e5936668e6d8d09730049",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "2d9db44a69ac55ad972213f86521667387d3aa3b59a75322b00db742f5242ba8",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-02 / F1-Sechs-Flächen-Abschluss:** In Forschungsowner-Commit `77fed8bbce67644dc0321b88daa24ebcb7812fa4` sind vier registrierte Originalfotos 0104–0107, sechs eng begrenzte KI-Stichprobenurteile (19 Loci) und fünf bildgeprüfte Übergänge dokumentiert; Wortjoin 0105R→0106L gestützt, Material-/Satzanschlüsse teils offen. F1 nach **projektinternem** Kriterium erledigt, keine Volltranskriptions-/Fach- oder G2–G6-Abnahme. **Weiter mit F2-Methodentest** (je zwei 0108–0131-Seiten pro Leseweise, fehlerbezogenes Methodenprotokoll); Review-Queue ab 0125L.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
