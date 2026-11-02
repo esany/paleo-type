@@ -48,7 +48,7 @@ class GesuchF4LossTest(unittest.TestCase):
     def test_unrelated_research_owner_bytes_preserved(self):
         """Also protect all other 0102/0103 and 0108–0131 material from loss."""
         payload = OLD_OWNER.read_bytes()
-        git_blob = hashlib.sha1(b"blob " + str(len(payload)).encode() + b"\\x00" + payload).hexdigest()
+        git_blob = hashlib.sha1(b"blob " + str(len(payload)).encode() + bytes([0]) + payload).hexdigest()
         self.assertEqual(git_blob, "bb4f209c1f6a68dfd2a7433e08bcb3615e8d7c4c")
 
 
