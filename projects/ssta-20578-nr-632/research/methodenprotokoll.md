@@ -4,7 +4,7 @@ Projektbezogener Forschungsstand, begonnen 31.10.2026. Getrennt vom [Eigentümer
 
 ## F2 — Vergleich der Leseweisen
 
-Noch kein F2-Methodenvergleich durchgeführt; die folgenden Spalten sind ausschließlich das vorgesehene Protokollformat.
+**F2 angelaufen (02.11.2026), noch keine methodische Rangfolge:** Erster im Voraus festgelegter Bildblock ist `0110L`/`0110R` (zwei unterscheidbare Schriftflächen auf PDF-/Providerbild 0110), **Methode (a) „ganze Seite ansehen, dann physische Zeilen“**. Vergleichsblöcke (b) und (c) werden erst nach dieser gesicherten Lesung quellengebunden festgelegt. Die Aufnahme 0110 ist ein JPEG mit zwei Flächen; dies und ungleiche Schriftkomplexität zwischen Bildflächen sind potenzielle Störgrößen des späteren Methodenvergleichs. Die beiden Seiten waren früher schon Gegenstand älterer KI-Arbeitsversuche; die aktuelle Hauptlesung ist daher **nicht blind gegenüber eigenen Entwurfshypothesen**. Independent review ist erst nach Commit der neuen Eigenlesung erlaubt. Quelle `FILE-SSTA-20578-NR632-FULL-PDF-20261030` SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, unverändertes native JPEG 0110 4304×3897 px, SHA-256 `19d9d9214d37ad823e69ca8ea96c1b65cc72c3d70cf28a1d4550d4fea3e1206b`, gleich registriertem `FILE-SSTA-20578-NR632-IMG0110`. PDFbild und L/R keine Archivfoliierung. Ohne neue unabhängige, bildgebundene Nachprobe bleiben Fehler- und Vereinheitlichungsspalten **offen**, niemals `0` als Platzhalter. Keine Dauer geschätzt, wenn nicht kontrolliert gemessen.
 
 | Seite | Leseweise | Bildquelle (kompakt/voll) | Zeilen | Fehler in der Gegenlesung | davon Vereinheitlichung | grobe Dauer | Bemerkung |
 |---|---|---|---:|---:|---:|---|---|
