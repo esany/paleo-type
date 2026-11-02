@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-02-5",
+  "run_status": "completed",
+  "baseline_commit": "62dbd83958fc9c8b9ad399d7927b4c3019809943",
+  "result_commit": "5324a2f1b294b11675962067b41989e8b0c369b2",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "5bbdaf6dd0e29832ac7cc02161c90b2c2fe1ace0f8be80f5847389f97e340f17",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-02 / F2-Nachproben 0110L/R:** Die jeweils *vor Einsicht* gesicherten F2-(a)-Lesungen `5923025134bb2bb87267b0cd2396d4c06d87ba8b` wurden mit unabhängigem Blind-Commit `c6a87dd8a2d1ae1aeb3be7e68d51a55eddb6a00c` am exakten Originalfoto 0110 verglichen. 0110L-2: **1** Wortformfehler, davon **1** stille Vereinheitlichung, begrenzt `passt`. 0110R-2: **2** unmarkierte Fehlgruppen, davon **0** sichere Normalisierungen, **`überarbeiten`**; A16 am Bild zu `solch alßo` korrigiert, A03/A08 Varianten offen, revidierter Forschungsowner `55e0f92e23a442cb6a47b88e4df467d5f6203b54`. Nächster Schritt **unabhängige 0110R-3-Nachkorrekturprobe in neuem, unvoreingenommenem Chat**, dann F2-Durchgang mit noch vier offenen Vergleichen; technische Methodensiegerwahl/F3/Fach-Gates weiter offen. Review-Queue-Kopf `99cc06c`.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
