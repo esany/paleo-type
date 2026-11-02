@@ -85,6 +85,8 @@ Kurz an den Eigentümer, in Alltagssprache:
 
 ## Pflichten des Hauptchats (Stichwort „weiter“)
 
+- **Hinweis an den Eigentümer:** Wann immer der Hauptchat auf „gegenlesen“ verweist (Meldung, `Stand für den Eigentümer`, Website), schreibt er wörtlich dazu: **„in einem frischen Chat im ChatGPT-Projekt, nicht in diesem Chat“**.
+
 - **Liste pflegen:** Am Ende jedes Durchgangs die Zeile `Vorab offen` in der Vorab-Datei setzen: **zuerst alle Nachproben**, die der Plan nach einer Korrektur verlangt (z. B. `0112L-2 (2–3 Zeilen)`), dann die nächsten Seiten in Planreihenfolge ohne Abschnitt, zusammen höchstens **10** Einträge. Nur diese Zeile ändern.
 - **Vergleich:** Seite lesen und committen, **erst dann** ihren Vorab-Abschnitt öffnen. Im Forschungsowner einen Vergleichsvermerk anlegen:
   - eigener Lesungs-Commit
