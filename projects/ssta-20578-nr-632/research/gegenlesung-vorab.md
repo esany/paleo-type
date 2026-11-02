@@ -403,3 +403,49 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Linker Textblock, Z. 1 von oben: `nicht mit benennet stehet, unbehindert`
 - Linker Textblock, Z. 7 von oben: `wie nicht minder auch die [hieher/hiesher] streitig`
 - Linker Textblock, Z. 16 von oben: `maßen es die Besitzer des Ritter-`
+
+## 0114R-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 114 (0114R)
+- Blind: ja
+- Haupttext, Z. 2 von oben: \`ter gebrauchet, Gleichwie nun die Hoch-\`
+- Haupttext, Z. 9 von oben: \`zu enthalten wißen werden, Alßo\`
+- Haupttext, Z. 16 von oben: \`[constituit?] limitum, ⟦…⟧\`
+
+## 0125L
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 125 (0125L)
+- Blind: ja
+- Schmaler Haupttextblock rechts auf linker Blattfläche, Z. 3 von oben: \`[Lehn?] [auff?] und [diesem?] in Manu\`
+- Schmaler Haupttextblock, Z. 13 von oben: \`[sonst?] zugehörigen,\`
+- Schmaler Haupttextblock, Z. 25 von oben: \`auch den Lehn-Brief mit ⟦…⟧\`
+
+## 0125R
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 125 (0125R)
+- Blind: ja
+- Überschrift, Z. 1 von oben: \`Vollmacht\`
+- Tabellarischer Haupttext rechts, Z. 8 von oben: \`[Curie?] ⟦…⟧, erscheinet, und\`
+- Tabellarischer Haupttext rechts, Z. 18 von oben: \`⟦…⟧ Cabinets-Ministers\`
+- Bildbefund, Textfeld: Die Seite enthält räumlich getrennte stichwortartige Zeilen links und längere Einträge rechts; ihre Zeilenzählung wurde auf den jeweils benannten Bereich bezogen.
+
+## 0126L
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 126 (0126L)
+- Blind: ja
+- Schmaler Haupttextblock rechts auf linker Blattfläche, Z. 2 von oben: \`die ⟦…⟧ betrifft, ⟦…⟧\`
+- Schmaler Haupttextblock, Z. 10 von oben: \`[Schein?] [Buch?] und [allodial?], ⟦…⟧\`
+- Schlussdatierung unter dem Haupttext, Z. 1 von oben: \`am 1. August, 1764\`
+
+## 0126R
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 126 (0126R)
+- Blind: ja
+- Haupttext, Z. 1 von oben: \`Den 22ten Augusti 1764. ist zu [Rochl.?] [uns?]\`
+- Haupttext, Z. 10 von oben: \`⟦…⟧ und die [gesammte?] Hand in\`
+- Haupttext, Z. 15 von oben: \`[bekandt?] worden. Signatum Dres[den?]\`
