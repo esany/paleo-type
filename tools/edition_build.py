@@ -302,6 +302,8 @@ def build_site(root: Path, output: Path) -> None:
         '<footer>Reproduzierbare Darstellung aus den Forschungsdateien '
         'von Nr. 632. Keine neue Textautorität.</footer></body></html>'
     )
+    if "**" in html_text:
+        raise ValueError("unrendered Markdown bold marker in generated edition")
     output.mkdir(parents=True, exist_ok=True)
     (output / "index.html").write_text(html_text, encoding="utf-8")
     (output / "style.css").write_text(STYLES, encoding="utf-8")
