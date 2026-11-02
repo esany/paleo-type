@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-02-1",
+  "run_status": "completed",
+  "baseline_commit": "203a33608d0e46a500329381f4a6722bf0940ee2",
+  "result_commit": "ceebe54df38103714311ebae482d744c717be79c",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "65ee0b2573333d1df3f3796f2bc789691666219ed5383d6a5b062f71968a9326",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-02 / Nr. 632: Original-JPEGs 0105/0112 aus registrierter Voll-PDF byteidentisch mit `corpus/files.tsv` und nicht blind erneut am Bild betrachtet; Forschungsowner-Commit `edae398394c13471f57ba73cc52c2d9ec4c4da26`. Nächster fachlicher Schritt bleibt frische unabhängige F1-Nachprobe `0105L-2` und `0112L-2`, danach bildgebundener Vergleich; 0112R gesperrt. #382 weiter zur Prüfung; kein fachlicher PASS.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
