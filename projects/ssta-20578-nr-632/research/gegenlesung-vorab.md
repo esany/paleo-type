@@ -492,3 +492,13 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Linker Haupttext, Z. 2 von oben: `Hintritt ihrer [Herren?] Brüder und deren De-`
 - Linker Haupttext, Z. 11 von oben: `obgedachtes Lehn-Quantum an 4000. f.`
 - Linker Haupttext, Z. 18 von oben: `sub dato den 20. April: 1769. gnädigst`
+
+## 0110R-3
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 0110, rechte Bildhälfte
+- Blind: ja
+- Haupttextblock, Z. 1 von oben: `und [einzurücken?] gewesen, daß die Jagd`
+- Haupttextblock, Z. 9 von oben: `cessus verblieben, und die Jagd im`
+- Haupttextblock, Z. 3 von unten: `ben solte, daß den Herrn Grafen und`
+- Bildbefund: Die drei Zeilen wurden unabhängig im Originalbild geprüft; die erste Wortform ist unsicher. Die Schriftfragmente am äußersten rechten Rand gehören nicht zur hier geprüften Haupttextspalte. Digitale Bildnummer und Zeilenzählung sind keine archivalische Foliierung.
