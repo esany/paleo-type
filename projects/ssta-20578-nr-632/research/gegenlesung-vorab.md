@@ -313,3 +313,48 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttext rechts, Z. 12 von oben: `Georg Fridrich Grafen von [Einsiedel?],`
 - Haupttext rechts, Z. 9 von unten: `7. Novbr. 1763. und [præs.?] den 9ten Dito,`
 - Unsicherheit: Zählung bezieht sich nur auf den durchlaufenden rechten Haupttextblock; die gesonderte linke Anrede und der blasse untere Randvermerk wurden nicht mitgezählt.
+## 0105L-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 105 (0105L)
+- Blind: ja
+- Haupttext, Z. 14 von oben: \`nebst [mich?] und meinen\`
+- Haupttext, Z. 15 von oben: \`Brüdern, Dero [Cammer?]\`
+- Haupttext, Z. 16 von oben: \`[Günders?], Herrn [Adelen?]\`
+
+## 0112L-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 112 (0112L)
+- Blind: ja
+- Haupttext, Z. 1 von oben: \`Zu wißen, Demnach zwischen dem [Dorff?]\`
+- Haupttext, Z. 10 von oben: \`der [erste?] den 23 Martij 1677. und\`
+- Haupttext, Z. 17 von oben: \`gnädigsten ratification folgendes\`
+
+## 0123L
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 123 (0123L)
+- Blind: ja
+- Schmaler Schriftstreifen, Z. 2 von oben: \`Berg: und Hütten\` (rechts Fortsetzung verdeckt)
+- Schmaler Schriftstreifen, Z. 8 von oben: \`die [Ehe/Lehe] und [Kauff?]\` (rechts Fortsetzung verdeckt)
+- Schmaler Schriftstreifen, Z. 13 von oben: \`[Schuldigkeit?] [erfor…?]\` (rechts Fortsetzung verdeckt)
+- Bildbefund, rechter Rand des Schriftstreifens: Eine darüberliegende Blattfläche verdeckt den Textfortgang; keine Wörter ergänzt.
+
+## 0123R
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 123 (0123R)
+- Blind: ja
+- Anrede, Z. 1 von oben: \`Durchlauchtigster Churfürst,\`
+- Haupttext, Z. 10 von oben: \`Justitien-Rath [ver…?] Mann-\`
+- Haupttext, Z. 17 von oben: \`der Sr. Königs: Majst: und Churfürstl:\`
+
+## 0124L
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 124 (0124L)
+- Blind: ja
+- Haupttext, Z. 2 von oben: \`Höchst Dieselben wollen gnädigst\`
+- Haupttext, Z. 14 von oben: \`habenden Antheile, erkennen,\`
+- Datumsvermerk unten links, Z. 2 von oben: \`am 7. Novbr.\`
