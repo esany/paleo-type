@@ -449,3 +449,46 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttext, Z. 1 von oben: \`Den 22ten Augusti 1764. ist zu [Rochl.?] [uns?]\`
 - Haupttext, Z. 10 von oben: \`⟦…⟧ und die [gesammte?] Hand in\`
 - Haupttext, Z. 15 von oben: \`[bekandt?] worden. Signatum Dres[den?]\`
+
+## 0127L
+- Datum: 2026-11-02
+- Leser: GPT-6, Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 127
+- Blind: ja
+- Bildbefund, linke Bildhälfte, oberer bis unterer Blattbereich: Schwache spiegelverkehrte Schriftspuren, keine sicher in eigener Leserichtung lesbare physische Schriftzeile.
+- Stichprobe: 0 eigenständige Schriftzeilen; Nullbeobachtung am Bild, kein positives Gegenleseergebnis.
+
+## 0127R
+- Datum: 2026-11-02
+- Leser: GPT-6, Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 127
+- Blind: ja
+- Rechter Haupttext, Z. 2 von oben: `gebohrne, Herr Detlev Carl Graf von Einsiedel,`
+- Rechter Haupttext, Z. 7 von oben: `dem Mann- und Weiber-Lehn-Guthe Knau, und`
+- Rechter Haupttext, Z. 1 von unten: `Dresden, ut supra,`
+
+## 0128L
+- Datum: 2026-11-02
+- Leser: GPT-6, Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 128
+- Blind: ja
+- Bildbefund, linke Bildhälfte, oberer bis unterer Blattbereich: Schwache spiegelverkehrte Schriftspuren, keine sicher in eigener Leserichtung lesbare physische Schriftzeile.
+- Stichprobe: 0 eigenständige Schriftzeilen; Nullbeobachtung am Bild, kein positives Gegenleseergebnis.
+
+## 0128R
+- Datum: 2026-11-02
+- Leser: GPT-6, Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 128
+- Blind: ja
+- Rechter Haupttext, Z. 3 von oben: `besondern Theilung vom 15. April: 1726.`
+- Rechter Haupttext, Z. 12 von oben: `17. ejusdem mensis et anni allergnädigst`
+- Rechter Haupttext, Z. 5 von unten: `Quantum von 4000. f. —, welche`
+
+## 0129L
+- Datum: 2026-11-02
+- Leser: GPT-6, Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 129
+- Blind: ja
+- Linker Haupttext, Z. 2 von oben: `Hintritt ihrer [Herren?] Brüder und deren De-`
+- Linker Haupttext, Z. 11 von oben: `obgedachtes Lehn-Quantum an 4000. f.`
+- Linker Haupttext, Z. 18 von oben: `sub dato den 20. April: 1769. gnädigst`
