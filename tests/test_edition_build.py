@@ -105,6 +105,18 @@ class EditionTests(unittest.TestCase):
         stylesheet = (self.dest / "style.css").read_text(encoding="utf-8")
         self.assertIn("@media(max-width:700px)", stylesheet)
 
+    def test_notes_render_code_and_bold_only_description_is_not_transcription(self):
+        source = self.readings.read_text(encoding="utf-8")
+        source = source.replace("unsicher am Schriftbild", "**unsicher** am `Schriftbild`")
+        source += "| `0104R-A03` | **Sichtbare Schrift, noch ohne diplomatische Lesung** | **Bildbefund** |\n"
+        self.readings.write_text(source, encoding="utf-8")
+        page = self.html()
+        self.assertNotIn("**", page)
+        self.assertIn("<code>Schriftbild</code>", page)
+        self.assertIn("Hinweis zur Zeile: unsicher am <code>Schriftbild</code>", page)
+        self.assertIn('<em class="description">Sichtbare Schrift, noch ohne diplomatische Lesung</em>', page)
+        self.assertNotIn('<span class="diplomatic">Sichtbare Schrift', page)
+
     def test_fixed_addresses_and_stylesheet(self):
         h = self.html()
         self.assertIn('id="doc-0103-0107"', h)
