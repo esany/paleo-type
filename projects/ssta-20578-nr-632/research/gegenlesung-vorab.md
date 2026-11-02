@@ -1,6 +1,6 @@
 # Nr. 632 — Vorab-Gegenlesung
 
-Vorab offen: 0110L-2 (F2, 2–3 Zeilen), 0110R-2 (F2, 2–3 Zeilen), 0113L-2 (F2, 2–3 Zeilen), 0113R-2 (F2, 2–3 Zeilen), 0114L-2 (F2, 2–3 Zeilen), 0114R-2 (F2, 2–3 Zeilen), 0125L, 0125R, 0126L, 0126R
+Vorab offen: 0110R-3 (F2, erneute 2–3 Zeilen nach Korrektur), 0127L, 0127R, 0128L, 0128R, 0129L, 0129R, 0130L, 0130R, 0131L
 
 Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Abschnitt „Parameter: Gegenlesung“. Abschnitte nur anhängen, nie ändern.
 
