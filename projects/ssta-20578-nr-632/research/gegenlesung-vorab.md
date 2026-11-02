@@ -358,3 +358,48 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttext, Z. 2 von oben: \`Höchst Dieselben wollen gnädigst\`
 - Haupttext, Z. 14 von oben: \`habenden Antheile, erkennen,\`
 - Datumsvermerk unten links, Z. 2 von oben: \`am 7. Novbr.\`
+
+## 0110L-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 110
+- Blind: ja
+- Linker Textblock, Z. 5 von oben: `handelte Puncte, biß zu Unserer gnä-`
+- Linker Textblock, Z. 10 von oben: `[wie/wir] uns hierbey gefügten Original`
+- Linker Textblock, Z. 16 von oben: `unter andern gemelte Grenze biß an`
+
+## 0110R-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 110
+- Blind: ja
+- Rechter Textblock, Z. 3 von oben: `und [ihm/ihn] zukommen solle; So ist`
+- Rechter Textblock, Z. 8 von oben: `es bey den Worten des angeregten Re-`
+- Rechter Textblock, Z. 16 von oben: `seinen Successoren, solch [also/alßo] auf`
+
+## 0113L-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 113
+- Blind: ja
+- Linker Textblock, Z. 4 von oben: `laßen, die hohe Jagd im Brande die`
+- Linker Textblock, Z. 12 von oben: `zur lincken Seiten hinwey streichet,`
+- Linker Textblock, Z. 15 von oben: `Revier man ausdrücklich reservi-`
+
+## 0113R-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 113
+- Blind: ja
+- Rechter Textblock, Z. 5 von oben: `auf alle diejenigen, was auf solchen`
+- Rechter Textblock, Z. 10 von oben: `langen möchten, so vor, so nachmahls`
+- Rechter Textblock, Z. 16 von oben: `in denen Dorfs, und Clauischen Fluh-`
+
+## 0114L-2
+- Datum: 2026-11-02
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 114
+- Blind: ja
+- Linker Textblock, Z. 1 von oben: `nicht mit benennet stehet, unbehindert`
+- Linker Textblock, Z. 7 von oben: `wie nicht minder auch die [hieher/hiesher] streitig`
+- Linker Textblock, Z. 16 von oben: `maßen es die Besitzer des Ritter-`
