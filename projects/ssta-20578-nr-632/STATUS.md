@@ -2,16 +2,17 @@
 
 Arbeitsplan: `ARBEITSPLAN.md` auf `main` (Eigentümerentscheidung 31.10.2026).
 
-## Geltender Rückkehrpunkt — 01.11.2026
+## Geltender Rückkehrpunkt — 02.11.2026
 - **Stand für den Eigentümer:** Die Handschrift wird Seite für Seite am Originalbild überprüft. Für 0105L und 0112L fehlen noch unabhängige Nachproben; die nächste Seite 0112R bleibt bis dahin zurückgestellt. Für diese Nachproben bitte in einem neuen, unabhängigen Chat „gegenlesen“ starten.
 - **Forschungsstand:** 0112L neu über 17 physische Zeilen (H01, A01–A16) als **ungeprüfte KI-Arbeitslesung** im bestehenden Forschungsowner; Lesungs-Commit `beec14411272b22924951851438dd957aaf1da1d`. Keine neue Lesung in diesem #379-Durchgang.
 - **Quelle:** registrierte Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030`, SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`, Provider-/PDFbild 0112 links; nicht archivalisch foliiert.
 - **Fehlerschwelle:** Die alte Probe zu 0112L fand mindestens zwei unmarkierte falsche Wortgruppen in drei Loci; sie validiert die Neulesung **nicht**. Auch 0105L-A14–A16 wurde nach einer Fehlerüberschreitung korrigiert, aber nicht erneut blind geprüft.
-- **Vorab-Warteschlange:** Auf `review/nr632-gegenlesung-vorab` zuerst `0105L-2` (Z. 14–16 von oben), `0112L-2` (2–3 Zeilen), danach weitere offene Ansichten. Die beiden F1-Nachproben fehlen unverändert. Für `0124R` gibt es inzwischen einen anderen blinden Abschnitt (Commit `aac5c54`); wegen F1-Vorrang ist er noch nicht disponiert.
+- **Vorab-Warteschlange:** Die beiden Nachproben `0105L-2` (Z. 14–16 von oben) und `0112L-2` (2–3 Zeilen) fehlen unverändert. Die nur in ihrer Queue-Zeile geänderte Review-Datei auf `review/nr632-gegenlesung-vorab` (Commit `9d4ff1b52e2d515e43ca99f5368d12ec477fadf1`) führt zehn offene Einträge; die bereits eingetragene blinde 0124R-Probe bleibt unverändert und für die spätere Prüfung vorgemerkt.
 - **Nächste fachliche Aktion:** Ein *anderer*, bisher unvoreingenommener Chat liest die beiden Nachproben blind am registrierten Bild und sichert die Abschnitte; danach vergleicht der Hauptchat ausschließlich gegen den jeweils **vor Einsicht** committeten eigenen Lesungsstand und klärt Abweichungen am Bild.
 - **Sperre:** 0112R bleibt bis zur Disposition der neuen 0112L-2-Probe gesperrt. F1/F2 und die wissenschaftlichen Gates G2–G6 sind nicht abgenommen.
+- **Schriftbildkontrolle ohne neue Lesungsabnahme:** Voll-PDF-SHA-256 `d89cf32d...b33531d88e` bestätigt; extrahierte native Bilder 0105 und 0112 sind SHA-256-identisch mit `FILE-SSTA-20578-NR632-IMG0105` und `IMG0112` (keine getrennte Archiv-JPEG neu beschafft). Bildkandidaten bei 0105L A14–A16 und 0112L A10 bleiben unverändert und vorläufig; die unabhängigen Nachproben werden nicht ersetzt.
 - **Werkzeuge:** PR #375 ist auf `main` übernommen (Merge-Stand `0d9226c`, technische Formatprüfung ohne Handschriftenabnahme). Nachbesserung #383 für Editions-PR #382 wurde im Branch `feature/nr632-edition-site-20261102` auf HEAD `4987327` mit grünen GitHub-Runs `41363394787` und `41363394806` gespeichert; #383 geschlossen, PR #382 weiterhin Entwurf und vor Übernahme unabhängig zu prüfen. Kein automatischer Forschungs-PASS.
-- **RÜCKKEHRANKER 2026-11-02 / #383: Editions-PR #382 nachgebessert, CI grün, Prüferabnahme offen. Fachlich zuerst unabhängige F1-Nachproben `0105L-2` und `0112L-2` in neuem Chat; 0112R bleibt gesperrt. Der vorhandene Blindabschnitt 0124R ist noch nicht verglichen, keine neue Lesung.**
+- **RÜCKKEHRANKER 2026-11-02 / Nr. 632: Original-JPEGs 0105/0112 aus registrierter Voll-PDF byteidentisch mit `corpus/files.tsv` und nicht blind erneut am Bild betrachtet; Forschungsowner-Commit `edae398394c13471f57ba73cc52c2d9ec4c4da26`. Nächster fachlicher Schritt bleibt frische unabhängige F1-Nachprobe `0105L-2` und `0112L-2`, danach bildgebundener Vergleich; 0112R gesperrt. #382 weiter zur Prüfung; kein fachlicher PASS.**
 - Frühere Rückkehrpunkt-Fassungen bleiben vollständig in der Git-Historie; darunter folgt der weiter bestehende Forschungskontext.
 
 ## Research purpose and Project authority
