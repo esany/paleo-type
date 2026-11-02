@@ -135,15 +135,32 @@ def render_diplomatic(reading: str) -> str:
     return "".join(pieces)
 
 
+def render_note(note: str) -> str:
+    """Interpret only established presentation markup, not historical readings."""
+    note = note.replace("**", "")
+    chunks = re.split(r"(`[^`]+`)", note)
+    return "".join(
+        "<code>" + esc(chunk[1:-1]) + "</code>"
+        if len(chunk) > 1 and chunk.startswith(chr(96)) and chunk.endswith(chr(96))
+        else esc(chunk)
+        for chunk in chunks
+    )
+
+
 def render_line(identifier: str, reading: str, note: str) -> str:
     number = '<span class="line-id">' + esc(identifier) + '</span>'
-    text = '<span class="diplomatic">' + render_diplomatic(reading) + '</span>'
     anchor = 'line-' + identifier.lower()
-    if UNCLEAR.search(reading):
-        body = ('<details><summary>' + number + text + '</summary>'
-                '<p>Hinweis zur Zeile: ' + esc(note or "Unsicherer Befund") + '</p></details>')
+    descriptive = re.fullmatch(r"\*\*(.+?)\*\*", reading.strip(), re.S)
+    if descriptive:
+        # Source commentary in a reading-shaped table cell is not a diplomatic transcription.
+        body = number + '<em class="description">' + esc(descriptive.group(1)) + '</em>'
     else:
-        body = number + text
+        text = '<span class="diplomatic">' + render_diplomatic(reading) + '</span>'
+        if UNCLEAR.search(reading):
+            body = ('<details><summary>' + number + text + '</summary>'
+                    '<p>Hinweis zur Zeile: ' + render_note(note or "Unsicherer Befund") + '</p></details>')
+        else:
+            body = number + text
     return '<li id="' + esc(anchor) + '" class="reading-line">' + body + '</li>'
 
 
