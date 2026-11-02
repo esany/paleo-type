@@ -502,12 +502,12 @@ Vergleich: 0110R-2 | Lesung 5923025134bb2bb87267b0cd2396d4c06d87ba8b | Vorab c6a
 |---|---|---|
 | `0110R-A01` | `und in Zukunften [gewesen?], daß die Jagd` | grammatical group still uncertain |
 | `0110R-A02` | `in solchen Teich mit eingeschlossen seyn,` | positive reading |
-| `0110R-A03` | `und [ihm/ihnen?] zukommen solte; So ist` | Originalfoto und Blindprobe unterscheiden sich bei der Personalschriftgruppe (`ihm` / `ihnen`); die Vergrößerung erlaubt hier keine verantwortbare Ein-Form-Entscheidung. |
+| `0110R-A03` | `und [ihm/ihnen?] zukommen [solte/solle?]; So ist` | Nach 0110R-2 am unveränderten Originalpixelbild nochmals geprüft: Personalform und t/l-Graphem im Verb sind nicht sicher gegeneinander abgegrenzt; weder eine still geglättete Form noch eine allein aus dem Blindtext übernommene Form. |
 | `0110R-A04` | `durch der Herrn Graff auf diesfalls` | first words uncertain in original case |
 | `0110R-A05` | `eingegangenen Bericht, und ihm darauf` | positive running words |
 | `0110R-A06` | `beschehen Remonstration von sol-` | written division; foreign noun retained |
 | `0110R-A07` | `chen Sachen abgestanden, also, daß` | line-initial candidate from A06 |
-| `0110R-A08` | `es bey den Worten des angezogenen Re-` | word-final abbreviation? preserve uncertainty |
+| `0110R-A08` | `es bey den Worten des [angezogenen/angeregten?] Re-` | Nach 0110R-2 am nativen Originalpixelbild ist `angezogenen` näherliegender, aber die abweichende Blindlesung `angeregten` lässt sich wegen der Binnenstriche nicht abschließend ausschließen; `Re-` als sichtbare Wortteilung erhalten. |
 | `0110R-A09` | `cessus verbleiben, und die [Jagd/Zeit?] im` | Zeilenbeginn ist Fortsetzung des vorherigen `Re-`; im folgenden Substantiv alter KI-Kandidat `Jagd`, unabhängiger Blindtext `Zeit`: Bildunterschied noch nicht zweifelsfrei graphisch diskriminiert. |
 | `0110R-A10` | `Teich ihm nicht zugestanden solle, Wir` | positive sequence |
 | `0110R-A11` | `wollen aber darbey dieses in Gnaden` | positive sequence |
