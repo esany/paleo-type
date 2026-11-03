@@ -1,0 +1,34 @@
+label	beschreibung
+accessibility	Barrier affecting people with disabilities
+an:chatgpt	Auftrag an ChatGPT (Hauptchat Astra); wird bei „weiter“ zuerst abgearbeitet
+an:claude	Auftrag an Claude (Prüfchat); wird bei „paleo-type“ genannt
+an:mensch	Entscheidung oder Handgriff des Eigentümers; wird bei „Entscheidungen“ vorgelegt
+automation	
+bibliography	
+bug	Something isn't working
+codex	
+corpus	
+data-quality	
+documentation	Improvements or additions to documentation
+domain:archival	
+domain:editing	
+domain:hitl	
+domain:palaeography	
+domain:provenance	
+domain:rse	
+duplicate	This issue or pull request already exists
+enhancement	New feature or request
+flow:blocked	
+flow:planning	
+good first issue	Good for newcomers
+help wanted	Extra attention is needed
+invalid	This doesn't seem right
+palaeography	
+provenance	
+publication	
+question	Further information is requested
+rettung-eigentümer	
+standards	
+uebergabe	Übergabestand des Prüfchats (jüngster Kommentar gilt)
+verfahren-ausnahme	
+wontfix	This will not be worked on
