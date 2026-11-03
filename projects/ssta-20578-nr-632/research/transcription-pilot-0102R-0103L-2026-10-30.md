@@ -272,6 +272,8 @@ Vergleich: 0105L-2 | Lesung fb3d0e5b65e6b6cc8eb09bfc044840ba2f937155 | Vorab 81a
 | `0106L-A08` | `dem Mann- und` | positive sequence |
 | `0106L-A09` | `Weiber-Lehn[-?]Güther` | Vergrößertes Originalbild 0106L zeigt gegenüber dem älteren unmarkierten Kompositum `Weiber-Lehen-Guthe` die graphisch nähere Schreibung `Lehn` und `Güther`; das interne Zeichen nach `Lehn` bleibt als Teilung/Bindestrich ungeklärt. Eine betroffene unmarkierte Wortgruppe (Kompositum). |
 | `0106L-A10` | `Knau und [Pabren?],` | second proper noun uncertain in this line too |
+
+Namenshinweis: 0106L 0106L-A10 | Eigentümer: Knau und Bahren | Lesung 78982f60e9153836acf97d930dc578a9544c2b39 | Klärung am Bild: 03.11.2026; zweite freiwillige Eigentümerrunde, Stelle Nr. 2, PDF-/Providerbild 0106 links, A10. Schriftbild- und Textvergleich mit Wiederholung 0105L-A13 (Knau und [Pabßen?]), die der Eigentümer separat ebenfalls als „Knau und Bahren“ gelesen hat. Zwei Eigentümerhinweise zu zwei Stellen, keine unabhängige KI-/Fachgegenlesung. Die genaue diplomatische Schreibweise von Bahren gegenüber früheren KI-Kandidaten [Pabren?] und [Pabßen?] bleibt bis zu diskriminierender Original-Buchstabenprüfung offen; keine stillschweigende Ortsidentifizierung, kein Stichprobenfehler.
 | `0106L-A11` | `samt deren Zugehö-` | line-end division |
 | `0106L-A12` | `rungen, zu meinen` | line-initial continuation |
 | `0106L-A13` | `[Antheile?] [welche?]` | Nach erneuter Originalbildkontrolle und unabhängigem Blindversuch plausible Bildkandidaten `Antheile welche`; zuvor `Vortheile`/`reichen` jeweils bereits ausdrücklich unsicher, keine unmarkierten Wortfehler gezählt. |
@@ -440,6 +442,8 @@ Vergleich: 0106R | Lesung 8d0b92c9946415b953c42aaa65b12ad5dab556a0 | Vorab e68e9
 | `0109R-A11` | `Unsers lieben getreuen, Herrn Johann` | positive textual sequence |
 | `0109R-A12` | `Albrechts, des Heil. Röm. Reichs [Graffens?]` | first and abbreviations as written; ending uncertain |
 | `0109R-A13` | `von [Ronov/Ronow?] und [Lieberstein?], [⟦further title⟧]` | 01.11.2026 Neuprüfung an vergrößertem Originalfoto und getrenntem Blindtext: vormals unmarkiertes `Bieberstein` nicht bildlich gesichert, der graphisch näherliegende Kandidat `Lieberstein` wird markiert; am Namenende `Ronov/Ronow` keine stille Angleichung oder historische Identifizierung. |
+
+Namenshinweis: 0109R 0109R-A13 | Eigentümer: Ronov und Bieberstein (..) | Lesung 78982f60e9153836acf97d930dc578a9544c2b39 | Klärung am Bild: 03.11.2026; zweite freiwillige Eigentümerrunde, Stelle Nr. 3, PDF-/Providerbild 0109 rechts, A13. Eigentümertext samt (..) wortgetreu übernommen. Sichtbarer Schriftzug unterstützt zumindest die Gruppe „Ronov und ...stein“; die initiale Buchstabenform des zweiten Namens wird hier nicht eigenständig sicher zwischen Eigentümerlesung Bieberstein und der zuvor begründet unsicheren KI-Arbeitslesung [Lieberstein?] entschieden. Die bisherige Arbeitslesung bleibt daher unverändert; keine neue historische Personenidentifizierung, keine unabhängige Gegenlesung und keine Fehlerzählung.
 | `0109R-A14` | `zu Oppurg, wegen Verlegung der Grenzen` | positive strong text |
 | `0109R-A15` | `und [Fortgerechtigkeit?] einige Diffe-` | noun difficult; written word division |
 | `0109R-A16` | `rentien entstanden, und Wir darauf` | continuation from A15, following text on next exposed carrier unknown |
