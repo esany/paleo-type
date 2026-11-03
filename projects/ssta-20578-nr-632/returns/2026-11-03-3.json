@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-03-3",
+  "run_status": "completed",
+  "baseline_commit": "a33ea1793633ce6ee332a74a6a934aed5495a2da",
+  "result_commit": "0cb2dcbf05dee815ba30e18a19fe9667b4475fa4",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "4b5987a865e0a70073cac3a2829b66144d74e4c90b9c791d4677ab233761615a",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-03 / 0114R original recheck ohne Blindprobe:** Quelle des PDF-/Providerbilds 0114 direkt überprüft; A02 `gebrauchet`, A09 `Alßo` bestätigt als bestehende Korrekturfassungen; A06 `[Fuß/Reiß?]` und A12 `[Gamse/Hante?]` quellengebunden enger lokalisiert. `0114R-3` noch **Gegenlesung offen**, daher bleibt F2-Methodenwahl offen. Als nächstes neuer unabhängiger `0114R-3`-Abschnitt durch `gegenlesen` in einem frischen Chat im ChatGPT-Projekt, nicht in diesem Chat; anschließend im Hauptchat bildgebundener Vergleich des vor Einsicht committeten Lesungsstands. Kein wissenschaftlicher F2-/G2–G6-PASS.",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
