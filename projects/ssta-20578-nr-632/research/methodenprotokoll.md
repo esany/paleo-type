@@ -33,6 +33,8 @@ Die Einträge beschreiben konkrete Arbeitshindernisse, keine Werkzeugfreigaben. 
 
 | Reibung | wie oft | Folge (Fehler/Zeit/Kontext) | möglicher Ausweg |
 |---|---:|---|---|
+| Nachkorrektur `0113L-3` brauchte drei native Originalpixel-Ausschnitte; `nächst/nebst` trotz unabhängiger Probe nicht sicher unterscheidbar | 1 Block (03.11.) | zusätzliche Bild-/Vergleichsarbeit, bewusst offener Graphembefund statt unmarkierter Sicherheit | Bildlocators/Alternativen im bestehenden Forschungsowner erhalten; kein daraus abgeleiteter Werkzeugauftrag |
+| Review-Warteschlange führte `0131R` noch auf, obwohl der unabhängige Abschnitt bereits vorlag | 1 (03.11.) | Queue-Orientierung hätte eine unnötige Neu-Gegenlesung veranlassen können | Nur die `Vorab offen`-Kopfzeile gegen vorhandene `##`-Abschnitte abgleichen; keine zweite Lesung ändern |
 | Kein autorisierter Remote-Ausführungseinstieg für `tools/work_return.py` im GitHub-only-Kontext | 2 Blöcke (31.10.) | Vorgeschriebene Skriptausgabe/Abschlussbeleg kann nicht erzeugt werden; kein PASS behauptet | Vorhandene GitHub-/CI-Ausführungsroute prüfen, keinen Ersatzbeleg erfinden |
 | Aktueller Blind-Gegenlesungskommentar zu 0104R war noch nicht im obersten STATUS-Rückkehrpunkt eingearbeitet | 1 (31.10.) | Rückkehrpunkt zunächst älter als die veröffentlichte Gegenprobe; erneute Prüfung und Abgleich nötig | Bestehenden Rückkehrpunkt nach belegter Disposition aktualisieren |
 | Ein großer Forschungsowner mit vielen getrennten Texteinheiten (ca. 166 kB) | 1 (31.10.) | Hohe Kontext- und Änderungs-/Verlustgefahr beim gezielten Editieren einzelner Seiten | Vorgesehene Aufteilung nach F4, mit zeilen- und alternativenfestem Verlusttest; noch nicht begonnen |
