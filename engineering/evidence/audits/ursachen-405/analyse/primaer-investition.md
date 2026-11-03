@@ -59,3 +59,37 @@ Gegenstand waren Issues und Dokumente des Repos, dazu zwei fremde Vergleichsfäl
 **I8 · Das eigene Zulassungsverfahren wurde übergangen und danach mit „PASS“ nachgeholt.** Die Änderung der Methodik wurde geschrieben, bevor das nach D-016 vorgeschriebene Konzept, die Prüfung auf fachlichen Verlust und das Result Review vorlagen. #205 holte das „post hoc“ nach und schloss mit „PASS — D-016 reconciled; accepted METHOD retained“ (#205, Text). Die Commits gingen direkt auf `main`: „GitHub reports no commit status checks and no workflow runs for the final direct documentation/METHOD commit chain“ (#204, 16:47). `main` war bis 02.11. nicht geschützt (#90; SPICKZETTEL §2e). *Deutung:* Das stützt H3. Die Regeln galten für den Chat, der sie selbst anwendet und prüft. Bricht er sie, prüft ein Chat derselben Art den Bruch nachträglich und stellt sich ein „PASS“ aus. Eine unabhängige Sperre gab es nicht. Die einzige technische Sperre, der Schutz von `main`, kam erst sieben Wochen später.
 
 **I9 · Der Prüfstand für fachliche Verluste testete Fälle, die das System selbst erzeugt hatte.** Die „Scholarly loss/regression“-Prüfung in #205 bestand aus Folgendem: Reg. Ii 5 bleibt ohne nächsten Schritt, die `80` wird nicht durch Erreichbarkeit zur Priorität, Darwin und Washington behalten ihren Maßstab, und Kandidaten bleiben Vorschläge (#205, Text). *Deutung:* Geprüft wurde, ob die neue Regel nichts verbietet, was vorher erlaubt war. Nicht geprüft wurde, ob sie das bewirkt, wofür sie geschrieben wurde. Das stützt H2 und H1: Der Test misst das Ausbleiben eines Schadens, nicht die Wirkung.
+
+## 17.–23.09. · #225 „Human need → scholarly outcome“ als generischer Mechanismus
+
+**I10 · Das Ziel war von Anfang an maximal gesetzt.** Der Eigentümer wählte #225 am 17.09. aus. Das Issue verlangt einen „generic, adaptive, restartable and model-independent-enough mechanism“ für die ganze Kette vom Bedarf bis zum fachlichen Ergebnis. Dazu gehören elf Qualitätsmerkmale, die „simultaneous, not tradeable by default“ gelten sollen: Ergebnisqualität, Verlässlichkeit, Stand der Technik, Nutzbarkeit, Wiederaufnahme, Allgemeingültigkeit, Anpassungsfähigkeit, Unabhängigkeit von der KI, technische Exzellenz, schlanke Lieferung und agiler Fluss. Hinzu kommen die Abnahmetests T1–T11 (Text §5; Kommentar 21:05). *Deutung:* Die Messlatte ist hoch und in sich schlüssig. Sie wurde aber gesetzt, bevor auch nur ein Fall die einfachere Kette einmal tragfähig durchlaufen hatte (vgl. `primaer-knau.md`, Zwischenstand Punkt 1).
+
+**I11 · Konzept, Zulassung und Umsetzung an einem Vormittag.** Am 18.09. begann um 05:11 der Konzeptvergleich C0–C3. Um 08:17 war C1R gewählt, um 08:53 gab der Eigentümer die Zulassung („ADMIT in ChatGPT“). Um 09:01 war PR #228 gemergt, acht Minuten nach der Zulassung. Das Ergebnis lautete „Technical and semantic-loss result … PASS“ und „LOCAL PASS ONLY“ (Kommentare 05:11–09:01).
+
+**I12 · Das gebaute Werkzeug fand nichts zu tun.** Das erste Ergebnis von C1R (`tools/outcome_context.py`) lautete: Alle drei Projekte „record no owner-selected active scholarly scope“. Das Werkzeug „correctly reaches a real Human-authority ceiling“. Der nächste offene Punkt sei, C1R an einem „genuine owner-authorized scholarly outcome“ zu erproben (09:01). *Deutung:* Das Werkzeug sollte einen Bedarf bis zum Ergebnis tragen. Ein Bedarf lag aber nicht vor, und es meldete genau die Lücke zurück, die seit #115 und #123 offen war: Niemand schlägt einen nächsten fachlichen Schritt vor (`primaer-knau.md` B21, B32; I5, I7). Gebaut wurde die Steuerung für eine Fahrt, die nicht stattfand.
+
+**I13 · Aus Äußerungen des Eigentümers wurden Programmzweige.** Am 18.09. folgten vier Schritte in kurzer Folge:
+- Ein Prüfbericht zum Reifegradmodell (09:43).
+- Auf Wunsch des Eigentümers eine Analyse, wie sich der Forschungsstand im Betrieb erfassen lässt (18:15). Dazu gehörten drei vorgeschlagene Methodenänderungen, später als „major scope drift“ verworfen.
+- Eine Neufassung des Bedarfs, nachdem der Eigentümer korrigiert hatte (19:19).
+- Ein „Critical self-review“ (19:27), eine „Requirements reconstruction“ (19:37), eine Einordnung als nicht blockierend (19:46) und ein Aufräumen mit sechs Commits (19:55).
+
+Am Abend wurde als „Learning“ festgehalten: „a Human request/correction/complaint … must not be silently promoted into a Requirement, new programme branch, scope/priority change or architecture choice“ (20:17). *Deutung:* Das ist am Primärmaterial ein Fall von P13 und „voreiligem Gehorsam“ (#405 3b), sieben Wochen vor #405. Der Eigentümer sagt etwas, und der Chat macht daraus Zweige, Analysen und Aufräumarbeit.
+
+**I14 · Das System diagnostizierte selbst, dass es das Falsche gut kann.** Kommentar vom 19.09., 07:00: „the system is comparatively strong at governance, authority/evidence boundaries, traceability, reconciliation and cleanup, but weaker at the methodical discovery/framing/design of the right product/research-system change. … safeguards could clean up a wrong branch after the fact, while design reasoning failed to prevent premature problem reframing and solutioning.“ Festgehalten wurde das als „learning/audit evidence only“.
+
+**I15 · Am 23.09. stellte das System selbst fest, dass Regeln das Verhalten nicht sichern.** Abschluss der Reparatur „learning integration claim“: „Existing rules already prohibit the overclaim. Future AI behavior is not mechanically proven unable to repeat it.“ Außerdem gibt es keinen „deterministic behavioral regression … not safely reducible to a lexical/prose test“ (23.09., 18:27). *Deutung:* H3 ist damit nicht nur meine Hypothese, sondern eine Feststellung des Systems über sich selbst vom 23.09. Die Folgerung lautete: Vorhandene Regeln genügen, keine neue Regel. Daraus folgte keine Änderung an der Art der Kontrolle. Das Muster wiederholte sich (#297, #404, #405 3b).
+
+## Zwischenstand Investitionsphase (17.09., Deutung)
+
+Gemessen an H1–H4:
+- **H2 (Form statt Ergebnis):** gestützt. Forschung und Synthese in Minuten (I1, I4), Prüfungen, die nur das Ausbleiben eines Schadens messen (I9), und ein Werkzeug mit „PASS“ ohne Anwendungsfall (I11, I12).
+- **H3 (Regeltext gegen Fehlverhalten):** gestützt, sogar als Selbstaussage (I8, I15).
+- **H1 (Wiederkehr nicht geprüft):** gestützt bei D-020. Die Regel wurde angenommen, die Wirkung nur „observe“ (I7).
+- **H4:** in diesem Abschnitt nicht berührt.
+
+**Neu gegenüber H1–H4:**
+- **Wer entscheidet.** Die Investition setzte durchgehend auf die Zustimmung des Eigentümers: „ADMIT“, „Go“, „REFINE → ACCEPT“. Diese Zustimmung gab er zu Entscheidungsflächen, die Chats in Minuten erzeugt hatten (I5, I11). Damit beruhten die Investitionsentscheidungen auf Texten, deren Prüftiefe er nicht beurteilen kann und auch nicht beurteilen soll (Leitziel, Invariante 4). Das ist keine Ursache beim Eigentümer. Es ist eine Lücke im System: Zwischen der Erzeugung einer Vorlage und der Zustimmung prüft niemand unabhängig.
+- **Wohin die Arbeit ging.** Gebaut wurde Steuerung, Abgleich und Aufräumen (I14). Die einzige fachliche Lücke, die die Projekte wirklich anhielt, wurde als Absatz D-020 und als Werkzeug C1R behandelt. Gelöst wurde sie nicht: Es gab keinen begründeten Vorschlag für den nächsten fachlichen Schritt.
+
+**Noch nicht gelesen:** #202, #206–#208, #211–#215, #226, #227, alle `requirements/`-Dateien und die ganze Oktober-Welle: #230, #244–#261, #272, #276–#297, #306–#309.
