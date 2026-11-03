@@ -552,3 +552,12 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Oberer Haupttextblock, Z. 10 von oben: \`[gedachtes?] [Buch/Guth] de dato den 20ten April 1769. zu denen\`
 - Unterschrift am unteren Blattrand, Z. 1 von oben: \`Joh[s?]. Benedict [Lohmann?]\`
 - Bildbefund, rechte Bildhälfte: Der obere Textblock endet über einer Siegelabbildung; darunter stehen räumlich abgesetzte Unterschriften. Unsichere Buchstaben insbesondere im unteren Namen bleiben offen.
+
+## 0113L-3
+- Datum: 2026-11-03
+- Leser: GPT-6, unabhängiger Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 113 (0113L)
+- Blind: ja
+- linker Haupttextblock, Z. 4 von oben: `laßen, die Hohe Jagd im Brande die`
+- linker Haupttextblock, Z. 12 von oben: `zur lincken Seiten hinaus streichet,`
+- linker Haupttextblock, Z. 16 von oben: `ret, So viel aber nebst dem die hier,`
