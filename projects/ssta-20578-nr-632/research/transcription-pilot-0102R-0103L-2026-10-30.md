@@ -810,6 +810,8 @@ Namenshinweis: 0114L 0114L-A04 | Eigentümer: (?) zu Dreba.. | Lesung 81e71d68fe
 | `0114L-A08` | `gewesene Grenze in der [⟦place⟧], bey` | working physical line; mark uncertainty retained |
 | `0114L-A09` | `anfang des [⟦word⟧] und hier` | working physical line; mark uncertainty retained |
 | `0114L-A10` | `des Teich, bis zu dem [⟦name⟧] Weg,` | working physical line; mark uncertainty retained |
+
+Namenshinweis: 0114L 0114L-A10 | Eigentümer: bis zu dem Mossbacher  (..) | Lesung 5eb82641c7d83d68465d608738326daa197e9ccf | Klärung am Bild: 03.11.2026; dritte freiwillige Eigentümerrunde, Nr. 1; Originalausschnitt PDFbild 0114 links um A10. Eigentümertext genau mit zwei Leerzeichen vor (..) bewahrt. Lesung des Namens als Mossbacher und der vorausgehenden Worte ist ein positiver Hinweis, keine sicher diplomatische Buchstabenentscheidung; bisheriger unsicherer Name in der Arbeitszeile bleibt stehen. Die angegebene Nachbarzeile zeigt eine Folge zu einem Weg; keine externe Ortsidentifizierung oder eigenständige Gegenlesung behauptet.
 | `0114L-A11` | `und folgend hierüber bis an den Lin-` | working physical line; mark uncertainty retained |
 | `0114L-A12` | `dnischen Gemeinde Teich, von dort` | working physical line; mark uncertainty retained |
 | `0114L-A13` | `weiter bis auff den Weg, welcher von` | working physical line; mark uncertainty retained |
@@ -830,12 +832,16 @@ Namenshinweis: 0114L 0114L-A04 | Eigentümer: (?) zu Dreba.. | Lesung 81e71d68fe
 | `0114R-A04` | `des jagens und schießens künftig, und` | working physical line; mark uncertainty retained |
 | `0114R-A05` | `nach dem diese [⟦group⟧] dermaleinst auf` | working physical line; mark uncertainty retained |
 | `0114R-A06` | `einen richtigen [Reiß?], vermittelst` | working physical line; mark uncertainty retained |
+
+Namenshinweis: 0114R 0114R-A06 | Eigentümer: könnte auch Reuss sein? | Lesung 5eb82641c7d83d68465d608738326daa197e9ccf | Klärung am Bild: 03.11.2026; dritte freiwillige Eigentümerrunde, Nr. 2; Originalausschnitt PDFbild 0114 rechts um A06. Frageform und ss-Schreibweise exakt erhalten, als Alternative zu bisherigem [Reiß?] aufgenommen, nicht als historischer Name bewiesen. Bei erneuter direkter Ansicht dieses bereits gezeigten Bildstreifens ist [Fuß?] ein weiterer positiver, noch nicht abschließend graphematisch entschiedener Kandidat (Formel auf einen richtigen Fuß ... gesetzt über A05–A07); Wortkontext allein ersetzt die Erstbuchstaben-/Vokalprüfung nicht. Keine Karte aus dieser Wortgruppe gesichert und keine diplomatische Textänderung.
 | `0114R-A07` | `gegenwärtigen Recessus gesetzt,` | working physical line; mark uncertainty retained |
 | `0114R-A08` | `in obberührten gestatteten Orten,` | working physical line; mark uncertainty retained |
 | `0114R-A09` | `zu erhalten wißen werden, Alßo` | working physical line; mark uncertainty retained |
 | `0114R-A10` | `will der Herr Graff in denen Wegen` | working physical line; mark uncertainty retained |
 | `0114R-A11` | `ihnen nacher abgetretenen Gehölzen,` | working physical line; mark uncertainty retained |
 | `0114R-A12` | `dem sogenannten Brandt oder Hante,` | working physical line; mark uncertainty retained |
+
+Namenshinweis: 0114R 0114R-A12 | Eigentümer: Brandt oder Gamse | Lesung 5eb82641c7d83d68465d608738326daa197e9ccf | Klärung am Bild: 03.11.2026; dritte freiwillige Eigentümerrunde, Nr. 3; Originalausschnitt PDFbild 0114 rechts um A12. Eigentümertext wörtlich bewahrt. Im zuvor bildgeprüften 0113L-A04–A05 stehen die Wortgruppen hohe Jagd im Brande, die Gamse genant als intern zu prüfende Parallele; das stützt die Benennung als plausible Wiederholung, ist allein keine sichere Identität der konkreten Grapheme. Alter Forschungszeilen-Kandidat Hante bleibt als Gegenlesekandidat vorerst erhalten; keine blind unabhängige Probe und keine Fehlerzählung.
 | `0114R-A13` | `nichts minder obmäßige Verfolgung` | working physical line; mark uncertainty retained |
 | `0114R-A14` | `niemahls an seine Bedienten, nach` | working physical line; mark uncertainty retained |
 | `0114R-A15` | `Anleitung hierunter allenhalben` | working physical line; mark uncertainty retained |
