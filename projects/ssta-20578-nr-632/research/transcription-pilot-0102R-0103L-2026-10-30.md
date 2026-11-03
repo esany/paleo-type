@@ -567,6 +567,8 @@ Vergleich: 0110R-2 | Lesung 5923025134bb2bb87267b0cd2396d4c06d87ba8b | Vorab c6a
 | Physically indexed line | Diplomatic source-near working reading | Limit / note |
 |---|---|---|
 | `0111R-A01` | `[⟦opening⟧] und geben zu [Morizburgk/Moritzburgk?] an der` | Quelle 0111R: alte unmarkierte Lesung `Merseburg` nicht am Schriftbild gestützt; Schlussform bleibt offen. |
+
+Namenshinweis: 0111R 0111R-A01 | Eigentümer: Moritzburgk | Lesung 8a35d72a7e3796e8055024cc58d05617b69f9680 | Klärung am Bild: 03.11.2026; zweite freiwillige Eigentümerrunde, Stelle Nr. 5; PDF-/Providerbild 0111 rechts, A01. Eigentümerlesung mit finalem k wortgetreu bewahrt. Der gezeigte Originalausschnitt trägt die Namensgruppe im Kontext „und geben zu … an der“; bisheriger, vor Eigentümerantwort committeter KI-Arbeitskandidat [Morizburgk/Moritzburgk?] schließt diese Form bereits ein. Der Unterschied zwischen Moriz- und Moritz- ist aus dieser Sicht noch nicht unabhängig graphisch entschieden; diplomatische Arbeitslesung und Ortsidentifizierung bleiben vorerst unverändert. Keine unabhängige Gegenlesung, kein gezählter Stichprobenfehler.
 | `0111R-A02` | `Elster, den 20. May Anno 1679.` | **written represented date** only, not material creation time |
 | `0111R-B01` | `[Moritz?]` | large single name/signature word, undecided; no biographical identification |
 | `0111R-B02` | `(L. S.)` | positionally separate letters/mark, source feature, not a validated physical seal |
