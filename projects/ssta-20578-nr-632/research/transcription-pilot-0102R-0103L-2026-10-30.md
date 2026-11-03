@@ -737,12 +737,12 @@ Vergleich: 0113L-2 | Lesung 8fea0bd2cd54262065ffa71bdd3c00829ec86fec | Vorab c6a
 | `0113R-A02` | `[⟦opening⟧] denen zu gewissen Zeiten ge-` | spatial writing uncertain |
 | `0113R-A03` | `falligen [⟦word⟧] [⟦end⟧]` | weak source phrase |
 | `0113R-A04` | `ingleichen die Jagd auf denen Feldern,` | directly positive |
-| `0113R-A05` | `auf alle demjenigen, was als solchen` | partly uncertain morphology |
+| `0113R-A05` | `auch alle [denjenigen/demjenigen?], was als solchen` | partly uncertain morphology |
 | `0113R-A06` | `Weg zur rechten Hand im übrigen Weg-` | line end uncertain |
 | `0113R-A07` | `[⟦start⟧] Fluß gelegen, dem Herrn Gra-` | physical division |
 | `0113R-A08` | `fen und dessen Descendenten, [⟦end⟧]` | Latin noun visible |
 | `0113R-A09` | `an von künftig [⟦end⟧] Güter ge-` | source working |
-| `0113R-A10` | `langen möchten, so vor, so nachmals` | visible text phrase |
+| `0113R-A10` | `langen möchten, so vor, so [nachmals/nachmahls?]` | visible text phrase |
 | `0113R-A11` | `beständig und ohne Contradiction` | positive historical spelling |
 | `0113R-A12` | `gebührend [exercirlich?]` | F2-(b), JPEG 0113R unten in direktem Zeilenstreifen: der bisher unmarkierte Anfang `gedacht` wird von der sichtbaren Schriftgruppe **nicht** gestützt; `gebührend` erscheint graphisch besser, das lateinische/latinisierende Folgewort bleibt unsicher. Keine methodische Fehlerquote ohne unabhängige neue Probe. |
 | `0113R-A13` | `gegen 2.) und intuitu [⟦end⟧]` | written list marker and Latin word |
@@ -770,7 +770,7 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
-| `0114L-A01` | `nicht mit benennet stehet, unberühret` | working physical line; mark uncertainty retained |
+| `0114L-A01` | `nicht mit benennet stehet, [unberühret/unbehindert?]` | working physical line; mark uncertainty retained |
 | `0114L-A02` | `des Gebrauchs der Niedern Koppel Jagd,` | working physical line; mark uncertainty retained |
 | `0114L-A03` | `mit [wegen?], [gegen?], und Stellen, so sonst [⟦end⟧]` | working physical line; mark uncertainty retained |
 | `0114L-A04` | `[Wild/Würth?] zu [Dorbe?], benebst dem [⟦end⟧]` | F2-(c): Bildstreifen und Binnenvergleich auf 0114L zeigen einen graphisch eher `Wild`-ähnlichen Wortanfang; die ältere unsichere Hypothese `Würth` bleibt als tatsächlich noch offene Alternative, keine Orts-/Sachwortidentifikation. |
@@ -785,7 +785,7 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | `0114L-A13` | `weiter bis auff den Weg, welcher von` | working physical line; mark uncertainty retained |
 | `0114L-A14` | `Linda aus gegen Dittersdorff, sodann` | working physical line; mark uncertainty retained |
 | `0114L-A15` | `gegen die Reuß: Grenze ziehet, allda` | working physical line; mark uncertainty retained |
-| `0114L-A16` | `woselbst es die [⟦group⟧] des Ritter-` | working physical line; mark uncertainty retained |
+| `0114L-A16` | `maßen es die Besitzer des Ritter-` | working physical line; mark uncertainty retained |
 | `0114L-A17` | `guths Knau hinhero in quasi possessi-` | working physical line; mark uncertainty retained |
 
 ### 0114R — visible writing field
@@ -795,14 +795,14 @@ Evidence: archival Source `SSTA-ARCHIVIALE-EDD69AA1`; direct examination of PDF/
 | Physical line / mark | Source-near diplomatic working reading | Phenomenon / status |
 |---|---|---|
 | `0114R-A01` | `one gehabt, und sich derselben hinun-` | working physical line; mark uncertainty retained |
-| `0114R-A02` | `ter getraüt, Gleichwie nun die Jagd,` | working physical line; mark uncertainty retained |
+| `0114R-A02` | `ter gebrauchet, Gleichwie nun die Jagd,` | working physical line; mark uncertainty retained |
 | `0114R-A03` | `fürstl: Durchl: [Jägern?] Bediente sich` | working physical line; mark uncertainty retained |
 | `0114R-A04` | `des jagens und schießens künftig, und` | working physical line; mark uncertainty retained |
 | `0114R-A05` | `nach dem diese [⟦group⟧] dermaleinst auf` | working physical line; mark uncertainty retained |
 | `0114R-A06` | `einen richtigen [Reiß?], vermittelst` | working physical line; mark uncertainty retained |
 | `0114R-A07` | `gegenwärtigen Recessus gesetzt,` | working physical line; mark uncertainty retained |
 | `0114R-A08` | `in obberührten gestatteten Orten,` | working physical line; mark uncertainty retained |
-| `0114R-A09` | `zu erhalten wißen werden, Also` | working physical line; mark uncertainty retained |
+| `0114R-A09` | `zu erhalten wißen werden, Alßo` | working physical line; mark uncertainty retained |
 | `0114R-A10` | `will der Herr Graff in denen Wegen` | working physical line; mark uncertainty retained |
 | `0114R-A11` | `ihnen nacher abgetretenen Gehölzen,` | working physical line; mark uncertainty retained |
 | `0114R-A12` | `dem sogenannten Brandt oder Hante,` | working physical line; mark uncertainty retained |
@@ -1612,3 +1612,18 @@ Plain text is source-near positive **working reading**; `⟦...⟧` means actual
 ### Native-image targeted recheck 0102L difficult A06/A07/A13/A14 (2026-10-30)
 
 Directly re-viewed original native-resolution source-photographic scan for PDF/provider image **0102** (4324 × 3880 embedded JPEG pixels) in the full-size working PDF SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`. Upper and lower left writing area inspected in separate contrast-only crops; no independent original provider JPEG File byte reopening, no OCR/HTR or scholarly specialist check. The opening `A06` permits candidate two-group `[Lehn-?] [Sachen?];`; `A07` has visible second `und` and final `Lehn-` with a physical division mark. The `A13` lower cursive line has a longer candidate `[vollmächtigen?]`, while `A14` begins with a group tentatively `[dieser?]`, but the middle strokes are **not** clear enough for certainty. The uncertainty cannot be overcome by conventional chancery syntax, so all candidate words stay bracketed; the previously unresolved baselines remain unfinished rather than downgraded to material lacunae. These updates revise **four existing local physical-line rows**, not four new lines, and do not assert full 0102L witness coverage or G2 completion. Exact PDF File: `FILE-SSTA-20578-NR632-FULL-PDF-20261030` (registered in `corpus/files.tsv`; not the compact PDF or separate JPEG Files).
+
+## F2-Blindstichproben 0113R-2, 0114L-2, 0114R-2 — 2026-11-03
+
+**Quellennachweis und Claim-Ceiling:** Im Hauptchat wurde die vollständig registrierte Voll-PDF `FILE-SSTA-20578-NR632-FULL-PDF-20261030` direkt aus den vom Eigentümer bereitgestellten Bytes erneut geprüft (SHA-256 `d89cf32d488122e274729be4388e2fd0f3bc7c6201d5d2293d04cfb33531d88e`). Die in PDF-/Providerbild 0113 und 0114 eingebetteten unveränderten nativen JPEGs wurden extrahiert: 0113 `84332e5cc36b271a68a717ea7cec27fdd80b85438b33a0bbd5897fee0a2f85bf` (4304×3897), 0114 `e0c71e0471ede605f6eac11dd62da307313708fd10578ee3cef8c37fe5b404ef` (4310×3891); beide Prüfsummen stimmen mit den bereits im Repo registrierten Dateien überein. Vollbilder und die drei Probezeilen je Seite in direkt ausgeschnittenen Originalpixelregionen geöffnet. Die Bilder sind Aufnahmelocators, keine archivalische Foliierung. Dies ist bildgebundene KI-Fehlerdisposition, keine unabhängige Fachvalidierung und kein Vollflächen-G2.
+
+**0113R-2, Methode (b):** Eigenlesung **vor Einsicht**: Forschungsowner-Commit `8fea0bd2cd54262065ffa71bdd3c00829ec86fec`; gesicherte unabhängige Blindstichprobe (`Blind: ja`) auf Review-Commit `c6a87dd8a2d1ae1aeb3be7e68d51a55eddb6a00c`. An A05 trägt das sichtbare Wort `auch` statt der unmarkierten Eigenform `auf` (**1** sicher falsche Wortform); `denjenigen/demjenigen` bleibt bei der aktuellen Bildauflösung als positive Alternative offen. Das blinde `auf solchen` verdrängt nicht das am Original graphisch eher gestützte `als solchen`. A10 `nachmals/nachmahls` wegen nicht diskriminiertem Binnen-h nun ausdrücklich alternativ; A16 zeigt nach `Dorfs` weitere Schrift, deren genauer Wortkörper trotz Gegenlesevorschlag nicht gesichert ist. **Bilanz: 1 sicher unmarkiert falsche Wortform / 3 Loci, davon 0 sicher als stille Vereinheitlichung nachgewiesen; enges `passt`.** Die Alternativen und der nicht aufgelöste A16-Wortkörper sind keine vermeintlich fehlerfreie Volltranskription.
+Vergleich: 0113R-2 | Lesung 8fea0bd2cd54262065ffa71bdd3c00829ec86fec | Vorab c6a87dd8a2d1ae1aeb3be7e68d51a55eddb6a00c | Abweichungen 1 | davon Vereinheitlichung 0 | Urteil passt
+
+**0114L-2, Methode (c):** Eigenlesung **vor Einsicht**: Forschungsowner-Commit `dd4bb06826c70ff4c24aa5c85b3234277fc939b3`; `Blind: ja` auf `c6a87dd8a2d1ae1aeb3be7e68d51a55eddb6a00c`. A01 `unberühret/unbehindert` ist aus dem Bild und den zwei Vorschlägen nicht sicher entscheidbar und wird deshalb ausdrücklich alternativ, nicht als Fehler des Gegenlesers oder der Eigenlesung gewertet. A07 bleibt nach `die` in der Hauptlesung bewusst unaufgelöst; `hieher/hiesher` ist ein unbewiesener Kandidat des Gegenlesers. A16 ist dagegen bildgebunden deutlich `maßen es die Besitzer des Ritter-` und nicht das bislang unmarkierte `woselbst es die [⟦group⟧] des Ritter-`: **1** sicher falsches unmarkiertes Anfangswort; die früher eingeklammerte Wortgruppe `Besitzer` ist kein zweiter unmarkierter Fehler. **Bilanz: 1 sicher unmarkiert falsches Wort / 3 Loci, 0 sichere Vereinheitlichungen; enges `passt`.** Schriftfolge/Trägerverbindung zu 0114R weiterhin nicht unabhängig bewiesen.
+Vergleich: 0114L-2 | Lesung dd4bb06826c70ff4c24aa5c85b3234277fc939b3 | Vorab c6a87dd8a2d1ae1aeb3be7e68d51a55eddb6a00c | Abweichungen 1 | davon Vereinheitlichung 0 | Urteil passt
+
+**0114R-2, Methode (c):** Eigenlesung **vor Einsicht**: Forschungsowner-Commit `dd4bb06826c70ff4c24aa5c85b3234277fc939b3`; `Blind: ja` im Review-Commit `862a61faf63bd7a676f1fc272e098390bde64b1e`. A02 zeigt den Wortkörper `gebrauchet` statt unmarkiert `getraüt` (**1** Wortfehler); der originale Zeilenschluss ist nach eigener Originalbildkontrolle weiterhin `die Jagd,`, nicht der blind vermutete neue `Hoch-`-Anschluss. A09 trägt graphisch `zu erhalten wißen werden, Alßo`, nicht das bisher unmarkiert still vereinheitlichte `Also` (**1** Schreibungsfehler, davon **1** Vereinheitlichung). Das blinde `enthalten` ersetzt das bildgestützte `erhalten` nicht. A16 bleibt am ersten lateinischen Wort unter Fragezeichen; das vom Gegenleser unversuchte Ende kann nicht als falsch bewiesene Eigenlesung gezählt werden. **Bilanz: 2 sicher unmarkiert falsche Wort-/Schreibformen / 3 Loci, davon 1 stille Vereinheitlichung; `überarbeiten`.** Daraufhin die vorhandene 0114R-Hauptschriftfläche A01–A17 am ganzen Originalbild und im vergrößerten Textblock nochmals visuell geprüft; nur graphisch begründete A02/A09-Revisionen geschrieben, keine glatte Neudichtung der übrigen unsicheren Zeilen. **Neue unabhängige Nachkorrekturprobe `0114R-3` erforderlich; noch kein begrenztes `passt` der korrigierten Seite.**
+Vergleich: 0114R-2 | Lesung dd4bb06826c70ff4c24aa5c85b3234277fc939b3 | Vorab 862a61faf63bd7a676f1fc272e098390bde64b1e | Abweichungen 2 | davon Vereinheitlichung 1 | Urteil überarbeiten
+
+**F2-Methode und Fortsetzung:** Drei gültig blind deklarierte 3-Locus-Stichproben wurden unabhängig von den vorher festgehaltenen Eigenlesungs-Commits erst nach deren Sicherung geöffnet und im Hauptchat am Original geprüft. A) und B) haben bereits Nachkorrektur-Fehler, C) erhält nun wegen der neuen 0114R-Schwellenüberschreitung ebenfalls eine Nachprobe. Es fehlen `0113L-3` und `0114R-3` als unabhängige Nachkorrekturprüfungen. Unterschiedliche Schreibflächen, frühere Eigenlesungskenntnis und fehlende Zeitmessung verhindern eine belastbare Methode-Siegerbehauptung. F3 und G2–G6 bleiben offen.
