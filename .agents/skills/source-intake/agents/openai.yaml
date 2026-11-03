@@ -1,0 +1,7 @@
+interface:
+  display_name: "source-intake"
+  short_description: "Gesicherte Archivquellen nachvollziehbar im bestehenden Corpus registrieren"
+  default_prompt: "Use $source-intake with the already verified archival package in the current context; do not start a new download, Project or Zotero write."
+
+policy:
+  allow_implicit_invocation: true
