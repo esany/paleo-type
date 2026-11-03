@@ -2,6 +2,29 @@
 
 Stand: `main@22b255b`, 03.11.2026. Auftrag: #398. Der zweite, unabhängige Prüfer ist ChatGPT (#400). Dieser Bericht ist **Befund und Vorschlag**. Er beschließt nichts, ändert keine Regel und ist nicht zur Übernahme auf `main` gedacht.
 
+## Berichtigung vom 03.11.2026 (nach Einwand des Eigentümers)
+
+Der Eigentümer hat eingewandt, dieser Bericht mache es sich zu einfach und rate. Daraufhin habe ich die folgenden Aussagen gegen das Repo nachgeprüft. Der ursprüngliche Text bleibt unten stehen, damit nachvollziehbar ist, was berichtigt wurde. Wo er dieser Berichtigung widerspricht, gilt die Berichtigung.
+
+1. **U2 ist als Ursache widerlegt.** Auch Knau hatte keine Forschungsfrage des Eigentümers und kam dennoch voran. Die Methode verlangt nicht zwingend eine Frage, sondern „an explicit question **or required source-representation task**“ (`methodology/historical-source-workflow.md`, Abschnitt „Research-question control“). Die fehlende Frage erklärt die Systemphasen also nicht.
+2. **Die Fehlerquote in U1 und Abschnitt 4 ist überdehnt.** Die Gegenleser wählen ihre Stellen selbst; bei Namensstellen kommen die unsicheren zuerst (`docs/gegenlesung-vorab.md`, Z. 47 und 109). „1–2 von 3“ beschreibt deshalb schwierige Stellen und keine allgemeine Lesequote. Die Folgerung, die Wand sei „fachlich, die KI kann diese Hand nicht“, ist damit **nicht belegt**.
+3. **Die fachliche Methode ist im Repo vorhanden.** Ich hatte nahegelegt, das Vorgehen eines Fachmanns fehle. Tatsächlich steht es da:
+   - S1–S9 in `historical-source-workflow.md`: S2 beschreibt Struktur und Dokumentart vor dem Lesen, S4 ist ein elfstufiger paläographischer Test mit lokalisierten Vergleichsstellen und unterscheidenden Merkmalen.
+   - Die Anforderungen REQ-PAL-001 bis REQ-PAL-010 in `requirements/domain-requirements.tsv`.
+4. **Neuer Befund: Erfahrung zu sammeln wurde ausdrücklich zurückgenommen.** Knau hatte `palaeography/lexicon.tsv` und `numerals.tsv`. Am 08.09. wurden sie zu Altbestand erklärt (#124; Nachträge zu L001 und L004). Seitdem steht in `palaeography/README.md`: „not an instruction to build a project-wide palaeographic lexicon or concordance … Do not extend these legacy tables merely because similar forms exist.“ Begründet wurde das damit, dass die Gleichheit der Hand nicht nachgewiesen war. Die Folge: Es gibt keinen Ort, an dem sich Erfahrung mit einer Hand, einer Kanzlei oder einem Formular über mehrere Sitzungen ansammelt. Das steht in Spannung zum Ziel, die Arbeitsweise eines erfahrenen Fachmanns nachzubilden. L029 benennt die Gefahr bereits: Das System ist sicherer, aber möglicherweise weniger leistungsfähig.
+5. **Neuer Befund: Bei Nr. 632 wurde die Übersicht angelegt, dann aber das Ziel gewechselt.**
+   - Eine Funktions- und Inhaltskarte über alle 135 Aufnahmen liegt vor (`research/content-document-function-inventory-2026-10-30.md`, #350): 24 Bereiche, überwiegend als „Kandidat“ eingeordnet, ohne Regest (wer, an wen, wann, worüber). Dazu kommen Chronologie und Quellenkritik (#351, #352).
+   - Danach setzte #358 als Ziel eine „möglichst vollständige diplomatische … Transkription **aller** einzigartigen sichtbaren Schriftflächen“.
+   - Der Eigentümer beschreibt sein Vorgehen anders: erst Struktur und grober Inhalt, dann setzt er Prioritäten.
+   - Wer das Ziel in #358 formuliert hat, lässt sich nicht prüfen: Alle Beiträge stammen vom Konto `esany`.
+6. **Ein Werkzeug für den Bildvergleich gibt es schon als Prototyp:** `tools/regii5_visual_retrieval.py` (#141, #148). Ergebnis des Versuchs: Exakter Vorlagenabgleich ist „not allograph-robust enough“ für schwierige Zeichen (`same-source-visual-retrieval-spike-2026-09-10.md`). Auf Nr. 632 wurde er nicht übertragen.
+7. **Bekannte KI-Fehlerbilder sind im Repo belegt, die Bildauflösung aber nicht.**
+   - Belegt sind: Wortbildraten L001, Sinnzusammenhang als Lesehilfe L002, Namenswissen L003, Metadaten als Inhalt L005, wiederholte KI-Lesung ohne Unabhängigkeit L006, übernommene Prämisse in der Prüfung L023, Unterstützungsarbeit verdrängt Forschung L028.
+   - Die Bildauflösung (kompakte gegenüber voller Fassung, Neulesung an der nativen JPEG-Aufnahme) taucht nur in der Arbeitspraxis von Nr. 632 auf (#359, Methodenprotokoll), nicht in der Methode.
+8. **Abschnitt 8 ziehe ich zurück, soweit er Kennzahl, Lesbarkeitsprobe und Regel-Limit als Kern vorschlägt.** Diese Vorschläge setzten das Ziel herab, statt zu fragen, welche Strukturen die nachgebildete Facharbeit tragen. Eine neue Fassung von Abschnitt 8 gehört in die Synthese. Sie muss den Befund 4 und die Methode S1–S9 zum Ausgangspunkt nehmen.
+
+Weiter belegt bleiben U3 bis U6 und die Abschnitte 1, 3, 6 und 9.
+
 ## 0 · Geprüft gegen / nicht geprüft
 
 **Geprüft gegen:**
