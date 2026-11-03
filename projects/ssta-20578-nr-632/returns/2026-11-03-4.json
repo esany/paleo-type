@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-03-4",
+  "run_status": "completed",
+  "baseline_commit": "4b97ff9e29d658e1d37a8d2cea30bf2544cd3883",
+  "result_commit": "3326fbdf7f9d7449d30e55fa0b906fc787584496",
+  "research_owner": "projects/ssta-20578-nr-632/research/methodenprotokoll.md",
+  "recorded_status_sha256": "8c669fa6d83bddd1ce23aacd04eaed284b6b8dbf5529c845f8319aff450d7a15",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-03 / F2 initialer Methodenvergleich:** Aus den bereits unabhängigen ursprünglichen 2×3-Locus-Proben: Methode (a) 1+2=3 unmarkierte Fehler (1 stille Vereinheitlichung), (b) 2+1=3 (1), (c) 1+2=3 (1). Unterschiedliche Schriftdichte, gemeinsam verwendete Fotoaufnahmen je L/R, Alt-KI-Exposition, geringe Zahl und ungemessene Dauer verhindern einen Methodensieger. Keine neue Blindprobe und keine neue Seitenlesung durchgeführt. **Nächste fachliche Aktion unverändert:** `0114R-3` als neue unabhängige Gegenlesung durch `gegenlesen` in einem frischen Chat im ChatGPT-Projekt, nicht in diesem Chat; danach hier `weiter` und am Bild gegen den **vor Einsicht** gesicherten eigenen 0114R-Lesungsstand vergleichen. Bei Gleichstand der F2-Erstzählungen keine willkürliche Standardwahl oder zusätzliche neue Testserie ohne begründete Eigentümerentscheidung. F3/G2–G6 nicht automatisch eröffnet.",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}

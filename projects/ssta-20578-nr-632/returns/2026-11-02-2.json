@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-02-2",
+  "run_status": "completed",
+  "baseline_commit": "ab489d1e2259a714e61891c21d2c323c5cdd1911",
+  "result_commit": "80c619314e3f0d1dd1d826e3988948638cc82350",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "7416617fa0f0a9a7a8332aab3798559b68e3f892b5a4366d54a4f8385e249536",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-02 / Neue F1-Nachproben: `0105L-2` und `0112L-2` anhand der originalen Schreibflächen gegen die alten eigenen Commits (`fb3d0e5` / `a23823e`) beurteilt; sechs Loci mit 0 sicher belegten unmarkierten Wortfehlern, beide begrenzt `passt`; Text- und Namenunsicherheit offen. Review-Queue ab 0125L; F1 als Ganzes offen, 0112R-spezifische Sperre nach Nachprobe gelöst. Nächster fachlicher Schritt F1-Bildübergänge und Sechs-Seiten-Bilanz, kein G2–G6-PASS.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}

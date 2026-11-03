@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-03-2",
+  "run_status": "completed",
+  "baseline_commit": "423c2cfcba2b946a9cffade9f650b92e752c8b0f",
+  "result_commit": "8aef706d26aa6dfa8bc9e2a8a401a4ccd95ffe91",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "67358dcc19f6e9b2c1355b156b3afa149c5c18b408f3a2e83db3a7b8b00295a1",
+  "continuation_anchor": "- **RÜCKKEHRANKER 2026-11-03 / F2 0113L-3:** Original-JPEG 0113 für A04, A12 und A16 nach direkt kontrollierter Voll-PDF inspiziert; ältere Korrekturfassung `f356a5c` mit unabhängig `Blind: ja` deklariertem Abschnitt `b48edb5` verglichen. Kein positiv bewiesener neuer unmarkierter Wortfehler (0/3), keine gesicherte stille Normalisierung; `A16 [nächst/nebst?]` offen, `0113L-3` enges `passt`. Aktive F2-Resthandlung: frische Blindprobe `0114R-3` in einem frischen Chat im ChatGPT-Projekt, nicht in diesem Chat, danach quellengebundener Vergleich. Keine F2-Methode, F3 oder G2–G6 automatisch freigegeben.",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}

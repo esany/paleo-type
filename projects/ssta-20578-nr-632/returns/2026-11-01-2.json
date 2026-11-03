@@ -1,0 +1,12 @@
+{
+  "run_id": "nr632-2026-11-01-2",
+  "run_status": "completed",
+  "baseline_commit": "eb1f1fff7df7126ef03689d35ee27c23ed1e7068",
+  "result_commit": "cabae48a5f83b08897a64b57afab7c5479dc0de5",
+  "research_owner": "projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md",
+  "recorded_status_sha256": "8c40ef34b9ffb86699dd8393d1d2d70b26a882b565c9de119403fdea62094e41",
+  "continuation_anchor": "**RÜCKKEHRANKER 2026-11-01 / 4 Quellenkontrollen 0108R–0110R: Vorabstichproben kritisch abgeglichen; Voll-Neulesung und 0105L-Nachprobe weiter offen.**",
+  "stop_reason": "",
+  "stop_evidence": "",
+  "local_pass": false
+}
