@@ -1,5 +1,7 @@
 # Nachtrag zur Analyse #405: Knau war kein Gegenbeispiel
 
+> **Vorläufig, abgelöst durch `primaer-knau.md`.** Dieser Nachtrag stützt sich nur auf Zusammenfassungen (LEARNINGS, STATUS) und ist am Primärmaterial nicht geprüft.
+
 Stand: 03.11.2026, abends · Claude, Prüfer, vierter Chat · Branch `analysis/ursachen-405-erhebung` (#408). **Nicht für `main`.** Keine Lösungen und keine Maßnahmen.
 
 ## Anlass
