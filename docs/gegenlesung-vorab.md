@@ -112,7 +112,8 @@ Nur, wenn `ARBEITSPLAN.md` unter „Parameter: Gegenlesung“ eine Zahl für **N
 - **Bildausschnitte** nur im Chat, nie im Repo.
 - **Festhalten** im Forschungsowner, je Stelle eine Zeile:
   `Namenshinweis: <Seite> <Locator> | Eigentümer: <Text> | Lesung <sha> | Klärung am Bild: <Ergebnis>`
-- **Gewicht:** Ein Hinweis, keine Gegenlesung. Er zählt nicht für die Fehlerschwelle. Abweichungen werden am Bild geklärt. Bleibt es offen, als `[a/b]` stehen lassen.
+- **Gewicht:** Ein Hinweis, keine Gegenlesung. Er zählt nicht für die Fehlerschwelle.
+- **Schichten trennen** (`methodology/transcription-guidelines.md`, „Normalization and identification“): Eine Lesung ändert sich nur, wenn das Schriftbild sie stützt. Die Orts- oder Personenkenntnis des Eigentümers ist eine **Identifizierungshypothese**: Sie wird gesondert festgehalten und überschreibt nie die diplomatische Lesung. Bleibt es offen, als `[a/b]` stehen lassen.
 - Antwortet der Eigentümer nicht, weiterarbeiten; die Stellen bleiben offen.
 
 ## Ein Projekt einrichten
