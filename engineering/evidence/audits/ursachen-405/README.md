@@ -1,5 +1,7 @@
 # Erhebung für die Ursachenanalyse #405
 
+> **Stand 03.11.2026 (Entscheidung nach #405 §4D):** Die Erhebung in Einheiten durch Astra (#406) wird **nicht** ausgeführt. Die Ursachenanalyse folgt dem Ansatz in `analyse/ansatz.md` (Struktur über die ganze Laufzeit, vorab festgelegte Hypothesen, gezielte Volllektüre an Wendepunkten). Weiterverwendet werden `sollliste.tsv`, `export/` und aus `pruefung.py` die Prüfungen F3 und F4. Der übrige Text dieser Datei beschreibt den verworfenen Entwurf und bleibt zur Nachvollziehbarkeit stehen.
+
 Dieses Verzeichnis gehört dem Auftrag **#406** (Erhebung durch Astra) und dient der Analyse **#405**. Es liegt auf dem Branch `analysis/ursachen-405-erhebung` und wird **nicht** auf `main` übernommen.
 
 Die Rollen auf einen Blick:
