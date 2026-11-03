@@ -645,6 +645,8 @@ Vergleich: 0110R-2 | Lesung 5923025134bb2bb87267b0cd2396d4c06d87ba8b | Vorab c6a
 | `0112L-A06` | `[ereignen?] wollen, daher und Krafft er-` | Erstes Wort als Schriftkandidat, kein syntaktisch erschlossenes sicheres Wort |
 | `0112L-A07` | `[gangener?] Hochfürstl: gnädigster Re-` | Erster Wortkörper und lateinische Amtsformel vorsichtig, Trennzeichen am Ende |
 | `0112L-A08` | `scripten, de datis [Morizburg/Moritzburg?] an` | Initialsegment gehört zu `Re- / scripten`; Ortsname nach sichtbaren Zeichen nur als Variante, nicht identifiziert |
+
+Namenshinweis: 0112L 0112L-A08 | Eigentümer: Moritzburg | Lesung f6da70534dd8e672473003bfbd6ee3d1d2af292a | Klärung am Bild: 03.11.2026; freiwillige Eigentümerlesung zum im Chat gezeigten Originalausschnitt Nr. 3 aus der kontrollierten Voll-PDF, PDF-/Providerbild 0112 links, Haupttext-A08. Der sichtbare Schriftzug wurde am bereitgestellten Originalpixel-Ausschnitt geprüft; die sichere Unterscheidung der graphematischen Varianten `Morizburg` und `Moritzburg` gelingt damit nicht unabhängig. Die vorab committete unsichere diplomatische KI-Arbeitslesung `[Morizburg/Moritzburg?]` bleibt deshalb unverändert; der Eigentümerhinweis wird nicht als archivalisch gesicherte Ortsidentifizierung, unabhängige Gegenlesung oder Fehlerzählung behandelt.
 | `0112L-A09` | `der Elster den 23 Martij [1677?]. und` | Geschriebene Datumsangabe, nicht Datierung der Foto- oder Trägeraufnahme |
 | `0112L-A10` | `4. Octbr: [1675?]. [Jahres?], das Werck` | Unterer Datumsstrich wirkt wie eine 5, andere Details bleiben geschriebene Ziffernkandidaten |
 | `0112L-A11` | `mit Zuziehung gewißer hierzu ver-` | Getrenntes Wort `ver-` führt in nächste physische Zeile |
