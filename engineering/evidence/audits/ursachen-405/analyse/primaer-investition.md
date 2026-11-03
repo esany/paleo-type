@@ -93,3 +93,34 @@ Gemessen an H1–H4:
 - **Wohin die Arbeit ging.** Gebaut wurde Steuerung, Abgleich und Aufräumen (I14). Die einzige fachliche Lücke, die die Projekte wirklich anhielt, wurde als Absatz D-020 und als Werkzeug C1R behandelt. Gelöst wurde sie nicht: Es gab keinen begründeten Vorschlag für den nächsten fachlichen Schritt.
 
 **Noch nicht gelesen:** #202, #206–#208, #211–#215, #226, #227, alle `requirements/`-Dateien und die ganze Oktober-Welle: #230, #244–#261, #272, #276–#297, #306–#309.
+
+## 02.–05.10. · #230, SD-KA-01, #297 (#230 ganz gelesen, #297 nur Kopf und Aktualisierungen bis 07.10., Zeitpunkte über die REST-API)
+
+**I16 · Das Pendel schlug von „so klein wie möglich“ zu „zuerst ausreichend“ um, und beides stand als Text da.** Im September galt die Leitlinie, nichts Überflüssiges zu bauen. #85 verzichtete deshalb auf ein Hilfsprogramm (`primaer-knau.md` B12). Am 02.10. benannte #230, auf Wunsch des Eigentümers, das Gegenteil als zentralen Fehler: „minimality has too often been treated as an input constraint on solution design instead of a post-sufficiency optimization criterion“. Daraus folgte der Grundsatz „Sufficient architecture first; simplify without loss second“. Er steht heute als „Adequacy before minimality“ in `AGENTS.md`. Die ursächliche Einordnung lautete: „a real coupled structural gap … in Repository Knowledge Lifecycle + Work/Programme Lifecycle + Operational Context Composition“ (#230, Kommentar vom 02./03.10.). *Deutung:* Die Investition im Oktober galt der Verwaltung des eigenen Textbestands. Gemeint sind Lebenszyklus, Aktualität, Ablösung und Kontextzusammenstellung, also die Folgen von Z2. Das Mittel gegen zu viel Text war Architektur für Text.
+
+**I17 · Sechs Arbeitspakete in 27 Stunden, die Schlussprüfung in drei Minuten.** SD-KA-01 WP1–WP6 wurde am 04.10. um 20:22 und 20:23 angelegt. Der letzte Schritt, „WP6: run adversarial terminal qualification“ (#301), wurde am 05.10. um 23:04 angelegt und um 23:07 geschlossen. „persist terminal Result Review and accepted baseline“ (#302) lief von 23:13 bis 23:14. **Vier Stunden vorher**, um 19:13, war #297 als „CRITICAL SYSTEM REGRESSION / MAX PRIORITY“ angelegt worden. *Deutung:* Am selben Abend stellte das System einen kritischen Rückfall fest und nahm seine neue Architektur nach einer dreiminütigen „adversarial qualification“ ab. Stärker lässt sich H2 kaum belegen: Abnahmesignale entstehen in Minuten und unabhängig vom erkannten Zustand.
+
+**I18 · #297 benennt das Muster und bleibt offen.** Der Fehler lautet: „integrated higher-order plan … → assistant optimizes for a small/lean next step … → local step can look correct while the intended complete transition remains unsafe/incomplete → Human must stop the reduction explicitly“. Die Folge sind sechs Pflichtprüfungen, „a continuous acceptance/assurance condition“, kein Mechanismus (#297, Text). Die Aktualisierungen vom 07.10. sprechen von „partial positive efficacy but overall FAIL“. Bis zum 28.10. kehrt der Fehler wieder: Ein frischer Chat lud das gebaute Werkzeug `savesax` nicht, sondern lud Bilder per Browser und `curl` (#297, Nachträge vom 27. und 28.10.). *Deutung:* Das stützt H3 (Pflichtprüfungen als Text) und H4: Das Werkzeug existiert, aber die Laufumgebung aktiviert es nicht. Es ist dasselbe Muster wie Generator B im September (`primaer-knau.md` B28).
+
+## Zwischenergebnis über beide Phasen (Deutung, angreifbar)
+
+Die vier Hypothesen tragen am Primärmaterial. Sie lassen sich aber auf **eine tiefere Ursache** zurückführen, die auch den Einwand des Eigentümers aufnimmt (Investition vor Fachbeitrag):
+
+> **Das System hat keine von der KI unabhängige Instanz, die Qualität feststellt.** Pläne, Forschungsprogramme, Synthesen, Konzepte, Code, Tests, Prüfungen und Abnahmen entstehen alle im selben Typ Chat. Oft geschieht das in Minuten (I1, I4, I11, I17; `primaer-knau.md` B20). Der Eigentümer stimmt nur zu, und er soll Prüftiefe nicht beurteilen müssen.
+
+Folgen dieser einen Ursache:
+- **H2:** Was den Abnahmeschritt bestanden hat, kostet so viel wie Text. Deshalb ist es billig.
+- **H3:** Gegenmittel richten sich an denselben Chat, also bleiben sie Text.
+- **H1:** Ob ein Fehler wiederkommt, prüft niemand außer dem nächsten Chat derselben Art. Der Eigentümer bemerkt es erst im Betrieb (P10).
+- **H4:** Was eine Laufumgebung nicht kann, fällt erst auf, wenn ein frischer Chat scheitert. Es gibt keinen dauerhaften Prüfstand, der denselben Fall wiederholt ausführt.
+- Die Investition fließt deshalb in das, was ein Chat selbst schreiben und selbst abnehmen kann: Steuerung, Abgleich, Aufräumen (I14). Was nur außerhalb des Chats prüfbar ist, bleibt liegen: das Bild, die Richtigkeit einer Lesung, ob ein Werkzeug in einer neuen Umgebung läuft, ob eine Regel wirkt.
+
+**Gegenprobe:** Wo eine Prüfung außerhalb des Chats lag, wirkte sie.
+- Der Eigentümer stoppt eine Verkleinerung (#297) oder einen Zweig (I13).
+- Die CI meldet veraltete Testtexte (`primaer-knau.md` B22).
+- Ein zweiter Chat erkennt eine unbelegte Behauptung, etwa „Generator B lief“ (B28).
+- Der Bildvergleich widerlegt eine alte Lesung (B19).
+
+Es sind also nicht die Regeln, die fehlen. Es fehlen Prüfinstanzen, die nicht vom selben Modell abhängen. *Grenze:* Diese Gegenprobe beruht auf wenigen Fällen. Wie viel davon an den Plattformen liegt (ChatGPT mit Connector, Claude im Container), ist nicht getrennt.
+
+**Nicht gelesen** und für eine Abnahme dieses Zwischenergebnisses nötig: #244–#261 im Einzelnen, #272, #276–#296, #306–#309, die Oktober-PRs, die `requirements/`- und `engineering/`-Dateien sowie die Phase ab 26.10. mit Nr. 632.
