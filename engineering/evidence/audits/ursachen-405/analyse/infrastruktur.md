@@ -2,7 +2,7 @@
 
 Stand: 03.11.2026, abends · Claude, Prüfer · Branch `analysis/ursachen-405-erhebung` (#408). **Nicht für `main`.** Keine Lösungen und keine Maßnahmen.
 
-**Zweck (Eigentümer, 03.11.2026):** Grundlage für den Umbau (B) und die Weiterführung von Nr. 632 (C). Der Bedienmodus mit Stichworten bleibt, solange er ans Ziel führt.
+**Zweck (Eigentümer, 03.11.2026):** Grundlage für den Umbau (B) zu einem **generischen Werkzeug**. Nr. 632 ist nur Mittel zum Zweck, also Testfall, nicht Ziel (Klarstellung des Eigentümers am selben Abend; so auch `post-166-research-framing-review-2026-09-14.md:55-56` laut `pilot-w1.md`). Der Bedienmodus mit Stichworten bleibt, solange er ans Ziel führt.
 **Zu prüfende Hypothese (Eigentümer):** Es gibt grundlegende Probleme der Infrastruktur, also zentrale Systemfehler, die sich gegenseitig aufschaukeln und verstärken.
 **Rahmen (vom Chat festgelegt):** Die Karte umfasst nur die Infrastruktur: wer womit arbeitet, wo der Stand liegt, wie Übergaben, Prüfungen und Bildzugriff laufen. Auf dieser Karte wird die Hypothese gegen Gegenhypothesen geprüft.
 
@@ -150,7 +150,7 @@ Jedes Glied ist einzeln belegt. Dass sie in dieser Reihenfolge **als Schleife** 
 | G1 Das Modellverhalten ist die eigentliche Ursache (vorschneller Abschluss, Flicken, Solutionism), unabhängig von der Infrastruktur. | #404 und #405 3b geschahen im Claude-Container, **dem nichts fehlte**: Code, Git, Zeit. Z1 und Z3 können diese Fälle nicht erklären. | Z2 wirkt auch dort: Pflichtlektüre und Grundstoff übersteigen den Kontext (#405 P11), und das lädt zum Überfliegen ein. | **teilweise gestützt.** Das Verhalten ist ein eigener Faktor. Die Infrastruktur verstärkt es, erzeugt es aber nicht allein. |
 | G2 Die Lesearbeit selbst ist schwer; die Wand ist fachlich. | Blinde Proben zeigen Fehler (belegt: #368, #389 Punkte 2–3). | Damit lässt sich schlechte Lesequalität erklären, nicht aber das Wachstum der Abläufe und die Wellen. Die übernommenen PRs vom 01.–03.11. sind „alles Ablaufregeln“ (belegt: Übergabe in #368). | **gestützt für die Lesequalität, nicht für die Systemdynamik** |
 | G3 Es fehlt die nächste Forschungsfrage (Pilot W1, H-F eng). | Belegt für den Umschlag am 14.09. (vorbelastet, `pilot-w1.md`) | Für Nr. 632 gab es einen Auftrag (#358, Plan vom 31.10.); trotzdem dieselbe Dynamik. | **gestützt für Knau, nicht für Nr. 632** |
-| G4 Knau lief besser, weil die Infrastruktur dort passte (Work und Codex mit Code, Rendern in 600 dpi, lokale Tests). | #123 (belegt: Rendern und lokale Tests bei Knau) | Knau hatte zudem Paralleltexte als Prüfstein (Aussage: #398, Bericht Claude, verworfen). Beide Faktoren sind nicht getrennt. | **offen; ein entscheidender Prüfpunkt für C** |
+| G4 Knau lief besser, weil die Infrastruktur dort passte (Work und Codex mit Code, Rendern in 600 dpi, lokale Tests). | #123 (belegt: Rendern und lokale Tests bei Knau) | Knau hatte zudem Paralleltexte als Prüfstein (Aussage: #398, Bericht Claude, verworfen). Beide Faktoren sind nicht getrennt. | **offen.** Für ein generisches Werkzeug lautet die Frage: Welche Fähigkeiten brauchte der erfolgreiche Fall, und hängen sie an einer bestimmten Umgebung? |
 
 ## 6. Ergebnis, soweit gelesen
 
@@ -160,10 +160,19 @@ Jedes Glied ist einzeln belegt. Dass sie in dieser Reihenfolge **als Schleife** 
   - **Z3:** Der zweimalige Wechsel der Umgebung (08.10. und 30.10.) wurde nicht nachgezogen. #297, #401 und #404 nennen die Rollen- und Werkzeuglücke (P9), aber nicht den Wechsel als Auslöser.
   - Die Rollenverteilung ab 30.10. stammt aus einer Empfehlung des design-lab-Chats (#353). Ob die Umgebung sie trägt, wurde vorher nicht geprüft.
 
+## 6b. Nachtrag: Zweck ist das generische Werkzeug
+
+Die erste Fassung hat Nr. 632 als zweites Ziel (C) geführt. Das war falsch: Nr. 632 ist Testfall. Neu geprüft wurden alle Grundannahmen, nicht nur die betroffene Zeile:
+- **Z1 und Z3 gewinnen an Gewicht.** Ein generisches Werkzeug muss über verschiedene Quellen und wechselnde Chat-Umgebungen tragen. Belegt ist, dass das heutige System an die Fähigkeiten einer bestimmten Umgebung gebunden ist und beim Wechsel ausfällt (Z3).
+- **G2 (Schwierigkeit der Lesung) betrifft die Quelle, nicht das Werkzeug.** Für das Werkzeug zählt, ob es die Lesequalität sichtbar und prüfbar macht, nicht wie gut eine bestimmte Hand lesbar ist.
+- **Neue Gegenhypothese G5, gleich stark zu prüfen:** Das generische Ziel selbst kann Systemarbeit ohne Zug durch einen Fall begünstigen. Am 14.09. stand die Klarstellung „allgemeines Forschungswerkzeug“ unmittelbar vor der Systemwelle (Pilot W1, vorbelastet). Umgekehrt zeigen #394 und #355, dass Fallarbeit an Nr. 632 am Vorhandenen vorbeilief. Belegt sind beide Einzelfälle; ob ein Muster dahintersteht, ist **offen**. Ursache liegt damit nicht beim Eigentümer: Geprüft wird, wie das System zwischen Fall und Allgemeinem vermittelt.
+- **Unverändert:** Z2, Z4, Z5, G1.
+
 ## 7. Offen und als Nächstes prüfbar (keine Maßnahmen)
 
-1. **G4:** Wie war die Umgebung bei Knau G2–G4 genau? Wer hat gelesen, mit welchem Bildzugang und mit welchen Ausschnitten? Zu klären aus #64, #96–#99, #115, #123, `projects/ega-reg-ii-5-knau/STATUS.md` und LEARNINGS.
+1. **G4:** Welche Fähigkeiten trugen den Erfolg bei Knau, und hingen sie an der damaligen Umgebung? Wie war die Umgebung bei Knau G2–G4 genau? Wer hat gelesen, mit welchem Bildzugang und mit welchen Ausschnitten? Zu klären aus #64, #96–#99, #115, #123, `projects/ega-reg-ii-5-knau/STATUS.md` und LEARNINGS.
 2. **Z3:** Gibt es einen Abgleich nach dem 08.10. oder dem 30.10., welche Werkzeuge und Regeln nicht mehr ausführbar sind? Zu prüfen in #310 (Volltext), #355 (Rest), #358, `engineering/configuration.json`.
 3. **Schleife in §4:** Zeitfolge 26.10.–03.11. an #358, #359 (Kommentare) und den PRs #366–#395 prüfen.
 4. **Astras Bildzugang:** Wie arbeitet der Hauptchat konkret am Bild (Ausschnitte, Auflösung)? Aus dem STATUS auf #359, nur die Arbeitsweise, ohne Lesungen.
-5. **Vergleich:** design-lab und wissensarbeit auf dieselben fünf Kandidaten Z1–Z5 hin lesen.
+5. **G5:** Wie wurde zwischen Fallarbeit und allgemeinem Werkzeug vermittelt (Wendepunkte 14.09. und 30.10.)?
+6. **Vergleich:** design-lab und wissensarbeit auf dieselben fünf Kandidaten Z1–Z5 hin lesen.
