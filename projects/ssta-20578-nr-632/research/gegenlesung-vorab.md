@@ -542,3 +542,13 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Oberer Haupttextblock, Z. 6 von oben: \`gerichtlich recognosciret, welches hierdurch\`
 - Unterer Haupttextblock, Z. 1 von oben: \`[Justiz?] Amt Dresden am 13ten [Nov?] 1780.\`
 - Bildbefund, Textgliederung: Zwei Schriftblöcke mit je eigener Zeilenfolge; je ein dunkler Siegelkörper liegt im Bereich der Blöcke.
+
+## 0131R
+- Datum: 2026-11-03
+- Leser: GPT-6, unabhängiger Vorab-Gegenlese-Chat (normaler Chat)
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 131 (0131R)
+- Blind: ja
+- Oberer Haupttextblock, Z. 3 von oben: \`daß Sie die Transferirung des in dem [Guthe?] ⟦…⟧\`
+- Oberer Haupttextblock, Z. 10 von oben: \`[gedachtes?] [Buch/Guth] de dato den 20ten April 1769. zu denen\`
+- Unterschrift am unteren Blattrand, Z. 1 von oben: \`Joh[s?]. Benedict [Lohmann?]\`
+- Bildbefund, rechte Bildhälfte: Der obere Textblock endet über einer Siegelabbildung; darunter stehen räumlich abgesetzte Unterschriften. Unsichere Buchstaben insbesondere im unteren Namen bleiben offen.
