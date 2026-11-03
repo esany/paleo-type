@@ -120,6 +120,172 @@ class PromptCapabilityTests(unittest.TestCase):
         self.assertIn("D-016 admission", result)
         self.assertNotIn("automatically admit", result.lower())
 
+    def test_paleo_prompt_contains_outcome_preserving_return_gate(self) -> None:
+        result = prompt.build_prompt("Implement the authorized bounded engineering task.", repo="esany/paleo-type")
+        lowered = result.lower()
+        for marker in (
+            "protected user/research outcome",
+            "semantic scope",
+            "negative distinctions",
+            "coupled obligations",
+            "authorized action",
+            "definition of ready",
+            "definition of done",
+            "residual/return condition",
+            "claim ceiling",
+            "stop/fail closed",
+        ):
+            self.assertIn(marker, lowered)
+
+    def test_consequential_paleo_prompt_without_return_gate_is_rejected(self) -> None:
+        tested = prompt.test_prompt("Implement a bounded change.", repo="esany/paleo-type")
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("missing-outcome-return-gate", tested["findings"])
+
+    def test_owner_existence_cannot_relativize_a_reproduced_failure(self) -> None:
+        tested = prompt.test_prompt(
+            "The existing owner covers this failure, so no fix is needed.",
+            repo="esany/paleo-type",
+        )
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("owner-existence-relativization", tested["findings"])
+
+        reviewed = prompt.review_prompt(
+            "Fix the reproduced failure; the existing owner covers it, so no gap exists.",
+            repo="esany/paleo-type",
+        )
+        self.assertTrue(any("owner-existence" in issue for issue in reviewed["issues"]))
+        self.assertIn("return gate", reviewed["prompt"].lower())
+
+    def test_collection_context_cannot_be_promoted_to_content(self) -> None:
+        tested = prompt.test_prompt(
+            "Wolkenburg identifies the content and priority of this archival unit.",
+            repo="esany/paleo-type",
+        )
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("context-content-promotion", tested["findings"])
+
+        negative = prompt.test_prompt(
+            "Wolkenburg is collection context only; content and identity require direct evidence.",
+            repo="esany/paleo-type",
+        )
+        self.assertEqual("PASS", negative["status"])
+
+    def test_complete_return_gate_can_pass(self) -> None:
+        adequate = (
+            "Implement only after stating the protected user outcome, semantic scope, negative distinctions, "
+            "coupled obligations, authorized action, Definition of Ready, Definition of Done, "
+            "residual condition and claim ceiling."
+        )
+        tested = prompt.test_prompt(adequate, repo="esany/paleo-type")
+        self.assertEqual("PASS", tested["status"])
+
+
+    def test_blank_return_gate_labels_do_not_establish_completion(self) -> None:
+        unfilled = (
+            "Implement this change; completed return gate:\n"
+            "Protected user/research outcome:\n"
+            "Semantic scope:\n"
+            "Negative distinctions:\n"
+            "Coupled obligations:\n"
+            "Authorized action:\n"
+            "Definition of Ready:\n"
+            "Definition of Done:\n"
+            "Residual/return condition:\n"
+            "Claim ceiling:\n"
+        )
+        tested = prompt.test_prompt(unfilled, repo="esany/paleo-type")
+        self.assertEqual("NEEDS_REVIEW", tested["status"])
+        self.assertIn("unfilled-outcome-return-gate", tested["findings"])
+        reviewed = prompt.review_prompt(unfilled, repo="esany/paleo-type")
+        self.assertTrue(any("unfilled" in issue for issue in reviewed["issues"]))
+
+        # The gate must not reject ordinary headings followed by actual values.
+        filled = (
+            "Implement this change; report the return gate:\n"
+            "Protected user/research outcome:\n"
+            "  Keep the Human's existing source-access objective.\n"
+            "Semantic scope:\n"
+            "  Access only, no scholarly interpretation.\n"
+            "Negative distinctions:\n"
+            "  Collection metadata is not documentary content.\n"
+            "Coupled obligations:\n"
+            "  Preserve the existing evidence and destination records.\n"
+            "Authorized action:\n"
+            "  Bounded implementation in the admitted branch.\n"
+            "Definition of Ready:\n"
+            "  Current repo and owner checked.\n"
+            "Definition of Done:\n"
+            "  Tests and remote proof complete.\n"
+            "Residual/return condition:\n"
+            "  Return unresolved host acceptance to its existing owner.\n"
+            "Claim ceiling:\n"
+            "  A test pass is not whole-system acceptance.\n"
+        )
+        self.assertEqual("PASS", prompt.test_prompt(filled, repo="esany/paleo-type")["status"])
+
+    def test_context_promotion_guard_is_not_wolkenburg_only(self) -> None:
+        for invalid in (
+            "Bestand 20578 identifies the content and priority of this archival unit.",
+            "Sammlung determines the identity and priority of the manuscript.",
+            "Collection proves the content and priority of this source.",
+        ):
+            with self.subTest(invalid=invalid):
+                tested = prompt.test_prompt(invalid, repo="esany/paleo-type")
+                self.assertEqual("NEEDS_REVIEW", tested["status"])
+                self.assertIn("context-content-promotion", tested["findings"])
+
+        contextual_only = (
+            "Bestand 20578 is collection context only; documentary content and "
+            "research priority require direct evidence and authority."
+        )
+        self.assertEqual(
+            "PASS",
+            prompt.test_prompt(contextual_only, repo="esany/paleo-type")["status"],
+        )
+
+
+    def test_single_missing_markdown_return_gate_field_is_detected(self) -> None:
+        # The original >=2 threshold silently passed one explicitly empty field.
+        one_missing = (
+            "Implement and report the completed return gate:\n"
+            "**Protected user/research outcome:** Preserve source access.\n"
+            "**Semantic scope:** TBD\n"
+            "**Negative distinctions:** No unselected interpretation.\n"
+            "**Coupled obligations:** Keep evidence references intact.\n"
+            "**Authorized action:** Review bounded change only.\n"
+            "**Definition of Ready:** Current branch and owner resolved.\n"
+            "**Definition of Done:** Regression and remote proof.\n"
+            "**Residual/return condition:** Return to #297.\n"
+            "**Claim ceiling:** CI is not scholarly acceptance.\n"
+        )
+        result = prompt.test_prompt(one_missing, repo="esany/paleo-type")
+        self.assertIn("unfilled-outcome-return-gate", result["findings"])
+        review = prompt.review_prompt(one_missing, repo="esany/paleo-type")
+        self.assertTrue(any("unfilled" in issue for issue in review["issues"]))
+
+        # An instruction that is not under paleo-type's contract stays simple.
+        other = prompt.test_prompt(one_missing)
+        self.assertNotIn("unfilled-outcome-return-gate", other["findings"])
+
+    def test_single_blank_markdown_field_followed_by_another_label_is_detected(self) -> None:
+        unfilled = (
+            "Implement; completed return gate:\n"
+            "**Protected user/research outcome:** Keep real source outcome.\n"
+            "**Semantic scope:**\n"
+            "**Negative distinctions:** Context is not evidence.\n"
+            "**Coupled obligations:** Preserve research state.\n"
+            "**Authorized action:** Bounded fix.\n"
+            "**Definition of Ready:** Owner checked.\n"
+            "**Definition of Done:** Tests pass.\n"
+            "**Residual/return condition:** Report the unresolved result.\n"
+            "**Claim ceiling:** Formal check only.\n"
+        )
+        self.assertIn(
+            "unfilled-outcome-return-gate",
+            prompt.test_prompt(unfilled, repo="esany/paleo-type")["findings"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -23,6 +23,57 @@ CONNECTOR_FAILURE_LOCAL_FALLBACK = re.compile(
 PREMATURE_CLOSURE = re.compile(
     r"(?i)(?:local|technical|unit|ci|github|issue|pr|work package).{0,60}(?:pass|green|closed|done|complete).{0,60}(?:means|proves|establishes|therefore|so|enough|accept|close)"
 )
+
+OWNER_RELATIVIZATION = re.compile(
+    r"(?i)\b(?:existing|current|applicable)\s+(?:owner|rule|contract|semantics?).{0,80}\b(?:covers|sufficient|no gap|no fix|defer|wait|not needed)\b"
+)
+CONTEXT_PROMOTION = re.compile(
+    r"(?i)(?:\bwolkenburg\b|\bbestand\s+\d+\b|\bfonds\b|\bsammlung\b|\bcollection\b)"
+    r".{0,60}\b(?:defines|identifies|determines|sets|proves|is\s+(?:the\s+)?(?:content|identity|priority|project|next action))\b"
+    r".{0,40}\b(?:content|identity|priority|project|next action)\b"
+)
+# This is a limited negative fixture, not general semantic or host assurance.
+_RETURN_GATE_FIELD = re.compile(
+    r"(?i)^\s*(?:[-*]\s*)?(?:protected user/research outcome|protected user outcome|protected research outcome|"
+    r"semantic scope|negative distinctions|coupled obligations|authorized action|"
+    r"definition of ready|definition of done|residual/return condition|claim ceiling)\s*:\s*(.*)$"
+)
+
+
+def _has_unfilled_return_gate(text: str) -> bool:
+    # Check explicitly labelled slots only; this cannot assess the truth of values.
+    # Markdown bold/code formatting on a label is presentation, not evidence.
+    lines = [line.replace("**", "").replace("\u0060", "") for line in text.splitlines()]
+    for i, line in enumerate(lines):
+        match = _RETURN_GATE_FIELD.match(line)
+        if not match:
+            continue
+        value = match.group(1).strip()
+        if value.lower() in {"todo", "tbd", "...", "[todo]", "[tbd]"}:
+            return True
+        if value:
+            continue
+        following = next((part.strip() for part in lines[i + 1:] if part.strip()), "")
+        if not following or _RETURN_GATE_FIELD.match(following):
+            return True
+    return False
+_RETURN_GATE_MARKERS = (
+    r"(?i)\bprotected (?:user(?:/research)?|research )?outcome\b",
+    r"(?i)\bsemantic scope\b",
+    r"(?i)\bnegative distinctions?\b",
+    r"(?i)\bcoupled obligations?\b",
+    r"(?i)\bauthorized action\b",
+    r"(?i)\bdefinition of ready\b",
+    r"(?i)\bdefinition of done\b",
+    r"(?i)\b(?:residual|return)(?:/return)? (?:condition|state)\b",
+    r"(?i)\bclaim ceiling\b",
+)
+RETURN_GATE_GUARDRAIL = """Outcome-preserving return gate:
+Before any consequential action, write one explicit return-gate tuple: protected user/research outcome; semantic scope and negative distinctions; coupled obligations; authorized action; Definition of Ready; Definition of Done; residual/return condition; and claim ceiling. Treat a reproduced documented failure as an enforcement failure: the existence of an owner, rule or contract is not closure. Keep collection/context metadata (including Wolkenburg) separate from content, identity, priority, Project and NEXT ACTION unless direct evidence and the canonical owner establish the relation. Stop/fail closed when the tuple or evidence is incomplete. Technical PASS, owner existence, issue comments, PR status or work-package completion do not prove root-cause resolution, user acceptance or whole-system return."""
+def _has_return_gate_contract(text: str) -> bool:
+    return sum(bool(re.search(pattern, text)) for pattern in _RETURN_GATE_MARKERS) >= 8
+def _is_consequential_prompt(text: str) -> bool:
+    return bool(re.search(r"(?i)\b(?:implement|change|fix|modify|merge|close|handoff|ship|deploy|execute|persist|update|reconcile|approve|accept)\b", text))
 _ADEQUACY_MARKERS = (
     r"(?i)\b(?:user|research) (?:outcome|pain|need)\b",
     r"(?i)\broot cause\b",
@@ -84,6 +135,8 @@ Use complete applicable context, not `read everything`; keep deeper provenance r
 {ONLINE_EXECUTION_GUARDRAIL}
 
 {ADEQUACY_GUARDRAIL}
+
+{RETURN_GATE_GUARDRAIL}
 
 For consequential review, state the review evidence basis, what remained inherited, what was re-tested, and any evidence-depth limit. A fresh context or second model is not independent evidence merely because it is new.
 
@@ -149,6 +202,17 @@ def review_prompt(prompt: str, repo: str | None = None) -> dict[str, Any]:
             improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
 
     if _is_paleo_repo(repo):
+        if _is_consequential_prompt(improved) and _has_unfilled_return_gate(improved):
+            issues.append("return-gate fields are unfilled: labels/placeholders are not completed transition evidence")
+        if _is_consequential_prompt(improved) and not _has_return_gate_contract(improved):
+            issues.append("missing outcome-preserving return gate: require protected outcome, semantic scope, coupled obligations, DOR/DOD, residual return and claim ceiling")
+            improved = improved.rstrip() + "\n\n" + RETURN_GATE_GUARDRAIL
+        if OWNER_RELATIVIZATION.search(improved):
+            issues.append("owner-existence relativization: a named owner/rule cannot substitute for reproducing and fixing the enforcement failure")
+            improved = improved.rstrip() + "\n\n" + RETURN_GATE_GUARDRAIL
+        if CONTEXT_PROMOTION.search(improved):
+            issues.append("context-content promotion: collection/context metadata cannot establish content, identity, priority, Project or NEXT ACTION")
+            improved = improved.rstrip() + "\n\n" + RETURN_GATE_GUARDRAIL
         if not _has_execution_proof_contract(improved):
             issues.append("missing online execution proof gate: require current main, intended branch/PR, remote commit, restart/handoff and affected-owner reconciliation")
             improved = improved.rstrip() + "\n\n" + ONLINE_EXECUTION_GUARDRAIL
@@ -171,7 +235,7 @@ def review_prompt(prompt: str, repo: str | None = None) -> dict[str, Any]:
     }
 
 
-def test_prompt(prompt: str, result: str | None = None, self_review: bool = False) -> dict[str, Any]:
+def test_prompt(prompt: str, result: str | None = None, self_review: bool = False, repo: str | None = None) -> dict[str, Any]:
     text = prompt.strip()
     if not text:
         raise ValueError("prompt must not be empty")
@@ -198,6 +262,14 @@ def test_prompt(prompt: str, result: str | None = None, self_review: bool = Fals
         findings.append("premature-closure-laundering")
     if re.search(r"(?i)(?:automatically )?(?:admit|approve|accept) (?:the )?(?:architecture|change|project)", text):
         findings.append("authority-laundering-risk")
+    if _is_paleo_repo(repo) and _is_consequential_prompt(text) and _has_unfilled_return_gate(text):
+        findings.append("unfilled-outcome-return-gate")
+    if _is_paleo_repo(repo) and _is_consequential_prompt(text) and not _has_return_gate_contract(text):
+        findings.append("missing-outcome-return-gate")
+    if _is_paleo_repo(repo) and OWNER_RELATIVIZATION.search(text):
+        findings.append("owner-existence-relativization")
+    if _is_paleo_repo(repo) and CONTEXT_PROMOTION.search(text):
+        findings.append("context-content-promotion")
 
     independence = "not-independent-self-review" if self_review else "not-established"
     if result and re.search(r"(?i)independent(?:ly)? (?:validated|verified|reviewed)", result):
@@ -231,6 +303,7 @@ def main() -> int:
     test.add_argument("prompt")
     test.add_argument("--result")
     test.add_argument("--self-review", action="store_true")
+    test.add_argument("--repo")
 
     args = parser.parse_args()
     try:
@@ -245,7 +318,7 @@ def main() -> int:
                 for issue in reviewed["issues"]:
                     print(f"- {issue}", file=sys.stderr)
             return 0
-        tested = test_prompt(args.prompt, args.result, args.self_review)
+        tested = test_prompt(args.prompt, args.result, args.self_review, args.repo)
         print(json.dumps(tested, indent=2, sort_keys=True))
         return 0 if tested["status"] == "PASS" else 1
     except ValueError as exc:
