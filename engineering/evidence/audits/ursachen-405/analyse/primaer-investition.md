@@ -124,3 +124,39 @@ Folgen dieser einen Ursache:
 Es sind also nicht die Regeln, die fehlen. Es fehlen Prüfinstanzen, die nicht vom selben Modell abhängen. *Grenze:* Diese Gegenprobe beruht auf wenigen Fällen. Wie viel davon an den Plattformen liegt (ChatGPT mit Connector, Claude im Container), ist nicht getrennt.
 
 **Nicht gelesen** und für eine Abnahme dieses Zwischenergebnisses nötig: #244–#261 im Einzelnen, #272, #276–#296, #306–#309, die Oktober-PRs, die `requirements/`- und `engineering/`-Dateien sowie die Phase ab 26.10. mit Nr. 632.
+
+## Abgleich mit vorhandenen Analysen (03.11.2026, abends)
+
+Gesichtet nach Überschriften, Befundlisten und Stichworten. Volltext gelesen nur dort, wo er unten genannt ist.
+- **Auf `main`:** `engineering/catalog/findings.tsv` (F01–F45), 30 Audits unter `engineering/evidence/audits/`, drei Lern-Dokumente unter `engineering/evidence/learning/`, die LEARNINGS der Projekte.
+- **Auf Branches:** #401 (`systemaudit-2026-11-chatgpt.md`, RC1–RC6, §7 gelesen), #402, #408 (`ansatz.md` H-A–H-I, `infrastruktur.md` Z1–Z5) und #409 (K1–K7).
+
+**Ergebnis: Der Kern meines Zwischenergebnisses ist nicht neu.**
+
+| meine Aussage | schon vorhanden |
+|---|---|
+| keine von der KI unabhängige Prüfinstanz; Wechsel von Chat oder Rolle schafft keine Unabhängigkeit | #401 RC2 („Unabhängigkeit von Chat/Modell/PR ist nicht Unabhängigkeit der Evidenzbasis“) und RC6 („Rollentrennung ohne … unabhängige Aufgaben- und Beweisprüfung wird zur gegenseitigen Bestätigung“); L023; Katalog F10 (`unresolved`) |
+| H3: Regeltext sichert das Verhalten nicht | Katalog F44; #405 P3; `ansatz.md` H-E; `infrastruktur.md` Z4; Lernbefund vom 23.09. |
+| H2: Form statt Ergebnis, lokaler PASS | #401 RC1 und Fehlkreis A; F11; `infrastruktur.md` Z5; #405 P7; #297 |
+| Eigentümer als Bote | F20; #405 P10; #401 §8; `infrastruktur.md` 2d |
+| Zustimmung ohne beurteilbare Prüftiefe | F21 („Authorization is not informed decision readiness“) |
+| Eingaben des Eigentümers werden zu Zweigen | F43; Lernbefund vom 18.09.; #405 3b |
+| Verbot einer Arbeitsweise (Formenverzeichnis) | F45; #405 P5; #409 A |
+| Wiederkehr nicht geprüft | #405 P2; `ansatz.md` H-E |
+
+**Nach diesem Abgleich möglicherweise neu** (nur gegen Überschriften geprüft, noch nicht gegen Volltexte):
+- Zeitstempel als Beleg dafür, dass Abnahme billig ist: Forschung, Synthese und Abnahme in Minuten (I1, I4, I11, I17; `primaer-knau.md` B20)
+- der Bildzugang als dauerhafter Engpass, Folge der Aufteilung auf getrennte Chats schon im August (B9–B11). `infrastruktur.md` Z1 und Z3 sehen den Engpass erst ab dem Wechsel der Umgebung.
+- #166 gewinnt einen Befund vom 29.08. zurück (B33). #401 RC2 und #409 führen #166 als Beleg für die Rückkehr zur Quelle.
+- Tests, die den Wortlaut des Forschungsstands prüfen, als Mechanismus der Reibung (B22, B26)
+- das gebaute Werkzeug lief im neuen Chat schon im September nicht (B28). Bekannt ist dieser Befund bisher für Ende Oktober (#368 B1).
+
+**Folgerung:** Die Ursache ist seit Wochen mehrfach richtig beschrieben: am 14.09. (I3), 19.09. (I14), 23.09. (I15), 09.10. (Audit zur deterministischen Kontrollschicht), 02.11. (#401) und 03.11. (#409). Die offene Frage ist deshalb nicht mehr, *was* die Ursache ist. Offen ist, **warum richtige Diagnosen nicht zu wirksamer Änderung führen** (#405 P2, dort „offen“). Ein Hinweis darauf, der noch zu lesen ist: Am 09.10. schlug ein Audit eine kleine Kontrollschicht vor, die nicht von der KI abhängt („small fail-closed control layer“). Eine kritische Nachprüfung verwarf sie am selben Tag als „False Lean“, mit dem Ergebnis „existing owners and vertical qualification first“.
+
+## Einordnung unter #410 (statt eines eigenen Plans)
+
+Seit 03.11.2026, 19:34, gibt es mit #410 einen vom Eigentümer für P0 freigegebenen, zentralen Untersuchungsauftrag mit den Phasen P0–P5. Ein Entwurf zu P0 liegt in `p0-410-untersuchungsanlage-2026-11-03.md` (Commit `93c5ed5`). Ein eigener Plan wäre eine Dopplung und entfällt.
+
+- `primaer-knau.md` und diese Datei sind **Material für #410 P2 und P3**: zeitlich geordnete Rekonstruktionen von Ketten am Primärmaterial, mit Fundstellen. Sie sind nicht abgenommen und keine zweite Planung.
+- Die Leitfrage oben, warum richtige Diagnosen nicht zu wirksamer Änderung führen, entspricht #410 P3.4 (Fehler → Diagnose → Reparatur → realer Gebrauch → Erfolg oder Rückfall) und P5.1 („Weshalb verhinderten bestehende Kontrollen die Rückfälle nicht?“).
+- **Hinweis für den P0-Rückkehrpunkt:** Die Tabelle P0.1 im Entwurf berücksichtigt diese beiden Dateien nicht. Sie entstanden kurz vor dem Entwurf. Auch `engineering/catalog/findings.tsv`, die Audits zur Kontrollschicht vom 09.10. und #401 RC1–RC6 sind dort nicht abgeglichen. Der Abgleich oben kann dafür Material sein.
