@@ -25,7 +25,7 @@ Ohne Angabe beziehen sich die Stichworte auf diese Projekte, in dieser Reihenfol
 | **Stichprobe** | Prüfchat | Der Chat liest eine Seite, deren Lesung er noch nicht kennt, blind gegen und trägt das Ergebnis im Forschungs-PR ein. |
 | **Entscheidungen** | Prüfchat | Der Chat legt dir alle offenen Issues mit Label `an:mensch` in Alltagssprache vor. Du antwortest je Punkt mit ja oder nein (oder einem Satz); der Chat setzt es um oder legt den Auftrag für den Hauptchat an. |
 | **Pflege** + Issue-Nummer | Prüfchat | Aufräumen von Branches und PRs nach dem Pflegeticket (braucht Git, das der Hauptchat nicht hat). |
-| **paleo-type** | neuer Prüfchat | Der Chat startet als Prüfer: Er liest diesen Spickzettel, den jüngsten Übergabestand und seine offenen Issues mit `an:claude` und nennt Stand und nächsten Schritt in zwei Sätzen. |
+| **paleo-type** | neuer Prüfchat | Der Chat startet als Prüfer: Er liest zuerst `GOVERNING_OBJECTIVE.md`, `AGENTS.md` und die für Nr. 632 geltende `methodology/` samt bestehendem Datenmodell (Vorbild `projects/ega-reg-ii-5-knau`), dann diesen Spickzettel, den jüngsten Übergabestand und seine offenen Issues mit `an:claude`. Er nennt Stand und nächsten Schritt in zwei Sätzen. |
 | **Abschluss** | jeder Chat | Der Chat beendet seine Sitzung sauber: Er schreibt seinen Übergabestand fort (Hauptchat: Rückkehrpunkt im `STATUS.md`; Prüfchat: Kommentar im Issue mit Label `uebergabe`) und nennt den Start-Satz für den nächsten Chat. |
 
 Optional mit Projekt-ID, z. B. „weiter ssta-20578-nr-632“. Ein normaler Chat arbeitet nur, solange er antwortet; jeder Durchgang braucht einen Anstoß von dir. Innerhalb eines Durchgangs läuft alles ohne dich.
@@ -57,7 +57,7 @@ paleo-type: Bei „vorab“ oder „gegenlesen“: im GitHub-Repo esany/paleo-ty
 
 **b) Anweisung im Claude-Projekt** (Prüfchat):
 ```
-paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-Repo esany/paleo-type SPICKZETTEL.md auf main und den jüngsten Kommentar „Übergabestand“ im offenen Issue mit Label uebergabe. Nenne Stand und nächsten Schritt in zwei Sätzen und warte auf den Auftrag. Bei „Abschluss“: Übergabestand als neuen Kommentar in diesem Issue fortschreiben. Bei „vorab“ oder „gegenlesen“: docs/gegenlesung-vorab.md ausführen.
+paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-Repo esany/paleo-type zuerst GOVERNING_OBJECTIVE.md, AGENTS.md und die geltende methodology/ samt bestehendem Werkzeug und Datenmodell, dann SPICKZETTEL.md auf main und den jüngsten Kommentar „Übergabestand“ im offenen Issue mit Label uebergabe. Nenne Stand und nächsten Schritt in zwei Sätzen und warte auf den Auftrag. Bei „Abschluss“: Übergabestand als neuen Kommentar in diesem Issue fortschreiben. Bei „vorab“ oder „gegenlesen“: docs/gegenlesung-vorab.md ausführen.
 ```
 
 **c) Bildquellen:** Die Bilddateien (z. B. PDFs) eines Projekts liegen als **Projektquelle** in beiden Chat-Projekten, nie im Repo. Welche Datei gilt, steht mit Prüfsumme im Projekt-Abschnitt „Parameter: Gegenlesung“.
@@ -100,14 +100,17 @@ vollständig aus.
 ### Prüfauftrag, ausführlich
 ```
 Repo: esany/paleo-type. Du bist Prüfer, nicht Bauer.
-Prüfe PR #<Nummer> gegen den Plan des Projekts und den Schritt, den er umsetzt:
+Prüfe PR #<Nummer> in dieser Reihenfolge: zuerst gegen GOVERNING_OBJECTIVE.md, AGENTS.md und
+methodology/ (Gates, Transkriptionsrichtlinie); dann gegen bestehendes Werkzeug und Datenmodell
+(gibt es das schon?); erst dann gegen den Plan des Projekts und den Schritt, den er umsetzt:
 - tut er genau seinen Schritt?
 - bleibt Geschütztes unangetastet (Provenienz, Quelle/Datei, Unsicherheit,
   Aussageebenen, Gates)?
 - Tests selbst ausführen: Gegenfall rot, richtiger Fall grün
 - keine neuen Regeln, Audits, Löschungen
 - Angaben im PR mit GitHub abgleichen
-Ergebnis als Kommentar im PR: Urteil (übernehmen / nachbessern / ablehnen), Abnahme in
+Ergebnis als Kommentar im PR, zuerst: gegen welche Ebenen geprüft wurde und gegen welche nicht.
+Dann Urteil (übernehmen / nachbessern / ablehnen), Abnahme in
 drei Ebenen (Build · frischer Kontext · tatsächliches Ergebnis), geprüft/nicht geprüft,
 höchstens drei Fragen an mich in Alltagssprache.
 Übernehmen nur, wenn alles grün ist und ich es sage.
