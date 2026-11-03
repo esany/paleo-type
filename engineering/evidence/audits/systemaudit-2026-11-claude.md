@@ -30,6 +30,19 @@ Der Eigentümer hat eingewandt, dieser Bericht mache es sich zu einfach und rate
    - Die Bildauflösung (kompakte gegenüber voller Fassung, Neulesung an der nativen JPEG-Aufnahme) taucht nur in der Arbeitspraxis von Nr. 632 auf (#359, Methodenprotokoll), nicht in der Methode.
 8. **Abschnitt 8 ziehe ich zurück, soweit er Kennzahl, Lesbarkeitsprobe und Regel-Limit als Kern vorschlägt.** Diese Vorschläge setzten das Ziel herab, statt zu fragen, welche Strukturen die nachgebildete Facharbeit tragen. Eine neue Fassung von Abschnitt 8 gehört in die Synthese. Sie muss den Befund 4 und die Methode S1–S9 zum Ausgangspunkt nehmen.
 
+9. **Nachtrag: Der transdisziplinäre Ansatz und wo er verloren ging** (aufgenommen nach Hinweis des Eigentümers).
+   - **Belegt:**
+     - Transdisziplinarität ist Invariante 2 des Leitziels.
+     - Die Synthesefunktion „Domain Review“ (#73) sollte vor dem nächsten Schritt alle betroffenen Fächer zusammenführen und die Reihenfolge begründen.
+     - Bei Knau hat sie gewirkt: `research/g2-domain-review-checkpoint-b.md` bewertet jeden Befund über Edition, Kodikologie, archivische Adressierung und Metrologie hinweg.
+     - Bei der Bereinigung wurde #73 in `workflow.md` aufgenommen und das Issue geschlossen.
+     - Das Audit vom 14.09. (`research-framing-transdisciplinary-competency-audit-2026-09-14.md`, §6, §10, §12) stellt fest: Die Funktion, aus mehreren Fächern eine Forschungsfrage zu rahmen und zu priorisieren, ist „operationally less visible after lean-down“. Es hält sie in §12 nur als Audit-Schluss fest, „not yet a new METHOD rule“. D-020 (#204) übernimmt davon nur den Teil „mehrere Richtungen prüfen, bevor priorisiert wird“.
+   - **Grober Hinweis (Wortsuche, kein Lesen):** In der Lesearbeit zu Nr. 632 kommen weder Lehnrecht, Rechts- oder Verwaltungsgeschichte noch Philologie, Onomastik oder eine Synthese über die Fächer vor. Geprüft habe ich `transcription-pilot-0102R-0103L`, den STATUS und das Methodenprotokoll auf #359. Vorhanden sind diplomatische Transkription (Editionswissenschaft), etwas Paläographie, „Kanzlei“ dreimal und „S4“ siebenmal. Eine Wortsuche ist ein schwacher Hinweis, kein Nachweis.
+   - **Nicht geprüft:**
+     - ob der Erfolg bei Knau an dieser Funktion lag (bisher nur zeitliches Zusammentreffen)
+     - wie gut die KI die einzelnen Fachrollen ausfüllt (#158 und die Befunde zum Zusammenspiel der Kompetenzen #184/#188 nicht gelesen)
+     - ob Inventar und Quellenkritik zu Nr. 632 (#350–#352) die Synthese genutzt haben
+
 Weiter belegt bleiben U3 bis U6 und die Abschnitte 1, 3, 6 und 9.
 
 ## 0 · Geprüft gegen / nicht geprüft
