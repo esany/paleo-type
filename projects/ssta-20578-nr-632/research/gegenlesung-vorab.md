@@ -561,3 +561,12 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - linker Haupttextblock, Z. 4 von oben: `laßen, die Hohe Jagd im Brande die`
 - linker Haupttextblock, Z. 12 von oben: `zur lincken Seiten hinaus streichet,`
 - linker Haupttextblock, Z. 16 von oben: `ret, So viel aber nebst dem die hier,`
+
+## 0114R-3
+- Datum: 2026-11-03
+- Leser: GPT-6, unabhängiger ChatGPT-Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 114 (0114R, rechte Bildhälfte)
+- Blind: ja
+- Haupttextblock, Z. 2 von oben: `der [gebrauchet?], Gleichwie nun die Sach,`
+- Haupttextblock, Z. 9 von oben: `zu enthalten [wißen?] werden, Also`
+- Haupttextblock, Z. 17 von oben: `laßen, [Urkundlich?] ist dieser`
