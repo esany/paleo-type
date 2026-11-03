@@ -38,7 +38,7 @@ Das Audit vom 14.09. selbst war schon vorher gelesen (Leseprotokoll in `ansatz.m
 | H-F fehlende Frage | **gestützt in enger Form** | Nicht eine übergeordnete Forschungsfrage fehlte, sondern die **nächste ausgewählte Frage**. Das System hält an dieser Stelle absichtlich an und wartet auf den Eigentümer (`0166.md:144-146`, Test `181bd89`). In genau diese Lücke fällt die Systemwelle. |
 | H-G notwendige Investition | **offen** | Prüfbar erst am weiteren Verlauf: Hat D-020 später eine Forschungsrichtung hervorgebracht? Für Reg. Ii 5 nicht (`STATUS.md:153`); für Nr. 632 noch ungeprüft. |
 | H-H Größe schlägt Kontext | **an W1 nicht entscheidend** | Das Repo war am 14.09. klein im Vergleich zu später (`struktur.md` Abschnitt 4). |
-| H-I Prämisse vererbt | **teilweise gestützt** | Die Diagnose „Rahmung der nächsten Frage fehlt“ vom Morgen des 14.09. wurde am selben Tag zum Rahmen des ganzen Forschungsprogramms #183–#191. #183 warnt selbst vor genau diesem Risiko („Concept Bias“, `0183.md`, Abschnitt Motivation). |
+| H-I Prämisse vererbt | **teilweise gestützt** | Die Diagnose „Rahmung der nächsten Frage fehlt“ vom Morgen des 14.09. wurde am selben Tag zum Rahmen des ganzen Forschungsprogramms #183–#191. #183 warnt selbst vor genau diesem Risiko („Concept Bias“, `0183.md:25`). |
 
 ## 4. Befund des Pilots
 
