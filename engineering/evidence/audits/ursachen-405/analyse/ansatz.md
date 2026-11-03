@@ -164,3 +164,9 @@ Ein Wirkungsgefüge entsteht nur aus Hypothesen, die an den Wendepunkten bestand
 2. **Wendepunkte bestimmen** nach Abschnitt 5 und festhalten, bevor dazu gelesen wird.
 3. **T am ersten Wendepunkt**, an dem Forschung in Systemarbeit umschlägt: Quellen ganz lesen, Hypothesen H-A bis H-I prüfen.
 4. **Prüfung des Pilots:** Konnte er mindestens zwei Hypothesen voneinander unterscheiden? Wenn ja, ist der Ansatz tragfähig, und die übrigen Wendepunkte folgen. Wenn nein, wird begründet, welches Kriterium aus #405 §4B nicht erfüllbar ist, und der Rechercheauftrag angelegt.
+
+---
+
+## Nachträge
+
+**N1 (03.11.2026, vor der Auswertung):** Ergänzung zur Wendepunktregel in Abschnitt 5: Wochen mit weniger als 200 auf `main` hinzugefügten Zeilen werden für den Anteil übersprungen. Grund: In Wochen mit einem einzigen kleinen Commit schwankt der Anteil zufällig zwischen 0 und 100 %. Festgelegt beim Schreiben von `struktur.py`, bevor die Wochenzahlen erzeugt wurden.
