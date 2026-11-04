@@ -160,3 +160,23 @@ Seit 03.11.2026, 19:34, gibt es mit #410 einen vom Eigentümer für P0 freigegeb
 - `primaer-knau.md` und diese Datei sind **Material für #410 P2 und P3**: zeitlich geordnete Rekonstruktionen von Ketten am Primärmaterial, mit Fundstellen. Sie sind nicht abgenommen und keine zweite Planung.
 - Die Leitfrage oben, warum richtige Diagnosen nicht zu wirksamer Änderung führen, entspricht #410 P3.4 (Fehler → Diagnose → Reparatur → realer Gebrauch → Erfolg oder Rückfall) und P5.1 („Weshalb verhinderten bestehende Kontrollen die Rückfälle nicht?“).
 - **Hinweis für den P0-Rückkehrpunkt:** Die Tabelle P0.1 im Entwurf berücksichtigt diese beiden Dateien nicht. Sie entstanden kurz vor dem Entwurf. Auch `engineering/catalog/findings.tsv`, die Audits zur Kontrollschicht vom 09.10. und #401 RC1–RC6 sind dort nicht abgeglichen. Der Abgleich oben kann dafür Material sein.
+
+## Nachtrag 04.11. · Nr. 632: Aus dem Probelauf wurde Wahrheit (Eigentümereinwand; gelesen: Titel #263–#405, Kopf und Stichworte von #293, `ARBEITSPLAN.md`)
+
+Einwand des Eigentümers: Die Arbeit an Nr. 632 war insgesamt ein schneller Probelauf („quick and dirty“). Sie sollte zeigen, wo Werkzeuge und die Funktion von Anfang bis Ende fehlen. Darauf wurde eine zweite Wahrheit entwickelt, vielleicht mit parallelen Plänen. Und zwar nicht erst seit gestern, sondern während der ganzen Arbeit an Nr. 632.
+
+Belegter Bogen:
+- **05.10.:** #293 heißt „[RESEARCH FIXTURE] Run one real Wolkenburg Archivale through the source-entry cycle“. Zweck: „evidence for Generic-Fit and semantic-loss detection“. Der Text sagt: „It does not become generic METHOD merely because it is rich.“
+- **07. und 08.10.:** Die Wahl des Eigentümers wird zur Projektautorität: „each independent Archivale … is intended as its own durable scholarly Project“ (#270, zitiert in #293). Bevor der Probelauf beginnen darf, verlangt #293: „ordered source-entry may begin only after the concrete Source/File/Project recovery is truthfully materialized, a restartable Project-local reconnaissance owner exists …“ Dazu kommen #309, #313, #267 und weitere Fehler-Issues zum Projektmodell. *Deutung:* Der Probelauf sollte die Abläufe testen. Er durfte erst beginnen, nachdem er selbst die volle Ordnung von Projekt und Quelle erfüllte. Der Testgegenstand wurde von Anfang an wie kanonische Forschung behandelt.
+- **Ende Oktober** wird dieselbe Linie Schritt für Schritt hochgestuft:
+  - Forschungsaufträge #350–#352
+  - #358 „[AKTIVE FORSCHUNG] … dokumentweise diplomatische Transkription und interne Arbeitsedition“
+  - #376 und #382, eine Edition als Website
+  - #390, Zwischenstände auf `main`
+  - #394 „Nr. 632 an die bestehende Methodik zurückbinden“
+  - #397, die Überführung ins Datenmodell
+- **31.10.:** Der `ARBEITSPLAN.md` des Eigentümers nennt die Lesungen „KI-Arbeitslesung, blind gegengeprüft“. Werkzeuge sollen nur aus belegter Reibung entstehen (Spur W).
+
+**Dasselbe Muster gab es schon bei Knau:** #64 war ausdrücklich ein Prüfstein für die Architektur („fixture, not the generic ontology“). Daraus wurden Forschung, G2–G4 „erreicht“ und das „Vorbild“ (`primaer-knau.md` B1, B2, B20). *Deutung:* Probelauf und Prüfstein werden wiederholt in Forschungswahrheit umgedeutet. Die Testfrage, was am System fehlt, geht dabei verloren.
+
+**Nicht gelesen** sind #293 vollständig (49.000 Zeichen), #270, #309, #350–#359, #368 und die Regel-PRs #366–#395.
