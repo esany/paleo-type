@@ -1,0 +1,75 @@
+# #410 / P0: Prüfung der Untersuchungsanlage (Entwurf zur Entscheidung)
+
+**Datum:** 2026-11-03. **Auftrag:** Human Owner: „#410 freigeben, P0 starten.“ **Kanonischer Arbeits-/Planungsowner:** [Issue #410](https://github.com/esany/paleo-type/issues/410). **Ablage:** bestehender Analyse-Draft [PR #408](https://github.com/esany/paleo-type/pull/408), *nicht* angenommener Befund auf `main`. **Baseline:** `main@22b255b14767960134589adba860bbe51169447a`; Ausgangskopf PR #408 `d83c45fffa04cf55b4541192c07f57a22be0c75c`; abhängiger Draft PR #409 `de49d51819d39447c32cbc7c405093d827a4cea7`. Die SHAs sind Prüfstand, keine Gewähr fortlaufender Aktualität.
+
+## 1. Entscheidungsschranke und Untersuchungsgegenstand
+
+Die Freigabe eröffnet **P0.1/P0.2**, nicht P1, keine Ursachenabnahme und keine D-016-Umsetzung. Leitfrage ist nicht die Anzahl von Tickets/Zeilen, sondern **warum vorhandene fachliche Kompetenz, Erfahrung, Methoden und Werkzeuge nicht zuverlässig in quellengebundene, prüfbare und fortsetzbare Forschung an historischen Handschriften umgesetzt werden**, und unter welchen Bedingungen das bereits gelang. Das [Governing Objective](https://github.com/esany/paleo-type/blob/main/GOVERNING_OBJECTIVE.md) macht wissenschaftliche Erkenntnis und Quellenverständnis zum Zweck; Software und GitHub sind subsidiär. [AGENTS](https://github.com/esany/paleo-type/blob/main/AGENTS.md) trennt Besitzer/Autorität, direkte Evidenz, Ableitungen, technische von wissenschaftlicher Abnahme und verbietet durch bloße Verfügbarkeit erzeugte Priorität. `engineering/configuration.json` auf main hat `active_changes=[]`, `current_focus=null`; dieses analytische P0 ist **keine** neue technische Implementierungszulassung.
+
+Der [Nr.-632-Project-STATUS](https://github.com/esany/paleo-type/blob/main/projects/ssta-20578-nr-632/STATUS.md) setzt keinen neuen G2–G6-Transkriptionslocus. Forschungs-/Pausen-/Quellenowner bleiben unverändert. Das für Nr. 632 reservierte Schlüsselwort „weiter“ wird nicht verwendet. [#297](https://github.com/esany/paleo-type/issues/297) bleibt als P0-äquivalenter operativer Defekt offen; #410 ersetzt und schließt dessen separate Anerkennungs-/Wirksamkeitsgrenze nicht.
+
+## 2. P0.1 — Vorhandene Eigentümer und Analyseansätze kritisch abgeglichen
+
+| Material / eigener Befund aus direkter Lektüre | Übernehmbar? / Widerspruch |
+|---|---|
+| [#405, aktuelle Issue-Fassung](https://github.com/esany/paleo-type/issues/405) | **Handoff mit ausdrücklich selbstkritischem Widerruf.** Der Kommentar [„Stand der Analyse“](https://github.com/esany/paleo-type/issues/405#issuecomment-6598734760) wurde durch den [späteren Kommentar](https://github.com/esany/paleo-type/issues/405#issuecomment-6603904222) als abgelöst gekennzeichnet. #405s Forderung, vor jedem Rahmen erneut den Eigentümer zu fragen, ist eine Warnung gegen eigenmächtige Ausweitung, kein Veto gegen die hier **ausdrückliche** P0-Freigabe von #410. P1 bleibt ungeöffnet. Die Phänomene P1–P13 sind als Herkunfts-/Prüfhinweise nutzbar, **nicht als vollständige Ursachen-Taxonomie**. |
+| [#408: `analyse/ansatz.md`](https://github.com/esany/paleo-type/blob/analysis/ursachen-405-erhebung/engineering/evidence/audits/ursachen-405/analyse/ansatz.md) | Wertvoll: offenes Leseprotokoll, konkurrierende Thesen, Nullhypothese, bewusste Gegenproben und verlinkbare Artefakte. Problematisch: E1–E4 sowie H-A–H-I werden vor dem breiten Inventar fixiert; zeitliche Wendepunkte nach *hinzugefügten Zeilen auf main* sind ein **Surrogat für Forschungsbewegung**, nicht das Explanandum. Der Ansatz gibt in N2 selbst zu, dass die Regel nur einen regulären Wendepunkt findet und Nr.-632-Forschung auf offenen Branches übersieht. Er darf daher **nicht** als exklusive Fallauswahl oder Kausalmethodik übernommen werden. |
+| [#408: `analyse/pilot-w1.md`](https://github.com/esany/paleo-type/blob/analysis/ursachen-405-erhebung/engineering/evidence/audits/ursachen-405/analyse/pilot-w1.md) | Nützlich: die Gegenlesart zu einem ungewollten „Abdriften“ (nach #166 war die lokale Forschungsfrage abgeschlossen; #201 enthielt bewusst gewählte Systemarbeit). **Nicht zulässig:** „Pilot unterscheidet Hypothesen ⇒ Ansatz ist tragfähig“ als Selbstabnahme. Ein Fall und ein selbstgesetztes Erfolgskriterium beweisen weder Abdeckung noch kausale Unterscheidung an anderen Fällen. Vor allem „keine folgende Frage ausgewählt“ ist als **Autoritätszustand**, nicht als bewiesener Grund für mangelnde Forschungsfähigkeit zu behandeln; warum Weg B gewählt wurde, ist aus dem Repo nicht zuverlässig ableitbar. |
+| [#408: `sollliste.tsv`, `export/STAND.md` und `export/`](https://github.com/esany/paleo-type/blob/analysis/ursachen-405-erhebung/engineering/evidence/audits/ursachen-405/export/STAND.md) | Wiederverwendbare **datierte Hilfsindizes**, keine aktuelle Primär- oder Vollständigkeitsauthority. Exporte enden bei #405, der Issue-/PR-Zustand ist vom 03.11. 07:48 UTC; PR #406–#410 sowie spätere Änderungen/Kommentare müssen live neu aufgelöst werden. `struktur.md` und die Skripte sind analytische Kandidaten; Pfadkategorien und Einbeziehung von Branches/gelöschten oder ungemergten Ergebnissen sind vor jedem Mengen-/Trendargument zu kontrollieren. |
+| [#409: Gesprächshypothesen](https://github.com/esany/paleo-type/blob/analysis/ursachen-405-chatbeitrag-20261103/engineering/evidence/audits/ursachen-405/analyse/chatbeitrag-hypothesen-und-gegenproben-2026-11-03.md) und [Funktionsfall](https://github.com/esany/paleo-type/blob/analysis/ursachen-405-chatbeitrag-20261103/engineering/evidence/audits/ursachen-405/analyse/fallpruefung-fachfunktion-und-tooling-2026-11-03.md) | Produktive Gegenlesarten: Vorhandensein ≠ Eignung ≠ Portierbarkeit ≠ Aktivierung; der fachübergreifende Domain-Review #73 ist umfassender als D-020; #353 umfasste teils Vorschläge, tatsächliche Knau-Tools waren quellengebunden. **Keine unabhängige Gesamtvalidierung.** PR #409 basiert auf dem nicht angenommenen #408-Branch und wurde nicht nach `main` übernommen. Nicht als zweite Ursachenautorität benutzen. |
+| [#73](https://github.com/esany/paleo-type/issues/73), [Audit vom 14.09.](https://github.com/esany/paleo-type/blob/main/engineering/evidence/audits/research-framing-transdisciplinary-competency-audit-2026-09-14.md), [#230](https://github.com/esany/paleo-type/issues/230), [#297](https://github.com/esany/paleo-type/issues/297), [#404](https://github.com/esany/paleo-type/issues/404) | Vorherige fachliche Funktion, bekannte Fehlermuster und ernsthafte positive Gegenfälle sind **Prior Art/Prüffälle**, keine endgültigen Ursachen. Der Audit 14.09. bezeichnet sich selbst als analytisch, nicht normativ. #404 belegt mindestens einen Vorfall von unzureichender Quellenlektüre und Scheinkontrolle, nicht automatisch die Gesamterklärung. #297 enthält weiterhin wirksame offene Abnahmefragen, die #410 weder duplizieren noch wegschließen darf. |
+
+**Konfliktentscheidung P0.1:** #410 kann als **einzige aktuelle Untersuchungssteuerung** dienen, sofern das neue Verfahren keine zweite Planungswahrheit schafft. #405 bleibt historischer Handoff; #408 ist der **eine weiterbenutzte Draft-Arbeitsraum**, #409 eine abhängige, unverbindliche Quelle. Alte Hypothesen, Exporte und Pilotsätze bleiben **prüfbar, anfechtbar und unpromotiert**. Keine Änderung an #405, #408s vorhandenen Thesen, #409, #297 oder Project-/METHOD-Ownern. Diese Einordnung ist eine P0-Arbeitsdisposition, keine human-abgenommene neue Gesamtpriorität.
+
+## 3. P0.2 — Kausaler Prüfvertrag *für diesen Untersuchungsvorgang*, keine neue METHOD-Regel
+
+### A. Explananda: Was soll überhaupt erklärt werden?
+
+Je **konkretem** Fall zuerst erwartetes Human-/wissenschaftliches Ergebnis, tatsächlich gewählten Auftrag, Ausgangs-/Endzustand und die nachweisbare Abweichung rekonstruieren. Vorläufige, **revidierbare** Fragegruppen:
+
+1. **Forschungswirksamkeit:** Warum erreichen einige Arbeitsgänge einen bedeutsamen quellengebundenen Befund (#166 als Gegenfall), während andere trotz Arbeit keinen vergleichbaren nutzbaren Erkenntnisfortschritt erzeugen? Unaufgelöste Schrift ist *für sich* kein Fehlschlag.
+2. **Aktivierung fachlicher Fähigkeit:** Wenn eine domänenspezifische Kompetenz, Methode oder Toolfunktion verfügbar war, wurde sie im konkreten Moment gefunden, verstanden, geeignet beurteilt, ausgeführt und fachlich geprüft? Welche dieser Stufen ist tatsächlich ausgefallen?
+3. **Übergang Forschung↔Technik:** Wo wurde ein fachlicher Bedarf fachlich korrekt übersetzt und nach Entwicklung zurückgeprüft, wo nicht? Lokales PASS und legitime Systeminvestition getrennt von ergebnisloser Reparaturspirale behandeln.
+4. **Fortsetzbarkeit/Owner-Belastung:** An welchen konkreten Übergängen musste der Owner Eingabe, Defektentdeckung, Quellenbereitstellung oder Wiederanstoß übernehmen, und war das eine reservierte Entscheidung, Ressourcenrestriktion oder vermeidbare Arbeitslast?
+
+Das sind **Untersuchungsfragen**, keine vorweg festgelegte Symptom- oder Ursachenhierarchie. Wenn ein Fall hier nicht passt, wird das Raster erweitert oder berichtigt, nicht der Fall ausgeblendet.
+
+### B. Fall- und Materialauswahl
+
+**Grundeinheit ist die zusammenhängende fachliche Handlungs-/Entscheidungskette**, nicht die Zahl eines Issues, Git-Zeilenprozent oder ein Wochenwechsel. Issue, PR, Kommentar, Commit, METHOD, konkreter Quellenbefund, aktueller/historischer Owner-Zustand und ggf. verfügbarer Chatnachweis werden entlang dieser Kette verbunden. Das **P1-Vollinventar** verhindert unsichtbare Auslassungen; die **P3-Tiefenfälle** werden vor Ursachendeutung mit dokumentierten Auswahlgründen aus verschiedenen Phasen, Projekten, Fehlerarten und positiven Gegenfällen gewählt. Zeitfenster/Wellen aus #408 können dabei Suchsignale sein, nicht der einzige Auswahlalgorithmus.
+
+Mögliche **Prüffälle**, noch keine Auswahl/Abnahme: #166 + #201 (erfolgreicher begrenzter Forschungsabschluss und bewusstes B); #73 + Knau-G2-Review (operative Synthese); #169/#296/#297 (wiederkehrende Autoritäts-/Abnahmeprobleme); #353/#376/#382/#394 (Fachfunktion und Software); #404/#405/#406/#408 (Selbstbestätigung und Solutionism); Nr. 632 nur auf der **Dokumentations- und Workflowebene**, ohne unautorisiert Lesungen/Project-Scope aufzunehmen. Vergleichsrepos kommen erst nach dem ausdrücklich vorgesehenen Fall-/Quellenbelegvergleich, nicht als Ersatz für ihn.
+
+### C. Nachweisregeln für Aussagen
+
+Für jede folgenreiche These:
+- **Exaktes Ereignis, erwarteter vs. tatsächlicher Outcome und zeitliche Reihenfolge.** Primärbeleg und gelesener Umfang/Version mit Fundort; wörtliche Owner-Handlung von KI-Zusammenfassung und heutiger Interpretation unterscheiden.
+- **Mechanismus und überprüfbare Zwischenknoten.** Etwa: Fachwissen existierte → war in der konkreten Entscheidung zugänglich? → wurde tatsächlich gelesen/aktiviert? → Entscheidung/Implementierung → fachliche Rückkontrolle → realer Gebrauch. Kein Auslassen des Verbindungsstücks durch „es muss wohl ...“.
+- **Ernsthafte Alternativen und Gegenproben.** Z. B. legitim bewusst gewählte Systemarbeit, quellenbezogene Kompetenzgrenze, nicht portierbares Tool, konkrete Plattformrestriktion, unbekannter Chat-Kontext, erfolgreiche Anwendung desselben Verfahrens. Untersuchen, welche Beobachtung unter Hypothese A, aber gerade nicht unter B zu erwarten wäre.
+- **Quellenstufen trennen:** direkt eingesehene Primär-/Action-Evidence; dokumentierte Behauptung über Verhalten/Absicht; abhängig abgeleiteter Prüfbericht; heutige Inferenz. Zwei KI-Texte mit demselben Ausgangsbericht sind keine unabhängige Bestätigung.
+- **Evidenzgrenzen ausdrücken.** Nicht einsehbarer Chat, fehlende Zeugenprüfung oder unvollständiger Branch/Kommentar-Verlauf bleibt unbekannt, nicht „wahrscheinlich vollständig“.
+
+**Zulässige Dispositionen:** *beobachteter Verlauf* (nur die Dokumentation/Handlung), *kausal plausibler Kandidat*, *an den geprüften Alternativen und Gegenfällen stark gestützt*, *widerlegt*, *noch offen*. „Systemisch bewiesen“ setzt mehrere in Mechanismus und Folge nachweisbar verknüpfte, heterogene Fälle plus trennscharfe Gegenproben voraus. Ein formaler Check, Pilot-Selbsteinschätzung oder Materialumfang kann diese Schwelle **nicht** ersetzen.
+
+### D. Frühzeitige Warnzeichen und Gegensteuerung, ohne neues Skript
+
+- **Frühe Diagnose ohne Ausgangs-/End-Outcome** ⇒ zuerst die fehlende Bedeutung klären.
+- **Trend aus `main`-Zeilen oder Stichworttiteln** ⇒ als Suchhinweis abwerten; Branches, tatsächliche Arbeitsresultate und spätere Wirkungen einbeziehen.
+- **Übernahme von #405 P1–P13, #408 H-A–H-I oder #409 K1–K7 als vorentschiedene Ursachen** ⇒ Ursprung/Alternativen neu prüfen.
+- **Gleichartige KI-Berichte als Mehrheitsbeweis** ⇒ zum frühesten überprüfbaren Evidence-Owner zurückgehen.
+- **„Pilot tragfähig“ ohne externe Quelle oder echte Gegenprobe; „CI grün“ als wissenschaftliche Abnahme** ⇒ nur lokale Eigenschaft attestieren.
+- **Vorschlag von Regel, Tool, Umbau, Abschluss oder #297-Abwertung in der Ursachenphase** ⇒ aus der Ursachenprüfung herausnehmen; neues Material nur nach separater Human-/D-016-Entscheidung.
+
+Diese Warnzeichen sind **einmalige Arbeitskriterien für #410**, kein neuer kontrollierter Kriterienkatalog oder Produktfeature.
+
+## 4. P0-Rückkehrpunkt / präzise mögliche P1-Einstiegseinheit
+
+**P0.1/P0.2 als prüfbarer *Entwurf* bearbeitet, nicht abgenommen.** Offene zentrale Fragen: Sind diese Explananda breit genug? Welche alternative Fallwahl widerlegt sie? Wie kann tatsächliche Kontext-Aktivierung ohne verfügbare Chatrekonstruktion geprüft werden? Sind die vorhandenen Exporte überhaupt vollständig genug für eine aktuelle Inventarabdeckung? Der vorliegende Text beantwortet diese Punkte **nicht** aus sich selbst.
+
+**Nur nach separater Entscheidung am P0-Rückkehrpunkt** wäre eine erste beschränkte P1-Einheit:
+
+> **P1-A / gemeinsamer Nummernbereich #1–#39** (Issues *und* PRs, offen *und* geschlossen): Live-Volltexte samt relevanten Kommentaren, ursprünglicher Auftrag/Motivation, tatsächliche Änderung und Review/Beschluss, heutiger Eigentümer-/Nachfolgeverweis, Datenstand und bekannte Lücken; Querbeziehungen werden festgehalten, nicht bloß Titel/Labels. Vor dem Lesen aktuelle Gesamtheit und Zählbasis #1–#410 (plus später neu entstandene Vorgänge) gegen GitHub verifizieren. Ergebnis wäre ein **erster, eindeutig abgrenzbarer Teil des P1-Inventars**, keine P1-Abnahme, keine frühe Ticket-Schließung und keine vorausgenommene Kausalbewertung.
+
+**Restart:** Von [#410](https://github.com/esany/paleo-type/issues/410) zu dieser Datei auf dem Head von Draft [#408](https://github.com/esany/paleo-type/pull/408); dann zuerst P0-Entscheidung über Anlage/Richtung. Nicht mit #405s „weiter W2“ oder Nr.-632-„weiter“ fortsetzen. Aus diesem Dokument entsteht **keine** Folgepriorität von selbst.
+
+**Nicht geändert:** Project-/STATUS-/CORPUS-/METHOD-/REQUIREMENT-/Engineering-Configuration; Nr.-632-Pause, #297, #405/#409-Hypothesen und bestehende Draft-/Acceptance-Gates. **Keine Ursachen bestätigt, keine Maßnahmen implementiert, keine CI-/Specialist-/Human-Abnahme behauptet.**

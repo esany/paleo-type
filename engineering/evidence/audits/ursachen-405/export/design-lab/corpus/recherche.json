@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "bertin-1967",
+    "titel": "Sémiologie graphique (dt. Graphische Semiologie, 1974)",
+    "autor": "Jacques Bertin",
+    "jahr": 1967,
+    "art": "Buch",
+    "url": "https://de.wikipedia.org/wiki/Jacques_Bertin",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Visuelle Variablen und ihre Leistung (assoziativ, selektiv, geordnet, quantitativ). Grundlage des Skills bertin-semiologie. Fundstelle in dieser Sitzung nicht geöffnet.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "neurath-isotype",
+    "titel": "Isotype (International System of Typographic Picture Education)",
+    "autor": "Otto Neurath, Marie Neurath, Gerd Arntz",
+    "jahr": "ab 1925",
+    "art": "Werk",
+    "url": "https://de.wikipedia.org/wiki/Isotype",
+    "lizenz": "unbekannt",
+    "felder": [
+      "vermitteln",
+      "raum-zeit"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Bildstatistik am Gesellschafts- und Wirtschaftsmuseum Wien; gesellschaftliches Wissen für alle lesbar. Grundlage des Skills isotype. Fundstelle in dieser Sitzung nicht geöffnet.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "tufte-1983",
+    "titel": "The Visual Display of Quantitative Information",
+    "autor": "Edward R. Tufte",
+    "jahr": 1983,
+    "art": "Buch",
+    "url": "https://www.edwardtufte.com/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Graphics Press. Daten-Tinte-Verhältnis, Chartjunk, Small Multiples. Fundstelle in dieser Sitzung nicht geöffnet.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "cleveland-mcgill-1984",
+    "titel": "Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods",
+    "autor": "William S. Cleveland, Robert McGill",
+    "jahr": 1984,
+    "art": "Paper",
+    "url": "https://en.wikipedia.org/wiki/Graphical_perception",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Journal of the American Statistical Association. Experimentelle Rangfolge, wie genau Menschen Werte ablesen (Position vor Länge vor Winkel, Fläche, Farbe).",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "mackinlay-1986",
+    "titel": "Automating the Design of Graphical Presentations of Relational Information",
+    "autor": "Jock D. Mackinlay",
+    "jahr": 1986,
+    "art": "Paper",
+    "url": "https://courses.ischool.berkeley.edu/i247/f05/readings/Mackinlay_APT_TOG86.pdf",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "ACM Transactions on Graphics, DOI 10.1145/22949.22950. Zwei Kriterien: Ausdrucksfähigkeit (zeigt genau die Daten, nicht mehr) und Wirksamkeit (am besten wahrnehmbare Kodierung zuerst). Basis automatischer Diagrammwahl bis heute.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "borland-taylor-2007",
+    "titel": "Rainbow Color Map (Still) Considered Harmful",
+    "autor": "David Borland, Russell M. Taylor II",
+    "jahr": 2007,
+    "art": "Paper",
+    "url": "https://www.sci.utah.edu/~kpotter/Library/Papers/borland:2007:RCCH/index.html",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "vermitteln",
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "IEEE Computer Graphics and Applications. Regenbogen-Farbskalen verzerren Ordnung und erzeugen Scheinkanten. Gegenposition: „Rainbow Colormaps Are Not All Bad“ (UNH CCOM).",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "dignazio-klein-2020",
+    "titel": "Data Feminism",
+    "autor": "Catherine D'Ignazio, Lauren F. Klein",
+    "jahr": 2020,
+    "art": "Buch",
+    "url": "https://en.wikipedia.org/wiki/Data_Feminism",
+    "lizenz": "Open Access (Lizenz nicht geprüft)",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "MIT Press. Wer zählt, wer wird gezählt, wessen Wissen gilt — Machtfragen in Daten und Visualisierung.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "viseval-2024",
+    "titel": "VisEval: A Benchmark for Data Visualization in the Era of Large Language Models",
+    "autor": "Nan Chen, Yuge Zhang, Jiahang Xu, Kan Ren, Yuqing Yang",
+    "jahr": 2024,
+    "art": "Paper",
+    "url": "https://arxiv.org/abs/2407.00981",
+    "lizenz": "unbekannt",
+    "felder": [
+      "vermitteln",
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "2.524 Anfragen, Prüfung auf Gültigkeit, Regelkonformität, Lesbarkeit. Bestes Modell (GPT-4) 2,89 von 5. Typische Fehler: erfundene Spaltennamen, falsche Datenumformung, überlappende Balken, falsche Legenden, falsche Sortierung, Textüberlauf, invertierte Achsen. Mehr Kanäle → schlechter; überflüssige Tabellen im Kontext → schlechter.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "plotcraft-2025",
+    "titel": "PlotCraft: Pushing the Limits of LLMs for Complex and Interactive Data Visualization",
+    "autor": "Jiajun Zhang u. a. (USTC, Qwen-Team u. a.)",
+    "jahr": 2025,
+    "art": "Paper",
+    "url": "https://arxiv.org/abs/2511.00010",
+    "lizenz": "unbekannt",
+    "felder": [
+      "vermitteln",
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "23 Modelle, 982 Aufgaben: einfache Einzeldiagramme gelingen, mehrteilige und zusammengesetzte scheitern meist („struggle to generate plots with multiple subplots“).",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "observable-plot",
+    "titel": "Observable Plot",
+    "autor": "Observable",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://www.npmjs.com/package/@observablehq/plot",
+    "lizenz": "ISC",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Version 0.6.17 (npm, 6.4.2026). Kurze, lesbare Grammatik für explorative Diagramme; erzeugt SVG.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "d3",
+    "titel": "D3",
+    "autor": "Mike Bostock u. a.",
+    "jahr": 2025,
+    "art": "Werkzeug",
+    "url": "https://www.npmjs.com/package/d3",
+    "lizenz": "ISC",
+    "felder": [
+      "vermitteln",
+      "interaktion"
+    ],
+    "status": "belegt",
+    "notiz": "Version 7.9.0 (npm, 17.5.2025). Bausteine für maßgeschneiderte Visualisierung (Skalen, Layouts, Geo, Übergänge); Werkzeug von Bremer und vielen Referenzprojekten.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "vega-lite",
+    "titel": "Vega-Lite",
+    "autor": "UW Interactive Data Lab / Vega",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://www.npmjs.com/package/vega-lite",
+    "lizenz": "BSD-3-Clause",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Version 6.5.0 (npm, 8.10.2026). Diagramm als JSON-Spezifikation: gut prüfbar, reproduzierbar, für Agenten gut schreibbar.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "mermaid",
+    "titel": "Mermaid",
+    "autor": "Mermaid-Community",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://www.npmjs.com/package/mermaid",
+    "lizenz": "MIT",
+    "felder": [
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Version 12.2.0 (npm, 13.10.2026). Diagramme (Fluss, Sequenz, Zustand, Zeitleiste) aus Text.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "vikus-viewer",
+    "titel": "VIKUS Viewer",
+    "autor": "Christopher Pietsch, UCLAB",
+    "jahr": null,
+    "art": "Werkzeug",
+    "url": "https://github.com/cpietsch/vikus-viewer",
+    "lizenz": "unbekannt",
+    "felder": [
+      "vermitteln",
+      "erkennen",
+      "raum-zeit"
+    ],
+    "status": "belegt",
+    "notiz": "Offenes Werkzeug, das tausende Kulturobjekte auf einer Zeitleiste zeigt; 6 eigene, über 15 fremde Instanzen. Lizenz in dieser Sitzung nicht prüfbar.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "generative-gestaltung",
+    "titel": "Generative Gestaltung — Code-Paket p5.js",
+    "autor": "Benedikt Groß, Hartmut Bohnacker, Julia Laub, Claudius Lazzeroni",
+    "jahr": null,
+    "art": "Repo",
+    "url": "https://github.com/generative-design/Code-Package-p5.js",
+    "lizenz": "Apache-2.0",
+    "felder": [
+      "ordnung",
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Code zum Buch „Generative Gestaltung“; Referenzbibliothek für Fachpaket „Ordnung“ (Issue #9).",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "ml5js",
+    "titel": "ml5.js",
+    "autor": "NYU ITP / ml5-Community",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://ml5js.org/about",
+    "lizenz": "MIT",
+    "felder": [
+      "interaktion",
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "Version 1.4.0 (npm). Maschinelles Lernen im Browser für Kunst und Gestaltung, mit Ethik- und Bias-Fokus.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "p5js",
+    "titel": "p5.js",
+    "autor": "Processing Foundation",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://p5js.org/",
+    "lizenz": "LGPL-2.1",
+    "felder": [
+      "ordnung",
+      "form",
+      "interaktion"
+    ],
+    "status": "belegt",
+    "notiz": "Version 2.3.4 (npm). Basis von Generative Gestaltung und ml5.js.",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "kindlab",
+    "titel": "KINDLAB, Hochschule Trier",
+    "autor": "Hochschule Trier, Campus Gestaltung",
+    "jahr": null,
+    "art": "Labor",
+    "url": "https://kind-lab.de/",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "Gestaltungsgetriebenes KI-Labor, Teil von KITeGG. KI als „neues Material für Gestaltung“; Annahmen vorher „verlernen“. 40-GPU-Cluster aus dem Browser. Konferenz TRANSFORM 2025.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "kitegg",
+    "titel": "KITeGG — KI greifbar machen und begreifen",
+    "autor": "Hochschule Mainz (Koordination), HfG Offenbach, HfG Schwäbisch Gmünd, KISD, Hochschule Trier",
+    "jahr": "2021–2025",
+    "art": "Projekt",
+    "url": "https://benedikt-gross.de/projects/kitegg-making-ai-tangible-and-comprehensible",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "Bundesförderung „KI in der Hochschulbildung“, 12/2021–11/2025. Formate: TRANSFORM, re:shape, Correlations, Hidden Layers.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "unlearn-ai",
+    "titel": "un/learn ai (Publikationsreihe)",
+    "autor": "KITeGG",
+    "jahr": null,
+    "art": "Buch",
+    "url": "https://openscience.ub.uni-mainz.de/items/02c2fbdd-fdc9-4bd6-a809-1174bd50714f/full",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "Bände „approaching“, „navigating“, „integrating AI in aesthetic practices“; frei zugänglich (abgeleitet).",
+    "zugang": "offen",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "reshape-2025",
+    "titel": "re:shape forum 2025",
+    "autor": "HfG Schwäbisch Gmünd, AI+Design Lab",
+    "jahr": 2025,
+    "art": "Konferenz",
+    "url": "https://aid-lab.hfg-gmuend.de/appearances/2025-reshape-summer-school-hfg-schwaebisch-gmuend/",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor",
+      "interaktion"
+    ],
+    "status": "belegt",
+    "notiz": "Themen u. a. Rolle der Gestaltenden, Interfaces für Mensch-KI-Interaktion, „designing with uncertainty“, generative Workflows mit Intention und Kritik. Vorträge als Video.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "aid-lab-gmuend",
+    "titel": "AI+Design Lab, HfG Schwäbisch Gmünd",
+    "autor": "HfG Schwäbisch Gmünd",
+    "jahr": null,
+    "art": "Labor",
+    "url": "https://aid-lab.hfg-gmuend.de/about",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "Forschung und Lehre zu KI im Gestaltungsprozess.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "udk-designing-ai",
+    "titel": "Designing_AI Lab, UdK Berlin",
+    "autor": "UdK Berlin, Produktdesign (Prof. Aeneas Stankowski)",
+    "jahr": 2026,
+    "art": "Labor",
+    "url": "https://produktdesign.udk-berlin.de/2026/08/designing_ai-lab-wraps-up-its-first-semester/",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor",
+      "interaktion",
+      "raum-zeit"
+    ],
+    "status": "belegt",
+    "notiz": "Seit März 2026: Kollaboration Mensch–Roboterarm. „Was können du und der Roboter gemeinsam, was keiner allein kann?“",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "burglabs",
+    "titel": "BurgLabs (XLab, BioLab, SustainLab)",
+    "autor": "Burg Giebichenstein Kunsthochschule Halle",
+    "jahr": null,
+    "art": "Labor",
+    "url": "https://www.burg-halle.de/en/university/facilities/burglabs",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor",
+      "raum-zeit"
+    ],
+    "status": "belegt",
+    "notiz": "KI und Robotik, robotergestützte additive Fertigung.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "khm-ground-zero",
+    "titel": "ground zero (Experimentelle Informatik), KHM Köln",
+    "autor": "KHM Köln",
+    "jahr": "bis 2025",
+    "art": "Labor",
+    "url": "https://ground-zero.khm.de/?p=8907",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor"
+    ],
+    "status": "belegt",
+    "notiz": "Am 20.8.2025 geschlossen; GitHub-Organisation und exmediawiki (GFDL) bleiben.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "hfg-karlsruhe-kim",
+    "titel": "KIM — Künstliche Intelligenz und Medienphilosophie",
+    "autor": "HfG Karlsruhe (Matteo Pasquinelli)",
+    "jahr": 2018,
+    "art": "Labor",
+    "url": "https://hfg-karlsruhe.de/en/archiv/kuenstliche-intelligenz-und-medienphilosophie/",
+    "lizenz": "unbekannt",
+    "felder": [
+      "labor",
+      "erkennen"
+    ],
+    "status": "belegt",
+    "notiz": "Kritische Maschinenintelligenz; Seite von 2018 im Archiv, heutiger Stand nicht belegt.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "hfg-archiv-ulm",
+    "titel": "HfG-Archiv Ulm",
+    "autor": "Museum Ulm",
+    "jahr": null,
+    "art": "Sammlung",
+    "url": "https://hfg-archiv.museumulm.de/en/archival-research-and-service",
+    "lizenz": "unbekannt",
+    "felder": [
+      "erkennen",
+      "form",
+      "system"
+    ],
+    "status": "belegt",
+    "notiz": "Archiv der HfG Ulm (1953–1968); Quelle für Gestaltungsgeschichte. Kein KI-Projekt gefunden.",
+    "geprueft": "2026-10-27"
+  },
+  {
+    "id": "bringhurst-1992",
+    "titel": "The Elements of Typographic Style",
+    "autor": "Robert Bringhurst",
+    "jahr": 1992,
+    "art": "Buch",
+    "url": "https://en.wikipedia.org/wiki/The_Elements_of_Typographic_Style",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Hartley & Marks; Version 4.0 von 2012. Zeilenlänge: „Anything from 45 to 75 characters is widely regarded as a satisfactory length of line“, 66 Zeichen als Ideal, mehrspaltig 40–50 (zitiert nach webtypography.net).",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "rutter-webtypography",
+    "titel": "The Elements of Typographic Style Applied to the Web",
+    "autor": "Richard Rutter",
+    "jahr": null,
+    "art": "Projekt",
+    "url": "https://webtypography.net/2.1.2",
+    "lizenz": "unbekannt",
+    "felder": [
+      "form",
+      "interaktion"
+    ],
+    "status": "belegt",
+    "notiz": "Überträgt Bringhurst auf CSS; empfiehlt Zeilenbreiten in em.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "butterick-practical-typography",
+    "titel": "Butterick’s Practical Typography — Summary of key rules",
+    "autor": "Matthew Butterick",
+    "jahr": null,
+    "art": "Projekt",
+    "url": "https://practicaltypography.com/summary-of-key-rules.html",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "26 Regeln, u. a.: Print 10–12 pt; Zeilenabstand 120–145 %; 45–90 Zeichen je Zeile; Kerning immer an; Versalien und Kapitälchen 5–12 % sperren; Einzug 1–4 × Schriftgröße oder Absatzabstand, nicht beides; Blocksatz immer mit Silbentrennung; keine doppelten Leerzeichen.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "willberg-forssman-1997",
+    "titel": "Lesetypografie",
+    "autor": "Hans Peter Willberg, Friedrich Forssman",
+    "jahr": 1997,
+    "art": "Buch",
+    "url": "https://hyphenpress.co.uk/two_books_on_book_typography/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Verlag Hermann Schmidt, Mainz; 2. Aufl. 2005, 340 S. Makrotypografie von Seite und Doppelseite; Maßstab ist das Lesen.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "forssman-dejong-2004",
+    "titel": "Detailtypografie. Nachschlagewerk für alle Fragen zu Schrift und Satz",
+    "autor": "Friedrich Forssman, Ralf de Jong",
+    "jahr": 2004,
+    "art": "Buch",
+    "url": "https://www.perlentaucher.de/buch/friedrich-forssman-ralf-de-jong/detail-typografie.html",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Verlag Hermann Schmidt, 2. Aufl. 2004, 376 S. Mikrotypografie: Schriftwahl, Wortabstand, Zeilen- und Seitenumbruch, Satzzeichen, Trennung, Auszeichnung. Von der taz „Duden für Typografen“ genannt.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "hochuli-1987",
+    "titel": "Das Detail in der Typografie",
+    "autor": "Jost Hochuli",
+    "jahr": 1987,
+    "art": "Buch",
+    "url": "https://en.wikipedia.org/wiki/Jost_Hochuli",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Buchstabe, Wort, Zeile, Zeilenabstand — die Grundlage der Mikrotypografie. Hochuli (1933–2026) laut Wikipedia am 18.10.2026 verstorben.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "ruder-1967",
+    "titel": "Typographie. Ein Gestaltungslehrbuch",
+    "autor": "Emil Ruder",
+    "jahr": 1967,
+    "art": "Buch",
+    "url": "https://www.niggli.ch/en/produkt/typographie",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form",
+      "ordnung"
+    ],
+    "status": "belegt",
+    "notiz": "Niggli; dreisprachig. Struktur, Raster, Rhythmus, Proportion, Lesbarkeit; Grundwerk der Schweizer Typografie. Lehrer von Karl Gerstner.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "tschichold-1928",
+    "titel": "Die neue Typographie",
+    "autor": "Jan Tschichold",
+    "jahr": 1928,
+    "art": "Buch",
+    "url": "https://monoskop.org/Tschichold",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Berlin, Bildungsverband der Deutschen Buchdrucker. Programmschrift der asymmetrischen, funktionalen Typografie; Tschichold (1902–1974) rückte später davon ab.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "tschichold-1960",
+    "titel": "Erfreuliche Drucksachen durch gute Typographie",
+    "autor": "Jan Tschichold",
+    "jahr": 1960,
+    "art": "Buch",
+    "url": "https://monoskop.org/Tschichold",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Ravensburg, Otto Maier. Praxisregeln für Akzidenzen — also genau Flyer, Karten, Formulare.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "legge-bigelow-2011",
+    "titel": "Does print size matter for reading? A review of findings from vision science and typography",
+    "autor": "Gordon E. Legge, Charles A. Bigelow",
+    "jahr": 2011,
+    "art": "Paper",
+    "url": "https://legge.dl8.umn.edu/sites/legge.psych.umn.edu/files/2020-08/Legge%20Bigelow%202011%20Does%20size%20matter%20for%20reading%3F%20A%20review%20of%20findings%20from%20vision%20science%20and%20typography.pdf",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form",
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Journal of Vision 11(5):8, doi 10.1167/11.5.8. Kritische Schriftgröße ≈ 0,2° x-Höhe; flüssiges Lesen von 0,2° bis 2°, bei 40 cm Leseabstand x-Höhe 1,4–14 mm (≈ 4–40 pt). Buchtext liegt im Mittel bei 0,24°.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "din-5008",
+    "titel": "DIN 5008 — Schreib- und Gestaltungsregeln für die Text- und Informationsverarbeitung",
+    "autor": "DIN",
+    "jahr": null,
+    "art": "Werk",
+    "url": "https://www.haufe-akademie.de/blog/themen/assistenz-und-office-management/din-5008/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Norm selbst nicht eingesehen; nach Haufe: IBAN in Vierergruppen mit Leerzeichen, beginnend mit Ländercode; Telefonnummern in sinnvollen Blöcken mit Leerzeichen, Vorwahl abgesetzt.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "w3c-css-text-4",
+    "titel": "CSS Text Module Level 4 (Working Draft)",
+    "autor": "W3C CSS Working Group",
+    "jahr": 2026,
+    "art": "Werk",
+    "url": "https://www.w3.org/TR/2026/WD-css-text-4-20260814/",
+    "lizenz": "W3C Document License",
+    "felder": [
+      "form",
+      "interaktion"
+    ],
+    "status": "belegt",
+    "notiz": "Entwurf vom 14.8.2026. Definiert u. a. hyphenate-limit-zone, hyphenate-limit-lines, hanging-punctuation, text-wrap-style pretty, Stauchen und Dehnen beim Blocksatz (§7.5.1). Was Chromium 153 davon kann: siehe Fachpaket „Form“ (getestet).",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "hyphen-npm",
+    "titel": "hyphen — Silbentrennung nach TeX-Mustern",
+    "autor": "Yevhen Tiurin",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://www.npmjs.com/package/hyphen",
+    "lizenz": "ISC",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Version 1.14.1; deutsche Muster (de-1996). Trennt im Labor anstelle der Browser-Trennung.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "pagedjs",
+    "titel": "Paged.js",
+    "autor": "Paged.js-Community (gegründet von Adam Hyde)",
+    "jahr": 2024,
+    "art": "Werkzeug",
+    "url": "https://pagedjs.org/en/about/",
+    "lizenz": "unbekannt",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Version 0.4.3 (npm, zuletzt geändert 10/2024). Polyfill für CSS Paged Media: Seitenformat, Beschnitt, Marken, Umbruch.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "scribus",
+    "titel": "Scribus",
+    "autor": "Scribus-Team",
+    "jahr": 2026,
+    "art": "Werkzeug",
+    "url": "https://en.wikipedia.org/wiki/Scribus",
+    "lizenz": "GPL",
+    "felder": [
+      "form"
+    ],
+    "status": "belegt",
+    "notiz": "Stabil 1.6.6 (13.4.2026), Entwicklung 1.7.3. CMYK, ICC, PDF/X-4, Python-Skripte; IDML-Import nur in der Entwicklungsversion.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "akutsu-1991",
+    "titel": "Psychophysics of reading — X. Effects of age-related changes in vision",
+    "autor": "Hiroshi Akutsu, Gordon E. Legge, J. A. Ross, K. J. Schuebel",
+    "jahr": 1991,
+    "art": "Paper",
+    "url": "https://legge.dl8.umn.edu/sites/legge.psych.umn.edu/files/2020-08/psychophysics_of_reading._x._effects_of_age_related_changes_in_vision_akutsu_legge_ross_schuebel_1991.pdf",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form",
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Journal of Gerontology 46(6), P325–P331. Ältere Leser mit normalem Sehen: gleich schnell bei 0,3°–1,0°, deutlich langsamer bei 0,15° und bei sehr großer Schrift; Grund: nachlassende Kontrastempfindlichkeit. Licht nicht variiert.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "wcag-2-2",
+    "titel": "WCAG 2.2 — Success Criterion 1.4.3 Contrast (Minimum)",
+    "autor": "W3C",
+    "jahr": 2023,
+    "art": "Werk",
+    "url": "https://w3c.github.io/wcag/understanding/contrast-minimum.html",
+    "lizenz": "W3C Document License",
+    "felder": [
+      "form",
+      "interaktion",
+      "vermitteln"
+    ],
+    "status": "belegt",
+    "notiz": "Kontrast mindestens 4,5 : 1, große Schrift (ab 18 pt oder 14 pt fett) 3 : 1. Begründung: Sehschärfe 20/40 geht mit etwa 1,5-fachem Verlust an Kontrastempfindlichkeit einher. Jahr der Fassung 2.2 nicht an dieser Fundstelle geprüft.",
+    "zugang": "offen",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "din-1450",
+    "titel": "DIN 1450 — Schriften: Leserlichkeit",
+    "autor": "DIN",
+    "jahr": 2024,
+    "art": "Werk",
+    "url": "https://www.dinmedia.de/de/norm/din-1450/170093157",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "form",
+      "raum-zeit"
+    ],
+    "status": "belegt",
+    "notiz": "Beschreibt, wie Schriften leserlich dargestellt werden, auch im Verhältnis von Leuchtdichtekontrast und Schriftgröße. Ausgabe 2013-04 zurückgezogen, ersetzt durch DIN 1450:2024-11. Normtext nicht eingesehen.",
+    "geprueft": "2026-10-28"
+  },
+  {
+    "id": "hohl-methodik-2024",
+    "titel": "Methodik als Ersatz für Kreativität?",
+    "autor": "Michael Hohl",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Fachtext an der Stelle gelesen: PDF S. 18–20 / Druck S. 12–14 (Kapitelanfang PDF S. 17 / Druck S. 11); kritisiert „technische Rationalität“ und Top-down-Methodik, fordert situatives Erproben; kein allgemeiner Wirksamkeitsbeweis; nicht das ganze Kapitel gelesen. Lesenotiz: research/2026-10-entwurfsbewegung/chat-ruecksicherung-2026-10-30.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "bredies-gegenstand-2016",
+    "titel": "Gegenstand und Gebrauch",
+    "autor": "Katharina Bredies",
+    "jahr": 2016,
+    "art": "Artikel",
+    "url": "https://www.transcript-verlag.de/978-3-8376-3160-9/manifestationen-im-entwurf/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat PDF S. 19 / Druck S. 18–19 und Inhaltsverzeichnis (Kapitel Druck S. 217 ff.) gesehen; ORIGINALKAPITEL NICHT gelesen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "mareis-future-2016",
+    "titel": "Design the Future – Mind the Past",
+    "autor": "Claudia Mareis",
+    "jahr": 2016,
+    "art": "Artikel",
+    "url": "https://www.transcript-verlag.de/978-3-8376-3160-9/manifestationen-im-entwurf/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat PDF S. 13–14 und Inhaltsverzeichnis (Kapitel Druck S. 95 ff.), Argument des Originalkapitels ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "stapenhorst-grids-2016",
+    "titel": "Grids. Projektdokumentationen als Denkinstrument",
+    "autor": "Carolin Stapenhorst",
+    "jahr": 2016,
+    "art": "Artikel",
+    "url": "https://www.transcript-verlag.de/978-3-8376-3160-9/manifestationen-im-entwurf/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat PDF S. 17–18 und Inhaltsverzeichnis (Kapitel Druck S. 185 ff.), Originalkapitel noch nicht gelesen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "wendler-modellbegriffe-2016",
+    "titel": "Modellbegriffe als Elemente der Modellierung",
+    "autor": "Reinhard Wendler",
+    "jahr": 2016,
+    "art": "Artikel",
+    "url": "https://www.transcript-verlag.de/978-3-8376-3160-9/manifestationen-im-entwurf/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Inhaltsverzeichnis PDF S. 7 / Kap. Druck S. 271 ff. und Einleitung, Originalkapitel nicht geprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "groninger-gestenraeume-2016",
+    "titel": "Gestenräume. Virtuelles Skizzieren, Modellieren und Verhandeln",
+    "autor": "Hannah Groninger",
+    "jahr": 2016,
+    "art": "Artikel",
+    "url": "https://www.transcript-verlag.de/978-3-8376-3160-9/manifestationen-im-entwurf/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat PDF S. 19–20 und Inhaltsverzeichnis (Kapitel Druck S. 239 ff.), Originalkapitel nicht voll gelesen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "bredella-instabilen-2016",
+    "titel": "Manifestationen des Instabilen. Interaktive Environments und die Agency des Materials",
+    "autor": "Nathalie Bredella",
+    "jahr": 2016,
+    "art": "Artikel",
+    "url": "https://www.transcript-verlag.de/978-3-8376-3160-9/manifestationen-im-entwurf/",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat PDF S. 16–17, Kapitel Druck S. 163 ff.; Originalkapitel ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "held-offenes-prinzip-2026",
+    "titel": "Offenes Design DDR, Kap. 3.8: Offenheit, Individualisierung, Emanzipation und Aneignung",
+    "autor": "Tobias Held",
+    "jahr": 2026,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-50880-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Monografie F2: Kap. 3.8 Druck S. 150 ff. im Inhaltsverzeichnis lokalisiert; Einleitung Druck S. 4–7 zu Aneignung gelesen; Kapitel selbst nicht als vollständig gelesen bezeichnen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "witzke-kuratieren-2025",
+    "titel": "Vom Gestalten zum Kuratieren: Autonomie im hybriden Designprozess",
+    "autor": "Dominik Witzke",
+    "jahr": 2025,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-49798-9",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F1 PDF S. 11–12 / Druck S. 4–5; Kapitel Druck S. 87 ff. nicht vollständig gelesen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "hasenhuetl-ki-2025",
+    "titel": "Anmerkungen zu KI beim Entwerfen",
+    "autor": "Gert Hasenhütl, Hans Stefan Moritsch",
+    "jahr": 2025,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-49798-9",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F1 PDF S. 13–14 / Druck S. 6–7, qualitative Studie/ComfyUI dort beschrieben; Originalkapitel Druck S. 139 ff. nicht ausgewertet; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "gruenkranz-ki-2025",
+    "titel": "KI als Designmedium? Eine kritische Betrachtung der KI-bedingten Bildgenerierung im Produktdesign",
+    "autor": "Daniel Grünkranz",
+    "jahr": 2025,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-49798-9",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F1 PDF S. 13–14 / Druck S. 7: Steuerbarkeit, Reproduzierbarkeit, Semantik; Originalkapitel Druck S. 159 ff. nicht geprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "augsten-peukert-2024",
+    "titel": "Designforschung, eine neue Designpraxis?",
+    "autor": "Andrea Augsten, Daniela Peukert",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 10–11 / Druck S. 3–4 und Inhaltsverzeichnis, Kapitel Druck S. 33 ff. nicht gelesen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "schuster-peukert-2024",
+    "titel": "Prototyping – eine Praxis der transdisziplinären Designforschung",
+    "autor": "Paula L. Schuster, Daniela Peukert",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 12 / Druck S. 5; Kapitel Druck S. 127 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "herlo-teilhabe-2024",
+    "titel": "Design im Kontext sozialer und digitaler Teilhabe",
+    "autor": "Bianca Herlo",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 14 / Druck S. 7; Kapitel Druck S. 273 ff. nicht gelesen; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "stadlbauer-ki-2025",
+    "titel": "Partizipative Designpraktiken für verkörperte Künstliche Intelligenz",
+    "autor": "Jana Stadlbauer, Debora Frommeld, Rosan Chow, Karsten Weber",
+    "jahr": 2025,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-49798-9",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F1 PDF S. 12–13 / Druck S. 5–6; Kapitel Druck S. 123 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "haarmann-diagnose-2024",
+    "titel": "Designforschung – Diagnose, Geschichte, Praxis",
+    "autor": "Anke Haarmann",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 11 / Druck S. 4 und Inhaltsverzeichnis; Kapitel Druck S. 67 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "foken-visuell-2024",
+    "titel": "Im Visuellen verstehen. Zur recherchebasierten Gestaltung",
+    "autor": "Gesa Foken",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 12 / Druck S. 5; Kapitel Druck S. 105 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "popp-rationalitaet-2024",
+    "titel": "Methoden in Form bringen. Über die Verbindungen gestalterischer und wissenschaftlicher Rationalität",
+    "autor": "Judith-Frederike Popp",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 13 / Druck S. 6; Kapitel Druck S. 195 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "schweppenhaeuser-kultur-2024",
+    "titel": "Designforschung als Kulturwissenschaft",
+    "autor": "Gerhard Schweppenhäuser",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 14 / Druck S. 7; Kapitel Druck S. 235 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "bauer-ethik-2024",
+    "titel": "Design und Ethik",
+    "autor": "Christian Bauer",
+    "jahr": 2024,
+    "art": "Artikel",
+    "url": "https://doi.org/10.1007/978-3-658-45253-7",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Nur Herausgeberreferat F3 PDF S. 14 / Druck S. 7; Kapitel Druck S. 257 ff. ungeprüft; Lesenotiz: research/2026-10-entwurfsbewegung/fuenf-buecher-wissenslandkarte-handoff-claude.md; exakter Kapitelnachweis erst bei Originallektüre.",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "dorst-cross-2001",
+    "titel": "Creativity in the design process: co-evolution of problem–solution",
+    "autor": "Kees Dorst, Nigel Cross",
+    "jahr": 2001,
+    "art": "Paper",
+    "url": "https://doi.org/10.1016/S0142-694X(01)00009-6",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Verlagsabstract/Artikelabschnitt gesichtet; Kurzbeleg zur Koevolution; keine Volltextvalidierung; research/2026-10-entwurfsbewegung/fehleranalyse-und-neupruefung.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "schoen-1992-ried",
+    "titel": "Designing as Reflective Conversation with the Materials of a Design Situation (Research in Engineering Design)",
+    "autor": "Donald A. Schön",
+    "jahr": 1992,
+    "art": "Paper",
+    "url": "https://www.uio.no/studier/emner/matnat/ifi/IN1060/v25/pensum/schon_design-conversation.pdf",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Zwei echte Publikationen von 1992: hier Research in Engineering Design 3, S. 131–147; Originaltitelblatt und Auszüge geprüft, nicht ganzer Text; textliche Gleichheit mit KBS ungeprüft; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "schoen-1992-kbs",
+    "titel": "Designing as Reflective Conversation with the Materials of a Design Situation (Knowledge-Based Systems)",
+    "autor": "Donald A. Schön",
+    "jahr": 1992,
+    "art": "Paper",
+    "url": "https://doi.org/10.1016/0950-7051(92)90020-G",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Bibliografie im Heftinhalt: Knowledge-Based Systems 5(1), S. 3–14; Abstract / Metadaten gesehen, kein Volltext der KBS-Fassung verglichen; Gleichheit mit Research in Engineering Design offen; research/2026-10-entwurfsbewegung/fehleranalyse-und-neupruefung.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "goldschmidt-1991",
+    "titel": "The Dialectics of Sketching",
+    "autor": "Gabriela Goldschmidt",
+    "jahr": 1991,
+    "art": "Paper",
+    "url": "https://doi.org/10.1080/10400419109534381",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Originalartikel auszugsweise geprüft; seeing as / seeing that, nicht jede digitale Formstudie; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "hatchuel-weil-2009",
+    "titel": "C-K Design Theory: an advanced formulation",
+    "autor": "Armand Hatchuel, Benoît Weil",
+    "jahr": 2009,
+    "art": "Paper",
+    "url": "https://doi.org/10.1007/s00163-008-0043-4",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Verlagsabstract gesichtet (Konzept-/Wissensraum), Volltext nicht ausgewertet; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "boden-1998",
+    "titel": "Creativity and Artificial Intelligence",
+    "autor": "Margaret A. Boden",
+    "jahr": 1998,
+    "art": "Paper",
+    "url": "https://doi.org/10.1016/S0004-3702(98)00055-1",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Verlagsabstract geprüft; Variation/Exploration/Transformation als Autorenunterscheidung nur im Abstract belegt; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "gero-kannengiesser-2004",
+    "titel": "The situated function–behaviour–structure framework",
+    "autor": "John S. Gero, Udo Kannengiesser",
+    "jahr": 2004,
+    "art": "Paper",
+    "url": "https://doi.org/10.1016/j.destud.2003.10.010",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Verlagsabstract, kein Volltext; situierter Kontext im Entwurf; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "gero-1990",
+    "titel": "Design Prototypes: A Knowledge Representation Schema for Design",
+    "autor": "John S. Gero",
+    "jahr": 1990,
+    "art": "Paper",
+    "url": "https://doi.org/10.1609/aimag.v11i4.854",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Verlagsabstract zu routine/innovative/creative design, kein Volltext; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "larkin-simon-1987",
+    "titel": "Why a Diagram is (Sometimes) Worth Ten Thousand Words",
+    "autor": "Jill H. Larkin, Herbert A. Simon",
+    "jahr": 1987,
+    "art": "Paper",
+    "url": "https://doi.org/10.1016/S0364-0213(87)80026-5",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Cognitive Science 11, S. 65–99 (Kopfzeile des Originals); Verlagsabstract; Repräsentation/Suche, Volltext nicht gesichert; research/2026-10-entwurfsbewegung/primaerquellen-dynamik-und-moeglichkeitsraeume.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "gibson-1979",
+    "titel": "The Ecological Approach to Visual Perception, Kap. The Theory of Affordances",
+    "autor": "James J. Gibson",
+    "jahr": 1979,
+    "art": "Buch",
+    "url": "https://www.cs.tufts.edu/comp/150DR/readings/week4/gibson_theory_of_affordances.pdf",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Kapiteltranskript auszugsweise gelesen, Komplementarität von Lebewesen und Umwelt; Buchvolltext nicht; research/2026-10-entwurfsbewegung/fehleranalyse-und-neupruefung.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "alexander-1964",
+    "titel": "Notes on the Synthesis of Form",
+    "autor": "Christopher Alexander",
+    "jahr": 1964,
+    "art": "Buch",
+    "url": "https://archive.org/details/notesonsynthesis00alex",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "nicht belegt",
+    "notiz": "Über Dubberly sekundär rezipiert; altes R4-Zitat trägt Kontext/Anpassung nicht; Primärstelle der Aussage ungeprüft; research/2026-10-entwurfsbewegung/fehleranalyse-und-neupruefung.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "iso-15288-2023",
+    "titel": "ISO/IEC/IEEE 15288:2023 Systems and software engineering — System life cycle processes",
+    "autor": "ISO, IEC, IEEE",
+    "jahr": 2023,
+    "art": "Buch",
+    "url": "https://www.iso.org/standard/81702.html",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "abgeleitet",
+    "notiz": "Normangabe/Katalog; Volltext der Norm nicht gelesen; Begriffspaar Entwicklung/Nutzung nicht als empirischer Entwurfsnachweis ausgeben; research/2026-10-entwurfsbewegung/zwischenstand.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "heijink-windsor-desain-2000",
+    "titel": "Data processing in music performance research: Using structural information to improve score-performance matching",
+    "autor": "H. Heijink, W. L. Windsor, P. Desain",
+    "jahr": 2000,
+    "art": "Paper",
+    "url": "https://www.mcg.uva.nl/mmm-2003/abstracts/mmm-24.html",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "nicht belegt",
+    "notiz": "Behavior Research Methods, Instruments & Computers (2000), S. 546–554; Identität am Abstract geprüft (Claude, 30.10.): „scores are frequently underspecified“. Frühere R7-Belegverwendung ZURÜCKGEZOGEN: Das Thema (Zuordnung von Aufführungsdaten zur Partitur) trägt den theoretischen Vergleich Partitur/Interpretation nicht; research/2026-10-entwurfsbewegung/fehleranalyse-und-neupruefung.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  },
+  {
+    "id": "kauffman-investigations",
+    "titel": "Investigations",
+    "autor": "Stuart A. Kauffman",
+    "jahr": 2000,
+    "art": "Buch",
+    "url": "https://global.oup.com/academic/product/investigations-9780195121056",
+    "lizenz": "alle Rechte vorbehalten",
+    "felder": [
+      "erkennen",
+      "system"
+    ],
+    "status": "nicht belegt",
+    "notiz": "Früheres R6-Direktzitat NICHT nachgewiesen; kein verifizierter Wortlaut, kein Volltext gelesen; research/2026-10-entwurfsbewegung/fehleranalyse-und-neupruefung.md",
+    "zugang": "eingeschränkt",
+    "geprueft": "2026-10-30"
+  }
+]
