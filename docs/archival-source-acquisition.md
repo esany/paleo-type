@@ -101,6 +101,8 @@ A normal interrupted run remains explicitly `partial-restartable`; an operator i
 
 An untracked pre-existing file is not trusted merely by filename. It is adopted only when a newly downloaded remote copy has the same SHA-256 and dimensions; otherwise the tool refuses to overwrite it.
 
+**Untracked prior sidecars are never overwritten:** if `QUELLENINFO.json`, `QUELLENINFO.txt`, `SHA256SUMS.txt` (or their `.part` staging files) already exist in the target package but there is no tracked `ACQUISITION_STATE.json`, acquisition fails before the first network request or write. Existing JPEG adoption by independently matching remote bytes remains separately permitted; a sidecar does not inherit that adoption rule.
+
 The final package contains the JPEGs without recompression/renaming plus:
 
 - `ACQUISITION_STATE.json` — restart/progress state;
