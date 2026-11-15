@@ -578,6 +578,34 @@ class AcquisitionTests(unittest.TestCase):
             self.assertEqual("cancelled-restartable", state["status"])
             self.assertEqual("0001.jpg", state["last_failure"]["filename"])
 
+    def test_untracked_sidecars_fail_closed_without_network_or_overwrite(self):
+        # An existing package may contain untracked images (adoption is
+        # separately checked), but never replace its prior manifest/notes,
+        # checksums or interrupted sidecar bytes without matching progress.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        sidecars = ("QUELLENINFO.json", "QUELLENINFO.txt", "SHA256SUMS.txt")
+        for name in (item for base in sidecars for item in (base, base + ".part")):
+            with self.subTest(sidecar=name):
+                with tempfile.TemporaryDirectory() as temp:
+                    root = Path(temp)
+                    package = root / plan.package_name
+                    package.mkdir()
+                    existing = package / name
+                    existing.write_bytes(b"prior, untracked user data")
+                    opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+                    with self.assertRaisesRegex(
+                        acquisition.AcquisitionError, "untracked package sidecar"
+                    ):
+                        acquisition.acquire(
+                            plan, root, opener=opener, rate_limit_seconds=0
+                        )
+                    opener.assert_not_called()
+                    self.assertEqual(b"prior, untracked user data", existing.read_bytes())
+                    self.assertFalse((package / acquisition.PROGRESS_FILENAME).exists())
+                    self.assertFalse((package / "0001.jpg").exists())
+
     def test_existing_different_file_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
