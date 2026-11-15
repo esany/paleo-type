@@ -620,6 +620,77 @@ class AcquisitionTests(unittest.TestCase):
                 acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             self.assertEqual(b"different", (package / "0001.jpg").read_bytes())
 
+    def test_symlinked_package_destination_cannot_escape_controlled_root(self):
+        # The external output_root check alone must not be bypassed by
+        # a package directory that resolves outside the controlled root.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "controlled"
+            outside = Path(temp) / "outside"
+            root.mkdir()
+            outside.mkdir()
+            target = root / plan.package_name
+            target.symlink_to(outside, target_is_directory=True)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+            self.assertFalse((outside / "0001.jpg").exists())
+            self.assertFalse((outside / acquisition.PROGRESS_FILENAME).exists())
+
+    def test_symlinked_jpeg_partial_cannot_overwrite_external_file(self):
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "controlled"
+            target = root / plan.package_name
+            target.mkdir(parents=True)
+            outside = Path(temp) / "preserve-original.txt"
+            outside.write_bytes(b"do not overwrite")
+            partial = target / "0001.jpg.part"
+            partial.symlink_to(outside)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+            self.assertTrue(partial.is_symlink())
+            self.assertEqual(b"do not overwrite", outside.read_bytes())
+            self.assertFalse((target / "0001.jpg").exists())
+
+    def test_symlinked_verified_jpeg_cannot_count_as_local_package_byte(self):
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "controlled"
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            target = root / plan.package_name
+            external = Path(temp) / "external.jpeg"
+            (target / "0001.jpg").replace(external)
+            (target / "0001.jpg").symlink_to(external)
+            opener.reset_mock()
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+            self.assertEqual(JPEG_32X16, external.read_bytes())
+
+    def test_atomic_sidecar_writer_refuses_symlinked_temp_path(self):
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / "QUELLENINFO.txt"
+            outside = Path(temp) / "prior-note"
+            outside.write_text("preserve", encoding="utf-8")
+            staging = target.with_name(target.name + ".part")
+            staging.symlink_to(outside)
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition._write_text_atomic(target, "replacement")
+            self.assertEqual("preserve", outside.read_text(encoding="utf-8"))
+            self.assertTrue(staging.is_symlink())
+            self.assertFalse(target.exists())
+
     def test_repository_worktree_is_rejected_as_output_root(self):
         plan = acquisition.SaechsischesStaatsarchivProvider().plan(
             source(image_count=1), one_image()
