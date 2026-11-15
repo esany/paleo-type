@@ -507,6 +507,18 @@ def acquire(
     _assert_external_output_root(output_root)
     plan = _resolve_plan_destination(plan, output_root)
     target = output_root / plan.package_name
+    # Existing original JPEGs can still be adopted after a byte-for-byte
+    # remote comparison. Existing package sidecars have no such safe adoption
+    # path without tracked progress and must never be silently replaced.
+    if not _progress_path(target).is_file():
+        for sidecar in ("QUELLENINFO.json", "QUELLENINFO.txt", "SHA256SUMS.txt"):
+            for suffix in ("", ".part"):
+                prior = target / (sidecar + suffix)
+                if prior.exists() or prior.is_symlink():
+                    raise AcquisitionError(
+                        f"untracked package sidecar at {prior}; "
+                        "do not overwrite without matching acquisition progress"
+                    )
     target.mkdir(parents=True, exist_ok=True)
     progress = _load_progress(target, plan)
     recorded = _recorded_images(progress)
