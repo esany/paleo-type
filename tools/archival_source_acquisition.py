@@ -286,6 +286,8 @@ def _inspect_jpeg(path: Path) -> dict:
 
 def _write_text_atomic(path: Path, content: str) -> None:
     temporary = path.with_name(path.name + ".part")
+    if path.is_symlink() or temporary.is_symlink():
+        raise AcquisitionError(f"refusing symbolic link in package sidecar path: {path}")
     temporary.write_text(content, encoding="utf-8")
     temporary.replace(path)
 
@@ -371,6 +373,8 @@ def _recorded_images(progress: dict) -> dict[str, dict]:
 
 
 def _verify_recorded_image(spec: ImageSpec, destination: Path, recorded: dict) -> dict:
+    if destination.is_symlink():
+        raise AcquisitionError(f"refusing symbolic link in recorded package image: {destination}")
     if recorded.get("sequence") != spec.sequence or recorded.get("url") != spec.url:
         raise AcquisitionError(f"progress metadata mismatch for {spec.filename}")
     if not destination.is_file():
@@ -413,6 +417,8 @@ def _download(
     ``acquire`` and never redownloaded merely to prove idempotence.
     """
     partial = destination.with_name(destination.name + ".part")
+    if destination.is_symlink() or partial.is_symlink():
+        raise AcquisitionError(f"refusing symbolic link in image destination/partial: {destination}")
     last_error: Exception | None = None
     for attempt in range(1, retries + 1):
         try:
@@ -507,6 +513,10 @@ def acquire(
     _assert_external_output_root(output_root)
     plan = _resolve_plan_destination(plan, output_root)
     target = output_root / plan.package_name
+    if target.is_symlink() or not _is_within(target, output_root):
+        raise AcquisitionError(
+            f"refusing symbolic link or escape from controlled package root: {target}"
+        )
     # Existing original JPEGs can still be adopted after a byte-for-byte
     # remote comparison. Existing package sidecars have no such safe adoption
     # path without tracked progress and must never be silently replaced.
