@@ -614,7 +614,7 @@ def acquire(
             f"Dateiliste: {plan.file_list_url}",
             f"Dateiliste SHA-256: {plan.file_list_sha256}",
             f"Bildroute: {plan.route}",
-            f"Umfang: {len(results)} Fullsize-JPEGs",
+            f"Umfang: {len(results)} JPEG-Datei{'' if len(results) == 1 else 'en'}",
             "Dateien: " + ", ".join(expected_names),
             f"Rights-/Zugriffsstatus: {plan.source.rights_status}",
             f"Restart-/Fortschrittsstatus: {PROGRESS_FILENAME}",
