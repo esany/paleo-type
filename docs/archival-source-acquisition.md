@@ -105,7 +105,7 @@ The final package contains the JPEGs without recompression/renaming plus:
 
 - `ACQUISITION_STATE.json` — restart/progress state;
 - `QUELLENINFO.json` — complete technical manifest;
-- `QUELLENINFO.txt` — Human-readable source/acquisition information;
+- `QUELLENINFO.txt` — Human-readable source/acquisition information; lists the **exact** saved filenames (including gaps, without implying unlisted images). Its JPEG count does not claim `fullsize` quality for the backward-compatible `download` route; the explicit `Bildroute` field records the actual route.
 - `SHA256SUMS.txt` — final image checksums.
 
 `complete` is written only after the actual image sequence matches the provider list and every image has passed integrity checks. A file-list check, one inspected JPEG, CI PASS, running job or temporary artifact is not a secured package.
