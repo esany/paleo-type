@@ -341,6 +341,26 @@ class AcquisitionTests(unittest.TestCase):
             )
             self.assertEqual(2, opener.call_count)
 
+    def test_download_route_sidecar_does_not_claim_fullsize_quality(self):
+        # A plain download.jsp URL is not evidence of fullsize quality.
+        # Preserve the exact route and count, without overstating pixels.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="download"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            acquisition.acquire(
+                plan, root,
+                opener=Mock(side_effect=lambda *_args, **_kwargs: response_for()),
+                rate_limit_seconds=0,
+            )
+            documented = (root / plan.package_name / "QUELLENINFO.txt").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("Bildroute: download", documented)
+            self.assertIn("Umfang: 1 JPEG-Datei", documented)
+            self.assertNotIn("Fullsize-JPEG", documented)
+
     def test_jpeg_dimensions_are_checked(self):
         self.assertEqual((32, 16), acquisition.jpeg_dimensions(JPEG_32X16))
         with self.assertRaises(acquisition.AcquisitionError):
