@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.1",
+  "change_id": "t5-click-case-c-evaluation-closure-2026-10-03",
+  "materiality": "material",
+  "summary": "Reconcile completion of the immutable T5 Click raw first run and its semantic Case-C evaluation, close the stale raw-run cursor, and leave successor trial selection explicitly un-derived without changing Skill or framework semantics.",
+  "source_refs": [
+    "github:esany/Wissensarbeit#7",
+    "github:esany/Wissensarbeit#43",
+    "github:esany/Wissensarbeit#46",
+    "https://github.com/esany/Wissensarbeit/issues/7#issuecomment-5968645891",
+    "https://github.com/esany/Wissensarbeit/issues/46#issuecomment-5968667313",
+    "https://github.com/esany/Wissensarbeit/issues/46#issuecomment-5969842014",
+    "https://github.com/esany/Wissensarbeit/issues/46#issuecomment-5969905723",
+    "https://github.com/pallets/click/commit/06b2a678741131fd577ce170e23e5ca0aeba0309",
+    "project/GOVERNING_OBJECTIVE.md",
+    "system/authority.json"
+  ],
+  "surfaces": {
+    "requirements": {
+      "disposition": "unchanged",
+      "objects": ["project/requirements.json"],
+      "rationale": "T5 is evaluation evidence under the existing #46 protocol and does not alter Requirement semantics."
+    },
+    "issues_findings": {
+      "disposition": "refined",
+      "objects": ["github:esany/Wissensarbeit#7", "github:esany/Wissensarbeit#43", "github:esany/Wissensarbeit#46"],
+      "rationale": "T5 raw evidence is durably preserved and the semantic evaluation records conforming Case-C discrimination with provenance-limited verification of external source execution. #46 remains open for the trial programme."
+    },
+    "risks": {
+      "disposition": "confirmed",
+      "objects": ["R-004", "R-006", "R-008", "R-009", "R-010"],
+      "rationale": "Authority laundering, solutionism, false assurance, self-reinforcing interpretation and execution/progress burden remain relevant. The evaluation explicitly separates semantic conformance from unverified external source-call provenance and creates no downstream authority."
+    },
+    "decisions_concepts": {
+      "disposition": "unchanged",
+      "objects": ["system/authority.json", "github:esany/Wissensarbeit#43", "github:esany/Wissensarbeit#46"],
+      "rationale": "No Skill revision, Generic-Fit claim, framework semantic, Authority, Requirement or Building Block is promoted by the T5 result."
+    },
+    "derived_views": {
+      "disposition": "refined",
+      "objects": ["project/CURRENT_STATE.md"],
+      "rationale": "CURRENT_STATE is refreshed only to bind the derived view to the T5 evaluation-closure reconciliation; it remains non-canonical."
+    },
+    "planning_execution_cursor": {
+      "disposition": "refined",
+      "objects": ["project/execution_state.json", "github:esany/Wissensarbeit#7", "github:esany/Wissensarbeit#46"],
+      "rationale": "The T5 raw-run and semantic-evaluation gates are complete, so the raw-first-run next action is removed. #46 remains focus, implementation stays disabled, and no T6/Case-D successor is selected by this closure.",
+      "cursor_binding": {
+        "planning_owner": "github:esany/Wissensarbeit#7",
+        "focus": "github:esany/Wissensarbeit#46",
+        "current_step": "t5-case-c-trial",
+        "next": "none",
+        "follow_up_status": "not-derived",
+        "implementation_allowed": false,
+        "merge_allowed": false
+      }
+    },
+    "active_work": {
+      "disposition": "refined",
+      "objects": ["github:esany/Wissensarbeit#46"],
+      "rationale": "#46 remains the active programme owner with T5 completed. Case D remains required by the programme but unselected/unfrozen by this closure; R3, Generic Fit and PR #51 merge remain unselected/unpromoted."
+    }
+  },
+  "unresolved": [],
+  "systemically_integrated": true
+}

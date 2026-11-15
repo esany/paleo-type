@@ -1,0 +1,1055 @@
+sha	datum	dateien	plus	minus	betreff
+0114d77	2026-08-26T13:18:05+02:00	1	3	0	Initialize repository
+a4a6bce	2026-08-26T13:19:01+02:00	1	82	0	Define project scope and lean workflow
+4245d40	2026-08-26T13:19:20+02:00	1	82	0	Add research guardrails for AI-assisted work
+a8d9db1	2026-08-26T13:19:31+02:00	1	42	0	Add lean scholarly workflow
+1194531	2026-08-26T13:19:42+02:00	1	40	0	Add evidence and source audit policy
+ec1fcf6	2026-08-26T13:19:53+02:00	1	33	0	Add transcription guidelines
+eb780e6	2026-08-26T13:20:04+02:00	1	39	0	Add quality and learning loop
+251ce9e	2026-08-26T13:20:12+02:00	1	16	0	Add Knau benchmark project metadata
+08c08bd	2026-08-26T13:20:31+02:00	1	60	0	Freeze current Knau research checkpoint
+92bd814	2026-08-26T13:20:46+02:00	1	59	0	Record project learnings and failure modes
+6113039	2026-08-26T13:20:54+02:00	1	5	0	Add inspected source register
+7a28342	2026-08-26T13:21:08+02:00	1	21	0	Add current working transcription for image 132
+f640f87	2026-08-26T13:21:21+02:00	1	16	0	Add conservative working transcription for image 133
+5131ea5	2026-08-26T13:21:32+02:00	1	11	0	Add conservative working transcription for image 134
+d7d5820	2026-08-26T13:21:39+02:00	1	5	0	Add current working transcription for image 135
+a9331db	2026-08-26T13:21:52+02:00	1	12	0	Add hand-specific working lexicon
+4377384	2026-08-26T13:22:02+02:00	1	13	0	Seed numeral and measure concordance
+3da87c5	2026-08-26T13:22:15+02:00	1	10	0	Add reading decision and rejection log
+f6f2386	2026-08-26T13:22:24+02:00	1	5	0	Add external research source audit
+7b7af05	2026-08-26T13:22:35+02:00	1	20	0	Separate user context from manuscript readings
+6a0b073	2026-08-26T13:36:53+02:00	1	37	1	Clarify AI expertise role and research-first principle
+794e3ae	2026-08-26T13:37:14+02:00	1	23	6	Make research-first and non-specialist AI principles explicit
+965a314	2026-08-26T13:48:30+02:00	1	101	0	Add lean AI governance and validation rules
+a20627b	2026-08-26T13:48:54+02:00	1	18	0	Add AI provenance, rights and validation guardrails
+f501b49	2026-08-26T13:49:13+02:00	1	29	15	Document AI governance and risk-scaled validation
+d2240a3	2026-08-26T13:49:23+02:00	1	15	0	Strengthen source provenance requirements
+a9c5148	2026-08-26T13:49:32+02:00	1	11	3	Add AI governance triggers to research workflow
+4c870e9	2026-08-26T13:56:01+02:00	1	148	0	Add lean maintenance and documentation ownership policy
+8f2aecf	2026-08-26T13:56:42+02:00	1	106	2	Clarify repository reading path, canonical records and maintenance ownership
+6893418	2026-08-26T13:57:10+02:00	1	39	5	Make continuous maintenance and ownership mandatory for AI work
+9c2f5a2	2026-08-26T13:57:54+02:00	1	7	4	Clarify Wiki maintenance and assistant ownership boundaries
+5191e47	2026-08-26T13:58:09+02:00	1	21	1	Integrate repository state persistence into research workflow
+e02ee2b	2026-08-26T14:25:17+02:00	1	48	0	Add continuous research integrity check
+2caf7e5	2026-08-26T14:25:29+02:00	1	7	0	Integrate integrity check into research workflow
+0a3d387	2026-08-26T14:33:39+02:00	1	12	12	Reinspect numeral anchors on images 132 and 133
+2c032ec	2026-08-26T14:33:56+02:00	1	5	5	Downgrade surname spelling after adversarial image check
+5c58a4b	2026-08-26T14:34:08+02:00	1	3	3	Reinspect 133 numerals and surname token
+cfb96a8	2026-08-26T14:34:23+02:00	1	3	3	Downgrade 134 surname spelling after adversarial check
+dc00009	2026-08-26T14:34:36+02:00	1	2	0	Log first adversarial integrity-check decisions
+986120c	2026-08-26T14:35:03+02:00	1	43	24	Persist first integrity-check checkpoint and next action
+a316751	2026-08-26T16:16:15+02:00	1	4	4	Record Reformationsportal as image provenance lead
+9eb15f1	2026-08-26T16:18:11+02:00	1	4	4	Record Knau-filtered DigiRef provenance URL
+ecf0d19	2026-08-26T17:14:20+02:00	1	6	4	Register authoritative Reg Ii 5 archival provenance
+545fee6	2026-08-26T17:14:43+02:00	1	24	13	Anchor Knau project to verified Reg Ii 5 metadata
+8c6686f	2026-08-26T17:28:30+02:00	1	25	0	Add verified Reg Ii 5 image-folio crosswalk
+9af2bfb	2026-08-26T17:33:10+02:00	1	8	6	Correct witness metadata and register A-B extract relation
+5b04f33	2026-08-26T18:16:33+02:00	1	3	2	Register inspected Reg Ii 3 comparison sources
+ed83c71	2026-08-26T18:17:09+02:00	1	44	60	Update canonical status with A/B/C source model
+34bb5de	2026-08-26T18:20:07+02:00	1	3	3	Pin exact C1/C2 archival identities and date ranges
+34d40af	2026-08-26T19:34:20+02:00	1	5	0	Add lean corpus source inventory
+e3bae54	2026-08-26T19:34:31+02:00	1	9	0	Add explicit corpus relationship register
+7a13df6	2026-08-26T19:34:43+02:00	1	4	0	Add visitation event registry
+4b0cea3	2026-08-26T19:34:55+02:00	1	9	0	Add minimal place authority registry
+8175ecf	2026-08-26T19:35:03+02:00	1	7	0	Add minimal person authority registry
+feb42af	2026-08-26T19:35:48+02:00	1	183	0	Add archival source and provenance methodology
+e649320	2026-08-26T19:36:46+02:00	1	180	147	Reframe paleo-type as lean corpus and source-criticism workspace
+0e0e584	2026-08-26T19:37:27+02:00	1	161	105	Add corpus provenance and lean backlog guardrails
+704ba7c	2026-08-26T19:38:08+02:00	1	76	26	Integrate corpus provenance into research workflow
+8e82af9	2026-08-26T19:38:30+02:00	1	12	9	Link project source inspections to canonical corpus IDs
+2126bb9	2026-08-26T19:38:55+02:00	1	70	36	Point active project to new corpus model
+50f7246	2026-08-26T19:39:25+02:00	1	95	102	Assign canonical ownership for corpus and deferred backlog
+7a5c952	2026-08-26T19:41:09+02:00	1	11	0	Add durable source file manifest with checksums
+66709c5	2026-08-26T19:41:46+02:00	1	1	1	Fix metadata filename in file manifest
+9bac875	2026-08-26T19:45:11+02:00	1	7	0	Map B Knau parallel to folios and export images
+5b7bfda	2026-08-26T19:45:29+02:00	1	2	2	Verify A-B Knau textual correspondence
+10ed320	2026-08-26T19:45:57+02:00	1	58	54	Advance restart point after locating B Knau parallel
+852d01c	2026-08-26T19:49:47+02:00	1	17	8	Require source-identity IDs and demote witness sigla to aliases
+7491d1f	2026-08-26T19:50:04+02:00	1	5	5	Replace ordinal source labels with identity-derived IDs
+f9616f9	2026-08-26T19:50:19+02:00	1	8	8	Migrate source relations to canonical identity-derived IDs
+731b493	2026-08-26T19:50:38+02:00	1	8	8	Migrate file manifest to source-identity IDs
+35dde37	2026-08-26T19:50:54+02:00	1	25	0	Add identity-named Reg Ii 5 crosswalk
+6df4826	2026-08-26T19:51:08+02:00	1	7	0	Add identity-named Reg Ii 4 Bd II crosswalk
+82357d9	2026-08-26T19:51:48+02:00	1	11	11	Migrate project source register to canonical source IDs
+730cdfa	2026-08-26T19:52:15+02:00	1	61	61	Replace ordinal witness labels with archival source identities
+fb6547a	2026-08-26T19:52:30+02:00	1	0	25	Remove ordinal-named source crosswalk
+61f4a70	2026-08-26T19:52:39+02:00	1	0	7	Remove ordinal-named source crosswalk
+d4dbcd1	2026-08-26T20:06:38+02:00	1	93	0	Add lean decision record for research architecture
+62ef197	2026-08-26T20:07:07+02:00	1	57	6	Add lean fachlich-technisches quality gate
+58ab445	2026-08-26T20:07:31+02:00	1	42	49	Document lean decision and quality model
+77330c2	2026-08-26T20:19:41+02:00	1	7	5	Align Knau project metadata with canonical provenance
+0beb27d	2026-08-26T20:19:55+02:00	1	3	3	Refresh source audit after parallel-locus discovery
+696f6e6	2026-08-26T20:20:11+02:00	1	2	2	Correct corpus inspection stages
+02efbb8	2026-08-26T20:20:35+02:00	1	27	8	Add lean repo-wide consistency pass rule
+24b3eff	2026-08-26T20:27:48+02:00	1	7	5	Document canonical file manifest ownership
+d58c829	2026-08-26T20:28:14+02:00	1	10	3	Clarify canonical digital file manifest
+b558683	2026-08-26T20:28:32+02:00	1	19	12	Add file manifest to canonical ownership map
+91ccc1c	2026-08-26T20:28:53+02:00	1	10	6	Make corpus file manifest canonical in provenance method
+4769d60	2026-08-26T20:39:55+02:00	1	8	0	Map C2 Knau income comparison locus
+71573bf	2026-08-26T20:40:12+02:00	1	1	1	Advance C2 comparison-source audit
+b7b31cc	2026-08-26T20:40:25+02:00	1	1	1	Promote directly rechecked Knau heading
+b23e217	2026-08-26T20:40:40+02:00	1	4	4	Promote directly rechecked Knau closing lines
+983d360	2026-08-26T20:41:25+02:00	1	40	41	Advance edition checkpoint and remove source-acquisition drift
+d3e0802	2026-08-26T20:41:53+02:00	1	2	1	Register C2 notation comparison locus without overclaiming
+bae6861	2026-08-26T20:52:12+02:00	1	296	0	Define evidence-based research milestones for Knau edition
+423b32a	2026-08-26T20:55:33+02:00	1	70	71	Align project status with research milestones
+a5d4d3e	2026-08-26T20:59:58+02:00	1	51	2	Define lean GitHub human-navigation rules
+b0b78dc	2026-08-26T21:40:38+02:00	1	6	0	Improve GitHub human navigation from README
+2c43eae	2026-08-26T21:41:02+02:00	0	0	0	Merge pull request #24 from esany/codex/fuhre-github-human-navigation-pass-durch
+b85a5cf	2026-08-26T21:46:18+02:00	1	301	0	Add authoritative historical source workflow and standards audit
+35bb93b	2026-08-26T21:46:53+02:00	1	136	18	Bring transcription method to scholarly source standards
+9aa5bae	2026-08-26T21:47:44+02:00	1	64	57	Record scholarly-method audit and M2 compliance gap
+93e3f87	2026-08-26T21:48:21+02:00	1	111	197	Align research gates with authoritative scholarly workflow
+918a0d9	2026-08-26T21:48:47+02:00	1	54	91	Make workflow an operational map to authoritative scholarly method
+d7f33c0	2026-08-26T21:55:53+02:00	1	215	0	Extract generic scholarly research gates from pilot project
+73c83e4	2026-08-26T21:56:33+02:00	1	162	192	Separate generic scholarly method from pilot-specific audit
+664f0e2	2026-08-26T21:56:55+02:00	1	30	44	Remove pilot-specific examples from generic transcription method
+65dd1a8	2026-08-26T21:57:19+02:00	1	38	69	Keep provenance methodology project-agnostic
+4595d5e	2026-08-26T21:57:33+02:00	1	2	5	Generalize evidence-policy examples
+f83d2b5	2026-08-26T21:57:55+02:00	1	28	17	Make operational workflow use generic research gates
+842903d	2026-08-26T21:58:24+02:00	1	84	142	Align maintenance ownership with generic research gates
+e15dc3e	2026-08-26T21:58:51+02:00	1	48	41	Make Knau status project-specific against generic gates
+e9c8c7b	2026-08-26T21:59:06+02:00	1	0	210	Remove duplicated project-specific gate definitions
+882ea08	2026-08-26T21:59:38+02:00	1	118	180	Clarify method corpus project separation and generic research gates
+dd3dd51	2026-08-26T22:00:24+02:00	1	114	117	Enforce generic method corpus project separation
+1d04aa8	2026-08-26T22:00:43+02:00	1	9	0	Record method corpus project separation decision
+4cda3fb	2026-08-26T22:01:29+02:00	1	8	0	Record pilot-vs-framework generalization lesson
+73a4fc5	2026-08-26T22:15:58+02:00	1	92	132	Complete scholarly workflow and expertise routing
+eec18ad	2026-08-26T22:18:00+02:00	1	20	19	Make deferred issues self-cleaning and trigger-audited
+7c456fc	2026-08-26T22:48:29+02:00	1	20	0	Add Reg Ii 3 source project scaffold
+6bf1da3	2026-08-26T22:48:40+02:00	1	9	0	Add Reg Ii 3 image folio crosswalk
+7ce2ceb	2026-08-26T22:48:50+02:00	1	17	0	Document Reg Ii 3 source status
+caee946	2026-08-26T22:48:59+02:00	1	13	0	Add Reg Ii 4 Bd II source project scaffold
+aa92680	2026-08-26T22:49:18+02:00	1	7	0	Add Reg Ii 4 Knau crosswalk
+9ca412b	2026-08-26T22:49:27+02:00	1	17	0	Document Reg Ii 4 source status
+3757c67	2026-08-26T22:56:17+02:00	1	13	0	Add minimal project contract template
+a885126	2026-08-26T22:56:28+02:00	1	33	0	Add minimal project status template
+ba77515	2026-08-26T22:56:39+02:00	1	13	0	Add Reg Ii 5 source-unit project
+ac14ff5	2026-08-26T22:56:54+02:00	1	25	0	Move Reg Ii 5 source crosswalk to source project
+eb2e2d7	2026-08-26T22:57:06+02:00	1	33	0	Document Reg Ii 5 source-unit status
+19a1199	2026-08-26T22:57:15+02:00	1	13	0	Add Reg Ii 3 visitation source project
+87c687d	2026-08-26T22:57:29+02:00	1	33	0	Document Reg Ii 3 visitation source status
+8e2d1f7	2026-08-26T22:57:48+02:00	1	4	2	Align Reg Ii 3 project with project contract
+7fcb517	2026-08-26T22:58:04+02:00	1	4	2	Align Reg Ii 4 project with project contract
+4880c99	2026-08-26T22:58:22+02:00	1	3	1	Classify Knau as research-scope project
+2153079	2026-08-26T22:58:33+02:00	1	5	0	Add canonical project relationship registry
+3e6f128	2026-08-26T22:58:42+02:00	1	0	25	Move source-unit crosswalk out of Knau project
+f407a59	2026-08-26T22:58:52+02:00	1	0	7	Move comparison source crosswalk to source-unit project
+7a1e6d8	2026-08-26T22:58:59+02:00	1	0	8	Move control source crosswalk to source-unit project
+8b70ad7	2026-08-26T22:59:22+02:00	1	24	79	Link Knau research scope to source-unit projects
+348273b	2026-08-26T22:59:43+02:00	3	314	5	Define governance milestone sequence and backlog semantics
+8bc6fe9	2026-08-26T23:00:05+02:00	1	150	0	Define project lifecycle and anti-drift invariants
+6791fdf	2026-08-26T23:00:30+02:00	1	85	94	Document project lifecycle and relationship layer
+563a606	2026-08-26T23:00:50+02:00	1	10	1	Record project lifecycle and relation model
+a58965e	2026-08-26T23:01:08+02:00	1	20	8	Align Reg Ii 3 status with source-unit lifecycle
+2ad692c	2026-08-26T23:01:24+02:00	1	20	8	Align Reg Ii 4 status with source-unit lifecycle
+a7653d6	2026-08-26T23:02:27+02:00	1	122	117	Integrate project lifecycle into maintenance invariants
+e37c30a	2026-08-26T23:05:54+02:00	1	11	2	Reconcile concurrent decisions and preserve milestone semantics
+24c9c6c	2026-08-26T23:06:24+02:00	1	29	5	Reconcile README with milestone and project lifecycle models
+f71d713	2026-08-26T23:06:52+02:00	1	290	0	Carry forward concurrent milestone governance plan
+f5a3093	2026-08-26T23:07:21+02:00	6	326	196	Separate governance and research milestone families
+e726e60	2026-08-26T23:07:24+02:00	1	1	0	Record temporary concurrency reconciliation marker
+093fe56	2026-08-26T23:07:43+02:00	1	0	1	Remove temporary concurrency marker
+18dd561	2026-08-26T23:08:05+02:00	0	0	0	Merge concurrent governance milestone work into project lifecycle branch
+0963ff3	2026-08-26T23:10:20+02:00	1	18	3	Reconcile latest milestone guardrails from main
+bc89755	2026-08-26T23:10:48+02:00	1	6	2	Reconcile latest project-gate milestone semantics from main
+d88d208	2026-08-26T23:11:36+02:00	1	5	5	Reconcile milestone-family decision with concurrent main
+4fe8684	2026-08-26T23:12:06+02:00	1	215	147	Adopt finalized concurrent milestone-family model
+74f4222	2026-08-26T23:12:38+02:00	1	45	35	Reconcile finalized milestone families with project lifecycle model
+d1f59da	2026-08-26T23:13:11+02:00	1	165	88	Reconcile maintenance with finalized milestones and project lifecycle
+05917ef	2026-08-26T23:13:26+02:00	0	0	0	Merge finalized concurrent governance/milestone work
+1b00f9a	2026-08-26T23:14:16+02:00	0	0	0	Align README wording with finalized concurrent milestone policy
+0826664	2026-08-26T23:14:45+02:00	0	0	0	Ensure README is coherent after concurrency reconciliation
+944924a	2026-08-26T23:15:09+02:00	0	0	0	Finalize README concurrency reconciliation
+699fa6e	2026-08-26T23:18:19+02:00	0	0	0	Merge pull request #40 from esany/source-projects-reg-ii-3-reg-ii-4
+30c4234	2026-08-26T23:34:01+02:00	1	115	97	Define projects as historical investigation scopes
+65c6850	2026-08-26T23:34:10+02:00	1	6	9	Make project template investigation-centered
+64cbfbb	2026-08-26T23:34:20+02:00	1	8	10	Align status template with source-group projects
+e7fc9b6	2026-08-26T23:34:30+02:00	1	5	0	Add human-readable Knau source group register
+bf747f2	2026-08-26T23:34:38+02:00	1	6	16	Define Knau as source-group investigation project
+b3d5a99	2026-08-26T23:35:01+02:00	1	33	21	Reframe Knau status around the source group
+d1db260	2026-08-26T23:35:27+02:00	1	84	81	Make exact source exports first-class preservation assets
+1496896	2026-08-26T23:35:48+02:00	1	11	11	Track repository preservation target for source exports
+6e486e4	2026-08-26T23:36:09+02:00	1	25	0	Move Reg Ii 5 crosswalk to canonical source data
+d29a828	2026-08-26T23:36:20+02:00	1	7	0	Move Reg Ii 4 Knau crosswalk to canonical source data
+1bd2e65	2026-08-26T23:36:28+02:00	1	9	0	Move Reg Ii 3 income crosswalk to canonical source data
+c7273c1	2026-08-26T23:37:37+02:00	1	0	33	Remove source record masquerading as project
+b202ced	2026-08-26T23:37:43+02:00	1	0	13	Remove source record masquerading as project
+e0807a2	2026-08-26T23:37:50+02:00	1	0	29	Remove source record masquerading as project
+80a5f81	2026-08-26T23:37:56+02:00	1	0	22	Remove source record masquerading as project
+a4aab27	2026-08-26T23:38:02+02:00	1	0	9	Move reusable crosswalk out of project namespace
+169526f	2026-08-26T23:38:08+02:00	1	0	29	Remove source record masquerading as project
+df53a75	2026-08-26T23:38:14+02:00	1	0	15	Remove source record masquerading as project
+5cc809f	2026-08-26T23:38:21+02:00	1	0	7	Move reusable crosswalk out of project namespace
+f162746	2026-08-26T23:38:27+02:00	1	0	33	Remove source record masquerading as project
+6c1816a	2026-08-26T23:38:33+02:00	1	0	13	Remove source record masquerading as project
+f61bf9d	2026-08-26T23:38:38+02:00	1	0	25	Move reusable crosswalk out of project namespace
+bd87c2e	2026-08-26T23:38:45+02:00	1	0	4	Remove artificial source-as-project relations
+a4b3f69	2026-08-26T23:39:02+02:00	1	12	0	Separate project source membership from inspection log
+7b54f3c	2026-08-26T23:39:08+02:00	1	0	12	Replace ambiguous source register with source group and inspection log
+3f4ef4c	2026-08-26T23:39:39+02:00	1	14	5	Correct project model and source preservation decision
+b05ca8b	2026-08-26T23:40:20+02:00	1	130	99	Make repository model historian-readable
+ee70732	2026-08-26T23:41:06+02:00	1	131	121	Align maintenance with investigation and source-group model
+3b18cda	2026-08-26T23:41:51+02:00	1	87	34	Align mandatory guardrails with investigation source-group model
+3679737	2026-08-26T23:42:21+02:00	1	1	0	Add project source group template
+e3b30a3	2026-08-26T23:42:39+02:00	1	44	0	Document human-readable corpus source and file model
+3efd3ca	2026-08-26T23:43:09+02:00	1	9	1	Record source-as-project modelling failure
+52999d9	2026-08-26T23:43:56+02:00	1	12	8	Align G1 with source groups and exact export preservation
+220b4ed	2026-08-26T23:44:47+02:00	1	2	2	Align source audit with project source roles
+c2a2530	2026-08-26T23:45:19+02:00	1	17	0	Reserve controlled location for exact original exports
+117a5c2	2026-08-26T23:47:14+02:00	1	15	14	Align authoritative workflow with investigation source groups
+a7c6165	2026-08-26T23:47:32+02:00	1	17	11	Align operational workflow with source-group ownership
+2e0888a	2026-08-26T23:48:05+02:00	1	7	0	Use source-neutral crosswalk name for Reg Ii 4
+7a9d6f7	2026-08-26T23:48:12+02:00	1	0	7	Remove project-specific crosswalk filename from corpus
+33e3cc3	2026-08-26T23:48:37+02:00	1	1	1	Repair Reg Ii 4 crosswalk reference
+565c487	2026-08-26T23:56:54+02:00	1	4	4	Clarify InC rights status for source export preservation
+3ab8355	2026-08-27T00:10:36+02:00	1	34	5	Clarify InC rights status and persistent identifier role
+01c731a	2026-08-27T00:10:48+02:00	1	12	4	Align source-file preservation notes with InC rights statement
+15de0fb	2026-08-27T00:15:55+02:00	0	0	0	Merge pull request #44 from esany/correct-project-source-model
+f3705ef	2026-08-27T00:41:43+02:00	1	10	5	Clarify project-source functions as project-relative relations
+ec4f293	2026-08-27T00:42:10+02:00	1	4	4	Clarify D-012 project-relative source functions
+1f92a60	2026-08-27T00:53:41+02:00	0	0	0	Merge pull request #45 from esany/clarify-project-source-function
+d87286e	2026-08-27T01:39:58+02:00	7	115	33	GOV-M1: establish canonical governing objective
+4135109	2026-08-27T02:19:13+02:00	1	31	0	GOV-M2: add canonical domain requirements index
+de2b087	2026-08-27T02:21:15+02:00	1	10	0	GOV-M2: add scholarly editing requirements
+91509ef	2026-08-27T02:55:58+02:00	1	60	0	Add domain requirements from audits 30-35 (#49)
+5eb6844	2026-08-27T03:00:14+02:00	1	30	0	Add GOV-M3 operational requirements (#50)
+0adcd91	2026-08-27T07:17:23+02:00	10	431	13	Add lean deterministic source contract
+e96259e	2026-08-27T07:26:03+02:00	4	51	26	Correct archival record and protocol source-group semantics
+39d2094	2026-08-27T07:30:18+02:00	1	5	0	Add canonical protocol source units
+4ce92cf	2026-08-27T07:30:37+02:00	1	1	1	Keep act and protocol metadata separate
+d1b4c9e	2026-08-27T07:30:48+02:00	1	5	5	Attach project roles to protocol source units
+4739159	2026-08-27T07:30:53+02:00	1	1	1	Add source unit reference to project template
+5816b9f	2026-08-27T07:31:04+02:00	1	34	1	Extend source contract to protocol units
+2d2aa92	2026-08-27T07:31:34+02:00	1	74	53	Validate and resolve protocol source units
+42d3ec5	2026-08-27T07:31:52+02:00	1	24	47	Document canonical protocol source units
+99ac1ad	2026-08-27T07:32:03+02:00	1	7	6	Add protocol unit to source intake
+578fb28	2026-08-27T07:32:24+02:00	1	11	11	Resolve Knau protocol source units in project status
+8a1b45d	2026-08-27T07:33:08+02:00	0	0	0	Merge pull request #53 from esany/model-protocol-source-unit-00000197
+d5e3ac3	2026-08-27T08:00:33+02:00	23	415	362	Correct archival-act and protocol source hierarchy
+0f2a054	2026-08-27T08:09:46+02:00	7	164	190	Finalize lean archival-act / protocol-source semantics
+736cab5	2026-08-27T08:22:20+02:00	11	205	165	Generalize source containment to part_of
+f560dca	2026-08-27T08:37:30+02:00	14	405	236	Anchor projects to historical source roots (#57)
+7a35e7a	2026-08-27T10:36:51+02:00	1	41	1	Add project source use and evidence contract
+a79b09a	2026-08-27T10:37:10+02:00	1	13	13	Separate source relation loci from source IDs
+1e15024	2026-08-27T10:38:12+02:00	1	164	38	Validate and resolve project source uses and evidence
+c175f40	2026-08-27T10:38:41+02:00	1	1	2	Point new project template to source uses
+4177c01	2026-08-27T10:38:58+02:00	1	1	0	Add project source-use template
+8e36d7d	2026-08-27T10:39:06+02:00	1	1	0	Add project use-evidence template
+86136f5	2026-08-27T10:39:17+02:00	1	0	1	Retire legacy project-source template
+349ac64	2026-08-27T10:41:23+02:00	1	55	0	Add Reg. Ii 5 migration and regression specification
+e854e83	2026-08-27T10:42:32+02:00	1	399	0	Add project source-use contract regressions
+38c6294	2026-08-27T10:42:56+02:00	1	13	0	Run project source-use regression tests in CI
+1b9c9b0	2026-08-27T10:43:43+02:00	1	125	65	Define normalized project source use and evidence lifecycle
+0b76712	2026-08-27T10:46:21+02:00	1	48	3	Operationalize consequence-based change admission
+d3106b3	2026-08-27T10:47:04+02:00	1	5	3	Align project status template with source uses
+ce090d6	2026-08-27T10:47:29+02:00	1	26	13	Document project use and relation-locus contract
+ece870c	2026-08-27T10:48:14+02:00	1	21	3	Record project-use and change-admission decisions
+8a3aa9c	2026-08-27T11:19:27+02:00	1	8	1	Enforce use-evidence source/file identity
+3c2cd22	2026-08-27T11:20:26+02:00	1	14	1	Test use-evidence source/file referentiality
+593ce02	2026-08-27T11:21:28+02:00	1	72	60	Align maintenance with project source-use target
+565fb21	2026-08-27T11:22:39+02:00	1	5	4	Document use-evidence source/file invariant
+9fa048a	2026-08-27T11:23:27+02:00	1	53	39	Align README with project source-use transition
+8608d7b	2026-08-27T11:23:57+02:00	1	2	0	Clarify use-evidence file/source binding
+49d316c	2026-08-27T11:39:10+02:00	1	1	1	Resolve D-016 workflow ownership
+939caee	2026-08-27T11:40:29+02:00	1	34	0	Test canonical change-admission ownership
+711ae98	2026-08-27T11:41:25+02:00	1	8	41	Apply Option B to AI governance
+ef8f443	2026-08-27T11:44:18+02:00	1	6	0	Strengthen governance owner regression
+953554d	2026-08-27T11:46:53+02:00	1	43	1	Make maintenance canonical admission owner
+f75e87c	2026-08-27T11:47:14+02:00	1	4	0	Verify maintenance ownership table
+1631cc9	2026-08-27T12:48:34+02:00	0	0	0	Merge PR #67: Implement Phase 1 project-source use safeguards
+61089af	2026-08-29T20:50:59+02:00	1	74	0	Persist Reg Ii 5 G2 baseline provenance
+e1df28a	2026-08-29T20:51:17+02:00	1	90	0	Persist Reg Ii 5 G2 Checkpoint A inventory
+1ab019f	2026-08-29T20:51:33+02:00	1	1	0	Record G2 baseline inspection provenance
+857df82	2026-08-29T20:52:02+02:00	1	51	20	Advance Reg Ii 5 G2 restart checkpoint
+4b4331e	2026-08-29T20:54:46+02:00	1	44	25	Refine G2 Checkpoint A from direct pixel inspection
+4ad163a	2026-08-29T20:55:18+02:00	1	19	10	Complete baseline-level G2 Checkpoint A inventory
+4cc6ddb	2026-08-29T20:55:33+02:00	1	3	0	temp
+ea28269	2026-08-29T20:55:47+02:00	1	0	3	Remove unused review placeholder
+d3bf137	2026-08-29T20:57:53+02:00	1	1	1	Align G2 inspection log with Checkpoint A
+a61899e	2026-08-29T23:26:53+02:00	1	12	0	Clarify operational ownership and explainability
+2f27b48	2026-08-29T23:28:14+02:00	1	3	1	Add operational ownership UX requirements
+16c732c	2026-08-29T23:30:10+02:00	1	1	1	Restore unchanged philology requirement
+ed98066	2026-08-30T10:28:41+02:00	1	256	0	Document AI role, handoff, engineering and risk analysis
+31844be	2026-08-30T10:50:12+02:00	1	1	1	Record recovered Reg Ii 5 provider file locator
+de38cfa	2026-08-30T10:50:33+02:00	1	4	4	Record observed Reg Ii 5 provider image locators
+474ec7e	2026-08-30T10:51:26+02:00	1	244	0	Add source-contract assurance regression fixtures
+45a1925	2026-08-30T10:52:21+02:00	1	40	26	Persist recovered Reg Ii 5 baseline fingerprints and access state
+404f6f7	2026-08-30T10:53:03+02:00	1	40	0	Cover source crosswalk ownership and locator invariants
+25f48da	2026-08-30T10:53:04+02:00	1	34	5	Complete Reg Ii 5 Checkpoint A source-anchor validation
+ae88827	2026-08-30T10:53:51+02:00	1	54	40	Advance Reg Ii 5 to Checkpoint B after source-anchor PASS
+3fcb783	2026-08-30T10:54:48+02:00	1	340	0	Record Phase A AI engineering control audit
+3fff89e	2026-08-30T20:19:29+02:00	1	39	0	Document controlled private source storage target for Reg Ii 5
+b54deb0	2026-08-30T20:19:56+02:00	1	1	1	Record private storage authorization without claiming binary persistence
+96644f4	2026-08-30T20:20:25+02:00	1	17	5	Record private-repository storage authorization and pending binary ingestion
+23e5274	2026-08-30T20:21:07+02:00	1	16	7	Record private-source storage authorization and pending binary ingestion
+96c12ec	2026-08-30T21:09:39+02:00	1	25	20	docs: finalize Reg Ii 5 fresh-context image access state
+16b5372	2026-08-30T21:10:10+02:00	1	25	11	docs: record tested private issue image access for Reg Ii 5
+505a25b	2026-08-30T21:10:36+02:00	1	4	4	docs: finalize Reg Ii 5 Checkpoint A inspection status
+ee6f836	2026-08-30T22:17:28+02:00	1	241	0	research: persist G2 Checkpoint B semantic-loss mapping
+ae19cd8	2026-08-30T22:18:31+02:00	1	40	21	research: advance G2 restart point to Domain Review after Checkpoint B
+7d20d7b	2026-08-31T01:03:16+02:00	1	250	150	Complete G2 Checkpoint B source-loss mapping
+be003d0	2026-08-31T01:17:22+02:00	1	277	0	Classify G2 Checkpoint B findings under Domain Review
+ac7ce63	2026-08-31T16:58:23+02:00	1	93	112	Synchronize Reg. Ii 5 restart status after Domain Review
+0990399	2026-08-31T17:08:42+02:00	1	171	0	Canonicalize cross-role work-context assurance pattern
+f815fdd	2026-08-31T17:09:24+02:00	1	92	1	Add cross-role assurance review criteria
+72e0fb3	2026-08-31T17:36:57+02:00	1	28	7	Clarify visual evidence readiness and semantic handoff review
+3b9ba59	2026-08-31T17:37:40+02:00	1	4	2	Make handoff assurance semantic and clarify visual readiness
+74ff4be	2026-08-31T22:00:04+02:00	1	7	0	Complete diplomatic coverage for Reg Ii 5 image 135
+e8a7235	2026-08-31T22:01:04+02:00	1	29	38	Advance Reg Ii 5 after 63r source completion
+3322d4f	2026-08-31T22:19:40+02:00	1	26	2	Separate source roles from current research priority
+17129a5	2026-08-31T22:20:05+02:00	1	1	1	Restore owner-grounded Reg Ii 4 comparison focus
+e31a37d	2026-08-31T22:20:32+02:00	1	12	0	Record research-routing drift fixture
+d452cdd	2026-08-31T22:21:30+02:00	1	57	32	Restore Reg Ii 4 comparison as scholarly next action
+9a042cc	2026-08-31T22:22:20+02:00	1	27	5	Guard current work target against inferred priority drift
+1191711	2026-08-31T22:22:55+02:00	1	15	10	Add owner-grounded priority assurance
+cab9311	2026-08-31T22:50:11+02:00	7	159	0	Restore owner-defined Li 3 and Li 4 project audit state
+e43936c	2026-08-31T22:52:56+02:00	3	86	165	Correct Li 5 project authority and preserve audit state
+71f7cc6	2026-08-31T22:54:37+02:00	1	116	89	Make project creation explicitly owner-defined
+3992aa0	2026-08-31T22:55:43+02:00	1	25	14	Record owner authority for project materialization
+b506ed3	2026-08-31T22:56:45+02:00	1	20	12	Extend authority review to project definition
+377049c	2026-09-03T19:34:23+02:00	10	229	112	Salvage owner-authorized Project semantics from final audited state
+0e1b16a	2026-09-03T19:35:14+02:00	10	976	151	Salvage deterministic source contract and restart adapters
+adb754f	2026-09-03T19:36:09+02:00	6	125	45	Salvage final canonical Source File and crosswalk facts
+b9c13d0	2026-09-03T19:36:55+02:00	8	308	88	Salvage loss-checked historical use and witness quarantine
+126112e	2026-09-03T19:37:39+02:00	12	887	1471	Salvage thin governance and evidence-execution surfaces
+e9582a4	2026-09-03T22:53:50+02:00	4	106	13	Operationalize recurring source-critical acceptance guards
+f96af53	2026-09-03T23:29:05+02:00	0	0	0	SALVAGE: reconstruct source/project repair from audited end state (#93)
+0a46f94	2026-09-03T23:36:47+02:00	1	1	1	Activate Reg. Ii 4 Knau research scope
+5a6b8a3	2026-09-03T23:37:07+02:00	1	17	7	Record Reg. Ii 4 Knau restart point
+5a54ac5	2026-09-03T23:38:32+02:00	1	6	3	Align recovery regression with owner-selected Li 4 scope
+f15db22	2026-09-03T23:39:05+02:00	0	0	0	RESEARCH: activate Reg. Ii 4 Knau locus (#94)
+34135d9	2026-09-04T09:26:22+02:00	1	96	0	Document Reg Ii 4 Knau first-reading evidence lock
+9bf6a93	2026-09-04T09:26:32+02:00	1	6	0	Add Reg Ii 4 Knau contamination matrix
+c0bb21f	2026-09-04T09:26:37+02:00	1	1	0	Initialize Reg Ii 4 Knau first-reading table
+3cb10cf	2026-09-04T09:26:58+02:00	1	14	2	Synchronize Reg Ii 4 Knau first-reading restart state
+3001fa5	2026-09-04T09:43:22+02:00	1	21	0	Add Reg Ii 4 image 667 first reading rows
+16332b3	2026-09-04T09:43:59+02:00	1	18	2	Advance Reg Ii 4 Knau cursor after image 667 pass
+3c6519e	2026-09-04T09:44:39+02:00	1	28	9	Update Reg Ii 4 status after image 667 first reading
+7a8b420	2026-09-04T10:06:39+02:00	1	22	0	Reshape Reg Ii 4 first-reading table for human audit
+51a51d4	2026-09-04T10:06:57+02:00	1	53	0	Document Reg Ii 4 transcription information hierarchy
+416e63e	2026-09-04T10:07:25+02:00	1	19	18	Align Knau evidence lock with folio-first transcription layout
+0e08cb1	2026-09-04T10:07:55+02:00	1	10	7	Make Reg Ii 4 first-reading state folio-local and human-first
+e921e8e	2026-09-04T10:08:02+02:00	1	0	22	Remove misleading range-named first-reading file
+af96169	2026-09-04T10:08:50+02:00	1	14	14	Trim transcription row boilerplate to consequential evidence
+07db42b	2026-09-04T10:12:02+02:00	1	78	0	Add parent overview for Reg Ii 4 Knau first reading
+c9a532a	2026-09-04T10:12:19+02:00	1	24	10	Clarify parent-child first-reading hierarchy
+00b653a	2026-09-05T09:02:18+02:00	5	125	114	Reconcile Reg. Ii 4 first-reading operational state
+51f8323	2026-09-05T21:59:37+02:00	3	54	10	Reg. Ii 4: persist fol. 307r first reading
+61cd4b3	2026-09-06T08:56:35+02:00	6	137	22	Reg. Ii 4: complete remaining Knau first reading (#104)
+7f28b4e	2026-09-06T09:05:12+02:00	3	205	54	Reg. Ii 4: complete Knau G2 completeness audit (#105)
+cb06de0	2026-09-06T09:08:38+02:00	2	35	0	Require repository-first persistence for research state
+0b7dd17	2026-09-06T10:09:09+02:00	5	99	78	Reg. Ii 4: complete Knau internal G3 adjudication
+2566491	2026-09-06T10:13:16+02:00	3	82	24	Reg. Ii 4: release Knau for controlled external collation
+1fe00a6	2026-09-06T16:49:36+02:00	2	48	13	Reg. Ii 4: record #99 comparison evidence-access preflight
+6765d03	2026-09-06T17:59:37+02:00	3	55	40	Reg. Ii 4: complete #99 controlled Knau collation
+1156bb4	2026-09-06T19:22:54+02:00	4	17	17	Clarify archival-unit vs visitation source-group levels
+19e57e2	2026-09-06T21:31:26+02:00	6	233	25	Audit DigiRef source context and Ziegenrück dating
+38ec45e	2026-09-07T10:04:35+02:00	5	721	0	Synthesize source-context analyses and learnings
+fb10a30	2026-09-07T18:44:57+02:00	1	1	1	Reconcile Reg. Ii 4 completed active scope
+cc48cd0	2026-09-07T18:45:08+02:00	1	2	0	Persist Reg. Ii 4 historical source uses
+1ca1569	2026-09-07T18:45:21+02:00	1	3	0	Bind Reg. Ii 4 historical uses to exact files
+e62f77b	2026-09-07T18:45:46+02:00	1	4	1	Narrow Reg. Ii 5 G2 provenance quarantine
+31adbc4	2026-09-07T18:46:47+02:00	1	9	7	Reconcile Reg. Ii 4 STATUS with completed workflow
+8c7e3e5	2026-09-07T18:47:26+02:00	1	24	8	Narrow Reg. Ii 5 STATUS provenance boundary
+d87f037	2026-09-07T18:49:09+02:00	1	1	1	Preserve Reg. Ii 4 scope history while clearing current activity
+e207907	2026-09-07T18:52:10+02:00	1	21	3	Update contract regressions for admitted Reg. Ii 4 historical uses
+8fb057e	2026-09-07T18:53:20+02:00	1	16	4	Update recovery regressions for admitted A-R reconciliation
+b1b443b	2026-09-07T18:53:55+02:00	1	19	1	Add project-context regressions for A-R state
+a9b9a8c	2026-09-07T20:59:31+02:00	0	0	0	RECONCILE: apply admitted A-R source-state/provenance corrections (#114)
+50c5f21	2026-09-07T23:13:37+02:00	1	2	2	RESEARCH: activate Reg Ii 5 editorial source scope
+8778fb3	2026-09-07T23:13:50+02:00	1	2	2	RESEARCH: reactivate Reg Ii 5 principal source use
+0ce7d5a	2026-09-07T23:14:00+02:00	1	3	3	RESEARCH: reactivate exact Reg Ii 5 file evidence
+3262958	2026-09-07T23:15:01+02:00	1	135	20	RESEARCH: set Reg Ii 5 editorial restart point
+30a5358	2026-09-07T23:15:48+02:00	1	20	9	TEST: protect Reg Ii 5 editorial restart state
+d493286	2026-09-07T23:17:49+02:00	1	6	4	TEST: accept active Reg Ii 5 principal source use
+94db787	2026-09-07T23:18:32+02:00	1	22	7	TEST: preserve recovery boundaries under Reg Ii 5 reactivation
+b2b136a	2026-09-07T23:20:19+02:00	1	1	1	RESEARCH: link active Reg Ii 5 principal use to #115
+b9e58f8	2026-09-07T23:20:58+02:00	1	15	8	MAINT: reconcile Reg Ii 3 crosswalk restart state
+cbf35f1	2026-09-07T23:21:12+02:00	1	35	0	TEST: guard Reg Ii 3 Neustadt crosswalk restart state
+250d9df	2026-09-07T23:23:40+02:00	1	2	1	CI: expect active Reg Ii 5 principal research use
+8aadaf8	2026-09-07T23:24:36+02:00	0	0	0	RESEARCH: activate Reg. Ii 5 source-exact editorial work (#116)
+fc4b916	2026-09-07T23:24:45+02:00	0	0	0	MAINT: reconcile Reg. Ii 3 Neustadt crosswalk restart state (#117)
+0d74651	2026-09-08T08:27:24+02:00	1	37	24	MAINT: align milestone semantics with canonical project priority
+23f53dc	2026-09-08T08:28:13+02:00	0	0	0	MAINT: align milestone semantics with actual project scheduling (#118)
+f941eb0	2026-09-08T08:56:36+02:00	1	10	0	Document mixed-witness legacy origin
+b845a3f	2026-09-08T10:09:18+02:00	1	9	3	METHOD: separate observed writing differences from hand attribution
+89cb21b	2026-09-08T10:13:09+02:00	1	3	1	REQ: bind roles and dates to evidenced contexts
+731c1ce	2026-09-08T10:13:56+02:00	1	1	1	DOC: fix editorial-layer wording
+40bf491	2026-09-08T10:20:57+02:00	1	32	16	METHOD: clarify scoped gate and completion semantics
+3bd1088	2026-09-08T10:21:19+02:00	1	16	1	TEMPLATE: separate gate state from task completion
+e67f706	2026-09-08T10:21:31+02:00	1	1	1	PROJECT: qualify Reg Ii 4 completed scope wording
+526c8cf	2026-09-08T10:21:42+02:00	1	2	2	PROJECT: qualify historical Reg Ii 4 use completion
+a0340a4	2026-09-08T10:22:58+02:00	1	33	14	STATUS: separate Reg Ii 4 gate maturity from task completion
+e9c4677	2026-09-08T10:24:05+02:00	1	19	8	STATUS: make Reg Ii 5 edition lifecycle explicit
+f679060	2026-09-08T10:26:03+02:00	1	8	6	STATUS: prevent gate inference from Reg Ii 3 source readiness
+8508b6e	2026-09-08T10:26:40+02:00	1	2	2	PROJECT: qualify Reg Ii 4 evidence completion semantics
+3aaab0b	2026-09-08T10:28:16+02:00	1	1	1	PROJECT: retain historical completion marker with qualified semantics
+ced16cd	2026-09-08T10:29:29+02:00	1	1	1	STATUS: retain explicit Reg Ii 5 no-current-transcription guard
+fa96021	2026-09-08T10:30:16+02:00	1	1	1	PROJECT: retain historical-use preservation guard
+9594ed0	2026-09-08T10:31:07+02:00	0	0	0	MAINT: clarify scoped edition-lifecycle and completion semantics (#119)
+d87c48d	2026-09-08T17:34:24+02:00	1	10	8	MAINT: sync Reg Ii 5 restart cursor after WP-0
+adf5c14	2026-09-08T17:36:13+02:00	1	2	1	TEST: follow Reg Ii 5 post-WP-0 cursor
+489a24c	2026-09-08T17:37:06+02:00	1	2	1	TEST: preserve post-WP-0 restart state
+e7df9ee	2026-09-08T17:39:24+02:00	1	15	0	MAINT: guard cross-domain terminology semantics
+c02d672	2026-09-08T17:40:18+02:00	1	49	2	MAINT: add semantic-boundary execution check
+a3c4934	2026-09-08T17:41:17+02:00	1	10	1	MAINT: record semantic-boundary decision
+dc7930e	2026-09-08T17:43:58+02:00	1	1	0	MAINT: require meaning-preserving cross-domain translation
+c5a0bba	2026-09-08T17:45:47+02:00	0	0	0	Merge current main into semantic-boundary maintenance
+7885c18	2026-09-08T17:48:08+02:00	1	12	0	TEST: preserve semantic-boundary owner chain
+ccf83c3	2026-09-08T17:50:33+02:00	0	0	0	MAINT: preserve semantic boundaries across domains and technical wording (#121)
+e26eaf5	2026-09-08T18:40:35+02:00	1	21	0	RESEARCH: start Reg Ii 5 fol. 61v first reading (#115)
+7de1ca3	2026-09-08T20:22:03+02:00	1	28	17	RESEARCH: advance Reg Ii 5 restart state after 61v (#115)
+e79d679	2026-09-08T20:43:33+02:00	1	26	0	RESEARCH: add Reg Ii 5 fol. 62r first reading (#115)
+7c28026	2026-09-08T20:59:13+02:00	1	26	0	RESEARCH: start Reg Ii 5 fol. 62v first reading (#115)
+ebb9090	2026-09-08T21:05:18+02:00	1	12	0	RESEARCH: start Reg Ii 5 fol. 63r first reading (#115)
+d967181	2026-09-08T21:11:01+02:00	1	98	0	RESEARCH: add derived Reg Ii 5 witness view for G2 review (#115)
+2d0d5e5	2026-09-08T21:12:19+02:00	1	56	39	RESEARCH: advance Reg Ii 5 through whole-locus G2 review (#115)
+cfa2320	2026-09-08T21:15:41+02:00	1	43	0	RESEARCH: begin Reg Ii 5 internal G3 review (#115)
+b564425	2026-09-08T21:37:40+02:00	1	1	1	RESEARCH: refine Reg Ii 5 62v internal reading (#115)
+9fd6c72	2026-09-08T21:38:18+02:00	1	48	15	RESEARCH: complete Reg Ii 5 internal G3 review (#115)
+4db4e44	2026-09-08T21:40:10+02:00	1	94	40	RESEARCH: revalidate Reg Ii 4/5 Knau controlled collation (#115)
+969c473	2026-09-08T21:40:59+02:00	1	1	1	RESEARCH: refresh derived Reg Ii 5 witness view (#115)
+6a5b522	2026-09-08T21:41:57+02:00	1	1	1	RESEARCH: finalize Reg Ii 5 #115 active scope (#115)
+c9a92f8	2026-09-08T21:42:13+02:00	1	2	2	RESEARCH: archive completed Reg Ii 5 #115 source uses (#115)
+64d3690	2026-09-08T21:42:23+02:00	1	2	2	RESEARCH: archive completed Reg Ii 5 #115 evidence uses (#115)
+8218f69	2026-09-08T21:43:36+02:00	1	98	98	RESEARCH: finalize Reg Ii 5 #115 G3/G4 state (#115)
+77b9efc	2026-09-08T21:45:59+02:00	1	56	54	RESEARCH: synchronize Reg Ii 4 G4 state after #115
+3884fd2	2026-09-08T23:04:00+02:00	1	13	1	MAINTENANCE: qualify legacy palaeography learnings
+f4220c8	2026-09-08T23:04:14+02:00	1	15	0	MAINTENANCE: mark Reg Ii 5 palaeography artifacts as legacy
+daed4df	2026-09-08T23:04:25+02:00	1	9	0	MAINTENANCE: mark Reg Ii 5 apparatus as recovery evidence
+c61def0	2026-09-08T23:04:35+02:00	1	11	0	MAINTENANCE: expose current Reg Ii 5 transcription ownership
+256a4ef	2026-09-09T00:15:23+02:00	4	33	38	MAINT: synchronize #115 completion regressions (#125)
+2184e21	2026-09-09T00:23:34+02:00	8	202	142	RESEARCH: activate #123 internal Reg Ii 5 relecture (#126)
+ba3687e	2026-09-09T07:18:09+02:00	1	79	0	RESEARCH #123: establish finite WP-R1 target matrix
+8e627b4	2026-09-09T07:19:33+02:00	1	22	21	RESEARCH #123: advance restart cursor to WP-R2
+38877c9	2026-09-09T07:21:07+02:00	1	5	3	TEST: follow #123 cursor from WP-R1 to WP-R2
+1b85a86	2026-09-09T07:21:46+02:00	1	4	3	TEST: preserve restart assurance after WP-R1 completion
+5ed7fa3	2026-09-09T07:22:15+02:00	0	0	0	RESEARCH #123: complete WP-R1 target matrix (#127)
+91f4a74	2026-09-09T07:55:24+02:00	1	55	0	RESEARCH #123: record cluster A readiness and negative comparator search
+6a7987d	2026-09-09T07:56:48+02:00	1	38	25	RESEARCH #123: advance restart cursor after cluster A negative search
+256ae5b	2026-09-09T07:58:00+02:00	1	5	1	TEST: track cluster-specific readiness after #123 cluster A
+fd31756	2026-09-09T07:58:56+02:00	0	0	0	RESEARCH #123: complete cluster A internal comparator path (#128)
+3bda18b	2026-09-09T10:46:04+02:00	1	2	2	RESEARCH #123: promote initial h in cluster B targets
+6b3e26c	2026-09-09T10:46:32+02:00	1	2	2	RESEARCH #123: regenerate derived view after cluster B
+f7847d4	2026-09-09T10:48:06+02:00	1	142	13	RESEARCH #123: record cluster B and notation protocol
+dcd6603	2026-09-09T10:49:44+02:00	1	45	39	RESEARCH #123: advance restart cursor after cluster B
+8eab9e7	2026-09-09T10:54:11+02:00	1	7	7	TEST #123: sync context fixture after cluster B
+ad9783e	2026-09-09T10:55:04+02:00	1	4	3	TEST #123: sync recovery fixture after cluster B
+747be23	2026-09-09T10:56:00+02:00	0	0	0	RESEARCH #123: complete cluster B and persist notation protocol (#130)
+f07fe29	2026-09-09T17:54:54+02:00	1	80	0	RESEARCH #123: persist cluster C notation result
+53f8e36	2026-09-09T17:56:56+02:00	1	40	20	STATUS #123: advance restart cursor after cluster C
+4243ff7	2026-09-09T17:59:08+02:00	1	4	4	TEST #123: sync project context after cluster C
+b129f57	2026-09-09T18:00:05+02:00	1	2	1	TEST #123: sync recovery fixture after cluster C
+898adc0	2026-09-09T18:00:46+02:00	0	0	0	RESEARCH #123: canonically persist cluster C notation result (#131)
+22ece30	2026-09-09T18:27:13+02:00	1	1	1	RESEARCH #123: promote deleted pfarrern at 61v-L16
+c91f86a	2026-09-09T18:27:43+02:00	1	1	1	RESEARCH #123: promote deleted Knawe at 62r-L18
+2512f71	2026-09-09T18:28:10+02:00	1	2	2	RESEARCH #123: regenerate derived view after cluster D
+82d09b8	2026-09-09T18:30:55+02:00	1	82	1	RESEARCH #123: complete cluster D cancellation relecture
+6d1e00b	2026-09-09T18:32:55+02:00	1	44	30	RESEARCH #123: advance STATUS after cluster D
+feb5971	2026-09-09T18:34:04+02:00	1	4	4	TEST: sync project context after cluster D
+479b930	2026-09-09T18:36:56+02:00	1	2	1	TEST: sync recovery assurance after cluster D
+9660269	2026-09-09T18:37:28+02:00	0	0	0	RESEARCH #123: complete cluster D cancellation relecture (#132)
+0681920	2026-09-09T19:53:17+02:00	6	110	27	RESEARCH #123: complete E1 partial grapheme relecture (#133)
+326240d	2026-09-09T20:07:24+02:00	6	104	28	RESEARCH #123: complete E2 bounded relecture (#134)
+a5c91ef	2026-09-09T20:23:22+02:00	4	70	25	RESEARCH #123: complete E3 notation relecture (#135)
+21c52e7	2026-09-09T20:42:42+02:00	6	67	24	RESEARCH #123: complete E4 L17 target-pixel relecture (#136)
+51f2169	2026-09-09T21:35:58+02:00	1	5	5	RESEARCH #123: persist E5 target-supported 62r readings
+afd66b2	2026-09-09T21:36:21+02:00	1	2	2	RESEARCH #123: regenerate derived view after E5
+88d002c	2026-09-09T21:39:43+02:00	1	95	0	RESEARCH #123: audit E5 target-pixel relecture
+8c10b37	2026-09-09T21:42:38+02:00	1	32	20	RESEARCH #123: advance STATUS from E5 to F1
+be209cd	2026-09-09T21:46:35+02:00	1	3	3	TEST #123: align project-context fixture with completed E5
+f340877	2026-09-09T21:47:10+02:00	1	1	1	TEST #123: align recovery fixture with completed E5
+0583665	2026-09-09T21:47:41+02:00	0	0	0	RESEARCH #123: complete E5 62r-L19–L23 target-pixel relecture (#137)
+c2967c7	2026-09-10T08:59:46+02:00	1	375	0	TOOLING #139: add bounded read-only evidence packet prototype
+06cd4fd	2026-09-10T09:00:18+02:00	1	145	0	TEST #139: cover packet phase separation and controls
+3d4ce84	2026-09-10T09:02:06+02:00	1	16	9	FIX #139: resolve both witness line-ref conventions
+045ee83	2026-09-10T09:02:29+02:00	1	2	2	FIX #139: assert native Reg. Ii 4 line refs
+d46f6ec	2026-09-10T09:03:18+02:00	0	0	0	TOOLING #139: add bounded read-only evidence packet prototype (#144)
+361ef61	2026-09-10T11:14:47+02:00	1	39	149	TOOLING #145: isolate Reg Ii 5 packet default scope
+f13d298	2026-09-10T11:15:17+02:00	1	45	29	TEST #145: enforce Reg Ii 5-only packet baseline
+6e5fa07	2026-09-10T11:16:12+02:00	0	0	0	Merge pull request #146 from esany/tooling/145-regii5-packet-scope-repair
+2645b25	2026-09-10T11:55:20+02:00	1	210	0	TOOLING #142: add evidence packet context benchmark
+02771e4	2026-09-10T11:55:39+02:00	1	98	0	TEST #142: cover packet context benchmark boundaries
+34c7568	2026-09-10T11:56:46+02:00	1	6	4	TEST #142: narrow benchmark implementation guard
+c6772a6	2026-09-10T11:57:52+02:00	1	127	0	RESEARCH SUPPORT #142: record first packet context benchmark
+5e3ecc6	2026-09-10T11:59:39+02:00	0	0	0	Merge pull request #147 from esany/tooling/142-packet-context-benchmark
+2802e66	2026-09-10T12:38:11+02:00	1	389	0	TOOLING #141: add explicit same-source visual retrieval prototype
+fa04147	2026-09-10T12:38:26+02:00	1	70	0	TEST #141: guard same-source visual retrieval boundaries
+a666c02	2026-09-10T12:39:59+02:00	1	183	0	RESEARCH SUPPORT #141: record same-source visual retrieval spike
+1756916	2026-09-10T12:41:08+02:00	0	0	0	Merge pull request #148 from esany/tooling/141-same-source-visual-retrieval
+c75cc0a	2026-09-10T14:54:20+02:00	1	268	0	RESEARCH #140: persist isolated local HTR generator benchmark
+72b353f	2026-09-10T14:56:40+02:00	0	0	0	Merge pull request #149 from esany/tooling/140-local-htr-benchmark
+76e0177	2026-09-10T15:04:46+02:00	1	127	0	RESEARCH #150: compare isolated Phase-2 candidate generators
+d8ba1d6	2026-09-10T15:05:34+02:00	0	0	0	Merge pull request #152 from esany/research/150-phase2-generator-comparison
+abb6937	2026-09-10T22:16:52+02:00	1	47	21	MAINT #123: consolidate F1/F2 restart state
+4e8a876	2026-09-10T22:20:06+02:00	1	144	0	MAINT #123: consolidate F1/F2 research audit
+3f5a2c9	2026-09-10T22:24:22+02:00	1	3	3	TEST #123: sync Reg II 5 restart assertions to F3
+28c651b	2026-09-10T22:25:06+02:00	1	1	1	TEST #123: sync recovery checkpoint assertion to F3
+8dae069	2026-09-10T22:25:38+02:00	0	0	0	Merge pull request #153 from esany/maintenance/123-consolidate-f1-f2
+32b7f18	2026-09-11T09:07:37+02:00	1	8	8	RESEARCH #123: promote target-supported F3 readings
+3aa43ba	2026-09-11T09:08:02+02:00	1	8	8	RESEARCH #123: regenerate derived view after F3
+678ddb6	2026-09-11T09:13:34+02:00	1	1	1	RESEARCH #123: complete F3 L13 target reading
+aad73e6	2026-09-11T09:14:00+02:00	1	1	1	RESEARCH #123: complete derived F3 view
+9b567ad	2026-09-11T09:15:06+02:00	0	0	0	Merge PR #154: complete F3 62v-L12-L19
+03f8557	2026-09-11T10:25:48+02:00	1	57	1	MAINT #123: consolidate F3 audit and hand off F4
+a240611	2026-09-11T10:27:39+02:00	1	35	22	MAINT #123: sync F3 state and F4 restart
+391aef9	2026-09-11T10:31:47+02:00	1	3	3	TEST #123: sync Reg Ii 5 restart assertions to F4
+da9ecd6	2026-09-11T10:32:29+02:00	1	1	1	TEST #123: sync recovery restart assertion to F4
+ad17389	2026-09-11T10:32:59+02:00	0	0	0	Merge PR #155: sync F3 audit and F4 restart state
+ae4d8f8	2026-09-11T12:42:52+02:00	1	5	5	RESEARCH #123: promote bounded F4 target islands
+50cc635	2026-09-11T12:43:13+02:00	1	5	5	RESEARCH #123: regenerate F4 derived witness view
+f4dc51b	2026-09-11T12:44:47+02:00	0	0	0	Merge PR #156: bounded F4 target-island promotions
+251cfc9	2026-09-11T13:19:37+02:00	3	41	27	MAINT #123: close F4 and advance restart to G
+34a8f55	2026-09-12T00:24:16+02:00	6	119	34	RESEARCH #123: resolve G display heading and advance H
+15c225b	2026-09-12T10:39:56+02:00	12	178	123	RESEARCH #123: resolve H and close bounded internal relecture
+c77a88e	2026-09-12T21:06:13+02:00	1	207	0	RESEARCH: persist 61v–63r source-understanding synthesis (#161)
+829ffa2	2026-09-12T21:08:09+02:00	1	425	0	ANALYSIS #162: audit parallel-chat coordination transport
+d4ebdb0	2026-09-12T22:16:07+02:00	1	21	19	MAINTENANCE #165: correct cross-folio unit boundary
+5e1e093	2026-09-12T22:16:52+02:00	0	0	0	Merge pull request #167 from esany/maintenance/165-cross-folio-unit-boundary
+530c847	2026-09-12T22:19:41+02:00	1	1	1	RESEARCH #166: activate bounded cross-folio scope
+4a2ce3a	2026-09-12T22:19:57+02:00	1	2	2	RESEARCH #166: reactivate principal Source use
+56fed10	2026-09-12T22:20:10+02:00	1	2	2	RESEARCH #166: reactivate principal evidence binding
+1665651	2026-09-12T22:23:53+02:00	1	39	35	RESEARCH #166: synchronize canonical restart state
+685c5a4	2026-09-12T22:28:15+02:00	1	4	4	RESEARCH #166: keep activation diff current-state only
+b7ddfb9	2026-09-12T22:30:03+02:00	1	19	17	TEST #166: update Project-context regression for active scope
+0f5d1fb	2026-09-12T22:30:51+02:00	1	8	6	TEST #166: update current Source-use state regression
+aaec19d	2026-09-12T22:32:24+02:00	1	15	11	TEST #166: update recovery assurance for active principal scope
+529efd3	2026-09-12T22:33:10+02:00	1	2	2	CI #166: align real-data resolver with active principal use
+5d8071d	2026-09-12T22:33:53+02:00	0	0	0	Merge pull request #168 from esany/research/166-activate-cross-folio-unit
+55bf978	2026-09-13T09:49:09+02:00	1	59	0	RSE #169: prevent support-dominance before first scholarly action
+2bca24f	2026-09-13T20:44:21+02:00	1	70	51	RESEARCH #165: reconcile analysis-unit framing
+1d5c3b3	2026-09-13T20:45:07+02:00	1	40	0	RESEARCH #165: record analysis-unit and review learnings
+b147178	2026-09-13T20:45:21+02:00	1	1	1	RESEARCH #165: neutralize active scope framing
+dd63aba	2026-09-13T20:45:36+02:00	1	3	3	RESEARCH #165: align source-use framing
+256778d	2026-09-13T20:46:06+02:00	1	2	2	RESEARCH #165: align use-evidence framing
+0919bc8	2026-09-13T20:46:59+02:00	1	129	375	RESEARCH #165: reconcile and lean current STATUS
+c1d52f0	2026-09-13T20:47:35+02:00	1	1	1	RESEARCH #165: preserve stable use invariants while correcting scope
+3e9d6fb	2026-09-13T20:48:00+02:00	1	20	20	TEST #165: assert neutral scope and real blocker invariants
+becd2cf	2026-09-13T20:48:00+02:00	1	360	0	DOC #162: consolidate parallel-chat human-control findings
+4be3dce	2026-09-13T20:48:38+02:00	1	22	14	TEST #165: protect corrected restart invariants
+e3f6315	2026-09-13T20:51:49+02:00	1	4	4	TEST #165: avoid typographic range-string coupling
+1749186	2026-09-13T20:52:39+02:00	1	2	2	TEST #165: avoid typographic range-string coupling
+84ab561	2026-09-13T20:53:36+02:00	0	0	0	RESEARCH #165: reconcile analysis-unit framing and next-phase state
+3bbbca8	2026-09-13T20:55:30+02:00	1	1	1	MAINT #165: synchronize closeout restart state
+ea9095a	2026-09-13T20:56:12+02:00	1	24	24	MAINT #165: make post-closeout STOP canonical
+06b7238	2026-09-13T20:56:30+02:00	1	1	1	MAINT #165: close reconciliation in source-use state
+aa50e00	2026-09-13T20:56:47+02:00	1	1	1	MAINT #165: close reconciliation in use-evidence state
+3c2e791	2026-09-13T20:57:19+02:00	1	5	4	TEST #165: assert post-closeout STOP state
+6214a6e	2026-09-13T20:58:05+02:00	1	5	3	TEST #165: assert post-closeout recovery state
+833da35	2026-09-13T20:58:49+02:00	0	0	0	MAINT #165: synchronize post-closeout STOP state
+4aaab17	2026-09-13T21:14:47+02:00	1	1	1	RSE #169: separate #166 resource state from task authority
+e6f37c6	2026-09-13T21:15:01+02:00	1	2	2	RSE #169: keep #166 resource unavailability action-local
+04a77bd	2026-09-13T21:15:14+02:00	1	2	2	RSE #169: separate evidence availability from blocker authority
+1dde7c4	2026-09-13T21:15:51+02:00	1	12	0	RSE #169: prevent resource state from manufacturing task authority
+5a22c3f	2026-09-13T21:16:16+02:00	1	2	0	RSE #169: keep access state separate from task authority
+79d5899	2026-09-13T21:17:24+02:00	1	53	13	RSE #169: require dependency provenance before blocker or STOP semantics
+e8a0ec7	2026-09-13T21:18:09+02:00	1	60	67	RSE #169: remove inferred STOP from Reg. Ii 5 resource state
+6361091	2026-09-13T21:19:22+02:00	1	13	1	RSE #169: record resource-state authority learning
+3e76228	2026-09-13T21:20:02+02:00	1	15	7	RSE #169: regress resource-state authority boundary
+efccc5a	2026-09-13T21:21:09+02:00	1	17	10	RSE #169: stop regressing inferred resource blockers
+865f84a	2026-09-13T21:21:39+02:00	1	13	0	RSE #169: protect resource-state authority owner chain
+a9678df	2026-09-13T21:24:37+02:00	1	9	7	RSE #169: decouple Project STATUS from RSE issue lifecycle
+7a72387	2026-09-13T21:25:10+02:00	0	0	0	RSE #169: separate resource state from blocker and roadmap authority
+69c5e99	2026-09-13T21:53:27+02:00	1	29	13	RESEARCH #166: refine G4-008 paragraph mapping
+0089364	2026-09-13T21:54:17+02:00	1	118	57	RESEARCH #166: adjudicate 62r/62v relation and close A1
+52292a6	2026-09-13T21:54:28+02:00	1	1	1	RESEARCH #166: close active scope after relation adjudication
+997644e	2026-09-13T21:54:46+02:00	1	2	2	RESEARCH #166: close principal use and update G4-008 relation
+f18e441	2026-09-13T21:55:04+02:00	1	2	2	RESEARCH #166: close evidence bindings after adjudication
+5b865d9	2026-09-13T21:55:38+02:00	1	85	109	RESEARCH #166: persist terminal project restart state
+181bd89	2026-09-13T21:56:12+02:00	1	25	31	TEST #166: assert completed relation state without auto-next scope
+eb5102b	2026-09-13T21:58:00+02:00	1	32	34	TEST #166: align recovery assurance with terminal state
+1c2a118	2026-09-13T21:59:59+02:00	1	1	1	DOC #166: keep legacy evidence wording explicit
+03e6be6	2026-09-13T22:01:01+02:00	1	11	8	TEST #166: make source contract reflect completed use lifecycle
+da33bd3	2026-09-13T22:01:55+02:00	1	2	2	CI #166: resolve completed historical use state
+f79b69e	2026-09-13T22:03:58+02:00	0	0	0	Merge pull request #176 from esany/research/166-relation-adjudication
+1448372	2026-09-14T08:46:05+02:00	2	636	0	AUDIT: persist research-framing and transdisciplinary review
+3187135	2026-09-14T08:47:45+02:00	0	0	0	Merge pull request #177 from esany/audit/research-framing-transdisciplinary-2026-09-14
+0f2435d	2026-09-14T09:06:15+02:00	1	278	0	AUDIT: persist research-system problem landscape
+7dbb022	2026-09-14T09:06:46+02:00	1	12	0	DOC: expose cross-project research-system problem landscape
+c29c8c8	2026-09-14T09:08:12+02:00	0	0	0	Merge pull request #178 from esany/audit/research-system-problem-landscape-2026-09-14
+1cc86f9	2026-09-14T09:35:25+02:00	1	391	0	CONCEPT: persist executable transdisciplinary research-system idea
+9230b93	2026-09-14T09:35:53+02:00	1	3	2	DOC: expose non-normative research-system concept idea
+f04bf07	2026-09-14T09:36:30+02:00	0	0	0	Merge pull request #179 from esany/concept/executable-transdisciplinary-research-system-2026-09-14
+1266940	2026-09-14T09:56:48+02:00	1	383	1	AUDIT: persist level-2 needs and requirements analysis
+3fa00c5	2026-09-14T09:57:44+02:00	0	0	0	AUDIT: persist second-level needs and requirements analysis
+602153c	2026-09-14T10:06:27+02:00	1	257	0	CONCEPT: add pre-synthesis competency analysis programme
+ec923f6	2026-09-14T10:07:12+02:00	0	0	0	Merge pull request #181 from esany/concept/pre-synthesis-competency-analysis-2026-09-14
+2ee84c6	2026-09-14T14:16:03+02:00	1	628	0	RESEARCH: persist pre-synthesis empirical research programme
+7d98486	2026-09-14T14:16:34+02:00	1	3	2	RESEARCH: expose pre-synthesis evidence programme
+3605453	2026-09-14T14:18:04+02:00	0	0	0	Merge pull request #187 from esany/research/pre-synthesis-research-plan-2026-09-14
+4a9f7a1	2026-09-14T14:35:20+02:00	1	476	0	RESEARCH: freeze #184 shared-fixture primary findings
+c347b0f	2026-09-14T14:39:06+02:00	1	505	0	RESEARCH: freeze #185 cross-source findings
+d8ea1c3	2026-09-14T14:41:16+02:00	0	0	0	Merge pull request #188 from esany/research/184-shared-fixture-evidence-2026-09-14
+de1953f	2026-09-14T14:41:45+02:00	0	0	0	Merge main into #185 cross-source research branch
+9a579fb	2026-09-14T14:42:20+02:00	0	0	0	Merge pull request #189 from esany/research/185-cross-source-evidence-2026-09-14
+110b8a0	2026-09-14T14:47:04+02:00	1	688	0	RESEARCH: integrate findings and challenge concept candidate
+d8af9fb	2026-09-14T14:48:10+02:00	0	0	0	Merge pull request #190 from esany/research/186-integration-concept-challenge-2026-09-14
+8f7cccd	2026-09-14T16:25:44+02:00	1	898	0	RESEARCH: persist final multi-question generation evidence
+3df6157	2026-09-14T16:26:30+02:00	0	0	0	Merge pull request #192 from esany/research/final-multi-question-generation-2026-09-14
+9f85fe5	2026-09-14T16:37:43+02:00	1	58	0	RESEARCH: record final closure extension
+e238f22	2026-09-14T16:38:09+02:00	1	7	3	RESEARCH: expose closed evidence chain
+ab5a492	2026-09-14T16:38:51+02:00	0	0	0	Merge pull request #193 from esany/research/close-pre-synthesis-research-history-2026-09-14
+c87130b	2026-09-14T17:26:18+02:00	1	225	0	DOC #162: capture ChatGPT Project coordination bootstrap
+43944fb	2026-09-14T17:30:21+02:00	1	337	0	CONCEPT: preserve post-research synthesis approaches and anti-regression checks
+26bd2ce	2026-09-14T17:30:57+02:00	1	1	0	DOC: link post-research synthesis concept approaches
+4429f15	2026-09-14T17:31:41+02:00	0	0	0	CONCEPT: preserve post-Research synthesis approaches and anti-regression checks
+71e67f5	2026-09-14T17:31:50+02:00	1	156	0	DOC #162: capture global ChatGPT coordination bootstrap
+4318e25	2026-09-14T17:32:45+02:00	0	0	0	DOC #162: capture global ChatGPT coordination bootstrap
+29b7ac7	2026-09-14T17:33:56+02:00	1	1	0	temporary placeholder
+5b3a2bd	2026-09-14T17:34:11+02:00	1	0	1	CLEANUP: remove accidental temporary placeholder
+3662f0b	2026-09-14T17:35:38+02:00	1	9	3	CONCEPT: incorporate Slack feedback on owner-gap and local guardrails
+334187a	2026-09-14T17:36:24+02:00	0	0	0	Merge pull request #197 from esany/review/slack-feedback-stop-rule-2026-09-14
+cbf2660	2026-09-14T17:53:02+02:00	1	579	0	SYNTHESIS: persist bounded post-Research capability requirement disposition
+7964a9d	2026-09-14T17:53:36+02:00	1	2	1	DOCS: expose completed post-Research synthesis in reading path
+da8800e	2026-09-14T17:54:12+02:00	0	0	0	Merge pull request #199 from esany/synthesis/post-research-disposition-2026-09-14
+f2dc235	2026-09-14T19:59:21+02:00	1	196	0	ANALYSIS: reconcile construction-site landscape with post-Research synthesis
+020511b	2026-09-14T19:59:57+02:00	1	1	0	DOCS: link post-Research landscape reconciliation
+14f56da	2026-09-15T18:42:55+02:00	1	4	0	METHOD: refine pre-priority research-direction control
+fe28d57	2026-09-15T18:44:12+02:00	1	9	0	DECISION: record pre-priority research-direction control
+082f5e9	2026-09-15T18:45:35+02:00	1	2	2	DOCS: refresh post-Research orientation after #203/#204
+ede825f	2026-09-15T18:46:13+02:00	1	85	45	DOCS: reconcile landscape orientation after #203/#204
+f291154	2026-09-15T19:12:07+02:00	1	29	18	DOCS: reconcile Arc B D-016 result review
+21553e3	2026-09-15T20:27:15+02:00	1	1	0	tmp
+8ac62bd	2026-09-15T20:27:26+02:00	1	0	1	CLEANUP: remove accidental placeholder
+4e3e1a7	2026-09-15T20:27:35+02:00	1	1	0	tmp2
+9d128a7	2026-09-15T20:27:47+02:00	1	0	1	CLEANUP: remove accidental placeholder
+cdcfb9d	2026-09-16T07:57:23+02:00	1	294	0	ANALYSIS: persist programme continuity / local-stop audit
+5b388fd	2026-09-16T07:58:05+02:00	1	158	107	RECONCILE: distinguish Arc-B stop from programme continuation
+f1df8ec	2026-09-16T07:58:38+02:00	1	11	3	DOCS: expose current programme navigation and continuity audit
+55b34ac	2026-09-16T08:46:17+02:00	1	417	0	SYNTHESIS: persist whole-map research-system programme disposition
+8b69747	2026-09-16T08:48:35+02:00	1	51	124	DOCS: close continuity audit routing after #207 synthesis
+3bea6cd	2026-09-16T08:49:09+02:00	1	69	119	DOCS: route post-Research landscape through completed #207 synthesis
+109a3da	2026-09-16T08:49:39+02:00	1	18	11	DOCS: expose completed #207 programme synthesis
+85e947d	2026-09-16T08:50:27+02:00	1	22	41	DOCS: keep README current after P3A closeout
+fcfcbb9	2026-09-16T19:57:37+02:00	1	129	0	REQ: resolve Route A programme continuity at P2
+69100ee	2026-09-16T19:58:45+02:00	1	4	1	DOCS: return programme cursor after Route A P2
+3cadf1c	2026-09-16T20:19:28+02:00	1	230	0	DOCS: persist bounded programme-continuity P3B concept
+1e37f7d	2026-09-16T20:20:23+02:00	1	4	3	DOCS: expose Route A Concept review cursor
+203baa2	2026-09-16T20:35:08+02:00	1	15	0	METHOD: require programme transition reconciliation
+a584cf2	2026-09-16T20:35:48+02:00	1	2	0	METHOD: invoke programme reconciliation on transitions
+4891ab5	2026-09-16T20:36:35+02:00	1	130	0	REVIEW: close Route A implementation
+b8bf91f	2026-09-16T20:37:28+02:00	1	3	2	DOCS: expose Route A terminal programme state
+4d176a9	2026-09-16T23:14:46+02:00	1	2	2	DOCS: expose Route B audit cursor
+4b6521d	2026-09-16T23:32:50+02:00	1	153	0	REQUIREMENTS: resolve Route B promotion-control properties
+b2a32c2	2026-09-16T23:33:59+02:00	1	265	0	CONCEPT: select smallest Route B promotion protection
+99cdfd5	2026-09-16T23:34:43+02:00	0	0	0	REQUIREMENTS/CONCEPT: resolve Route B promotion protection
+8273ff2	2026-09-16T23:35:58+02:00	1	3	1	DOCS: expose Route B Concept admission cursor
+855023f	2026-09-16T23:37:17+02:00	0	0	0	DOCS: expose Route B Concept admission cursor
+4a63b36	2026-09-17T07:12:40+02:00	1	91	0	ADMISSION: authorize bounded Route B protection implementation
+b87255b	2026-09-17T07:13:22+02:00	0	0	0	ADMISSION: authorize bounded Route B protection implementation
+5e8c6aa	2026-09-17T07:14:38+02:00	1	2	1	DOCS: expose Route B admitted prerequisite cursor
+6a02c83	2026-09-17T07:15:07+02:00	0	0	0	DOCS: expose Route B admitted prerequisite cursor
+78672ac	2026-09-17T07:35:49+02:00	1	85	0	DECISION: defer Route B at Free/private platform boundary
+dc9ebbc	2026-09-17T07:36:14+02:00	1	153	0	REVIEW: conclude research-system programme STOP
+1833780	2026-09-17T07:36:47+02:00	1	8	4	DOCS: expose research-system programme STOP
+0f3fa79	2026-09-17T07:37:28+02:00	0	0	0	Merge pull request #222 from esany/programme/route-b-defer-stop-2026-09-17
+7eb7001	2026-09-17T11:41:51+02:00	1	46	0	LEARNINGS: capture direction, pilot and recovery failures
+81a9be5	2026-09-17T11:42:37+02:00	0	0	0	Merge PR #223: capture pilot direction and recovery learnings
+e5627b4	2026-09-17T13:47:28+02:00	1	1	1	PILOT: make unset scope non-generative
+c78821e	2026-09-17T13:47:52+02:00	1	63	0	PILOT: freeze post-166 routing regression criteria
+d56c49f	2026-09-17T21:57:32+02:00	0	0	0	Merge pull request #224 from esany/pilot/post166-routing-regression-2026-09-17
+2d22a9e	2026-09-17T22:00:25+02:00	1	43	0	Record post-#166 regression execution result
+06b636d	2026-09-17T22:45:23+02:00	1	84	0	docs(regii5): preserve human-need to outcome control-gap learning
+782afa3	2026-09-17T22:45:52+02:00	1	131	0	requirements: preserve need-to-outcome continuity problem frame
+9b1fab5	2026-09-17T22:53:47+02:00	1	309	0	audit systemic operationalization gap
+240f2b9	2026-09-17T23:12:11+02:00	1	158	0	REQ: start #225 phase 0/1 capability and ownership consolidation
+b296caf	2026-09-17T23:14:15+02:00	1	133	67	REQ: advance #227 phase 0 capability map and requirements gaps
+d26792e	2026-09-17T23:44:35+02:00	1	86	0	PLAN: persist next Phase-1 traceability and falsification work block
+fe37ba7	2026-09-18T00:13:12+02:00	1	259	0	REQ: complete #225 Phase 0/1 integration traceability and falsification
+abd7b0b	2026-09-18T00:23:32+02:00	1	226	0	REQ: complete phase-independent outcome-continuity Generic-Fit review
+e15cec7	2026-09-18T07:11:03+02:00	1	265	0	DESIGN: start #225 Phase 2 integrated concept comparison
+e6a9242	2026-09-18T07:12:35+02:00	1	81	0	DESIGN: begin #225 Phase 2 concept comparison
+69e024e	2026-09-18T10:12:13+02:00	1	159	0	PLAN: add holistic #225 Phase 2 execution block
+38fb2e5	2026-09-18T10:17:18+02:00	1	262	0	DESIGN: complete #225 Phase 2 and prepare C1R D-016 surface
+5fe70f6	2026-09-18T11:00:05+02:00	3	511	0	#225 Phase 4: add read-only C1R outcome context (#228)
+ff3ec2a	2026-09-18T11:43:13+02:00	1	660	0	AUDIT: test project maturity model against repository truth
+2193cb9	2026-09-18T20:15:51+02:00	1	537	0	ANALYSIS: define iteration-boundary research decision operationalization
+357dacb	2026-09-18T21:18:58+02:00	1	198	0	REQ: clarify human need for whole-project maturity transparency
+a2b89dc	2026-09-18T21:19:01+02:00	1	3	0	ANALYSIS: correct research-direction scope drift
+1479479	2026-09-18T21:27:44+02:00	1	6	5	REQ: tighten project-level maturity semantics
+c53e9f0	2026-09-18T21:27:46+02:00	1	311	0	AUDIT: critically review maturity transparency work
+54a9658	2026-09-18T21:34:20+02:00	1	474	0	ANALYSIS: add human-need reconstruction prompt
+5e199d2	2026-09-18T21:36:59+02:00	1	1015	0	REQ: reconstruct maturity progress human need
+ae919bf	2026-09-18T21:46:12+02:00	1	52	0	REQ: clarify maturity analysis is non-blocking
+9916ed6	2026-09-18T21:54:37+02:00	1	3	1	CLEANUP: supersede narrow decision-analysis branch
+13ec2d5	2026-09-18T21:54:45+02:00	1	3	1	CLEANUP: fix maturity review routing
+d167573	2026-09-18T21:54:48+02:00	1	3	1	CLEANUP: mark maturity audit non-blocking
+1be3032	2026-09-18T21:55:16+02:00	1	3	1	CLEANUP: close completed analysis prompt
+1c7f9ee	2026-09-18T21:55:19+02:00	1	3	1	CLEANUP: mark maturity reconstruction current non-blocking reference
+407fbfb	2026-09-18T21:55:22+02:00	1	1	1	CLEANUP: clarify maturity branch is optional decision support
+22531e7	2026-09-18T22:16:25+02:00	1	103	0	LEARNING: distinguish human need from symptom-driven redirection
+cc87174	2026-09-19T08:59:42+02:00	1	73	0	LEARNING: record design-methodology weakness
+7e02877	2026-09-19T09:08:29+02:00	1	397	0	ANALYSIS: add learning integration claim repair prompt
+28d5b2a	2026-09-23T20:14:25+02:00	1	30	0	RECONCILE: link repair prompt to owner and restart state
+0108b22	2026-09-23T20:23:34+02:00	1	90	0	ANALYSIS: add learning-repair execution prompt
+a98750c	2026-09-23T20:26:14+02:00	1	340	0	RESULT: close learning assurance overclaim repair
+21a8f98	2026-09-23T20:27:15+02:00	1	15	1	RECONCILE: mark learning-repair execution prompt complete
+0a9fe33	2026-09-23T20:27:29+02:00	1	19	1	RECONCILE: close learning-repair work prompt
+eba53b8	2026-10-01T14:04:37+02:00	1	1	1	MAINT: reconcile Reg Ii 5 legacy path wording
+8390b26	2026-10-01T14:06:29+02:00	0	0	0	Merge pull request #229 from esany/cleanup/regii5-legacy-path-wording
+8e58ef8	2026-10-02T22:41:23+02:00	1	748	0	AUDIT: persist repository knowledge/lifecycle adequacy synthesis
+2b2599c	2026-10-02T22:42:56+02:00	1	392	0	REQUIREMENTS: add D-016 surface for repository lifecycle architecture
+7ca1ab2	2026-10-02T22:44:39+02:00	1	10	1	MAINT: preserve accepted C1R architecture rationale
+efe53f7	2026-10-02T22:45:23+02:00	1	15	5	MAINT: reconcile research-system programme navigation
+5d81784	2026-10-02T22:50:21+02:00	0	0	0	Merge pull request #231 from esany/audit/repo-first-knowledge-lifecycle-2026-10-02
+3f1165d	2026-10-03T12:50:08+02:00	1	717	0	AUDIT: define target state and implementation readiness
+6306169	2026-10-03T12:51:14+02:00	0	0	0	Merge pull request #232 from esany/analysis/target-state-implementation-readiness-2026-10-03
+447ebc9	2026-10-03T13:25:39+02:00	1	4	1	MAINT: reconcile target-state audit navigation
+7eeb490	2026-10-03T13:26:30+02:00	0	0	0	Merge pull request #233 from esany/maint/reconcile-target-state-navigation-2026-10-03
+505b4a8	2026-10-03T18:58:54+02:00	1	156	0	ANALYSIS: persist product/co-development boundary delta
+4e291e2	2026-10-03T19:05:59+02:00	1	612	0	ANALYSIS: deep-check product/co-development boundary
+49ca65f	2026-10-03T19:07:08+02:00	1	7	5	MAINT: reconcile #225 and co-development audit navigation
+5a02c9b	2026-10-03T19:08:47+02:00	0	0	0	Merge pull request #234 from esany/analysis/product-co-development-boundary-2026-10-03
+4e6b090	2026-10-03T20:06:34+02:00	1	627	0	ANALYSIS: audit human relay, work lifecycle and context efficiency
+dbb7607	2026-10-03T20:07:40+02:00	1	3	2	MAINT: link human-proxy lifecycle efficiency audit
+cab6b8d	2026-10-03T20:08:34+02:00	0	0	0	Merge pull request #235 from esany/analysis/human-proxy-work-lifecycle-efficiency-2026-10-03
+7efbfac	2026-10-03T21:31:12+02:00	1	476	0	ANALYSIS: refine D-016 lifecycle decision surface for autonomous authorized work
+3bd0959	2026-10-03T21:31:54+02:00	1	2	1	MAINT: point navigation to refined D-016 lifecycle surface
+aed044b	2026-10-03T21:32:51+02:00	0	0	0	Merge pull request #239 from esany/analysis/d016-autonomous-work-context-refinement-2026-10-03
+c353e59	2026-10-03T22:48:50+02:00	1	623	0	ANALYSIS: rebaseline human decision readiness and design process
+8f7188c	2026-10-03T22:49:57+02:00	1	5	2	MAINT: mark lifecycle revision not decision-ready after meta-audit
+cdc70b0	2026-10-03T22:51:01+02:00	0	0	0	Merge pull request #240 from esany/analysis/human-decision-readiness-rebaseline-2026-10-03
+2aff99e	2026-10-03T23:45:49+02:00	1	512	0	ANALYSIS: complete system-development design to dev-ready
+bf68d5e	2026-10-03T23:46:41+02:00	1	4	3	MAINT: point system-development navigation to dev-ready design
+be497cb	2026-10-03T23:50:03+02:00	0	0	0	Merge pull request #241 from esany/analysis/system-development-dev-ready-design-2026-10-03
+afda3fe	2026-10-04T00:38:03+02:00	1	1452	0	ANALYSIS: holistic engineering knowledge architecture to dev-ready
+93882f6	2026-10-04T00:41:02+02:00	1	10	5	MAINT: point system-development navigation to holistic dev-ready design
+4468473	2026-10-04T00:41:57+02:00	0	0	0	Merge pull request #242 from esany/analysis/holistic-engineering-knowledge-dev-ready-2026-10-04
+5b189a2	2026-10-04T16:32:28+02:00	1	649	0	ANALYSIS: activate findings before system-development implementation
+2a5d72a	2026-10-04T16:33:49+02:00	1	8	5	MAINT: requalify system-development state after anti-regression baseline
+68c9536	2026-10-04T16:34:57+02:00	0	0	0	Merge pull request #243 from esany/analysis/pre-implementation-anti-regression-baseline-2026-10-04
+0a38b98	2026-10-04T20:54:12+02:00	1	351	0	ANALYSIS: persist bugwave master map and work portfolio
+1ab5338	2026-10-04T20:55:42+02:00	1	265	0	ANALYSIS: inventory bugwave architecture decisions
+d25ccf7	2026-10-04T20:56:37+02:00	1	192	0	ANALYSIS: adapt Wissensarbeit prompt skill as paleo-type candidate
+9c68059	2026-10-04T20:58:51+02:00	1	9	4	MAINT: route current system development through bugwave map
+0b9cd83	2026-10-04T21:12:08+02:00	1	115	0	ANALYSIS: prove bugwave finding coverage across major audits
+b633ac8	2026-10-04T21:56:47+02:00	0	0	0	Merge bugwave traceability and work-readiness analysis
+e94b870	2026-10-04T22:02:32+02:00	1	238	0	ANALYSIS: close engineering configuration and reference semantics
+d8e85f0	2026-10-04T22:03:33+02:00	1	298	0	ANALYSIS: close system-development context and developer bootstrap design
+04e4da6	2026-10-04T22:04:24+02:00	1	235	0	ANALYSIS: close activity-relative readiness and Human decision contract
+3c2a50b	2026-10-04T22:05:23+02:00	1	248	0	ANALYSIS: close engineering assurance and local-to-whole design
+220316c	2026-10-04T22:07:20+02:00	1	376	0	ANALYSIS: close brownfield representation and migration design
+10ddd23	2026-10-04T22:08:14+02:00	1	232	0	ANALYSIS: test and disposition .prompt transfer candidate
+eefb5e1	2026-10-04T22:09:33+02:00	1	173	0	ANALYSIS: resolve Review Premise Inheritance Generic-Fit
+05debd6	2026-10-04T22:12:52+02:00	1	303	0	ANALYSIS: close material finding coverage and promotion design
+0db6980	2026-10-04T22:13:40+02:00	1	245	0	ANALYSIS: close ADR surface and decision lifecycle design
+7e8a45a	2026-10-04T22:15:31+02:00	1	370	0	ANALYSIS: bring bugwave architecture to Human D-016 decision readiness
+b63f0f1	2026-10-04T22:17:37+02:00	1	39	64	MAINT: make README current-first after bugwave design closure
+b9d27de	2026-10-04T22:18:54+02:00	0	0	0	Merge bugwave design closure and D-016 decision surface
+e71e2ea	2026-10-04T22:25:47+02:00	1	8	4	MAINT: point current navigation to decision-ready SD-KA backlog
+e18906c	2026-10-04T22:26:34+02:00	0	0	0	Merge current bugwave decision/work navigation
+b1be355	2026-10-04T23:53:28+02:00	1	76	0	FEAT: add archival source acquisition MVP documentation
+a40be18	2026-10-04T23:53:45+02:00	2	462	0	FEAT: add bounded archival source acquisition MVP
+a27de75	2026-10-04T23:55:54+02:00	1	15	10	FIX: make acquisition tests import-safe and idempotent
+1bab512	2026-10-04T23:57:02+02:00	1	1	1	TEST: cover idempotent revalidation download path
+ed03053	2026-10-04T23:57:53+02:00	21	792	10	SD-KA-01 WP1: establish admitted engineering contracts
+8b997fb	2026-10-05T00:17:50+02:00	1	1	1	REFINE: make SStA viewer boundary explicit
+d4f9b8b	2026-10-05T00:18:04+02:00	1	16	3	DOCS: qualify SStA viewer boundary and repeatability claims
+f1ea48b	2026-10-05T00:18:15+02:00	1	2	2	TEST: lock SStA viewer boundary and qualified repeatability
+e089240	2026-10-05T00:19:41+02:00	1	10	1	FIX: preserve Python test block newlines
+03e160e	2026-10-05T00:20:32+02:00	1	17	2	FIX: restore explicit SStA provider boundary syntax
+c66ef07	2026-10-05T00:24:27+02:00	0	0	0	Merge pull request #274 from esany/codex/sd-ka-01-wp1
+45990ba	2026-10-05T00:27:18+02:00	6	56	7	SD-KA-01: persist WP1 result and whole-system return
+2c683be	2026-10-05T00:28:39+02:00	0	0	0	Merge pull request #275 from esany/codex/sd-ka-01-wp1-result-2026-10-05
+a3858bb	2026-10-05T01:17:44+02:00	1	88	27	FIX: plan SStA acquisition from files.json
+423cb41	2026-10-05T01:18:07+02:00	1	1	0	TEST: preserve SStA files.json fixture nr632
+3755a73	2026-10-05T01:18:11+02:00	1	1	0	TEST: preserve SStA files.json fixture nr754
+e204497	2026-10-05T01:18:15+02:00	1	1	0	TEST: preserve SStA files.json fixture oppurg-pilot
+42360aa	2026-10-05T01:19:14+02:00	1	113	38	TEST: exercise real SStA files.json fixtures and fail-closed parsing
+b01016a	2026-10-05T01:19:47+02:00	1	55	66	DOCS: describe live files.json pilot and assurance limits
+eddf5af	2026-10-05T01:33:27+02:00	1	7	0	docs: clarify human-facing archival acquisition UX
+9d7801e	2026-10-05T01:36:03+02:00	1	5	1	docs: record preferred savesax shortcut
+a510869	2026-10-05T02:23:45+02:00	1	169	0	chore: run bounded savesax live acquisition
+0e0ff7a	2026-10-05T02:30:42+02:00	1	28	0	feat: add chat-facing savesax skill
+1c1de03	2026-10-05T02:30:43+02:00	1	7	0	feat: add savesax skill invocation metadata
+78f6624	2026-10-05T02:31:21+02:00	1	3	1	feat: accept acquisition metadata on stdin
+a693066	2026-10-05T02:31:25+02:00	1	8	1	test: cover savesax stdin metadata path
+64f1334	2026-10-05T02:31:29+02:00	1	1	2	docs: describe savesax chat entrypoint
+12115bb	2026-10-05T02:31:34+02:00	1	1	0	docs: add repository skill navigation
+4f1ed59	2026-10-05T02:38:56+02:00	1	1	3	safety: make full image acquisition manual only
+11c5eb8	2026-10-05T02:41:07+02:00	1	4	7	docs: mark savesax skill implementation and limits
+33855f6	2026-10-05T02:43:12+02:00	1	18	8	Fix savesax documentation formatting
+acd2c3d	2026-10-05T16:19:03+02:00	1	7	1	SD-KA-01 WP2: register current context and work owners
+bb1e484	2026-10-05T16:19:42+02:00	1	5	1	SD-KA-01 WP2: advance bounded implementation relations
+81c6463	2026-10-05T16:20:20+02:00	1	46	5	SD-KA-01 WP2: establish currentness and applicability state
+1289a23	2026-10-05T16:20:43+02:00	1	22	13	SD-KA-01 WP2: advance bounded change cursor
+e63b2db	2026-10-05T16:21:02+02:00	1	8	2	SD-KA-01 WP2: persist currentness problem slice
+57b4146	2026-10-05T16:21:20+02:00	1	17	2	SD-KA-01 WP2: persist current/query requirements
+9cfba10	2026-10-05T16:21:57+02:00	1	53	3	SD-KA-01 WP2: define current/query implementation design
+25e7723	2026-10-05T16:22:11+02:00	1	15	7	SD-KA-01 WP2: advance implementation plan
+1ad725b	2026-10-05T16:24:42+02:00	1	335	46	SD-KA-01 WP2: derive and validate current engineering state
+b4586fe	2026-10-05T16:25:47+02:00	1	132	11	SD-KA-01 WP2: add currentness and applicability regressions
+6f69d0b	2026-10-05T16:26:09+02:00	1	13	8	SD-KA-01 WP2: document current/query interfaces
+c440804	2026-10-05T16:26:27+02:00	1	7	4	SD-KA-01 WP2: advance architecture implementation status
+1af1e74	2026-10-05T16:29:23+02:00	1	2	2	SD-KA-01 WP2: separate work-contract basis from admission authority
+d873092	2026-10-05T16:32:27+02:00	1	0	1	SD-KA-01 WP2: keep focus provenance minimal
+2fa201f	2026-10-05T16:32:49+02:00	1	1	1	SD-KA-01 WP2: align query design with implementation
+a33c148	2026-10-05T16:34:57+02:00	1	1	1	SD-KA-01 WP2: remove stale WP1 CI label
+e10a51a	2026-10-05T16:35:53+02:00	0	0	0	Merge pull request #278 from esany/codex/sd-ka-01-wp2
+baa87d1	2026-10-05T16:38:58+02:00	1	7	37	SD-KA-01 WP2: persist verified result transition
+8581f29	2026-10-05T16:39:30+02:00	1	7	7	SD-KA-01 WP2: return verified work-package state
+9090764	2026-10-05T16:40:24+02:00	1	76	9	SD-KA-01 WP2: persist result and whole-system return
+aa2f7a0	2026-10-05T16:41:05+02:00	1	3	2	SD-KA-01 WP2: reconcile result and downstream work metadata
+b6ba3da	2026-10-05T16:42:56+02:00	1	18	12	SD-KA-01 WP2: reconcile current repository navigation
+90f8277	2026-10-05T16:44:07+02:00	1	30	16	SD-KA-01 WP2: assert returned currentness state
+855ed1e	2026-10-05T16:44:28+02:00	1	4	4	SD-KA-01 WP2: reconcile current architecture boundary
+6e85023	2026-10-05T16:44:48+02:00	1	14	10	SD-KA-01 WP2: close implementation plan slice
+5b84f72	2026-10-05T16:46:21+02:00	1	2	1	SD-KA-01 WP2: reconcile completed and ready-next work relations
+ddf289f	2026-10-05T16:47:02+02:00	0	0	0	Merge pull request #279 from esany/codex/sd-ka-01-wp2-result-2026-10-05
+dc2e41d	2026-10-05T17:02:34+02:00	1	81	0	SD-KA-01 WP3: add derived engineering context contract
+0fed387	2026-10-05T17:03:04+02:00	1	68	0	SD-KA-01 WP3: activate bounded prompt capability contract
+beda21e	2026-10-05T17:04:41+02:00	1	448	0	SD-KA-01 WP3: implement derived engineering context profiles
+f0ef0f9	2026-10-05T17:05:36+02:00	1	173	0	SD-KA-01 WP3: implement bounded prompt create review test surface
+9761ef0	2026-10-05T17:06:16+02:00	1	134	0	SD-KA-01 WP3: add shared local and CI full check entrypoint
+94c9d26	2026-10-05T17:07:06+02:00	1	162	0	SD-KA-01 WP3: add context profile and ambiguity regressions
+134f1f4	2026-10-05T17:07:25+02:00	1	62	0	SD-KA-01 WP3: add bounded prompt capability regressions
+fef1ab9	2026-10-05T17:08:09+02:00	1	6	1	SD-KA-01 WP3: catalog context prompt and assurance surfaces
+3541027	2026-10-05T17:08:56+02:00	1	6	0	SD-KA-01 WP3: relate context prompt and check implementation
+59b7113	2026-10-05T17:09:31+02:00	1	62	7	SD-KA-01 WP3: activate bounded current focus and applicability
+bf55082	2026-10-05T17:11:37+02:00	1	11	9	SD-KA-01 WP3: advance bounded execution state
+a7b29d1	2026-10-05T17:12:10+02:00	1	19	0	SD-KA-01 WP3: codify context bootstrap prompt requirements
+8a721c4	2026-10-05T17:12:59+02:00	1	71	1	SD-KA-01 WP3: define context prompt bootstrap implementation design
+8f53206	2026-10-05T17:13:25+02:00	1	18	3	SD-KA-01 WP3: advance implementation plan
+7a57f97	2026-10-05T17:13:53+02:00	1	43	4	SD-KA-01 WP3: document context prompt and developer bootstrap
+8406626	2026-10-05T17:14:10+02:00	1	6	42	SD-KA-01 WP3: share one local and CI full-check entrypoint
+8d1e053	2026-10-05T17:14:31+02:00	1	9	5	SD-KA-01 WP3: update current admitted architecture boundary
+1e82352	2026-10-05T17:16:07+02:00	1	15	11	SD-KA-01 WP3: align engineering currentness regressions
+073c58a	2026-10-05T17:17:39+02:00	1	19	7	SD-KA-01 WP3: refresh system-development navigation and bootstrap
+bf8b741	2026-10-05T17:19:18+02:00	1	3	0	SD-KA-01 WP3: catalog admitted context evidence inputs
+88884b4	2026-10-05T17:19:42+02:00	1	3	3	SD-KA-01 WP3: bind applicability to managed evidence artifacts
+c6575ff	2026-10-05T17:21:46+02:00	0	0	0	Merge pull request #283 from esany/codex/sd-ka-01-wp3
+68f748f	2026-10-05T17:26:22+02:00	1	60	1	SD-KA-01 WP3: persist verified result and whole-system return
+6bd6e03	2026-10-05T17:26:37+02:00	1	5	60	SD-KA-01 WP3: return to explicit no-current-focus
+036166b	2026-10-05T17:27:00+02:00	1	7	7	SD-KA-01 WP3: persist verified package state and WP4 readiness
+4dfb09f	2026-10-05T17:27:39+02:00	1	2	1	SD-KA-01 WP3: close WP3 work metadata and catalog WP4 ready-next
+69073ad	2026-10-05T17:28:19+02:00	1	2	1	SD-KA-01 WP3: return work ownership and expose WP4 transition
+26a9e10	2026-10-05T17:29:07+02:00	1	2	2	SD-KA-01 WP3: return architecture navigation to no-current-focus
+313e83e	2026-10-05T17:29:26+02:00	1	16	11	SD-KA-01 WP3: mark verified return and expose WP4 ready-next
+5e712b1	2026-10-05T17:30:25+02:00	1	6	6	SD-KA-01 WP3: return navigation to WP4 ready-next
+83fe27b	2026-10-05T17:31:24+02:00	1	19	17	SD-KA-01 WP3: align engineering regressions to returned state
+78a361b	2026-10-05T17:32:02+02:00	1	14	18	SD-KA-01 WP3: align context journeys to WP4 ready-next
+3334ce3	2026-10-05T17:32:36+02:00	1	4	4	SD-KA-01 WP3: mark context bootstrap capabilities verified and returned
+2dc556c	2026-10-05T17:33:58+02:00	1	1	1	SD-KA-01 WP3: clarify ready-next is not active focus
+3830751	2026-10-05T17:35:02+02:00	0	0	0	Merge pull request #284 from esany/codex/sd-ka-01-wp3-result-2026-10-05
+230242d	2026-10-05T17:36:11+02:00	1	1	217	TEMP
+984fd7d	2026-10-05T17:37:21+02:00	1	217	1	Restore WP3 result navigation after accidental overwrite
+09be2cd	2026-10-05T17:39:17+02:00	0	0	0	Restore README navigation content after no-op verification
+37e59ee	2026-10-05T17:39:28+02:00	1	1	217	NOOP
+10b902d	2026-10-05T18:24:01+02:00	1	120	0	docs: persist execution-control D-016 decision brief
+98e0aa5	2026-10-05T18:24:32+02:00	1	87	0	docs: persist Human Owner ADMIT for execution control
+f44873e	2026-10-05T18:24:51+02:00	0	0	0	Merge #287: admit outcome-preserving execution control
+23dac2d	2026-10-05T18:31:00+02:00	1	268	36	fix: make archival acquisition restartable and status read-only
+3285c13	2026-10-05T18:32:10+02:00	1	154	18	test: cover interruption resume corruption and read-only status
+3d739d2	2026-10-05T18:32:47+02:00	1	10	3	docs: make savesax runtime and status semantics explicit
+d3d4456	2026-10-05T18:37:15+02:00	1	33	0	governance: preserve outcome across consequential execution control
+f3b7b45	2026-10-05T18:38:42+02:00	1	100	1	method: define read retry resume and runtime fitness boundaries
+dffdc7d	2026-10-05T18:41:30+02:00	1	217	1	fix: restore README after accidental NOOP overwrite
+67c0df4	2026-10-05T18:42:03+02:00	0	0	0	Merge #289: restore README after accidental NOOP overwrite
+2af9370	2026-10-05T18:42:49+02:00	0	0	0	Merge main after README restoration
+2e1cb11	2026-10-05T18:43:36+02:00	0	0	0	Merge #288: preserve outcome and mutation boundaries
+e3d5d7d	2026-10-05T18:45:28+02:00	1	0	167	fix: remove unsuitable live acquisition workflow
+1753a31	2026-10-05T18:46:04+02:00	1	50	52	docs: document restartable external acquisition path
+9980f76	2026-10-05T18:48:44+02:00	0	0	0	Merge current main into restartable archival acquisition branch
+743f972	2026-10-05T18:50:33+02:00	0	0	0	Merge #273: restartable archival source acquisition
+985e0e2	2026-10-05T18:57:22+02:00	1	15	0	SD-KA-01 WP4: add engineering fitness assurance contract
+ead9fdd	2026-10-05T18:57:42+02:00	1	41	0	SD-KA-01 WP4: define deterministic fitness mapping
+58ab407	2026-10-05T18:58:46+02:00	1	256	0	SD-KA-01 WP4: implement engineering fitness checker
+9cbe27a	2026-10-05T18:59:18+02:00	1	154	0	SD-KA-01 WP4: add seeded engineering fitness failures
+da8e07d	2026-10-05T18:59:42+02:00	1	3	2	SD-KA-01 WP4: integrate engineering fitness into shared check
+869ab71	2026-10-05T18:59:53+02:00	1	3	3	SD-KA-01 WP4: sharpen CI assurance boundary
+c2ab2ac	2026-10-05T19:00:34+02:00	1	4	0	SD-KA-01 WP4: register assurance owners
+378a47a	2026-10-05T19:01:11+02:00	1	5	0	SD-KA-01 WP4: link assurance owners to bounded change
+1de013b	2026-10-05T19:01:35+02:00	1	42	6	SD-KA-01 WP4: start bounded assurance cursor
+e9dcab6	2026-10-05T19:02:06+02:00	1	14	11	SD-KA-01 WP4: advance canonical work-package cursor
+9d79958	2026-10-05T19:05:37+02:00	1	17	20	SD-KA-01 WP4: align engineering regressions with active cursor
+1d71b57	2026-10-05T19:06:09+02:00	1	14	8	SD-KA-01 WP4: align context regressions with active cursor
+dfbe252	2026-10-05T19:07:25+02:00	1	1	0	SD-KA-01 WP4: manage shared execution-control admission input
+df0f40c	2026-10-05T19:07:45+02:00	1	1	1	SD-KA-01 WP4: use managed execution-control admission ref
+06166eb	2026-10-05T19:08:06+02:00	1	1	1	SD-KA-01 WP4: use managed execution-control rule ref
+bba5abc	2026-10-05T19:08:31+02:00	1	4	4	SD-KA-01 WP4: bind fitness to managed shared admission
+ddecf04	2026-10-05T19:10:12+02:00	0	0	0	Merge pull request #294: SD-KA-01 WP4 engineering fitness
+729ef0a	2026-10-05T19:14:36+02:00	1	5	41	SD-KA-01 WP4: record verified implementation return
+c46f920	2026-10-05T19:14:59+02:00	1	7	7	SD-KA-01 WP4: persist verified work-package state
+61cdb69	2026-10-05T19:16:10+02:00	1	55	1	SD-KA-01 WP4: persist verified result and whole-system return
+528dffd	2026-10-05T19:16:53+02:00	1	34	35	SD-KA-01 WP4: align regressions with verified return state
+1006c50	2026-10-05T19:17:32+02:00	1	2	1	SD-KA-01 WP4: reconcile completed and ready-next work metadata
+6b71684	2026-10-05T19:18:09+02:00	1	2	1	SD-KA-01 WP4: return verified result to next work owner
+ed57269	2026-10-05T19:18:46+02:00	1	37	58	SD-KA-01 WP4: align contexts with ready-next WP5 state
+647480a	2026-10-05T19:20:11+02:00	1	1	1	SD-KA-01 WP4: assert semantic WP5 title rather than issue wording
+8d9b912	2026-10-05T19:20:33+02:00	1	4	4	SD-KA-01 WP4: reconcile architecture navigation after return
+69c1467	2026-10-05T19:20:58+02:00	1	17	24	SD-KA-01 WP4: reconcile implementation plan and WP5 readiness
+c1fa5b7	2026-10-05T19:21:41+02:00	1	9	7	SD-KA-01 WP4: reconcile repository orientation and WP5 readiness
+b01bfa1	2026-10-05T19:22:52+02:00	0	0	0	Merge pull request #295: SD-KA-01 WP4 verified return
+2f5dfba	2026-10-05T21:10:07+02:00	2	51	18	SD-KA-01 WP5: start bounded brownfield migration
+e957379	2026-10-05T21:15:52+02:00	19	60	16	SD-KA-01 WP5: migrate classified managed engineering evidence
+f1ce8d8	2026-10-05T21:16:47+02:00	1	16	0	SD-KA-01 WP5: record legacy-path continuity for migration slice
+5e18389	2026-10-05T21:18:37+02:00	1	18	20	SD-KA-01 WP5: align engineering regressions with active migration
+2bfe45b	2026-10-05T21:19:06+02:00	1	12	5	SD-KA-01 WP5: align context regressions with active migration
+cbafdb8	2026-10-05T21:19:40+02:00	1	36	8	SD-KA-01 WP5: add migration continuity and byte-preservation fixtures
+edf0f07	2026-10-05T21:20:13+02:00	1	13	8	SD-KA-01 WP5: align engineering navigation with active migration
+37162b8	2026-10-05T21:20:31+02:00	1	10	7	SD-KA-01 WP5: align architecture navigation with migrated admission
+4eb47c5	2026-10-05T21:21:00+02:00	1	18	4	SD-KA-01 WP5: record active migration sequence
+d313619	2026-10-05T21:21:50+02:00	1	34	28	SD-KA-01 WP5: repair current navigation after migration slice
+331786b	2026-10-05T21:25:37+02:00	1	1	1	SD-KA-01 WP5: align legacy-path applicability expectation
+5322f88	2026-10-05T21:26:22+02:00	1	9	7	SD-KA-01 WP5: repair ADR references after migration
+468873a	2026-10-05T21:43:03+02:00	55	110	0	SD-KA-01 WP5: migrate classified historical engineering evidence
+3f57edb	2026-10-05T21:44:39+02:00	1	53	0	SD-KA-01 WP5: map historical evidence legacy paths
+fe80d44	2026-10-05T21:45:31+02:00	1	17	5	SD-KA-01 WP5: narrow Requirements namespace and record retained owners
+9b94290	2026-10-05T21:46:18+02:00	1	18	6	SD-KA-01 WP5: assert narrowed Requirements residue
+88bfee8	2026-10-05T23:25:38+02:00	5	0	0	SD-KA-01 WP5: relocate cross-project owner decision evidence
+be93599	2026-10-05T23:31:02+02:00	5	30	31	SD-KA-01 WP5: complete Requirements namespace narrowing
+0c4c948	2026-10-05T23:33:57+02:00	1	10	3	SD-KA-01 WP5: repair source-owner evidence consumer
+ffc4d37	2026-10-05T23:35:29+02:00	0	0	0	Merge pull request #298: SD-KA-01 WP5 implementation
+0008450	2026-10-05T23:36:30+02:00	1	5	35	SD-KA-01 WP5: persist verified configuration return
+beb7733	2026-10-05T23:36:49+02:00	1	7	7	SD-KA-01 WP5: mark verified return and WP6 readiness
+70acd67	2026-10-05T23:38:16+02:00	1	65	1	SD-KA-01 WP5: record exact result and whole-system return
+df4cd99	2026-10-05T23:39:59+02:00	1	2	1	SD-KA-01 WP5: advance work metadata to WP6
+a02c465	2026-10-05T23:40:34+02:00	1	2	0	SD-KA-01 WP5: record historical owner and WP6 transition
+5d199c6	2026-10-05T23:41:16+02:00	1	25	21	SD-KA-01 WP5: align engineering tests with verified return
+00b353d	2026-10-05T23:41:43+02:00	1	12	13	SD-KA-01 WP5: align context tests with WP6 readiness
+d61f1eb	2026-10-05T23:42:47+02:00	1	76	117	SD-KA-01 WP5: return lean post-migration repository navigation
+27c5ec7	2026-10-05T23:43:12+02:00	1	6	5	SD-KA-01 WP5: update engineering navigation after migration
+ceea929	2026-10-05T23:43:26+02:00	1	5	4	SD-KA-01 WP5: return post-migration architecture boundary
+3e708a9	2026-10-05T23:43:52+02:00	1	18	27	SD-KA-01 WP5: persist completed migration plan state
+57f2bc6	2026-10-05T23:47:14+02:00	0	0	0	Merge pull request #300: SD-KA-01 WP5 verified return
+aec31ac	2026-10-06T01:02:49+02:00	1	42	6	SD-KA-01 WP6: start terminal qualification
+ee16f4d	2026-10-06T01:02:51+02:00	1	7	7	SD-KA-01 WP6: enter reviewing state
+edaa294	2026-10-06T01:03:27+02:00	1	54	0	SD-KA-01 WP6: add adversarial qualification evidence
+8dd0d92	2026-10-06T01:03:29+02:00	1	91	0	SD-KA-01 WP6: add terminal real-state qualification fixture
+ac1f516	2026-10-06T01:03:36+02:00	1	1	0	SD-KA-01 WP6: register qualification evidence
+513d0a5	2026-10-06T01:03:58+02:00	1	11	11	SD-KA-01 WP6: align engineering contract tests with active qualification
+39644cd	2026-10-06T01:04:00+02:00	1	5	5	SD-KA-01 WP6: align context tests with active qualification
+bf2cd05	2026-10-06T01:04:21+02:00	1	2	2	SD-KA-01 WP6: align active qualification navigation
+30a3210	2026-10-06T01:04:24+02:00	1	2	2	SD-KA-01 WP6: align active qualification navigation
+7554af6	2026-10-06T01:04:27+02:00	1	5	3	SD-KA-01 WP6: align active qualification navigation
+5f992b6	2026-10-06T01:06:26+02:00	1	7	5	SD-KA-01 WP6: preserve active focus in currentness fixtures
+91a0758	2026-10-06T01:07:01+02:00	1	1	1	SD-KA-01 WP6: fix engineering summary focus assertion
+b8fcc66	2026-10-06T01:07:44+02:00	0	0	0	Merge pull request #301: SD-KA-01 WP6 qualification
+3920d23	2026-10-06T01:09:32+02:00	1	10	47	SD-KA-01 WP6: accept qualified engineering baseline
+2925a71	2026-10-06T01:09:45+02:00	1	43	16	SD-KA-01 WP6: persist terminal accepted state
+663f116	2026-10-06T01:09:55+02:00	1	3	3	SD-KA-01 WP6: mark target ADR accepted by Result Review
+5a2a49d	2026-10-06T01:10:02+02:00	1	2	2	SD-KA-01 WP6: promote accepted ADR and retire work metadata
+4f2adb1	2026-10-06T01:10:20+02:00	1	22	3	SD-KA-01 WP6: record exact qualification and terminal disposition
+3e7d976	2026-10-06T01:10:47+02:00	1	62	0	SD-KA-01 WP6: append terminal Result Review
+cd56e6d	2026-10-06T01:11:16+02:00	1	37	31	SD-KA-01 WP6: assert terminal accepted baseline state
+ab356b6	2026-10-06T01:11:32+02:00	1	8	9	SD-KA-01 WP6: assert no successor work after terminal return
+20ca380	2026-10-06T01:11:48+02:00	1	13	12	SD-KA-01 WP6: qualify terminal accepted composition
+224a0c8	2026-10-06T01:12:18+02:00	1	2	2	SD-KA-01 WP6: publish terminal repository status
+bcad949	2026-10-06T01:12:21+02:00	1	1	1	SD-KA-01 WP6: update engineering landing state
+5b87aca	2026-10-06T01:12:23+02:00	1	4	4	SD-KA-01 WP6: publish accepted architecture boundary
+1b4b9f9	2026-10-06T01:12:26+02:00	1	2	4	SD-KA-01 WP6: complete implementation plan
+ee50d76	2026-10-06T01:12:44+02:00	1	23	18	SD-KA-01 WP6: keep ambiguity fixture self-contained after closure
+ef8b6a5	2026-10-06T01:12:56+02:00	1	1	1	SD-KA-01 WP6: retire terminal work metadata in query fixture
+e0a9ff3	2026-10-06T01:13:59+02:00	1	2	2	SD-KA-01 WP6: align explicit-absence wording fixture
+8575375	2026-10-06T01:14:02+02:00	1	1	1	SD-KA-01 WP6: align explicit-absence wording fixture
+c75856e	2026-10-06T01:14:38+02:00	0	0	0	Merge pull request #302: SD-KA-01 terminal Result Review
+29e3266	2026-10-06T01:22:46+02:00	5	247	0	Implement admitted research-assistance interaction boundary
+7065d4f	2026-10-06T01:23:31+02:00	0	0	0	Merge pull request #303: research-assistance interaction boundary
+5afd584	2026-10-07T08:29:59+02:00	1	311	0	Add bug intent and Wirknetz plan-fit audit
+7da5c10	2026-10-07T08:30:02+02:00	1	1	0	Register bug Wirknetz audit artifact
+b1fa2d6	2026-10-07T08:30:55+02:00	0	0	0	Merge PR #304: persist bug Wirknetz audit
+ddf891e	2026-10-07T10:41:53+02:00	1	1	0	CORPUS: record Saxon archive lead 20578 Nr. 636
+514239e	2026-10-07T13:30:05+02:00	1	0	1	Revert "CORPUS: record Saxon archive lead 20578 Nr. 636"
+6e98eda	2026-10-07T13:53:58+02:00	1	3	0	savesax: make SStA access routing cost-aware
+0283bd2	2026-10-07T13:54:47+02:00	0	0	0	Merge PR #305: savesax cost-aware routing
+64574b6	2026-10-07T18:36:18+02:00	1	1	0	#264 require Project title in executable contract
+59bd345	2026-10-07T18:36:33+02:00	1	1	1	#264 align Project template required labels
+75c4dbd	2026-10-07T18:36:46+02:00	1	21	0	#264 add Project title regression coverage
+00c1ca1	2026-10-07T18:36:56+02:00	1	1	0	#264 propagate Project title to assurance fixtures
+9bd0771	2026-10-07T18:37:04+02:00	1	1	0	#264 propagate Project title to intake fixtures
+81d95e9	2026-10-07T18:42:29+02:00	1	1	1	#264 fix missing-title regression fixture
+cecba40	2026-10-07T18:44:54+02:00	0	0	0	Merge PR #299: fix Project metadata contract drift
+0e7223f	2026-10-08T02:30:19+02:00	1	13	0	Require GitHub connector-only repository work in Work and Codex
+f5ef611	2026-10-08T02:30:20+02:00	1	2	0	Route execution persistence to mandatory GitHub-only guardrail
+c64ac5c	2026-10-08T13:35:58+02:00	0	0	0	Merge pull request #310 from esany/governance/github-only-work-codex-2026-10-08
+c5b4cb7	2026-10-08T13:42:42+02:00	1	202	0	docs: persist current Option C concept
+efa2063	2026-10-08T13:42:49+02:00	1	70	0	docs: persist Option C D-016 admission
+05123b8	2026-10-08T13:42:55+02:00	1	81	0	feat: add source-entry owner contract
+6563f60	2026-10-08T13:43:03+02:00	1	123	0	feat: add source-entry owner contract
+804ed0d	2026-10-08T13:43:10+02:00	1	1	0	feat: add source-entry route history
+825d1fa	2026-10-08T13:43:17+02:00	1	1	0	feat: add source-entry coverage owner
+468eba9	2026-10-08T13:44:49+02:00	1	219	1	feat: validate source-entry routing and coverage
+cea13f4	2026-10-08T13:45:44+02:00	1	211	0	test: cover source-entry Option C invariants
+21d679d	2026-10-08T13:46:13+02:00	1	2	0	docs: register Option C recovery artifacts
+60b8ec7	2026-10-08T13:46:21+02:00	1	3	0	docs: relate Option C concept and admission
+192a70e	2026-10-08T13:46:42+02:00	1	5	1	docs: expose source-entry canonical owner
+3e3c922	2026-10-08T13:49:06+02:00	1	71	0	docs: add Option C result review
+f0716a9	2026-10-08T13:49:20+02:00	1	1	0	docs: register Option C result review
+a8cf86c	2026-10-08T13:49:36+02:00	1	2	0	docs: relate Option C result review
+5140044	2026-10-08T14:52:54+02:00	0	0	0	Merge pull request #311 from esany/implementation/source-entry-option-c-2026-10-08
+d04cb17	2026-10-08T14:58:11+02:00	1	96	8	test: complete Option C acceptance loss checks
+6861be8	2026-10-08T14:58:33+02:00	1	2	2	docs: state Option C assurance boundaries precisely
+d0a7b68	2026-10-08T14:58:55+02:00	1	21	3	audit: apply P0 completeness review to Option C
+d0170ca	2026-10-08T15:03:31+02:00	0	0	0	Merge PR #312: complete P0 assurance for source-entry Option C
+f87fafb	2026-10-08T15:12:06+02:00	1	1	0	corpus: materialize SStA 20578 Nr 632 source
+658d6c4	2026-10-08T15:13:35+02:00	1	9	0	project: materialize Nr 632 authority and purpose
+08c27b1	2026-10-08T15:13:44+02:00	1	2	0	project: register Nr 632 root source use
+05fb424	2026-10-08T15:13:52+02:00	1	1	0	project: initialize Nr 632 use-evidence owner
+473786e	2026-10-08T15:14:00+02:00	1	100	0	project: persist Nr 632 recovery and restart state
+b119b1d	2026-10-08T15:14:24+02:00	1	1	0	source-entry: materialize Nr 632 existing-project route
+41b26c7	2026-10-08T15:15:09+02:00	1	3	2	docs: expose Nr 632 Project in repository navigation
+d215c42	2026-10-08T15:15:21+02:00	1	7	0	docs: reconcile Project navigation for SStA Nr 632
+cbe0b0f	2026-10-08T15:17:32+02:00	1	8	1	test: reconcile current Project-use fixture for Nr 632
+9783785	2026-10-08T15:17:41+02:00	1	6	4	test: isolate empty source-entry owner fixture
+d9a7c43	2026-10-08T20:34:17+02:00	1	124	0	Audit artificial-stop continuation boundary
+65e5837	2026-10-08T21:24:49+02:00	1	135	0	Reconcile Nr. 632 recovery evidence and overview claim ceilings
+c644dd7	2026-10-08T21:24:54+02:00	1	11	7	Reconcile Nr. 632 recovery evidence and overview claim ceilings
+b867073	2026-10-08T21:24:59+02:00	1	135	0	Reconcile Nr. 632 recovery evidence and overview claim ceilings
+44712f2	2026-10-08T21:25:04+02:00	1	135	0	Reconcile Nr. 632 recovery evidence and overview claim ceilings
+c6390a3	2026-10-08T21:25:09+02:00	1	20	1	Reconcile Nr. 632 recovery evidence and overview claim ceilings
+c583794	2026-10-08T21:25:14+02:00	1	8	1	Reconcile Nr. 632 recovery evidence and overview claim ceilings
+c42cb72	2026-10-08T21:25:16+02:00	1	124	0	Integrate current main continuation-boundary audit
+b1b5eaa	2026-10-08T21:25:24+02:00	0	0	0	Merge current main into Nr. 632 recovery branch
+c578833	2026-10-08T21:26:49+02:00	1	2	2	Correct stale Nr. 632 overview restartability wording
+2c4b656	2026-10-08T21:28:35+02:00	1	1	1	Record evidence-ranked Nr. 632 detail inspection plan
+f7b3bc7	2026-10-08T21:33:20+02:00	1	135	135	research: keep Nr 632 overview relevance unresolved
+1c078bb	2026-10-08T21:33:31+02:00	1	4	3	project: reconcile Nr 632 restart state after overview
+d30d5ed	2026-10-08T21:35:26+02:00	0	0	0	Merge PR #313: recover SStA 20578 Nr. 632 canonical source-entry state
+ba31166	2026-10-09T07:07:12+02:00	1	387	0	audit: persist chat-end knowledge monopoly review
+216fd5d	2026-10-09T07:07:30+02:00	1	1	0	docs: register chat-end knowledge audit
+89c01b1	2026-10-09T07:07:39+02:00	1	4	0	docs: relate chat-end knowledge audit
+6516386	2026-10-09T07:07:53+02:00	1	2	0	docs: complete chat-end audit owner relations
+7781283	2026-10-09T07:08:49+02:00	0	0	0	Merge pull request #317 from esany/audit/chat-end-knowledge-monopoly-2026-10-09
+585e29e	2026-10-09T07:31:30+02:00	1	459	0	audit: document repeated Human-meaning precedence failures
+f285d4e	2026-10-09T11:33:48+02:00	1	139	0	audit: finalize chat-end knowledge-monopoly currentness
+3dc7cff	2026-10-09T11:34:56+02:00	0	0	0	Merge pull request #319 from esany/audit/chat-end-final-currentness-2026-10-09
+3ee9800	2026-10-09T12:48:04+02:00	8	255	2	Implement GitHub-first execution proof and adequacy guards (#322)
+9a98240	2026-10-09T14:06:19+02:00	1	103	0	Persist current open Issue reconciliation (#323)
+096efe9	2026-10-09T14:16:54+02:00	1	387	0	Add systemic audit for deterministic control layer
+b7a77bc	2026-10-09T14:18:00+02:00	1	13	0	Add primary-source references to deterministic control audit
+a3c865e	2026-10-09T14:32:40+02:00	2	392	1	Supersede control-layer recommendation after critical re-audit
+256f12b	2026-10-09T16:33:00+02:00	2	120	33	FIX: savesax complete only after package sidecars are finished
+cef9479	2026-10-27T20:01:19+01:00	1	1	0	CORPUS: identify SStA 10001 Nr. 01739 from exact GUID; keep image access uninspected
+4a6f626	2026-10-27T20:01:37+01:00	1	1	0	SOURCE ENTRY: record unresolved routing of distinct Dresden Nr. 01739
+227d63b	2026-10-27T20:02:07+01:00	1	1	1	CORPUS: preserve literal archive catalogue title instead of derived paraphrase
+ad577a3	2026-10-27T20:05:42+01:00	0	0	0	Merge pull request #330 from esany/research/ssta-10001-01739-source-intake-2026-10-27
+39d32f1	2026-10-28T23:15:08+01:00	3	153	0	Guard scholarly source-work activation before support routing
+73d2a73	2026-10-29T00:01:04+01:00	3	88	7	Reconcile Nr. 632 boundary observations against original images
+eaa3d1e	2026-10-29T00:14:38+01:00	2	15	11	Correct Nr. 632 oversized-charter view interpretation
+9d7ee41	2026-10-29T08:56:49+01:00	3	179	5	Persist Nr. 632 documentary-object/view reconnaissance (#344)
+6adf6c6	2026-10-29T09:07:14+01:00	15	442	14	Extend Source data for folio-free digital locator mappings (#345)
+d734640	2026-10-30T00:50:51+01:00	5	160	10	RESEARCH Nr. 632: reconcile content, chronology, source criticism (#350–#352)
+211f9f8	2026-10-30T02:07:52+01:00	3	140	0	RESEARCH: integrate Nr632 transcription experiment learnings and restart pointers
+65c5167	2026-10-30T02:09:35+01:00	3	327	0	S0 (#353): freeze new procedure evidence files and show PR metrics (#356)
+edd11ab	2026-10-31T08:04:00+01:00	2	364	0	S1 (#346/#347): check work-block return against Git and Project owner (#360)
+f667522	2026-10-31T08:16:09+01:00	2	68	4	S1: continuation anchor must be newly written in the block (#362)
+281fc5f	2026-10-31T10:04:23+01:00	1	192	0	Nr. 632: owner working plan of 2026-10-31 (#363)
+36a36b7	2026-10-31T10:26:57+01:00	2	110	0	Spickzettel für den Eigentümer (#367)
+49c9f6e	2026-10-31T22:22:38+01:00	1	32	0	Nr. 632: Vorab-Gegenlesung als Eigentümernachtrag (31.10.2026) (#365)
+f41c49d	2026-10-31T22:22:43+01:00	2	97	1	Nr. 632: Anleitung Gegenlesung für jeden Chat (vorab/gegenlesen) (#366)
+b8e5026	2026-10-31T22:24:07+01:00	1	18	1	Spickzettel: Chatwechsel (#369)
+c25c09d	2026-10-31T22:32:50+01:00	4	171	153	Allgemeine Abläufe: Gegenlesung und Spickzettel projektunabhängig (#370)
+562f98b	2026-11-01T08:25:33+01:00	1	7	2	Gegenlesung: Gültigkeit und mehrere Seiten je Durchgang (#371)
+f5085ba	2026-11-01T08:29:27+01:00	1	11	1	Spickzettel: Aufträge über Issues (#373)
+fa38629	2026-11-01T08:32:46+01:00	1	17	8	Spickzettel: Labels wie im Labor (#374)
+4ab6aab	2026-11-01T19:40:13+01:00	1	3	2	Gegenlesung: Nachproben in die Warteschlange (#378)
+01cd490	2026-11-01T19:40:50+01:00	3	17	2	Namensstellen: Eigentümer liest Bildausschnitte blind (#380)
+0d9226c	2026-11-02T00:37:14+01:00	5	583	1	Nr. 632: GitHub-Prüfungen für Blind-Gegenlesung und Rückkehrbericht (#375)
+508fc27	2026-11-02T08:10:12+01:00	1	2	2	Spickzettel: wo gegenlesen läuft (#385)
+d933191	2026-11-02T08:11:24+01:00	1	2	0	Gegenlesung: Hauptchat nennt immer den frischen Chat (#386)
+714e37d	2026-11-02T09:43:29+01:00	1	2	0	Spickzettel: main ist geschützt (#90) (#387)
+25d706d	2026-11-02T22:00:30+01:00	1	1	1	Gegenlesung: bis zu 10 Einträge je Durchgang (#391)
+f6a3971	2026-11-03T03:39:36+01:00	1	2	1	Namensstellen: Lesung und Identifizierung getrennt halten (#393)
+22b255b	2026-11-03T03:51:14+01:00	1	7	4	Spickzettel: Prüfer beginnt bei Methodik und Bestand, nicht beim Plan (#395)
