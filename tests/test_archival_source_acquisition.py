@@ -316,6 +316,31 @@ class AcquisitionTests(unittest.TestCase):
         self.assertTrue(all(image.url.startswith("https://www.archiv.sachsen.de/")
                             for image in plan.images))
 
+    def test_written_package_inventory_never_invents_missing_filenames(self):
+        # The provider accepts a non-consecutive image list. A sidecar must
+        # identify precisely those files, not imply all intervening filenames.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=0), images("0042", "0001"), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            manifest = acquisition.acquire(
+                plan, root, opener=opener, rate_limit_seconds=0
+            )
+            package = root / plan.package_name
+            documented = (package / "QUELLENINFO.txt").read_text(encoding="utf-8")
+            self.assertIn(
+                "Dateien: 0001.jpg, 0042.jpg", documented.splitlines()
+            )
+            self.assertNotIn("0001.jpg–0042.jpg", documented)
+            self.assertNotIn("0002.jpg", documented)
+            self.assertEqual(
+                ["0001.jpg", "0042.jpg"],
+                [item["filename"] for item in manifest["images"]],
+            )
+            self.assertEqual(2, opener.call_count)
+
     def test_jpeg_dimensions_are_checked(self):
         self.assertEqual((32, 16), acquisition.jpeg_dimensions(JPEG_32X16))
         with self.assertRaises(acquisition.AcquisitionError):
