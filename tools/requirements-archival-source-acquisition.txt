@@ -1,0 +1,2 @@
+# Decoder for full JPEG pixel validation (not just SOF dimensions).
+Pillow>=11,<13
