@@ -1,6 +1,6 @@
 # STATUS — Sächsisches Staatsarchiv, 20578, Nr. 632
 
-Last checkpoint: 2026-10-08
+Last checkpoint: 2026-10-30 (reviewed Nr. 632 content/function and business-process candidate; no independent specialist validation)
 
 ## Research purpose and Project authority
 
@@ -20,7 +20,7 @@ The catalogue record establishes the archival-unit identity and boundary at sign
 
 ## Active scope
 
-**No evidence-selected active scholarly scope is currently established.**
+**No narrower evidence-selected diplomatic/transcription locus or G2–G6 scholarly scope is currently established.** The Human Owner has separately authorized the **bounded research tasks #350, #351 and #352** to characterize the whole archival unit at overview/function, business-process and targeted source-critical depth. These tasks do not constitute a G2 transcription activation or subsequent automatic scope.
 
 The verified provider sequence `0001.jpg`–`0135.jpg` is the current **inspection domain** for source-entry/reconnaissance. Inspection domain is not active scholarly scope, manuscript coverage, a documentary boundary or G2 transcription scope. Scope may narrow, multiply or remain unresolved only after direct evidence supports that move.
 
@@ -51,7 +51,7 @@ Catalogue/provenance facts currently established:
 
 A complete controlled external OneDrive package has been independently re-verified at package level: 135/135 JPEGs are present in exact `0001.jpg`–`0135.jpg` sequence, package/manifests report complete state, and all 135 JPEG byte checks pass against the persisted checksum inventory. No re-acquisition was used or is warranted merely to reproduce that verification.
 
-**Canonical exact-File population is now complete for the primary provider images.** `corpus/files.tsv` contains one byte-exact File identity per JPEG, with the manifest SHA-256, `external-controlled` storage, truthful rights wording and provider-image-only locator semantics. The full PDF and compact PDF are retained as separate derivative working representations in the controlled package; they are not used as substitutes for the JPEG File identities, and no unsupported parent/derivative relation is asserted in the current contract.
+**Canonical exact-File population is complete for the primary provider images.** `corpus/files.tsv` contains one byte-exact File identity per JPEG, with the manifest SHA-256, `external-controlled` storage, truthful rights wording and provider-image-only locator semantics. On 2026-10-29 the Human supplied the 135-page compact PDF to the active research context; that exact byte sequence is now separately registered as `FILE-SSTA-20578-NR632-COMPACT-PDF-20261029` (SHA-256 `8cc44ccf25b78a1174fa78da26f617fb1af39cea4ccb6999c2a616041a5d1a7f`). It remains a convenience/working instantiation, not a substitute for the JPEG File identities. No byte-identity claim is made for any other compact/full PDF copy in the external package without separate hash verification, and no unsupported parent/derivative relation is asserted.
 
 Rights/authority basis:
 
@@ -66,27 +66,70 @@ The exact JPEGs are directly vision-inspectable in the current work context. An 
 
 The overview used nine execution-local contact sheets covering consecutive ranges `0001–0015`, `0016–0030`, `0031–0045`, `0046–0060`, `0061–0075`, `0076–0090`, `0091–0105`, `0106–0120` and `0121–0135`. Each sheet was rendered from the exact JPEG bytes in provider order as a proportional full-frame thumbnail grid: no crop, rotation, OCR/HTR or content-generating enhancement was applied, and every provider image was included once with its provider number retained. The sheets were temporary staging aids, not canonical historical Files; the exact JPEGs remain the evidence objects. Representative originals `0001`, `0098`, `0103`, `0104`, `0107` and `0130–0135` were additionally opened at high detail. Overview observations do not claim full-resolution reading of all 135 images.
 
+### Targeted detail and boundary reconciliation — 2026-10-28
+
+The authorized detail investigation directly opened controlled original JPEGs 0098–0107 and 0130–0135 and the needed neighbours 0097, 0108 and 0129; all 19 hashes matched the current File register in the execution context. Display was scaled during inspection (0098 also opened at higher detail), and depth does not imply exhaustive full-resolution reading. The resulting 19 append-only detail checkpoints remain distinct from the 135 overview checkpoints. The Project research note [targeted boundary investigation](research/targeted-boundary-reconciliation-2026-10-28.md) separates provisional diagnostic readings and interpretation from image observations and reconciles unmerged PR #316, head 9847cba63475daaebcd42546b6e558cf84ccd092.
+
+Closing and formal opening configurations support provisional textual transitions at 0097/0098, within the 0102–0104 complex, and around 0107/0108. The apparent continuation and numeric arrangement weaken a boundary exactly at 0129/0130; the closing area is instead visible within 0130. Repeated areas under changed overlap at 0103/0104, and pale/reversed or folded surfaces at 0132/0134, make changes of view, reverse or overlap serious alternatives to treating each image change as a documentary boundary. **Human-Owner correction after review:** the views on 0133–0135 belong to the same oversized charter, shown in different views including front/reverse; they are not two separate related text carriers or executions. The earlier AI comparison hypothesis is withdrawn.
+
+These are AI-assisted, source-visible working findings with the stated Human-Owner correction; they are not independent specialist validation. Remaining ceilings include exact material attachment and seal count/identity, unresolved readings, and the broader internal documentary structure beyond the corrected 0133–0135 object identity. No complete internal segmentation, reliable archival foliation, hand identification or selected G2 transcription locus follows.
+
+### Whole-domain documentary-object / view reconnaissance — 2026-10-29
+
+Issue #342 has now supplied a direct-original, whole-domain object/view pass across provider images **0001–0135**. The Work context visually opened all 135 controlled original JPEGs and reported SHA-256 agreement with the current File register; images were mostly viewed scaled with selected detail enlargements. The Fachchat review accepts this as source-visible AI research at the declared depth, not as independent specialist validation.
+
+The durable Project map is [documentary-object / view structure map](research/documentary-object-view-map-2026-10-29.md). It records 38 overlapping working groups to keep material-object/view hypotheses distinct from provider-image numbering and from canonical Source identity. Strong repeated-view evidence now includes `0003/0004`, `0011/0012`, `0013/0014`, `0103/0104`, `0122/0123` and `0132R/0134L`. The latter extends the already Human-corrected oversized-charter view complex `0133–0135` by identifying `0132R` as the same reverse-side surface with high confidence.
+
+A further source-critical delta is the `0094–0116` complex: two 1760 closing blocks can be compared with later passages provisionally read as `vorstehende Abschrift` / `Original Supplicat`; a subsequent writing apparently refers to both 1760 dates; and the older `0109–0115` complex includes a provisional note referring to two `Abschriften` A/B and `Originalien`. These readings make transmission-stage and business-context relationships testable, but **do not establish which concrete photographed text is the exact original/template for which copy**. That requires independent reading/collation.
+
+The pass does not identify every physical carrier. Long sequences such as `0020–0054`, `0055–0071` and `0072–0087` remain partly describable only as overlay/view/text complexes. No canonical internal Source, final documentary segmentation, archival foliation or G2 scope follows.
+
+### Reviewed content/function and business-process results — 2026-10-30
+
+Human-authorized research Issues [#350](https://github.com/esany/paleo-type/issues/350), [#351](https://github.com/esany/paleo-type/issues/351), [#352](https://github.com/esany/paleo-type/issues/352) have produced separate, **AI/source-visible and reviewable provisional research owners**:
+
+- [Content and document-function inventory](research/content-document-function-inventory-2026-10-30.md) — maps the full 0001–0135 PDF/provider-image domain to recognizable written-function zones. The file contains formal Lehnbrief/confirmation texts, diagnostically named `Lehen-Briefs Concept` (0042R), `Revers` (0061R), `Vollmacht` (0069R), `Lehn-Schein` (0071R), petitions/administrative writing, copies and authentication/chancery notes, older represented texts and a large 1781 charter. These are not assumed to be one physical document per image or accepted legal-functional classifications.
+- [Lehns-/administrative process and chronology](research/business-process-chronology-2026-10-30.md) — separates recurring earlier functional zones, a clearer two-1760-petition/copy/possible-presentation complex, texts dated 1678/1679 transmitted in a later copy setting, and late formal instruments dated provisionally 1780/1781. The original image order is **not** a demonstrated historic process order. `1678/1679` are represented **text dates**, not photographed carrier dates. One contiguous whole-case chronology is **not** established.
+- [Targeted source-critical dispositions](research/targeted-source-criticism-2026-10-30.md) — discriminates read titles from legal/diplomatic identification, copy labels from demonstrated concrete template links, and surface observations from material/seal hypotheses. `vorstehende Abschrift`/`Original Supplicat` are evidenced at 0102R; A/B-copy/Originalien reference in 0115L remains provisional in exact extent. No exact photograph-to-photograph original/copy chain is accepted.
+
+**Human visual corrections supersede weaker earlier AI hypotheses:** the `0094–0096/0097 ↔ later Abschriften` Vorlage chain is withdrawn; `0006L` and `0006R` are not one text (possible `0006R↔0007L` front/reverse); `0008L` has dispatch-like folds/closure/address while `0008R` has only a light vertical fold and no obvious letter character; `0131R` contains an additional small sheet obscuring a signature/chancery area, with `0132L` as reverse of the main carrier. `Chur. Für... … Kanzley` is only a fragmentary Human reading; paste/rubbing/seal explanations remain unverified. The one-object correction for `0133–0135` remains in force. The existing [object/view map](research/documentary-object-view-map-2026-10-29.md) was reconciled to these observations without replacing its distinct material ownership.
+
+**Review/evidence ceiling:** exact compact PDF SHA-256 was checked again on 2026-10-30; targeted visually inspected pages 0042, 0061, 0069, 0071, 0102, 0115, 0131. Prior 135-JPEG visual coverage remains the existing #342 observation at its declared lower overview depth; no new complete 135-original inspection, no full transcription or specialist validation is claimed. Unresolved: material object/text boundaries, many names and exact dates, particular Lehnbrief↔Revers relationships, precise A/B and photo-template collation, seal/attachment details and internal Source identities. No G2–G6 gate, new Source, foliation or generic method contract follows.
+
+### Bounded direct-transcription experiments — 2026-10-30 (review candidates, no G2 activation)
+
+A failed first PDF-to-text attempt and subsequent **partial experimental re-readings** are recorded with source locators, uncertainties, error diagnosis, and learning dispositions in [iteration 2 experiment](research/direct-transcription-experiment-iteration-02-2026-10-30.md) and [iterations 3–4](research/direct-transcription-iterations-03-04-2026-10-30.md). The latter note is the owning Project **candidate** for the short 0102R→0103L attestation continuation (seven working main-text lines plus isolated `102R-K01 supplicat` as a **possible Kustode**, not a confirmed additional word). Neither research note is a canonical G2 transcription or independent palaeographic/specialist validation.
+
+Practical documented corrections: the first attempt confused microfilm frame counters with the already verified PDF-page/provider-image crosswalk; image-by-image reading missed known repeated views and material overlaps; incomplete/unattempted text had been confused with illegibility. These are applications of **existing** Source/Provenance, S2/S3/transcription and Learning rules, not evidence for a new method, software requirement or automatic scholarly scope. An integrated line/region/variation viewer remains a tooling *candidate*, not admitted development. The previous 0094–0097↔later-copy chain remains withdrawn. The downloadable experimental PDFs remain derived presentation outputs external to canonical repository truth, so future work must recover candidate readings from the linked research notes and recheck exact controlled source images.
+
+**Status unchanged:** no source-wide G2 representation, no G2–G6 gate, no new archival foliation, no accepted original-copy identity and no successor scholarly NEXT ACTION. This section is restart/navigation and result classification only.
+
 ## Source-entry route and coverage state
 
 The Project route is Human-confirmed `EXISTING_PROJECT`. Canonical source-entry route history is owned by `../../source-entry/routes.tsv`.
 
-The canonical source-entry owner contains one exact-locator checkpoint for each inspected JPEG in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. Package verification and visual inspection remain separate: the rows record only the overview observations and their claim ceilings.
+The canonical source-entry owner contains 135 exact-locator overview checkpoints, 19 targeted-detail checkpoints, and **one whole-domain object/view-reconnaissance checkpoint** for provider images 0001–0135 in `../../source-entry/inspection-coverage.tsv`, all bound to `ROUTE-SSTA-20578-NR632-001`. The single domain checkpoint is deliberate: exact per-image File identities and earlier per-image overview coverage already exist, while the new pass has one homogeneous purpose/depth/claim ceiling across the declared domain. Cross-image grouping, readings and documentary-function hypotheses remain Project research state rather than coverage truth.
 
 During any further direct reconnaissance, each durable coverage record must continue to reference the exact route and exact File/evidence locator actually inspected. Provider image IDs, PDF pages and archival folios remain distinct unless an evidenced crosswalk is established.
+
+### Digital locator crosswalk — 2026-10-29
+
+The exact supplied compact PDF now has an additive Source-level digital crosswalk at `../../corpus/source-data/SSTA-ARCHIVIALE-EDD69AA1/digital-crosswalk.tsv`. It records the observed one-to-one correspondence between the 135 exact provider JPEG Files and PDF pages 1–135. This is **digital-instantiation mapping only**: it does not establish archival foliation, material-object boundaries, documentary-unit boundaries or internal Source identity. The existing folio-centred crosswalk model remains unchanged for Sources where archival folios are evidenced. If Nr. 632 foliation is later established, that is added as separate folio evidence rather than inferred from numeric coincidence.
 
 ## Generic gate state
 
 | Gate/activity | State | Evaluated scope | Meaning / residual limit |
 |---|---|---|---|
 | G1 source/transmission basis | `reached` | Nr. 632 source-entry basis and exact provider-image File domain | Source identity, Project root/use, explicit route, exact JPEG File identities, storage/rights state, Project-use bindings and target-context inspectability are persisted; archival foliation/internal boundaries remain unresolved. |
-| source-entry reconnaissance | `complete for declared overview domain` | provider images 0001–0135 | Ordered overview pass is persisted as 135 exact-locator observations at overview depth; deeper document-boundary/relevance work remains open and no narrower scholarly scope is inferred. |
-| G2–G6 | `not activated` | no active scholarly scope | No transcription, internal analysis, controlled comparison, consolidation or edition claim is made. |
+| source-entry reconnaissance | `overview complete; targeted detail + whole-domain object/view pass inspected` | overview 0001–0135; detail 0097–0108 and 0129–0135; object/view 0001–0135 | 135 overview checkpoints, 19 targeted-detail checkpoints and one complete-for-declared-domain object/view checkpoint; the Project map preserves cross-image grouping hypotheses and residuals; relevance remains unresolved and no narrower scope is inferred. |
+| content/function/business-process review | `provisional research results available` | whole PDF/provider-image domain 0001–0135 at diagnostic depth, with targeted 2026-10-30 review loci | Three Project research owners linked above, separate from material/view map; Human corrections reconciled; not specialist acceptance or G2. |
+| G2–G6 | `not activated` | no selected G2 transcription/edition scope | No G2 diplomatic representation, G3–G6 gate or edition claim; diagnostic readings remain provisional in the three Project research notes. |
 
 ## NEXT ACTION — canonical restart point
 
-Continue the already-authorized Nr. 632 source-entry block with an evidence-ranked detail pass over the unresolved document/material boundaries identified during the ordered overview. Begin with provider images **0098–0107**, where the overview shows a material/documentary transition with written leaves, signatures and/or wax-seal impressions; then assess **0130–0135**, where formal written leaves, a calligraphic heading, signatures and/or wax-seal impressions are visible. Inspect adjacent images `0097`, `0108` or `0129` only as needed to test those boundaries. Preserve provider-image, archival-folio and documentary-boundary distinctions; do not infer a narrower scholarly scope, foliation or text reading from the overview. A global restart at `0001` is not required unless later evidence shows the overview cursor or package provenance needs re-audit.
+The Human-authorized **#350–#352 research cycle** has produced bounded inventory, business-process and source-critical results in the linked Project research owners, with residual claims explicitly marked. **Their Issue/PR acceptance and closure remain separate from the existence of these research files.** After this authorized review/persistence work, **no successor research priority, transcription/edition target or automatic NEXT ACTION is selected.** Later targeted collation or specialist adjudication requires a concrete reason and correct authority; open uncertainties alone do not activate it.
 
-Do not substitute abstract schema work, a synthetic Corpus-only fixture, OCR/HTR, guessed foliation or a narrower scholarly locus for this continuation.
+Preserve Project purpose, direct source evidence, provider-image/archival-folio/document distinctions, and all Human corrections. No re-acquisition, OCR/HTR, automatic segmentation, internal Source generation or generic METHOD/CORPUS implementation is authorized by this checkpoint.
 
 ## Restartability
 
@@ -100,6 +143,13 @@ A fresh capable context must be able to reconstruct without old chat that:
 - declared overview coverage is 135/135; this is not detail, transcription or full-resolution reading coverage;
 - controlled external package existence/integrity and research-use authority are established;
 - exact per-JPEG canonical File identities, Project-use evidence bindings and overview coverage records are present for all 135 provider images;
+- the exact Human-supplied 135-page compact PDF is separately registered and Project-use-bound; its digital crosswalk maps PDF pages 1–135 to provider-image Files 0001–0135 without asserting archival folios;
 - overview `relevance_status` remains `UNRESOLVED` because visible documentary/material cues do not by themselves establish narrower scholarly relevance;
 - no re-acquisition is authorized merely to reproduce existing package verification;
-- the next authorized continuation is the evidence-ranked detail pass over the unresolved material/document boundaries beginning with provider images `0098–0107`, then `0130–0135`, using adjacent images only as needed.
+- the authorized detail pass has been performed for `0098–0107` and `0130–0135`, with controls `0097`, `0108` and `0129`;
+- a later #342 Work pass directly opened all 135 original JPEGs at object/view reconnaissance depth; its 38-group candidate map is persisted in `research/documentary-object-view-map-2026-10-29.md`, while source-entry stores only the inspection checkpoints;
+- Human review identifies `0133–0135` as different views, including front/reverse, of the same oversized charter, and the new pass adds high-confidence repeated-view evidence linking `0132R` to the same reverse-side surface at `0134L`;
+- the `0094–0116` copy/authentication complex is a candidate for future collation, not an accepted original/copy relation or selected priority;
+- the Human-authorized #350–#352 content/chronology/targeted criticism tasks have separate 2026-10-30 Project research files; Human corrections replace older AI candidate views and are source-referenced;
+- the 1760er copy labels do not establish a photographed template relation, and older text dates do not date copy carriers;
+- a new research decision after the #350–#352 bounded review/persistence cycle remains open.

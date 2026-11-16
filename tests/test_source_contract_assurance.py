@@ -286,6 +286,115 @@ class SourceContractAssuranceRegressionTests(unittest.TestCase):
         errors, _, _ = self.validate()
         self.assertTrue(any("at least one digital locator is required" in error for error in errors))
 
+    def test_digital_crosswalk_allows_file_bound_mapping_without_archival_folio(self) -> None:
+        file_path = self.root / "corpus" / "files.tsv"
+        file_headers, file_rows = read_tsv(file_path)
+        file_rows.append(
+            {
+                "file_id": "FILE-A-COMPACT",
+                "source_id": "SRC-A",
+                "filename": "a-compact.pdf",
+                "sha256": "c" * 64,
+                "role": "compact PDF",
+                "coverage": "fixture",
+                "storage_status": "external-controlled",
+                "repository_path": "",
+                "rights_status": "fixture",
+            }
+        )
+        write_tsv(file_path, file_headers, file_rows)
+
+        cfg = self._contract()["tables"]["digital_crosswalks"]
+        path = self.root / "corpus" / "source-data" / "SRC-A" / "digital-crosswalk.tsv"
+        write_tsv(
+            path,
+            cfg["required_columns"],
+            [
+                {
+                    "mapping_id": "DMAP-A-1",
+                    "source_id": "SRC-A",
+                    "provider_image": "0001",
+                    "provider_file_id": "FILE-A",
+                    "pdf_page": "1",
+                    "pdf_file_id": "FILE-A-COMPACT",
+                    "mapping_status": "observed",
+                    "evidence": "fixture direct comparison",
+                    "notes": "no folio asserted",
+                }
+            ],
+        )
+
+        errors, _, cache = self.validate()
+        self.assertEqual([], errors)
+        self.assertEqual("DMAP-A-1", cache["digital_crosswalks"]["SRC-A"][0]["mapping_id"])
+
+    def test_digital_crosswalk_rejects_file_from_another_source(self) -> None:
+        cfg = self._contract()["tables"]["digital_crosswalks"]
+        path = self.root / "corpus" / "source-data" / "SRC-A" / "digital-crosswalk.tsv"
+        write_tsv(
+            path,
+            cfg["required_columns"],
+            [
+                {
+                    "mapping_id": "DMAP-BAD",
+                    "source_id": "SRC-A",
+                    "provider_image": "0001",
+                    "provider_file_id": "FILE-A",
+                    "pdf_page": "1",
+                    "pdf_file_id": "FILE-B",
+                    "mapping_status": "observed",
+                    "evidence": "fixture",
+                    "notes": "",
+                }
+            ],
+        )
+
+        errors, _, _ = self.validate()
+        self.assertTrue(
+            any("pdf_file_id FILE-B belongs to source SRC-B, not SRC-A" in error for error in errors)
+        )
+
+    def test_digital_crosswalk_requires_positive_pdf_page(self) -> None:
+        file_path = self.root / "corpus" / "files.tsv"
+        file_headers, file_rows = read_tsv(file_path)
+        file_rows.append(
+            {
+                "file_id": "FILE-A-COMPACT",
+                "source_id": "SRC-A",
+                "filename": "a-compact.pdf",
+                "sha256": "c" * 64,
+                "role": "compact PDF",
+                "coverage": "fixture",
+                "storage_status": "external-controlled",
+                "repository_path": "",
+                "rights_status": "fixture",
+            }
+        )
+        write_tsv(file_path, file_headers, file_rows)
+
+        cfg = self._contract()["tables"]["digital_crosswalks"]
+        path = self.root / "corpus" / "source-data" / "SRC-A" / "digital-crosswalk.tsv"
+        write_tsv(
+            path,
+            cfg["required_columns"],
+            [
+                {
+                    "mapping_id": "DMAP-A-0",
+                    "source_id": "SRC-A",
+                    "provider_image": "0001",
+                    "provider_file_id": "FILE-A",
+                    "pdf_page": "0",
+                    "pdf_file_id": "FILE-A-COMPACT",
+                    "mapping_status": "observed",
+                    "evidence": "fixture",
+                    "notes": "",
+                }
+            ],
+        )
+
+        errors, _, _ = self.validate()
+        self.assertTrue(any("pdf_page must be a positive integer" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

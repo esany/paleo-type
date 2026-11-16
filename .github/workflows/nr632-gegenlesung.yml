@@ -1,0 +1,62 @@
+name: Nr. 632 – GitHub blind-review checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/nr632-gegenlesung.yml"
+      - "tools/gegenlesung_check.py"
+      - "tests/test_gegenlesung_check.py"
+      - "projects/ssta-20578-nr-632/research/**"
+      - "projects/ssta-20578-nr-632/returns/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gegenlesung:
+    name: Independent review and work-return (no manuscript judgement)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout proposed checker code and tests
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run checker regressions first
+        run: python -m unittest discover -s tests -p "test_gegenlesung_check.py" -v
+      - name: Checkout current research PR #359
+        uses: actions/checkout@v4
+        with:
+          ref: research/nr632-transcription-t0-t1-20261030
+          path: research-checkout
+          fetch-depth: 0
+      - name: Fetch independently committed review branch
+        run: |
+          git -C research-checkout fetch origin \
+            +refs/heads/review/nr632-gegenlesung-vorab:refs/remotes/origin/review/nr632-gegenlesung-vorab
+      - name: Verify work_return against latest committed return report
+        run: |
+          REPORT=$(find research-checkout/projects/ssta-20578-nr-632/returns \
+            -maxdepth 1 -name '????-??-??-*.json' -type f | sort -V | tail -n 1)
+          test -n "$REPORT" && test -f "$REPORT"
+          echo "Validating committed report: $REPORT"
+          python tools/work_return.py \
+            --root research-checkout --project ssta-20578-nr-632 \
+            --report "$REPORT"
+      - name: Verify review declarations and historical reading-owner commits
+        run: |
+          python tools/gegenlesung_check.py \
+            --root research-checkout \
+            --research-owner projects/ssta-20578-nr-632/research/transcription-pilot-0102R-0103L-2026-10-30.md \
+            --review-path projects/ssta-20578-nr-632/research/gegenlesung-vorab.md \
+            --review-ref refs/remotes/origin/review/nr632-gegenlesung-vorab
+      - name: GitHub check summary
+        if: always()
+        run: |
+          {
+            echo '## Nr. 632 — GitHub checks'
+            echo 'Tests, source-owner Git delta, explicit blind declarations and comparison metadata only.'
+            echo 'A green check is **not** a diplomatic reading or scholarly gate.'
+            echo 'See step logs for exact red/green status.'
+          } >> "$GITHUB_STEP_SUMMARY"

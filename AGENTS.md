@@ -17,6 +17,28 @@ Use `README.md` for the repository reading/navigation path and generated/resolve
 
 Complete **applicable** context is required; indiscriminate loading of the whole repository is not.
 
+### Scholarly source-work activation checkpoint
+
+When the requested outcome concerns historical-source understanding, source criticism, transcription or scholarly edition work, do not let tool/access/acquisition state become the answer backbone. Before substantial support work, freshly resolve the applicable scholarly owner/current cursor and make the following meanings explicit enough to govern execution:
+
+```text
+CURRENT OBSERVATION / UNCERTAINTY
+→ BOUNDED SCHOLARLY QUESTION
+→ GOVERNING DISCIPLINE / METHOD
+→ EXACT EVIDENCE / LOCATOR NEEDED
+→ CLAIM CEILING
+→ FIRST SCHOLARLY ACTION
+→ RETURN / REVIEW / SPECIALIST TRIGGER
+```
+
+Derive those meanings from the current Project/Source owners, `STATUS.md` where applicable, and the owning scholarly method; do not copy current Project truth into a second store. Source/File/package availability is support state, not a substitute for the scholarly question.
+
+For a source-capable handoff, bind the exact Source/File identity and evidence locator that can be resolved before execution, state the target-context access status, and distinguish inherited/candidate observations from new direct primary-source inspection. A prior AI/PR observation is not new primary evidence merely because another AI repeats it.
+
+Support work before the first scholarly action is justified only when it directly makes that action executable or protects a required invariant. Resource unavailability remains action-local unless an authoritative dependency establishes a wider consequence.
+
+This checkpoint is an activation projection of the existing scholarly method, #292 assistance semantics and `methodology/workflow.md`; it creates no new scholarly stage, Project priority, automatic scope or workflow engine.
+
 For an **image-preservation/acquisition** request concerning a record at `https://www.archiv.sachsen.de`, resolve the archival branch from the record and load the current repository skill `.agents/skills/savesax/SKILL.md` when it is **Hauptstaatsarchiv Dresden**. The Human need not name the skill. This is a task-specific routing reference to the skill owner (#271), not a general SStA/Leipzig scope expansion, a status-read download authorization, or a guarantee that a host which has not mounted repository skills can invoke it. The skill owns the provider route and external-preservation contract; do not reproduce them here.
 
 ## Mission

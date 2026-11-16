@@ -23,6 +23,7 @@ Project existence or priority is never inferred from Source/File structure or en
 
 ### Human
 
+0. **Bedienung, Stichworte und Prompts: [`SPICKZETTEL.md`](SPICKZETTEL.md).**
 1. Read this README for orientation.
 2. Read `GOVERNING_OBJECTIVE.md` for purpose, precedence and Human Owner authority.
 3. Open the relevant Project `project.yml` for purpose/scope/documentary anchor.

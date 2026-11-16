@@ -567,6 +567,75 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
                 errors.append(f"{path}:{i}: stable_image_urn must start with 'urn:'")
         crosswalks_by_source[source_dir] = rows
 
+    digital_cfg = contract["tables"].get("digital_crosswalks", {})
+    digital_crosswalks_by_source: dict[str, list[dict[str, str]]] = {}
+    if digital_cfg:
+        digital_ids_seen: set[str] = set()
+        for path in sorted(root.glob(digital_cfg["glob"])):
+            headers, rows = read_tsv(path)
+            check_headers(path, headers, digital_cfg["required_columns"], errors)
+            source_dir = path.parent.name
+            if source_dir not in source_by_id:
+                errors.append(f"{path}: source-data directory {source_dir} has no corpus source node")
+
+            tuples_seen: set[tuple[str, str, str, str]] = set()
+            for i, row in enumerate(rows, start=2):
+                for field in digital_cfg.get("required_nonempty", []):
+                    if not row.get(field):
+                        errors.append(f"{path}:{i}: {field} must not be empty")
+
+                mapping_id = row.get(digital_cfg.get("key", "mapping_id"), "")
+                if mapping_id:
+                    if mapping_id in digital_ids_seen:
+                        errors.append(f"{path}:{i}: duplicate digital mapping_id {mapping_id}")
+                    digital_ids_seen.add(mapping_id)
+
+                sid = row.get("source_id", "")
+                if sid != source_dir:
+                    errors.append(f"{path}:{i}: row source_id {sid!r} must match directory {source_dir}")
+
+                mapping = row.get("mapping_status", "")
+                if mapping not in allowed_mapping:
+                    errors.append(f"{path}:{i}: unknown mapping_status {mapping!r}")
+
+                provider_file_id = row.get("provider_file_id", "")
+                pdf_file_id = row.get("pdf_file_id", "")
+                for field_name, file_id in (
+                    ("provider_file_id", provider_file_id),
+                    ("pdf_file_id", pdf_file_id),
+                ):
+                    if file_id and file_id not in file_by_id:
+                        errors.append(f"{path}:{i}: {field_name} {file_id} does not exist in corpus/files.tsv")
+                    elif file_id and sid and file_by_id[file_id].get("source_id") != sid:
+                        errors.append(
+                            f"{path}:{i}: {field_name} {file_id} belongs to source "
+                            f"{file_by_id[file_id].get('source_id')}, not {sid}"
+                        )
+
+                pdf_page = row.get("pdf_page", "")
+                if pdf_page:
+                    try:
+                        if int(pdf_page) < 1:
+                            raise ValueError
+                    except ValueError:
+                        errors.append(f"{path}:{i}: pdf_page must be a positive integer")
+
+                mapping_tuple = (
+                    provider_file_id,
+                    row.get("provider_image", ""),
+                    pdf_file_id,
+                    pdf_page,
+                )
+                if all(mapping_tuple):
+                    if mapping_tuple in tuples_seen:
+                        errors.append(
+                            f"{path}:{i}: duplicate provider/PDF locator mapping "
+                            f"{mapping_tuple[0]}:{mapping_tuple[1]} -> {mapping_tuple[2]}:{mapping_tuple[3]}"
+                        )
+                    tuples_seen.add(mapping_tuple)
+
+            digital_crosswalks_by_source[source_dir] = rows
+
     for (project_id, sid), rows in uses_by_project_source.items():
         if any(row.get("status") == "active" and row.get("relevant_locus") for row in rows) and sid not in crosswalks_by_source:
             warnings.append(f"projects/{project_id}: active source use {sid} has a relevant_locus but no source-data crosswalk yet")
@@ -593,6 +662,7 @@ def validate(root: Path, contract: dict) -> tuple[list[str], list[str], dict]:
         use_evidence=evidence_by_id,
         evidence_by_use=evidence_by_use,
         crosswalks=crosswalks_by_source,
+        digital_crosswalks=digital_crosswalks_by_source,
         source_entry_routes=source_entry["routes"],
         source_entry_coverage=source_entry["coverage"],
         source_entry_current_routes=source_entry["current_routes"],
@@ -685,6 +755,7 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         resolved_uses.append({"use": use, "evidence": evidence_records})
 
     rows = cache["crosswalks"].get(args.source_id, [])
+    digital_rows = cache["digital_crosswalks"].get(args.source_id, [])
     locus_matches = []
     if args.locus:
         locus_matches = [row for row in rows if row.get("archival_folio") == args.locus]
@@ -713,6 +784,7 @@ def cmd_resolve(args: argparse.Namespace) -> int:
         "primary_file": None,
         "locus": args.locus or None,
         "locus_matches": locus_matches,
+        "digital_crosswalk": digital_rows,
         "warnings": warnings,
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))

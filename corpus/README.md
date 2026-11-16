@@ -7,7 +7,7 @@ This directory stores project-independent facts about historical/documentary Sou
 1. `sources.tsv` — canonical Source nodes at whatever evidenced granularity is needed (for example archival unit, bounded source group/document group, section);
 2. `relationships.tsv` — explicit evidence-status-controlled relations between nodes, including generic `part_of` containment and source-relative loci where a bounded relation requires them;
 3. `files.tsv` — exact PDFs/images/exports with filename, SHA-256, coverage, preservation state and rights status;
-4. `source-data/<source_id>/` — reusable source-level folio ↔ export-image ↔ PDF-page ↔ stable-URN crosswalks;
+4. `source-data/<source_id>/` — reusable source-level locator mappings: `crosswalk.tsv` for folio-known mappings and, where needed, `digital-crosswalk.tsv` for exact provider-image File ↔ exact PDF File/page mappings before foliation is established;
 5. `events.tsv` — shared event/activity context.
 
 There is no hard-coded archival hierarchy in the storage model. The generic structural pattern is:
@@ -51,14 +51,15 @@ The resolver derives structural status from the Project's `project_source_id` pl
 
 During the Reg. Ii 5 transition it also exposes the existing legacy Project Source row and `primary_file_id` separately. Legacy file selection is not silently converted into target use-evidence; that conversion belongs to the separately loss-checked migration.
 
-Missing crosswalk mappings are reported rather than guessed.
+Missing crosswalk mappings are reported rather than guessed. `crosswalk.tsv` remains the folio-centred owner; `digital-crosswalk.tsv` is an additive case for digital-to-digital mappings when archival foliation is not yet established. A later folio mapping enriches the Source data; it does not retroactively make an earlier digital-only mapping folio evidence.
 
 ## Identity and ownership
 
 - canonical Source-node identity/type/title/extent/provenance → `sources.tsv`;
 - structural and other Source→Source relationships → `relationships.tsv`;
 - exact File identity/preservation/checksum/rights → `files.tsv`;
-- reusable source-level folio/image/PDF/URN mapping → `source-data/<source_id>/`;
+- reusable source-level folio/image/PDF/URN mapping → `source-data/<source_id>/crosswalk.tsv`;
+- reusable exact provider-image File ↔ exact PDF File/page mapping without asserted foliation → `source-data/<source_id>/digital-crosswalk.tsv`;
 - Project→Source `research_function` and source-relative relevant locus → project `source-uses.tsv`;
 - concrete Project-use→File evidence binding → project `research/use-evidence.tsv` when needed;
 - project reading/analysis → project scholarly work records.
@@ -67,7 +68,7 @@ Research functions are not Source properties. A Source may serve several differe
 
 A use-evidence `file_id` must resolve to a File whose canonical `source_id` equals the `source_id` of the referenced use. This relation identifies a concrete digital instantiation of that Source for that use; it is not a cross-Source claim-evidence mechanism.
 
-`source-uses.relevant_locus` and `use-evidence.evidence_locator` are not interchangeable: the former is source-relative scholarly scope; the latter is an optional locator inside the concrete digital instantiation actually used. Prefer the canonical crosswalk for reusable folio/image/PDF/URN correspondence rather than duplicating it project-locally.
+`source-uses.relevant_locus` and `use-evidence.evidence_locator` are not interchangeable: the former is source-relative scholarly scope; the latter is an optional locator inside the concrete digital instantiation actually used. Prefer the canonical Source-data mappings rather than duplicating reusable locator correspondence project-locally. Use the folio crosswalk when foliation is evidenced; use the digital crosswalk only for exact digital-instantiation mappings that do not assert an archival folio.
 
 ## Persistent identifiers
 
