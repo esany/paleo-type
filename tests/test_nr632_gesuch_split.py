@@ -60,8 +60,15 @@ class GesuchSplitLossTest(unittest.TestCase):
     def test_original_is_restorable_byte_for_byte(self) -> None:
         self.assertEqual(git_blob(restore(self.pilot, self.gesuch)), ORIGINAL_BLOB)
 
+    def moved_blocks(self) -> str:
+        """Nur die verschobenen Transkriptionsblöcke, ohne spätere Arbeitsabschnitte."""
+        return "".join(
+            self.gesuch.split(f"<!-- F4-START:{k} -->\n", 1)[1].split(f"<!-- F4-END:{k} -->\n", 1)[0]
+            for k in KEYS
+        )
+
     def test_all_physical_rows_moved_once(self) -> None:
-        rows = [m.group(0) for m in ROW.finditer(self.gesuch)]
+        rows = [m.group(0) for m in ROW.finditer(self.moved_blocks())]
         self.assertEqual(len(rows), 97)
         self.assertEqual(len(set(rows)), 97, "keine doppelten Zeilen-IDs")
         self.assertEqual(ROW.findall(self.pilot), [], "keine Gesuch-Zeilen mehr in der bisherigen Datei")
