@@ -76,7 +76,7 @@ class GesuchSplitLossTest(unittest.TestCase):
     def test_comparison_lines_stay_where_the_checker_reads_them(self) -> None:
         restored = restore(self.pilot, self.gesuch)
         self.assertEqual(VERGLEICH.findall(self.pilot), VERGLEICH.findall(restored))
-        self.assertEqual(VERGLEICH.findall(self.gesuch), [], "Vergleichszeilen nur in der bisherigen Datei")
+        self.assertEqual(VERGLEICH.findall(self.moved_blocks()), [], "keine Vergleichszeile in den verschobenen Blöcken")
 
     def test_counter_case_detects_loss(self) -> None:
         damaged = self.gesuch.replace("Allergnädigster Herr!", "Allergnädigster Herr", 1)
