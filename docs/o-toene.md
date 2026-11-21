@@ -89,6 +89,12 @@ Antworten auf die offenen Punkte in Claudes Audit „Zweck und Zielbild“, Fass
 **Audit-Kette beenden und Durchgang am Gesuch 0104R–0107L starten** (vorgegebener Antwortknopf gewählt, auf die Frage „Audit-Kette beenden und den Durchgang am Gesuch 0104R–0107L starten?“)
 > Ja, beides
 
+**Ortskenntnis zu den Ortsnamen im Gesuch 0104R–0107L** (selbst geschrieben, während der Prüfung am Bild)
+> Ebersdorf gibt es in der Nähe. auch Bahren und Posen ..
+
+**Fortsetzung des Gesuch-Durchgangs** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich mit den übrigen unsicheren Stellen des Gesuchs weitermachen?“)
+> Ja, weitermachen
+
 ---
 
 ## 15.11.2026 · übertragen
