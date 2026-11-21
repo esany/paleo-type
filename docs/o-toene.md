@@ -148,6 +148,9 @@ Der erste Satz bezieht sich auf die Notiz „coll: Knau“ unten links auf 0104R
 **Übernahme von PR #418 auf `main`** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich PR #418 übernehmen, sobald die Prüfung grün ist?“; übernommen als Commit `bee7716`)
 > Ja, dann übernehmen
 
+**Übernahme von PR #416 auf `main`** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich PR #416 auf main übernehmen?“; damit kommen D-022, die Audits, die Ursachenanalyse und diese O-Töne auf `main`)
+> Ja, übernehmen
+
 ---
 
 ## 15.11.2026 · übertragen
