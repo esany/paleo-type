@@ -143,7 +143,7 @@ class GovernanceOwnershipRegressionTests(unittest.TestCase):
         self.assertNotIn("## Current active scope", readme)
         self.assertNotIn("Current active scope:", readme)
         self.assertNotIn("The current Knau project is at G2", readme)
-        self.assertIn("Do not copy current Project scope/gate/`NEXT ACTION` into this README", readme)
+        self.assertIn("Den aktuellen Projektumfang, Gate-Stand oder `NEXT ACTION` nicht in diese README kopieren.", readme)
 
 
 if __name__ == "__main__":
