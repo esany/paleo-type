@@ -77,8 +77,79 @@ Antworten auf die offenen Punkte in Claudes Audit „Zweck und Zielbild“, Fass
 >
 > Denke in Zusammenhängen und Systemisch. Achte darauf das es hier eine transdisziplinäre Fragestellung ist.
 
-**Freigabe der Quickwins Q1–Q5 aus Audit Fassung 2**
+**Freigabe der Quickwins Q1–Q5 aus Audit Fassung 2** (vorgegebener Antwortknopf gewählt)
 > Alle fünf
+
+**Übernahme von PR #415 auf `main`** (vorgegebener Antwortknopf gewählt)
+> Ja, übernehmen
+
+**Neustart oder Reparatur** (selbst geschriebene Antwort auf die Frage „Reparatur annehmen und mit dem Gesuch-Durchstich beginnen?“; sie beantwortet nur den ersten Teil; festgehalten als D-022)
+> reparieren statt neu starten“
+
+**Audit-Kette beenden und Durchgang am Gesuch 0104R–0107L starten** (vorgegebener Antwortknopf gewählt, auf die Frage „Audit-Kette beenden und den Durchgang am Gesuch 0104R–0107L starten?“)
+> Ja, beides
+
+**Ortskenntnis zu den Ortsnamen im Gesuch 0104R–0107L** (selbst geschrieben, während der Prüfung am Bild)
+> Ebersdorf gibt es in der Nähe. auch Bahren und Posen ..
+
+**Fortsetzung des Gesuch-Durchgangs** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich mit den übrigen unsicheren Stellen des Gesuchs weitermachen?“)
+> Ja, weitermachen
+
+**Reihenfolge im Gesuch-Durchgang** (vorgegebener Antwortknopf gewählt, auf die Frage „Was zuerst: Blindprobe der Vorschläge oder die lesbare Fassung?“)
+> Erst Blindprobe
+
+**Zur Antwort eines ChatGPT-Chats, der die Gegenlesung ablehnte und auf einen frischen Chat verwies** (selbst geschrieben)
+> hattest du das nicht schon repariert:
+
+**Art der Blindprobe** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich die Blindprobe hier von einem frischen, unabhängigen Leser machen lassen?“)
+> Ich öffne neuen Chat
+
+**Zu den Ortsnamen im Gesuch nach dem Vergleich mit der Blindprobe** (selbst geschrieben)
+> Bahren für mich eindeutig / Gerstdorff kann auch ein Name sein
+
+**Frage nach der Arbeitsweise** (selbst geschrieben)
+> hast du sauber methodisch gearbeitet oder wilde sau gespielt
+
+**Frage nach Werkzeug und Wissen** (selbst geschrieben)
+> hast du überhaupt das nötige tooling für das lesen der handschriften .. das erfahrungswissen und sota?
+
+**Auftrag zum Methodenvergleich** (selbst geschrieben)
+> wir haben  doch schon jede menge ansätze im Modell dazu  - mache einen deep research ..erstmal im repo .. schau in den visitationsakten .. wie erschließen wir quellen, was legen wir wann an. da finde ich seit 632 auch ein methodenverlust passiert .. schaue tiefer nach
+
+**Umsetzung von #397** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich #397 umsetzen und das Gesuch ins Visitations-Format überführen?“)
+> Ja, #397 umsetzen
+
+**Zur Arbeitsweise und Auftrag zur Ursachenanalyse** (selbst geschrieben)
+> das ist doch kein problem, oder?
+>
+> hattest du das nicht schon als Fehler identifiziert?:
+>
+> Wir hatten massive Probleme mit dem Repo, allein, das du ungesehen da mit vollgas reingelaufen bist, zeigt mir das du überhaupt nicht mit der nötigen Gewissenhaftigket und Behutsamkeit agierst, und dir der Risiken auch überhaupt nicht bewußt bist, trotz angeblich eigehendem Studium. Das Repo ist ein repo der Prosa. Wir haben viele wichtige Anforderungen definiert .. gerade bei der Methodik, aber es fehlt an funktionaler Umsetzung und Support, um unseren Intent zu erreichen. bevor wir weiter lesen, sollten wir erstmal schauen, wie schlimme es ist .. was an bugs schon bekannt ist, diese analysieren und zu prüfen.
+>
+> Zentral: sind es symtome, oder die tatsächlichen Ursachen: Frage nach einem vermeintlichen Fund, Warum .. und du kommst zur nächsten Ursachen .. am Ende der Warum-Kette steht dann hoffentlich das eigentliche Problem
+
+Der erste Satz bezieht sich auf die Notiz „coll: Knau“ unten links auf 0104R, der zweite auf die fehlende G3-Prüftabelle; beide zitierte der Prüfchat zuvor als „offene Punkte“.
+
+**Ablage der Ursachenanalyse** (vorgegebener Antwortknopf gewählt, auf die Frage „Trifft die Warum-Kette das eigentliche Problem?“; festgehalten in `engineering/evidence/audits/warum-ketten-bekannte-bugs-2026-11-21.md`)
+> Ja, festhalten
+
+**Prüfung der Warum-Kette** (selbst geschrieben)
+> du kannst stichprobenweiese weiteree audits lesen und prüfen, ob die Kette hält.
+
+**Frage nach Schutz vor demselben Muster** (selbst geschrieben)
+> ok, wie verhindern wir, das du diesem gift auch erliegst
+
+**Erste Gegenmaßnahme** (vorgegebener Antwortknopf gewählt, auf die Frage „Womit anfangen?“; umgesetzt in PR #418)
+> Bestandsprüfung zuerst
+
+**Bestandsprüfung bei jedem PR** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll die Bestandsprüfung bei jedem PR automatisch mitlaufen?“; umgesetzt in PR #418)
+> Ja, automatisch
+
+**Übernahme von PR #418 auf `main`** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich PR #418 übernehmen, sobald die Prüfung grün ist?“; übernommen als Commit `bee7716`)
+> Ja, dann übernehmen
+
+**Übernahme von PR #416 auf `main`** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich PR #416 auf main übernehmen?“; damit kommen D-022, die Audits, die Ursachenanalyse und diese O-Töne auf `main`)
+> Ja, übernehmen
 
 ---
 
