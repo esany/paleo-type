@@ -95,6 +95,12 @@ Antworten auf die offenen Punkte in Claudes Audit „Zweck und Zielbild“, Fass
 **Fortsetzung des Gesuch-Durchgangs** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich mit den übrigen unsicheren Stellen des Gesuchs weitermachen?“)
 > Ja, weitermachen
 
+**Art der Blindprobe** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich die Blindprobe hier von einem frischen, unabhängigen Leser machen lassen?“)
+> Ich öffne neuen Chat
+
+**Zu den Ortsnamen im Gesuch nach dem Vergleich mit der Blindprobe** (selbst geschrieben)
+> Bahren für mich eindeutig / Gerstdorff kann auch ein Name sein
+
 ---
 
 ## 15.11.2026 · übertragen
