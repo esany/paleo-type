@@ -142,6 +142,9 @@ Der erste Satz bezieht sich auf die Notiz „coll: Knau“ unten links auf 0104R
 **Erste Gegenmaßnahme** (vorgegebener Antwortknopf gewählt, auf die Frage „Womit anfangen?“; umgesetzt in PR #418)
 > Bestandsprüfung zuerst
 
+**Bestandsprüfung bei jedem PR** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll die Bestandsprüfung bei jedem PR automatisch mitlaufen?“; umgesetzt in PR #418)
+> Ja, automatisch
+
 ---
 
 ## 15.11.2026 · übertragen
