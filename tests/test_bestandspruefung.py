@@ -59,5 +59,37 @@ class BestandspruefungTest(unittest.TestCase):
         self.assertIn("Eigentümerentscheidung", out)
 
 
+
+class TermsFromPathsTest(unittest.TestCase):
+    """Für den automatischen Lauf bei PRs: Gegenstände aus den geänderten Pfaden ableiten."""
+
+    def test_pr_417_paths_give_the_six_surfaces(self) -> None:
+        paths = [
+            "projects/ssta-20578-nr-632/transcription/first-reading/0104R.tsv",
+            "projects/ssta-20578-nr-632/transcription/first-reading/0107L.tsv",
+            "projects/ssta-20578-nr-632/research/gesuch-0104R-0107L.md",
+            "projects/ssta-20578-nr-632/transcription/first-reading/0105L.tsv",
+            "tests/test_nr632_first_reading_migration.py",
+            "corpus/source-data/SSTA-ARCHIVIALE-EDD69AA1/digital-crosswalk.tsv",
+        ]
+        self.assertEqual(bp.terms_from_paths(paths), ["0104R", "0105L", "0107L"])
+
+    def test_project_without_surface_gives_project_id(self) -> None:
+        self.assertEqual(bp.terms_from_paths(["projects/ega-reg-ii-3/STATUS.md"]), ["ega-reg-ii-3"])
+
+    def test_tool_only_change_gives_nothing(self) -> None:
+        self.assertEqual(bp.terms_from_paths(["tools/bestandspruefung.py", "tests/test_bestandspruefung.py"]), [])
+
+    def test_command_line_from_paths_with_nothing_to_check(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            listing = Path(tmp) / "changed.txt"
+            listing.write_text("tools/bestandspruefung.py\n", encoding="utf-8")
+            out = subprocess.run(
+                [sys.executable, str(ROOT / "tools/bestandspruefung.py"), "--github-json", str(FIXTURE),
+                 "--repo", tmp, "--from-paths", str(listing)],
+                capture_output=True, text=True, check=True,
+            ).stdout
+        self.assertIn("Keine Gegenstände", out)
+
 if __name__ == "__main__":
     unittest.main()

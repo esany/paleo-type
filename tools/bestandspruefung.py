@@ -79,6 +79,18 @@ def _hit(item: dict, patterns: list[re.Pattern[str]]) -> dict | None:
     }
 
 
+SURFACE = re.compile(r"(?<![0-9])([0-9]{4}[LR])(?![0-9A-Za-z])")
+PROJECT = re.compile(r"^projects/([^/]+)/")
+
+
+def terms_from_paths(paths: list[str]) -> list[str]:
+    """Gegenstände aus geänderten Pfaden: Flächen wie `0104R`; sonst die Projekt-ID."""
+    surfaces = sorted({m.group(1) for p in paths for m in SURFACE.finditer(p) if PROJECT.match(p)})
+    if surfaces:
+        return surfaces
+    return sorted({m.group(1) for p in paths if (m := PROJECT.match(p))})
+
+
 def pruefe(terms: list[str], issues: list[dict], prs: list[dict], files: dict[str, str]) -> dict[str, list[dict]]:
     patterns = [term_pattern(t) for t in terms if t.strip()]
     result: dict[str, list[dict]] = {
@@ -145,10 +157,19 @@ def _line(h: dict) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("terms", nargs="+", help="Gegenstand, z. B. \"Gesuch 0104R-0107L\"")
+    ap.add_argument("terms", nargs="*", help="Gegenstand, z. B. \"Gesuch 0104R-0107L\"")
+    ap.add_argument("--from-paths", type=Path, help="Datei mit geänderten Pfaden (eine je Zeile); Gegenstände werden daraus abgeleitet")
     ap.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     ap.add_argument("--github-json", type=Path, help="Datei mit {\"issues\": [...], \"prs\": [...]} statt live")
     args = ap.parse_args()
+    if args.from_paths:
+        paths = [line.strip() for line in args.from_paths.read_text(encoding="utf-8").splitlines() if line.strip()]
+        args.terms = list(args.terms) + terms_from_paths(paths)
+        if not args.terms:
+            print("Keine Gegenstände aus den geänderten Pfaden ableitbar (keine Projekt- oder Flächenpfade). Bestandsprüfung übersprungen.")
+            return 0
+    if not args.terms:
+        ap.error("Gegenstand angeben oder --from-paths nutzen")
 
     if args.github_json:
         data = json.loads(args.github_json.read_text(encoding="utf-8"))
