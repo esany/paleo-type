@@ -1,6 +1,6 @@
 # Spickzettel für den Eigentümer
 
-Alle Stichworte, Prompts und Handgriffe an einem Ort. Gilt für jedes Projekt. Stand: **01.11.2026**.
+Alle Stichworte, Prompts und Handgriffe an einem Ort. Gilt für jedes Projekt. Stand: **21.11.2026**.
 
 **Pflege:** Wer ein Stichwort, einen Prompt oder einen Ablauf einführt oder ändert (Astra, Claude oder eine andere KI), ändert ihn **hier im selben PR**. Hier stehen nur allgemeine Regeln; was ein einzelnes Projekt betrifft, steht in dessen `projects/<id>/ARBEITSPLAN.md`. Ältere Fassungen stehen in der Git-Historie.
 
@@ -62,7 +62,7 @@ paleo-type: Bei „paleo-type“: Du bist Prüfer, nicht Bauer. Lies im GitHub-R
 
 **c) Bildquellen:** Die Bilddateien (z. B. PDFs) eines Projekts liegen als **Projektquelle** in beiden Chat-Projekten, nie im Repo. Welche Datei gilt, steht mit Prüfsumme im Projekt-Abschnitt „Parameter: Gegenlesung“.
 
-**d) GitHub:** Settings → General → „Automatically delete head branches“ einschalten.
+**d) GitHub:** „Automatically delete head branches“ ist seit 21.11.2026 eingeschaltet: Nach jedem Merge verschwindet der Branch von selbst. Archivierte Stände liegen als Tag `archiv/<branchname>` (#364).
 
 **e) `main` ist geschützt** (Ruleset „Main“, seit 02.11.2026, #90): Änderungen nur über einen PR, und nur wenn `validate` grün ist. Niemand kann das umgehen, auch du und die KIs nicht. Löschen und Überschreiben sind gesperrt.
 
@@ -138,5 +138,6 @@ Wenn du eingreifen musstest, weil die Arbeit in die falsche Richtung lief, setze
 | Rückkehrpunkt | `STATUS.md` des Projekts (oben), im aktuellen Forschungsbranch |
 | Ablauf der Gegenlesung | `docs/gegenlesung-vorab.md` |
 | Übergabestand des Prüfchats | offenes Issue mit Label `uebergabe` |
+| Deine wörtlichen Aussagen (O-Töne) | [`docs/o-toene.md`](docs/o-toene.md) |
 | Aufträge | offene Issues mit `an:chatgpt` / `an:claude` |
 | Offene Entscheidungen für dich | offene Issues mit `an:mensch` |

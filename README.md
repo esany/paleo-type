@@ -1,153 +1,167 @@
 # paleo-type
 
-Lean, evidence-based workspace for transparent transcription, source criticism and scholarly analysis of early modern handwritten sources.
+Schlanke, belegorientierte Arbeitsumgebung für nachvollziehbare Transkription, Quellenkritik und wissenschaftliche Auswertung frühneuzeitlicher Handschriften.
 
-## Purpose
+## Zweck
 
-The highest-order purpose, precedence and Human Owner change authority are defined once in `GOVERNING_OBJECTIVE.md`.
+Oberster Zweck, Rangfolge und die Änderungsbefugnis des Eigentümers stehen an genau einer Stelle: `GOVERNING_OBJECTIVE.md`.
 
-This README is the repository **orientation and reading-path view**. It is not a second method manual, Project status store or executable contract. The research sources and scholarly result are the product; software, AI, GitHub and working formats are support infrastructure.
+Diese README ist die **Orientierungs- und Leseweg-Ansicht** des Repos. Sie ist kein zweites Methodenhandbuch, kein Speicher für Projektstände und kein ausführbarer Vertrag. Das Produkt sind die Quellen und das wissenschaftliche Ergebnis; Software, KI, GitHub und Arbeitsformate sind Hilfsmittel.
 
-## Repository layers
+Die wörtlichen Aussagen des Eigentümers stehen gesammelt in [`docs/o-toene.md`](docs/o-toene.md), getrennt von allem KI-Text.
 
-- **METHOD** — `methodology/`, `AGENTS.md`, `DECISIONS.md`, `templates/`: reusable scholarly/operational rules, governance rationale and templates.
-- **REQUIREMENTS** — `requirements/`: accepted reusable Requirement baselines plus namespace navigation. Historical engineering evidence no longer lives here after WP5.
-- **ENGINEERING** — `engineering/`: engineering configuration, bounded changes, ADRs, assurance, semantic catalogs and non-default engineering evidence/history.
-- **CORPUS** — `corpus/`, `entities/`: canonical Source/File identity, reusable source-wide mappings, evidenced relationships and normalized entities.
-- **SOURCE-ENTRY** — `source-entry/`: admitted append-only Source routing history plus granular inspection/coverage state; it references Corpus identity and optional Project binding without owning Project purpose, scholarly scope, gates or `NEXT ACTION`.
-- **PROJECT** — `projects/<id>/`: durable scholarly state for one purpose-established investigation, including source use, evidence binding, transcription/analysis and current research state.
+## Aktuelle Lage
 
-Project existence or priority is never inferred from Source/File structure or engineering state. Detailed semantics live in the owning methodology and Project files.
+Stand: 21.11.2026. Hier stehen nur Hinweise, wo der jeweilige Stand liegt; der Stand selbst steht bei seinem Eigentümer.
 
-## Start here
+- **Aktives Projekt:** `projects/ssta-20578-nr-632/` (Sächsisches Staatsarchiv, 20578, Nr. 632), laut [`SPICKZETTEL.md`](SPICKZETTEL.md).
+- **Forschungspause:** Die Forschung an Nr. 632 ruht seit dem 03.11.2026; der Eigentümer hat das am 14.11.2026 bestätigt. Maßgeblich ist Issue [#399](https://github.com/esany/paleo-type/issues/399). Die Pause endet erst durch Entscheidung des Eigentümers.
+- **Wo die Forschung zu Nr. 632 liegt:** nicht auf `main`, sondern auf dem Branch `research/nr632-transcription-t0-t1-20261030` (Entwurfs-PR [#359](https://github.com/esany/paleo-type/pull/359)). Der Rückkehrpunkt ist die dortige `projects/ssta-20578-nr-632/STATUS.md`. Die gleichnamige Datei auf `main` ist vom 30.10.2026 und nicht der aktuelle Stand. Die Vorab-Gegenlesung liegt auf dem Branch `review/nr632-gegenlesung-vorab`.
+- **Prüfung des Gesamtsystems:** Audits und Ursachenanalysen laufen in [#398](https://github.com/esany/paleo-type/issues/398), [#405](https://github.com/esany/paleo-type/issues/405), [#412](https://github.com/esany/paleo-type/issues/412) und [#413](https://github.com/esany/paleo-type/issues/413) und in den zugehörigen Entwurfs-PRs. Eine Abnahme oder Entscheidung des Eigentümers dazu gibt es noch nicht.
+- **Systementwicklung:** Das Vorhaben SD-KA-01 ist abgeschlossen. Laut `engineering/configuration.json` gibt es keinen aktuellen Engineering-Fokus und keine laufende Änderung.
+- **Übergabestand des Prüfchats:** das offene Issue mit Label `uebergabe` ([#368](https://github.com/esany/paleo-type/issues/368)), jüngster Kommentar.
 
-### Human
+## Schichten des Repos
+
+- **METHODE** — `methodology/`, `AGENTS.md`, `DECISIONS.md`, `templates/`: wiederverwendbare wissenschaftliche und operative Regeln, Begründungen der Steuerung und Vorlagen.
+- **ANFORDERUNGEN** — `requirements/`: angenommene wiederverwendbare Anforderungs-Baselines und Navigation. Historische Engineering-Belege liegen seit WP5 nicht mehr hier.
+- **ENGINEERING** — `engineering/`: Engineering-Konfiguration, begrenzte Änderungen, ADRs, Absicherung, Kataloge sowie Engineering-Belege und -Geschichte.
+- **CORPUS** — `corpus/`, `entities/`: kanonische Identität von Quelle und Datei, wiederverwendbare quellenweite Zuordnungen, belegte Beziehungen und normalisierte Entitäten.
+- **QUELLENEINGANG** — `source-entry/`: angenommene, nur fortgeschriebene Eingangsgeschichte von Quellen sowie feingranularer Stand von Sichtung und Abdeckung. Verweist auf Corpus-Identität und optional auf ein Projekt, besitzt aber weder Projektzweck noch wissenschaftlichen Umfang, Gates oder `NEXT ACTION`.
+- **PROJEKT** — `projects/<id>/`: dauerhafter wissenschaftlicher Stand einer Untersuchung, die aus einem Forschungszweck eingerichtet wurde: Quellennutzung, Belegbindung, Transkription und Auswertung sowie aktueller Forschungsstand.
+
+Ob ein Projekt existiert und welchen Vorrang es hat, wird nie aus der Struktur von Quellen und Dateien oder aus dem Engineering-Stand abgeleitet. Die genaue Bedeutung steht in der zuständigen Methodikdatei und in den Projektdateien.
+
+## Hier anfangen
+
+### Mensch
 
 0. **Bedienung, Stichworte und Prompts: [`SPICKZETTEL.md`](SPICKZETTEL.md).**
-1. Read this README for orientation.
-2. Read `GOVERNING_OBJECTIVE.md` for purpose, precedence and Human Owner authority.
-3. Open the relevant Project `project.yml` for purpose/scope/documentary anchor.
-4. Open its `STATUS.md` for actual gate/evidence/restart state and authorized `NEXT ACTION` when one exists.
-5. Open Project `source-uses.tsv` / `research/use-evidence.tsv` when Project→Source use or concrete File evidence matters.
-6. Follow the owning methodology file for the specific question.
+1. Diese README zur Orientierung lesen.
+2. `GOVERNING_OBJECTIVE.md` für Zweck, Rangfolge und Befugnis des Eigentümers.
+3. Die `project.yml` des Projekts für Zweck, Umfang und dokumentarischen Anker.
+4. Dessen `STATUS.md` für den tatsächlichen Stand von Gates, Belegen und Wiedereinstieg, und für die freigegebene `NEXT ACTION`, wenn es eine gibt.
+5. `source-uses.tsv` und `research/use-evidence.tsv` des Projekts, wenn es darum geht, wie das Projekt Quellen nutzt und welche Datei etwas belegt.
+6. Für die konkrete Frage der zuständigen Methodikdatei folgen.
 
-### AI / implementation agent
+### KI / ausführender Agent
 
-1. read `GOVERNING_OBJECTIVE.md` and `AGENTS.md`;
-2. read the relevant Project/Corpus or engineering canonical state;
-3. establish and load every canonical rule/requirement applicable to the concrete task;
-4. use resolver/generated context where available instead of reconstructing structure/priority from names or chat;
-5. continue only from an authorized task/`NEXT ACTION` when one exists.
+1. `GOVERNING_OBJECTIVE.md` und `AGENTS.md` lesen;
+2. den einschlägigen kanonischen Stand von Projekt, Corpus oder Engineering lesen;
+3. jede für die konkrete Aufgabe geltende kanonische Regel und Anforderung ermitteln und laden;
+4. vorhandene erzeugte Kontexte und Resolver nutzen, statt Struktur oder Vorrang aus Namen oder Chat zu rekonstruieren;
+5. nur von einer freigegebenen Aufgabe oder `NEXT ACTION` aus weiterarbeiten, wenn es eine gibt.
 
-Old chat must never be required to reconstruct durable research or engineering state.
+Alter Chat darf nie nötig sein, um den dauerhaften Forschungs- oder Engineering-Stand zu rekonstruieren.
 
-## Current system-development navigation
+## Navigation zur Systementwicklung
 
-The Human-visible system-development work/decision view is GitHub **#244**. SD-KA-01 implementation is decomposed as **#256–#261** under the recorded D-016 admission.
+Die für Menschen sichtbare Arbeits- und Entscheidungsansicht der Systementwicklung war GitHub **#244**. Die Umsetzung von SD-KA-01 war unter der dokumentierten D-016-Freigabe in **#256–#261** gegliedert.
 
-Canonical current owners:
+Kanonische Eigentümer:
 
-- `engineering/configuration.json` — accepted baselines, active change, explicit current focus/absence and transition provenance;
-- `engineering/changes/SD-KA-01/STATE.json` — bounded change/work-package lifecycle;
-- `engineering/changes/SD-KA-01/RESULT.md` — completed work-package results and whole-system returns;
-- `engineering/changes/SD-KA-01/D016-DECISION-BRIEF.md` and `D016-OWNER-ADMISSION.md` — admitted target/scope and Human-Owner admission;
-- `engineering/catalog/` — managed identities, finding/coverage/relations and legacy-path continuity;
-- `engineering/changes/SD-KA-01/MIGRATION.tsv` — WP5 migration classification, exact pre-move blob identity and rollback evidence.
+- `engineering/configuration.json` — angenommene Baselines, laufende Änderung, ausdrücklicher aktueller Fokus oder dessen Fehlen, Herkunft der Übergänge;
+- `engineering/changes/SD-KA-01/STATE.json` — Lebenszyklus der begrenzten Änderung und ihrer Arbeitspakete;
+- `engineering/changes/SD-KA-01/RESULT.md` — Ergebnisse der abgeschlossenen Arbeitspakete und Rückmeldungen an das Gesamtsystem;
+- `engineering/changes/SD-KA-01/D016-DECISION-BRIEF.md` und `D016-OWNER-ADMISSION.md` — freigegebenes Ziel, freigegebener Umfang und Freigabe durch den Eigentümer;
+- `engineering/catalog/` — verwaltete Identitäten, Befunde, Abdeckung, Beziehungen und Kontinuität alter Pfade;
+- `engineering/changes/SD-KA-01/MIGRATION.tsv` — Einordnung der WP5-Migration, exakte Blob-Identität vor dem Verschieben und Rückweg.
 
-Current process state:
+Prozessstand von SD-KA-01:
 
-> **SD-KA-01 WP1–WP6 VERIFIED / TERMINAL RESULT REVIEW ACCEPTED / ENGINEERING BASELINE UPDATED / NO SD-KA WORK CURRENT.**
+> **WP1–WP6 verifiziert / abschließende Ergebnisprüfung angenommen / Engineering-Baseline aktualisiert / keine SD-KA-Arbeit aktuell.**
 
-SD-KA-01 is complete. Terminal Result Review accepted ADR-0001 / `artifact:ENG-A-0031` as an engineering architecture baseline after exact qualification; the accepted reusable Requirement baseline remains `artifact:ENG-A-0008`. There is no SD-KA current focus or automatically generated successor work. F10 evidential independence, F17/#225 scholarly vertical acceptance and external runtime/specialist claims remain outside this engineering acceptance.
+SD-KA-01 ist abgeschlossen. Die abschließende Ergebnisprüfung hat ADR-0001 / `artifact:ENG-A-0031` nach genauer Qualifizierung als Engineering-Architektur-Baseline angenommen; die angenommene wiederverwendbare Anforderungs-Baseline bleibt `artifact:ENG-A-0008`. Es gibt keinen SD-KA-Fokus und keine automatisch erzeugte Folgearbeit. Ausdrücklich außerhalb dieser Engineering-Abnahme bleiben: F10 (Unabhängigkeit von Belegen), F17/#225 (wissenschaftliche Abnahme von Anfang bis Ende) sowie Aussagen über externe Laufzeitumgebungen und Fachprüfung.
 
-For a derived Human-readable rendering of the same repository state use:
+Eine erzeugte, für Menschen lesbare Darstellung desselben Stands liefert:
 
 `python tools/engineering_context.py --profile human-system-overview --format text`
 
-A generic invocation may resolve context-relative current/next work, but the visible result must remain a meaningful action with scope and provenance. Ambiguity is surfaced rather than silently collapsed into one repository-global cursor.
+Ein allgemeiner Aufruf kann kontextabhängig aktuelle oder nächste Arbeit ermitteln; das sichtbare Ergebnis muss aber eine sinnvolle Handlung mit Umfang und Herkunft bleiben. Mehrdeutigkeit wird offengelegt und nicht stillschweigend auf einen einzigen repoweiten Arbeitsstand verengt.
 
-## Post-WP5 information architecture
+## Informationsarchitektur nach WP5
 
-`requirements/` is now intentionally narrow: `README.md` plus the accepted reusable `domain-requirements.tsv` baseline. The historical mixed engineering corpus has moved to semantic owners without changing authority or currentness:
+`requirements/` ist jetzt bewusst schmal: `README.md` und die angenommene wiederverwendbare Baseline `domain-requirements.tsv`. Der frühere gemischte Engineering-Bestand ist zu seinen inhaltlichen Eigentümern umgezogen, ohne dass sich Befugnis oder Aktualität geändert haben:
 
-- SD-KA bounded change evidence: `engineering/changes/SD-KA-01/`;
-- architecture rationale: `engineering/decisions/`;
-- cross-project Human decision/admission evidence: `engineering/evidence/decisions/`;
-- audits/reviews: `engineering/evidence/audits/`;
-- research/design/problem evidence: `engineering/evidence/research/`;
-- learning: `engineering/evidence/learning/`;
-- historical work instructions/prompts: `engineering/evidence/work-instructions/`;
-- coordination history retained as evidence: `engineering/evidence/coordination/`.
+- Belege der begrenzten Änderung SD-KA: `engineering/changes/SD-KA-01/`;
+- Architekturbegründungen: `engineering/decisions/`;
+- projektübergreifende Entscheidungs- und Freigabebelege des Eigentümers: `engineering/evidence/decisions/`;
+- Audits und Prüfungen: `engineering/evidence/audits/`;
+- Recherche-, Entwurfs- und Problembelege: `engineering/evidence/research/`;
+- Lernen: `engineering/evidence/learning/`;
+- historische Arbeitsanweisungen und Prompts: `engineering/evidence/work-instructions/`;
+- als Beleg aufbewahrte Koordinationsgeschichte: `engineering/evidence/coordination/`.
 
-Moved managed artifacts keep stable `ENG-A-*` identity. `engineering/catalog/legacy-paths.tsv` resolves former paths; those locators are compatibility/navigation only and are not parallel truth stores. `engineering/changes/SD-KA-01/MIGRATION.tsv` records the three bounded WP5 migration slices and exact pre-move blob identities.
+Verschobene verwaltete Artefakte behalten ihre stabile `ENG-A-*`-Identität. `engineering/catalog/legacy-paths.tsv` löst frühere Pfade auf; diese Fundstellen dienen nur der Kompatibilität und Navigation und sind keine zweiten Wahrheitsspeicher. `engineering/changes/SD-KA-01/MIGRATION.tsv` hält die drei begrenzten WP5-Migrationsschritte und die exakten Blob-Identitäten vor dem Verschieben fest.
 
-The current engineering configuration, context and Result owners should be read before deeper historical evidence. Historical evidence is loaded on demand, not as mandatory default context.
+Vor tieferen historischen Belegen sind die aktuellen Eigentümer für Engineering-Konfiguration, Kontext und Ergebnis zu lesen. Historische Belege werden bei Bedarf geladen und gehören nicht zur Pflichtlektüre.
 
-## Engineering verification boundary
+## Grenze der Engineering-Prüfung
 
-`python tools/check.py` is the shared local/CI deterministic full-check entrypoint. It covers Source Contract validation, Engineering validation, the engineering-fitness mapping/safeguards, regressions, fresh-process Project contexts and managed real-data resolver fixtures.
+`python tools/check.py` ist der gemeinsame lokale und CI-Einstiegspunkt für die vollständige deterministische Prüfung. Er umfasst Prüfung des Quellenvertrags, Engineering-Prüfung, die Zuordnungen und Schutzmechanismen der Engineering-Eignung, Regressionstests, Projektkontexte in frischen Prozessen und Resolver-Prüfungen an echten Daten.
 
-A green check establishes only the formal/deterministic properties actually exercised at that exact head. It does **not** establish manuscript truth, specialist validity, evidential independence, Human Owner acceptance, external runtime/preservation fitness or whole-system/programme closure.
+Eine grüne Prüfung belegt nur die formalen, deterministischen Eigenschaften, die an genau diesem Stand tatsächlich geprüft wurden. Sie belegt **nicht**: die Richtigkeit von Handschriftenlesungen, fachliche Gültigkeit, Unabhängigkeit von Belegen, Abnahme durch den Eigentümer, Eignung externer Laufzeit- oder Sicherungsumgebungen oder den Abschluss des Gesamtsystems oder eines Programms.
 
-## Historical programme boundaries
+## Grenzen früherer Programme
 
-- **#225** is closed as GitHub work metadata, but F17 preserves the unresolved scholarly whole-system acceptance boundary; engineering CI cannot convert it into a scholarly PASS.
-- **#230** is completed as the bounded audit owner that led into the current engineering work; closing it did not itself admit implementation.
-- the former **#206** programme remains historical/terminal at its explicit STOP; later separately authorized work does not rewrite that history.
-- **Route B / #90** remains deferred under its Human-Owner disposition.
-- the separately admitted outcome-preserving execution-control family remains under its own owners (#280/#285 etc.); SD-KA assurance consumes only repository-testable consequences that fit its admitted scope.
+- **#225** ist als GitHub-Arbeitsmetadatum geschlossen. F17 hält aber die offene wissenschaftliche Abnahme des Gesamtsystems fest; Engineering-CI kann daraus kein wissenschaftliches PASS machen.
+- **#230** ist als begrenzter Audit-Eigentümer abgeschlossen, der zur damaligen Engineering-Arbeit führte; seine Schließung hat selbst keine Umsetzung freigegeben.
+- Das frühere Programm **#206** bleibt historisch und an seinem ausdrücklichen STOP beendet; später gesondert freigegebene Arbeit schreibt diese Geschichte nicht um.
+- **Route B / #90** bleibt nach der Entscheidung des Eigentümers zurückgestellt.
+- Die gesondert freigegebene Familie der ergebniserhaltenden Ausführungssteuerung bleibt bei ihren eigenen Eigentümern (#280/#285 usw.); die SD-KA-Absicherung übernimmt davon nur repo-prüfbare Folgen, die in ihren freigegebenen Umfang passen.
 
-## Where truth lives
+## Wo die Wahrheit liegt
 
-| Question | Canonical owner |
+| Frage | Kanonischer Eigentümer |
 |---|---|
-| Why does the repository exist / what has precedence? | `GOVERNING_OBJECTIVE.md` |
-| What stable AI/research guardrails apply? | `AGENTS.md` |
-| What accepted cross-project decision history matters? | `DECISIONS.md` |
-| What is the authoritative scholarly end-to-end method? | `methodology/historical-source-workflow.md` |
-| What are the generic research gates? | `methodology/research-gates.md` |
-| How are Projects established, anchored and prioritized? | `methodology/project-lifecycle.md` |
-| How are Source/File identity, provenance and preservation handled? | `methodology/source-and-provenance.md` |
-| What evidence/source-status semantics apply? | `methodology/evidence-policy.md` |
-| How is diplomatic transcription handled? | `methodology/transcription-guidelines.md` |
-| How are execution context, prerequisites, retries and loops handled? | `methodology/workflow.md` |
-| How are quality/falsification/review dimensions handled? | `methodology/quality-and-learning.md` |
-| How are ownership, D-016 admission and propagation handled? | `methodology/maintenance.md` |
-| What stable Source/File/Project-use constraints apply? | `corpus/source-contract.json` + `tools/source_contract.py` |
-| What owns source-entry route history and granular inspection/coverage state? | `source-entry/README.md` + `source-entry/contract.json` + `tools/source_contract.py` |
-| What is the admitted/current Option C decision basis? | `artifact:ENG-A-0119` + `artifact:ENG-A-0120` |
-| What is the accepted reusable Requirement inventory? | `requirements/domain-requirements.tsv` |
-| What is the accepted engineering baseline / active change / explicit focus? | `engineering/configuration.json` |
-| What is the bounded SD-KA lifecycle? | `engineering/changes/SD-KA-01/STATE.json` |
-| What did completed SD-KA work establish? | `engineering/changes/SD-KA-01/RESULT.md` |
-| What managed engineering artifacts/findings/relations exist? | `engineering/catalog/` |
-| What owns moved-path compatibility? | `engineering/catalog/legacy-paths.tsv` |
-| What owns WP5 migration/rollback evidence? | `engineering/changes/SD-KA-01/MIGRATION.tsv` |
-| What owns derived engineering context behavior? | `engineering/context/README.md` |
-| What owns bounded `.prompt` behavior? | `engineering/prompts/CONTRACT.md` |
-| What owns deterministic engineering-fitness mappings? | `engineering/assurance/fitness.json` + `tools/engineering_fitness.py` |
-| What is a Source/File/relationship/crosswalk fact? | `corpus/` |
-| What is one Project and its current scope? | Project `project.yml` |
-| How does a Project use Sources? | Project `source-uses.tsv` |
-| Which concrete File supports a Project use? | Project `research/use-evidence.tsv` |
-| What is current Project restart/gate/evidence state? | Project `STATUS.md` |
+| Warum gibt es das Repo, was hat Vorrang? | `GOVERNING_OBJECTIVE.md` |
+| Was hat der Eigentümer wörtlich gesagt? | `docs/o-toene.md` |
+| Welche festen KI- und Forschungsregeln gelten? | `AGENTS.md` |
+| Welche angenommenen projektübergreifenden Entscheidungen zählen? | `DECISIONS.md` |
+| Was ist die maßgebliche wissenschaftliche Methode von Anfang bis Ende? | `methodology/historical-source-workflow.md` |
+| Was sind die allgemeinen Forschungs-Gates? | `methodology/research-gates.md` |
+| Wie werden Projekte eingerichtet, verankert und priorisiert? | `methodology/project-lifecycle.md` |
+| Wie werden Identität, Herkunft und Sicherung von Quelle und Datei behandelt? | `methodology/source-and-provenance.md` |
+| Welche Beleg- und Quellenstatus gelten? | `methodology/evidence-policy.md` |
+| Wie wird diplomatisch transkribiert? | `methodology/transcription-guidelines.md` |
+| Wie werden Ausführungskontext, Voraussetzungen, Wiederholungen und Schleifen behandelt? | `methodology/workflow.md` |
+| Wie werden Qualität, Falsifikation und Prüfdimensionen behandelt? | `methodology/quality-and-learning.md` |
+| Wie werden Zuständigkeit, D-016-Freigabe und Weitergabe von Änderungen behandelt? | `methodology/maintenance.md` |
+| Welche festen Regeln gelten maschinenprüfbar für Quelle, Datei und Projektnutzung? | `corpus/source-contract.json` + `tools/source_contract.py` |
+| Wer verwaltet Eingangsgeschichte und feingranulare Sichtung und Abdeckung? | `source-entry/README.md` + `source-entry/contract.json` + `tools/source_contract.py` |
+| Was ist die freigegebene und aktuelle Entscheidungsgrundlage für Option C? | `artifact:ENG-A-0119` + `artifact:ENG-A-0120` |
+| Welche wiederverwendbaren Anforderungen sind angenommen? | `requirements/domain-requirements.tsv` |
+| Welche Engineering-Baseline, laufende Änderung und welcher Fokus gelten? | `engineering/configuration.json` |
+| Wie ist der Lebenszyklus von SD-KA? | `engineering/changes/SD-KA-01/STATE.json` |
+| Was hat die abgeschlossene SD-KA-Arbeit ergeben? | `engineering/changes/SD-KA-01/RESULT.md` |
+| Welche Engineering-Artefakte, Befunde und Beziehungen werden verwaltet? | `engineering/catalog/` |
+| Wer verwaltet die Kompatibilität verschobener Pfade? | `engineering/catalog/legacy-paths.tsv` |
+| Wer verwaltet Migrations- und Rückweg-Belege von WP5? | `engineering/changes/SD-KA-01/MIGRATION.tsv` |
+| Wer verwaltet das Verhalten erzeugter Engineering-Kontexte? | `engineering/context/README.md` |
+| Wer verwaltet das Verhalten begrenzter `.prompt`-Aufrufe? | `engineering/prompts/CONTRACT.md` |
+| Wer verwaltet die deterministischen Zuordnungen der Engineering-Eignung? | `engineering/assurance/fitness.json` + `tools/engineering_fitness.py` |
+| Was ist eine Tatsache über Quelle, Datei, Beziehung oder Zuordnung? | `corpus/` |
+| Was ist ein Projekt und sein aktueller Umfang? | `project.yml` des Projekts |
+| Wie nutzt ein Projekt Quellen? | `source-uses.tsv` des Projekts |
+| Welche konkrete Datei belegt eine Projektnutzung? | `research/use-evidence.tsv` des Projekts |
+| Wie ist der aktuelle Stand von Wiedereinstieg, Gates und Belegen im Projekt? | `STATUS.md` des Projekts |
 
-One durable fact/state has one canonical owner. Human summaries, generated context, Issues and chat may point to it but must not become parallel truth stores.
+Eine dauerhafte Tatsache oder ein Stand hat genau einen kanonischen Eigentümer. Zusammenfassungen für Menschen, erzeugte Kontexte, Issues und Chat dürfen darauf verweisen, aber keine zweiten Wahrheitsspeicher werden.
 
-## Current Project directories
+## Aktuelle Projektverzeichnisse
 
-The repository currently contains:
+Das Repo enthält derzeit:
 
 - `projects/ega-reg-ii-3/`;
 - `projects/ega-reg-ii-4-bd-ii/`;
 - `projects/ega-reg-ii-5-knau/`;
 - `projects/ssta-20578-nr-632/`.
 
-The `ega-reg-ii-5-knau` path is a legacy directory/id retained for continuity. Its current Project meaning, scope and priority are defined only by its canonical Project files, not by the slug.
+Der Pfad `ega-reg-ii-5-knau` ist ein altes Verzeichnis bzw. eine alte ID, die aus Gründen der Kontinuität bleibt. Bedeutung, Umfang und Vorrang des Projekts ergeben sich nur aus seinen kanonischen Projektdateien, nicht aus dem Namen.
 
-**Do not copy current Project scope/gate/`NEXT ACTION` into this README.** Read the Project owner directly or use the rebuildable Project-context view.
+**Den aktuellen Projektumfang, Gate-Stand oder `NEXT ACTION` nicht in diese README kopieren.** Direkt beim Projekt-Eigentümer lesen oder die neu erzeugbare Projektkontext-Ansicht nutzen.
 
-## Repository structure
+## Aufbau des Repos
 
 ```text
 GOVERNING_OBJECTIVE.md
@@ -155,6 +169,8 @@ AGENTS.md
 DECISIONS.md
 MILESTONES.md
 README.md
+SPICKZETTEL.md
+docs/
 methodology/
 requirements/
 engineering/
@@ -175,16 +191,16 @@ tools/
 tests/
 ```
 
-## Restartability acceptance
+## Prüfmaßstab für Wiederaufnahme
 
-Another capable researcher/agent, given repository + authorized evidence and no old chat, should be able to determine:
+Eine andere fähige Forscherin, ein anderer Forscher oder Agent soll mit Repo und freigegebenen Belegen, ohne alten Chat, feststellen können:
 
-- repository purpose and authority boundaries;
-- Project purpose/scope and documentary anchor;
-- canonical Source/File identity and structural relationships;
-- Project-relative Source use and concrete evidence bindings;
-- actual Project research/gate/evidence state and whether an authorized `NEXT ACTION` exists;
-- which outputs are canonical versus derived;
-- for system-development work, accepted engineering baselines, active admitted change state, explicit current/next work with provenance, applicable context, completed results, migration compatibility and the next permitted bounded transition.
+- Zweck des Repos und Grenzen der Befugnisse;
+- Zweck und Umfang eines Projekts und seinen dokumentarischen Anker;
+- kanonische Identität von Quellen und Dateien und ihre strukturellen Beziehungen;
+- projektbezogene Quellennutzung und konkrete Belegbindungen;
+- tatsächlichen Forschungs-, Gate- und Belegstand eines Projekts und ob es eine freigegebene `NEXT ACTION` gibt;
+- welche Ausgaben kanonisch und welche abgeleitet sind;
+- für die Systementwicklung: angenommene Engineering-Baselines, Stand laufender freigegebener Änderungen, ausdrückliche aktuelle oder nächste Arbeit mit Herkunft, geltender Kontext, abgeschlossene Ergebnisse, Kompatibilität nach Migrationen und den nächsten zulässigen begrenzten Übergang.
 
-If continuation requires stale orientation prose, duplicated state, inferred priority or recovery of old chat, the owning surface has drifted and must be repaired.
+Wenn die Fortsetzung veraltete Orientierungsprosa, doppelten Stand, abgeleiteten Vorrang oder alten Chat braucht, ist die zuständige Stelle abgedriftet und muss repariert werden.
