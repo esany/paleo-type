@@ -1,0 +1,18 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	[verfallet?] hat; [⟦short transition uncertain⟧]	0105R-A01	haupttext	unclear|deletion_addition_damage:not_investigated	working				first predicate and short final group uncertain
+002	[fordert?] mein Pflicht-	0105R-A02	haupttext	unclear|line_end_division|deletion_addition_damage:not_investigated	working				Bild und danach geöffnete blinde Vorab-Zeile stützen `mein` statt des alten unmarkierten `meine`; sichtbare Teilung statt Komma, Anfang des Verbs bleibt graphisch unsicher.
+003	schuldigster Gehorsam	0105R-A03	haupttext	deletion_addition_damage:not_investigated	working				strong positive graphic reading
+004	der [respective?] Lehn und	0105R-A04	haupttext	unclear|deletion_addition_damage:not_investigated	working				spelling/endings uncertain; keep as visible rather than normalize
+005	gesamten Hand, an	0105R-A05	haupttext	deletion_addition_damage:not_investigated	working				positive word-sequence
+006	diesen beyden Güthern	0105R-A06	haupttext	deletion_addition_damage:not_investigated	working				positive word-sequence
+007	Folge zu thun, welches	0105R-A07	haupttext	deletion_addition_damage:not_investigated	working				positive word-sequence
+008	mich in Allerunter-	0105R-A08	haupttext	line_end_division|deletion_addition_damage:not_investigated	working				visible physical word division
+009	thänigkeit hierdurch be-	0105R-A09	haupttext	line_end_division|deletion_addition_damage:not_investigated	working				continued word at physical line end
+010	[werkstellige?]; Und	0105R-A10	haupttext	unclear|deletion_addition_damage:not_investigated	working				middle consonants uncertain
+011	an Ew: Königl: Majts:	0105R-A11	haupttext	abbreviation_mark|deletion_addition_damage:not_investigated	working				abbreviated forms retained
+012	gelanget mein aller-	0105R-A12	haupttext	line_end_division|deletion_addition_damage:not_investigated	working				written division
+013	gehorsamstes Bitten,	0105R-A13	haupttext	deletion_addition_damage:not_investigated	working				positive group
+014	allerhöchst Dieselben	0105R-A14	haupttext	deletion_addition_damage:not_investigated	working				positive group
+015	wollen allergnädigst	0105R-A15	haupttext	deletion_addition_damage:not_investigated	working				positive group
+016	geruhen, mich zur	0105R-A16	haupttext	deletion_addition_damage:not_investigated	working				positive group
+017	Leistung der schuldig-	0105R-A17	haupttext	line_end_division|deletion_addition_damage:not_investigated	working				line-end division into 0106L A01 is a text-join candidate, not proof same physical leaf
