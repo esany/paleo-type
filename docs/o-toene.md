@@ -145,6 +145,9 @@ Der erste Satz bezieht sich auf die Notiz „coll: Knau“ unten links auf 0104R
 **Bestandsprüfung bei jedem PR** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll die Bestandsprüfung bei jedem PR automatisch mitlaufen?“; umgesetzt in PR #418)
 > Ja, automatisch
 
+**Übernahme von PR #418 auf `main`** (vorgegebener Antwortknopf gewählt, auf die Frage „Soll ich PR #418 übernehmen, sobald die Prüfung grün ist?“; übernommen als Commit `bee7716`)
+> Ja, dann übernehmen
+
 ---
 
 ## 15.11.2026 · übertragen
