@@ -1,6 +1,6 @@
 # Nr. 632 — Vorab-Gegenlesung
 
-Vorab offen: 0114R-3 (F2, 2–3 Zeilen nach Korrektur)
+Vorab offen: 0104R (Kopfvermerk ganz oben; Titelblock Z. 1 von oben; Fließtext Z. 7 von oben), 0105L-3 (Z. 9, 13 und 17 von oben), 0105R-2 (Z. 1 und 2 von oben), 0106L-2 (Z. 7, 10 und 13 von oben), 0106R-2 (Fließtext Z. 8 von oben; Unterschrift rechts unten Z. 3 und 4 von oben), 0107L-2 (Beglaubigung Z. 6 von oben; Namenszeile unter dem Kanzleivermerk; unterste Namenszeile)
 
 Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Abschnitt „Parameter: Gegenlesung“. Abschnitte nur anhängen, nie ändern.
 
