@@ -52,3 +52,20 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: python tools/metrics.py --base "$BASE_SHA" --guard
+      - name: Bestandsprüfung zu den geänderten Stellen (informativ, blockiert nie)
+        if: always()
+        continue-on-error: true
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git diff --name-only "$BASE_SHA" HEAD > "$RUNNER_TEMP/changed-paths.txt"
+          {
+            echo '## Bestandsprüfung: Was gibt es zu den geänderten Stellen schon?'
+            echo
+            echo 'Abgeleitet aus den geänderten Pfaden (Flächen wie `0104R`, sonst Projekt-ID). Offene Aufträge und Eigentümerentscheidungen vor dem Übernehmen lesen.'
+            echo
+            echo '```text'
+            python tools/bestandspruefung.py --from-paths "$RUNNER_TEMP/changed-paths.txt" || echo "Bestandsprüfung konnte nicht ausgeführt werden."
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
