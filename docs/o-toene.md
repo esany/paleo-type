@@ -10,6 +10,23 @@ Hier stehen Aussagen des Eigentümers **wörtlich**, mit Datum und Fundstelle, e
 
 ---
 
+## 22.11.2026 · Chat mit Claude (Prüfchat) · direkt
+
+**Übergabe an ChatGPT** (selbst geschrieben, nach Claudes Statusmeldung)
+> prs  können wir an gbt geben
+
+**Welche PRs, und zu Claudes Statusmeldung** (selbst geschrieben; dazwischen zitiert der Eigentümer aus Claudes Statusmeldung die Punkte zu PR #417 und zur Pause #399, hier ausgelassen)
+> aslo diese:
+>
+> […]
+>
+> und sonst haben wir gerade fundamentale probleme festgestellt, und du sagst gerade weiter im text
+
+**Ergebnisprüfung vor der Übergabe** (vorgegebener Antwortknopf gewählt, auf die Frage „Vor der Übergabe an GPT zuerst die Ergebnisprüfung anbinden?“)
+> Ja, erst Prüfung
+
+---
+
 ## 21.11.2026 · Chat mit Claude (Prüfchat) · direkt
 
 Antworten auf die offenen Punkte in Claudes Audit „Zweck und Zielbild“, Fassung 1 vom 21.11.2026. Claude hat die Aussagen aus dem Chat wörtlich übernommen.
