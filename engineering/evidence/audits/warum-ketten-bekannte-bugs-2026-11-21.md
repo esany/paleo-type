@@ -99,3 +99,44 @@ Das deckt sich mit der Beobachtung des Eigentümers: „die Modelle reagieren mi
 - **#297 hat Teile davon schon festgestellt** („No single new prose rule is likely to close this family“). Danach kamen weitere Regeln hinzu. Das stützt die letzte Stufe, beweist sie aber nicht.
 - **Die Ketten beruhen auf Ausschnitten.** Kommentarverläufe und die Berichte unter `engineering/evidence/` sind nicht gelesen und könnten Gegenbelege enthalten.
 - **Dieser Befund ist selbst ein Text.** Er ändert nichts, solange daraus keine geprüfte Funktion entsteht. Das ist eine Feststellung, kein Vorschlag.
+
+---
+
+## 6 · Stichprobenprüfung: Hält die Kette? (21.11.2026, auf Wunsch des Eigentümers)
+
+**Auswahl:** fünf Audits aus der Zeit vom 17.09. bis 03.11. Bevorzugt waren solche, die selbst nach Ursachen fragen und damit widersprechen könnten, verteilt über die Zeit; eines stammt von einem anderen Modell. Gelesen wurden jeweils die Gliederung und die Abschnitte mit Befund, Ursache und Schluss, nicht der volle Text.
+
+| # | Audit | Kernaussage zur Ursache (Wortlaut, gekürzt) |
+|---|---|---|
+| S1 | `system-operationalization-audit-2026-09-17.md` | „a rich set of individually mature components without an operational system integration/control plane connecting the Human need to the scholarly outcome. The AI therefore acts as the de facto integration layer … repeated prose can improve guidance but does not remove the integration dependency.“ (§14). Dazu §11: lokale „horizontale“ Optimierung statt eines durchgehenden Schnitts bis zum Ergebnis. |
+| S2 | `bug-intent-root-cause-wirknetz-plan-fit-audit-2026-10-07.md` (ENG-A-0118) | RC-5: „correct local truth does not reliably compose into correct whole-state“. Der einzige echte Wirksamkeitstest nach PR #303 (F1) endete mit „overall FAIL / partial positive efficacy“. |
+| S3 | `deterministic-control-layer-system-audit-2026-10-09.md` | „conceptually sound but operationally under-enforced. Adding more prose would increase surface area without closing the loop.“ Empfehlung: eine erzwingende Prüfschicht für folgenreiche Schritte. |
+| S3' | `deterministic-control-layer-critical-reaudit-2026-10-09.md`, am selben Tag | Verwirft diese Empfehlung als „False Lean / Solution-first“. Beschluss: zuerst die vorhandenen Regeln in echten Durchläufen testen (V1 „fresh-context scholarly stage preservation“, V2 Laufzeit, V3 „false-Lean acceptance“), erst danach etwas bauen. |
+| S4 | `nr632-diplomatische-transkription-system-und-wirkungs-audit-2026-10-31.md` (#361) | „Der Hauptausfall ist kein vollständiges Fehlen der richtigen wissenschaftlichen Methodik“; die Ausführung habe Schutzregeln in „Inventar-/Slotverwaltung … und syntaktisch prüfbare Teilresultate“ übersetzt. Das Locus-Paket-Werkzeug sei „kein universelles Nr632-Werkzeug“, eine Verallgemeinerung „nicht begründet, sofern kein konkreter Engpass experimentell gezeigt ist“. Stichprobe 1: Die Lesungen 0114–0131 sind „nicht verwendbar“. |
+| S5 | `systemaudit-2026-11-chatgpt.md` (#401, GPT, Tag `archiv/audit/systemaudit-2026-11-chatgpt-400`) | RC1: Lokale Erledigung verdrängt das Ergebnis; „Die Regel hierzu existiert bereits – Anwendung/Assurance ist das Defizit“. RC4: Kontext zu groß und verteilt. RC5: „der automatische Ablauf war nicht dadurch vorhanden, dass er beschrieben wurde“. RC6: Rollenwechsel bestätigen dieselbe Annahme, Claude und GPT bilden nacheinander neue Regeln. |
+
+**Abhängigkeit:** S5 hatte ich vor dieser Analyse in Teilen gelesen (§0–5, §8); §6–7 erst jetzt. S5 ist deshalb keine völlig unabhängige Bestätigung.
+
+### Prüfung je Kettenglied
+
+| Glied | Ergebnis | Belege |
+|---|---|---|
+| K1/K2 · Steuerung über Text wirkt nicht verlässlich | **gestützt** | S1 §14, S3 („well specified in prose … runtime path can still produce …“), S5 RC1 |
+| K1 · Auf Pannen folgen Regeln; Text wächst | **gestützt** | S3 („Adding more prose would increase surface area …“), S5 RC6 |
+| K1 · Erledigt-Signale nehmen Text an | **gestützt** | S1 §9, S4 („Lokal-PASS beendet Whole-Outcome“), S5 RC1 |
+| K1 · „Nichts prüft das Ergebnis“ | **zu absolut, zu korrigieren** | Es gab einen Ergebnistest (F1 nach PR #303), er endete mit FAIL (S2). Die beschlossenen Ergebnistests V1–V3 (S3') wurden nicht ausgeführt: #280 wurde zuletzt am 09.10. fortgeschrieben, mit „KEEP OPEN … downstream of … the V1 fresh-context scholarly stage-preservation fixture“. Die Blindprobe prüft Lesegüte an Stichproben, nicht das Gesamtergebnis. **Richtig ist:** Ergebnisprüfung wurde vereinbart, einmal ausgeführt (FAIL) und danach nicht mehr. |
+| K2 · Kontext zu groß und verteilt | **gestützt** | S5 RC4 |
+| K3 · Methode und Werkzeuge blieben lokal, weil Schlankheitsregeln es verlangen | **gestützt** | S4 (Werkzeugkarte: Verallgemeinerung „nicht begründet, sofern kein konkreter Engpass …“), S1 §5 (Werkzeuge „concentrated in the control/support plane“) |
+| K4 · Prüfung KI gegen KI | **gestützt und erweitert** | S5 RC2/RC6 (Review-Prämissenvererbung, F10): Auch ein anderer Kontext prüft oft gegen dieselbe abgeleitete Annahme. S4: Stichprobe 1 macht einen ganzen Leseschub unbrauchbar. |
+
+### Was die Stichprobe neu zeigt
+
+1. **Dieselbe Diagnose wurde mindestens fünfmal gestellt:** 17.09. (S1), 07.10. (S2), 09.10. (S3), 31.10. (S4), 03.11. (S5); dazu am 21.11. diese Analyse. Keine dieser Diagnosen hat zu einer Funktion geführt, die das Ergebnis prüft oder die Arbeit trägt. Das ist der stärkste Beleg für den Zusammenlauf in Abschnitt 4.
+2. **Schärfung der letzten Stufe.** Nicht nur die KIs antworten von sich aus mit Text. Auch die eigenen Angemessenheits- und Anti-Solutionism-Regeln des Repos haben eine funktionale Antwort ausdrücklich verworfen (S3'). Verlangt wurde stattdessen, zuerst in echten Durchläufen zu testen. Diese Tests fanden nicht statt; die Arbeit ging am 30.10. mit Nr. 632 und neuen Ablaufregeln weiter. **Geschärfte Hypothese:** Wenn das Ergebnis unklar ist, ist Analyse die einzige Ausgabe, die die Regeln ohne weiteres zulassen. Funktion braucht einen Nachweis, den niemand erbringt. Deshalb wächst Text, und die Diagnose wiederholt sich.
+3. **Gegenbeleg bleibt gültig:** S1 §11 beschreibt als gesunden Weg einen durchgehenden Schnitt bis zu einem echten Handschriftenergebnis. Genau so wurden Reg. Ii 4 und Reg. Ii 5 bis G4 gebracht. Wo die Arbeit eng begrenzt und bis zum Ergebnis durchgezogen wurde, funktionierte sie.
+
+### Grenzen dieser Prüfung
+
+- Fünf von 25 Audits; Rechercheberichte nicht gelesen.
+- Die Auswahl zielte auf Ursachenaussagen; Audits mit anderem Schwerpunkt (z. B. Entscheidungsvorlagen, Migration) könnten andere Zusammenhänge zeigen.
+- Ob V1–V3 an anderer Stelle doch ausgeführt wurden, ist nur über #280 geprüft.
