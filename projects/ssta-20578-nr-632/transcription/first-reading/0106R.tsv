@@ -1,0 +1,22 @@
+reading_order	diplomatic_reading	line_ref	region	source_phenomena	research_status	alternatives	abbreviation_layer	editorial_supply	evidence_note
+001	[Antheilen?] inhalts deren	0106R-A01	haupttext	unclear|deletion_addition_damage:not_investigated	working				first word uncertain
+002	Lehn-Briefe, in hohen	0106R-A02	haupttext	deletion_addition_damage:not_investigated	working				first/second group graphically supported
+003	Gnaden [bekommen/bekennen?], [⟦Schlussgruppe ungesichert⟧]	0106R-A03	haupttext	unclear|deletion_addition_damage:not_investigated	working	bekommen|bekennen			Direkte Nachprüfung des Originalfotos: Binnenkonsonanten des Verbs nicht eindeutig getrennt; vormals sicher behauptetes `bekennen` nicht als gesichert übernehmen. Verbindung mit A04 offen; keine Formelergänzung.
+004	bey [gewöhnliche/gewöhnlicher?] [Lehn-/Lehen-?]	0106R-A04	haupttext	unclear|deletion_addition_damage:not_investigated	working	gewöhnliche|gewöhnlicher; Lehn-|Lehen-			Das vergrößerte Originalbild stützt ein selbständiges `bey` am Zeilenanfang; frühere Hypothese `darü- / ber` nicht gestützt. Endung von `gewöhnlich` und Wortform `Lehn/Lehen` mit unabhängigem, jedoch erst nach dem Hauptchat-Commit gespeichertem KI-Vergleich noch offen.
+005	Scheine ertheilen, und	0106R-A05	haupttext	deletion_addition_damage:not_investigated	working				running sequence
+006	die Lehn-Briefe aus-	0106R-A06	haupttext	line_end_division|deletion_addition_damage:not_investigated	working				line-ending mark visible
+007	fertigen zu laßen;	0106R-A07	haupttext	deletion_addition_damage:not_investigated	working				Quellenform am vergrößerten Bild mit ß beibehalten, kein stilles ss.
+008	Darüber ich in [Pflicht-?]	0106R-A08	haupttext	unclear|deletion_addition_damage:not_investigated	working				Bildevidenz und unabhängige Nachlesung zeigen `Darüber` statt unmarkiertem `Dafür` der vorigen Arbeitsfassung; das Wortend-/Teilungszeichen von `Pflicht` bleibt offen.
+009	schuldigster Treue Zeit-	0106R-A09	haupttext	line_end_division|deletion_addition_damage:not_investigated	working				physical division; `Zeit` graph remains inspectable
+010	Lebens verharren werde,	0106R-A10	haupttext	deletion_addition_damage:not_investigated	working				positive sequence
+011	Ew: Königl: Majts:	0106R-A11	haupttext	abbreviation_mark|deletion_addition_damage:not_investigated	working				separate enlarged dedicatory line
+012	Dreßden	0106R-D01	datum	deletion_addition_damage:not_investigated	working				Separat links stehende Datumszeile, am Bild ß-Form statt stiller Normalisierung zu `ss`.
+013	am 3. Julii,	0106R-D02	datum	deletion_addition_damage:not_investigated	working				source date; not year of paper
+014	1760.	0106R-D03	datum	deletion_addition_damage:not_investigated	working				separate third physical date line
+015	allerunterthänigst	0106R-B01	unterschrift	deletion_addition_damage:not_investigated	working				right-positioned subscription
+016	gehorsamster	0106R-B02	unterschrift	deletion_addition_damage:not_investigated	working				right-positioned subscription
+017	Johann [George?] Friedrich	0106R-B03	unterschrift	unclear|deletion_addition_damage:not_investigated	working				name-like script, middle word uncertain
+018	[Fr:?] von [Einsiedel?].	0106R-B04	unterschrift	unclear|abbreviation_mark|deletion_addition_damage:not_investigated	working				abbreviation and surname graphic hypothesis only; no person identification
+019	Daß vorstehende Abschrifft mit dem	0106R-C01	beglaubigung	deletion_addition_damage:not_investigated	working				separate *fainter* attestation main line, not a continuation of petition
+020	bey der Königl: Pohl: und Churfürstl:	0106R-C02	beglaubigung	abbreviation_mark|deletion_addition_damage:not_investigated	working				faint original writing, abbreviations left literal
+021	[Sächßl.?]	0106R-C03	beglaubigung	unclear|deletion_addition_damage:not_investigated	working				Eine einzelne blasse, separat positionierte Abkürzungsgruppe am unteren rechten Schreibfeld sichtbar; keine darüber hinaus sicher lesbare Fortsetzung auf *dieser* Bildfläche belegt. **Nicht still mit 0107L-A01 verschmelzen**, dort beginnt erneut eine `Sächßl.`-ähnliche Gruppe.
