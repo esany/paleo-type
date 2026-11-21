@@ -210,3 +210,14 @@ For the current visitation material, the owner presently chooses to continue Reg
 **Reason:** #225 demonstrated a real AI/chat composition burden, but concept comparison also showed that solving it with a new canonical control store or generic planner would over-promote open semantics. Reg. Ii 4 is a decisive negative fixture: G1–G4 can be reached while no G5/current scholarly scope is authorized. The bounded C1R concept reduces reconstructable stable composition without creating a second planning/research clock.
 
 **Consequence:** `tools/outcome_context.py` remains a derived integration surface, not a new truth owner. Its technical/semantic-loss result is a **LOCAL PASS ONLY**: #225 whole-system acceptance remains open until a genuine owner-authorized scholarly outcome is carried through applicable requirements, work/responsibility composition, real scholarship, valid outcome/ceiling disposition and fresh-context/cross-fixture acceptance. Any material extension beyond this boundary returns to D-016 rather than being inferred from C1R's existence.
+
+## D-022 — Reparieren statt neu starten
+
+**Status:** angenommen durch ausdrückliche Entscheidung des Eigentümers am 21.11.2026; Wortlaut in `docs/o-toene.md` („reparieren statt neu starten“).
+**Entscheidung:** Das bestehende Repo wird repariert und nicht durch einen Neuaufbau ersetzt.
+
+**Grundlage:** Empfehlung in Claudes Audit „Zweck und Zielbild“, Fassung 2, Abschnitt 7 (`engineering/evidence/audits/zweck-und-zielbild-2026-11-21-fassung-2.md`). Danach trägt der Kern und lässt sich abtrennen: Leitziel, wissenschaftliche Methodik, Corpus, Projektdaten, getestete Werkzeuge, Anforderungsliste und Befundkatalog. Ein Neuaufbau verlöre Herkunft und Entscheidungsgeschichte und beseitigte die beobachtete Ursache nicht: Funktion wird in Prosa behauptet, und die Antwort darauf ist eine neue Regel.
+
+**Nicht entschieden:** wie repariert wird. Einzelne Reparaturschritte, etwa das Verkleinern der Ausführungsregeln, sind materielle Änderungen und brauchen jeweils eine eigene Freigabe nach D-016. Ebenfalls nicht entschieden sind das Ende der Audit-Kette (#398, #405, #411–#414), die Aufhebung der Pause #399 und ein Durchgang am Gesuch 0104R–0107L von Nr. 632.
+
+**Folge:** Ein Neuaufbau des Repos ist verworfen. Vorschläge für Reparaturschritte gehen nach D-016 an den Eigentümer, in Alltagssprache und mit etwas, das er selbst prüfen kann.

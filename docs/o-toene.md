@@ -77,8 +77,14 @@ Antworten auf die offenen Punkte in Claudes Audit „Zweck und Zielbild“, Fass
 >
 > Denke in Zusammenhängen und Systemisch. Achte darauf das es hier eine transdisziplinäre Fragestellung ist.
 
-**Freigabe der Quickwins Q1–Q5 aus Audit Fassung 2**
+**Freigabe der Quickwins Q1–Q5 aus Audit Fassung 2** (vorgegebener Antwortknopf gewählt)
 > Alle fünf
+
+**Übernahme von PR #415 auf `main`** (vorgegebener Antwortknopf gewählt)
+> Ja, übernehmen
+
+**Neustart oder Reparatur** (selbst geschriebene Antwort auf die Frage „Reparatur annehmen und mit dem Gesuch-Durchstich beginnen?“; sie beantwortet nur den ersten Teil; festgehalten als D-022)
+> reparieren statt neu starten“
 
 ---
 
