@@ -133,6 +133,15 @@ Der erste Satz bezieht sich auf die Notiz „coll: Knau“ unten links auf 0104R
 **Ablage der Ursachenanalyse** (vorgegebener Antwortknopf gewählt, auf die Frage „Trifft die Warum-Kette das eigentliche Problem?“; festgehalten in `engineering/evidence/audits/warum-ketten-bekannte-bugs-2026-11-21.md`)
 > Ja, festhalten
 
+**Prüfung der Warum-Kette** (selbst geschrieben)
+> du kannst stichprobenweiese weiteree audits lesen und prüfen, ob die Kette hält.
+
+**Frage nach Schutz vor demselben Muster** (selbst geschrieben)
+> ok, wie verhindern wir, das du diesem gift auch erliegst
+
+**Erste Gegenmaßnahme** (vorgegebener Antwortknopf gewählt, auf die Frage „Womit anfangen?“; umgesetzt in PR #418)
+> Bestandsprüfung zuerst
+
 ---
 
 ## 15.11.2026 · übertragen
