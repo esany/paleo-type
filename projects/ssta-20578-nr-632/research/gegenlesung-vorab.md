@@ -570,3 +570,56 @@ Ablauf: `docs/gegenlesung-vorab.md` (auf `main`); Werte: `ARBEITSPLAN.md`, Absch
 - Haupttextblock, Z. 2 von oben: `der [gebrauchet?], Gleichwie nun die Sach,`
 - Haupttextblock, Z. 9 von oben: `zu enthalten [wißen?] werden, Also`
 - Haupttextblock, Z. 17 von oben: `laßen, [Urkundlich?] ist dieser`
+
+## 0104R
+- Datum: 2026-11-21
+- Leser: ChatGPT GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 104 (R)
+- Blind: ja
+- Kopfvermerk ganz oben, Z. 1 von oben: `[18./28.] bis: 4. July 1760.`
+- Titelblock, Z. 1 von oben: `Aller-Durchlauchtigster-Großmächtig,`
+- Fließtext, Z. 7 von oben: `welche am 17. [Jun?] des`
+
+## 0105L-3
+- Datum: 2026-11-21
+- Leser: ChatGPT GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 105 (L)
+- Blind: ja
+- Haupttext, Z. 9 von oben: `[Werthdorff?],`
+- Haupttext, Z. 13 von oben: `Knau und Pabzen,`
+- Haupttext, Z. 17 von oben: `Carl [Werßner?] zu [Ein?]`
+
+## 0105R-2
+- Datum: 2026-11-21
+- Leser: ChatGPT GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 105 (R)
+- Blind: ja
+- Haupttext, Z. 1 von oben: `[veranlasset?] hat; Euer,`
+- Haupttext, Z. 2 von oben: `[forderst?] mein [Pflicht?].`
+
+## 0106L-2
+- Datum: 2026-11-21
+- Leser: ChatGPT GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 106 (L)
+- Blind: ja
+- Haupttext, Z. 7 von oben: `Guther [Werthdorff?] und`
+- Haupttext, Z. 10 von oben: `Knau und Pabzen,`
+- Haupttext, Z. 13 von oben: `[wegen?] zu meinen`
+
+## 0106R-2
+- Datum: 2026-11-21
+- Leser: ChatGPT GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 106 (R)
+- Blind: ja
+- Fließtext, Z. 8 von oben: `Deswegen ich [auff?] [Pflicht?],`
+- Unterschrift rechts unten, Z. 3 von oben: `Johann Georg Heinrich`
+- Unterschrift rechts unten, Z. 4 von oben: `[Joh:] von Einsiedel.`
+
+## 0107L-2
+- Datum: 2026-11-21
+- Leser: ChatGPT GPT-6, unabhängiger Gegenlese-Chat
+- Bildquelle: FILE-SSTA-20578-NR632-FULL-PDF-20261030, Seite 107 (L)
+- Blind: ja
+- Beglaubigung, Z. 6 von oben: `instrumentum 8. July 1760.`
+- Namenszeile unter dem Kanzleivermerk: `H. H. von [Stammer?]`
+- Unterste Namenszeile: `[Hoch?] Benedictus [Lehmann?]`
