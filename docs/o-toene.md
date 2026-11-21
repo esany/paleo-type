@@ -86,6 +86,9 @@ Antworten auf die offenen Punkte in Claudes Audit „Zweck und Zielbild“, Fass
 **Neustart oder Reparatur** (selbst geschriebene Antwort auf die Frage „Reparatur annehmen und mit dem Gesuch-Durchstich beginnen?“; sie beantwortet nur den ersten Teil; festgehalten als D-022)
 > reparieren statt neu starten“
 
+**Audit-Kette beenden und Durchgang am Gesuch 0104R–0107L starten** (vorgegebener Antwortknopf gewählt, auf die Frage „Audit-Kette beenden und den Durchgang am Gesuch 0104R–0107L starten?“)
+> Ja, beides
+
 ---
 
 ## 15.11.2026 · übertragen
