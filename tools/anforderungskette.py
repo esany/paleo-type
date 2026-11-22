@@ -561,7 +561,8 @@ def render(root: Path) -> str:
         "**Status der Zuordnungen:** Welchem Bedürfnis eine Anforderung dient, ab wann sie gilt, welcher Test sie "
         "betrifft, was sie zuerst braucht und womit sie sich überschneidet, hat Claude am 22.11.2026 aus "
         "Anforderungstext, Testnamen und Werkzeugbeschreibungen abgeleitet. Der Eigentümer hat es nicht bestätigt. "
-        "Eine unabhängige Zweitprüfung fand Fehlzuordnungen; sie sind korrigiert, weitere sind möglich. Die "
+        "Zwei Prüfrunden durch einen frischen Kontext desselben Modells fanden Fehlzuordnungen; sie sind korrigiert. "
+        "Modellfehler und geteilte Annahmen hat noch kein anderes Modell geprüft, weitere Fehler sind möglich. Die "
         "Kurzbezeichnungen sind Übersetzungen und lassen Einschränkungen wie „folgenreich“ oder „wo machbar“ weg; "
         "maßgeblich ist der englische Wortlaut in der Tabelle.",
         "",

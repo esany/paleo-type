@@ -1,6 +1,7 @@
 """Tests für die Anforderungskette (tools/anforderungskette.py)."""
 from __future__ import annotations
 
+import re
 import sys
 import tempfile
 import unittest
@@ -391,6 +392,21 @@ class Funktionen(unittest.TestCase):
         self.assertEqual(1, kette.main(["issue", "FN-01", "--root", str(self.fx.root)]))
         self.write(func())
         self.assertEqual(0, kette.main(["issue", "FN-01", "--root", str(self.fx.root)]))
+
+
+class Arbeitsweise(unittest.TestCase):
+    def test_agents_md_verweist_auf_vorhandene_kettendateien(self) -> None:
+        """Die Übersetzung der Arbeitsweise in AGENTS.md darf nicht auf fehlende Dateien zeigen."""
+        agents = (REPO / "AGENTS.md").read_text(encoding="utf-8")
+        start = agents.index("## Arbeitsweise des Eigentümers (übergeordnet)")
+        section = agents[start:agents.index("\n## ", start + 5)]
+        named = {m.split()[0] for m in re.findall(r"`((?:requirements|docs|tools)/[^`]+)`", section)}
+        self.assertGreaterEqual(len(named), 3)
+        for path in sorted(named):
+            self.assertTrue((REPO / path).is_file(), path)
+        for name in ("beduerfnisse.tsv", "domain-requirements.tsv", "funktionen.tsv", "kette.md"):
+            self.assertIn(f"`{name}`", section)
+            self.assertTrue((REPO / "requirements" / name).is_file(), name)
 
 
 class EchteFunktionen(unittest.TestCase):
