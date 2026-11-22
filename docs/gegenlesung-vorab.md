@@ -100,6 +100,7 @@ Kurz an den Eigentümer, in Alltagssprache:
   2. der Hauptchat den Lesungsstand vergleicht, den er **vor dem Öffnen** des Abschnitts committet hatte (Commit im Vermerk nennen).
 
   Ob der Vorab-Abschnitt vor oder nach diesem Lesungs-Commit entstand, spielt keine Rolle. Auch früher gelesene Seiten lassen sich so gültig gegenprüfen.
+- **Offen bleibt eine Seite,** solange ihr letzter Vergleich (die Probe mit der höchsten Nummer) „überarbeiten“ lautet, solange sie keinen Vergleich hat oder solange ihre Lesung nach dem verglichenen Lesungs-Commit geändert wurde. Das folgt aus der Fehlerschwelle („nachbessern und erneut prüfen“) und aus der Gültigkeit oben. Der GitHub-Prüfer zeigt solche Seiten rot, wenn er mit `--offen-pruefen` aufgerufen wird (Eigentümerentscheidung 22.11.2026). Er prüft nicht, ob eine Lesung stimmt.
 - **Mehrere Seiten je Durchgang:** Der Hauptchat arbeitet in einem Durchgang alle Seiten ab, für die ein Vorab-Abschnitt vorliegt, höchstens so viele, wie der Plan des Projekts je Durchgang erlaubt. Danach meldet er sich.
 
 ## Namensstellen für den Eigentümer (freiwillig, je Projekt)
