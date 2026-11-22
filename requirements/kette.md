@@ -34,6 +34,7 @@ Bei **18** Anforderungen lautet die Selbstbewertung in der Spalte `current_suppo
 - **R-05** Der Eigentümer ist kein Softwareentwickler; er setzt um, was ihm einleuchtet. (wörtlich; O-Ton: „Ich bin kein Softwareentwickler .. wenn mir was vorgeschlagen wird, wo ich glaube das es hilft mache ich es“) Dient: AI-010 Fachprüfung mit genauen Belegpaketen; Eigentümer ist kein Fachprüfer; UX-011 Forschen, ohne Repo-Technik zu bedienen.
 - **R-06** Das Repo wird repariert, nicht neu gestartet (D-022). (wörtlich; O-Ton: „reparieren statt neu starten“) Dient: RSE-007 Vor Formatwechsel Verlusttest.
 - **R-07** Zweck ist zuerst die eigene Forschung. (wörtlich; O-Ton: „erstmal eigene Forschung“)
+- **R-08** Geplant wird transparent in Issues, die kurz bleiben und keine Kontextwürste werden. (wörtlich; O-Ton: „Transparent aufgeplant als Issues .. die keine Kontextwürsten werden dürfen“)
 
 ## Bedürfnisse, Pains und ihre Anforderungen
 

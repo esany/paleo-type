@@ -52,6 +52,9 @@ Hier stehen Aussagen des Eigentümers **wörtlich**, mit Datum und Fundstelle, e
 **Zu Claudes Übersetzung in fünf Blickrichtungen** (selbst geschrieben, auf die Frage „Trifft diese Übersetzung, was du meinst?“)
 > Ja, weiter machen, ich arbeite gerade auch an einem übergeordneten Tooling, der das projektunabhängig als Vorgehen einfordert
 
+**Zu Claudes Abschlussnachricht über PR #420** (selbst geschrieben)
+> prosa reicht nicht .. Text ist zu schwach. Es braucht aus meiner Sicht eine Analyse und multiperspektischen Ordnung der Bedürfnisse ..welche Anforderungen zahlen auf welches BEdürfnis ein, welcher Schmerz entsteht durch das Fehlen, wie groß ist er .. wie hängt es zusammen, all die multiperspektivischen Fragen. .. und dann entsteht eine Priorisierung, welche Funktionalität wellche (Gruppe von) Anforderungen absichern würde .. Was ist Abhängigkeiten, was ist DOR für eine Funktionalität, was ist DOD (iteration mit in die Aufplanung einplanen .. keine neuen Blocker bauen) .. und dann kontinuierlich den Stapel abarbeiten, den wir schon klar benennen können und zu dem wir schon 100 mio + token lange Texte geschrieben haben. .. Transparent aufgeplant als Issues .. die keine Kontextwürsten werden dürfen
+
 ---
 
 ## 21.11.2026 · Chat mit Claude (Prüfchat) · direkt
