@@ -20,7 +20,7 @@ Hier steht die Kette **Intent → Bedürfnis → Pain → Anforderung → Prüfu
   - `verified_by`: Tests als `tests/…py::test_…`, `Fachurteil`, `Gebrauch` oder `keine` (prüfbar, kein Test bekannt);
   - `depends_on` und `overlaps`.
 
-  Die Spalten haben verschiedene Rollen und stehen nicht in Konkurrenz: `validation_mode` sagt, wie die Anforderung laut Fachaudit zu prüfen wäre; `current_support` ist die Selbstbewertung aus den Audits vom August und September 2026; `verified_by` sagt, was sie heute im Repo prüft.
+  Die Spalten haben verschiedene Rollen und stehen nicht in Konkurrenz: `validation_mode` sagt, wie die Anforderung laut Fachaudit zu prüfen wäre; `current_support` ist die Selbstbewertung aus den KI-Fachaudits #26–#37 (Tabelle angelegt am 27.08.2026, vor dieser Änderung zuletzt am 08.09.2026 geändert); `verified_by` sagt, was sie heute im Repo prüft.
 - `kette.md`: daraus erzeugte Leseansicht mit Lücken, Überschneidungen und Tests ohne Anforderung. Nicht von Hand ändern.
 
 **Status der Zuordnungen:** Die neuen Spalten hat Claude am 22.11.2026 abgeleitet, aus Anforderungstext, Testnamen und Werkzeugbeschreibungen. Der Eigentümer hat sie nicht bestätigt.
@@ -28,7 +28,7 @@ Hier steht die Kette **Intent → Bedürfnis → Pain → Anforderung → Prüfu
 `tools/anforderungskette.py pruefen` prüft die Kette und ob die Ansicht aktuell ist. `tests/test_anforderungskette.py` gehört zur Gesamtprüfung `tools/check.py`.
 
 Was geprüft wird:
-- ob ein O-Ton als ganze Wörter in einem Zitat des genannten Abschnitts steht;
+- ob ein O-Ton als ganze Wörter in einem einzelnen Zitat des genannten Abschnitts steht (KI-Wortlaut, den der Eigentümer innerhalb eines Zitats wiedergibt, erkennt die Prüfung nicht);
 - ob jede Anforderung verknüpft ist;
 - ob die genannten Tests existieren.
 

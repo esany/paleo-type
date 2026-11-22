@@ -136,7 +136,10 @@ def o_ton_sections(text: str) -> dict[tuple[str, str], dict[str, object]]:
     """Abschnitte von docs/o-toene.md: (Datum, Fettüberschrift) → nur die Zitatzeilen.
 
     Gezählt werden nur Zeilen, die mit ``>`` beginnen; Überschriften und
-    Anmerkungen der KI zählen nicht als O-Ton.
+    Anmerkungen der KI zählen nicht als O-Ton. Jedes Zitat ist ein eigener
+    Absatz: Ein neuer beginnt nach einer Zeile ohne ``>``, nach einer leeren
+    Zitatzeile und an einer Auslassung ``[…]``, damit ein O-Ton nicht über
+    zwei Zitate hinweg zusammengesetzt werden kann.
     """
     sections: dict[tuple[str, str], dict[str, object]] = {}
     date = ""
@@ -148,11 +151,22 @@ def o_ton_sections(text: str) -> dict[tuple[str, str], dict[str, object]]:
             continue
         label = BOLD_LABEL.match(line)
         if label and date:
-            current = {"quotes": [], "button": "Antwortknopf" in line}
+            current = {"paragraphs": [], "button": "Antwortknopf" in line, "open": False}
             sections[(date, label["label"].strip())] = current
             continue
-        if current is not None and line.lstrip().startswith(">"):
-            current["quotes"].append(re.sub(r"^\s*>\s?", "", line))
+        if current is None:
+            continue
+        if not line.lstrip().startswith(">"):
+            current["open"] = False
+            continue
+        content = re.sub(r"^\s*>\s?", "", line).strip()
+        if not content or content == "[…]":
+            current["open"] = False
+            continue
+        if not current["open"]:
+            current["paragraphs"].append([])
+            current["open"] = True
+        current["paragraphs"][-1].append(content)
     return sections
 
 
@@ -165,7 +179,10 @@ def resolve_anchor(anchor: str, sections: dict[tuple[str, str], dict[str, object
             problems.append(f"Abschnitt {part!r} ist nicht lesbar")
             continue
         date = match["date"] or date
-        hits = [key for key in sections if key[0] == date and key[1].startswith(match["label"])]
+        label = match["label"]
+        hits = [key for key in sections if key[0] == date and key[1] == label] or [
+            key for key in sections
+            if key[0] == date and key[1].startswith(label) and not key[1][len(label)].isalnum()]
         if len(hits) != 1:
             problems.append(f"Abschnitt {part!r} {'gibt es nicht' if not hits else 'ist mehrdeutig'}")
             continue
@@ -190,7 +207,7 @@ def check_quote(root: Path, nid: str, row: dict[str, str]) -> list[str]:
     quotes = [q.strip() for q in row["o_ton"].split(QUOTE_SEPARATOR)]
     if not any(quotes):
         return out + [f"{nid}: O-Ton fehlt"]
-    texts = [normalized("\n".join(section["quotes"])) for section in found]
+    texts = [normalized(" ".join(par)) for section in found for par in section["paragraphs"]]
     for quote in quotes:
         pattern = re.compile(r"(?<!\w)" + re.escape(normalized(quote)) + r"(?!\w)") if quote else None
         if pattern is None or not any(pattern.search(text) for text in texts):
@@ -384,8 +401,9 @@ def render(root: Path) -> str:
         "",
         f"Bei **{len(claimed)}** Anforderungen lautet die Selbstbewertung in der Spalte `current_support` ohne "
         "Einschränkung „adequate“ oder „strong“, aber kein Test ist genannt: "
-        + ", ".join(short(r["requirement_id"]) for r in claimed) + ". Die Selbstbewertung stammt aus den Fachaudits "
-        "vom August und September 2026 und ist eine Auskunft, kein Beleg.",
+        + ", ".join(short(r["requirement_id"]) for r in claimed) + ". Die Selbstbewertung stammt aus KI-Fachaudits "
+        "(#26–#37; Tabelle angelegt am 27.08.2026, vor dieser Änderung zuletzt am 08.09.2026 geändert) und ist eine "
+        "Auskunft, kein Beleg.",
         "",
         "## Intent und Rahmen",
         "",

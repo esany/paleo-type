@@ -129,6 +129,23 @@ class Kette(unittest.TestCase):
             self.fx.write(needs, [req("REQ-EDIT-008")])
             self.assertTrue(any("nicht wörtlich" in f for f in self.fx.findings()), quote)
 
+    def test_o_ton_ueber_zwei_zitate_hinweg_faellt_auf(self) -> None:
+        (self.fx.root / "docs" / "o-toene.md").write_text(
+            O_TOENE.replace("> Das Repo ist ein repo der Prosa.\n",
+                            "> Das Repo ist ein repo der Prosa.\n\n> Es fehlt Funktion.\n>\n> […]\n>\n> Und mehr\n"),
+            encoding="utf-8")
+        for quote in ("der Prosa. Es fehlt", "Funktion. […] Und mehr", "Funktion. Und mehr"):
+            needs = list(GOOD_NEEDS)
+            needs[3] = need("P-01", "Pain", "B-01", "Prosa.", "wörtlich", quote, "docs/o-toene.md#01.01.2026 Kern")
+            self.fx.write(needs, [req("REQ-EDIT-008")])
+            self.assertTrue(any("nicht wörtlich" in f for f in self.fx.findings()), quote)
+
+    def test_abschnittsname_muss_ganze_woerter_treffen(self) -> None:
+        needs = list(GOOD_NEEDS)
+        needs[4] = need("R-01", "Rahmen", "", "Deutsch.", "wörtlich", "Englisch ist falsch", "docs/o-toene.md#01.01.2026 S")
+        self.fx.write(needs, [req("REQ-EDIT-008")])
+        self.assertIn("R-01: Abschnitt '01.01.2026 S' gibt es nicht", self.fx.findings())
+
     def test_knopfwahl_ist_kein_eigener_wortlaut(self) -> None:
         needs = list(GOOD_NEEDS)
         needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "Ja, übernehmen", "docs/o-toene.md#01.01.2026 Zustimmung")

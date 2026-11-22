@@ -12,17 +12,17 @@ Erzeugt von `tools/anforderungskette.py` aus `requirements/beduerfnisse.tsv` und
 
 | Gilt ab | Anforderungen | Test genannt | nur Urteil | kein Test bekannt |
 |---|---:|---:|---:|---:|
-| immer | 47 | 15 | 17 | 15 |
+| immer | 47 | 14 | 17 | 16 |
 | G1 | 7 | 3 | 2 | 2 |
 | G2 | 30 | 5 | 1 | 24 |
-| G3 | 8 | 1 | 2 | 5 |
+| G3 | 8 | 0 | 2 | 6 |
 | G4 | 3 | 0 | 0 | 3 |
 | G5 | 3 | 0 | 1 | 2 |
 | G6 | 23 | 0 | 13 | 10 |
 | Auslöser (bei Bedarf) | 14 | 1 | 5 | 8 |
-| **alle** | **135** | 25 | 41 | 69 |
+| **alle** | **135** | 23 | 41 | 71 |
 
-Bei **17** Anforderungen lautet die Selbstbewertung in der Spalte `current_support` ohne Einschränkung „adequate“ oder „strong“, aber kein Test ist genannt: PHIL-001, PHIL-004, PHIL-006, PHIL-009, DOM-002, DOM-004, DOM-007, ONO-001, ONO-007, ONO-008, MET-009, GWP-006, RSE-002, RSE-009, AI-003, UX-002, UX-007. Die Selbstbewertung stammt aus den Fachaudits vom August und September 2026 und ist eine Auskunft, kein Beleg.
+Bei **18** Anforderungen lautet die Selbstbewertung in der Spalte `current_support` ohne Einschränkung „adequate“ oder „strong“, aber kein Test ist genannt: ARCH-007, PHIL-001, PHIL-004, PHIL-006, PHIL-009, DOM-002, DOM-004, DOM-007, ONO-001, ONO-007, ONO-008, MET-009, GWP-006, RSE-002, RSE-009, AI-003, UX-002, UX-007. Die Selbstbewertung stammt aus KI-Fachaudits (#26–#37; Tabelle angelegt am 27.08.2026, vor dieser Änderung zuletzt am 08.09.2026 geändert) und ist eine Auskunft, kein Beleg.
 
 ## Intent und Rahmen
 
@@ -174,7 +174,7 @@ O-Ton (wörtlich): „ich brauche Transparenz, Vertrauen und Verlässlichkeit - 
 | UX-004 | Unsicheres, Ergänztes, Eingriffe sichtbar | G2 | **kein Test bekannt**, Prüfung im Gebrauch |
 | UX-005 | Vom Ergebnis zum Beleg durchklicken | G2 | **kein Test bekannt** |
 | PAL-010 | Offene Lesung ist gültig; Fachprüfung benennen | G3 | Fachurteil |
-| UX-008 | Fachprüfstatus getrennt von KI-Arbeit sichtbar | G3 | Test genannt (1) |
+| UX-008 | Fachprüfstatus getrennt von KI-Arbeit sichtbar | G3 | **kein Test bekannt** |
 | DOM-006 | Mehrere Deutungen zulassen | G6 | Fachurteil |
 | HIST-007 | Alternative Deutungen bleiben sichtbar | G6 | Fachurteil |
 | HIST-008 | Vorläufige Kontextannahmen behalten Status | G6 | **kein Test bekannt** |
@@ -199,7 +199,7 @@ O-Ton (abgeleitet): „Immer Provinenz erhalten, Nachvollzihebarkeit.“
 | ARCH-002 | Provenienz getrennt von Quelle und Deutung | immer | Fachurteil |
 | ARCH-003 | Geprüfte Datei getrennt vom Archivale | immer | Test genannt (3) |
 | ARCH-005 | Katalog, Schluss und Autopsie unterscheiden | immer | Test genannt (2) |
-| ARCH-007 | Forschungsfunktion gilt nur im Projekt | immer | Test genannt (1) |
+| ARCH-007 | Forschungsfunktion gilt nur im Projekt | immer | **kein Test bekannt** |
 | COD-006 | Objekt getrennt vom Digitalisat | immer | Test genannt (2) |
 | GWP-002 | Belege bis zu Quelle, Datei, Stelle rückverfolgbar | immer | Test genannt (2) |
 | GWP-003 | Beleg, Metadaten, Hinweis, KI-Hypothese unterscheidbar | immer | Test genannt (1) |
@@ -287,7 +287,7 @@ O-Ton (wörtlich): „Zentral: sind es symtome, oder die tatsächlichen Ursachen
 O-Ton (abgeleitet): „Wir haben denk ich schon gute Strutkturen, siehe Visitationsprotokolle“
 
 - Pain **P-06** Beschreiben statt beheben: Die KI beschreibt ihre Mängel, statt den ersten Schritt zur Behebung zu tun. (O-Ton: „Die KI ist top ihre eigene Unzulänglichkeit zu beschreiben“)
-- Pain **P-08** Methodenverlust: Er sieht seit Nr. 632 einen Verlust an Methode gegenüber den Visitationsakten. (O-Ton: „da finde ich seit 632 auch ein methodenverlust passiert“)
+- Pain **P-08** Methodenverlust: Er sieht seit Nr. 632 einen Verlust an Methode. (O-Ton: „da finde ich seit 632 auch ein methodenverlust passiert“)
 - Pain **P-09** Vollgas ohne Behutsamkeit: ungesehen losarbeiten, ohne sich der Risiken bewusst zu sein. (O-Ton: „das du ungesehen da mit vollgas reingelaufen bist“)
 
 | Anforderung | Kurz | gilt ab | Prüfung |
@@ -348,7 +348,7 @@ O-Ton (abgeleitet): „da würde ich befreundete historiker fragen“
 | Anforderung | Kurz | gilt ab | Prüfung |
 |---|---|---|---|
 | PAL-010 | Offene Lesung ist gültig; Fachprüfung benennen | G3 | Fachurteil |
-| UX-008 | Fachprüfstatus getrennt von KI-Arbeit sichtbar | G3 | Test genannt (1) |
+| UX-008 | Fachprüfstatus getrennt von KI-Arbeit sichtbar | G3 | **kein Test bekannt** |
 | DOM-010 | Fachprüfung der Domänenaussage ausweisen | G6 | Fachurteil |
 | HIST-010 | Historische Fachprüfung ausweisen | G6 | Fachurteil |
 | MET-010 | Fachprüfung bei seltenen Zeichen ausweisen | G6 | Fachurteil |
@@ -361,7 +361,7 @@ O-Ton (abgeleitet): „da würde ich befreundete historiker fragen“
 
 ### B-16 Vom Bedürfnis zur prüfbaren Lösung: Entwicklung geht vom Bedürfnis aus, wird umgesetzt und ist prüfbar; jede Perspektive wird einmal bedacht.
 
-O-Ton (wörtlich): „In meiner Welt ist user research der zentrale Motor für entwicklung“
+O-Ton (abgeleitet): „In meiner Welt ist user research der zentrale Motor für entwicklung“
 
 - Pain **P-14** Tun statt Funktion: Nach erkannten Grundproblemen geht die laufende Arbeit weiter, ohne fehlende Funktionen nachzulegen. (O-Ton: „und du sagst gerade weiter im text“)
 - Pain **P-15** Absicht ungeprüft: Prüfungen zeigen nicht, ob die Absicht erreicht ist. (O-Ton: „Absicht nicht geprüft“)
@@ -384,6 +384,7 @@ Prüfbare Anforderungen ohne bekannten Test, geordnet danach, ab wann sie gelten
 
 | gilt ab | Anforderung | Kurz | dient | braucht zuerst |
 |---|---|---|---|---|
+| immer | ARCH-007 | Forschungsfunktion gilt nur im Projekt | B-06 |  |
 | immer | PHIL-001 | Handschriftliche Form bleibt vorrangig | B-01, B-03 |  |
 | immer | PHIL-004 | Historische Schreibung bleibt erhalten | B-01, B-03 |  |
 | immer | DOM-001 | Zuständige Fachgebiete benennen | B-08 |  |
@@ -430,6 +431,7 @@ Prüfbare Anforderungen ohne bekannten Test, geordnet danach, ab wann sie gelten
 | G3 | PAL-008 | Bildvergleich auf genaues Bild zurückführen | B-06, B-14 | COD-007 |
 | G3 | PHIL-005 | Wortbedeutung mit eingesehenem Beleg | B-06, P-13 |  |
 | G3 | MET-005 | Zahlschlüsse mit Stelle und Vergleich | B-06, B-14 | PAL-002 |
+| G3 | UX-008 | Fachprüfstatus getrennt von KI-Arbeit sichtbar | B-15, B-05 | GWP-005 |
 | G4 | EDIT-004 | Jeder Textzeuge erst für sich gelesen | B-03 | EDIT-001 |
 | G4 | EDIT-005 | Entsprechungen zwischen Zeugen belegt zuordnen | B-03 | EDIT-004, ARCH-009 |
 | G4 | HIST-003 | Überlieferung nur mit Beleg, nicht aus Kontext | B-02, B-03 |  |
@@ -491,6 +493,7 @@ Diese Anforderungen sagen aus verschiedenen Fächern fast dasselbe. Sie bleiben 
 Testdateien, aus denen keine Anforderung einen Test nennt. Sie können trotzdem nötig sein; dann fehlt ihre Zuordnung.
 
 - `tests/test_archival_source_acquisition.py`
+- `tests/test_engineering_context.py`
 - `tests/test_governance_ownership.py`
 - `tests/test_metrics.py`
 - `tests/test_prompt.py`
