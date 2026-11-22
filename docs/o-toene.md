@@ -5,6 +5,8 @@ Hier stehen Aussagen des Eigentümers **wörtlich**, mit Datum und Fundstelle, e
 **Übertragung:**
 - **direkt:** Der Eigentümer hat es selbst geschrieben, und es wurde Zeichen für Zeichen übernommen.
 - **übertragen:** Eine KI hat es aus einem Chat in ein Issue übernommen. Der Chat selbst liegt nicht im Repo.
+- **Antwortknopf:** Steht dabei „vorgegebener Antwortknopf gewählt“, stammt der Wortlaut des Knopfs von der KI; festgehalten ist die Wahl des Eigentümers, nicht sein eigener Wortlaut.
+- **[…]** markiert eine Auslassung, etwa wo der Eigentümer KI-Text zitiert. Der übrige Text ist unverändert.
 
 **Lücke:** Für August bis Oktober 2026 hat eine Volltextsuche über alle Issues und PRs (Stand 21.11.2026) keine wörtlichen Aussagen gefunden. Entscheidungen aus dieser Zeit (D-013, D-015, D-016, D-018, D-019, D-020, D-021) liegen nur in KI-Formulierung vor.
 

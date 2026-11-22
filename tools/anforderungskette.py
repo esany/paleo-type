@@ -45,7 +45,11 @@ TRIGGER = re.compile(r"Auslöser: \S.*\Z")
 JUDGEMENTS = {"Fachurteil": "Fachurteil", "Gebrauch": "Prüfung im Gebrauch"}
 TEST_REF = re.compile(r"(?P<path>tests/test_[a-z0-9_]+\.py)::(?P<name>test_[A-Za-z0-9_]+)\Z")
 QUOTE_SEPARATOR = " || "
-STRONG_SUPPORT = re.compile(r"(adequate|strong)", re.I)
+UNQUALIFIED_SUPPORT = re.compile(r"(adequate|strong)\Z")
+O_TON_PATH = Path("docs/o-toene.md")
+DATE_HEADING = re.compile(r"^## (?P<date>\d{2}\.\d{2}\.\d{4})\b")
+BOLD_LABEL = re.compile(r"^\*\*(?P<label>[^*]+)\*\*")
+ANCHOR_PART = re.compile(r"(?:(?P<date>\d{2}\.\d{2}\.\d{4}) )?(?P<label>\S.*)")
 
 
 # ---------------------------------------------------------------- Einlesen
@@ -67,6 +71,10 @@ def normalized(text: str) -> str:
 
 def stage_of(applies: str) -> str:
     return applies if applies in STAGES else "Auslöser"
+
+
+def stage_rank(applies: str) -> int:
+    return STAGES.index(applies) if applies in STAGES else len(STAGES)
 
 
 def test_refs(verified: str) -> list[str]:
@@ -124,23 +132,70 @@ def validate(root: Path) -> list[str]:
     return findings
 
 
+def o_ton_sections(text: str) -> dict[tuple[str, str], dict[str, object]]:
+    """Abschnitte von docs/o-toene.md: (Datum, Fettüberschrift) → nur die Zitatzeilen.
+
+    Gezählt werden nur Zeilen, die mit ``>`` beginnen; Überschriften und
+    Anmerkungen der KI zählen nicht als O-Ton.
+    """
+    sections: dict[tuple[str, str], dict[str, object]] = {}
+    date = ""
+    current: dict[str, object] | None = None
+    for line in text.splitlines():
+        heading = DATE_HEADING.match(line)
+        if heading:
+            date, current = heading["date"], None
+            continue
+        label = BOLD_LABEL.match(line)
+        if label and date:
+            current = {"quotes": [], "button": "Antwortknopf" in line}
+            sections[(date, label["label"].strip())] = current
+            continue
+        if current is not None and line.lstrip().startswith(">"):
+            current["quotes"].append(re.sub(r"^\s*>\s?", "", line))
+    return sections
+
+
+def resolve_anchor(anchor: str, sections: dict[tuple[str, str], dict[str, object]]) -> tuple[list[dict[str, object]], list[str]]:
+    """``Datum Überschrift[; [Datum ]Überschrift]``; ohne Datum gilt das vorige."""
+    found, problems, date = [], [], ""
+    for part in [p.strip() for p in anchor.split(";") if p.strip()]:
+        match = ANCHOR_PART.fullmatch(part)
+        if match is None:
+            problems.append(f"Abschnitt {part!r} ist nicht lesbar")
+            continue
+        date = match["date"] or date
+        hits = [key for key in sections if key[0] == date and key[1].startswith(match["label"])]
+        if len(hits) != 1:
+            problems.append(f"Abschnitt {part!r} {'gibt es nicht' if not hits else 'ist mehrdeutig'}")
+            continue
+        if sections[hits[0]]["button"]:
+            problems.append(f"Abschnitt {part!r} ist eine Knopfwahl, kein eigener Wortlaut")
+            continue
+        found.append(sections[hits[0]])
+    return found, problems
+
+
 def check_quote(root: Path, nid: str, row: dict[str, str]) -> list[str]:
-    path_text = row["fundstelle"].split("#", 1)[0].strip()
-    path = Path(path_text)
-    if not path_text or path.is_absolute() or ".." in path.parts:
-        return [f"{nid}: Fundstelle {row['fundstelle']!r} ist kein Pfad im Repo"]
-    target = root / path
+    path_text, _, anchor = row["fundstelle"].partition("#")
+    if path_text.strip() != O_TON_PATH.as_posix():
+        return [f"{nid}: Fundstelle muss {O_TON_PATH} sein, dort stehen die O-Töne"]
+    target = root / O_TON_PATH
     if not target.is_file():
-        return [f"{nid}: Fundstelle {path_text} gibt es nicht"]
-    text = normalized(target.read_text(encoding="utf-8"))
-    quotes = [q for q in row["o_ton"].split(QUOTE_SEPARATOR)]
-    if not any(q.strip() for q in quotes):
-        return [f"{nid}: O-Ton fehlt"]
-    return [
-        f"{nid}: O-Ton steht nicht wörtlich in {path_text}: {quote.strip()!r}"
-        for quote in quotes
-        if not quote.strip() or normalized(quote) not in text
-    ]
+        return [f"{nid}: {O_TON_PATH} gibt es nicht"]
+    if not anchor.strip():
+        return [f"{nid}: Fundstelle nennt keinen Abschnitt (Datum und Überschrift nach #)"]
+    found, problems = resolve_anchor(anchor, o_ton_sections(target.read_text(encoding="utf-8")))
+    out = [f"{nid}: {problem}" for problem in problems]
+    quotes = [q.strip() for q in row["o_ton"].split(QUOTE_SEPARATOR)]
+    if not any(quotes):
+        return out + [f"{nid}: O-Ton fehlt"]
+    texts = [normalized("\n".join(section["quotes"])) for section in found]
+    for quote in quotes:
+        pattern = re.compile(r"(?<!\w)" + re.escape(normalized(quote)) + r"(?!\w)") if quote else None
+        if pattern is None or not any(pattern.search(text) for text in texts):
+            out.append(f"{nid}: O-Ton steht nicht wörtlich in einem Zitat des genannten Abschnitts: {quote!r}")
+    return out
 
 
 def check_requirement(root: Path, row: dict[str, str], needs: dict[str, dict[str, str]], known: set[str]) -> list[str]:
@@ -197,7 +252,12 @@ def check_relations(reqs: list[dict[str, str]]) -> list[str]:
         for other in sorted(others):
             if other in overlaps and rid not in overlaps[other]:
                 out.append(f"{rid}: Überschneidung mit {other} ist nicht beidseitig eingetragen")
-    graph = {r["requirement_id"]: split(r["depends_on"]) for r in reqs}
+    graph = {r["requirement_id"]: [d for d in split(r["depends_on"]) if d != r["requirement_id"]] for r in reqs}
+    applies = {r["requirement_id"]: r["applies_from"].strip() for r in reqs}
+    for rid, deps in graph.items():
+        for dep in deps:
+            if dep in applies and stage_rank(applies[dep]) > stage_rank(applies[rid]):
+                out.append(f"{rid} gilt ab {applies[rid]}, braucht aber {dep}, das erst ab {applies[dep]} gilt")
     state: dict[str, int] = {}
 
     def visit(node: str, path: list[str]) -> None:
@@ -226,10 +286,10 @@ def check_label(verified: str) -> str:
     parts = []
     tests = test_refs(verified)
     if tests:
-        parts.append(f"Test ({len(tests)})")
+        parts.append(f"Test genannt ({len(tests)})")
+    elif "keine" in items:
+        parts.append("**kein Test bekannt**")
     parts.extend(JUDGEMENTS[i] for i in items if i in JUDGEMENTS)
-    if not tests and "keine" in items:
-        parts.insert(0, "**keine**")
     return ", ".join(parts)
 
 
@@ -238,7 +298,12 @@ def has_test(row: dict[str, str]) -> bool:
 
 
 def untested_gap(row: dict[str, str]) -> bool:
+    """Prüfbar, aber kein Test bekannt."""
     return not has_test(row) and "keine" in split(row["verified_by"])
+
+
+def judgement_only(row: dict[str, str]) -> bool:
+    return not has_test(row) and not untested_gap(row)
 
 
 def components(reqs: list[dict[str, str]]) -> list[list[str]]:
@@ -278,40 +343,58 @@ def render(root: Path) -> str:
         "Tabellen `python3 tools/anforderungskette.py schreiben` ausführen. Die Prüfung schlägt fehl, wenn diese "
         "Ansicht veraltet ist.",
         "",
-        "**Was hier geprüft ist:** dass jeder O-Ton wörtlich an seiner Fundstelle steht, dass jede Anforderung "
-        "einem Bedürfnis oder ausdrücklich einem Fachanspruch dient, dass jede eine Prüfangabe hat und dass jeder "
-        "genannte Test existiert. **Was nicht geprüft ist:** ob ein Test die Anforderung inhaltlich ganz abdeckt, "
-        "ob eine Ableitung den O-Ton richtig deutet, ob eine Anforderung fachlich erfüllt ist. Die Kurzbezeichnungen "
-        "sind deutsche Übersetzungen; maßgeblich ist der englische Wortlaut in der Tabelle.",
+        "**Was hier geprüft ist:** dass jeder O-Ton als ganze Wörter in einem Zitat des genannten Abschnitts von "
+        "`docs/o-toene.md` steht und keine Knopfwahl ist, dass jede Anforderung einem Bedürfnis, Pain, einer "
+        "Rahmenbedingung oder ausdrücklich nur einem Fach dient, dass jede eine Prüfangabe hat, dass jeder genannte "
+        "Test existiert und dass keine Anforderung etwas braucht, das erst später gilt. **Was nicht geprüft ist:** "
+        "ob ein genannter Test die Anforderung inhaltlich abdeckt, ob eine Ableitung den O-Ton richtig deutet, ob "
+        "eine Anforderung fachlich erfüllt ist.",
         "",
-        "**Prüfangaben:** *Test (n)*: n Tests im Repo prüfen einen Teil davon. *Fachurteil*: nur Fachleute können "
-        "es beurteilen. *Prüfung im Gebrauch*: nur du kannst es beim Benutzen beurteilen. ***keine***: prüfbar, "
-        "aber nichts prüft es.",
+        "**Status der Zuordnungen:** Welchem Bedürfnis eine Anforderung dient, ab wann sie gilt, welcher Test sie "
+        "betrifft, was sie zuerst braucht und womit sie sich überschneidet, hat Claude am 22.11.2026 aus "
+        "Anforderungstext, Testnamen und Werkzeugbeschreibungen abgeleitet. Der Eigentümer hat es nicht bestätigt. "
+        "Eine unabhängige Zweitprüfung fand Fehlzuordnungen; sie sind korrigiert, weitere sind möglich. Die "
+        "Kurzbezeichnungen sind Übersetzungen und lassen Einschränkungen wie „folgenreich“ oder „wo machbar“ weg; "
+        "maßgeblich ist der englische Wortlaut in der Tabelle.",
+        "",
+        "**Prüfangaben:** *Test genannt (n)*: n Tests im Repo betreffen nach Einschätzung der KI einen Teil davon. "
+        "*Fachurteil*: nur ein Urteil im jeweiligen Fach (Wissenschaft, Edition, Softwaretechnik) kann es "
+        "beurteilen. *Prüfung im Gebrauch*: nur du kannst es beim Benutzen beurteilen. Ob solche Urteile "
+        "stattgefunden haben, steht nicht in der Tabelle. ***kein Test bekannt***: prüfbar, aber kein Test im Repo "
+        "ist bekannt, der es prüft.",
         "",
         "## Auf einen Blick",
         "",
-        "| Gilt ab | Anforderungen | mit Test | ohne jede Prüfung |",
-        "|---|---:|---:|---:|",
+        "| Gilt ab | Anforderungen | Test genannt | nur Urteil | kein Test bekannt |",
+        "|---|---:|---:|---:|---:|",
     ]
     order = STAGES + ["Auslöser"]
+
+    def counts(rows: list[dict[str, str]]) -> str:
+        return f"{sum(map(has_test, rows))} | {sum(map(judgement_only, rows))} | {sum(map(untested_gap, rows))}"
+
     for stage in order:
         rows = [r for r in reqs if stage_of(r["applies_from"]) == stage]
         if rows:
             label = "immer" if stage == "immer" else ("Auslöser (bei Bedarf)" if stage == "Auslöser" else stage)
-            lines.append(f"| {label} | {len(rows)} | {sum(map(has_test, rows))} | {sum(map(untested_gap, rows))} |")
-    lines.append(f"| **alle** | **{len(reqs)}** | **{sum(map(has_test, reqs))}** | **{sum(map(untested_gap, reqs))}** |")
-    claimed = [r for r in reqs if STRONG_SUPPORT.search(r["current_support"]) and not has_test(r)]
+            lines.append(f"| {label} | {len(rows)} | {counts(rows)} |")
+    lines.append(f"| **alle** | **{len(reqs)}** | {counts(reqs)} |")
+    claimed = [r for r in reqs if UNQUALIFIED_SUPPORT.fullmatch(r["current_support"].strip()) and not has_test(r)]
     lines += [
         "",
-        f"Bei **{len(claimed)}** Anforderungen bewertet die Tabelle die Unterstützung selbst als „adequate“ oder "
-        "„strong“, ohne dass ein Test sie prüft. Das ist eine Selbstauskunft, kein Beleg.",
+        f"Bei **{len(claimed)}** Anforderungen lautet die Selbstbewertung in der Spalte `current_support` ohne "
+        "Einschränkung „adequate“ oder „strong“, aber kein Test ist genannt: "
+        + ", ".join(short(r["requirement_id"]) for r in claimed) + ". Die Selbstbewertung stammt aus den Fachaudits "
+        "vom August und September 2026 und ist eine Auskunft, kein Beleg.",
         "",
         "## Intent und Rahmen",
         "",
     ]
     for n in needs:
         if n["art"] in ("Intent", "Rahmen"):
-            lines.append(f"- **{n['id']}** {n['aussage']} ({n['status']}; O-Ton: „{first_quote(n)}“)")
+            served = "; ".join(f"{short(rid)} {by_req[rid]['kurz']}" for rid in serves[n["id"]])
+            lines.append(f"- **{n['id']}** {n['aussage']} ({n['status']}; O-Ton: „{first_quote(n)}“)"
+                         + (f" Dient: {served}." if served else ""))
     lines += ["", "## Bedürfnisse, Pains und ihre Anforderungen", ""]
     for n in needs:
         if n["art"] != "Bedürfnis":
@@ -332,7 +415,7 @@ def render(root: Path) -> str:
             lines.append(f"| {short(rid)} | {r['kurz']} | {r['applies_from']} | {check_label(r['verified_by'])} |")
         lines.append("")
 
-    lines += ["## Lücken nach Stufe", "", "Prüfbare Anforderungen, die nichts prüft, geordnet danach, ab wann sie gelten.", ""]
+    lines += ["## Lücken nach Stufe", "", "Prüfbare Anforderungen ohne bekannten Test, geordnet danach, ab wann sie gelten.", ""]
     lines += ["| gilt ab | Anforderung | Kurz | dient | braucht zuerst |", "|---|---|---|---|---|"]
     for stage in order:
         for r in reqs:

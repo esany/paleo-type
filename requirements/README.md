@@ -12,11 +12,27 @@ A file's presence under `requirements/` is **not** by itself evidence that it is
 
 Hier steht die Kette **Intent → Bedürfnis → Pain → Anforderung → Prüfung** an einer Stelle:
 
-- `beduerfnisse.tsv`: Intent, Rahmenbedingungen, Bedürfnisse und Pains des Eigentümers. Jede Zeile nennt den wörtlichen O-Ton und seine Fundstelle (`docs/o-toene.md`); die Aussage daneben ist eine Ableitung mit Status `wörtlich`, `abgeleitet` oder `Hypothese`.
-- `domain-requirements.tsv`: die Anforderungen der Fächer, ergänzt um `kurz` (deutsche Kurzbezeichnung), `need_ids` (welchem Bedürfnis oder Pain sie dient, oder `fach`), `applies_from` (ab welcher Reifestufe G1–G6, `immer` oder `Auslöser: …`), `verified_by` (Tests als `tests/…py::test_…`, `Fachurteil`, `Gebrauch` oder `keine`), `depends_on` und `overlaps`.
+- `beduerfnisse.tsv`: Intent, Rahmenbedingungen, Bedürfnisse und Pains des Eigentümers. Jede Zeile nennt den O-Ton und seinen Abschnitt in `docs/o-toene.md`. Die Aussage daneben ist eine Ableitung der KI, gekennzeichnet als `wörtlich` (gibt den O-Ton nur wieder), `abgeleitet` (deutet ihn) oder `Hypothese`.
+- `domain-requirements.tsv`: die Anforderungen der Fächer, ergänzt um sechs Spalten:
+  - `kurz`: deutsche Kurzbezeichnung;
+  - `need_ids`: welchem Bedürfnis, Pain oder welcher Rahmenbedingung die Anforderung dient, oder `fach`, wenn nur ein Fach sie begründet;
+  - `applies_from`: ab welcher Reifestufe sie gilt (G1–G6), `immer` oder `Auslöser: …`;
+  - `verified_by`: Tests als `tests/…py::test_…`, `Fachurteil`, `Gebrauch` oder `keine` (prüfbar, kein Test bekannt);
+  - `depends_on` und `overlaps`.
+
+  Die Spalten haben verschiedene Rollen und stehen nicht in Konkurrenz: `validation_mode` sagt, wie die Anforderung laut Fachaudit zu prüfen wäre; `current_support` ist die Selbstbewertung aus den Audits vom August und September 2026; `verified_by` sagt, was sie heute im Repo prüft.
 - `kette.md`: daraus erzeugte Leseansicht mit Lücken, Überschneidungen und Tests ohne Anforderung. Nicht von Hand ändern.
 
-`tools/anforderungskette.py pruefen` prüft die Kette und ob die Ansicht aktuell ist; `tests/test_anforderungskette.py` läuft in der Gesamtprüfung mit. Die Prüfung belegt Verknüpfung, wörtliche O-Töne und vorhandene Tests, nicht die fachliche Erfüllung einer Anforderung.
+**Status der Zuordnungen:** Die neuen Spalten hat Claude am 22.11.2026 abgeleitet, aus Anforderungstext, Testnamen und Werkzeugbeschreibungen. Der Eigentümer hat sie nicht bestätigt.
+
+`tools/anforderungskette.py pruefen` prüft die Kette und ob die Ansicht aktuell ist. `tests/test_anforderungskette.py` gehört zur Gesamtprüfung `tools/check.py`.
+
+Was geprüft wird:
+- ob ein O-Ton als ganze Wörter in einem Zitat des genannten Abschnitts steht;
+- ob jede Anforderung verknüpft ist;
+- ob die genannten Tests existieren.
+
+Nicht geprüft wird, ob ein Test die Anforderung inhaltlich abdeckt und ob sie fachlich erfüllt ist.
 
 ## WP5 migration result in this namespace
 

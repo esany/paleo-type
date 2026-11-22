@@ -19,12 +19,22 @@ def need(*fields: str) -> str:
     return "\t".join(fields)
 
 
+ZIEL = "docs/o-toene.md#01.01.2026 Ziel"
 GOOD_NEEDS = [
-    need("I-01", "Intent", "", "Jede Quelle lesen.", "wörtlich", "jede Quelle lesen", "docs/o-toene.md#Ziel"),
-    need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "wissen, was da steht", "docs/o-toene.md#Ziel"),
-    need("B-02", "Bedürfnis", "I-01", "Einordnen.", "abgeleitet", "einordnen können", "docs/o-toene.md#Ziel"),
-    need("P-01", "Pain", "B-01", "Prosa statt Funktion.", "wörtlich", "ein repo der Prosa", "docs/o-toene.md#Kern"),
+    need("I-01", "Intent", "", "Jede Quelle lesen.", "wörtlich", "jede Quelle lesen", ZIEL),
+    need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "wissen, was da steht", ZIEL),
+    need("B-02", "Bedürfnis", "I-01", "Einordnen.", "abgeleitet", "einordnen können", ZIEL),
+    need("P-01", "Pain", "B-01", "Prosa statt Funktion.", "wörtlich", "ein repo der Prosa", "docs/o-toene.md#01.01.2026 Kern"),
+    need("R-01", "Rahmen", "", "Deutsch.", "wörtlich", "Englisch ist falsch", "docs/o-toene.md#01.01.2026 Sprache"),
 ]
+O_TOENE = (
+    "# O-Töne\n\n## 01.01.2026 · Chat · direkt\n\n"
+    "**Ziel**\n> ich will jede Quelle lesen und\n> wissen, was da steht, und es einordnen können\n\n"
+    "Anmerkung der KI: Der Satz bezieht sich auf eine Notiz.\n\n"
+    "**Kern**\n> Das Repo ist ein repo der Prosa.\n\n"
+    "**Sprache**\n> Englisch ist falsch\n\n"
+    "**Zustimmung** (vorgegebener Antwortknopf gewählt)\n> Ja, übernehmen\n"
+)
 
 
 def req(rid: str, needs: str = "B-01", applies: str = "G2", verified: str = "keine",
@@ -39,9 +49,7 @@ class Fixture:
         (self.root / "docs").mkdir()
         (self.root / "requirements").mkdir()
         (self.root / "tests").mkdir()
-        (self.root / "docs" / "o-toene.md").write_text(
-            "## Ziel\n> ich will jede Quelle lesen und\n> wissen, was da steht, und es einordnen können\n"
-            "## Kern\n> Das Repo ist ein repo der Prosa.\n", encoding="utf-8")
+        (self.root / "docs" / "o-toene.md").write_text(O_TOENE, encoding="utf-8")
         (self.root / "tests" / "test_beispiel.py").write_text(
             "def test_vorhanden():\n    pass\n", encoding="utf-8")
         (self.root / "tests" / "test_verwaist.py").write_text(
@@ -91,21 +99,58 @@ class Kette(unittest.TestCase):
 
     def test_o_ton_muss_woertlich_in_der_fundstelle_stehen(self) -> None:
         needs = list(GOOD_NEEDS)
-        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "wissen, was dort steht", "docs/o-toene.md#Ziel")
+        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "wissen, was dort steht", ZIEL)
         self.fx.write(needs, [req("REQ-EDIT-008")])
-        self.assertIn("B-01: O-Ton steht nicht wörtlich in docs/o-toene.md: 'wissen, was dort steht'", self.fx.findings())
+        self.assertIn("B-01: O-Ton steht nicht wörtlich in einem Zitat des genannten Abschnitts: 'wissen, was dort steht'",
+                      self.fx.findings())
 
     def test_o_ton_ueber_zeilenumbruch_und_zitatzeichen_wird_gefunden(self) -> None:
         needs = list(GOOD_NEEDS)
-        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "jede Quelle lesen und wissen", "docs/o-toene.md#Ziel")
+        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "jede Quelle lesen und wissen", ZIEL)
         self.fx.write(needs, [req("REQ-EDIT-008")])
         self.assertEqual([], self.fx.findings())
 
-    def test_fundstelle_ausserhalb_des_repos_faellt_auf(self) -> None:
+    def test_fundstelle_ausserhalb_der_o_toene_faellt_auf(self) -> None:
         needs = list(GOOD_NEEDS)
-        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "x", "../geheim.md")
+        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "x", "../geheim.md#01.01.2026 Ziel")
         self.fx.write(needs, [req("REQ-EDIT-008")])
-        self.assertTrue(any("kein Pfad im Repo" in f for f in self.fx.findings()))
+        self.assertIn("B-01: Fundstelle muss docs/o-toene.md sein, dort stehen die O-Töne", self.fx.findings())
+
+    def test_o_ton_aus_falschem_abschnitt_faellt_auf(self) -> None:
+        needs = list(GOOD_NEEDS)
+        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "wissen, was da steht", "docs/o-toene.md#01.01.2026 Kern")
+        self.fx.write(needs, [req("REQ-EDIT-008")])
+        self.assertTrue(any("nicht wörtlich in einem Zitat des genannten Abschnitts" in f for f in self.fx.findings()))
+
+    def test_ueberschrift_anmerkung_und_wortbruchstueck_sind_kein_o_ton(self) -> None:
+        for quote in ("Ziel ich will jede Quelle lesen", "Der Satz bezieht sich auf eine Notiz", "ill jede Quel"):
+            needs = list(GOOD_NEEDS)
+            needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", quote, ZIEL)
+            self.fx.write(needs, [req("REQ-EDIT-008")])
+            self.assertTrue(any("nicht wörtlich" in f for f in self.fx.findings()), quote)
+
+    def test_knopfwahl_ist_kein_eigener_wortlaut(self) -> None:
+        needs = list(GOOD_NEEDS)
+        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "Ja, übernehmen", "docs/o-toene.md#01.01.2026 Zustimmung")
+        self.fx.write(needs, [req("REQ-EDIT-008")])
+        self.assertIn("B-01: Abschnitt '01.01.2026 Zustimmung' ist eine Knopfwahl, kein eigener Wortlaut", self.fx.findings())
+
+    def test_unbekannter_oder_fehlender_abschnitt_faellt_auf(self) -> None:
+        needs = list(GOOD_NEEDS)
+        needs[1] = need("B-01", "Bedürfnis", "I-01", "Lesen.", "wörtlich", "wissen, was da steht", "docs/o-toene.md#02.01.2026 Ziel")
+        needs[2] = need("B-02", "Bedürfnis", "I-01", "Einordnen.", "abgeleitet", "einordnen können", "docs/o-toene.md")
+        self.fx.write(needs, [req("REQ-EDIT-008")])
+        findings = self.fx.findings()
+        self.assertIn("B-01: Abschnitt '02.01.2026 Ziel' gibt es nicht", findings)
+        self.assertIn("B-02: Fundstelle nennt keinen Abschnitt (Datum und Überschrift nach #)", findings)
+
+    def test_abhaengigkeit_von_spaeterer_stufe_faellt_auf(self) -> None:
+        self.fx.write(GOOD_NEEDS, [req("REQ-UX-005", applies="immer", depends="REQ-EDIT-006"), req("REQ-EDIT-006", applies="G2")])
+        self.assertEqual(["REQ-UX-005 gilt ab immer, braucht aber REQ-EDIT-006, das erst ab G2 gilt"], self.fx.findings())
+
+    def test_selbstverweis_wird_einmal_gemeldet(self) -> None:
+        self.fx.write(GOOD_NEEDS, [req("REQ-EDIT-008", depends="REQ-EDIT-008")])
+        self.assertEqual(["REQ-EDIT-008: verweist in depends_on auf sich selbst"], self.fx.findings())
 
     def test_pain_muss_zu_beduerfnis_gehoeren(self) -> None:
         needs = list(GOOD_NEEDS)
@@ -165,8 +210,20 @@ class Ansicht(unittest.TestCase):
     def test_ansicht_zeigt_kette_vom_beduerfnis_zur_pruefung(self) -> None:
         self.assertIn("### B-01 Lesen.", self.view)
         self.assertIn("- Pain **P-01** Prosa statt Funktion.", self.view)
-        self.assertIn("| EDIT-008 | Kurz | G2 | Test (1) |", self.view)
-        self.assertIn("| UX-003 | Kurz | G2 | **keine** |", self.view)
+        self.assertIn("| EDIT-008 | Kurz | G2 | Test genannt (1) |", self.view)
+        self.assertIn("| UX-003 | Kurz | G2 | **kein Test bekannt** |", self.view)
+
+    def test_anforderung_fuer_rahmen_erscheint_in_der_ansicht(self) -> None:
+        self.fx.write(GOOD_NEEDS, [req("REQ-UX-012", needs="R-01", kurz="Alltagssprache")])
+        self.assertIn("- **R-01** Deutsch. (wörtlich; O-Ton: „Englisch ist falsch“) Dient: UX-012 Alltagssprache.",
+                      kette.render(self.fx.root))
+
+    def test_zaehlung_ordnet_jede_anforderung_genau_einer_spalte_zu(self) -> None:
+        self.fx.write(GOOD_NEEDS, [req("REQ-A-001", verified="tests/test_beispiel.py::test_vorhanden"),
+                                   req("REQ-A-002", verified="Fachurteil"),
+                                   req("REQ-A-003", verified="keine;Fachurteil"),
+                                   req("REQ-A-004", verified="Gebrauch")])
+        self.assertIn("| G2 | 4 | 1 | 2 | 1 |", kette.render(self.fx.root))
 
     def test_ansicht_nennt_beduerfnis_ohne_anforderung(self) -> None:
         self.assertIn("### B-02 Einordnen.", self.view)
@@ -178,8 +235,10 @@ class Ansicht(unittest.TestCase):
         self.assertNotIn("- `tests/test_beispiel.py`", self.view)
 
     def test_selbstbewertung_ohne_test_wird_gezaehlt(self) -> None:
-        self.fx.write(GOOD_NEEDS, [req("REQ-EDIT-008", support="adequate", verified="Fachurteil")])
-        self.assertIn("Bei **1** Anforderungen bewertet die Tabelle", kette.render(self.fx.root))
+        self.fx.write(GOOD_NEEDS, [req("REQ-EDIT-008", support="adequate", verified="Fachurteil"),
+                                   req("REQ-UX-003", support="adequate method / not yet exercised", verified="keine")])
+        self.assertIn("Bei **1** Anforderungen lautet die Selbstbewertung", kette.render(self.fx.root))
+        self.assertIn("aber kein Test ist genannt: EDIT-008.", kette.render(self.fx.root))
 
     def test_luecken_tabelle_nennt_abhaengigkeit(self) -> None:
         self.assertIn("| G2 | UX-003 | Kurz | P-01 | EDIT-008 |", self.view)
