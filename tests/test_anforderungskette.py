@@ -266,5 +266,90 @@ class Ansicht(unittest.TestCase):
         self.assertEqual(0, kette.main(["pruefen", "--root", str(self.fx.root)]))
 
 
+FUNC_HEADER = "\t".join(kette.FUNC_COLUMNS)
+ALL_ASPECTS = ";".join(a for a in kette.ASPECTS if a != "Nutzer")
+
+
+def func(fid: str = "FN-01", rang: str = "1", braucht: str = "", sichert: str = "REQ-UX-003",
+         befunde: str = "Nutzer: Will mitlesen [belegt: B-01]", ohne: str = ALL_ASPECTS,
+         dod: str = "`tests/test_beispiel.py` prüft es", status: str = "Vorschlag", schmerz: str = "Fehlt.") -> str:
+    values = {"id": fid, "name": "Name", "zweck": "Zweck.", "sichert": sichert, "lindert": "B-01", "schmerz": schmerz,
+              "befunde": befunde, "ohne_befund": ohne, "groesse": "hoch", "aufwand": "klein", "braucht": braucht,
+              "bestand": "", "dor": "bereit", "dod": dod, "iteration": "1: erst", "rang": rang,
+              "begruendung": "weil", "status": status, "issue": ""}
+    return "\t".join(values[c] for c in kette.FUNC_COLUMNS)
+
+
+class Funktionen(unittest.TestCase):
+    def setUp(self) -> None:
+        self.fx = Fixture()
+        self.addCleanup(self.fx.close)
+
+    def write(self, *rows: str) -> list[str]:
+        (self.fx.root / kette.FUNC_PATH).write_text("\n".join([FUNC_HEADER, *rows]) + "\n", encoding="utf-8")
+        return self.fx.findings()
+
+    def test_gueltige_funktion_hat_keine_befunde(self) -> None:
+        self.assertEqual([], self.write(func()))
+
+    def test_unbedachte_perspektive_faellt_auf(self) -> None:
+        findings = self.write(func(ohne=ALL_ASPECTS.replace("Recht;", "")))
+        self.assertIn("FN-01: Recht ist nicht bedacht (Befund oder „ohne Befund“)", findings)
+
+    def test_befund_ohne_herkunft_faellt_auf(self) -> None:
+        findings = self.write(func(befunde="Nutzer: Will mitlesen"))
+        self.assertTrue(any("braucht die Form" in f for f in findings), findings)
+
+    def test_doppelt_bedachte_perspektive_faellt_auf(self) -> None:
+        findings = self.write(func(ohne=ALL_ASPECTS + ";Nutzer"))
+        self.assertIn("FN-01: Nutzer steht doppelt", findings)
+
+    def test_was_gebraucht_wird_kommt_zuerst(self) -> None:
+        self.assertEqual([], self.write(func("FN-01", rang="2", braucht="FN-02"), func("FN-02", rang="1")))
+        findings = self.write(func("FN-01", rang="1", braucht="FN-02"), func("FN-02", rang="2"))
+        self.assertIn("FN-01 (Rang 1) braucht FN-02 (Rang 2); was gebraucht wird, kommt zuerst", findings)
+
+    def test_dod_ohne_test_faellt_auf(self) -> None:
+        findings = self.write(func(dod="sieht gut aus"))
+        self.assertIn("FN-01: DOD nennt keinen Test (tests/test_….py), an dem „fertig“ prüfbar ist", findings)
+
+    def test_fertig_verlangt_vorhandenen_test_und_gepruefte_anforderung(self) -> None:
+        findings = self.write(func(status="fertig", dod="`tests/test_fehlt.py` prüft es"))
+        self.assertIn("FN-01: fertig, aber tests/test_fehlt.py gibt es nicht", findings)
+        self.assertIn("FN-01: fertig, aber REQ-UX-003 nennt noch keinen Test", findings)
+
+    def test_unbekannte_anforderung_faellt_auf(self) -> None:
+        self.assertIn("FN-01: unbekannte Anforderung REQ-XX-999", self.write(func(sichert="REQ-XX-999")))
+
+    def test_issue_text_darf_keine_kontextwurst_sein(self) -> None:
+        findings = self.write(func(schmerz="lang " * 900))
+        self.assertIn(f"FN-01: Issue-Text länger als {kette.MAX_ISSUE_CHARS} Zeichen; kürzen statt Kontextwurst",
+                      findings)
+
+    def test_ansicht_zeigt_rang_und_luecken_ohne_funktion(self) -> None:
+        self.write(func(sichert="REQ-EDIT-008"))
+        view = kette.render(self.fx.root)
+        self.assertIn("| 1 | FN-01 Name | hoch | klein | EDIT-008 | B-01 |  | Vorschlag |  |", view)
+        self.assertIn("## Lücken bis G3 ohne Funktion", view)
+        self.assertIn("- UX-003 Kurz (G2)", view)
+
+    def test_issue_text_hat_dor_und_dod_als_abhakliste(self) -> None:
+        self.write(func())
+        _, rows = kette.read_tsv(self.fx.root / kette.FUNC_PATH)
+        _, reqs = kette.read_tsv(self.fx.root / kette.REQS_PATH)
+        _, needs = kette.read_tsv(self.fx.root / kette.NEEDS_PATH)
+        body = kette.issue_body(rows[0], {r["requirement_id"]: r for r in reqs}, {n["id"]: n for n in needs})
+        self.assertIn("**DOR (bereit, wenn):**\n- [ ] bereit", body)
+        self.assertIn("**DOD (fertig, wenn):**\n- [ ] `tests/test_beispiel.py` prüft es", body)
+        self.assertIn("**Sichert:** UX-003 Kurz (**kein Test bekannt**)", body)
+
+
+class EchteFunktionen(unittest.TestCase):
+    def test_funktionstabelle_liegt_vor_und_jede_funktion_hat_rang(self) -> None:
+        _, rows = kette.read_tsv(REPO / kette.FUNC_PATH)
+        self.assertGreaterEqual(len(rows), 1)
+        self.assertEqual(sorted(int(r["rang"]) for r in rows), list(range(1, len(rows) + 1)))
+
+
 if __name__ == "__main__":
     unittest.main()

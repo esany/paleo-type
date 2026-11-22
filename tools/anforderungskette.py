@@ -8,7 +8,10 @@ Prüft die Kette deterministisch und erzeugt daraus die Leseansicht
   jeweils mit wörtlichem O-Ton und Fundstelle;
 - ``requirements/domain-requirements.tsv``: die Anforderungen mit den
   Kettenspalten ``kurz``, ``need_ids``, ``applies_from``, ``verified_by``,
-  ``depends_on`` und ``overlaps``.
+  ``depends_on`` und ``overlaps``;
+- ``requirements/funktionen.tsv``: Funktionen, die Gruppen von Anforderungen
+  absichern, mit Schmerz, Größe, Befunden je Perspektive, Abhängigkeiten,
+  DOR, DOD, Iterationen und Rang.
 
 Grenze: Das Werkzeug prüft, ob die Kette vollständig und widerspruchsfrei
 verknüpft ist, ob jeder O-Ton wörtlich an seiner Fundstelle steht und ob jeder
@@ -19,6 +22,7 @@ Anforderung fachlich erfüllt ist.
 Aufruf:
   python3 tools/anforderungskette.py pruefen     # Kette und Ansicht prüfen
   python3 tools/anforderungskette.py schreiben   # Ansicht neu erzeugen
+  python3 tools/anforderungskette.py issue FN-01 # Titel und Text des Issues zu einer Funktion
 """
 from __future__ import annotations
 
@@ -45,6 +49,20 @@ TRIGGER = re.compile(r"Auslöser: \S.*\Z")
 JUDGEMENTS = {"Fachurteil": "Fachurteil", "Gebrauch": "Prüfung im Gebrauch"}
 TEST_REF = re.compile(r"(?P<path>tests/test_[a-z0-9_]+\.py)::(?P<name>test_[A-Za-z0-9_]+)\Z")
 QUOTE_SEPARATOR = " || "
+
+FUNC_PATH = Path("requirements/funktionen.tsv")
+FUNC_COLUMNS = ["id", "name", "zweck", "sichert", "lindert", "schmerz", "befunde", "ohne_befund", "groesse",
+                "aufwand", "braucht", "bestand", "dor", "dod", "iteration", "rang", "begruendung", "status", "issue"]
+PERSPECTIVES = ["Nutzer", "Fach", "Gestaltung", "Technik", "Recht"]
+DIMENSIONS = ["Wissen", "Ressourcen", "Qualität", "Komplexität", "Strategie", "Nachhaltigkeit"]
+ASPECTS = PERSPECTIVES + DIMENSIONS
+FN_ID = re.compile(r"FN-\d{2}\Z")
+SIZES = ["hoch", "mittel", "gering"]
+EFFORTS = ["klein", "mittel", "groß"]
+FN_STATUS = ["Vorschlag", "bestätigt", "in Arbeit", "fertig"]
+FINDING = re.compile(r"(?P<aspect>[A-Za-zÄÖÜäöüß]+): (?P<text>.+?) \[(?P<status>belegt|abgeleitet|Hypothese)(?::[^\]]*)?\]\Z")
+TEST_PATH = re.compile(r"tests/test_[a-z0-9_]+\.py")
+MAX_ISSUE_CHARS = 4000
 UNQUALIFIED_SUPPORT = re.compile(r"(adequate|strong)\Z")
 O_TON_PATH = Path("docs/o-toene.md")
 DATE_HEADING = re.compile(r"^## (?P<date>\d{2}\.\d{2}\.\d{4})\b")
@@ -129,7 +147,120 @@ def validate(root: Path) -> list[str]:
     for row in reqs:
         findings.extend(check_requirement(root, row, by_id, known))
     findings.extend(check_relations(reqs))
+    if (root / FUNC_PATH).is_file():
+        findings.extend(check_functions(root, reqs, by_id))
     return findings
+
+
+def check_functions(root: Path, reqs: list[dict[str, str]], needs: dict[str, dict[str, str]]) -> list[str]:
+    fields, funcs = read_tsv(root / FUNC_PATH)
+    if fields != FUNC_COLUMNS:
+        return [f"{FUNC_PATH}: Spalten müssen genau {FUNC_COLUMNS} sein"]
+    out: list[str] = []
+    req_by_id = {r["requirement_id"]: r for r in reqs}
+    ids = [f["id"] for f in funcs]
+    ranks: dict[str, int] = {}
+    for f in funcs:
+        fid = f["id"]
+        if not FN_ID.fullmatch(fid):
+            out.append(f"{fid!r}: ungültige Funktions-ID (erwartet FN- mit zwei Ziffern)")
+        if ids.count(fid) > 1:
+            out.append(f"{fid}: doppelte Funktion")
+        for column in ("name", "zweck", "schmerz", "dor", "dod", "begruendung"):
+            if not f[column].strip():
+                out.append(f"{fid}: {column} fehlt")
+        if not split(f["sichert"]) and not split(f["lindert"]):
+            out.append(f"{fid}: sichert keine Anforderung und lindert kein Bedürfnis")
+        for rid in split(f["sichert"]):
+            if rid not in req_by_id:
+                out.append(f"{fid}: unbekannte Anforderung {rid}")
+        for nid in split(f["lindert"]):
+            if nid not in needs or needs[nid]["art"] == "Intent":
+                out.append(f"{fid}: lindert unbekanntes Bedürfnis, Pain oder Rahmen {nid}")
+        out.extend(check_aspects(fid, f))
+        if f["groesse"] not in SIZES:
+            out.append(f"{fid}: Größe muss {', '.join(SIZES)} sein")
+        if f["aufwand"] not in EFFORTS:
+            out.append(f"{fid}: Aufwand muss {', '.join(EFFORTS)} sein")
+        if not TEST_PATH.search(f["dod"]):
+            out.append(f"{fid}: DOD nennt keinen Test (tests/test_….py), an dem „fertig“ prüfbar ist")
+        if f["status"] not in FN_STATUS:
+            out.append(f"{fid}: Status muss {', '.join(FN_STATUS)} sein")
+        if f["issue"] and not re.fullmatch(r"#\d+", f["issue"]):
+            out.append(f"{fid}: Issue muss als #Nummer angegeben sein")
+        if f["rang"].isdigit() and int(f["rang"]) > 0:
+            ranks[fid] = int(f["rang"])
+        else:
+            out.append(f"{fid}: Rang muss eine positive Zahl sein")
+        if f["status"] == "fertig":
+            for path in TEST_PATH.findall(f["dod"]):
+                if not (root / path).is_file():
+                    out.append(f"{fid}: fertig, aber {path} gibt es nicht")
+            for rid in split(f["sichert"]):
+                if rid in req_by_id and not has_test(req_by_id[rid]):
+                    out.append(f"{fid}: fertig, aber {rid} nennt noch keinen Test")
+        if len(issue_body(f, req_by_id, needs)) > MAX_ISSUE_CHARS:
+            out.append(f"{fid}: Issue-Text länger als {MAX_ISSUE_CHARS} Zeichen; kürzen statt Kontextwurst")
+    for rank in sorted({r for r in ranks.values() if list(ranks.values()).count(r) > 1}):
+        out.append(f"Rang {rank} ist mehrfach vergeben")
+    graph = {f["id"]: split(f["braucht"]) for f in funcs}
+    for fid, deps in graph.items():
+        for dep in deps:
+            if dep == fid:
+                out.append(f"{fid}: braucht sich selbst")
+            elif dep not in graph:
+                out.append(f"{fid}: braucht unbekannte Funktion {dep}")
+            elif fid in ranks and dep in ranks and ranks[dep] >= ranks[fid]:
+                out.append(f"{fid} (Rang {ranks[fid]}) braucht {dep} (Rang {ranks[dep]}); was gebraucht wird, kommt zuerst")
+    return out
+
+
+def check_aspects(fid: str, f: dict[str, str]) -> list[str]:
+    """Jede Perspektive und Dimension wird einmal bedacht: mit Befund oder ausdrücklich ohne."""
+    out, seen = [], []
+    for part in [p.strip() for p in f["befunde"].split(" | ") if p.strip()]:
+        match = FINDING.fullmatch(part)
+        if match is None:
+            out.append(f"{fid}: Befund {part[:40]!r} braucht die Form „Perspektive: Befund [belegt|abgeleitet|Hypothese]“")
+            continue
+        seen.append(match["aspect"])
+    seen += split(f["ohne_befund"])
+    for aspect in sorted(set(seen) - set(ASPECTS)):
+        out.append(f"{fid}: unbekannte Perspektive oder Dimension {aspect}")
+    for aspect in sorted({a for a in seen if seen.count(a) > 1}):
+        out.append(f"{fid}: {aspect} steht doppelt")
+    for aspect in ASPECTS:
+        if aspect not in seen:
+            out.append(f"{fid}: {aspect} ist nicht bedacht (Befund oder „ohne Befund“)")
+    return out
+
+
+def issue_body(f: dict[str, str], req_by_id: dict[str, dict[str, str]], needs: dict[str, dict[str, str]]) -> str:
+    def bullets(value: str) -> list[str]:
+        return [part.strip() for part in value.split(" | ") if part.strip()]
+
+    reqs = [f"{short(r)} {req_by_id[r]['kurz']} ({check_label(req_by_id[r]['verified_by'])})"
+            for r in split(f["sichert"]) if r in req_by_id]
+    eased = [f"{n} {needs[n]['aussage'].split(':')[0]}" for n in split(f["lindert"]) if n in needs]
+    lines = [
+        f"**Zweck:** {f['zweck']}", "",
+        f"**Schmerz ohne sie** (Größe: {f['groesse']}): {f['schmerz']}", "",
+        "**Sichert:** " + ("; ".join(reqs) or "keine bestehende Anforderung"), "",
+        "**Lindert:** " + "; ".join(eased), "",
+        "**Befunde je Perspektive:**",
+    ]
+    lines += [f"- {part}" for part in bullets(f["befunde"])]
+    lines += [f"- Ohne Befund bedacht: {', '.join(split(f['ohne_befund']))}", "",
+              f"**Braucht:** {', '.join(split(f['braucht'])) or 'nichts'} · **Aufwand:** {f['aufwand']} · "
+              f"**Rang:** {f['rang']} ({f['status']}): {f['begruendung']}", "",
+              f"**Bestand:** {f['bestand']}", "", "**DOR (bereit, wenn):**"]
+    lines += [f"- [ ] {part}" for part in bullets(f["dor"])]
+    lines += ["", "**DOD (fertig, wenn):**"]
+    lines += [f"- [ ] {part}" for part in bullets(f["dod"])]
+    lines += ["", "**Iterationen:** " + " · ".join(bullets(f["iteration"])), "",
+              f"_Erzeugt aus `{FUNC_PATH}` von `tools/anforderungskette.py`; Änderungen dort, nicht hier. "
+              "Größe, Rang und Befunde sind ein Vorschlag der KI._"]
+    return "\n".join(lines) + "\n"
 
 
 def o_ton_sections(text: str) -> dict[tuple[str, str], dict[str, object]]:
@@ -459,7 +590,32 @@ def render(root: Path) -> str:
               "Testdateien, aus denen keine Anforderung einen Test nennt. Sie können trotzdem nötig sein; "
               "dann fehlt ihre Zuordnung.", ""]
     lines += [f"- `{p}`" for p in orphans] or ["Keine."]
+    if (root / FUNC_PATH).is_file():
+        lines += render_functions(root, reqs, by_req)
     return "\n".join(lines) + "\n"
+
+
+def render_functions(root: Path, reqs: list[dict[str, str]], by_req: dict[str, dict[str, str]]) -> list[str]:
+    _, funcs = read_tsv(root / FUNC_PATH)
+    funcs = sorted(funcs, key=lambda f: int(f["rang"]) if f["rang"].isdigit() else 999)
+    lines = ["", "## Funktionen nach Rang", "",
+             "Welche Funktion welche Anforderungen absichert und welchen Schmerz sie lindert. Größe, Rang und "
+             "Befunde je Perspektive sind ein Vorschlag der KI (`requirements/funktionen.tsv`); entscheiden tust du. "
+             "**Größe:** *hoch* hält die laufende Arbeit auf oder lässt Fehler in Forschungsdaten unbemerkt; *mittel* "
+             "verlangsamt oder macht intransparent; *gering* betrifft erst spätere Stufen.", "",
+             "| Rang | Funktion | Größe | Aufwand | sichert | lindert | braucht | Stand | Issue |",
+             "|---:|---|---|---|---|---|---|---|---|"]
+    for f in funcs:
+        lines.append(f"| {f['rang']} | {f['id']} {f['name']} | {f['groesse']} | {f['aufwand']} | "
+                     f"{', '.join(short(r) for r in split(f['sichert']))} | {', '.join(split(f['lindert']))} | "
+                     f"{', '.join(split(f['braucht']))} | {f['status']} | {f['issue']} |")
+    covered = {r for f in funcs for r in split(f["sichert"])}
+    open_now = [r for r in reqs if stage_rank(r["applies_from"]) <= STAGES.index("G3") and untested_gap(r)
+                and r["requirement_id"] not in covered]
+    lines += ["", "## Lücken bis G3 ohne Funktion", "",
+              "Prüfbare Anforderungen bis zur Stufe G3 ohne bekannten Test, die noch keine Funktion absichert.", ""]
+    lines += [f"- {short(r['requirement_id'])} {r['kurz']} ({r['applies_from']})" for r in open_now] or ["Keine."]
+    return lines
 
 
 def first_quote(row: dict[str, str]) -> str:
@@ -470,11 +626,23 @@ def first_quote(row: dict[str, str]) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("befehl", choices=["pruefen", "schreiben"])
+    parser.add_argument("befehl", choices=["pruefen", "schreiben", "issue"])
+    parser.add_argument("funktion", nargs="?", help="bei issue: Funktions-ID, z. B. FN-01")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args(argv)
     root = args.root.resolve()
     findings = validate(root)
+    if args.befehl == "issue":
+        _, funcs = read_tsv(root / FUNC_PATH)
+        _, reqs = read_tsv(root / REQS_PATH)
+        _, needs = read_tsv(root / NEEDS_PATH)
+        match = [f for f in funcs if f["id"] == args.funktion]
+        if not match:
+            print(f"unbekannte Funktion {args.funktion!r}", file=sys.stderr)
+            return 1
+        print(f"{match[0]['id']} {match[0]['name']}")
+        print(issue_body(match[0], {r["requirement_id"]: r for r in reqs}, {n["id"]: n for n in needs}), end="")
+        return 0
     if args.befehl == "schreiben":
         if findings:
             print("\n".join(findings), file=sys.stderr)

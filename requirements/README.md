@@ -21,6 +21,7 @@ Hier steht die Kette **Intent → Bedürfnis → Pain → Anforderung → Prüfu
   - `depends_on` und `overlaps`.
 
   Die Spalten haben verschiedene Rollen und stehen nicht in Konkurrenz: `validation_mode` sagt, wie die Anforderung laut Fachaudit zu prüfen wäre; `current_support` ist die Selbstbewertung aus den KI-Fachaudits #26–#37 (Tabelle angelegt am 27.08.2026, vor dieser Änderung zuletzt am 08.09.2026 geändert); `verified_by` sagt, was sie heute im Repo prüft.
+- `funktionen.tsv`: Funktionen, die Gruppen von Anforderungen absichern. Je Funktion stehen dort: welchen Schmerz ihr Fehlen verursacht und wie groß er ist, Befunde je Perspektive und Dimension (jede mit Befund und Herkunft oder ausdrücklich ohne Befund), Abhängigkeiten, DOR, DOD mit dem Test, an dem „fertig“ prüfbar ist, Iterationen und Rang. Größe, Rang und Befunde sind ein Vorschlag der KI; über die Reihenfolge entscheidet der Eigentümer. Die Issues zu den Funktionen werden mit `tools/anforderungskette.py issue FN-…` aus dieser Tabelle erzeugt und sind kurz zu halten (höchstens 4000 Zeichen).
 - `kette.md`: daraus erzeugte Leseansicht mit Lücken, Überschneidungen und Tests ohne Anforderung. Nicht von Hand ändern.
 
 **Status der Zuordnungen:** Die neuen Spalten hat Claude am 22.11.2026 abgeleitet, aus Anforderungstext, Testnamen und Werkzeugbeschreibungen. Der Eigentümer hat sie nicht bestätigt.

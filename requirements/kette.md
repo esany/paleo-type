@@ -503,3 +503,35 @@ Testdateien, aus denen keine Anforderung einen Test nennt. Sie können trotzdem 
 - `tests/test_regii5_packet_benchmark.py`
 - `tests/test_regii5_visual_retrieval.py`
 - `tests/test_sd_ka_wp6_qualification.py`
+
+## Funktionen nach Rang
+
+Welche Funktion welche Anforderungen absichert und welchen Schmerz sie lindert. Größe, Rang und Befunde je Perspektive sind ein Vorschlag der KI (`requirements/funktionen.tsv`); entscheiden tust du. **Größe:** *hoch* hält die laufende Arbeit auf oder lässt Fehler in Forschungsdaten unbemerkt; *mittel* verlangsamt oder macht intransparent; *gering* betrifft erst spätere Stufen.
+
+| Rang | Funktion | Größe | Aufwand | sichert | lindert | braucht | Stand | Issue |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | FN-01 Zeilenformat-Prüfer | hoch | klein | EDIT-001, EDIT-002, EDIT-003, ARCH-009, PAL-001, PAL-005, PAL-006, PAL-007, PHIL-002, PHIL-003, COD-004, COD-005, MET-001, AI-005 | B-01, B-03, B-05, P-01, P-08 |  | Vorschlag |  |
+| 2 | FN-02 Leseansicht | hoch | mittel | EDIT-008, RSE-006, UX-003, UX-004, UX-005, PHIL-001, PHIL-004 | B-04, B-01, P-01, P-11 | FN-01 | Vorschlag |  |
+| 3 | FN-03 G3-Prüftabelle für strittige Stellen | hoch | mittel | PAL-002, PAL-004, PAL-008, PAL-010, MET-005 | B-03, B-14, B-15, P-13 | FN-01 | Vorschlag |  |
+| 4 | FN-04 Namen: Lesung und Identifizierung getrennt | mittel | mittel | ONO-001, ONO-002, ONO-003, ONO-004, ONO-009, PHIL-008 | B-02, B-06, P-13 | FN-01 | Vorschlag |  |
+| 5 | FN-05 Querbezüge im Gelesenen | mittel | mittel | PHIL-005 | B-17, P-12, B-14 | FN-01 | Vorschlag |  |
+| 6 | FN-06 Gegenlesung zielgenau, Lesequalität messbar | mittel | klein | AI-004, EDIT-006, UX-008, GWP-005 | B-03, B-05, B-13, P-12, P-13 | FN-01, FN-03 | Vorschlag |  |
+| 7 | FN-07 Stand auf einen Blick | mittel | mittel | UX-007, UX-001 | B-12, B-13, B-04, P-05, P-07 | FN-01, FN-06 | Vorschlag |  |
+| 8 | FN-08 Bildausschnitt für jedes Projekt | mittel | groß | COD-007 | B-14, B-01 | FN-01 | Vorschlag |  |
+| 9 | FN-09 Rückbau | mittel | mittel | RSE-001 | P-02, P-04, B-12 |  | Vorschlag |  |
+
+## Lücken bis G3 ohne Funktion
+
+Prüfbare Anforderungen bis zur Stufe G3 ohne bekannten Test, die noch keine Funktion absichert.
+
+- ARCH-007 Forschungsfunktion gilt nur im Projekt (immer)
+- DOM-001 Zuständige Fachgebiete benennen (immer)
+- DOM-009 Erfahrungswissen als offene Fragen, nicht als Schluss (immer)
+- GWP-006 Rechte und Zugangsgrenzen ausdrücklich (G1)
+- GWP-009 Methoden und Standards mit Fassung benannt (immer)
+- RSE-008 Umwandlungen behalten Herkunft und Entscheidungen (immer)
+- RSE-010 Automatik schreibt weniger, als Fachurteil entscheidet (immer)
+- AI-002 Kürzen ohne geltende Regel zu verlieren (immer)
+- AI-003 KI-Ausgabe, Beleg, Schluss, Prüfung unterscheiden (immer)
+- AI-006 KI-Schritte mit angemessener Herkunft (immer)
+- AI-007 Schreibgrenzen nach Tragweite (immer)
