@@ -4,6 +4,40 @@ These rules apply to every AI-assisted action in this repository.
 
 `GOVERNING_OBJECTIVE.md` is the highest-order repository constraint. This file provides stable operating guardrails and routing; it does **not** duplicate specialist methodology, Project state or executable contracts.
 
+## Arbeitsweise des Eigentümers (übergeordnet)
+
+Für jede Sitzung in diesem Repo gilt zusätzlich die projektübergreifende Arbeitsweise des Eigentümers: Datei `AGENTS.md` im privaten Repo `esany/arbeitsweise`. Sie regelt Rollen, Sprache, die Steuerung über die Kette Intent → Bedürfnis → Pain → Anforderung → Ziel, die Multiperspektivität, den Ablauf jeder Aufgabe, den Status von Aussagen, den Umgang mit Fehlern, die Unabhängigkeit von KI und Anbietern sowie Git und Sitzungen. Fachliches und der Zustand der Projekte richten sich nach `GOVERNING_OBJECTIVE.md` und dieser Datei. Widersprechen sich beide, wird der Widerspruch genannt und nicht still eine Seite gewählt. Ihr Text wird hier nicht kopiert, weil dieses Repo öffentlich ist und die Arbeitsweise persönliche Aussagen enthält. Wer keinen Zugriff auf sie hat, arbeitet mindestens nach den folgenden Punkten und meldet den fehlenden Zugriff.
+
+**So gilt sie in paleo-type:**
+
+- **Kette:** steht in `requirements/`:
+  - `beduerfnisse.tsv`: Intent, Rahmen, Bedürfnisse und Pains mit O-Ton;
+  - `domain-requirements.tsv`: Anforderungen mit Herkunft, Stufe und Prüfung;
+  - `funktionen.tsv`: Funktionen mit Schmerz, Perspektiven, DOR, DOD und Rang;
+  - `kette.md`: daraus erzeugte Ansicht.
+
+  `tools/anforderungskette.py` prüft sie in der Gesamtprüfung. Arbeit, die keiner Anforderung dient, wird nicht gemacht. Der nächste Schritt kommt aus den Lücken dort, nicht aus dem laufenden Fall.
+- **O-Töne zu diesem Projekt:** wörtlich in `docs/o-toene.md`. Was die KI daraus ableitet, steht mit Status `wörtlich`, `abgeleitet` oder `Hypothese` an seinem Ort.
+- **Domänen** für die Perspektive des Fachwissens: die dreizehn Fächer in `requirements/domain-requirements.tsv`, von Archivwissenschaft und Paläographie bis zu KI-Zusammenarbeit und Nutzbarkeit.
+- **Aussagen** tragen ihren Status: belegt (Quelle oder Prüfung aus diesem Lauf) · abgeleitet · Hypothese · nicht geprüft. Eine lokale Prüfung belegt keine GitHub-Prüfung.
+- **Zweitprüfung:** Ein frischer Kontext desselben Modells findet Kontextverfall, aber keine Modellfehler. Die prüft ein anderes Modell oder der Eigentümer; hier über die Labels `an:chatgpt` und `an:claude`.
+- **Fehler:** Fälle aus diesem Projekt kommen mit dem Projektnamen `paleo-type` in den Fehlerkatalog der Arbeitsweise, nur über dessen Eintragewerkzeug.
+- **Übernahme:** jede Änderung auf eigenem Zweig, dann PR nach `main`. Übernommen wird erst, wenn die Pflichtprüfung `validate` grün ist und der Eigentümer zugestimmt hat.
+  - Sein Urteil stützt sich nicht auf den Code, sondern auf eine kurze Vorlage in seiner Sprache, mit einer Frage und einer Empfehlung. Sie sagt, was sich für ihn ändert, was er davon selbst ansehen kann, wie es geprüft ist, was offen ist und ob es umkehrbar ist.
+  - Bei neuralgischen Änderungen prüft vorher ein anderes Modell.
+  - Öffentliche Issues sind eine Frage der Sichtbarkeit und gehen ebenfalls an ihn.
+- **Issues** halten fest und steuern nicht. Issues zu Funktionen werden mit `tools/anforderungskette.py issue FN-…` aus `requirements/funktionen.tsv` erzeugt und bleiben kurz.
+
+**Bekannte Widersprüche zwischen dieser Datei und der Arbeitsweise** (Stand 22.11.2026):
+
+1. Diese Datei ist bis auf diesen Abschnitt englisch, die Arbeitsweise verlangt Deutsch. Die Übersetzung steht noch aus; sie muss die Bedeutung der Fachbegriffe erhalten (D-019).
+2. Diese Datei und die Arbeitsweise regeln teils dasselbe:
+   - die Grenzen der Zuständigkeit und die Rollen;
+   - „Research outcome before infrastructure“ und „Arbeit, die keiner Anforderung dient, wird nicht gemacht“;
+   - „Maintenance and learning“ und den Umgang mit Fehlern.
+
+   Die Arbeitsweise verlangt kurze Kerndateien; die Dopplungen werden im Rückbau (`FN-09`) aufgelöst, nicht durch weiteren Text.
+
 ## Mandatory context before action
 
 Before acting, read:
