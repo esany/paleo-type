@@ -60,9 +60,10 @@ FN_ID = re.compile(r"FN-\d{2}\Z")
 SIZES = ["hoch", "mittel", "gering"]
 EFFORTS = ["klein", "mittel", "groß"]
 FN_STATUS = ["Vorschlag", "bestätigt", "in Arbeit", "fertig"]
-FINDING = re.compile(r"(?P<aspect>[A-Za-zÄÖÜäöüß]+): (?P<text>.+?) \[(?P<status>belegt|abgeleitet|Hypothese)(?::[^\]]*)?\]\Z")
+FINDING = re.compile(r"(?P<aspect>[A-Za-zÄÖÜäöüß]+): (?P<text>.+?) \[(?P<status>belegt|abgeleitet|Hypothese)(?::(?P<refs>[^\]]*))?\]\Z")
+FN_REF = re.compile(r"\bFN-\d{2}\b")
 TEST_PATH = re.compile(r"tests/test_[a-z0-9_]+\.py")
-MAX_ISSUE_CHARS = 4000
+MAX_ISSUE_CHARS = 3000
 UNQUALIFIED_SUPPORT = re.compile(r"(adequate|strong)\Z")
 O_TON_PATH = Path("docs/o-toene.md")
 DATE_HEADING = re.compile(r"^## (?P<date>\d{2}\.\d{2}\.\d{4})\b")
@@ -158,31 +159,37 @@ def check_functions(root: Path, reqs: list[dict[str, str]], needs: dict[str, dic
         return [f"{FUNC_PATH}: Spalten müssen genau {FUNC_COLUMNS} sein"]
     out: list[str] = []
     req_by_id = {r["requirement_id"]: r for r in reqs}
+    sections = o_ton_sections((root / O_TON_PATH).read_text(encoding="utf-8")) if (root / O_TON_PATH).is_file() else {}
+    resolver = BelegResolver(root, needs, req_by_id, sections)
     ids = [f["id"] for f in funcs]
+    known = set(ids)
+    for fid in sorted({i for i in ids if ids.count(i) > 1}):
+        out.append(f"{fid}: doppelte Funktion")
     ranks: dict[str, int] = {}
+    owner_of: dict[str, list[str]] = defaultdict(list)
     for f in funcs:
         fid = f["id"]
         if not FN_ID.fullmatch(fid):
             out.append(f"{fid!r}: ungültige Funktions-ID (erwartet FN- mit zwei Ziffern)")
-        if ids.count(fid) > 1:
-            out.append(f"{fid}: doppelte Funktion")
         for column in ("name", "zweck", "schmerz", "dor", "dod", "begruendung"):
             if not f[column].strip():
                 out.append(f"{fid}: {column} fehlt")
         if not split(f["sichert"]) and not split(f["lindert"]):
             out.append(f"{fid}: sichert keine Anforderung und lindert kein Bedürfnis")
         for rid in split(f["sichert"]):
+            owner_of[rid].append(fid)
             if rid not in req_by_id:
                 out.append(f"{fid}: unbekannte Anforderung {rid}")
         for nid in split(f["lindert"]):
             if nid not in needs or needs[nid]["art"] == "Intent":
                 out.append(f"{fid}: lindert unbekanntes Bedürfnis, Pain oder Rahmen {nid}")
-        out.extend(check_aspects(fid, f))
+        out.extend(check_aspects(fid, f, resolver))
         if f["groesse"] not in SIZES:
             out.append(f"{fid}: Größe muss {', '.join(SIZES)} sein")
         if f["aufwand"] not in EFFORTS:
             out.append(f"{fid}: Aufwand muss {', '.join(EFFORTS)} sein")
-        if not TEST_PATH.search(f["dod"]):
+        dod_tests = TEST_PATH.findall(f["dod"])
+        if not dod_tests:
             out.append(f"{fid}: DOD nennt keinen Test (tests/test_….py), an dem „fertig“ prüfbar ist")
         if f["status"] not in FN_STATUS:
             out.append(f"{fid}: Status muss {', '.join(FN_STATUS)} sein")
@@ -192,15 +199,26 @@ def check_functions(root: Path, reqs: list[dict[str, str]], needs: dict[str, dic
             ranks[fid] = int(f["rang"])
         else:
             out.append(f"{fid}: Rang muss eine positive Zahl sein")
+        for column in ("zweck", "dor", "dod", "iteration", "begruendung", "bestand"):
+            for ref in FN_REF.findall(f[column]):
+                if ref not in known:
+                    out.append(f"{fid}: {column} nennt unbekannte Funktion {ref}")
+        for ref in FN_REF.findall(f["dor"]):
+            if ref != fid and ref not in split(f["braucht"]):
+                out.append(f"{fid}: DOR verlangt {ref}, aber {ref} steht nicht unter braucht")
         if f["status"] == "fertig":
-            for path in TEST_PATH.findall(f["dod"]):
+            for path in dod_tests:
                 if not (root / path).is_file():
                     out.append(f"{fid}: fertig, aber {path} gibt es nicht")
             for rid in split(f["sichert"]):
-                if rid in req_by_id and not has_test(req_by_id[rid]):
-                    out.append(f"{fid}: fertig, aber {rid} nennt noch keinen Test")
+                named = {TEST_REF.fullmatch(t)["path"] for t in test_refs(req_by_id.get(rid, {}).get("verified_by", ""))}
+                if rid in req_by_id and not named & set(dod_tests):
+                    out.append(f"{fid}: fertig, aber {rid} nennt keinen Test aus der DOD")
         if len(issue_body(f, req_by_id, needs)) > MAX_ISSUE_CHARS:
             out.append(f"{fid}: Issue-Text länger als {MAX_ISSUE_CHARS} Zeichen; kürzen statt Kontextwurst")
+    for rid, owners in sorted(owner_of.items()):
+        if len(owners) > 1:
+            out.append(f"{rid} wird von mehreren Funktionen gesichert: {', '.join(owners)}")
     for rank in sorted({r for r in ranks.values() if list(ranks.values()).count(r) > 1}):
         out.append(f"Rang {rank} ist mehrfach vergeben")
     graph = {f["id"]: split(f["braucht"]) for f in funcs}
@@ -212,18 +230,55 @@ def check_functions(root: Path, reqs: list[dict[str, str]], needs: dict[str, dic
                 out.append(f"{fid}: braucht unbekannte Funktion {dep}")
             elif fid in ranks and dep in ranks and ranks[dep] >= ranks[fid]:
                 out.append(f"{fid} (Rang {ranks[fid]}) braucht {dep} (Rang {ranks[dep]}); was gebraucht wird, kommt zuerst")
+    for f in funcs:
+        for rid in split(f["sichert"]):
+            for dep in split(req_by_id.get(rid, {}).get("depends_on", "")):
+                for other in owner_of.get(dep, []):
+                    if other != f["id"] and other not in graph.get(f["id"], []):
+                        out.append(f"{f['id']}: {rid} braucht {dep}, das {other} sichert; {other} fehlt unter braucht")
     return out
 
 
-def check_aspects(fid: str, f: dict[str, str]) -> list[str]:
-    """Jede Perspektive und Dimension wird einmal bedacht: mit Befund oder ausdrücklich ohne."""
-    out, seen = [], []
+class BelegResolver:
+    """Löst Belege auf: Bedürfnis-ID, Anforderung (kurz), #Issue, Repo-Pfad oder „O-Ton Datum Überschrift“."""
+
+    def __init__(self, root: Path, needs: dict, reqs: dict, sections: dict) -> None:
+        self.root, self.needs, self.sections = root, needs, sections
+        self.reqs = {short(r) for r in reqs}
+
+    def problem(self, token: str) -> str | None:
+        if token in self.needs or token in self.reqs or re.fullmatch(r"#\d+", token):
+            return None
+        if token.startswith("O-Ton "):
+            _, problems = resolve_anchor(token.removeprefix("O-Ton "), self.sections)
+            return problems[0] if problems else None
+        path = Path(token.strip("`"))
+        if "/" in token and not path.is_absolute() and ".." not in path.parts:
+            return None if (self.root / path).exists() else f"Pfad {token} gibt es nicht"
+        return f"Beleg {token!r} ist weder ID, Anforderung, #Issue, Repo-Pfad noch „O-Ton Datum Überschrift“"
+
+
+def check_aspects(fid: str, f: dict[str, str], resolver: BelegResolver) -> list[str]:
+    """Jede Perspektive und Dimension wird einmal bedacht: mit Befund oder ausdrücklich ohne.
+
+    Die Nutzersicht braucht immer einen Befund. „belegt“ verlangt mindestens
+    einen auflösbaren Beleg; genannte Belege müssen sich auflösen lassen.
+    """
+    out, seen, with_finding = [], [], []
     for part in [p.strip() for p in f["befunde"].split(" | ") if p.strip()]:
         match = FINDING.fullmatch(part)
         if match is None:
             out.append(f"{fid}: Befund {part[:40]!r} braucht die Form „Perspektive: Befund [belegt|abgeleitet|Hypothese]“")
             continue
         seen.append(match["aspect"])
+        with_finding.append(match["aspect"])
+        tokens = [t.strip() for t in (match["refs"] or "").split(",") if t.strip()]
+        if match["status"] == "belegt" and not tokens:
+            out.append(f"{fid}: {match['aspect']} ist als belegt markiert, nennt aber keinen Beleg")
+        for token in tokens:
+            problem = resolver.problem(token)
+            if problem:
+                out.append(f"{fid}: {match['aspect']}: {problem}")
     seen += split(f["ohne_befund"])
     for aspect in sorted(set(seen) - set(ASPECTS)):
         out.append(f"{fid}: unbekannte Perspektive oder Dimension {aspect}")
@@ -232,6 +287,8 @@ def check_aspects(fid: str, f: dict[str, str]) -> list[str]:
     for aspect in ASPECTS:
         if aspect not in seen:
             out.append(f"{fid}: {aspect} ist nicht bedacht (Befund oder „ohne Befund“)")
+    if "Nutzer" not in with_finding:
+        out.append(f"{fid}: Die Nutzersicht braucht einen Befund")
     return out
 
 
@@ -239,13 +296,15 @@ def issue_body(f: dict[str, str], req_by_id: dict[str, dict[str, str]], needs: d
     def bullets(value: str) -> list[str]:
         return [part.strip() for part in value.split(" | ") if part.strip()]
 
-    reqs = [f"{short(r)} {req_by_id[r]['kurz']} ({check_label(req_by_id[r]['verified_by'])})"
-            for r in split(f["sichert"]) if r in req_by_id]
+    rows = [req_by_id[r] for r in split(f["sichert"]) if r in req_by_id]
+    tally = (f"Test genannt: {sum(map(has_test, rows))}, nur Urteil: {sum(map(judgement_only, rows))}, "
+             f"kein Test bekannt: {sum(map(untested_gap, rows))}")
     eased = [f"{n} {needs[n]['aussage'].split(':')[0]}" for n in split(f["lindert"]) if n in needs]
     lines = [
         f"**Zweck:** {f['zweck']}", "",
         f"**Schmerz ohne sie** (Größe: {f['groesse']}): {f['schmerz']}", "",
-        "**Sichert:** " + ("; ".join(reqs) or "keine bestehende Anforderung"), "",
+        (f"**Sichert {len(rows)} Anforderungen** ({tally}): " + "; ".join(f"{short(r['requirement_id'])} {r['kurz']}" for r in rows))
+        if rows else "**Sichert:** noch keine Anforderung", "",
         "**Lindert:** " + "; ".join(eased), "",
         "**Befunde je Perspektive:**",
     ]
@@ -258,8 +317,9 @@ def issue_body(f: dict[str, str], req_by_id: dict[str, dict[str, str]], needs: d
     lines += ["", "**DOD (fertig, wenn):**"]
     lines += [f"- [ ] {part}" for part in bullets(f["dod"])]
     lines += ["", "**Iterationen:** " + " · ".join(bullets(f["iteration"])), "",
-              f"_Erzeugt aus `{FUNC_PATH}` von `tools/anforderungskette.py`; Änderungen dort, nicht hier. "
-              "Größe, Rang und Befunde sind ein Vorschlag der KI._"]
+              f"_Erzeugt aus `{FUNC_PATH}`; Änderungen dort, nicht hier. Größe, Rang und Befunde sind ein Vorschlag "
+              "der KI. „Test genannt“: ein Test im Repo prüft einen Teil davon; „kein Test bekannt“: nichts prüft es; "
+              "„nur Urteil“: nur Fachleute oder du beim Benutzen können es beurteilen._"]
     return "\n".join(lines) + "\n"
 
 
@@ -639,6 +699,9 @@ def main(argv: list[str] | None = None) -> int:
         match = [f for f in funcs if f["id"] == args.funktion]
         if not match:
             print(f"unbekannte Funktion {args.funktion!r}", file=sys.stderr)
+            return 1
+        if findings:
+            print("Erst die Kette in Ordnung bringen:\n" + "\n".join(findings), file=sys.stderr)
             return 1
         print(f"{match[0]['id']} {match[0]['name']}")
         print(issue_body(match[0], {r["requirement_id"]: r for r in reqs}, {n["id"]: n for n in needs}), end="")

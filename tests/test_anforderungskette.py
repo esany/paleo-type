@@ -305,8 +305,8 @@ class Funktionen(unittest.TestCase):
         self.assertIn("FN-01: Nutzer steht doppelt", findings)
 
     def test_was_gebraucht_wird_kommt_zuerst(self) -> None:
-        self.assertEqual([], self.write(func("FN-01", rang="2", braucht="FN-02"), func("FN-02", rang="1")))
-        findings = self.write(func("FN-01", rang="1", braucht="FN-02"), func("FN-02", rang="2"))
+        self.assertEqual([], self.write(func("FN-01", rang="2", braucht="FN-02"), func("FN-02", rang="1", sichert="REQ-EDIT-008")))
+        findings = self.write(func("FN-01", rang="1", braucht="FN-02"), func("FN-02", rang="2", sichert="REQ-EDIT-008"))
         self.assertIn("FN-01 (Rang 1) braucht FN-02 (Rang 2); was gebraucht wird, kommt zuerst", findings)
 
     def test_dod_ohne_test_faellt_auf(self) -> None:
@@ -316,7 +316,8 @@ class Funktionen(unittest.TestCase):
     def test_fertig_verlangt_vorhandenen_test_und_gepruefte_anforderung(self) -> None:
         findings = self.write(func(status="fertig", dod="`tests/test_fehlt.py` prüft es"))
         self.assertIn("FN-01: fertig, aber tests/test_fehlt.py gibt es nicht", findings)
-        self.assertIn("FN-01: fertig, aber REQ-UX-003 nennt noch keinen Test", findings)
+        self.assertIn("FN-01: fertig, aber REQ-UX-003 nennt keinen Test aus der DOD", findings)
+        self.assertEqual([], self.write(func(status="fertig", sichert="REQ-EDIT-008")))
 
     def test_unbekannte_anforderung_faellt_auf(self) -> None:
         self.assertIn("FN-01: unbekannte Anforderung REQ-XX-999", self.write(func(sichert="REQ-XX-999")))
@@ -341,7 +342,55 @@ class Funktionen(unittest.TestCase):
         body = kette.issue_body(rows[0], {r["requirement_id"]: r for r in reqs}, {n["id"]: n for n in needs})
         self.assertIn("**DOR (bereit, wenn):**\n- [ ] bereit", body)
         self.assertIn("**DOD (fertig, wenn):**\n- [ ] `tests/test_beispiel.py` prüft es", body)
-        self.assertIn("**Sichert:** UX-003 Kurz (**kein Test bekannt**)", body)
+        self.assertIn("**Sichert 1 Anforderungen** (Test genannt: 0, nur Urteil: 0, kein Test bekannt: 1): UX-003 Kurz", body)
+
+    def test_beleg_muss_aufloesbar_sein(self) -> None:
+        findings = self.write(func(befunde="Nutzer: Will mitlesen [belegt: irgendwo]"))
+        self.assertTrue(any("Beleg 'irgendwo' ist weder" in f for f in findings), findings)
+        findings = self.write(func(befunde="Nutzer: Will mitlesen [belegt: docs/gibtsnicht.md]"))
+        self.assertIn("FN-01: Nutzer: Pfad docs/gibtsnicht.md gibt es nicht", findings)
+        findings = self.write(func(befunde="Nutzer: Will mitlesen [belegt]"))
+        self.assertIn("FN-01: Nutzer ist als belegt markiert, nennt aber keinen Beleg", findings)
+        findings = self.write(func(befunde="Nutzer: Will mitlesen [belegt: O-Ton 01.01.2026 Ziel, #12, UX-003, B-01]"))
+        self.assertEqual([], findings)
+
+    def test_nutzersicht_braucht_einen_befund(self) -> None:
+        findings = self.write(func(befunde="Fach: Grund [abgeleitet]",
+                                   ohne=";".join(a for a in kette.ASPECTS if a != "Fach")))
+        self.assertIn("FN-01: Die Nutzersicht braucht einen Befund", findings)
+
+    def test_anforderung_bei_zwei_funktionen_faellt_auf(self) -> None:
+        findings = self.write(func("FN-01", rang="1"), func("FN-02", rang="2"))
+        self.assertIn("REQ-UX-003 wird von mehreren Funktionen gesichert: FN-01, FN-02", findings)
+
+    def test_abhaengigkeit_der_anforderung_muss_unter_braucht_stehen(self) -> None:
+        findings = self.write(func("FN-01", rang="2", sichert="REQ-UX-003"), func("FN-02", rang="1", sichert="REQ-EDIT-008"))
+        self.assertIn("FN-01: REQ-UX-003 braucht REQ-EDIT-008, das FN-02 sichert; FN-02 fehlt unter braucht", findings)
+        self.assertEqual([], self.write(func("FN-01", rang="2", sichert="REQ-UX-003", braucht="FN-02"),
+                                        func("FN-02", rang="1", sichert="REQ-EDIT-008")))
+
+    def test_funktionsverweise_muessen_stimmen(self) -> None:
+        row = func().replace("\tbereit\t", "\tFN-02 fertig\t").replace("1: erst", "2: mit FN-07")
+        findings = self.write(row, func("FN-02", rang="2", sichert="REQ-EDIT-008"))
+        self.assertIn("FN-01: DOR verlangt FN-02, aber FN-02 steht nicht unter braucht", findings)
+        self.assertIn("FN-01: iteration nennt unbekannte Funktion FN-07", findings)
+
+    def test_werte_ids_und_raenge_werden_geprueft(self) -> None:
+        bad = func().replace("\thoch\tklein\t", "\triesig\twinzig\t").replace("\tVorschlag\t", "\tbald\t")
+        findings = self.write(bad.replace("\tB-01\t", "\tI-01\t"), func("FN-02", rang="1", braucht="FN-02;FN-09", sichert="REQ-EDIT-008"),
+                              func("FN-03", rang="3", sichert=""), func("FN-03", rang="4", sichert=""))
+        for expected in ("FN-01: Größe muss hoch, mittel, gering sein", "FN-01: Aufwand muss klein, mittel, groß sein",
+                         "FN-01: Status muss Vorschlag, bestätigt, in Arbeit, fertig sein",
+                         "FN-01: lindert unbekanntes Bedürfnis, Pain oder Rahmen I-01", "Rang 1 ist mehrfach vergeben",
+                         "FN-02: braucht sich selbst", "FN-02: braucht unbekannte Funktion FN-09"):
+            self.assertIn(expected, findings)
+        self.assertEqual(1, findings.count("FN-03: doppelte Funktion"))
+
+    def test_issue_befehl_verweigert_bei_befunden(self) -> None:
+        self.write(func(dod="ohne Test"))
+        self.assertEqual(1, kette.main(["issue", "FN-01", "--root", str(self.fx.root)]))
+        self.write(func())
+        self.assertEqual(0, kette.main(["issue", "FN-01", "--root", str(self.fx.root)]))
 
 
 class EchteFunktionen(unittest.TestCase):
