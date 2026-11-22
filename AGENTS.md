@@ -23,6 +23,9 @@ Für jede Sitzung in diesem Repo gilt zusätzlich die projektübergreifende Arbe
 - **Zweitprüfung:** Ein frischer Kontext desselben Modells findet Kontextverfall, aber keine Modellfehler. Die prüft ein anderes Modell oder der Eigentümer; hier über die Labels `an:chatgpt` und `an:claude`.
 - **Fehler:** Fälle aus diesem Projekt kommen mit dem Projektnamen `paleo-type` in den Fehlerkatalog der Arbeitsweise, nur über dessen Eintragewerkzeug.
 - **Übernahme:** jede Änderung auf eigenem Zweig, dann PR nach `main`. Übernommen wird erst, wenn die Pflichtprüfung `validate` grün ist und der Eigentümer zugestimmt hat.
+  - Sein Urteil stützt sich nicht auf den Code, sondern auf eine kurze Vorlage in seiner Sprache, mit einer Frage und einer Empfehlung. Sie sagt, was sich für ihn ändert, was er davon selbst ansehen kann, wie es geprüft ist, was offen ist und ob es umkehrbar ist.
+  - Bei neuralgischen Änderungen prüft vorher ein anderes Modell.
+  - Öffentliche Issues sind eine Frage der Sichtbarkeit und gehen ebenfalls an ihn.
 - **Issues** halten fest und steuern nicht. Issues zu Funktionen werden mit `tools/anforderungskette.py issue FN-…` aus `requirements/funktionen.tsv` erzeugt und bleiben kurz.
 
 **Bekannte Widersprüche zwischen dieser Datei und der Arbeitsweise** (Stand 22.11.2026):
