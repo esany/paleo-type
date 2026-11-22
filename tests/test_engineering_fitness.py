@@ -119,7 +119,7 @@ class EngineeringFitnessTests(unittest.TestCase):
             self.assertEqual(row["baseline_blob_sha"], git_blob, artifact_id)
 
     def test_wp5_requirements_namespace_is_narrow_and_fully_classified(self) -> None:
-        expected = {"README.md", "domain-requirements.tsv"}
+        expected = {"README.md", "domain-requirements.tsv", "beduerfnisse.tsv", "kette.md"}
         actual = {path.name for path in (REPO / "requirements").iterdir() if path.is_file()}
         self.assertEqual(expected, actual)
         artifacts = self._read_rows(REPO / "engineering" / "catalog" / "artifacts.tsv")

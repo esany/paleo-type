@@ -121,3 +121,5 @@ ENG-A-0119	concept	engineering/evidence/research/source-entry-transition-coverag
 ENG-A-0120	owner-admission	engineering/evidence/decisions/source-entry-transition-coverage-option-c-owner-admission-2026-10-08.md	cross-project	admitted-change	active		Human-owner D-016 admission for source-entry Option C
 ENG-A-0121	audit	engineering/evidence/audits/source-entry-transition-coverage-option-c-result-review-2026-10-08.md	cross-project	non-normative-evidence	active		Source-entry Option C result review
 ENG-A-0122	audit	engineering/evidence/audits/chat-end-knowledge-monopoly-restartability-audit-2026-10-09.md	cross-project	non-normative-evidence	active		Chat-end knowledge-monopoly and restartability audit 2026-10-09
+ENG-A-0123	need-set	requirements/beduerfnisse.tsv	repository	canonical	active		Intent, Rahmen, Bedürfnisse und Pains des Eigentümers mit O-Ton und Fundstelle
+ENG-A-0124	navigation	requirements/kette.md	repository	derived	active		Erzeugte Ansicht der Anforderungskette (tools/anforderungskette.py)
