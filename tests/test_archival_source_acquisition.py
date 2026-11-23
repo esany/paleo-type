@@ -5,8 +5,10 @@ import importlib.util
 import json
 import sys
 import tempfile
+from contextlib import redirect_stdout
 import unittest
-from io import StringIO
+from io import BytesIO, StringIO
+from PIL import Image
 from pathlib import Path
 from unittest.mock import Mock, patch
 
@@ -24,12 +26,14 @@ FIXTURES = REPO / "tests" / "fixtures"
 GUID_632 = "edd69aa1-eae4-4970-a695-94aaeccd6724"
 GUID_754 = "6e0423b3-880c-431c-9a1a-b9e12086b3a7"
 GUID_OPPURG = "e741423e-c9f2-4f52-ad43-3cbbe9a7b1af"
-JPEG_32X16 = (
-    b"\xff\xd8"
-    b"\xff\xc0\x00\x11\x08\x00\x10\x00\x20\x03"
-    b"\x01\x11\x00\x02\x11\x00\x03\x11\x00"
-    b"\xff\xd9"
+# Genuine compressed JPEG fixture generated with the same declared decoder,
+# rather than the earlier SOF-only pseudo-JPEG (which has no image pixel stream).
+_buffer = BytesIO()
+Image.new("RGB", (32, 16), (80, 122, 157)).save(
+    _buffer, format="JPEG", quality=80
 )
+JPEG_32X16 = _buffer.getvalue()
+
 
 
 def fixture(label: str) -> bytes:
@@ -83,6 +87,104 @@ class AcquisitionTests(unittest.TestCase):
         with patch.object(sys, "stdin", StringIO(metadata_json)):
             loaded = acquisition.load_source(Path("-"))
         self.assertEqual(source(), loaded)
+
+    def test_dresden_metadata_stdin_cli_dry_run_uses_list_only_fullsize(self):
+        guid = "8bdce320-0ce6-4ddb-b37a-eed8fe52cb94"
+        metadata = source(
+            guid=guid, signature="Nr. 01739", fonds="10001",
+            date_label="29. Oktober 1303", image_count=0,
+            page_url=f"https://www.archiv.sachsen.de/archiv/bestand.jsp?guid={guid}",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            listing = Path(tmp) / "files.json"
+            listing.write_bytes(images("0002", "0001"))
+            output_root = Path(tmp) / "external-source-root"
+            buffer = StringIO()
+            argv = [
+                "archival_source_acquisition.py", "--metadata", "-",
+                "--file-list", str(listing), "--output-root", str(output_root),
+                "--route", "fullsize", "--dry-run",
+            ]
+            with patch.object(sys, "argv", argv):
+                with patch.object(sys, "stdin", StringIO(json.dumps(acquisition.asdict(metadata)))):
+                    with redirect_stdout(buffer):
+                        self.assertEqual(0, acquisition.main())
+            planned = json.loads(buffer.getvalue())
+            self.assertEqual("fullsize", planned["route"])
+            self.assertTrue(planned["package_name"].startswith("1303_SStA_10001_"))
+            self.assertNotIn("Oktober", planned["package_name"])
+            self.assertEqual(["0001.jpg", "0002.jpg"],
+                             [item["filename"] for item in planned["images"]])
+            self.assertEqual([
+                f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0001.jpg",
+                f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0002.jpg",
+            ], [item["url"] for item in planned["images"]])
+            self.assertFalse(output_root.exists())
+
+    def test_year_prefix_preserves_complete_catalogue_date_only_in_metadata(self):
+        cases = (
+            ("29. Oktober 1303", "1303"),
+            ("29_Oktober_1303", "1303"),
+            ("1303-10-29", "1303"),
+            ("1704-1781", "1704"),
+            ("1627_1652-1668", "1627"),
+            ("16. Jahrhundert", "undatiert"),
+        )
+        for label, expected in cases:
+            with self.subTest(date_label=label):
+                metadata = source(date_label=label)
+                generated = acquisition.package_name(metadata)
+                self.assertEqual(expected, generated.split("_", 1)[0])
+                self.assertEqual(label, metadata.date_label)
+
+    def test_existing_legacy_dated_package_remains_readable_and_resumable(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            metadata = source(date_label="29. Oktober 1303", image_count=1)
+            plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+                metadata, one_image(), route="fullsize"
+            )
+            legacy = acquisition._legacy_package_name(metadata)
+            modern = acquisition.package_name(metadata)
+            self.assertNotEqual(legacy, modern)
+            legacy_dir = root / legacy
+            legacy_dir.mkdir()
+            old_plan = acquisition.replace(plan, package_name=legacy)
+            acquisition._write_progress(legacy_dir, acquisition._new_progress(old_plan))
+            state_before = (legacy_dir / acquisition.PROGRESS_FILENAME).read_bytes()
+            initial_status = acquisition.status_for_source(metadata, root)
+            self.assertEqual("planned", initial_status["status"])
+            self.assertEqual(legacy, initial_status["package_name"])
+            self.assertTrue(initial_status["read_only"])
+            self.assertEqual(
+                state_before, (legacy_dir / acquisition.PROGRESS_FILENAME).read_bytes()
+            )
+            resolved = acquisition._resolve_plan_destination(plan, root)
+            self.assertEqual(legacy, resolved.package_name)
+            manifest = acquisition.acquire(
+                plan,
+                root,
+                opener=lambda *_args, **_kwargs: response_for(),
+                rate_limit_seconds=0,
+            )
+            self.assertEqual(legacy, manifest["package_name"])
+            self.assertEqual("29. Oktober 1303", manifest["source"]["date_label"])
+            self.assertTrue((legacy_dir / "0001.jpg").is_file())
+            self.assertFalse((root / modern).exists())
+            self.assertEqual("complete", acquisition.status_for_source(metadata, root)["status"])
+
+    def test_legacy_and_year_only_folder_conflict_fails_without_mutation(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            metadata = source(date_label="29. Oktober 1303")
+            (root / acquisition._legacy_package_name(metadata)).mkdir()
+            (root / acquisition.package_name(metadata)).mkdir()
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "both year-only"):
+                acquisition.status_for_source(metadata, root)
+            self.assertEqual(
+                [],
+                list((root / acquisition.package_name(metadata)).iterdir()),
+            )
 
     def test_real_files_json_fixtures_drive_three_distinct_plans(self):
         provider = acquisition.SaechsischesStaatsarchivProvider()
@@ -181,10 +283,92 @@ class AcquisitionTests(unittest.TestCase):
             plan.images[0].url,
         )
 
+    def test_dresden_1303_record_preserves_exact_two_real_listed_jpegs(self):
+        # Captured from official files.json for 10001 Ältere Urkunden
+        # Nr. 01739 on 2026-10-27. The original list is unsorted.
+        guid = "8bdce320-0ce6-4ddb-b37a-eed8fe52cb94"
+        actual_list = json.dumps([
+            {"name": "0002", "typ": "jpg", "istEinzelbild": True},
+            {"name": "0001", "typ": "jpg", "istEinzelbild": True},
+        ]).encode()
+        provider = acquisition.SaechsischesStaatsarchivProvider()
+        metadata = source(guid=guid, signature="Nr. 01739",
+                          page_url=f"https://www.archiv.sachsen.de/archiv/bestand.jsp?guid={guid}",
+                          image_count=0)
+        plan = provider.plan(metadata, actual_list, route="fullsize")
+        self.assertEqual(["0001.jpg", "0002.jpg"],
+                         [image.filename for image in plan.images])
+        self.assertEqual([
+            f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0001.jpg",
+            f"https://www.archiv.sachsen.de/digitalisate/{guid}/fullsize/0002.jpg",
+        ], [image.url for image in plan.images])
+        self.assertEqual(2, len(plan.images))
+        self.assertNotIn("0003.jpg", [image.filename for image in plan.images])
+
+    def test_fullsize_from_nonsequential_list_never_invents_intermediate_names(self):
+        provider = acquisition.SaechsischesStaatsarchivProvider()
+        plan = provider.plan(source(image_count=0), images("0042", "0001"),
+                             route="fullsize")
+        self.assertEqual(["0001.jpg", "0042.jpg"],
+                         [image.filename for image in plan.images])
+        self.assertTrue(all("/fullsize/" in image.url for image in plan.images))
+        self.assertTrue(all("/preview/" not in image.url for image in plan.images))
+        self.assertTrue(all(image.url.startswith("https://www.archiv.sachsen.de/")
+                            for image in plan.images))
+
+    def test_written_package_inventory_never_invents_missing_filenames(self):
+        # The provider accepts a non-consecutive image list. A sidecar must
+        # identify precisely those files, not imply all intervening filenames.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=0), images("0042", "0001"), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            manifest = acquisition.acquire(
+                plan, root, opener=opener, rate_limit_seconds=0
+            )
+            package = root / plan.package_name
+            documented = (package / "QUELLENINFO.txt").read_text(encoding="utf-8")
+            self.assertIn(
+                "Dateien: 0001.jpg, 0042.jpg", documented.splitlines()
+            )
+            self.assertNotIn("0001.jpg–0042.jpg", documented)
+            self.assertNotIn("0002.jpg", documented)
+            self.assertEqual(
+                ["0001.jpg", "0042.jpg"],
+                [item["filename"] for item in manifest["images"]],
+            )
+            self.assertEqual(2, opener.call_count)
+
+    def test_download_route_sidecar_does_not_claim_fullsize_quality(self):
+        # A plain download.jsp URL is not evidence of fullsize quality.
+        # Preserve the exact route and count, without overstating pixels.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="download"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            acquisition.acquire(
+                plan, root,
+                opener=Mock(side_effect=lambda *_args, **_kwargs: response_for()),
+                rate_limit_seconds=0,
+            )
+            documented = (root / plan.package_name / "QUELLENINFO.txt").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("Bildroute: download", documented)
+            self.assertIn("Umfang: 1 JPEG-Datei", documented)
+            self.assertNotIn("Fullsize-JPEG", documented)
+
     def test_jpeg_dimensions_are_checked(self):
         self.assertEqual((32, 16), acquisition.jpeg_dimensions(JPEG_32X16))
         with self.assertRaises(acquisition.AcquisitionError):
             acquisition.jpeg_dimensions(b"not-a-jpeg")
+        with self.assertRaisesRegex(acquisition.AcquisitionError, "truncated JPEG"):
+            acquisition.jpeg_dimensions(JPEG_32X16[:-2])
+        with self.assertRaises(acquisition.AcquisitionError):
+            acquisition.jpeg_dimensions(JPEG_32X16[:70] + bytes.fromhex("ffd9"))
 
     def test_complete_repeat_run_is_network_free_and_revalidates_persisted_bytes(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -394,6 +578,34 @@ class AcquisitionTests(unittest.TestCase):
             self.assertEqual("cancelled-restartable", state["status"])
             self.assertEqual("0001.jpg", state["last_failure"]["filename"])
 
+    def test_untracked_sidecars_fail_closed_without_network_or_overwrite(self):
+        # An existing package may contain untracked images (adoption is
+        # separately checked), but never replace its prior manifest/notes,
+        # checksums or interrupted sidecar bytes without matching progress.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        sidecars = ("QUELLENINFO.json", "QUELLENINFO.txt", "SHA256SUMS.txt")
+        for name in (item for base in sidecars for item in (base, base + ".part")):
+            with self.subTest(sidecar=name):
+                with tempfile.TemporaryDirectory() as temp:
+                    root = Path(temp)
+                    package = root / plan.package_name
+                    package.mkdir()
+                    existing = package / name
+                    existing.write_bytes(b"prior, untracked user data")
+                    opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+                    with self.assertRaisesRegex(
+                        acquisition.AcquisitionError, "untracked package sidecar"
+                    ):
+                        acquisition.acquire(
+                            plan, root, opener=opener, rate_limit_seconds=0
+                        )
+                    opener.assert_not_called()
+                    self.assertEqual(b"prior, untracked user data", existing.read_bytes())
+                    self.assertFalse((package / acquisition.PROGRESS_FILENAME).exists())
+                    self.assertFalse((package / "0001.jpg").exists())
+
     def test_existing_different_file_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -407,6 +619,77 @@ class AcquisitionTests(unittest.TestCase):
             with self.assertRaises(acquisition.AcquisitionError):
                 acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
             self.assertEqual(b"different", (package / "0001.jpg").read_bytes())
+
+    def test_symlinked_package_destination_cannot_escape_controlled_root(self):
+        # The external output_root check alone must not be bypassed by
+        # a package directory that resolves outside the controlled root.
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "controlled"
+            outside = Path(temp) / "outside"
+            root.mkdir()
+            outside.mkdir()
+            target = root / plan.package_name
+            target.symlink_to(outside, target_is_directory=True)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+            self.assertFalse((outside / "0001.jpg").exists())
+            self.assertFalse((outside / acquisition.PROGRESS_FILENAME).exists())
+
+    def test_symlinked_jpeg_partial_cannot_overwrite_external_file(self):
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "controlled"
+            target = root / plan.package_name
+            target.mkdir(parents=True)
+            outside = Path(temp) / "preserve-original.txt"
+            outside.write_bytes(b"do not overwrite")
+            partial = target / "0001.jpg.part"
+            partial.symlink_to(outside)
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+            self.assertTrue(partial.is_symlink())
+            self.assertEqual(b"do not overwrite", outside.read_bytes())
+            self.assertFalse((target / "0001.jpg").exists())
+
+    def test_symlinked_verified_jpeg_cannot_count_as_local_package_byte(self):
+        plan = acquisition.SaechsischesStaatsarchivProvider().plan(
+            source(image_count=1), one_image(), route="fullsize"
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp) / "controlled"
+            opener = Mock(side_effect=lambda *_args, **_kwargs: response_for())
+            acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            target = root / plan.package_name
+            external = Path(temp) / "external.jpeg"
+            (target / "0001.jpg").replace(external)
+            (target / "0001.jpg").symlink_to(external)
+            opener.reset_mock()
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition.acquire(plan, root, opener=opener, rate_limit_seconds=0)
+            opener.assert_not_called()
+            self.assertEqual(JPEG_32X16, external.read_bytes())
+
+    def test_atomic_sidecar_writer_refuses_symlinked_temp_path(self):
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / "QUELLENINFO.txt"
+            outside = Path(temp) / "prior-note"
+            outside.write_text("preserve", encoding="utf-8")
+            staging = target.with_name(target.name + ".part")
+            staging.symlink_to(outside)
+            with self.assertRaisesRegex(acquisition.AcquisitionError, "symbolic link"):
+                acquisition._write_text_atomic(target, "replacement")
+            self.assertEqual("preserve", outside.read_text(encoding="utf-8"))
+            self.assertTrue(staging.is_symlink())
+            self.assertFalse(target.exists())
 
     def test_repository_worktree_is_rejected_as_output_root(self):
         plan = acquisition.SaechsischesStaatsarchivProvider().plan(
